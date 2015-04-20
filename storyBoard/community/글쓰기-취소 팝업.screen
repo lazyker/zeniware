@@ -91,10 +91,10 @@
   <widgets xsi:type="model:Text" id="404" x="262" y="218" text="옵션" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="299" x="576" y="648" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc" link="글쓰기-저장%20팝업.screen">
+  <widgets xsi:type="model:Button" id="299" x="576" y="648" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="300" x="624" y="648" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="글쓰기-취소%20팝업.screen">
+  <widgets xsi:type="model:Button" id="300" x="624" y="648" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
     <font/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="353" x="348" y="173" width="640" measuredWidth="640" measuredHeight="23">
@@ -116,6 +116,18 @@
   </widgets>
   <widgets xsi:type="model:Button" id="407" x="424" y="624" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="408" x="404" y="296" measuredWidth="400" measuredHeight="113">
+    <widgets xsi:type="model:Window" id="409" height="97" text="취소" measuredWidth="400" measuredHeight="97"/>
+    <widgets xsi:type="model:TextArea" id="410" y="21" width="400" height="92" text="　&#xD;&#xA;취소하시겠습니까?" measuredWidth="400" measuredHeight="92" textAlignment="Center">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="411" x="156" y="72" text="확인" measuredWidth="44" measuredHeight="25" background="#cccccc" link="공지.screen">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="412" x="204" y="72" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="글쓰기.screen">
+      <font/>
+    </widgets>
   </widgets>
   <hRuler/>
   <vRuler/>
