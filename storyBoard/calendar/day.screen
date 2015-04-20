@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
-  <widgets xsi:type="model:Image" id="3" x="240" y="200" width="801" height="586" measuredWidth="801" measuredHeight="586" src="../../zeniware/assets/day.jpg"/>
+  <widgets xsi:type="model:Image" id="3" x="240" y="200" width="801" height="590" measuredWidth="801" measuredHeight="590" src="../assets/day.jpg"/>
   <widgets xsi:type="model:Panel" id="7" x="240" y="200" width="801" height="49" measuredWidth="801" measuredHeight="49"/>
   <widgets xsi:type="model:Label" id="8" x="264" y="209" text="2015.04.10" measuredWidth="86" measuredHeight="31">
     <font size="17px"/>
@@ -11,7 +11,7 @@
     <items link="week.screen" x="58" y="0" width="57" height="29" text="주간"/>
     <items link="month.screen" x="115" y="0" width="62" height="29" text="월간"/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="20" x="1000" y="213" width="24" height="24" measuredWidth="24" measuredHeight="24" icon="pdf (large)"/>
+  <widgets xsi:type="model:Icon" id="20" x="1000" y="213" width="24" height="24" measuredWidth="24" measuredHeight="24" icon="print (medium)"/>
   <widgets xsi:type="model:Panel" id="22" x="40" y="200" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
   <widgets xsi:type="model:Image" id="25" x="45" y="248" width="192" height="233" measuredWidth="192" measuredHeight="233" src="../../zeniware/assets/calendar.jpg"/>
   <widgets xsi:type="model:Icon" id="26" x="192" y="485" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="add (large)"/>
