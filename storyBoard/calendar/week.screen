@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Image" id="59" x="240" y="200" width="801" height="586" measuredWidth="801" measuredHeight="586" src="../../zeniware/assets/week.jpg"/>
+  <widgets xsi:type="model:Panel" id="7" x="240" y="200" width="801" height="49" measuredWidth="801" measuredHeight="49"/>
+  <widgets xsi:type="model:Label" id="8" x="264" y="209" text="04.05 ~ 04.11" measuredWidth="110" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:ButtonBar" id="14" x="552" y="210" width="177" height="29" text="일간, 주간, 월간" measuredWidth="177" measuredHeight="29" selection="1">
+    <font/>
+    <items link="day.screen" x="0" y="0" width="58" height="29" text="일간"/>
+    <items x="58" y="0" width="57" height="29" text="주간"/>
+    <items link="month.screen" x="115" y="0" width="62" height="29" text="월간"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="20" x="1000" y="213" width="24" height="24" measuredWidth="24" measuredHeight="24" icon="pdf (large)"/>
+  <widgets xsi:type="model:Panel" id="22" x="40" y="200" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
+  <widgets xsi:type="model:Image" id="25" x="45" y="248" width="192" height="233" measuredWidth="192" measuredHeight="233" src="../../zeniware/assets/calendar.jpg"/>
+  <widgets xsi:type="model:Icon" id="26" x="192" y="485" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="add (large)"/>
+  <widgets xsi:type="model:Icon" id="27" x="214" y="485" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="minus (custom)"/>
+  <widgets xsi:type="model:TextField" id="30" x="72" y="512" width="159" text="개인 스케쥴" measuredWidth="159" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="31" x="72" y="544" width="159" text="회사 스케쥴" measuredWidth="159" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="34" x="50" y="209" width="181" height="32" text="일정 쓰기" measuredWidth="181" measuredHeight="32">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="37" x="45" y="511" text="[x]&#xA;" measuredWidth="27" measuredHeight="26" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="27" height="22" text="[x]"/>
+  </widgets>
+  <widgets xsi:type="model:Checkbox" id="38" x="50" y="542" measuredWidth="21" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="40" x="40" y="632" width="197" measuredWidth="197" measuredHeight="6"/>
+  <widgets xsi:type="model:TextField" id="47" x="45" y="637" width="192" text="할일" measuredWidth="192" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="48" x="192" y="641" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="add (large)"/>
+  <widgets xsi:type="model:Icon" id="49" x="214" y="640" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="minus (custom)"/>
+  <widgets xsi:type="model:Checkbox" id="50" x="50" y="669" measuredWidth="21" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="51" x="71" y="669" width="114" text="스토리 보드 작성" measuredWidth="114" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="52" x="184" y="668" width="53" text="진행" measuredWidth="53" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="54" x="433" y="212" width="41" height="24" text="오늘" measuredWidth="41" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="55" x="399" y="212" width="25" text="▶" measuredWidth="25" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="56" x="375" y="212" width="25" text="◀" measuredWidth="25" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

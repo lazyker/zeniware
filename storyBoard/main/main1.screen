@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Panel" id="22" x="40" y="144" width="617" height="463" measuredWidth="617" measuredHeight="463"/>
+  <widgets xsi:type="model:Panel" id="73" x="665" y="144" width="376" height="249" measuredWidth="376" measuredHeight="249"/>
+  <widgets xsi:type="model:HLine" id="75" x="665" y="174" width="376" measuredWidth="376" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="78" x="675" y="151" text="공지사항" measuredWidth="54" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:VLine" id="80" x="963" y="179" height="214" measuredWidth="6" measuredHeight="214"/>
+  <widgets xsi:type="model:Label" id="83" x="981" y="186" text="작성일" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="84" x="809" y="186" text="제목" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="97" x="40" y="174" width="617" measuredWidth="617" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="98" x="52" y="151" text="내 정보" measuredWidth="46" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="99" x="60" y="190" width="581" text="2015년 4월 13일 (월) 홍길동 팀명/직급" measuredWidth="581" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="101" x="507" y="200" text="출근체크" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="102" x="579" y="200" text="퇴근체크" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="103" x="52" y="245" width="589" measuredWidth="589" measuredHeight="6"/>
+  <widgets xsi:type="model:Icon" id="104" x="59" y="272" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="bullet (custom)"/>
+  <widgets xsi:type="model:Label" id="105" x="87" y="273" text="받은 메일함(2)" measuredWidth="85" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="106" x="159" y="303" width="380" text="회장님과의 대화관련 질문사항 및 참석 요청 건" measuredWidth="380" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="107" x="574" y="299" text="2015-04-13" measuredWidth="72" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="108" x="97" y="303" text="김재환" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="109" x="59" y="302" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="email (large)"/>
+  <widgets xsi:type="model:Label" id="110" x="159" y="325" width="380" text="한양 전투 일지" measuredWidth="380" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="111" x="574" y="322" text="2015-04-13" measuredWidth="72" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="112" x="97" y="325" text="임꺽정" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="113" x="59" y="324" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="email (large)"/>
+  <widgets xsi:type="model:Label" id="114" x="591" y="272" text="▷ More" measuredWidth="50" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="128" x="59" y="440" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="bullet (custom)"/>
+  <widgets xsi:type="model:Label" id="129" x="87" y="441" text="결재할 문서" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="130" x="97" y="470" width="380" text="물품 구입 지급건" measuredWidth="380" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="131" x="574" y="468" text="2015-04-13" measuredWidth="72" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="132" x="515" y="470" text="김재환" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="133" x="59" y="470" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="paste (custom)"/>
+  <widgets xsi:type="model:Label" id="134" x="99" y="492" width="380" text="여름 휴가" measuredWidth="380" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="135" x="574" y="490" text="2015-04-13" measuredWidth="72" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="136" x="515" y="490" text="임꺽정" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="137" x="59" y="492" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="paste (custom)"/>
+  <widgets xsi:type="model:Label" id="138" x="591" y="440" text="▷ More" measuredWidth="50" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="139" x="40" y="99" width="1001" height="41" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="140" x="50" y="104" width="63" height="28" text="회사로고" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="141" x="224" y="104" width="593" height="28" text="홈  전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서함   통계현황   설문조사" measuredWidth="593" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="142" x="915" y="104" width="30" height="30" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="143" x="952" y="108" text="홍길동" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="144" x="993" y="107" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="145" x="1016" y="108" width="21" height="21" measuredWidth="21" measuredHeight="21" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="146" x="856" y="107" text="관리자" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Tooltip" id="96" x="880" y="51" text="hidden&#xD;&#xA;Button" measuredWidth="48" measuredHeight="55">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="147" x="60" y="212" width="581" text="메일 용량 : 187.7MB / 1000.0MB " measuredWidth="581" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="155" x="665" y="400" measuredWidth="376" measuredHeight="207">
+    <widgets xsi:type="model:Panel" id="148" width="376" height="207" measuredWidth="376" measuredHeight="207"/>
+    <widgets xsi:type="model:HLine" id="149" y="30" width="376" measuredWidth="376" measuredHeight="6"/>
+    <widgets xsi:type="model:Label" id="150" x="10" y="7" text="경조사" measuredWidth="42" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:VLine" id="151" x="298" y="35" height="172" measuredWidth="6" measuredHeight="172"/>
+    <widgets xsi:type="model:Label" id="152" x="316" y="42" text="작성일" measuredWidth="42" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="153" x="103" y="42" text="제목" measuredWidth="30" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:VLine" id="156" x="223" y="35" height="172" measuredWidth="6" measuredHeight="172"/>
+    <widgets xsi:type="model:Label" id="157" x="247" y="42" text="분류" measuredWidth="30" measuredHeight="23">
+      <font/>
+    </widgets>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

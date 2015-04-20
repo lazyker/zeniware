@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="48" y="48" width="1209" height="753" text="Browser&#xA;http://..." measuredWidth="1209" measuredHeight="753">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Placeholder" id="3" x="64" y="110" width="1175" height="27" text="상단 영역" measuredWidth="1175" measuredHeight="27"/>
+  <widgets xsi:type="model:Panel" id="6" x="64" y="152" width="177" height="633" measuredWidth="177" measuredHeight="633"/>
+  <widgets xsi:type="model:TextField" id="15" x="74" y="214" width="157" text="새 문서 기안" measuredWidth="157" measuredHeight="23" background="#fff2cc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TabbedPane" id="16" x="256" y="152" width="473" height="633" text="임시저장,미결문서,진행문서,반송문서,완결문서" measuredWidth="473" measuredHeight="633" selection="0">
+    <items x="10" y="0" width="69" height="27" text="임시저장"/>
+    <items x="79" y="0" width="69" height="27" text="미결문서"/>
+    <items x="148" y="0" width="69" height="27" text="진행문서"/>
+    <items x="217" y="0" width="69" height="27" text="반송문서"/>
+    <items x="286" y="0" width="69" height="27" text="완결문서"/>
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Accordion" id="17" x="736" y="179" width="511" height="342" text="결재선&#xA;수신처&#xA;첨부파일&#xA;의견" measuredWidth="511" measuredHeight="342" selection="0">
+    <items x="0" y="2" width="511" height="25" text="결재선"/>
+    <items x="0" y="267" width="511" height="25" text="수신처"/>
+    <items x="0" y="292" width="511" height="25" text="첨부파일"/>
+    <items x="0" y="317" width="511" height="25" text="의견"/>
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="19" x="74" y="253" width="157" text="개인결재" measuredWidth="157" measuredHeight="23" background="#fff2cc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HSplitter" id="22" x="74" y="337" width="157" measuredWidth="157" measuredHeight="11"/>
+  <widgets xsi:type="model:Label" id="23" x="74" y="162" width="157" text="전자결재" measuredWidth="157" measuredHeight="36" foreground="#a2c4c9">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="26" x="746" y="214" width="493" text="순번,성명,직위,부서,결재유형,결재상태,결재일시&#xA;1,홍길동,사원,솔루션사업팀,결재,승인,2015-04-14 13:10:00&#xA;2,임꺽정,과장,솔루션사업팀,합의,대기,&#xA;3,제니엘,부장,정보기획실,결재,대기," measuredWidth="493" measuredHeight="124" rowHeight="30" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="28" x="74" y="420" width="157" text="등록대장" measuredWidth="157" measuredHeight="23" background="#fff2cc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="32" x="74" y="368" width="157" text="문서함" measuredWidth="157" measuredHeight="36" foreground="#a2c4c9">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Tree" id="33" x="74" y="534" width="157" height="201" text="v 회의자료&#xA;-[>] 경영회의&#xA;-[v] 전사업무회의&#xA;-[>] 팀장회의&#xA;v 각종서식&#xA;-[>] Closed Folder&#xA;-[v] Open Folder&#xA;> 업무인수인계서" measuredWidth="157" measuredHeight="201">
+    <items x="0" y="5" width="157" height="21" text="v 회의자료"/>
+    <items x="0" y="26" width="157" height="21" text="-[>] 경영회의"/>
+    <items x="0" y="47" width="157" height="21" text="-[v] 전사업무회의"/>
+    <items x="0" y="68" width="157" height="21" text="-[>] 팀장회의"/>
+    <items x="0" y="89" width="157" height="21" text="v 각종서식"/>
+    <items x="0" y="110" width="157" height="21" text="-[>] Closed Folder"/>
+    <items x="0" y="131" width="157" height="21" text="-[v] Open Folder"/>
+    <items x="0" y="152" width="157" height="21" text="> 업무인수인계서"/>
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="35" x="74" y="458" width="157" text="부서문서함" measuredWidth="157" measuredHeight="23" background="#fff2cc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="36" x="74" y="496" width="157" text="개인문서함" measuredWidth="157" measuredHeight="23" background="#fff2cc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="38" x="266" y="189" width="453" height="540" text="*Table Header*, *Table Header*, *Table Header*, *Table Header*&#xA;Content Goes Here, This is longer content, Content Goes Here, Content Goes Here&#xA;Content Goes Here, This is longer Content, Content Goes Here, Content Goes Here&#xA;Content Goes Here, This is longer Content, Content Goes Here, Content Goes Here" measuredWidth="453" measuredHeight="540" rowHeight="30" alternative="#eeeeee">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="39" x="74" y="296" width="157" text="문서수발" measuredWidth="157" measuredHeight="23" background="#fff2cc">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

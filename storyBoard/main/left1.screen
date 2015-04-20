@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Panel" id="139" x="40" y="99" width="1001" height="41" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="140" x="50" y="105" width="63" height="28" text="회사로고" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="141" x="264" y="106" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="142" x="894" y="104" width="30" height="30" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="143" x="931" y="108" text="홍길동" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="144" x="993" y="107" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="145" x="1016" y="108" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="146" x="835" y="107" text="관리자" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="22" x="232" y="144" width="809" height="463" measuredWidth="809" measuredHeight="463"/>
+  <widgets xsi:type="model:Icon" id="160" x="968" y="107" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Panel" id="165" x="40" y="144" width="185" height="463" measuredWidth="185" measuredHeight="463"/>
+  <widgets xsi:type="model:HLine" id="167" x="40" y="184" width="185" measuredWidth="185" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="168" x="50" y="154" width="165" text="전자결재" measuredWidth="165" measuredHeight="25" textAlignment="Center">
+    <font size="13px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Shape" id="169" x="50" y="200" width="165" height="33" text="기안 상신" measuredWidth="165" measuredHeight="33" shapeType="rectangle-round">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="170" x="50" y="254" width="165" text="임시보관" measuredWidth="165" measuredHeight="24" icon="image (medium)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="171" x="50" y="288" width="165" text="결재진행" measuredWidth="165" measuredHeight="24" icon="image (medium)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="172" x="50" y="352" width="165" text="부서 문서함" measuredWidth="165" measuredHeight="24" icon="image (medium)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="173" x="50" y="320" width="165" text="개인 문서함" measuredWidth="165" measuredHeight="24" icon="image (medium)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="175" x="50" y="573" width="165" text="결재 환경설정" measuredWidth="165" measuredHeight="24" icon="image (medium)">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
