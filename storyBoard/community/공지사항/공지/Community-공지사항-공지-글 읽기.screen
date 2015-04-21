@@ -173,6 +173,23 @@
   <widgets xsi:type="model:Button" id="484" x="888" y="800" width="78" height="65" text="입력하기" measuredWidth="78" measuredHeight="65">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Panel" id="486" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="487" x="18" y="65" width="63" height="28" text="회사로고" locked="true" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="488" x="232" y="66" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" locked="true" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="489" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="490" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="491" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="492" x="984" y="68" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="493" x="803" y="67" text="관리자" locked="true" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="494" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
