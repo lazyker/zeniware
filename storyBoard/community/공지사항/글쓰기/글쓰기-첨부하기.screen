@@ -148,7 +148,7 @@
   <widgets xsi:type="model:TextField" id="418" x="467" y="457" width="337" text="Text field" measuredWidth="337" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="420" x="819" y="456" text="열기" measuredWidth="44" measuredHeight="25" link="글쓰기3.screen">
+  <widgets xsi:type="model:Button" id="420" x="819" y="456" text="열기" measuredWidth="44" measuredHeight="25" link="글쓰기-파일첨부.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="421" x="872" y="456" text="취소" measuredWidth="44" measuredHeight="25" link="글쓰기.screen">
