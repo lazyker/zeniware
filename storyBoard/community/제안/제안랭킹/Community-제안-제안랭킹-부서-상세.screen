@@ -149,6 +149,10 @@
   <widgets xsi:type="model:Text" id="356" x="272" y="176" text="내용" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="357" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="358" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../공지사항/경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="359" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="360" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

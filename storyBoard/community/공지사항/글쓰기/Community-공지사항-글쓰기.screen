@@ -76,8 +76,8 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="554" text="공지사항,제안,소속 게시판,동호회" locked="true" measuredWidth="751" measuredHeight="554" selection="0">
-    <items x="10" y="0" width="69" height="27" text="공지사항"/>
-    <items x="79" y="0" width="45" height="27" text="제안"/>
+    <items link="" x="10" y="0" width="69" height="27" text="공지사항"/>
+    <items link="../../제안/글쓰기/Community-제안-글쓰기.screen" x="79" y="0" width="45" height="27" text="제안"/>
     <items x="124" y="0" width="85" height="27" text="소속 게시판"/>
     <items x="209" y="0" width="57" height="27" text="동호회"/>
     <font/>
@@ -117,6 +117,10 @@
   <widgets xsi:type="model:Button" id="407" x="424" y="624" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="408" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="409" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="410" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="411" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

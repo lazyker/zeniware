@@ -126,6 +126,10 @@
     <items x="123" y="0" width="25" height="23" text="제안"/>
     <items x="168" y="0" width="25" height="23" text="제안"/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="303" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="304" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../공지사항/경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="305" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="306" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link=""/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
