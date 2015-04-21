@@ -20,15 +20,15 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:Label" id="225" x="248" y="122" width="165" text="공지" measuredWidth="165" measuredHeight="36">
+  <widgets xsi:type="model:Label" id="225" x="248" y="122" width="165" text="경조사" measuredWidth="165" measuredHeight="36">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:Breadcrumbs" id="229" x="779" y="105" text="Home,커뮤티니,공지사항,공지" measuredWidth="220" measuredHeight="23">
+  <widgets xsi:type="model:Breadcrumbs" id="229" x="779" y="105" text="Home,커뮤티니,공지사항,경조사" measuredWidth="232" measuredHeight="23">
     <font/>
     <items x="0" y="0" width="34" height="23" text="Home"/>
     <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
     <items x="123" y="0" width="49" height="23" text="공지사항"/>
-    <items x="192" y="0" width="25" height="23" text="공지"/>
+    <items x="192" y="0" width="37" height="23" text="경조사"/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="245" x="248" y="172" height="517" measuredWidth="751" measuredHeight="516">
     <widgets xsi:type="model:Panel" id="230" width="751" height="505" measuredWidth="751" measuredHeight="505"/>
