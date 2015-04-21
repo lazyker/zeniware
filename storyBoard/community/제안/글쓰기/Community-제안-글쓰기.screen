@@ -133,6 +133,10 @@
   <widgets xsi:type="model:Combo" id="423" x="678" y="194" width="234" text="미정&#xD;&#xA;단순건의(일반) 1000포인트&#xD;&#xA;단순건의(일반) 2000포인트&#xD;&#xA;단순건의(업무) 2000포인트&#xD;&#xA;단순건의(업무) 3000포인트" measuredWidth="234" measuredHeight="107">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="424" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="425" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../공지사항/경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="426" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="427" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

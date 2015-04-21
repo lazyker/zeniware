@@ -122,6 +122,10 @@
   <widgets xsi:type="model:Button" id="296" x="940" y="133" text="상세▽" locked="true" measuredWidth="56" measuredHeight="25" link="Community-제안-제안-상세.screen">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="298" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="299" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../공지사항/경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="300" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link=""/>
+  <widgets xsi:type="model:Hotspot" id="301" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

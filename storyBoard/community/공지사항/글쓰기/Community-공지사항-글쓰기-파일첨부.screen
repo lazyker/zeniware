@@ -120,6 +120,10 @@
   <widgets xsi:type="model:Table" id="411" x="348" y="575" width="641" height="58" text="[],파일명,업로드상태,용량&#xA;[],연말정산 관련 자료.xlsx,,4.19KB" measuredWidth="641" measuredHeight="58" alternative="#eeeeee">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="412" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="413" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="414" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="415" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

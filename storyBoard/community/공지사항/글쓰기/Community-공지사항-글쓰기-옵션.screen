@@ -169,6 +169,10 @@
   <widgets xsi:type="model:Button" id="436" x="614" y="287" width="75" height="18" text="대상자 설정" measuredWidth="75" measuredHeight="18">
     <font size="11px"/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="437" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="438" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="439" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="440" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
