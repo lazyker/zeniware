@@ -20,8 +20,18 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Label" id="225" x="248" y="122" width="165" text="경조사" measuredWidth="165" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
   <widgets xsi:type="model:SearchField" id="226" x="400" y="134" width="529" text="Search" locked="true" measuredWidth="529" measuredHeight="24">
     <font/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="229" x="779" y="105" text="Home,커뮤티니,공지사항,경조사" measuredWidth="232" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="34" height="23" text="Home"/>
+    <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
+    <items x="123" y="0" width="49" height="23" text="공지사항"/>
+    <items x="192" y="0" width="37" height="23" text="경조사"/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="245" x="248" y="248" height="517" locked="true" measuredWidth="751" measuredHeight="440">
     <widgets xsi:type="model:Panel" id="230" y="24" width="751" height="405" measuredWidth="751" measuredHeight="405"/>
@@ -50,7 +60,7 @@
     <widgets xsi:type="model:Button" id="239" x="210" y="410" height="23" text="4" measuredWidth="27" measuredHeight="23" style="round">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Table" id="244" width="751" height="405" text="글번호,분류,제목,작성자,작성일,조회수,결과,포인트&#xA;100,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;99,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;86,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;98,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;97,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;96,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;95,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;94,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;93,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;92,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;91,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;90,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;89,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;88,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;87,매출증대,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,1000,단순건의(일반)&#xA;" measuredWidth="751" measuredHeight="405" alternative="#eeeeee">
+    <widgets xsi:type="model:Table" id="244" width="751" height="405" text="글번호,제목,작성자,작성일,조회수,첨부여부&#xD;&#xA;100,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;99,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;86,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;98,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;97,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;96,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;95,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;94,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;93,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;92,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;91,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;90,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;89,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;88,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;87,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;" measuredWidth="751" measuredHeight="405" alternative="#eeeeee">
       <font/>
     </widgets>
   </widgets>
@@ -100,17 +110,32 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Panel" id="321" x="248" y="162" width="751" height="75" locked="true" measuredWidth="751" measuredHeight="75"/>
-  <widgets xsi:type="model:Combo" id="336" x="400" y="172" width="211" text="수주/영업&#xD;&#xA;매출증대&#xD;&#xA;고객서비스&#xD;&#xA;신규사업&#xD;&#xA;제도개선 및 활성화 방안&#xD;&#xA;비용절감&#xD;&#xA;인사총무/교육&#xD;&#xA;정보전산&#xD;&#xA;" measuredWidth="211" measuredHeight="170">
-    <font/>
-  </widgets>
+  <widgets xsi:type="model:Panel" id="321" x="248" y="162" width="751" height="75" measuredWidth="751" measuredHeight="75"/>
   <widgets xsi:type="model:WidgetGroup" id="294" x="8" y="134" locked="true" measuredWidth="225" measuredHeight="46">
     <widgets xsi:type="model:TextArea" id="292" width="225" height="46" measuredWidth="225" measuredHeight="46">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Button" id="293" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="../글쓰기/Community-제안-글쓰기.screen">
+    <widgets xsi:type="model:Button" id="293" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="글쓰기.screen">
       <font/>
     </widgets>
+  </widgets>
+  <widgets xsi:type="model:Text" id="297" x="272" y="179" text="공지사용" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="300" x="338" y="176" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="301" x="387" y="176" text="사용안함" measuredWidth="64" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="302" x="272" y="209" text="팝업사용" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="303" x="338" y="206" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="304" x="387" y="206" text="사용안함" measuredWidth="64" measuredHeight="21">
+    <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:Text" id="305" x="483" y="209" text="기간" measuredWidth="25" measuredHeight="15">
     <font/>
@@ -120,7 +145,7 @@
     <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:DateField" id="308" x="771" y="205" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="Community-제안-제안.screen">
+  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="322" x="940" y="172" height="55" text="검색" measuredWidth="44" measuredHeight="55">
@@ -129,24 +154,14 @@
   <widgets xsi:type="model:TextField" id="330" x="619" y="172" width="281" text="Text field" measuredWidth="281" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Combo" id="328" x="307" y="172" text="제목+본문&#xD;&#xA;제목&#xD;&#xA;본문" measuredWidth="83" measuredHeight="65">
+  <widgets xsi:type="model:Combo" id="328" x="520" y="172" text="제목+본문&#xD;&#xA;제목&#xD;&#xA;본문" measuredWidth="83" measuredHeight="65">
     <font/>
   </widgets>
   <widgets xsi:type="model:Combo" id="332" x="520" y="205" width="83" text="전체&#xD;&#xA;1주일&#xD;&#xA;1개월&#xD;&#xA;3개월&#xD;&#xA;6개월&#xD;&#xA;1년&#xD;&#xA;직접입력" measuredWidth="83" measuredHeight="149">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="333" x="272" y="176" text="내용" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="333" x="483" y="176" text="내용" measuredWidth="25" measuredHeight="15">
     <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="334" x="248" y="122" width="165" text="제안" measuredWidth="165" measuredHeight="36">
-    <font size="20px"/>
-  </widgets>
-  <widgets xsi:type="model:Breadcrumbs" id="335" x="800" y="105" text="Home,커뮤티니,제안,제안" measuredWidth="196" measuredHeight="23">
-    <font/>
-    <items x="0" y="0" width="34" height="23" text="Home"/>
-    <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
-    <items x="123" y="0" width="25" height="23" text="제안"/>
-    <items x="168" y="0" width="25" height="23" text="제안"/>
   </widgets>
   <hRuler/>
   <vRuler/>
