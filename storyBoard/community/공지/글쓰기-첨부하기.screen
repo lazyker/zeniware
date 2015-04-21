@@ -105,7 +105,7 @@
   <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="공지" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="395" x="258" y="244" width="730" height="373" measuredWidth="730" measuredHeight="373" src="../assets/글쓰기_image.png"/>
+  <widgets xsi:type="model:Image" id="395" x="258" y="244" width="730" height="373" measuredWidth="730" measuredHeight="373" src="../../assets/글쓰기_image.png"/>
   <widgets xsi:type="model:Icon" id="397" x="320" y="218" measuredWidth="16" measuredHeight="16" icon="add (small)"/>
   <widgets xsi:type="model:Text" id="401" x="262" y="625" text="파일첨부" measuredWidth="49" measuredHeight="15">
     <font/>
