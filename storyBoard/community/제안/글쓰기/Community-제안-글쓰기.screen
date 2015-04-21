@@ -76,8 +76,13 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="907" text="공지사항,제안,소속 게시판,동호회" locked="true" measuredWidth="751" measuredHeight="907" selection="1">
+<<<<<<< HEAD
     <items link="../../공지사항/글쓰기/Community-공지사항-글쓰기.screen" x="10" y="0" width="69" height="27" text="공지사항"/>
     <items link="" x="79" y="0" width="45" height="27" text="제안"/>
+=======
+    <items x="10" y="0" width="69" height="27" text="공지사항"/>
+    <items x="79" y="0" width="45" height="27" text="제안"/>
+>>>>>>> branch 'master' of ssh://git@61.97.131.25/root/zeniware.git
     <items x="124" y="0" width="85" height="27" text="소속 게시판"/>
     <items x="209" y="0" width="57" height="27" text="동호회"/>
     <font/>
