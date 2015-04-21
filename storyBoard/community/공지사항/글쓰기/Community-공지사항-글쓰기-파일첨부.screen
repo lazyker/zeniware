@@ -102,56 +102,22 @@
       <font/>
     </widgets>
   </widgets>
+  <widgets xsi:type="model:Image" id="410" x="258" y="244" width="730" height="298" measuredWidth="730" measuredHeight="298" src="../../../assets/글쓰기_image.png"/>
   <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="공지" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="395" x="258" y="244" width="730" height="373" measuredWidth="730" measuredHeight="373" src="../../../assets/글쓰기_image.png"/>
   <widgets xsi:type="model:Icon" id="397" x="320" y="218" measuredWidth="16" measuredHeight="16" icon="add (small)"/>
-  <widgets xsi:type="model:Text" id="401" x="262" y="625" text="파일첨부" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="401" x="262" y="550" text="파일첨부" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="405" x="320" y="625" measuredWidth="16" measuredHeight="16" icon="add (small)"/>
-  <widgets xsi:type="model:Button" id="406" x="348" y="624" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
+  <widgets xsi:type="model:Icon" id="405" x="320" y="550" measuredWidth="16" measuredHeight="16" icon="minus (small)" link="Community-공지사항-글쓰기.screen"/>
+  <widgets xsi:type="model:Button" id="406" x="348" y="549" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Button" id="407" x="424" y="624" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
+  <widgets xsi:type="model:Button" id="407" x="424" y="549" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Window" id="408" x="310" y="218" width="627" height="279" text="열기" measuredWidth="627" measuredHeight="279"/>
-  <widgets xsi:type="model:Tree" id="409" x="310" y="237" height="212" text="Folder One&#xA;-Folder Two&#xA;--File One&#xA;--File Two&#xA;v Collapse Arrow&#xA;-[>] Closed Folder&#xA;-[v] Open Folder&#xA;> Expand Arrow&#xA;[-] Collapse&#xA;-[+] Expand&#xA;[] You can have&#xA;[x] Checkboxes&#xA;() And even radio buttons&#xA;{attachment} Or just any other icon&#xA;[_] And no icon too" measuredWidth="163" measuredHeight="212">
-    <items x="0" y="5" width="163" height="21" text="Folder One"/>
-    <items x="0" y="26" width="163" height="21" text="-Folder Two"/>
-    <items x="0" y="47" width="163" height="21" text="--File One"/>
-    <items x="0" y="68" width="163" height="21" text="--File Two"/>
-    <items x="0" y="89" width="163" height="21" text="v Collapse Arrow"/>
-    <items x="0" y="110" width="163" height="21" text="-[>] Closed Folder"/>
-    <items x="0" y="131" width="163" height="21" text="-[v] Open Folder"/>
-    <items x="0" y="152" width="163" height="21" text="> Expand Arrow"/>
-    <items x="0" y="173" width="163" height="21" text="[-] Collapse"/>
-    <items x="0" y="194" width="163" height="21" text="-[+] Expand"/>
-    <items x="0" y="215" width="163" height="21" text="[] You can have"/>
-    <items x="0" y="236" width="163" height="21" text="[x] Checkboxes"/>
-    <items x="0" y="257" width="163" height="21" text="() And even radio buttons"/>
-    <items x="0" y="278" width="163" height="21" text="{attachment} Or just any other icon"/>
-    <items x="0" y="299" width="163" height="21" text="[_] And no icon too"/>
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:CrossOut" id="411" x="384" y="352" width="8" height="17" measuredWidth="8" measuredHeight="17"/>
-  <widgets xsi:type="model:Panel" id="412" x="472" y="237" width="465" height="212" measuredWidth="465" measuredHeight="212"/>
-  <widgets xsi:type="model:Icon" id="413" x="504" y="256" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
-  <widgets xsi:type="model:Icon" id="414" x="560" y="256" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
-  <widgets xsi:type="model:Icon" id="415" x="619" y="256" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
-  <widgets xsi:type="model:Icon" id="416" x="680" y="256" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
-  <widgets xsi:type="model:Label" id="417" x="384" y="457" text="파일 이름" measuredWidth="58" measuredHeight="23">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:TextField" id="418" x="467" y="457" width="337" text="Text field" measuredWidth="337" measuredHeight="23">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="420" x="819" y="456" text="열기" measuredWidth="44" measuredHeight="25" link="글쓰기-파일첨부.screen">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="421" x="872" y="456" text="취소" measuredWidth="44" measuredHeight="25" link="글쓰기.screen">
+  <widgets xsi:type="model:Table" id="411" x="348" y="575" width="641" height="58" text="[],파일명,업로드상태,용량&#xA;[],연말정산 관련 자료.xlsx,,4.19KB" measuredWidth="641" measuredHeight="58" alternative="#eeeeee">
     <font/>
   </widgets>
   <hRuler/>

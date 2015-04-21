@@ -20,18 +20,18 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:Label" id="225" x="248" y="122" width="165" text="공지" measuredWidth="165" measuredHeight="36">
+  <widgets xsi:type="model:Label" id="225" x="248" y="122" width="165" text="경조사" measuredWidth="165" measuredHeight="36">
     <font size="20px"/>
   </widgets>
   <widgets xsi:type="model:SearchField" id="226" x="400" y="134" width="529" text="Search" locked="true" measuredWidth="529" measuredHeight="24">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Breadcrumbs" id="229" x="779" y="105" text="Home,커뮤티니,공지사항,공지" measuredWidth="220" measuredHeight="23">
+  <widgets xsi:type="model:Breadcrumbs" id="229" x="779" y="105" text="Home,커뮤티니,공지사항,경조사" measuredWidth="232" measuredHeight="23">
     <font/>
     <items x="0" y="0" width="34" height="23" text="Home"/>
     <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
     <items x="123" y="0" width="49" height="23" text="공지사항"/>
-    <items x="192" y="0" width="25" height="23" text="공지"/>
+    <items x="192" y="0" width="37" height="23" text="경조사"/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="245" x="248" y="248" height="517" locked="true" measuredWidth="751" measuredHeight="440">
     <widgets xsi:type="model:Panel" id="230" y="24" width="751" height="405" measuredWidth="751" measuredHeight="405"/>
@@ -60,7 +60,7 @@
     <widgets xsi:type="model:Button" id="239" x="210" y="410" height="23" text="4" measuredWidth="27" measuredHeight="23" style="round">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Table" id="244" width="751" height="405" text="글번호,제목,작성자,작성일,조회수,첨부여부&#xA;100,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;99,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;86,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;98,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;97,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;96,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;95,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;94,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;93,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;92,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;91,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;90,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;89,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;88,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;87,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xA;" measuredWidth="751" measuredHeight="405" alternative="#eeeeee">
+    <widgets xsi:type="model:Table" id="244" width="751" height="405" text="글번호,제목,작성자,작성일,조회수,첨부여부&#xD;&#xA;100,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;99,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;86,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;98,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;97,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;96,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;95,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;94,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;93,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;92,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;91,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;90,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;89,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;88,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;87,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;" measuredWidth="751" measuredHeight="405" alternative="#eeeeee">
       <font/>
     </widgets>
   </widgets>
@@ -115,7 +115,7 @@
     <widgets xsi:type="model:TextArea" id="292" width="225" height="46" measuredWidth="225" measuredHeight="46">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Button" id="293" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="../글쓰기/글쓰기.screen">
+    <widgets xsi:type="model:Button" id="293" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="글쓰기.screen">
       <font/>
     </widgets>
   </widgets>
@@ -145,7 +145,7 @@
     <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:DateField" id="308" x="771" y="205" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="공지.screen">
+  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사-경조사.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="322" x="940" y="172" height="55" text="검색" measuredWidth="44" measuredHeight="55">

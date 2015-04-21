@@ -75,7 +75,7 @@
   <widgets xsi:type="model:Button" id="276" x="18" y="141" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="554" text="공지사항,제안,소속 게시판,동호회" locked="true" measuredWidth="751" measuredHeight="554" selection="0">
+  <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="554" text="공지사항,제안,소속 게시판,동호회" locked="true" measuredWidth="751" measuredHeight="554" selection="1">
     <items x="10" y="0" width="69" height="27" text="공지사항"/>
     <items x="79" y="0" width="45" height="27" text="제안"/>
     <items x="124" y="0" width="85" height="27" text="소속 게시판"/>

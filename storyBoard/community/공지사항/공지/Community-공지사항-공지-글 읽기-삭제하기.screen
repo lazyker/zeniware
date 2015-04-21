@@ -113,7 +113,7 @@
   <widgets xsi:type="model:Label" id="453" x="516" y="611" text="총 2개의 댓글이 있습니다." measuredWidth="148" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="455" x="664" y="611" text="댓글닫기 △" measuredWidth="70" measuredHeight="23" link="글%20읽기-댓글닫기.screen">
+  <widgets xsi:type="model:Label" id="455" x="664" y="611" text="댓글닫기 △" measuredWidth="70" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="456" x="258" y="640" width="731" height="129" measuredWidth="731" measuredHeight="129"/>
@@ -129,13 +129,13 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Button" id="465" x="921" y="896" text="목록보기" measuredWidth="68" measuredHeight="25" link="공지.screen">
+  <widgets xsi:type="model:Button" id="465" x="921" y="896" text="목록보기" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="466" x="258" y="896" text="삭제하기" measuredWidth="68" measuredHeight="25" link="글%20읽기-삭제하기.screen">
+  <widgets xsi:type="model:Button" id="466" x="258" y="896" text="삭제하기" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="467" x="335" y="896" text="수정하기" measuredWidth="68" measuredHeight="25" link="../글쓰기/글쓰기.screen">
+  <widgets xsi:type="model:Button" id="467" x="335" y="896" text="수정하기" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="468" x="272" y="648" text="김재환 / 주임 / 솔루션사업팀" measuredWidth="164" measuredHeight="23">
@@ -148,11 +148,9 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:HLine" id="472" x="258" y="698" width="731" measuredWidth="731" measuredHeight="6"/>
-  <widgets xsi:type="model:WidgetGroup" id="485" x="936" y="648" measuredWidth="41" measuredHeight="23" link="글%20읽기-삭제하기.screen">
-    <widgets xsi:type="model:Icon" id="473" x="25" y="3" measuredWidth="16" measuredHeight="16" icon="delete (small)"/>
-    <widgets xsi:type="model:Label" id="474" text="삭제" measuredWidth="30" measuredHeight="23">
-      <font bold="true"/>
-    </widgets>
+  <widgets xsi:type="model:Icon" id="473" x="961" y="651" measuredWidth="16" measuredHeight="16" icon="delete (small)"/>
+  <widgets xsi:type="model:Label" id="474" x="936" y="648" text="삭제" measuredWidth="30" measuredHeight="23">
+    <font bold="true"/>
   </widgets>
   <widgets xsi:type="model:Label" id="475" x="272" y="709" text="정종석 / 대리 / 솔루션사업팀" measuredWidth="164" measuredHeight="23">
     <font bold="true"/>
@@ -163,6 +161,10 @@
   <widgets xsi:type="model:Label" id="477" x="286" y="731" text="확인하였습니다." measuredWidth="93" measuredHeight="23">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Icon" id="478" x="961" y="712" measuredWidth="16" measuredHeight="16" icon="delete (small)"/>
+  <widgets xsi:type="model:Label" id="479" x="936" y="709" text="삭제" measuredWidth="30" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
   <widgets xsi:type="model:Panel" id="481" x="258" y="784" width="731" height="97" measuredWidth="731" measuredHeight="97"/>
   <widgets xsi:type="model:Label" id="482" x="272" y="821" text="김재환" measuredWidth="42" measuredHeight="23">
     <font bold="true"/>
@@ -172,6 +174,18 @@
   </widgets>
   <widgets xsi:type="model:Button" id="484" x="888" y="800" width="78" height="65" text="입력하기" measuredWidth="78" measuredHeight="65">
     <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="485" x="404" y="296" measuredWidth="400" measuredHeight="113">
+    <widgets xsi:type="model:Window" id="486" height="97" text="삭제" measuredWidth="400" measuredHeight="97"/>
+    <widgets xsi:type="model:TextArea" id="487" y="21" width="400" height="92" text="　&#xD;&#xA;삭제하시겠습니까?" measuredWidth="400" measuredHeight="92" textAlignment="Center">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="488" x="156" y="72" text="확인" measuredWidth="44" measuredHeight="25" background="#cccccc" link="Community-공지사항-공지.screen">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="489" x="204" y="72" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="Community-공지사항-공지-글%20읽기.screen">
+      <font/>
+    </widgets>
   </widgets>
   <hRuler/>
   <vRuler/>
