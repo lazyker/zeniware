@@ -118,7 +118,7 @@
   <widgets xsi:type="model:SearchField" id="295" x="400" y="134" width="529" text="Search" locked="true" measuredWidth="529" measuredHeight="24">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="296" x="940" y="133" text="상세▽" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사-경조사상세.screen">
+  <widgets xsi:type="model:Button" id="296" x="940" y="133" text="상세▽" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사-상세.screen">
     <font/>
   </widgets>
   <hRuler/>

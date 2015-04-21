@@ -145,7 +145,7 @@
     <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:DateField" id="308" x="771" y="205" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사-경조사.screen">
+  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="322" x="940" y="172" height="55" text="검색" measuredWidth="44" measuredHeight="55">
