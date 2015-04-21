@@ -135,6 +135,10 @@
   <widgets xsi:type="model:Button" id="467" x="335" y="648" text="수정하기" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="468" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="469" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="470" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="471" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

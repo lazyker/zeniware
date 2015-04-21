@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
-  <widgets xsi:type="model:Browser" id="158" width="1024" height="720" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="720">
+  <widgets xsi:type="model:Browser" id="158" width="1024" height="1073" text="Browser&#xA;http://..." measuredWidth="1024" measuredHeight="1073">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
@@ -26,7 +26,7 @@
     <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
     <items x="123" y="0" width="37" height="23" text="글쓰기"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="248" y="695" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="248" y="1050" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="223" x="8" y="99" width="225" height="36" measuredWidth="225" measuredHeight="36"/>
@@ -75,7 +75,7 @@
   <widgets xsi:type="model:Button" id="276" x="18" y="141" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="554" text="공지사항,제안,소속 게시판,동호회" locked="true" measuredWidth="751" measuredHeight="554" selection="0">
+  <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="907" text="공지사항,제안,소속 게시판,동호회" locked="true" measuredWidth="751" measuredHeight="907" selection="1">
     <items x="10" y="0" width="69" height="27" text="공지사항"/>
     <items x="79" y="0" width="45" height="27" text="제안"/>
     <items x="124" y="0" width="85" height="27" text="소속 게시판"/>
@@ -85,16 +85,16 @@
   <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="399" x="262" y="197" text="위치" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="399" x="262" y="197" text="제안부문" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="404" x="262" y="218" text="옵션" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="404" x="262" y="218" text="현황분석 및 문제점" measuredWidth="105" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="299" x="576" y="648" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
+  <widgets xsi:type="model:Button" id="299" x="581" y="992" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc" link="Community-제안-글쓰기-저장%20팝업.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="300" x="624" y="648" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
+  <widgets xsi:type="model:Button" id="300" x="629" y="992" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="Community-제안-글쓰기-취소%20팝업.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="353" x="348" y="173" width="640" measuredWidth="640" measuredHeight="23">
@@ -102,28 +102,41 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Image" id="410" x="258" y="244" width="730" height="298" measuredWidth="730" measuredHeight="298" src="../../../assets/글쓰기_image.png"/>
-  <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="공지" measuredWidth="234" measuredHeight="23">
+  <widgets xsi:type="model:Image" id="408" x="258" y="244" measuredWidth="731" measuredHeight="185" src="../../../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
+  <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="수주/영업&#xD;&#xA;매출증대&#xD;&#xA;고객서비스&#xD;&#xA;신규사업&#xD;&#xA;제도개선 및 활성화 방안&#xD;&#xA;비용절감&#xD;&#xA;인사총무/교육&#xD;&#xA;정보전산&#xD;&#xA;" measuredWidth="234" measuredHeight="170">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="397" x="320" y="218" measuredWidth="16" measuredHeight="16" icon="add (small)"/>
-  <widgets xsi:type="model:Text" id="401" x="262" y="550" text="파일첨부" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="409" x="262" y="438" text="구체적인 제안내용 및 추진절차" measuredWidth="169" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="405" x="320" y="550" measuredWidth="16" measuredHeight="16" icon="minus (small)" link="Community-공지사항-글쓰기.screen"/>
-  <widgets xsi:type="model:Button" id="406" x="348" y="549" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
+  <widgets xsi:type="model:Image" id="410" x="258" y="464" measuredWidth="731" measuredHeight="185" src="../../../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
+  <widgets xsi:type="model:Text" id="415" x="262" y="660" text="결과 및 실시효과 (실시 후 효과에 대한 계수화)" measuredWidth="253" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="416" x="258" y="686" measuredWidth="731" measuredHeight="185" src="../../../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
+  <widgets xsi:type="model:Text" id="417" x="262" y="895" text="파일첨부" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="418" x="320" y="895" measuredWidth="16" measuredHeight="16" icon="minus (small)"/>
+  <widgets xsi:type="model:Button" id="419" x="348" y="894" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Button" id="407" x="424" y="549" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
+  <widgets xsi:type="model:Button" id="420" x="424" y="894" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Table" id="411" x="348" y="575" width="641" height="58" text="[],파일명,업로드상태,용량&#xA;[],연말정산 관련 자료.xlsx,,4.19KB" measuredWidth="641" measuredHeight="58" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="421" x="348" y="920" width="641" height="58" text="[],파일명,업로드상태,용량&#xA;[],연말정산 관련 자료.xlsx,,4.19KB" measuredWidth="641" measuredHeight="58" alternative="#eeeeee">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="412" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
-  <widgets xsi:type="model:Hotspot" id="413" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
-  <widgets xsi:type="model:Hotspot" id="414" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
-  <widgets xsi:type="model:Hotspot" id="415" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
+  <widgets xsi:type="model:Text" id="422" x="592" y="197" text="처리결과" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="423" x="678" y="194" width="234" text="미정&#xD;&#xA;단순건의(일반) 1000포인트&#xD;&#xA;단순건의(일반) 2000포인트&#xD;&#xA;단순건의(업무) 2000포인트&#xD;&#xA;단순건의(업무) 3000포인트" measuredWidth="234" measuredHeight="107">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="424" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="425" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../공지사항/경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="426" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="427" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
