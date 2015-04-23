@@ -41,8 +41,8 @@
   </widgets>
   <widgets xsi:type="model:TabbedPane" id="441" x="248" y="134" width="751" height="955" text="클래식,피드,제안,설문" measuredWidth="751" measuredHeight="955" selection="2">
     <items link="Community-글쓰기-클래식.screen" x="10" y="0" width="57" height="27" text="클래식"/>
-    <items x="67" y="0" width="45" height="27" text="피드"/>
-    <items x="112" y="0" width="45" height="27" text="제안"/>
+    <items link="Community-글쓰기-피드.screen" x="67" y="0" width="45" height="27" text="피드"/>
+    <items link="" x="112" y="0" width="45" height="27" text="제안"/>
     <items x="157" y="0" width="45" height="27" text="설문"/>
     <font/>
   </widgets>
@@ -127,6 +127,7 @@
   <widgets xsi:type="model:Icon" id="503" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
   <widgets xsi:type="model:Icon" id="504" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <widgets xsi:type="model:Hotspot" id="505" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="506" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

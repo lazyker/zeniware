@@ -149,7 +149,7 @@
   <widgets xsi:type="model:Button" id="532" x="921" y="1009" text="목록보기" measuredWidth="68" measuredHeight="25" link="Community-공지사항-공지.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="533" x="258" y="1009" text="삭제하기" measuredWidth="68" measuredHeight="25" link="">
+  <widgets xsi:type="model:Button" id="533" x="258" y="1009" text="삭제하기" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="534" x="335" y="1009" text="수정하기" measuredWidth="68" measuredHeight="25" link="../글쓰기/Community-공지사항-글쓰기.screen">
@@ -165,7 +165,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:HLine" id="538" x="258" y="811" width="731" measuredWidth="731" measuredHeight="6"/>
-  <widgets xsi:type="model:WidgetGroup" id="539" x="936" y="761" measuredWidth="41" measuredHeight="23" link="">
+  <widgets xsi:type="model:WidgetGroup" id="539" x="936" y="761" measuredWidth="41" measuredHeight="23">
     <widgets xsi:type="model:Icon" id="540" x="25" y="3" measuredWidth="16" measuredHeight="16" icon="delete (small)"/>
     <widgets xsi:type="model:Label" id="541" text="삭제" measuredWidth="30" measuredHeight="23">
       <font bold="true"/>
@@ -193,6 +193,7 @@
   <widgets xsi:type="model:Label" id="549" x="584" y="609" text="54" measuredWidth="52" measuredHeight="32" textAlignment="Center" icon="thumbs-up (large)">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="553" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

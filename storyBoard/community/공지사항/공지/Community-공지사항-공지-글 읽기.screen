@@ -181,6 +181,7 @@
   <widgets xsi:type="model:Label" id="518" x="584" y="609" text="54" measuredWidth="52" measuredHeight="32" textAlignment="Center" icon="thumbs-up (large)">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="519" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <hRuler>
     <guides position="1063"/>
   </hRuler>
