@@ -75,7 +75,7 @@
     <font size="20px"/>
   </widgets>
   <widgets xsi:type="model:Panel" id="321" x="248" y="162" width="751" height="75" measuredWidth="751" measuredHeight="75"/>
-  <widgets xsi:type="model:WidgetGroup" id="294" x="8" y="134" locked="true" measuredWidth="225" measuredHeight="46">
+  <widgets xsi:type="model:WidgetGroup" id="294" x="8" y="134" locked="true" measuredWidth="225" measuredHeight="46" link="../../글쓰기/Community-글쓰기-클래식.screen">
     <widgets xsi:type="model:TextArea" id="292" width="225" height="46" measuredWidth="225" measuredHeight="46">
       <font/>
     </widgets>

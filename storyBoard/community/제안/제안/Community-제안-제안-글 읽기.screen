@@ -32,7 +32,7 @@
   <widgets xsi:type="model:TextArea" id="277" x="8" y="134" width="225" height="46" locked="true" measuredWidth="225" measuredHeight="46">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="276" x="18" y="141" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32">
+  <widgets xsi:type="model:Button" id="276" x="18" y="141" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="../../글쓰기/Community-글쓰기-클래식.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
