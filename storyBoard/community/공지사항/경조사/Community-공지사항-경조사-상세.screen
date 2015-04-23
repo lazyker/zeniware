@@ -136,7 +136,7 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="353" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="353" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
   <widgets xsi:type="model:Hotspot" id="354" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="Community-공지사항-경조사.screen"/>
   <widgets xsi:type="model:Hotspot" id="355" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="356" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>

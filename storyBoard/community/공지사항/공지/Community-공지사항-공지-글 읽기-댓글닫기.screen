@@ -108,7 +108,7 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="481" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="481" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="Community-공지사항-공지.screen"/>
   <widgets xsi:type="model:Hotspot" id="482" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
   <widgets xsi:type="model:Hotspot" id="483" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="484" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>

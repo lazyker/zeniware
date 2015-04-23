@@ -54,7 +54,7 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="450" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="450" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="../공지사항/공지/Community-공지사항-공지.screen"/>
   <widgets xsi:type="model:Hotspot" id="451" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
   <widgets xsi:type="model:Hotspot" id="452" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="453" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
@@ -94,7 +94,7 @@
   <widgets xsi:type="model:Label" id="515" x="441" y="181" text="관리자는 해당 부서의 게시판을 추가, 수정, 삭제 할 수 있습니다." measuredWidth="367" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="517" x="346" y="352" width="602" height="177" text="게시판,관리자,개설일,중지,삭제&#xD;&#xA;----------------------------------------------공지사항,,,{unchecked},{trash}&#xD;&#xA;공지,김재환,2014-04-23,{unchecked},{trash}&#xD;&#xA;경조사,김재환,2014-04-23,{unchecked},{trash}&#xD;&#xA;----------------------------------------------제안,,,{unchecked},{trash}&#xD;&#xA;제안,김재환,2014-04-23,{unchecked},{trash}&#xD;&#xA;제안랭킹,김재환,2014-04-23,{unchecked},{trash}&#xD;&#xA;" measuredWidth="602" measuredHeight="177" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="517" x="346" y="352" width="602" height="177" text="게시판,관리자,개설일,중지,삭제,이동&#xD;&#xA;----------------------------------------------공지사항,,,{unchecked},{trash},{arrow-up}{arrow-down}&#xD;&#xA;공지,김재환,2014-04-23,{unchecked},{trash},{arrow-up}{arrow-down}&#xD;&#xA;경조사,김재환,2014-04-23,{unchecked},{trash},{arrow-up}{arrow-down}&#xD;&#xA;----------------------------------------------제안,,,{unchecked},{trash},{arrow-up}{arrow-down}&#xD;&#xA;제안,김재환,2014-04-23,{unchecked},{trash},{arrow-up}{arrow-down}&#xD;&#xA;제안랭킹,김재환,2014-04-23,{unchecked},{trash},{arrow-up}{arrow-down}&#xD;&#xA;" measuredWidth="602" measuredHeight="177" alternative="#eeeeee">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="518" x="259" y="352" text="게시판 관리" measuredWidth="65" measuredHeight="15">

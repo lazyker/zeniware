@@ -122,7 +122,7 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="406" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="406" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="../../공지사항/공지/Community-공지사항-공지.screen"/>
   <widgets xsi:type="model:Hotspot" id="407" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../공지사항/경조사/Community-공지사항-경조사.screen"/>
   <widgets xsi:type="model:Hotspot" id="408" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="409" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="Community-제안-제안랭킹-부서.screen"/>

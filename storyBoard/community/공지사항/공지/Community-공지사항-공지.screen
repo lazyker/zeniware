@@ -95,7 +95,7 @@
   <widgets xsi:type="model:Button" id="296" x="940" y="133" text="상세▽" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-공지-공지상세.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="298" x="10" y="240" width="223" height="18" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="298" x="10" y="240" width="223" height="18" measuredWidth="223" measuredHeight="18" link=""/>
   <widgets xsi:type="model:Hotspot" id="299" x="10" y="257" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
   <widgets xsi:type="model:Hotspot" id="300" x="10" y="288" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="301" x="8" y="301" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
