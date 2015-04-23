@@ -211,6 +211,7 @@
   <widgets xsi:type="model:Hotspot" id="525" x="10" y="257" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../공지사항/경조사/Community-공지사항-경조사.screen"/>
   <widgets xsi:type="model:Hotspot" id="526" x="10" y="288" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="527" x="8" y="301" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
+  <widgets xsi:type="model:Hotspot" id="528" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

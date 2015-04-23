@@ -109,6 +109,7 @@
   </widgets>
   <widgets xsi:type="model:Icon" id="387" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
   <widgets xsi:type="model:Icon" id="388" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
+  <widgets xsi:type="model:Hotspot" id="389" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
