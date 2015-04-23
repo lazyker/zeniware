@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
-  <widgets xsi:type="model:Browser" id="516" width="1024" height="673" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="673">
+  <widgets xsi:type="model:Browser" id="516" width="1024" height="913" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="913">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
@@ -20,13 +20,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:Breadcrumbs" id="229" x="812" y="109" text="Home,커뮤티니,부서관리" measuredWidth="175" measuredHeight="23">
-    <font/>
-    <items x="0" y="0" width="34" height="23" text="Home"/>
-    <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
-    <items x="123" y="0" width="49" height="23" text="부서관리"/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="248" y="650" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="248" y="890" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="223" x="8" y="99" width="225" height="36" measuredWidth="225" measuredHeight="36"/>
@@ -39,10 +33,10 @@
   <widgets xsi:type="model:Button" id="276" x="18" y="141" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="299" x="576" y="592" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
+  <widgets xsi:type="model:Button" id="299" x="576" y="848" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="300" x="624" y="592" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
+  <widgets xsi:type="model:Button" id="300" x="624" y="848" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
     <font/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="447" x="8" y="180" locked="true" measuredWidth="225" measuredHeight="204">
@@ -66,9 +60,6 @@
     <widgets xsi:type="model:TextArea" id="456" y="25" width="225" text="*커뮤니티 전체보기*&#xD;&#xA;* 커뮤니티 목록&#xD;&#xA;&#xD;&#xA;*가입대기 커뮤니티*&#xD;&#xA;* 축구동호회&#xD;&#xA;&#xD;&#xA;*가입 커뮤니티*&#xD;&#xA;* 레져동호회&#xD;&#xA;## 회칙&#xD;&#xA;* 사진동호회&#xD;&#xA;## 공지사항&#xD;&#xA;* 문화 동호회&#xD;&#xA;## 이번 주 활동" measuredWidth="225" measuredHeight="203">
       <font/>
     </widgets>
-  </widgets>
-  <widgets xsi:type="model:Label" id="457" x="248" y="122" width="165" text="부서관리" measuredWidth="165" measuredHeight="36">
-    <font size="20px"/>
   </widgets>
   <widgets xsi:type="model:Text" id="470" x="259" y="185" text="관리자" measuredWidth="37" measuredHeight="15">
     <font/>
@@ -103,14 +94,32 @@
   <widgets xsi:type="model:Button" id="519" x="864" y="536" text="구분선 추가" measuredWidth="84" measuredHeight="25" link="Community-게시판%20관리-게시판%20추가.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="520" x="346" y="536" text="게시판 이관" measuredWidth="84" measuredHeight="25">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Button" id="521" x="768" y="536" text="게시판 추가" measuredWidth="84" measuredHeight="25" link="Community-게시판%20관리-게시판%20추가.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="522" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link=""/>
+  <widgets xsi:type="model:Icon" id="522" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)"/>
   <widgets xsi:type="model:Icon" id="523" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="Community-게시판%20관리-게시판%20관리.screen"/>
+  <widgets xsi:type="model:Text" id="529" x="259" y="568" text="게시판 이관 요청" measuredWidth="93" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="530" x="346" y="592" width="600" height="177" text="부서,게시판,{arrow-left}{arrow-right},부서,게시판,요청일,수락,삭제&#xD;&#xA;제니엘,경조사,{arrow-right},솔루션사업팀,,2014-04-23,,{trash}&#xD;&#xA;제니엘,,{arrow-left},솔루션사업팀,업무,2014-04-23,{curved-arrow-left},{trash}&#xD;&#xA;제니엘,제안{wizard},{arrow-right},솔루션사업팀,,2014-04-23,,{trash}" measuredWidth="600" measuredHeight="177" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="531" x="346" y="776" text="게시판 이관 요청 추가" measuredWidth="140" measuredHeight="25" link="Community-게시판%20관리-부서%20게시판%20관리-게시판%20이관.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="534" x="359" y="564" text="{wizard}표시는 새로 작성한 이관 요청사항입니다. 저장을 누르시면 이관요청이 완료됩니다." measuredWidth="484" measuredHeight="24" textAlignment="Center" icon="brightness (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="535" x="727" y="112" text="Home,커뮤티니,부서 게시판 관리" measuredWidth="219" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="34" height="23" text="Home"/>
+    <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
+    <items x="123" y="0" width="93" height="23" text="부서 게시판 관리"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="536" x="248" y="122" width="165" text="부서 게시판 관리" measuredWidth="165" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

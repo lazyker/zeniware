@@ -119,7 +119,7 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Icon" id="482" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20관리자.screen"/>
+  <widgets xsi:type="model:Icon" id="482" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
   <widgets xsi:type="model:Icon" id="483" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <hRuler/>
   <vRuler/>

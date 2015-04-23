@@ -95,7 +95,7 @@
     </widgets>
   </widgets>
   <widgets xsi:type="model:Hotspot" id="380" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
-  <widgets xsi:type="model:Hotspot" id="381" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link=""/>
+  <widgets xsi:type="model:Hotspot" id="381" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14"/>
   <widgets xsi:type="model:Hotspot" id="382" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
   <widgets xsi:type="model:Hotspot" id="383" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
   <widgets xsi:type="model:WidgetGroup" id="384" x="8" y="382" locked="true" measuredWidth="225" measuredHeight="228">
@@ -107,7 +107,7 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Icon" id="387" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20관리자.screen"/>
+  <widgets xsi:type="model:Icon" id="387" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
   <widgets xsi:type="model:Icon" id="388" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <hRuler/>
   <vRuler/>
