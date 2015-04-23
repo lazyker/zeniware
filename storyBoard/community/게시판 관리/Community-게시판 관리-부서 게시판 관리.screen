@@ -97,7 +97,7 @@
   <widgets xsi:type="model:Button" id="521" x="768" y="536" text="게시판 추가" measuredWidth="84" measuredHeight="25" link="Community-게시판%20관리-게시판%20추가.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="522" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)"/>
+  <widgets xsi:type="model:Icon" id="522" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link=""/>
   <widgets xsi:type="model:Icon" id="523" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="Community-게시판%20관리-게시판%20관리.screen"/>
   <widgets xsi:type="model:Text" id="529" x="259" y="568" text="게시판 이관 요청" measuredWidth="93" measuredHeight="15">
     <font/>
