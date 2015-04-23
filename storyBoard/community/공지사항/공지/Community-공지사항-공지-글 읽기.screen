@@ -29,42 +29,6 @@
   <widgets xsi:type="model:Label" id="224" x="10" y="99" width="223" text="커뮤니티" locked="true" measuredWidth="223" measuredHeight="36" textAlignment="Center">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="261" x="8" y="179" locked="true" measuredWidth="225" measuredHeight="66">
-    <widgets xsi:type="model:Accordion" id="217" width="225" height="26" text="공지사항" measuredWidth="225" measuredHeight="26">
-      <items x="0" y="2" width="225" height="25" text="공지사항"/>
-      <font/>
-    </widgets>
-    <widgets xsi:type="model:TextArea" id="260" y="25" width="225" height="41" text="  공지&#xD;&#xA;  경조사" measuredWidth="225" measuredHeight="41">
-      <font/>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="263" x="8" y="309" locked="true" measuredWidth="225" measuredHeight="53">
-    <widgets xsi:type="model:Accordion" id="264" width="225" height="27" text="소속 게시판" measuredWidth="225" measuredHeight="27">
-      <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
-      <font/>
-    </widgets>
-    <widgets xsi:type="model:TextArea" id="265" y="26" width="225" height="27" text="  솔루션사업팀" measuredWidth="225" measuredHeight="27">
-      <font/>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="267" x="8" y="244" locked="true" measuredWidth="225" measuredHeight="66">
-    <widgets xsi:type="model:Accordion" id="268" width="225" height="27" text="제안" measuredWidth="225" measuredHeight="27">
-      <items x="0" y="2" width="225" height="25" text="제안"/>
-      <font/>
-    </widgets>
-    <widgets xsi:type="model:TextArea" id="269" y="26" width="225" height="40" text="  제안&#xD;&#xA;  제안랭킹" measuredWidth="225" measuredHeight="40">
-      <font/>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="271" x="8" y="361" locked="true" measuredWidth="225" measuredHeight="96">
-    <widgets xsi:type="model:Accordion" id="272" width="225" height="42" text="동호회" measuredWidth="225" measuredHeight="42">
-      <items x="0" y="2" width="225" height="25" text="동호회"/>
-      <font/>
-    </widgets>
-    <widgets xsi:type="model:TextArea" id="273" y="25" width="225" height="71" text="  축구동호회&#xD;&#xA;  레져동호회&#xD;&#xA;  문화동호회&#xD;&#xA;  사진동호회" measuredWidth="225" measuredHeight="71">
-      <font/>
-    </widgets>
-  </widgets>
   <widgets xsi:type="model:TextArea" id="277" x="8" y="134" width="225" height="46" locked="true" measuredWidth="225" measuredHeight="46">
     <font/>
   </widgets>
@@ -190,11 +154,31 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="494" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:Hotspot" id="495" x="10" y="205" width="223" height="18" measuredWidth="223" measuredHeight="18" link="Community-공지사항-공지.screen"/>
-  <widgets xsi:type="model:Hotspot" id="496" x="10" y="226" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
-  <widgets xsi:type="model:Hotspot" id="497" x="10" y="275" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
-  <widgets xsi:type="model:Hotspot" id="498" x="8" y="291" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
-  <hRuler/>
+  <widgets xsi:type="model:WidgetGroup" id="505" x="8" y="180" locked="true" measuredWidth="225" measuredHeight="204">
+    <widgets xsi:type="model:Accordion" id="506" width="225" height="27" text="소속 게시판" measuredWidth="225" measuredHeight="27">
+      <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="507" y="26" width="225" height="178" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="178">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="508" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="509" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="510" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="511" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
+  <widgets xsi:type="model:WidgetGroup" id="512" x="8" y="382" locked="true" measuredWidth="225" measuredHeight="228">
+    <widgets xsi:type="model:Accordion" id="513" width="225" height="42" text="커뮤니티" measuredWidth="225" measuredHeight="42">
+      <items x="0" y="2" width="225" height="25" text="커뮤니티"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="514" y="25" width="225" text="*커뮤니티 전체보기*&#xD;&#xA;* 커뮤니티 목록&#xD;&#xA;&#xD;&#xA;*가입대기 커뮤니티*&#xD;&#xA;* 축구동호회&#xD;&#xA;&#xD;&#xA;*가입 커뮤니티*&#xD;&#xA;* 레져동호회&#xD;&#xA;## 회칙&#xD;&#xA;* 사진동호회&#xD;&#xA;## 공지사항&#xD;&#xA;* 문화 동호회&#xD;&#xA;## 이번 주 활동" measuredWidth="225" measuredHeight="203">
+      <font/>
+    </widgets>
+  </widgets>
+  <hRuler>
+    <guides position="1063"/>
+  </hRuler>
   <vRuler/>
   <font size="12px"/>
 </model:Screen>
