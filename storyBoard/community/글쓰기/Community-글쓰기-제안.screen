@@ -42,7 +42,7 @@
   <widgets xsi:type="model:TabbedPane" id="441" x="248" y="134" width="751" height="955" text="클래식,피드,제안,설문" measuredWidth="751" measuredHeight="955" selection="2">
     <items link="Community-글쓰기-클래식.screen" x="10" y="0" width="57" height="27" text="클래식"/>
     <items link="Community-글쓰기-피드.screen" x="67" y="0" width="45" height="27" text="피드"/>
-    <items link="" x="112" y="0" width="45" height="27" text="제안"/>
+    <items x="112" y="0" width="45" height="27" text="제안"/>
     <items x="157" y="0" width="45" height="27" text="설문"/>
     <font/>
   </widgets>
@@ -66,18 +66,18 @@
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Image" id="449" x="258" y="281" measuredWidth="731" measuredHeight="185" src="../../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
+  <widgets xsi:type="model:Image" id="449" x="258" y="281" measuredWidth="731" measuredHeight="185" src="../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
   <widgets xsi:type="model:Combo" id="450" x="348" y="231" width="234" text="수주/영업" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="451" x="262" y="475" text="구체적인 제안내용 및 추진절차" measuredWidth="169" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="452" x="258" y="501" measuredWidth="731" measuredHeight="185" src="../../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
+  <widgets xsi:type="model:Image" id="452" x="258" y="501" measuredWidth="731" measuredHeight="185" src="../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
   <widgets xsi:type="model:Text" id="453" x="262" y="707" text="결과 및 실시효과 (실시 후 효과에 대한 계수화)" measuredWidth="253" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="454" x="258" y="723" measuredWidth="731" measuredHeight="185" src="../../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
+  <widgets xsi:type="model:Image" id="454" x="258" y="723" measuredWidth="731" measuredHeight="185" src="../../assets/Community-제안-글쓰기-파일첨부_image.png"/>
   <widgets xsi:type="model:Text" id="455" x="262" y="942" text="파일첨부" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>

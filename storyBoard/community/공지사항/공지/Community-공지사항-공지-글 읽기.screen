@@ -69,7 +69,7 @@
   <widgets xsi:type="model:Label" id="449" x="952" y="201" text="120" measuredWidth="27" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="450" x="258" y="232" width="727" measuredWidth="727" measuredHeight="328" src="../../../../assets/글쓰기-옵션_image.png"/>
+  <widgets xsi:type="model:Image" id="450" x="258" y="232" width="727" measuredWidth="727" measuredHeight="328" src="../../../assets/글쓰기-옵션_image.png"/>
   <widgets xsi:type="model:Table" id="451" x="258" y="672" width="731" height="42" text="파일명,용량&#xA;연말정산 관련 자료.xlsx,4.19KB" measuredWidth="731" measuredHeight="42" alternative="#eeeeee">
     <font/>
   </widgets>
