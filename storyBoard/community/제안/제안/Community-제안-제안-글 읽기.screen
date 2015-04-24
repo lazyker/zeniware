@@ -162,9 +162,9 @@
   <widgets xsi:type="model:Text" id="517" x="262" y="680" text="결과 및 실시효과 (실시 후 효과에 대한 계수화)" measuredWidth="253" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="520" x="262" y="267" measuredWidth="716" measuredHeight="138" src="../../../assets/Community-제안-제안-글%20읽기_image(1).png"/>
-  <widgets xsi:type="model:Image" id="521" x="262" y="496" measuredWidth="716" measuredHeight="138" src="../../../assets/Community-제안-제안-글%20읽기_image(1).png"/>
-  <widgets xsi:type="model:Image" id="522" x="262" y="712" measuredWidth="716" measuredHeight="138" src="../../../assets/Community-제안-제안-글%20읽기_image(1).png"/>
+  <widgets xsi:type="model:Image" id="520" x="262" y="267" measuredWidth="716" measuredHeight="138" src="../../../assets/Community-content-small2.png"/>
+  <widgets xsi:type="model:Image" id="521" x="262" y="496" measuredWidth="716" measuredHeight="138" src="../../../assets/Community-content-small2.png"/>
+  <widgets xsi:type="model:Image" id="522" x="262" y="712" measuredWidth="716" measuredHeight="138" src="../../../assets/Community-content-small2.png"/>
   <widgets xsi:type="model:Text" id="523" x="426" y="204" text="제안부문" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
