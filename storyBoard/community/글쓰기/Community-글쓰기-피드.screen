@@ -41,9 +41,9 @@
   </widgets>
   <widgets xsi:type="model:TabbedPane" id="295" x="248" y="134" width="751" height="554" text="클래식,피드,제안,설문" locked="true" measuredWidth="751" measuredHeight="554" selection="1">
     <items link="Community-글쓰기-클래식.screen" x="10" y="0" width="57" height="27" text="클래식"/>
-    <items x="67" y="0" width="45" height="27" text="피드"/>
+    <items link="Community-글쓰기-제안.screen" x="67" y="0" width="45" height="27" text="피드"/>
     <items link="Community-글쓰기-제안.screen" x="112" y="0" width="45" height="27" text="제안"/>
-    <items x="157" y="0" width="45" height="27" text="설문"/>
+    <items link="Community-글쓰기-설문.screen" x="157" y="0" width="45" height="27" text="설문"/>
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
