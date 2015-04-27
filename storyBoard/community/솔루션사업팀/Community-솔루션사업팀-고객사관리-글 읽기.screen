@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
+  <widgets xsi:type="model:Panel" id="569" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="570" x="18" y="65" width="63" height="28" text="회사로고" locked="true" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="571" x="232" y="66" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" locked="true" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="572" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="573" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="574" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="575" x="984" y="68" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="576" x="803" y="67" text="관리자" locked="true" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="577" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Browser" id="579" width="1024" height="1257" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="1257">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="580" y="1234" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="581" x="8" y="99" width="225" height="36" measuredWidth="225" measuredHeight="36"/>
+  <widgets xsi:type="model:Label" id="582" x="10" y="99" width="223" text="커뮤니티" locked="true" measuredWidth="223" measuredHeight="36" textAlignment="Center">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="584" x="248" y="122" width="165" text="고객사관리" measuredWidth="165" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="585" x="711" y="105" text="Home,커뮤티니,솔루션사업팀,고객사관리" measuredWidth="280" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="34" height="23" text="Home"/>
+    <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
+    <items x="123" y="0" width="73" height="23" text="솔루션사업팀"/>
+    <items x="216" y="0" width="61" height="23" text="고객사관리"/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="593" x="259" y="661" width="731" height="42" text="파일명,용량&#xA;연말정산 관련 자료.xlsx,4.19KB" measuredWidth="731" measuredHeight="42" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="594" x="259" y="713" width="731" height="22" measuredWidth="731" measuredHeight="22"/>
+  <widgets xsi:type="model:Label" id="595" x="517" y="713" text="총 2개의 댓글이 있습니다." measuredWidth="148" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="596" x="665" y="713" text="댓글닫기 △" measuredWidth="70" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="597" x="259" y="742" width="731" height="219" measuredWidth="731" measuredHeight="219"/>
+  <widgets xsi:type="model:WidgetGroup" id="598" x="260" y="1124" measuredWidth="731" measuredHeight="23">
+    <widgets xsi:type="model:Panel" id="599" y="1" width="731" height="22" measuredWidth="731" measuredHeight="22"/>
+    <widgets xsi:type="model:Label" id="600" x="10" text="다음글 2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독)" measuredWidth="383" measuredHeight="23">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="601" x="260" y="1149" measuredWidth="731" measuredHeight="23">
+    <widgets xsi:type="model:Panel" id="602" width="731" height="22" measuredWidth="731" measuredHeight="22"/>
+    <widgets xsi:type="model:Label" id="603" x="10" text="이전글 2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독)" measuredWidth="383" measuredHeight="23">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Button" id="604" x="923" y="1093" text="목록보기" measuredWidth="68" measuredHeight="25" link="Community-솔루션사업팀-고객사관리.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="605" x="260" y="1093" text="삭제하기" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="606" x="337" y="1093" text="수정하기" measuredWidth="68" measuredHeight="25" link="../글쓰기/Community-글쓰기-고객사관리.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="607" x="273" y="750" text="김재환 / 주임 / 솔루션사업팀" measuredWidth="164" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="608" x="436" y="751" text="\[112.148.xxx.60\] | 2015-04-20" measuredWidth="150" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="610" x="260" y="880" width="731" measuredWidth="731" measuredHeight="6"/>
+  <widgets xsi:type="model:WidgetGroup" id="611" x="937" y="750" measuredWidth="41" measuredHeight="23">
+    <widgets xsi:type="model:Icon" id="612" x="25" y="3" measuredWidth="16" measuredHeight="16" icon="delete (small)"/>
+    <widgets xsi:type="model:Label" id="613" text="삭제" measuredWidth="30" measuredHeight="23">
+      <font bold="true"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Label" id="614" x="274" y="896" text="정종석 / 대리 / 솔루션사업팀" measuredWidth="164" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="615" x="437" y="897" text="\[112.148.xxx.60\] | 2015-04-20" measuredWidth="150" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="616" x="288" y="918" text="담당자, 재직자 미팅" measuredWidth="113" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="617" x="260" y="981" width="731" height="97" measuredWidth="731" measuredHeight="97"/>
+  <widgets xsi:type="model:Label" id="618" x="274" y="1018" text="김재환" measuredWidth="42" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:TextArea" id="619" x="337" y="997" width="538" height="65" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="538" measuredHeight="65">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="620" x="890" y="997" width="78" height="65" text="입력하기" measuredWidth="78" measuredHeight="65">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="621" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="622" x="18" y="65" width="63" height="28" text="회사로고" locked="true" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="623" x="232" y="66" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" locked="true" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="624" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="625" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="626" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="627" x="984" y="68" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="628" x="803" y="67" text="관리자" locked="true" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="629" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Image" id="635" x="262" y="376" measuredWidth="716" measuredHeight="138" src="../../assets/Community-content-small2.png"/>
+  <widgets xsi:type="model:Label" id="640" x="581" y="560" text="54" measuredWidth="52" measuredHeight="32" textAlignment="Center" icon="thumbs-up (large)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="641" x="8" y="134" measuredWidth="225" measuredHeight="46" link="../글쓰기/Community-글쓰기-클래식.screen">
+    <widgets xsi:type="model:TextArea" id="642" width="225" height="46" measuredWidth="225" measuredHeight="46">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="643" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="../글쓰기/Community-글쓰기-클래식.screen">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="644" x="8" y="180" measuredWidth="225" measuredHeight="237">
+    <widgets xsi:type="model:Accordion" id="645" width="225" height="27" text="소속 게시판" measuredWidth="225" measuredHeight="27">
+      <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="646" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="211">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="647" x="10" y="240" width="223" height="18" measuredWidth="223" measuredHeight="18" link="../공지사항/공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="648" x="10" y="257" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../공지사항/설문/Community-공지사항-설문.screen"/>
+  <widgets xsi:type="model:Hotspot" id="649" x="10" y="288" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="650" x="8" y="301" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
+  <widgets xsi:type="model:WidgetGroup" id="651" x="8" y="416" measuredWidth="225" measuredHeight="228">
+    <widgets xsi:type="model:Accordion" id="652" width="225" height="42" text="커뮤니티" measuredWidth="225" measuredHeight="42">
+      <items x="0" y="2" width="225" height="25" text="커뮤니티"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="653" y="25" width="225" text="*커뮤니티 전체보기*&#xD;&#xA;* 커뮤니티 목록&#xD;&#xA;&#xD;&#xA;*가입대기 커뮤니티*&#xD;&#xA;* 축구동호회&#xD;&#xA;&#xD;&#xA;*가입 커뮤니티*&#xD;&#xA;* 레져동호회&#xD;&#xA;## 회칙&#xD;&#xA;* 사진동호회&#xD;&#xA;## 공지사항&#xD;&#xA;* 문화 동호회&#xD;&#xA;## 이번 주 활동" measuredWidth="225" measuredHeight="203">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="654" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
+  <widgets xsi:type="model:Icon" id="655" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
+  <widgets xsi:type="model:Hotspot" id="656" x="8" y="626" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
+  <widgets xsi:type="model:Hotspot" id="657" x="10" y="330" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../공지사항/설문/Community-공지사항-설문.screen"/>
+  <widgets xsi:type="model:Text" id="818" x="262" y="166" text="고객사명" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="820" x="262" y="343" text="담당자" measuredWidth="37" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="826" x="262" y="195" text="법인번호" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="829" x="608" y="196" text="사업자번호" measuredWidth="61" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="832" x="262" y="256" text="전화번호1" measuredWidth="56" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="835" x="608" y="257" text="전화번호2&#xD;&#xA;" measuredWidth="56" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="838" x="262" y="283" text="사업장 주소" measuredWidth="65" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="841" x="608" y="284" text="창립기념일" measuredWidth="61" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="842" x="262" y="226" text="대표자" measuredWidth="37" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="845" x="608" y="227" text="업종" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="848" x="262" y="312" text="계약여부" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="850" x="348" y="353" measuredWidth="0" measuredHeight="0"/>
+  <widgets xsi:type="model:Text" id="852" x="348" y="166" text="교통방송본부" measuredWidth="73" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="853" x="348" y="196" text="1028301744" measuredWidth="71" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="854" x="694" y="196" text="1028301744" measuredWidth="71" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="855" x="348" y="227" text="성경환" measuredWidth="37" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="856" x="348" y="257" text="--" measuredWidth="11" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="857" x="348" y="284" text="서울 중구 예장동 3-8" measuredWidth="116" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="858" x="694" y="225" text="--" measuredWidth="11" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="859" x="694" y="257" text="--" measuredWidth="11" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="860" x="694" y="283" text="--" measuredWidth="11" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="863" x="348" y="312" text="계약중" measuredWidth="37" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="864" x="347" y="343" text="김재환" measuredWidth="37" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextArea" id="865" x="288" y="772" text="*청구, 급여작업&#xA;- 3월 첫 청구, 급여작업&#xA;- 퇴직금 급여팀 정산중&#xA;*제직자, 담당자 미팅&#xA;- 개별계약서 수정, 통장사본 수령" measuredWidth="204" measuredHeight="83" borderColor="#ffffff">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

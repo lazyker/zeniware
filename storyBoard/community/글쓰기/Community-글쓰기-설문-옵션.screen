@@ -40,13 +40,7 @@
     <items x="157" y="0" width="45" height="27" text="설문"/>
     <font size="12px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Text" id="399" x="262" y="197" text="위치" measuredWidth="25" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Text" id="404" x="262" y="248" text="옵션" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="404" x="262" y="264" text="옵션" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="299" x="576" y="1644" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
@@ -55,16 +49,8 @@
   <widgets xsi:type="model:Button" id="300" x="624" y="1644" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
     <font/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="353" x="348" y="173" width="630" measuredWidth="630" measuredHeight="23">
-    <widgets xsi:type="model:TextField" id="354" width="630" measuredWidth="630" measuredHeight="23">
-      <font/>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="설문" measuredWidth="234" measuredHeight="23">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Image" id="395" x="262" y="918" measuredWidth="731" measuredHeight="185" src="../../assets/Community-kendoUi-Editor-small.png"/>
-  <widgets xsi:type="model:Icon" id="397" x="320" y="248" measuredWidth="16" measuredHeight="16" icon="minus (small)" link="Community-글쓰기-설문.screen"/>
+  <widgets xsi:type="model:Icon" id="397" x="320" y="264" measuredWidth="16" measuredHeight="16" icon="minus (small)" link="Community-글쓰기-설문.screen"/>
   <widgets xsi:type="model:Text" id="401" x="265" y="1121" text="파일첨부" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
@@ -75,40 +61,40 @@
   <widgets xsi:type="model:Button" id="407" x="427" y="1120" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="410" x="349" y="250" text="공지사용" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="410" x="349" y="266" text="공지사용" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="417" x="459" y="247" text="사용" measuredWidth="42" measuredHeight="21">
+  <widgets xsi:type="model:RadioButton" id="417" x="459" y="263" text="사용" measuredWidth="42" measuredHeight="21">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="418" x="524" y="247" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
+  <widgets xsi:type="model:RadioButton" id="418" x="524" y="263" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="421" x="349" y="274" text="팝업사용" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="421" x="349" y="290" text="팝업사용" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="422" x="459" y="271" text="사용" measuredWidth="42" measuredHeight="21">
+  <widgets xsi:type="model:RadioButton" id="422" x="459" y="287" text="사용" measuredWidth="42" measuredHeight="21">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="423" x="524" y="271" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
+  <widgets xsi:type="model:RadioButton" id="423" x="524" y="287" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="424" x="616" y="250" text="기간" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="424" x="616" y="266" text="기간" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="425" x="656" y="246" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Text" id="427" x="792" y="255" text="~" measuredWidth="9" measuredHeight="13">
+  <widgets xsi:type="model:DateField" id="425" x="656" y="262" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="427" x="792" y="271" text="~" measuredWidth="9" measuredHeight="13">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="428" x="808" y="246" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Text" id="429" x="616" y="274" text="기간" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:DateField" id="428" x="808" y="262" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="429" x="616" y="290" text="기간" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="430" x="656" y="270" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Text" id="431" x="792" y="275" text="~" measuredWidth="9" measuredHeight="13">
+  <widgets xsi:type="model:DateField" id="430" x="656" y="286" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="431" x="792" y="291" text="~" measuredWidth="9" measuredHeight="13">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="432" x="808" y="270" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:DateField" id="432" x="808" y="286" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
   <widgets xsi:type="model:Group" id="477" x="348" y="764" width="630" height="146" text="Black List" measuredWidth="630" measuredHeight="146">
     <font/>
   </widgets>
@@ -127,71 +113,63 @@
   <widgets xsi:type="model:Table" id="482" x="363" y="656" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;김재환,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="483" x="459" y="421" text="사용" measuredWidth="42" measuredHeight="21">
+  <widgets xsi:type="model:RadioButton" id="483" x="459" y="437" text="사용" measuredWidth="42" measuredHeight="21">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="484" x="523" y="421" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
+  <widgets xsi:type="model:RadioButton" id="484" x="523" y="437" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="485" x="349" y="424" text="대상지정" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="485" x="349" y="440" text="대상지정" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="487" x="349" y="297" text="이메일 알림" measuredWidth="65" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="487" x="349" y="313" text="이메일 알림" measuredWidth="65" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="488" x="459" y="294" text="사용" measuredWidth="42" measuredHeight="21">
+  <widgets xsi:type="model:RadioButton" id="488" x="459" y="310" text="사용" measuredWidth="42" measuredHeight="21">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="489" x="524" y="294" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
+  <widgets xsi:type="model:RadioButton" id="489" x="524" y="310" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="490" x="459" y="314" text="기명" measuredWidth="42" measuredHeight="21" selected="true">
+  <widgets xsi:type="model:RadioButton" id="490" x="459" y="330" text="기명" measuredWidth="42" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="491" x="524" y="314" text="무기명" measuredWidth="53" measuredHeight="21">
+  <widgets xsi:type="model:RadioButton" id="491" x="524" y="330" text="무기명" measuredWidth="53" measuredHeight="21">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="492" x="349" y="317" text="기명/무기명" measuredWidth="66" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="492" x="349" y="333" text="기명/무기명" measuredWidth="66" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="493" x="262" y="225" text="설문기간" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="497" x="351" y="376" text="작성자 이름 변경" measuredWidth="93" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="494" x="349" y="221" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Text" id="495" x="485" y="230" text="~" measuredWidth="9" measuredHeight="13">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:DateField" id="496" x="501" y="221" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Text" id="497" x="351" y="360" text="작성자 이름 변경" measuredWidth="93" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="498" x="459" y="356" width="519" measuredWidth="519" measuredHeight="23">
+  <widgets xsi:type="model:WidgetGroup" id="498" x="459" y="372" measuredWidth="519" measuredHeight="23">
     <widgets xsi:type="model:TextField" id="499" width="519" measuredWidth="519" measuredHeight="23">
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Text" id="500" x="351" y="383" text="{wizard} 설문 참여자에게 보이는 설문 등록자를 설정합니다. 특정 부서나 조직을 설문 등록자로 지정할 때 사용합니다.&#xD;&#xA;(예) 인사팀, 운영실 등" measuredWidth="607" measuredHeight="31">
+  <widgets xsi:type="model:Text" id="500" x="351" y="399" text="{wizard} 설문 참여자에게 보이는 설문 등록자를 설정합니다. 특정 부서나 조직을 설문 등록자로 지정할 때 사용합니다.&#xD;&#xA;(예) 인사팀, 운영실 등" measuredWidth="607" measuredHeight="31">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="501" x="459" y="334" text="사용" measuredWidth="42" measuredHeight="21">
+  <widgets xsi:type="model:RadioButton" id="501" x="459" y="350" text="사용" measuredWidth="42" measuredHeight="21">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="502" x="523" y="334" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
+  <widgets xsi:type="model:RadioButton" id="502" x="523" y="350" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="503" x="349" y="337" text="설문결과 비공개" measuredWidth="89" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="503" x="349" y="353" text="설문결과 비공개" measuredWidth="89" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Group" id="504" x="348" y="448" width="630" height="146" text="부서 지정" measuredWidth="630" measuredHeight="146">
+  <widgets xsi:type="model:Group" id="504" x="348" y="457" width="630" height="146" text="부서 지정" measuredWidth="630" measuredHeight="146">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="505" x="363" y="465" text="공유부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
+  <widgets xsi:type="model:Label" id="505" x="363" y="474" text="공유부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="506" x="363" y="495" width="609" height="87" text="부서명, 작성권한, 삭제&#xD;&#xA;전체,{checked},{trash}" measuredWidth="609" measuredHeight="87" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="506" x="363" y="504" width="609" height="87" text="부서명, 작성권한, 삭제&#xD;&#xA;전체,{checked},{trash}" measuredWidth="609" measuredHeight="87" alternative="#eeeeee">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="507" x="469" y="465" text="하위부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
+  <widgets xsi:type="model:Label" id="507" x="469" y="474" text="하위부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="508" x="265" y="1188" text="질문" measuredWidth="25" measuredHeight="15">
@@ -369,6 +347,28 @@
   <widgets xsi:type="model:Icon" id="600" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <widgets xsi:type="model:Hotspot" id="601" x="8" y="626" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <widgets xsi:type="model:Hotspot" id="602" x="10" y="330" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../공지사항/설문/Community-공지사항-설문.screen"/>
+  <widgets xsi:type="model:Text" id="657" x="262" y="210" text="제목" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="658" x="262" y="177" text="위치" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="660" x="348" y="206" measuredWidth="630" measuredHeight="23">
+    <widgets xsi:type="model:TextField" id="661" width="630" measuredWidth="630" measuredHeight="23">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="662" x="348" y="173" width="234" text="설문" measuredWidth="234" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="663" x="262" y="241" text="설문기간" measuredWidth="49" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="664" x="349" y="237" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="665" x="485" y="262" text="~" measuredWidth="9" measuredHeight="13">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="666" x="501" y="237" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

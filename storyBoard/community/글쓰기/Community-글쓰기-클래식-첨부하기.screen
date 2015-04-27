@@ -40,40 +40,40 @@
     <items x="157" y="0" width="45" height="27" text="설문"/>
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Button" id="475" x="576" y="648" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc" link="Community-글쓰기-클래식-저장%20팝업.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="399" x="262" y="197" text="위치" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Button" id="476" x="624" y="648" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="Community-글쓰기-클래식-취소%20팝업.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="404" x="262" y="218" text="옵션" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Image" id="477" x="258" y="263" measuredWidth="734" measuredHeight="363" src="../../assets/Community-kendoUi-Editor-big.png"/>
+  <widgets xsi:type="model:Icon" id="478" x="320" y="240" measuredWidth="16" measuredHeight="16" icon="add (small)" link="Community-글쓰기-클래식-옵션.screen"/>
+  <widgets xsi:type="model:Text" id="479" x="262" y="639" text="파일첨부" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="299" x="576" y="648" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
+  <widgets xsi:type="model:Icon" id="480" x="320" y="639" measuredWidth="16" measuredHeight="16" icon="add (small)" link="Community-글쓰기-클래식-파일첨부.screen"/>
+  <widgets xsi:type="model:Button" id="481" x="348" y="638" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc" link="">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="482" x="424" y="638" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="483" x="262" y="209" text="제목" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="300" x="624" y="648" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
+  <widgets xsi:type="model:Text" id="484" x="262" y="178" text="위치" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="353" x="348" y="173" width="640" measuredWidth="640" measuredHeight="23">
-    <widgets xsi:type="model:TextField" id="354" width="640" measuredWidth="640" measuredHeight="23">
+  <widgets xsi:type="model:Text" id="485" x="262" y="240" text="옵션" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="486" x="348" y="205" measuredWidth="640" measuredHeight="23">
+    <widgets xsi:type="model:TextField" id="487" width="640" measuredWidth="640" measuredHeight="23">
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="공지" measuredWidth="234" measuredHeight="23">
+  <widgets xsi:type="model:Combo" id="488" x="348" y="174" width="234" text="공지" measuredWidth="234" measuredHeight="23">
     <font/>
-  </widgets>
-  <widgets xsi:type="model:Image" id="395" x="258" y="244" measuredWidth="734" measuredHeight="363" src="../../assets/Community-kendoUi-Editor-big.png"/>
-  <widgets xsi:type="model:Icon" id="397" x="320" y="218" measuredWidth="16" measuredHeight="16" icon="add (small)"/>
-  <widgets xsi:type="model:Text" id="401" x="262" y="625" text="파일첨부" measuredWidth="49" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Icon" id="405" x="320" y="625" measuredWidth="16" measuredHeight="16" icon="add (small)"/>
-  <widgets xsi:type="model:Button" id="406" x="348" y="624" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="407" x="424" y="624" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
-    <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:Window" id="408" x="310" y="218" width="627" height="279" text="열기" measuredWidth="627" measuredHeight="279"/>
   <widgets xsi:type="model:Tree" id="409" x="310" y="237" height="212" text="Folder One&#xA;-Folder Two&#xA;--File One&#xA;--File Two&#xA;v Collapse Arrow&#xA;-[>] Closed Folder&#xA;-[v] Open Folder&#xA;> Expand Arrow&#xA;[-] Collapse&#xA;-[+] Expand&#xA;[] You can have&#xA;[x] Checkboxes&#xA;() And even radio buttons&#xA;{attachment} Or just any other icon&#xA;[_] And no icon too" measuredWidth="163" measuredHeight="212">
@@ -94,7 +94,6 @@
     <items x="0" y="299" width="163" height="21" text="[_] And no icon too"/>
     <font/>
   </widgets>
-  <widgets xsi:type="model:CrossOut" id="411" x="384" y="352" width="8" height="17" measuredWidth="8" measuredHeight="17"/>
   <widgets xsi:type="model:Panel" id="412" x="472" y="237" width="465" height="212" measuredWidth="465" measuredHeight="212"/>
   <widgets xsi:type="model:Icon" id="413" x="504" y="256" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
   <widgets xsi:type="model:Icon" id="414" x="560" y="256" measuredWidth="32" measuredHeight="32" icon="image (large)"/>

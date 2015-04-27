@@ -40,13 +40,13 @@
     <items x="157" y="0" width="45" height="27" text="설문"/>
     <font size="12px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="398" x="262" y="210" text="제목" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="399" x="262" y="197" text="위치" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="399" x="262" y="177" text="위치" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="404" x="262" y="248" text="옵션" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="404" x="262" y="264" text="옵션" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="299" x="576" y="996" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
@@ -55,34 +55,34 @@
   <widgets xsi:type="model:Button" id="300" x="624" y="996" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
     <font/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="353" x="348" y="173" width="630" measuredWidth="630" measuredHeight="23">
+  <widgets xsi:type="model:WidgetGroup" id="353" x="348" y="206" measuredWidth="630" measuredHeight="23">
     <widgets xsi:type="model:TextField" id="354" width="630" measuredWidth="630" measuredHeight="23">
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Combo" id="377" x="348" y="194" width="234" text="설문" measuredWidth="234" measuredHeight="23">
+  <widgets xsi:type="model:Combo" id="377" x="348" y="173" width="234" text="설문" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Image" id="395" x="262" y="270" measuredWidth="731" measuredHeight="185" src="../../assets/Community-kendoUi-Editor-small.png"/>
-  <widgets xsi:type="model:Icon" id="397" x="320" y="248" measuredWidth="16" measuredHeight="16" icon="add (small)" link="Community-글쓰기-설문-옵션.screen"/>
-  <widgets xsi:type="model:Text" id="401" x="265" y="473" text="파일첨부" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Image" id="395" x="262" y="286" measuredWidth="731" measuredHeight="185" src="../../assets/Community-kendoUi-Editor-small.png"/>
+  <widgets xsi:type="model:Icon" id="397" x="320" y="264" measuredWidth="16" measuredHeight="16" icon="add (small)" link="Community-글쓰기-설문-옵션.screen"/>
+  <widgets xsi:type="model:Text" id="401" x="265" y="489" text="파일첨부" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="405" x="323" y="473" measuredWidth="16" measuredHeight="16" icon="minus (small)"/>
-  <widgets xsi:type="model:Button" id="406" x="351" y="472" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
+  <widgets xsi:type="model:Icon" id="405" x="323" y="489" measuredWidth="16" measuredHeight="16" icon="minus (small)"/>
+  <widgets xsi:type="model:Button" id="406" x="351" y="488" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Button" id="407" x="427" y="472" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
+  <widgets xsi:type="model:Button" id="407" x="427" y="488" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="493" x="262" y="225" text="설문기간" measuredWidth="49" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="493" x="262" y="241" text="설문기간" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="494" x="349" y="221" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
-  <widgets xsi:type="model:Text" id="495" x="485" y="230" text="~" measuredWidth="9" measuredHeight="13">
+  <widgets xsi:type="model:DateField" id="494" x="349" y="237" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="495" x="485" y="246" text="~" measuredWidth="9" measuredHeight="13">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="496" x="501" y="221" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:DateField" id="496" x="501" y="237" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
   <widgets xsi:type="model:Text" id="508" x="265" y="540" text="질문" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>

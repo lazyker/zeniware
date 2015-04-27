@@ -40,7 +40,7 @@
     <items link="Community-글쓰기-설문.screen" x="157" y="0" width="45" height="27" text="설문"/>
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="442" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="442" x="262" y="203" text="제목" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="443" x="262" y="234" text="제안부문" measuredWidth="49" measuredHeight="15">
@@ -55,7 +55,7 @@
   <widgets xsi:type="model:Button" id="446" x="629" y="1048" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="Community-글쓰기-제안-취소%20팝업.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="447" x="348" y="173" width="640" measuredWidth="640" measuredHeight="23">
+  <widgets xsi:type="model:WidgetGroup" id="447" x="348" y="200" measuredWidth="640" measuredHeight="23">
     <widgets xsi:type="model:TextField" id="448" width="640" measuredWidth="640" measuredHeight="23">
       <font/>
     </widgets>
@@ -91,10 +91,10 @@
   <widgets xsi:type="model:Combo" id="461" x="678" y="231" width="234" text="미정" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="491" x="262" y="203" text="위치" measuredWidth="25" measuredHeight="15">
+  <widgets xsi:type="model:Text" id="491" x="262" y="174" text="위치" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Combo" id="492" x="348" y="200" width="234" text="공지" measuredWidth="234" measuredHeight="23">
+  <widgets xsi:type="model:Combo" id="492" x="348" y="171" width="234" text="공지" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="507" x="8" y="134" measuredWidth="225" measuredHeight="46" link="Community-글쓰기-클래식.screen">
