@@ -90,7 +90,7 @@
       <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
       <font/>
     </widgets>
-    <widgets xsi:type="model:TextArea" id="379" y="26" width="225" height="178" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="178">
+    <widgets xsi:type="model:TextArea" id="379" y="26" width="225" height="178" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="178">
       <font/>
     </widgets>
   </widgets>
