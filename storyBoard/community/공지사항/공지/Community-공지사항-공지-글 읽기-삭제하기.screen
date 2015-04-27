@@ -122,7 +122,7 @@
   <widgets xsi:type="model:Button" id="533" x="258" y="1009" text="삭제하기" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="534" x="335" y="1009" text="수정하기" measuredWidth="68" measuredHeight="25" link="../글쓰기/Community-공지사항-글쓰기.screen">
+  <widgets xsi:type="model:Button" id="534" x="335" y="1009" text="수정하기" measuredWidth="68" measuredHeight="25" link="../../글쓰기/Community-글쓰기-클래식.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="535" x="272" y="761" text="김재환 / 주임 / 솔루션사업팀" measuredWidth="164" measuredHeight="23">
@@ -155,9 +155,6 @@
     <font bold="true"/>
   </widgets>
   <widgets xsi:type="model:TextArea" id="547" x="335" y="913" width="538" height="65" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="538" measuredHeight="65">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="548" x="888" y="913" width="78" height="65" text="입력하기" measuredWidth="78" measuredHeight="65">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="549" x="584" y="609" text="54" measuredWidth="52" measuredHeight="32" textAlignment="Center" icon="thumbs-up (large)">
@@ -197,6 +194,12 @@
   <widgets xsi:type="model:Icon" id="568" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <widgets xsi:type="model:Hotspot" id="569" x="8" y="626" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <widgets xsi:type="model:Hotspot" id="570" x="10" y="330" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../설문/Community-공지사항-설문.screen"/>
+  <widgets xsi:type="model:Button" id="571" x="891" y="913" width="78" height="28" text="입력하기" measuredWidth="78" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="572" x="891" y="950" width="78" height="28" text="파일첨부" measuredWidth="78" measuredHeight="28">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

@@ -3,7 +3,7 @@
   <widgets xsi:type="model:Browser" id="158" width="1024" height="720" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="720">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TabbedPane" id="475" x="248" y="134" width="751" height="683" text="클래식,피드,제안,설문,고객사관리" locked="true" measuredWidth="751" measuredHeight="683" selection="0">
+  <widgets xsi:type="model:TabbedPane" id="475" x="248" y="134" width="751" height="555" text="클래식,피드,제안,설문,고객사관리" measuredWidth="751" measuredHeight="555" selection="0">
     <items link="" x="10" y="0" width="57" height="27" text="클래식"/>
     <items link="Community-글쓰기-피드.screen" x="67" y="0" width="45" height="27" text="피드"/>
     <items link="Community-글쓰기-제안.screen" x="112" y="0" width="45" height="27" text="제안"/>

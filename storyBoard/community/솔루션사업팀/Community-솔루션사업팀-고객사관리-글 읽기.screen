@@ -98,7 +98,7 @@
   <widgets xsi:type="model:TextArea" id="619" x="337" y="997" width="538" height="65" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="538" measuredHeight="65">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="620" x="890" y="997" width="78" height="65" text="입력하기" measuredWidth="78" measuredHeight="65">
+  <widgets xsi:type="model:Button" id="620" x="890" y="997" width="78" height="28" text="입력하기" measuredWidth="78" measuredHeight="28">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="621" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
@@ -224,6 +224,9 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:TextArea" id="865" x="288" y="772" text="*청구, 급여작업&#xA;- 3월 첫 청구, 급여작업&#xA;- 퇴직금 급여팀 정산중&#xA;*제직자, 담당자 미팅&#xA;- 개별계약서 수정, 통장사본 수령" measuredWidth="204" measuredHeight="83" borderColor="#ffffff">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="868" x="890" y="1034" width="78" height="28" text="파일첨부" measuredWidth="78" measuredHeight="28">
     <font/>
   </widgets>
   <hRuler/>
