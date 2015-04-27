@@ -17,7 +17,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:WidgetGroup" id="480" height="1137" measuredWidth="1024" measuredHeight="1137">
+  <widgets xsi:type="model:WidgetGroup" id="480" height="1137" locked="true" measuredWidth="1024" measuredHeight="1137">
     <widgets xsi:type="model:Browser" id="158" width="1024" height="1137" text="Browser&#xA;http://..." measuredWidth="1024" measuredHeight="1137">
       <font/>
     </widgets>
@@ -28,12 +28,6 @@
   <widgets xsi:type="model:Panel" id="223" x="8" y="99" width="225" height="36" measuredWidth="225" measuredHeight="36"/>
   <widgets xsi:type="model:Label" id="224" x="10" y="99" width="223" text="커뮤니티" locked="true" measuredWidth="223" measuredHeight="36" textAlignment="Center">
     <font size="20px"/>
-  </widgets>
-  <widgets xsi:type="model:TextArea" id="277" x="8" y="134" width="225" height="46" locked="true" measuredWidth="225" measuredHeight="46">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="276" x="18" y="141" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="../../글쓰기/Community-글쓰기-클래식.screen">
-    <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="398" x="262" y="176" text="제목" measuredWidth="25" measuredHeight="15">
     <font/>
@@ -154,34 +148,43 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="494" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:WidgetGroup" id="505" x="8" y="180" locked="true" measuredWidth="225" measuredHeight="204">
-    <widgets xsi:type="model:Accordion" id="506" width="225" height="27" text="소속 게시판" measuredWidth="225" measuredHeight="27">
-      <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
-      <font/>
-    </widgets>
-    <widgets xsi:type="model:TextArea" id="507" y="26" width="225" height="178" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="178">
-      <font/>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:Hotspot" id="508" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="Community-공지사항-공지.screen"/>
-  <widgets xsi:type="model:Hotspot" id="509" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../경조사/Community-공지사항-경조사.screen"/>
-  <widgets xsi:type="model:Hotspot" id="510" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
-  <widgets xsi:type="model:Hotspot" id="511" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
-  <widgets xsi:type="model:WidgetGroup" id="512" x="8" y="382" locked="true" measuredWidth="225" measuredHeight="228">
-    <widgets xsi:type="model:Accordion" id="513" width="225" height="42" text="커뮤니티" measuredWidth="225" measuredHeight="42">
-      <items x="0" y="2" width="225" height="25" text="커뮤니티"/>
-      <font/>
-    </widgets>
-    <widgets xsi:type="model:TextArea" id="514" y="25" width="225" text="*커뮤니티 전체보기*&#xD;&#xA;* 커뮤니티 목록&#xD;&#xA;&#xD;&#xA;*가입대기 커뮤니티*&#xD;&#xA;* 축구동호회&#xD;&#xA;&#xD;&#xA;*가입 커뮤니티*&#xD;&#xA;* 레져동호회&#xD;&#xA;## 회칙&#xD;&#xA;* 사진동호회&#xD;&#xA;## 공지사항&#xD;&#xA;* 문화 동호회&#xD;&#xA;## 이번 주 활동" measuredWidth="225" measuredHeight="203">
-      <font/>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:Icon" id="515" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
-  <widgets xsi:type="model:Icon" id="516" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <widgets xsi:type="model:Label" id="518" x="584" y="609" text="54" measuredWidth="52" measuredHeight="32" textAlignment="Center" icon="thumbs-up (large)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="519" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
+  <widgets xsi:type="model:WidgetGroup" id="520" x="8" y="134" measuredWidth="225" measuredHeight="46" link="../../글쓰기/Community-글쓰기-클래식.screen">
+    <widgets xsi:type="model:TextArea" id="521" width="225" height="46" measuredWidth="225" measuredHeight="46">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="522" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="../../글쓰기/Community-글쓰기-클래식.screen">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="523" x="8" y="180" measuredWidth="225" measuredHeight="237">
+    <widgets xsi:type="model:Accordion" id="524" width="225" height="27" text="소속 게시판" measuredWidth="225" measuredHeight="27">
+      <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="525" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="211">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="526" x="10" y="240" width="223" height="18" measuredWidth="223" measuredHeight="18" link="Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="527" x="10" y="257" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../설문/Community-공지사항-설문.screen"/>
+  <widgets xsi:type="model:Hotspot" id="528" x="10" y="288" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="529" x="8" y="301" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
+  <widgets xsi:type="model:WidgetGroup" id="530" x="8" y="416" measuredWidth="225" measuredHeight="228">
+    <widgets xsi:type="model:Accordion" id="531" width="225" height="42" text="커뮤니티" measuredWidth="225" measuredHeight="42">
+      <items x="0" y="2" width="225" height="25" text="커뮤니티"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="532" y="25" width="225" text="*커뮤니티 전체보기*&#xD;&#xA;* 커뮤니티 목록&#xD;&#xA;&#xD;&#xA;*가입대기 커뮤니티*&#xD;&#xA;* 축구동호회&#xD;&#xA;&#xD;&#xA;*가입 커뮤니티*&#xD;&#xA;* 레져동호회&#xD;&#xA;## 회칙&#xD;&#xA;* 사진동호회&#xD;&#xA;## 공지사항&#xD;&#xA;* 문화 동호회&#xD;&#xA;## 이번 주 활동" measuredWidth="225" measuredHeight="203">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="533" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
+  <widgets xsi:type="model:Icon" id="534" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
+  <widgets xsi:type="model:Hotspot" id="535" x="8" y="626" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
+  <widgets xsi:type="model:Hotspot" id="536" x="10" y="330" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../설문/Community-공지사항-설문.screen"/>
   <hRuler>
     <guides position="1063"/>
   </hRuler>
