@@ -4,7 +4,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:TabbedPane" id="475" x="248" y="134" width="751" height="555" text="클래식,피드,제안,설문,고객사관리" measuredWidth="751" measuredHeight="555" selection="0">
-    <items link="" x="10" y="0" width="57" height="27" text="클래식"/>
+    <items x="10" y="0" width="57" height="27" text="클래식"/>
     <items link="Community-글쓰기-피드.screen" x="67" y="0" width="45" height="27" text="피드"/>
     <items link="Community-글쓰기-제안.screen" x="112" y="0" width="45" height="27" text="제안"/>
     <items link="Community-글쓰기-설문.screen" x="157" y="0" width="45" height="27" text="설문"/>
@@ -72,7 +72,7 @@
       <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
       <font/>
     </widgets>
-    <widgets xsi:type="model:TextArea" id="449" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="211">
+    <widgets xsi:type="model:TextArea" id="449" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 고객사관리" measuredWidth="225" measuredHeight="211">
       <font/>
     </widgets>
   </widgets>
@@ -110,6 +110,7 @@
   <widgets xsi:type="model:Combo" id="466" x="348" y="174" width="234" text="공지" measuredWidth="234" measuredHeight="23">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="476" x="10" y="392" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../솔루션사업팀/Community-솔루션사업팀-고객사관리.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
