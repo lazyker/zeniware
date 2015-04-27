@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
+  <widgets xsi:type="model:Browser" id="158" width="1024" height="913" text="Browser&#xA;http://..." measuredWidth="1024" measuredHeight="913">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="195" x="18" y="65" width="63" height="28" text="회사로고" locked="true" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="196" x="232" y="66" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" locked="true" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="197" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="198" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="199" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="200" x="984" y="68" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="201" x="803" y="67" text="관리자" locked="true" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Breadcrumbs" id="229" x="881" y="105" text="Home,마이페이지" measuredWidth="118" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="34" height="23" text="Home"/>
+    <items x="54" y="0" width="61" height="23" text="마이페이지"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="248" y="890" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextArea" id="297" x="8" y="134" width="225" height="363" text="*나의 개인정보*&#xD;&#xA;&#xD;&#xA;*나의 일정*&#xD;&#xA;&#xD;&#xA;*나의 전자결재*&#xD;&#xA;&#xD;&#xA;*나의 업무*&#xD;&#xA;&#xD;&#xA;*나의 커뮤니티*&#xD;&#xA;* 게시물&#xD;&#xA;* 댓글&#xD;&#xA;&#xD;&#xA;*나의 자원*&#xD;&#xA;&#xD;&#xA;*나의 문서*&#xD;&#xA;&#xD;&#xA;*나의 주소록*&#xD;&#xA;&#xD;&#xA;*나의 근태*&#xD;&#xA;&#xD;&#xA;" measuredWidth="225" measuredHeight="363">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="311" x="8" y="99" width="225" height="36" measuredWidth="225" measuredHeight="36"/>
+  <widgets xsi:type="model:Label" id="312" x="10" y="99" width="223" text="마이페이지" measuredWidth="223" measuredHeight="36" textAlignment="Center">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="320" x="266" y="426" measuredWidth="733" measuredHeight="263">
+    <widgets xsi:type="model:TabbedPane" id="315" y="22" width="733" height="241" text="클래식,피드,제안,설문,고객사관리" measuredWidth="733" measuredHeight="241" selection="0">
+      <items x="10" y="0" width="57" height="27" text="클래식"/>
+      <items x="67" y="0" width="45" height="27" text="피드"/>
+      <items x="112" y="0" width="45" height="27" text="제안"/>
+      <items x="157" y="0" width="45" height="27" text="설문"/>
+      <items x="202" y="0" width="81" height="27" text="고객사관리"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Table" id="314" x="10" y="81" width="347" height="169" text="제목,게시판,등록날짜&#xD;&#xA;주간정보동향_150427+2,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27&#xD;&#xA;주간정보동향_150427,자유게시판,2015-04-27" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+      <font bold="false"/>
+    </widgets>
+    <widgets xsi:type="model:Table" id="317" x="372" y="81" width="347" height="169" text="내용,게시판,등록날짜&#xD;&#xA;재밌었어요~,자유게시판,2015-04-27&#xD;&#xA;정보 감사합니다.,자유게시판,2015-04-27&#xD;&#xA;향후 일정이 어떻게 되나요?,자유게시판,2015-04-27&#xD;&#xA;연락 바랍니다.,자유게시판,2015-04-27&#xD;&#xA;감사합니다.,자유게시판,2015-04-27&#xD;&#xA;메일로 보내드렸습니다.,자유게시판,2015-04-27&#xD;&#xA;확인 부탁드립니다.,자유게시판,2015-04-27&#xD;&#xA;최신 파일 올려주세요.,자유게시판,2015-04-27&#xD;&#xA;감사합니다,자유게시판,2015-04-27" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+      <font bold="false"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="318" x="10" y="59" text="게시글" measuredWidth="42" measuredHeight="23">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="319" x="372" y="59" text="댓글" measuredWidth="30" measuredHeight="23">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="330" x="299" y="59" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="331" x="661" y="59" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="332" text="나의 커뮤니티" measuredWidth="98" measuredHeight="23" icon="list-bullet (small)">
+      <font size="12px"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="333" x="266" y="218" measuredWidth="347" measuredHeight="191">
+    <widgets xsi:type="model:Table" id="324" y="22" width="347" height="169" text="일자,출근시간,구분,퇴근시간,구분&#xD;&#xA;2015-04-27(월),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-26(일),--,--&#xD;&#xA;2015-04-25(토),--,--&#xD;&#xA;2015-04-24(금),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-23(목),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-22(수),07:30,정시출근,17:30,정시퇴근&#xD;&#xA;2015-04-21(화),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+      <font bold="false"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="325" text="나의 근태현황" measuredWidth="98" measuredHeight="23" icon="calendar2 (small)">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="327" x="289" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="336" x="256" y="144" measuredWidth="357" measuredHeight="54">
+    <widgets xsi:type="model:Label" id="249" x="72" text="김재환 / 주임" measuredWidth="79" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Icon" id="250" width="56" height="54" measuredWidth="56" measuredHeight="54" icon="smile (large)"/>
+    <widgets xsi:type="model:Label" id="313" x="72" y="22" text="제니엘 / 그룹전략부문 / 정보기획실 / 솔루션사업팀" measuredWidth="285" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="335" x="299" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="337" x="638" y="218" measuredWidth="347" measuredHeight="191">
+    <widgets xsi:type="model:Table" id="338" y="22" width="347" height="169" text="일자,결제문서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+      <font bold="false"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="339" text="나의 전자결제" measuredWidth="98" measuredHeight="23" icon="copy (small)">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="340" x="289" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="349" x="266" y="700" measuredWidth="347" measuredHeight="191">
+    <widgets xsi:type="model:Table" id="350" y="22" width="347" height="169" text="일자,출근시간,구분,퇴근시간,구분&#xD;&#xA;2015-04-27(월),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-26(일),--,--&#xD;&#xA;2015-04-25(토),--,--&#xD;&#xA;2015-04-24(금),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-23(목),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-22(수),07:30,정시출근,17:30,정시퇴근&#xD;&#xA;2015-04-21(화),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+      <font bold="false"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="351" text="나의 자원예약 목록" measuredWidth="126" measuredHeight="23" icon="calendar2 (small)">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="352" x="289" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="353" x="638" y="700" measuredWidth="347" measuredHeight="191">
+    <widgets xsi:type="model:Table" id="354" y="22" width="347" height="169" text="일자,결제문서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+      <font bold="false"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="355" text="나의 문서관리" measuredWidth="98" measuredHeight="23" icon="copy (small)">
+      <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="356" x="289" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+      <font size="12px"/>
+    </widgets>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

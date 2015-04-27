@@ -327,7 +327,7 @@
       <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
       <font/>
     </widgets>
-    <widgets xsi:type="model:TextArea" id="591" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="211">
+    <widgets xsi:type="model:TextArea" id="591" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 고객사관리" measuredWidth="225" measuredHeight="211">
       <font/>
     </widgets>
   </widgets>
@@ -370,6 +370,7 @@
     <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:DateField" id="666" x="501" y="237" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Hotspot" id="668" x="8" y="390" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../솔루션사업팀/Community-솔루션사업팀-고객사관리.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

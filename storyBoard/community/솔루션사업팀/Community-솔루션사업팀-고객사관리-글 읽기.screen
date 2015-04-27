@@ -135,7 +135,7 @@
       <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
       <font/>
     </widgets>
-    <widgets xsi:type="model:TextArea" id="646" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="211">
+    <widgets xsi:type="model:TextArea" id="646" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 고객사관리" measuredWidth="225" measuredHeight="211">
       <font/>
     </widgets>
   </widgets>
@@ -229,6 +229,7 @@
   <widgets xsi:type="model:Button" id="868" x="890" y="1034" width="78" height="28" text="파일첨부" measuredWidth="78" measuredHeight="28">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Hotspot" id="869" x="10" y="392" width="223" height="14" measuredWidth="223" measuredHeight="14" link="Community-솔루션사업팀-고객사관리.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

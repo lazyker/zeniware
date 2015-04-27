@@ -53,7 +53,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="480" x="320" y="639" measuredWidth="16" measuredHeight="16" icon="add (small)" link="Community-글쓰기-클래식-파일첨부.screen"/>
-  <widgets xsi:type="model:Button" id="481" x="348" y="638" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc" link="">
+  <widgets xsi:type="model:Button" id="481" x="348" y="638" width="71" height="17" text="첨부하기" measuredWidth="71" measuredHeight="17" background="#cccccc">
     <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:Button" id="482" x="424" y="638" width="33" height="17" text="삭제" measuredWidth="33" measuredHeight="17" background="#cccccc">
@@ -125,7 +125,7 @@
       <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
       <font/>
     </widgets>
-    <widgets xsi:type="model:TextArea" id="463" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="211">
+    <widgets xsi:type="model:TextArea" id="463" y="26" width="225" height="211" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;* 설문&#xD;&#xA;## 설문조사&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 고객사관리" measuredWidth="225" measuredHeight="211">
       <font/>
     </widgets>
   </widgets>
@@ -146,6 +146,7 @@
   <widgets xsi:type="model:Icon" id="472" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
   <widgets xsi:type="model:Hotspot" id="473" x="8" y="626" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <widgets xsi:type="model:Hotspot" id="474" x="10" y="330" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../공지사항/설문/Community-공지사항-설문.screen"/>
+  <widgets xsi:type="model:Hotspot" id="490" x="10" y="392" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../솔루션사업팀/Community-솔루션사업팀-고객사관리.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
