@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
+  <widgets xsi:type="model:Browser" id="158" width="1024" height="720" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="720">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="195" x="18" y="65" width="63" height="28" text="회사로고" locked="true" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="196" x="232" y="66" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" locked="true" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="197" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="198" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="199" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="200" x="984" y="68" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="201" x="803" y="67" text="관리자" locked="true" measuredWidth="56" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Label" id="225" x="248" y="122" width="165" text="설문" measuredWidth="165" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="226" x="400" y="134" width="529" text="Search" locked="true" measuredWidth="529" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="229" x="779" y="105" text="Home,커뮤티니,공지사항,설문" measuredWidth="220" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="34" height="23" text="Home"/>
+    <items x="54" y="0" width="49" height="23" text="커뮤티니"/>
+    <items x="123" y="0" width="49" height="23" text="공지사항"/>
+    <items x="192" y="0" width="25" height="23" text="설문"/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="245" x="248" y="248" height="517" locked="true" measuredWidth="751" measuredHeight="440">
+    <widgets xsi:type="model:Panel" id="230" y="24" width="751" height="405" measuredWidth="751" measuredHeight="405"/>
+    <widgets xsi:type="model:Panel" id="240" y="404" width="751" height="36" measuredWidth="751" measuredHeight="36"/>
+    <widgets xsi:type="model:Button" id="231" x="10" y="410" height="23" text="&lt;&lt;" measuredWidth="36" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="232" x="56" y="410" height="23" text="&lt;" measuredWidth="28" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="233" x="249" y="410" height="23" text=">" measuredWidth="28" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="234" x="288" y="410" height="23" text=">>" measuredWidth="36" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="236" x="95" y="410" height="23" text="1" measuredWidth="27" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="237" x="133" y="410" height="23" text="2" measuredWidth="27" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="238" x="172" y="410" height="23" text="3" measuredWidth="27" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="239" x="210" y="410" height="23" text="4" measuredWidth="27" measuredHeight="23" style="round">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Table" id="244" width="751" height="405" text="글번호,상태,제목,작성자,작성일,조회수,첨부여부&#xD;&#xA;100,참여완료,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;99,참여완료,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;86,참여완료,{volume}2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;98,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;97,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;96,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;95,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;94,미참여,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;93,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;92,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;91,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;90,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;89,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;88,미참여,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;87,참여완료,2015년 5월 16일 가정의 달 기념 전문직 사원 시행 공지 (필독) ,관리자,2015-04-20,120,{attachment}&#xD;&#xA;" measuredWidth="751" measuredHeight="405" alternative="#eeeeee">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Label" id="248" y="695" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="223" x="8" y="99" width="225" height="36" measuredWidth="225" measuredHeight="36"/>
+  <widgets xsi:type="model:Label" id="224" x="10" y="99" width="223" text="커뮤니티" measuredWidth="223" measuredHeight="36" textAlignment="Center">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="279" x="10" y="99" width="223" text="커뮤니티" locked="true" measuredWidth="223" measuredHeight="36" textAlignment="Center">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="321" x="248" y="162" width="751" height="75" measuredWidth="751" measuredHeight="75"/>
+  <widgets xsi:type="model:WidgetGroup" id="294" x="8" y="134" locked="true" measuredWidth="225" measuredHeight="46" link="../../글쓰기/Community-글쓰기-클래식.screen">
+    <widgets xsi:type="model:TextArea" id="292" width="225" height="46" measuredWidth="225" measuredHeight="46">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="293" x="10" y="7" width="205" height="32" text="글 쓰기" locked="true" measuredWidth="205" measuredHeight="32" link="글쓰기.screen">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Text" id="305" x="276" y="209" text="기간" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="306" x="412" y="205" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="307" x="548" y="210" text="~" measuredWidth="9" measuredHeight="13">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="308" x="564" y="205" width="129" text="  /  /  " measuredWidth="129" measuredHeight="23"/>
+  <widgets xsi:type="model:Button" id="320" x="940" y="133" text="상세△" locked="true" measuredWidth="56" measuredHeight="25" link="Community-공지사항-경조사.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="322" x="940" y="172" height="55" text="검색" measuredWidth="44" measuredHeight="55">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="330" x="412" y="172" width="509" text="Text field" measuredWidth="509" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="328" x="313" y="172" text="제목+본문&#xD;&#xA;제목&#xD;&#xA;본문&#xD;&#xA;작성자" measuredWidth="83" measuredHeight="86">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="332" x="313" y="205" width="83" text="전체&#xD;&#xA;1주일&#xD;&#xA;1개월&#xD;&#xA;3개월&#xD;&#xA;6개월&#xD;&#xA;1년&#xD;&#xA;직접입력" measuredWidth="83" measuredHeight="149">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="333" x="276" y="176" text="내용" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="350" x="8" y="180" locked="true" measuredWidth="225" measuredHeight="204">
+    <widgets xsi:type="model:Accordion" id="351" width="225" height="27" text="소속 게시판" measuredWidth="225" measuredHeight="27">
+      <items x="0" y="2" width="225" height="25" text="소속 게시판"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="352" y="26" width="225" height="178" text="*제니엘*&#xD;&#xA;* 공지사항&#xD;&#xA;## 공지&#xD;&#xA;## 경조사&#xD;&#xA;&#xD;&#xA;* 제안&#xD;&#xA;## 제안&#xD;&#xA;## 제안랭킹&#xD;&#xA;&#xD;&#xA;*솔루션사업팀*&#xD;&#xA;* 업무&#xD;&#xA;* 프로젝트" measuredWidth="225" measuredHeight="178">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="353" x="10" y="240" width="223" height="18" locked="true" measuredWidth="223" measuredHeight="18" link="../공지/Community-공지사항-공지.screen"/>
+  <widgets xsi:type="model:Hotspot" id="354" x="10" y="257" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="Community-공지사항-경조사.screen"/>
+  <widgets xsi:type="model:Hotspot" id="355" x="10" y="288" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안/Community-제안-제안.screen"/>
+  <widgets xsi:type="model:Hotspot" id="356" x="8" y="301" width="223" height="14" locked="true" measuredWidth="223" measuredHeight="14" link="../../제안/제안랭킹/Community-제안-제안랭킹-부서.screen"/>
+  <widgets xsi:type="model:WidgetGroup" id="357" x="8" y="382" locked="true" measuredWidth="225" measuredHeight="228">
+    <widgets xsi:type="model:Accordion" id="358" width="225" height="42" text="커뮤니티" measuredWidth="225" measuredHeight="42">
+      <items x="0" y="2" width="225" height="25" text="커뮤니티"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextArea" id="359" y="25" width="225" text="*커뮤니티 전체보기*&#xD;&#xA;* 커뮤니티 목록&#xD;&#xA;&#xD;&#xA;*가입대기 커뮤니티*&#xD;&#xA;* 축구동호회&#xD;&#xA;&#xD;&#xA;*가입 커뮤니티*&#xD;&#xA;* 레져동호회&#xD;&#xA;## 회칙&#xD;&#xA;* 사진동호회&#xD;&#xA;## 공지사항&#xD;&#xA;* 문화 동호회&#xD;&#xA;## 이번 주 활동" measuredWidth="225" measuredHeight="203">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="360" x="212" y="209" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-부서%20게시판%20관리.screen"/>
+  <widgets xsi:type="model:Icon" id="361" x="212" y="225" measuredWidth="16" measuredHeight="16" icon="options (small)" link="../../게시판%20관리/Community-게시판%20관리-게시판%20관리.screen"/>
+  <widgets xsi:type="model:Hotspot" id="362" x="8" y="593" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
+  <widgets xsi:type="model:Callout" id="363" x="10" y="10" text="1" measuredWidth="25" measuredHeight="25">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Checkbox" id="364" x="706" y="205" text="참여완료" measuredWidth="69" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Checkbox" id="365" x="790" y="205" text="미참여" measuredWidth="57" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Checkbox" id="367" x="858" y="205" text="나의 설문" measuredWidth="73" measuredHeight="23">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
