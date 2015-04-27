@@ -182,7 +182,7 @@
   <widgets xsi:type="model:RadioButton" id="575" x="523" y="284" text="사용안함" measuredWidth="64" measuredHeight="21" selected="true">
     <font size="11px"/>
   </widgets>
-  <widgets xsi:type="model:Group" id="576" x="347" y="338" width="630" height="146" text="부서 지정" measuredWidth="630" measuredHeight="146">
+  <widgets xsi:type="model:Group" id="576" x="347" y="337" width="630" height="146" text="부서 지정" measuredWidth="630" measuredHeight="146">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="577" x="362" y="355" text="공유부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
