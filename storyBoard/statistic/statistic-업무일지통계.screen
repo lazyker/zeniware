@@ -68,7 +68,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Hotspot" id="461" x="10" y="137" width="223" height="18" measuredWidth="223" measuredHeight="18"/>
-  <widgets xsi:type="model:Hotspot" id="462" x="10" y="165" width="223" height="18" measuredWidth="223" measuredHeight="18" link=""/>
+  <widgets xsi:type="model:Hotspot" id="462" x="10" y="166" width="223" height="18" measuredWidth="223" measuredHeight="18" link=""/>
   <widgets xsi:type="model:Icon" id="463" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
   <hRuler/>
   <vRuler/>
