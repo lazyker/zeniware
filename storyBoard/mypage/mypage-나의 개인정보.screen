@@ -130,7 +130,7 @@
   <widgets xsi:type="model:Label" id="398" x="432" y="610" text="자택전화" measuredWidth="54" measuredHeight="23">
     <font bold="true"/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="399" x="536" y="610" width="393" text="Text field" measuredWidth="393" measuredHeight="23">
+  <widgets xsi:type="model:TextField" id="399" x="536" y="610" width="447" text="Text field" measuredWidth="447" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="400" x="544" y="656" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc" link="mypage-main.screen">
@@ -139,26 +139,17 @@
   <widgets xsi:type="model:Button" id="401" x="592" y="656" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="mypage-main.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Checkbox" id="402" x="936" y="546" text="공개" measuredWidth="45" measuredHeight="23">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Checkbox" id="403" x="936" y="578" text="공개" measuredWidth="45" measuredHeight="23">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Checkbox" id="404" x="936" y="610" text="공개" measuredWidth="45" measuredHeight="23">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:DateField" id="405" x="536" y="546" width="257" text="  /  /  " measuredWidth="257" measuredHeight="23"/>
+  <widgets xsi:type="model:DateField" id="405" x="536" y="546" width="327" text="  /  /  " measuredWidth="327" measuredHeight="23"/>
   <widgets xsi:type="model:Button" id="406" x="621" y="577" text="우편번호" measuredWidth="68" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="407" x="704" y="578" width="225" text="Text field" measuredWidth="225" measuredHeight="23">
+  <widgets xsi:type="model:TextField" id="407" x="704" y="578" width="279" text="Text field" measuredWidth="279" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="410" x="815" y="546" text="양력" measuredWidth="44" measuredHeight="23" selected="true">
+  <widgets xsi:type="model:RadioButton" id="410" x="881" y="546" text="양력" measuredWidth="44" measuredHeight="23" selected="true">
     <font/>
   </widgets>
-  <widgets xsi:type="model:RadioButton" id="411" x="870" y="546" text="음력" measuredWidth="44" measuredHeight="23">
+  <widgets xsi:type="model:RadioButton" id="411" x="936" y="546" text="음력" measuredWidth="44" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="412" x="536" y="288" text="4일" measuredWidth="25" measuredHeight="23">

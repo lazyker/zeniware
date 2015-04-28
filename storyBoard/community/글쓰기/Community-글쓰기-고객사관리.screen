@@ -170,9 +170,6 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:DateField" id="614" x="694" y="328" width="234" text="  /  /  " measuredWidth="234" measuredHeight="23"/>
-  <widgets xsi:type="model:Combo" id="615" x="694" y="271" width="234" text="Combo" measuredWidth="234" measuredHeight="23">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Text" id="616" x="262" y="360" text="계약여부" measuredWidth="49" measuredHeight="15">
     <font/>
   </widgets>
@@ -184,6 +181,11 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="622" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../../statistic/statistic-근태통계.screen"/>
+  <widgets xsi:type="model:WidgetGroup" id="623" x="694" y="271" measuredWidth="234" measuredHeight="23">
+    <widgets xsi:type="model:TextField" id="624" width="234" measuredWidth="234" measuredHeight="23">
+      <font/>
+    </widgets>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
