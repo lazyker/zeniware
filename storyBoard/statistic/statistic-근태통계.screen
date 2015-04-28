@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
-  <widgets xsi:type="model:Browser" id="158" width="1024" height="673" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="673">
+  <widgets xsi:type="model:Browser" id="158" width="1024" height="1591" text="Browser&#xA;http://..." measuredWidth="1024" measuredHeight="1591">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
@@ -26,7 +26,7 @@
     <items x="54" y="0" width="25" height="23" text="통계"/>
     <items x="99" y="0" width="49" height="23" text="근태통계"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="248" y="650" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="248" y="1568" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:TextArea" id="297" x="8" y="134" width="225" height="363" text="*근태 통계*&#xD;&#xA;&#xD;&#xA;*업무일지 통계*" measuredWidth="225" measuredHeight="363">
@@ -67,9 +67,150 @@
   <widgets xsi:type="model:TextField" id="460" x="577" y="231" text="근무일 : 22일" measuredWidth="84" measuredHeight="23" borderColor="#ffffff">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="461" x="10" y="136" width="223" height="18" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="461" x="10" y="136" width="223" height="18" measuredWidth="223" measuredHeight="18" link=""/>
   <widgets xsi:type="model:Hotspot" id="462" x="10" y="165" width="223" height="18" measuredWidth="223" measuredHeight="18" link="statistic-업무일지통계.screen"/>
-  <widgets xsi:type="model:Icon" id="463" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link=""/>
+  <widgets xsi:type="model:Icon" id="463" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Chart" id="560" x="256" y="680" width="315" height="153" measuredWidth="315" measuredHeight="153" chartType="column"/>
+  <widgets xsi:type="model:TextField" id="561" x="256" y="848" text="평균출근시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="562" x="504" y="848" text="평균퇴근시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="563" x="368" y="848" text="평균근무시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="564" x="312" y="712" text=" 100%" measuredWidth="41" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="565" x="400" y="680" text=" 100%" measuredWidth="41" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="566" x="520" y="664" text=" 100%" measuredWidth="41" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="567" x="570" y="728" text=" 100%" measuredWidth="41" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="568" x="256" y="642" text="이번달 통계" measuredWidth="70" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Chart" id="569" x="643" y="680" width="315" height="153" measuredWidth="315" measuredHeight="153" chartType="column"/>
+  <widgets xsi:type="model:TextField" id="570" x="643" y="848" text="평균출근시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="571" x="891" y="848" text="평균퇴근시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="572" x="755" y="848" text="평균근무시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="573" x="699" y="712" text="80%" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="574" x="787" y="680" text="80%" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="575" x="907" y="664" text="80%" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="576" x="957" y="728" text="80%" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="577" x="643" y="642" text="3월달 통계" measuredWidth="65" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="578" x="256" y="976" width="729" height="281" text="부서,이름,,13/5,13/6,13/7,13/8,13/9,13/10,13/11,13/12,14/1,14/2,14/3,14/4&#xD;&#xA;솔루션사업팀,김태경차장,평균출근시간:,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30&#xD;&#xA;,,평균퇴근시간,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,,평균근무시간,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00&#xD;&#xA;솔루션사업팀,이민수과장,평균출근시간:,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30&#xD;&#xA;,,평균퇴근시간,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,,평균근무시간,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00&#xD;&#xA;솔루션사업팀,정종석대리,평균출근시간:,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30&#xD;&#xA;,,평균퇴근시간,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,,평균근무시간,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00&#xD;&#xA;솔루션사업팀,김재환주임,평균출근시간:,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30,8:30&#xD;&#xA;,,평균퇴근시간,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,,평균근무시간,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00" measuredWidth="729" measuredHeight="281" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="579" x="832" y="912" text="엑셀출력" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Checkbox" id="580" x="791" y="944" text="하위 부서 포함" measuredWidth="101" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="581" x="912" y="943" width="68" text="조회" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="582" x="912" y="912" width="68" text="프린트" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="583" x="712" y="943" text="부서검색" measuredWidth="68" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="584" x="576" y="944" width="123" text="솔루션사업팀" measuredWidth="123" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="585" x="256" y="944" width="128" text="  /  /  " measuredWidth="128" measuredHeight="23"/>
+  <widgets xsi:type="model:DateField" id="586" x="424" y="944" width="128" text="  /  /  " measuredWidth="128" measuredHeight="23"/>
+  <widgets xsi:type="model:Text" id="587" x="400" y="949" text="~" measuredWidth="9" measuredHeight="13">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Chart" id="588" x="256" y="1336" width="315" height="153" measuredWidth="315" measuredHeight="153" chartType="line"/>
+  <widgets xsi:type="model:TextField" id="589" x="272" y="1504" text="13/5" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="590" x="312" y="1368" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="591" x="400" y="1336" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="592" x="520" y="1320" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="593" x="570" y="1384" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="594" x="256" y="1298" text="13/5~14/4" measuredWidth="67" measuredHeight="23">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="595" x="368" y="1504" text="13/5" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="596" x="325" y="1504" text="13/5" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="597" x="412" y="1504" text="13/5" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="598" x="508" y="1504" text="14/4" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="599" x="465" y="1504" text="14/3" measuredWidth="37" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Chart" id="600" x="643" y="1336" width="315" height="153" measuredWidth="315" measuredHeight="153" chartType="column"/>
+  <widgets xsi:type="model:TextField" id="601" x="643" y="1504" text="평균 출근시간 " measuredWidth="91" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="602" x="891" y="1504" text="평균 근무시간" measuredWidth="87" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="603" x="755" y="1504" text="평균 퇴근시간" measuredWidth="87" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="604" x="699" y="1368" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="605" x="787" y="1336" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="606" x="907" y="1320" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="607" x="957" y="1384" text="8:30" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="608" x="551" y="1336" text="평균출근시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="609" x="551" y="1401" text="평균퇴근시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="610" x="556" y="1448" text="평균근무시간" measuredWidth="83" measuredHeight="23">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
