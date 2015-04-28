@@ -140,6 +140,9 @@
   <widgets xsi:type="model:Hotspot" id="431" x="8" y="626" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../이번%20주%20활동/Community-커뮤니티-문화동호회-이번%20주%20활동.screen"/>
   <widgets xsi:type="model:Hotspot" id="432" x="10" y="330" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../공지사항/설문/Community-공지사항-설문.screen"/>
   <widgets xsi:type="model:Hotspot" id="433" x="10" y="392" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../솔루션사업팀/Community-솔루션사업팀-고객사관리.screen"/>
+  <widgets xsi:type="model:Label" id="434" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="../../../mypage/mypage-main.screen">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

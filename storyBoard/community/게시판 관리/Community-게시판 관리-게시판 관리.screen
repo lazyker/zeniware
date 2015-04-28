@@ -219,6 +219,9 @@
   <widgets xsi:type="model:RadioButton" id="543" x="608" y="294" text="고객사관리" measuredWidth="80" measuredHeight="23">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Label" id="544" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="../../mypage/mypage-main.screen">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

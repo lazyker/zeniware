@@ -12,7 +12,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Image" id="197" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
-  <widgets xsi:type="model:Label" id="198" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="mypage-main.screen">
+  <widgets xsi:type="model:Label" id="198" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="199" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
@@ -133,10 +133,10 @@
   <widgets xsi:type="model:TextField" id="399" x="536" y="610" width="393" text="Text field" measuredWidth="393" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="400" x="544" y="656" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc" link="mypage-main.screen">
+  <widgets xsi:type="model:Button" id="400" x="544" y="656" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc" link="statistic-근태통계.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="401" x="592" y="656" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="mypage-main.screen">
+  <widgets xsi:type="model:Button" id="401" x="592" y="656" text="취소" measuredWidth="44" measuredHeight="25" background="#999999" link="statistic-근태통계.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Checkbox" id="402" x="936" y="546" text="공개" measuredWidth="45" measuredHeight="23">

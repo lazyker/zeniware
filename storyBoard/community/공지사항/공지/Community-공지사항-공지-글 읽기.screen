@@ -189,6 +189,9 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Hotspot" id="540" x="8" y="389" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../../솔루션사업팀/Community-솔루션사업팀-고객사관리.screen"/>
+  <widgets xsi:type="model:Label" id="541" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="../../../mypage/mypage-main.screen">
+    <font/>
+  </widgets>
   <hRuler>
     <guides position="1063"/>
   </hRuler>
