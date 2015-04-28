@@ -110,6 +110,7 @@
   <widgets xsi:type="model:Label" id="471" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="../../mypage/mypage-main.screen">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Icon" id="472" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../../statistic/statistic-근태통계.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

@@ -20,11 +20,11 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
-  <widgets xsi:type="model:Breadcrumbs" id="229" x="832" y="105" text="Home,통계,근태통계" measuredWidth="151" measuredHeight="23">
+  <widgets xsi:type="model:Breadcrumbs" id="229" x="832" y="105" text="Home,통계,업무일지통계" measuredWidth="175" measuredHeight="23">
     <font/>
     <items x="0" y="0" width="34" height="23" text="Home"/>
     <items x="54" y="0" width="25" height="23" text="통계"/>
-    <items x="99" y="0" width="49" height="23" text="근태통계"/>
+    <items x="99" y="0" width="73" height="23" text="업무일지통계"/>
   </widgets>
   <widgets xsi:type="model:Label" id="248" y="650" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
     <font/>
@@ -36,10 +36,10 @@
   <widgets xsi:type="model:Label" id="312" x="10" y="99" width="223" text="통계" measuredWidth="223" measuredHeight="36" textAlignment="Center">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="413" x="248" y="122" width="165" text="근태통계" measuredWidth="165" measuredHeight="36">
+  <widgets xsi:type="model:Label" id="413" x="248" y="122" width="165" text="업무일지통계4" measuredWidth="165" measuredHeight="36">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:Table" id="447" x="256" y="328" width="729" height="281" text="부서,이름,,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30&#xD;&#xA;솔루션사업팀,김태경차장,평균출근시간:08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30&#xD;&#xA;,지각회수:0,평균퇴근시간:18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,&#xD;&#xA;,결근회수:0,평균근무시간:10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00&#xD;&#xA;솔루션사업팀,이민수과장,평균출근시간:08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30&#xD;&#xA;,지각회수:0,평균퇴근시간:18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,결근회수:0,평균근무시간:10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00&#xD;&#xA;솔루션사업팀,정종석대리,평균출근시간:08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30&#xD;&#xA;,지각회수:0,평균퇴근시간:18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,결근회수:0,평균근무시간:10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00&#xD;&#xA;솔루션사업팀,김재환주임,평균출근시간:08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30,08:30&#xD;&#xA;,지각회수:0,평균퇴근시간:18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30,18:30&#xD;&#xA;,결근회수:0,평균근무시간:10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00,10:00" measuredWidth="729" measuredHeight="281" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="447" x="256" y="328" width="729" height="281" text="부서,이름,,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30&#xD;&#xA;솔루션사업팀,김태경차장,업무계획률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,업무일지작성률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,상급자 확인율:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;솔루션사업팀,이민수과장,업무계획률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,업무일지작성률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,상급자 확인율:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;솔루션사업팀,정종석대리,업무계획률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,업무일지작성률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,상급자 확인율:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;솔루션사업팀,김재환주임,업무계획률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,업무일지작성률:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;,,상급자 확인율:100%,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O&#xD;&#xA;" measuredWidth="729" measuredHeight="281" alternative="#eeeeee">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="448" x="832" y="264" text="엑셀출력" measuredWidth="68" measuredHeight="25">
@@ -67,9 +67,9 @@
   <widgets xsi:type="model:TextField" id="460" x="577" y="231" text="근무일 : 22일" measuredWidth="84" measuredHeight="23" borderColor="#ffffff">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Hotspot" id="461" x="10" y="136" width="223" height="18" measuredWidth="223" measuredHeight="18"/>
-  <widgets xsi:type="model:Hotspot" id="462" x="10" y="165" width="223" height="18" measuredWidth="223" measuredHeight="18" link="statistic-업무일지통계.screen"/>
-  <widgets xsi:type="model:Icon" id="463" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link=""/>
+  <widgets xsi:type="model:Hotspot" id="461" x="10" y="137" width="223" height="18" measuredWidth="223" measuredHeight="18"/>
+  <widgets xsi:type="model:Hotspot" id="462" x="10" y="165" width="223" height="18" measuredWidth="223" measuredHeight="18" link=""/>
+  <widgets xsi:type="model:Icon" id="463" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

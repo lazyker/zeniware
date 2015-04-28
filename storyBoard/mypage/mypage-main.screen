@@ -19,7 +19,7 @@
   <widgets xsi:type="model:Button" id="201" x="803" y="67" text="관리자" locked="true" measuredWidth="56" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:Icon" id="214" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../statistic/statistic-근태통계.screen"/>
   <widgets xsi:type="model:Breadcrumbs" id="229" x="881" y="105" text="Home,마이페이지" measuredWidth="118" measuredHeight="23">
     <font/>
     <items x="0" y="0" width="34" height="23" text="Home"/>
