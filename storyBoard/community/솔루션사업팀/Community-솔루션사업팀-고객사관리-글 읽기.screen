@@ -230,6 +230,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Hotspot" id="869" x="10" y="392" width="223" height="14" measuredWidth="223" measuredHeight="14" link="Community-솔루션사업팀-고객사관리.screen"/>
+  <widgets xsi:type="model:Icon" id="870" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../../statistic/statistic-근태통계.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

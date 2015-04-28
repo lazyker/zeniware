@@ -173,6 +173,7 @@
   <widgets xsi:type="model:Label" id="415" x="432" y="320" text="권한" measuredWidth="30" measuredHeight="23">
     <font bold="true"/>
   </widgets>
+  <widgets xsi:type="model:Icon" id="416" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../statistic/statistic-근태통계.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
