@@ -77,16 +77,28 @@
       <font size="12px"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="336" x="256" y="144" measuredWidth="357" measuredHeight="54">
+  <widgets xsi:type="model:WidgetGroup" id="336" x="256" y="144" measuredWidth="730" measuredHeight="54">
     <widgets xsi:type="model:Label" id="249" x="72" text="김재환 / 주임" measuredWidth="79" measuredHeight="23">
       <font/>
     </widgets>
     <widgets xsi:type="model:Icon" id="250" width="56" height="54" measuredWidth="56" measuredHeight="54" icon="smile (large)"/>
-    <widgets xsi:type="model:Label" id="313" x="72" y="22" text="제니엘 / 그룹전략부문 / 정보기획실 / 솔루션사업팀" measuredWidth="285" measuredHeight="23">
+    <widgets xsi:type="model:Label" id="313" x="72" y="31" text="제니엘 / 그룹전략부문 / 정보기획실 / 솔루션사업팀" measuredWidth="285" measuredHeight="23">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Label" id="335" x="299" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
+    <widgets xsi:type="model:Label" id="335" x="672" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)" link="mypage-나의%20개인정보.screen">
       <font size="12px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="365" x="384" text="연차일수" measuredWidth="54" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="366" x="450" text="4일" measuredWidth="25" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="367" x="384" y="31" text="권한" measuredWidth="30" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="368" x="450" y="31" text="솔루션사업팀 게시판 관리자" measuredWidth="158" measuredHeight="23">
+      <font/>
     </widgets>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="337" x="638" y="218" measuredWidth="347" measuredHeight="191">
