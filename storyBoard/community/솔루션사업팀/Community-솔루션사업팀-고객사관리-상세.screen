@@ -143,6 +143,9 @@
     <items x="216" y="0" width="61" height="23" text="고객사관리"/>
   </widgets>
   <widgets xsi:type="model:Hotspot" id="443" x="10" y="392" width="223" height="14" measuredWidth="223" measuredHeight="14" link="Community-솔루션사업팀-고객사관리.screen"/>
+  <widgets xsi:type="model:Label" id="444" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="../../mypage/mypage-main.screen">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

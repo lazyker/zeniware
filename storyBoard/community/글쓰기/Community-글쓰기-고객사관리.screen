@@ -38,7 +38,7 @@
     <items link="Community-글쓰기-피드.screen" x="67" y="0" width="45" height="27" text="피드"/>
     <items link="Community-글쓰기-제안.screen" x="112" y="0" width="45" height="27" text="제안"/>
     <items link="Community-글쓰기-설문.screen" x="157" y="0" width="45" height="27" text="설문"/>
-    <items link="" x="202" y="0" width="81" height="27" text="고객사관리"/>
+    <items x="202" y="0" width="81" height="27" text="고객사관리"/>
     <font size="12px"/>
   </widgets>
   <widgets xsi:type="model:Text" id="398" x="262" y="210" text="고객사명" measuredWidth="49" measuredHeight="15">
@@ -180,6 +180,9 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Hotspot" id="620" x="10" y="391" width="223" height="14" measuredWidth="223" measuredHeight="14" link="../솔루션사업팀/Community-솔루션사업팀-고객사관리.screen"/>
+  <widgets xsi:type="model:Label" id="621" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="../../mypage/mypage-main.screen">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

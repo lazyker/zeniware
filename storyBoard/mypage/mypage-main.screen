@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" theme="clean">
-  <widgets xsi:type="model:Browser" id="158" width="1024" height="913" text="Browser&#xA;http://..." measuredWidth="1024" measuredHeight="913">
+  <widgets xsi:type="model:Browser" id="158" width="1024" height="1025" text="Browser&#xA;http://..." measuredWidth="1024" measuredHeight="1025">
     <font/>
   </widgets>
   <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
@@ -11,7 +11,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Image" id="197" x="862" y="64" width="30" height="30" locked="true" measuredWidth="30" measuredHeight="30"/>
-  <widgets xsi:type="model:Label" id="198" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="198" x="899" y="68" text="홍길동" locked="true" measuredWidth="42" measuredHeight="23" link="">
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="199" x="961" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
@@ -25,7 +25,7 @@
     <items x="0" y="0" width="34" height="23" text="Home"/>
     <items x="54" y="0" width="61" height="23" text="마이페이지"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="248" y="890" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="248" y="1002" width="1024" text="    Copyright ©1996-2015 Zeniel, Inc. All rights reserved. Patented                                                                                                                                                       ? Help " measuredWidth="1024" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:TextArea" id="297" x="8" y="134" width="225" height="363" text="*나의 개인정보*&#xD;&#xA;&#xD;&#xA;*나의 일정*&#xD;&#xA;&#xD;&#xA;*나의 전자결재*&#xD;&#xA;&#xD;&#xA;*나의 업무*&#xD;&#xA;&#xD;&#xA;*나의 커뮤니티*&#xD;&#xA;* 게시물&#xD;&#xA;* 댓글&#xD;&#xA;&#xD;&#xA;*나의 자원*&#xD;&#xA;&#xD;&#xA;*나의 문서*&#xD;&#xA;&#xD;&#xA;*나의 주소록*&#xD;&#xA;&#xD;&#xA;*나의 근태*&#xD;&#xA;&#xD;&#xA;" measuredWidth="225" measuredHeight="363">
@@ -35,7 +35,7 @@
   <widgets xsi:type="model:Label" id="312" x="10" y="99" width="223" text="마이페이지" measuredWidth="223" measuredHeight="36" textAlignment="Center">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="320" x="266" y="426" measuredWidth="733" measuredHeight="263">
+  <widgets xsi:type="model:WidgetGroup" id="320" x="264" y="448" measuredWidth="733" measuredHeight="263">
     <widgets xsi:type="model:TabbedPane" id="315" y="22" width="733" height="241" text="클래식,피드,제안,설문,고객사관리" measuredWidth="733" measuredHeight="241" selection="0">
       <items x="10" y="0" width="57" height="27" text="클래식"/>
       <items x="67" y="0" width="45" height="27" text="피드"/>
@@ -66,8 +66,8 @@
       <font size="12px"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="333" x="266" y="218" measuredWidth="347" measuredHeight="191">
-    <widgets xsi:type="model:Table" id="324" y="22" width="347" height="169" text="일자,출근시간,구분,퇴근시간,구분&#xD;&#xA;2015-04-27(월),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-26(일),--,--&#xD;&#xA;2015-04-25(토),--,--&#xD;&#xA;2015-04-24(금),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-23(목),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-22(수),07:30,정시출근,17:30,정시퇴근&#xD;&#xA;2015-04-21(화),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
+  <widgets xsi:type="model:WidgetGroup" id="333" x="264" y="240" measuredWidth="347" measuredHeight="191">
+    <widgets xsi:type="model:Table" id="324" y="78" width="347" height="113" text="일자,출근시간,구분,퇴근시간,구분&#xD;&#xA;2015-04-27(월),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-26(일),--,--&#xD;&#xA;2015-04-25(토),--,--&#xD;&#xA;2015-04-24(금),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-23(목),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-22(수),07:30,정시출근,17:30,정시퇴근&#xD;&#xA;2015-04-21(화),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;" measuredWidth="347" measuredHeight="113" alternative="#eeeeee">
       <font bold="false"/>
     </widgets>
     <widgets xsi:type="model:Label" id="325" text="나의 근태현황" measuredWidth="98" measuredHeight="23" icon="calendar2 (small)">
@@ -76,8 +76,11 @@
     <widgets xsi:type="model:Label" id="327" x="289" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)">
       <font size="12px"/>
     </widgets>
+    <widgets xsi:type="model:Table" id="369" y="22" width="347" height="49" text="기준일,출근일,지각,결근,휴가&#xD;&#xA;22,20,3,0,0&#xD;&#xA;" measuredWidth="347" measuredHeight="49" alternative="#eeeeee">
+      <font/>
+    </widgets>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="336" x="256" y="144" measuredWidth="730" measuredHeight="54">
+  <widgets xsi:type="model:WidgetGroup" id="336" x="264" y="166" measuredWidth="720" measuredHeight="54">
     <widgets xsi:type="model:Label" id="249" x="72" text="김재환 / 주임" measuredWidth="79" measuredHeight="23">
       <font/>
     </widgets>
@@ -85,23 +88,23 @@
     <widgets xsi:type="model:Label" id="313" x="72" y="31" text="제니엘 / 그룹전략부문 / 정보기획실 / 솔루션사업팀" measuredWidth="285" measuredHeight="23">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Label" id="335" x="672" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)" link="mypage-나의%20개인정보.screen">
+    <widgets xsi:type="model:Label" id="335" x="662" text="더보기" measuredWidth="58" measuredHeight="23" icon="add (small)" link="mypage-나의%20개인정보.screen">
       <font size="12px"/>
     </widgets>
-    <widgets xsi:type="model:Label" id="365" x="384" text="연차일수" measuredWidth="54" measuredHeight="23">
+    <widgets xsi:type="model:Label" id="365" x="374" text="연차일수" measuredWidth="54" measuredHeight="23">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Label" id="366" x="450" text="4일" measuredWidth="25" measuredHeight="23">
+    <widgets xsi:type="model:Label" id="366" x="440" text="4일" measuredWidth="25" measuredHeight="23">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Label" id="367" x="384" y="31" text="권한" measuredWidth="30" measuredHeight="23">
+    <widgets xsi:type="model:Label" id="367" x="374" y="31" text="권한" measuredWidth="30" measuredHeight="23">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Label" id="368" x="450" y="31" text="솔루션사업팀 게시판 관리자" measuredWidth="158" measuredHeight="23">
+    <widgets xsi:type="model:Label" id="368" x="440" y="31" text="솔루션사업팀 게시판 관리자" measuredWidth="158" measuredHeight="23">
       <font/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="337" x="638" y="218" measuredWidth="347" measuredHeight="191">
+  <widgets xsi:type="model:WidgetGroup" id="337" x="636" y="240" measuredWidth="347" measuredHeight="191">
     <widgets xsi:type="model:Table" id="338" y="22" width="347" height="169" text="일자,결제문서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
       <font bold="false"/>
     </widgets>
@@ -112,7 +115,7 @@
       <font size="12px"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="349" x="266" y="700" measuredWidth="347" measuredHeight="191">
+  <widgets xsi:type="model:WidgetGroup" id="349" x="264" y="722" measuredWidth="347" measuredHeight="191">
     <widgets xsi:type="model:Table" id="350" y="22" width="347" height="169" text="일자,출근시간,구분,퇴근시간,구분&#xD;&#xA;2015-04-27(월),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-26(일),--,--&#xD;&#xA;2015-04-25(토),--,--&#xD;&#xA;2015-04-24(금),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-23(목),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;2015-04-22(수),07:30,정시출근,17:30,정시퇴근&#xD;&#xA;2015-04-21(화),08:30,정시출근,18:30,정시퇴근&#xD;&#xA;" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
       <font bold="false"/>
     </widgets>
@@ -123,7 +126,7 @@
       <font size="12px"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="353" x="638" y="700" measuredWidth="347" measuredHeight="191">
+  <widgets xsi:type="model:WidgetGroup" id="353" x="636" y="722" measuredWidth="347" measuredHeight="191">
     <widgets xsi:type="model:Table" id="354" y="22" width="347" height="169" text="일자,결제문서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서&#xD;&#xA;2015-04-27,휴가 신청서" measuredWidth="347" measuredHeight="169" alternative="#eeeeee">
       <font bold="false"/>
     </widgets>
@@ -134,6 +137,16 @@
       <font size="12px"/>
     </widgets>
   </widgets>
+  <widgets xsi:type="model:Label" id="371" x="344" y="134" text="France" measuredWidth="57" measuredHeight="23" textAlignment="Center" icon="country-flag1 (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="372" x="304" y="134" text="7" measuredWidth="29" measuredHeight="23" textAlignment="Center" icon="bell (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="373" x="264" y="134" text="15" measuredWidth="36" measuredHeight="23" textAlignment="Center" icon="email (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Hotspot" id="374" x="8" y="137" width="223" height="18" measuredWidth="223" measuredHeight="18" link="mypage-나의%20개인정보.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
