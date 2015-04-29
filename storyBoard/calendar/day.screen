@@ -13,7 +13,7 @@
   </widgets>
   <widgets xsi:type="model:Icon" id="20" x="1000" y="213" width="24" height="24" measuredWidth="24" measuredHeight="24" icon="print (medium)"/>
   <widgets xsi:type="model:Panel" id="22" x="40" y="200" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
-  <widgets xsi:type="model:Image" id="25" x="45" y="248" width="192" height="233" measuredWidth="192" measuredHeight="233" src="../../zeniware/assets/calendar.jpg"/>
+  <widgets xsi:type="model:Image" id="25" x="45" y="248" measuredWidth="231" measuredHeight="303" src="../assets/calendar.jpg"/>
   <widgets xsi:type="model:Icon" id="26" x="192" y="485" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="add (large)"/>
   <widgets xsi:type="model:Icon" id="27" x="214" y="485" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="minus (custom)"/>
   <widgets xsi:type="model:TextField" id="30" x="72" y="512" width="159" text="개인 스케쥴" measuredWidth="159" measuredHeight="23">
