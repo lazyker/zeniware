@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Panel" id="1" x="24" y="69" width="617" height="463" measuredWidth="617" measuredHeight="463"/>
+  <widgets xsi:type="model:HLine" id="2" x="24" y="99" width="617" measuredWidth="617" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="3" x="36" y="76" text="내 정보" measuredWidth="40" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="4" x="44" y="115" width="581" text="2015년 4월 13일 (월) 홍길동 팀명/직급" measuredWidth="581" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="5" x="491" y="125" width="50" text="출근" measuredWidth="50" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="6" x="558" y="125" width="49" text="퇴근" measuredWidth="49" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="7" x="36" y="170" width="589" measuredWidth="589" measuredHeight="6"/>
+  <widgets xsi:type="model:Icon" id="8" x="43" y="197" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="bullet (custom)"/>
+  <widgets xsi:type="model:Label" id="9" x="71" y="198" text="받은 메일함(2)" measuredWidth="74" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="10" x="143" y="228" width="380" text="회장님과의 대화관련 질문사항 및 참석 요청 건" measuredWidth="380" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="11" x="558" y="224" text="2015-04-13" measuredWidth="73" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="12" x="81" y="228" text="김재환" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="13" x="43" y="227" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="email (large)"/>
+  <widgets xsi:type="model:Label" id="14" x="143" y="250" width="380" text="한양 전투 일지" measuredWidth="380" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="15" x="558" y="247" text="2015-04-13" measuredWidth="73" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="81" y="250" text="임꺽정" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="17" x="43" y="249" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="email (large)"/>
+  <widgets xsi:type="model:Label" id="18" x="575" y="197" text="▷ More" measuredWidth="49" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="19" x="43" y="365" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="bullet (custom)"/>
+  <widgets xsi:type="model:Label" id="20" x="71" y="366" text="결재할 문서" measuredWidth="60" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="21" x="81" y="395" width="380" text="물품 구입 지급건" measuredWidth="380" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="22" x="558" y="393" text="2015-04-13" measuredWidth="73" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="23" x="499" y="395" text="김재환" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="24" x="43" y="395" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="paste (custom)"/>
+  <widgets xsi:type="model:Label" id="25" x="83" y="417" width="380" text="여름 휴가" measuredWidth="380" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="26" x="558" y="415" text="2015-04-13" measuredWidth="73" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="27" x="499" y="415" text="임꺽정" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="28" x="43" y="417" width="22" height="24" measuredWidth="22" measuredHeight="24" icon="paste (custom)"/>
+  <widgets xsi:type="model:Label" id="29" x="575" y="365" text="▷ More" measuredWidth="49" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="30" x="24" y="24" width="1001" height="41" measuredWidth="1001" measuredHeight="41"/>
+  <widgets xsi:type="model:Button" id="31" x="34" y="30" width="63" height="28" text="회사로고" measuredWidth="63" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="32" x="248" y="31" width="505" height="28" text="전자우편   일정관리   전자결재   업무관리   커뮤니티   자원관리   문서관리   주소록" measuredWidth="505" measuredHeight="28">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="33" x="878" y="29" width="30" height="30" measuredWidth="30" measuredHeight="30"/>
+  <widgets xsi:type="model:Label" id="34" x="915" y="33" text="홍길동" measuredWidth="36" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="35" x="977" y="32" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="options (large)"/>
+  <widgets xsi:type="model:Icon" id="36" x="1000" y="33" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="shutdown (custom)"/>
+  <widgets xsi:type="model:Button" id="37" x="819" y="32" text="관리자" measuredWidth="50" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="38" x="44" y="137" width="581" text="메일 용량 : 187.7MB / 1000.0MB " measuredWidth="581" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="41" x="952" y="32" width="22" height="22" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)"/>
+  <widgets xsi:type="model:TabbedPane" id="44" x="646" y="69" width="376" height="207" text="공지사항,경조사" measuredWidth="376" measuredHeight="207" selection="0">
+    <items x="10" y="0" width="61" height="27" text="공지사항"/>
+    <items x="71" y="0" width="51" height="27" text="경조사"/>
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="45" x="646" y="283" measuredWidth="376" measuredHeight="178">
+    <widgets xsi:type="model:WidgetGroup" id="46" height="29" measuredWidth="376" measuredHeight="29">
+      <widgets xsi:type="model:Panel" id="47" width="376" height="29" measuredWidth="376" measuredHeight="29"/>
+      <widgets xsi:type="model:WidgetGroup" id="48" x="19" y="2" height="21" measuredWidth="336" measuredHeight="23">
+        <widgets xsi:type="model:Label" id="49" x="80" width="175" text="April 2015" measuredWidth="175" measuredHeight="23" textAlignment="Center">
+          <font bold="true"/>
+        </widgets>
+        <widgets xsi:type="model:Icon" id="50" y="4" width="30" height="14" measuredWidth="30" measuredHeight="14" icon="filled-arrow-left (small)"/>
+        <widgets xsi:type="model:Icon" id="51" x="306" y="4" width="30" height="14" measuredWidth="30" measuredHeight="14" icon="filled-arrow-right (small)"/>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="52" y="26" height="152" measuredWidth="376" measuredHeight="152">
+      <widgets xsi:type="model:Panel" id="53" width="376" height="152" measuredWidth="376" measuredHeight="152"/>
+      <widgets xsi:type="model:WidgetGroup" id="54" x="19" y="4" height="139" measuredWidth="336" measuredHeight="140">
+        <widgets xsi:type="model:WidgetGroup" id="55" height="21" measuredWidth="336" measuredHeight="23">
+          <widgets xsi:type="model:Label" id="56" width="48" text="S" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="57" x="48" width="48" text="M" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="58" x="96" width="48" text="T" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="59" x="144" width="48" text="W" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="60" x="192" width="48" text="T" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="61" x="240" width="48" text="F" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="62" x="288" width="48" text="S" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font bold="true"/>
+          </widgets>
+        </widgets>
+        <widgets xsi:type="model:WidgetGroup" id="63" x="96" y="23" height="21" measuredWidth="240" measuredHeight="23">
+          <widgets xsi:type="model:Label" id="64" width="48" text="1" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="65" x="48" width="48" text="2" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="66" x="96" width="48" text="3" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="67" x="144" width="48" text="4" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="68" x="192" width="48" text="5" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+        </widgets>
+        <widgets xsi:type="model:WidgetGroup" id="69" y="46" height="21" measuredWidth="336" measuredHeight="23">
+          <widgets xsi:type="model:Label" id="70" width="48" text="6" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="71" x="48" width="48" text="7" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="72" x="96" width="48" text="8" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="73" x="144" width="48" text="9" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="74" x="192" width="48" text="10" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="75" x="240" width="48" text="11" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="76" x="288" width="48" text="12" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+        </widgets>
+        <widgets xsi:type="model:WidgetGroup" id="77" y="70" height="21" measuredWidth="336" measuredHeight="23">
+          <widgets xsi:type="model:Label" id="78" width="48" text="13" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="79" x="48" width="48" text="14" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="80" x="96" width="48" text="15" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="81" x="144" width="48" text="16" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="82" x="192" width="48" text="17" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="83" x="240" width="48" text="18" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="84" x="288" width="48" text="19" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+        </widgets>
+        <widgets xsi:type="model:WidgetGroup" id="85" y="93" height="21" measuredWidth="336" measuredHeight="23">
+          <widgets xsi:type="model:Label" id="86" width="48" text="20" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="87" x="48" width="48" text="21" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="88" x="96" width="48" text="22" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="89" x="144" width="48" text="23" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="90" x="192" width="48" text="24" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="91" x="240" width="48" text="25" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="92" x="288" width="48" text="26" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+        </widgets>
+        <widgets xsi:type="model:WidgetGroup" id="93" y="117" height="21" measuredWidth="192" measuredHeight="23">
+          <widgets xsi:type="model:Label" id="94" width="48" text="27" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="95" x="48" width="48" text="28" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="96" x="96" width="48" text="29" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Label" id="97" x="144" width="48" text="30" measuredWidth="48" measuredHeight="23" textAlignment="Center">
+            <font/>
+          </widgets>
+        </widgets>
+      </widgets>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Table" id="98" x="646" y="469" width="376" height="63" text="금주일정,오늘일정,내일일정&#xD;&#xA;4,2,1" measuredWidth="376" measuredHeight="63" rowHeight="30" textAlignment="Center" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
