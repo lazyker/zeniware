@@ -63,10 +63,10 @@
         </widgets>
       </overrides>
     </widgets>
-    <widgets xsi:type="model:Master" id="119" width="78" measuredWidth="78" measuredHeight="30">
+    <widgets xsi:type="model:Master" id="119" width="87" measuredWidth="87" measuredHeight="30">
       <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Typography.screen#h2.%20Heading"/>
       <overrides>
-        <widgets ref="5" width="78" text="대기 문서">
+        <widgets ref="5" width="87" text="대기 문서">
           <font size="18px"/>
         </widgets>
       </overrides>
@@ -82,10 +82,10 @@
         </widgets>
       </overrides>
     </widgets>
-    <widgets xsi:type="model:Master" id="129" width="78" measuredWidth="78" measuredHeight="30">
+    <widgets xsi:type="model:Master" id="129" width="79" measuredWidth="79" measuredHeight="30">
       <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Typography.screen#h2.%20Heading"/>
       <overrides>
-        <widgets ref="5" width="78" text="기안 문서">
+        <widgets ref="5" width="79" text="기안 문서">
           <font size="18px"/>
         </widgets>
       </overrides>
@@ -145,7 +145,7 @@
           <object xsi:type="model:Item" text=">> 일반기안문"/>
         </itemChanges>
         <itemChanges xsi:type="o:Insert" newIndex="1">
-          <object xsi:type="model:Item" text="> 미처리문서함"/>
+          <object xsi:type="model:Item" link="workflow_dept_appr1.screen" text="> 미처리문서함"/>
         </itemChanges>
         <itemChanges xsi:type="o:Insert" newIndex="1">
           <object xsi:type="model:Item" text="* 부서결재"/>
