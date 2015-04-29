@@ -24,7 +24,7 @@
             <font size="12px"/>
             <items ref="@items.0" text="전자우편"/>
             <items ref="@items.1" text="일정관리"/>
-            <items ref="@items.2" text="전자결재"/>
+            <items ref="@items.2" text="전자결재" link="workflow_main.screen"/>
             <itemChanges xsi:type="o:Insert" newIndex="3">
               <object xsi:type="model:Item" text="주소록"/>
             </itemChanges>
@@ -53,67 +53,11 @@
     </widgets>
     <widgets xsi:type="model:Image" id="106" x="14" y="6" width="80" height="23" measuredWidth="80" measuredHeight="23" src="../assets/footer_logo.jpg"/>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="120" x="226" y="74" width="829" measuredWidth="829" measuredHeight="145">
-    <widgets xsi:type="model:Master" id="116" y="32" width="829" measuredWidth="829" measuredHeight="113">
-      <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Content.screen#Table"/>
-      <overrides>
-        <widgets ref="51" width="829" height="113" text="기안일,양식,제목,첨부,상태&#xA;2015-04-29,기안문,소프트웨어 구매,,진행중&#xA;2015-04-28,휴가계,휴가신청서,,진행중&#xA;2015-04-28,품의문,UI Component 구매 건,,진행중&#xA;2015-04-27,휴직원,휴직신청서,,진행중">
-          <attributes key="rowHeight" value="23"/>
-          <font size="11px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-    <widgets xsi:type="model:Master" id="119" width="78" measuredWidth="78" measuredHeight="30">
-      <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Typography.screen#h2.%20Heading"/>
-      <overrides>
-        <widgets ref="5" width="78" text="대기 문서">
-          <font size="18px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="127" x="226" y="248" measuredWidth="829" measuredHeight="145">
-    <widgets xsi:type="model:Master" id="128" y="32" width="829" measuredWidth="829" measuredHeight="113">
-      <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Content.screen#Table"/>
-      <overrides>
-        <widgets ref="51" width="829" height="113" text="기안일,양식,제목,첨부,상태&#xA;2015-04-29,기안문,소프트웨어 구매,,진행중&#xA;2015-04-28,휴가계,휴가신청서,,진행중&#xA;2015-04-28,품의문,UI Component 구매 건,,진행중&#xA;2015-04-27,휴직원,휴직신청서,,진행중">
-          <attributes key="rowHeight" value="23"/>
-          <font size="11px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-    <widgets xsi:type="model:Master" id="129" width="78" measuredWidth="78" measuredHeight="30">
-      <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Typography.screen#h2.%20Heading"/>
-      <overrides>
-        <widgets ref="5" width="78" text="기안 문서">
-          <font size="18px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="130" x="226" y="422" measuredWidth="829" measuredHeight="145">
-    <widgets xsi:type="model:Master" id="131" y="32" width="829" measuredWidth="829" measuredHeight="113">
-      <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Content.screen#Table"/>
-      <overrides>
-        <widgets ref="51" width="829" height="113" text="기안일,양식,제목,첨부,문서번호,상태&#xA;2015-04-29,기안문,소프트웨어 구매,,SB-2015-00005,완료&#xA;2015-04-28,휴가계,휴가신청서,,SB-2015-00004,완료&#xA;2015-04-28,품의문,UI Component 구매 건,,SB-2015-00003,완료&#xA;2015-04-27,휴직원,휴직신청서,,SB-2015-00002,완료">
-          <attributes key="rowHeight" value="23"/>
-          <font size="11px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-    <widgets xsi:type="model:Master" id="132" width="78" measuredWidth="78" measuredHeight="30">
-      <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Typography.screen#h2.%20Heading"/>
-      <overrides>
-        <widgets ref="5" width="78" text="완료 문서">
-          <font size="18px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:Master" id="133" x="24" y="110" width="193" measuredWidth="193" measuredHeight="405">
+  <widgets xsi:type="model:Master" id="133" x="24" y="110" measuredWidth="193" measuredHeight="405">
     <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Buttons.screen#Dropdown"/>
     <overrides>
       <widgets ref="49" width="193" text="* 개인결재&#xA;> 대기 문서&#xA;> 진행 문서&#xA;--&#xA;* 부서결재&#xA;> 미처리문서함&#xA;>> 일반기안문&#xA;>> 영업관련&#xA;--&#xA;* 개인문서함&#xA;> 기안문서함&#xA;> 결재문서함&#xA;> 참조문서함&#xA;--&#xA;* 부서문서함&#xA;> 솔루션사업팀&#xA;>> 품의함&#xA;>> 수신함&#xA;>> 발신함">
+        <attributes key="selection" value="2"/>
         <items ref="@items.0" text="* 개인결재"/>
         <items ref="@items.1" text="> 결재문서함"/>
         <items ref="@items.2" text="> 참조문서함"/>
@@ -154,13 +98,25 @@
           <object xsi:type="model:Item" text="--"/>
         </itemChanges>
         <itemChanges xsi:type="o:Insert" newIndex="1">
-          <object xsi:type="model:Item" link="workflow_pers_appr2.screen" text="> 진행 문서"/>
+          <object xsi:type="model:Item" text="> 진행 문서"/>
         </itemChanges>
         <itemChanges xsi:type="o:Insert" newIndex="1">
-          <object xsi:type="model:Item" link="workflow_pers_appr1.screen" text="> 대기 문서"/>
+          <object xsi:type="model:Item" text="> 대기 문서"/>
         </itemChanges>
       </widgets>
     </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="134" x="226" y="110" width="829" measuredWidth="829" measuredHeight="193">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Content.screen#Table%20Contextual"/>
+    <overrides>
+      <widgets ref="55" width="829" text="기안일,기안자,양식,제목,첨부&#xA;2015-04-29,기사원,품의문,소프트웨어 구매 요청,,&#xA;2015-04-29,기사원,품의문,소프트웨어 구매 요청,,&#xA;2015-04-29,기사원,품의문,소프트웨어 구매 요청,,&#xA;2015-04-29,기사원,품의문,소프트웨어 구매 요청,,&#xA;2015-04-29,기사원,품의문,소프트웨어 구매 요청,,&#xA;2015-04-29,기사원,품의문,소프트웨어 구매 요청,,">
+        <attributes key="rowHeight" value="27"/>
+        <font size="12px"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="136" x="848" y="81" width="207" text="제목, 기안자, 양식" measuredWidth="207" measuredHeight="24">
+    <font/>
   </widgets>
   <hRuler/>
   <vRuler>
