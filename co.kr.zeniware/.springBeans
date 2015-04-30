@@ -7,11 +7,8 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
-		<config>src/main/webapp/WEB-INF/_config/servlet-context.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/main/resources/zeniware/spring/datasource-context.xml</config>
-		<config>src/main/resources/zeniware/spring/mapper-context.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
