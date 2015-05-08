@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
-  <widgets xsi:type="model:Image" id="59" x="240" y="168" width="801" height="586" measuredWidth="801" measuredHeight="586" src="../assets/week.jpg"/>
+  <widgets xsi:type="model:Image" id="3" x="240" y="168" width="801" height="586" measuredWidth="801" measuredHeight="586" src="../assets/month.jpg"/>
   <widgets xsi:type="model:Panel" id="7" x="240" y="168" width="801" height="49" measuredWidth="801" measuredHeight="49"/>
-  <widgets xsi:type="model:Label" id="8" x="264" y="177" text="04.05 ~ 04.11" measuredWidth="110" measuredHeight="31">
+  <widgets xsi:type="model:Label" id="8" x="264" y="177" text="2015.04" measuredWidth="64" measuredHeight="31">
     <font size="17px"/>
   </widgets>
-  <widgets xsi:type="model:ButtonBar" id="14" x="552" y="178" width="177" height="29" text="일간, 주간, 월간" measuredWidth="177" measuredHeight="29" selection="1">
+  <widgets xsi:type="model:ButtonBar" id="14" x="552" y="178" width="177" height="29" text="일간, 주간, 월간" measuredWidth="177" measuredHeight="29" selection="2">
     <font/>
     <items link="day.screen" x="0" y="0" width="58" height="29" text="일간"/>
-    <items x="58" y="0" width="57" height="29" text="주간"/>
-    <items link="month.screen" x="115" y="0" width="62" height="29" text="월간"/>
+    <items link="week.screen" x="58" y="0" width="57" height="29" text="주간"/>
+    <items x="115" y="0" width="62" height="29" text="월간"/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="20" x="1000" y="181" measuredWidth="24" measuredHeight="24" icon="print (medium)"/>
+  <widgets xsi:type="model:Icon" id="20" x="936" y="181" measuredWidth="24" measuredHeight="24" icon="print (medium)"/>
   <widgets xsi:type="model:Panel" id="22" x="40" y="168" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
-  <widgets xsi:type="model:Image" id="25" x="45" y="216" width="192" height="225" measuredWidth="192" measuredHeight="225" src="../assets/calendar.jpg"/>
+  <widgets xsi:type="model:Image" id="25" x="45" y="216" width="192" height="233" measuredWidth="192" measuredHeight="233" src="../assets/calendar.jpg"/>
   <widgets xsi:type="model:Icon" id="26" x="192" y="453" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="add (large)"/>
   <widgets xsi:type="model:Icon" id="27" x="214" y="453" width="17" height="16" measuredWidth="17" measuredHeight="16" icon="minus (custom)"/>
   <widgets xsi:type="model:TextField" id="30" x="72" y="480" width="159" text="개인 스케쥴" measuredWidth="159" measuredHeight="23">
@@ -47,13 +47,39 @@
   <widgets xsi:type="model:Button" id="52" x="184" y="636" width="53" text="진행" measuredWidth="53" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="54" x="433" y="180" width="41" height="24" text="오늘" measuredWidth="41" measuredHeight="24">
+  <widgets xsi:type="model:Button" id="53" x="394" y="180" width="41" height="24" text="오늘" measuredWidth="41" measuredHeight="24">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="55" x="399" y="180" width="25" text="▶" measuredWidth="25" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="54" x="360" y="180" width="25" text="▶" measuredWidth="25" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="56" x="375" y="180" width="25" text="◀" measuredWidth="25" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="55" x="336" y="180" width="25" text="◀" measuredWidth="25" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="56" x="967" y="182" text="Search" measuredWidth="67" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="63" x="352" y="262" measuredWidth="520" measuredHeight="398" src="../assets/일정쓰기.jpg"/>
+  <widgets xsi:type="model:Panel" id="64" x="353" y="263" width="99" height="347" measuredWidth="99" measuredHeight="347" border="none"/>
+  <widgets xsi:type="model:Label" id="66" x="394" y="280" text="제목" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="67" x="394" y="317" text="시작일" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="68" x="394" y="356" text="종료일" measuredWidth="42" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="69" x="394" y="392" text="종일" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="71" x="394" y="468" text="반복" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="72" x="394" y="504" text="설명" measuredWidth="30" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="73" x="394" y="562" text="캘린더" measuredWidth="42" measuredHeight="23">
     <font/>
   </widgets>
   <hRuler/>
