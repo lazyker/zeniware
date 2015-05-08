@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
   <widgets xsi:type="model:Panel" id="60" x="242" y="169" width="799" height="585" measuredWidth="799" measuredHeight="585"/>
+  <widgets xsi:type="model:Image" id="137" x="240" y="169" width="801" height="585" measuredWidth="801" measuredHeight="585" src="../assets/week.jpg"/>
   <widgets xsi:type="model:Panel" id="22" x="40" y="168" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
   <widgets xsi:type="model:HLine" id="40" x="40" y="216" width="197" measuredWidth="197" measuredHeight="6"/>
   <widgets xsi:type="model:Master" id="94" x="44" y="233" measuredWidth="117" measuredHeight="125">
@@ -12,7 +13,6 @@
   <widgets xsi:type="model:Label" id="97" x="50" y="180" text="자원관리" measuredWidth="70" measuredHeight="29">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:Image" id="98" x="240" y="168" width="801" height="586" measuredWidth="801" measuredHeight="586" src="../assets/month.jpg"/>
   <widgets xsi:type="model:Panel" id="99" x="240" y="168" width="801" height="49" measuredWidth="801" measuredHeight="49"/>
   <widgets xsi:type="model:Label" id="100" x="264" y="177" text="2015.04" measuredWidth="64" measuredHeight="31">
     <font size="17px"/>
@@ -23,13 +23,13 @@
   <widgets xsi:type="model:Button" id="104" x="336" y="180" width="25" text="◀" measuredWidth="25" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:ButtonBar" id="105" x="552" y="178" width="177" height="29" text="일간, 주간, 월간" measuredWidth="177" measuredHeight="29" selection="2">
+  <widgets xsi:type="model:ButtonBar" id="105" x="552" y="178" width="177" height="29" text="일간, 주간, 월간" measuredWidth="177" measuredHeight="29" selection="1">
     <font/>
     <items x="0" y="0" width="58" height="29" text="일간"/>
     <items x="58" y="0" width="57" height="29" text="주간"/>
     <items x="115" y="0" width="62" height="29" text="월간"/>
   </widgets>
-  <widgets xsi:type="model:Master" id="118" x="374" y="382" measuredWidth="513" measuredHeight="239">
+  <widgets xsi:type="model:Master" id="149" x="374" y="357" measuredWidth="513" measuredHeight="239">
     <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Content.screen#Panel%20with%20Heading"/>
     <overrides>
       <widgetChanges xsi:type="o:Delete" ref="59"/>
@@ -37,42 +37,42 @@
       <widgets ref="57" text="예약"/>
     </overrides>
   </widgets>
-  <widgets xsi:type="model:Label" id="119" x="392" y="446" text="예약일" measuredWidth="42" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="150" x="392" y="421" text="예약일" measuredWidth="42" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="120" x="392" y="478" text="종일" measuredWidth="30" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="151" x="392" y="453" text="사용자" measuredWidth="42" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="121" x="392" y="508" text="제목" measuredWidth="30" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="152" x="392" y="483" text="인원수" measuredWidth="42" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="122" x="392" y="540" text="내용" measuredWidth="30" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="153" x="392" y="515" text="용도" measuredWidth="30" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="123" x="592" y="580" text="확인" measuredWidth="44" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="154" x="592" y="555" text="확인" measuredWidth="44" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="124" x="640" y="580" text="취소" measuredWidth="44" measuredHeight="25" link="meetingRoom.screen">
+  <widgets xsi:type="model:Button" id="155" x="640" y="555" text="취소" measuredWidth="44" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="125" x="454" y="509" width="411" measuredWidth="411" measuredHeight="23">
+  <widgets xsi:type="model:TextField" id="156" x="454" y="484" width="91" measuredWidth="91" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="126" x="454" y="540" width="411" measuredWidth="411" measuredHeight="23">
+  <widgets xsi:type="model:TextField" id="157" x="454" y="515" width="411" measuredWidth="411" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:DateField" id="127" x="454" y="446" text="  2015-05-07" measuredWidth="104" measuredHeight="23"/>
-  <widgets xsi:type="model:DateField" id="130" x="664" y="446" text="  2015-05-07" measuredWidth="104" measuredHeight="23"/>
-  <widgets xsi:type="model:Combo" id="131" x="567" y="446" text="14:30" measuredWidth="58" measuredHeight="23">
+  <widgets xsi:type="model:DateField" id="158" x="454" y="421" text="  2015-05-07" measuredWidth="104" measuredHeight="23"/>
+  <widgets xsi:type="model:DateField" id="159" x="664" y="421" text="  2015-05-07" measuredWidth="104" measuredHeight="23"/>
+  <widgets xsi:type="model:Combo" id="160" x="567" y="421" text="14:30" measuredWidth="58" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="132" x="640" y="446" text="~" measuredWidth="14" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="161" x="640" y="421" text="~" measuredWidth="14" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Combo" id="133" x="776" y="446" text="15:00" measuredWidth="58" measuredHeight="23">
+  <widgets xsi:type="model:Combo" id="162" x="776" y="421" text="15:00" measuredWidth="58" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Checkbox" id="135" x="454" y="478" measuredWidth="21" measuredHeight="23">
+  <widgets xsi:type="model:TextField" id="164" x="454" y="453" width="91" measuredWidth="91" measuredHeight="23">
     <font/>
   </widgets>
   <hRuler/>

@@ -87,6 +87,9 @@
   <widgets xsi:type="model:Button" id="104" x="504" y="526" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
     <font/>
   </widgets>
+  <widgets xsi:type="model:Label" id="105" x="170" y="233" text="클릭" measuredWidth="30" measuredHeight="23" link="meetingRoom.screen">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

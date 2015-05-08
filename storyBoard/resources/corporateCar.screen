@@ -24,11 +24,14 @@
   <widgets xsi:type="model:Button" id="98" x="808" y="267" text="예약" measuredWidth="44" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="99" x="808" y="304" text="예약" measuredWidth="44" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="99" x="808" y="304" text="예약" measuredWidth="44" measuredHeight="25" link="carRent.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Master" id="100" x="496" y="352" measuredWidth="254" measuredHeight="40">
     <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Navigation.screen#Pagination"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="101" x="923" y="183" text="운행일지" measuredWidth="68" measuredHeight="25" link="corporateCarReport.screen">
+    <font/>
   </widgets>
   <hRuler/>
   <vRuler/>
