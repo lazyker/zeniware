@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Panel" id="60" x="242" y="168" width="799" height="585" measuredWidth="799" measuredHeight="585"/>
+  <widgets xsi:type="model:Panel" id="22" x="40" y="168" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
+  <widgets xsi:type="model:HLine" id="40" x="40" y="216" width="197" measuredWidth="197" measuredHeight="6"/>
+  <widgets xsi:type="model:Master" id="64" x="251" y="222" width="742" measuredWidth="742" measuredHeight="115">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Foundation/Content.screen#Table"/>
+    <overrides>
+      <widgets ref="34" width="742" text="*항목*, *예약*&#xA;26허4393,&#xA;26허6689,&#xA;"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Label" id="65" x="252" y="180" text="영업차량" measuredWidth="70" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="94" x="44" y="233" measuredWidth="117" measuredHeight="125">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Foundation/Typography.screen#List"/>
+    <overrides>
+      <widgets ref="29" text="* 3F-대회의실&#xA;* BF-대회의실&#xA;* BF-소회의실&#xA;* 사무자산&#xA;* 영업차량"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Label" id="97" x="50" y="180" text="자원관리" measuredWidth="70" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="98" x="808" y="267" text="예약" measuredWidth="44" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="99" x="808" y="304" text="예약" measuredWidth="44" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="100" x="496" y="352" measuredWidth="254" measuredHeight="40">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Navigation.screen#Pagination"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
