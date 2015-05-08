@@ -19,7 +19,7 @@
             <font size="12px"/>
             <items ref="@items.0" text="전자우편"/>
             <items ref="@items.1" text="일정관리"/>
-            <items ref="@items.2" text="전자결재"/>
+            <items ref="@items.2" text="전자결재" link=""/>
             <itemChanges xsi:type="o:Insert" newIndex="3">
               <object xsi:type="model:Item" text="주소록"/>
             </itemChanges>
@@ -163,7 +163,7 @@
         </widgets>
       </overrides>
     </widgets>
-    <widgets xsi:type="model:Button" id="135" x="10" y="56" width="173" height="33" text="기안 상신" measuredWidth="173" measuredHeight="33">
+    <widgets xsi:type="model:Button" id="135" x="10" y="56" width="173" height="33" text="기안 상신" measuredWidth="173" measuredHeight="33" link="new/new_document_choose_form.screen">
       <font bold="true"/>
     </widgets>
   </widgets>
