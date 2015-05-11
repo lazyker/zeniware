@@ -167,11 +167,11 @@
       <font bold="true"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Master" id="141" x="24" y="542" width="193" measuredWidth="193" measuredHeight="35">
+  <widgets xsi:type="model:Master" id="138" x="24" y="542" width="193" measuredWidth="193" measuredHeight="35">
     <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Forms.screen#Input%20Group%20Button"/>
     <overrides>
       <widgets ref="86" width="154"/>
-      <widgets ref="87" x="152" link="../employeeDirectory/employee_directory_popup.screen"/>
+      <widgets ref="87" x="152" link="employee_directory_popup.screen"/>
     </overrides>
   </widgets>
   <hRuler/>

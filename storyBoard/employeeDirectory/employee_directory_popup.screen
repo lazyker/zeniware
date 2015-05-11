@@ -167,12 +167,24 @@
       <font bold="true"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Master" id="141" x="24" y="542" width="193" measuredWidth="193" measuredHeight="35">
+  <widgets xsi:type="model:Master" id="137" x="24" y="542" width="193" measuredWidth="193" measuredHeight="35">
     <screen xsi:type="model:WidgetGroup" href="../assets/Bootstrap/Forms.screen#Input%20Group%20Button"/>
     <overrides>
       <widgets ref="86" width="154"/>
-      <widgets ref="87" x="152" link="../employeeDirectory/employee_directory_popup.screen"/>
+      <widgets ref="87" x="152" link="../workflow/workflow_main.screen"/>
     </overrides>
+  </widgets>
+  <widgets xsi:type="model:Tree" id="138" x="24" y="288" width="193" height="255" text="v 그룹전략부문&#xA;-[v] 정보기획실&#xA;--[v] 솔루션사업팀&#xA;---기팀장 팀장&#xA;---기대리 대리&#xA;---기사원 사원&#xA;--[>] 정보화사업팀&#xA;-[>] 경영지원실&#xA;-[>] 전략기획실" measuredWidth="193" measuredHeight="255">
+    <items x="0" y="5" width="193" height="21" text="v 그룹전략부문"/>
+    <items x="0" y="26" width="193" height="21" text="-[v] 정보기획실"/>
+    <items x="0" y="47" width="193" height="21" text="--[v] 솔루션사업팀"/>
+    <items x="0" y="68" width="193" height="21" text="---기팀장 팀장"/>
+    <items x="0" y="89" width="193" height="21" text="---기대리 대리"/>
+    <items x="0" y="110" width="193" height="21" text="---기사원 사원"/>
+    <items x="0" y="131" width="193" height="21" text="--[>] 정보화사업팀"/>
+    <items x="0" y="152" width="193" height="21" text="-[>] 경영지원실"/>
+    <items x="0" y="173" width="193" height="21" text="-[>] 전략기획실"/>
+    <font/>
   </widgets>
   <hRuler/>
   <vRuler/>
