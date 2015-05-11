@@ -340,29 +340,39 @@
       </widgetChanges>
       <widgetChanges xsi:type="o:Insert" newIndex="4">
         <object xsi:type="model:WidgetGroup" x="12" y="30" width="171">
-          <widgets xsi:type="model:TabbedPane" width="171" height="318" text="조직도,저장결재선" selection="0">
-            <items text="조직도"/>
-            <items text="저장결재선"/>
+          <widgets xsi:type="model:TabbedPane" width="171" height="318" text="조직도,저장결재선" selection="1">
+            <items link="apr_line_main1.screen" text="조직도"/>
+            <items link="" text="저장결재선"/>
             <font/>
           </widgets>
-          <widgets xsi:type="model:Tree" x="7" y="64" width="154" height="245" text="v 그룹전략부문&#xA;-[v] 정보기획실&#xA;--[v] 솔루션사업팀&#xA;---기팀장 팀장&#xA;---기대리 대리&#xA;---기사원 사원&#xA;--[>] 정보화사업팀&#xA;-[>] 경영지원실&#xA;-[>] 전략기획실">
-            <items text="v 그룹전략부문"/>
-            <items text="-[v] 정보기획실"/>
-            <items text="--[v] 솔루션사업팀"/>
-            <items text="---기팀장 팀장"/>
-            <items text="---기대리 대리"/>
-            <items text="---기사원 사원"/>
-            <items text="--[>] 정보화사업팀"/>
-            <items text="-[>] 경영지원실"/>
-            <items text="-[>] 전략기획실"/>
+          <widgets xsi:type="model:Label" x="18" y="46" text="자주쓰는결재선1    x" textAlignment="Center" icon="favorites (medium)">
             <font/>
           </widgets>
-          <widgets xsi:type="model:SearchField" x="7" y="37" width="154" text="Search">
+          <widgets xsi:type="model:Label" x="18" y="78" text="자주쓰는결재선2    x" textAlignment="Center" icon="favorites (medium)">
             <font/>
           </widgets>
-          <widgets xsi:type="model:Table" x="178" y="27" width="401" height="291" text="순번,결재유형,성명,직위,부서,상태&#xA;4,참조,-,-,정보기획실,대기&#xA;3,참조,-,-,정보화사업팀,대기&#xA;2,결재,기팀장,과장,솔루션사업팀,대기&#xA;1,결재,기사원,사원,솔루션사업팀,진행" alternative="#eeeeee">
+          <widgets xsi:type="model:Label" x="18" y="110" text="자주쓰는결재선3    x" textAlignment="Center" icon="favorites (medium)">
             <font/>
           </widgets>
+          <widgets xsi:type="model:WidgetGroup" x="202" y="27" width="377">
+            <widgets xsi:type="model:Table" width="377" height="291" text="순번,결재유형,성명,직위,부서,상태&#xA;4,,-,-,정보기획실,대기&#xA;3,,-,-,정보화사업팀,대기&#xA;2,,기팀장,과장,솔루션사업팀,대기&#xA;1,,기사원,사원,솔루션사업팀,진행" rowHeight="35" alternative="#eeeeee">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="51" y="147" width="58" text="결재">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="51" y="112" width="58" text="결재">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="51" y="75" width="58" text="합의">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="51" y="43" width="58" text="합의">
+              <font/>
+            </widgets>
+          </widgets>
+          <widgets xsi:type="model:Icon" x="174" y="93" icon="curved-arrow-right (medium)"/>
+          <widgets xsi:type="model:Icon" x="174" y="141" icon="curved-arrow-left (medium)"/>
         </object>
       </widgetChanges>
       <widgetChanges xsi:type="o:Delete" ref="30"/>
@@ -372,6 +382,9 @@
         <font size="14px" bold="true"/>
       </widgets>
     </overrides>
+  </widgets>
+  <widgets xsi:type="model:Button" id="116" x="679" y="149" text="자주쓰는 결재선으로 저장" measuredWidth="138" measuredHeight="26">
+    <font/>
   </widgets>
   <hRuler/>
   <vRuler/>

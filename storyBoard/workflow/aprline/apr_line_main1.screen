@@ -126,7 +126,7 @@
   <widgets xsi:type="model:Button" id="45" x="536" y="80" width="63" height="23" text="취소" measuredWidth="63" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="46" x="288" y="80" width="63" height="23" text="결재선지정" measuredWidth="63" measuredHeight="23" link="../aprline/apr_line_main1.screen">
+  <widgets xsi:type="model:Button" id="46" x="288" y="80" width="63" height="23" text="결재선지정" measuredWidth="63" measuredHeight="23">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="48" x="412" y="80" width="63" height="23" text="문서첨부" measuredWidth="63" measuredHeight="23">
@@ -318,6 +318,87 @@
         </widgets>
       </overrides>
     </widgets>
+  </widgets>
+  <widgets xsi:type="model:Master" id="114" x="24" y="31" measuredWidth="1041" measuredHeight="546">
+    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Content.screen#Modal%20Background"/>
+    <overrides>
+      <widgets ref="109" width="1041" height="546"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="115" x="226" y="124" width="605" measuredWidth="605" measuredHeight="403">
+    <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Callouts%20&amp;%20Prompts.screen#Modal%20Dialog"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Insert" newIndex="4">
+        <object xsi:type="model:Button" x="312" y="356" width="83" text="취소" link="../new/new_document_main1.screen">
+          <font/>
+        </object>
+      </widgetChanges>
+      <widgetChanges xsi:type="o:Insert" newIndex="4">
+        <object xsi:type="model:Button" x="222" y="356" width="83" text="확인" link="../new/new_document_main1.screen">
+          <font/>
+        </object>
+      </widgetChanges>
+      <widgetChanges xsi:type="o:Insert" newIndex="4">
+        <object xsi:type="model:WidgetGroup" x="12" y="30" width="171">
+          <widgets xsi:type="model:TabbedPane" width="171" height="318" text="조직도,저장결재선" selection="0">
+            <items link="" text="조직도"/>
+            <items link="apr_line_main2.screen" text="저장결재선"/>
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Tree" x="7" y="64" width="154" height="245" text="v 그룹전략부문&#xA;-[v] 정보기획실&#xA;--[v] 솔루션사업팀&#xA;---기팀장 팀장&#xA;---기대리 대리&#xA;---기사원 사원&#xA;--[>] 정보화사업팀&#xA;-[>] 경영지원실&#xA;-[>] 전략기획실">
+            <items text="v 그룹전략부문"/>
+            <items text="-[v] 정보기획실"/>
+            <items text="--[v] 솔루션사업팀"/>
+            <items text="---기팀장 팀장"/>
+            <items text="---기대리 대리"/>
+            <items text="---기사원 사원"/>
+            <items text="--[>] 정보화사업팀"/>
+            <items text="-[>] 경영지원실"/>
+            <items text="-[>] 전략기획실"/>
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:SearchField" x="7" y="37" width="154" text="Search">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:WidgetGroup" x="202" y="27" width="377">
+            <widgets xsi:type="model:Table" width="377" height="291" text="순번,결재유형,성명,직위,부서,상태&#xA;4,,-,-,정보기획실,대기&#xA;3,,-,-,정보화사업팀,대기&#xA;2,,기팀장,과장,솔루션사업팀,대기&#xA;1,,기사원,사원,솔루션사업팀,진행" rowHeight="35" alternative="#eeeeee">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="50" y="147" width="57" text="결재">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="50" y="112" width="57" text="결재">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="50" y="75" width="57" text="합의">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Spinner" x="50" y="43" width="57" text="합의">
+              <font/>
+            </widgets>
+          </widgets>
+          <widgets xsi:type="model:Icon" x="174" y="94" icon="curved-arrow-right (medium)"/>
+          <widgets xsi:type="model:Icon" x="174" y="142" icon="curved-arrow-left (medium)"/>
+        </object>
+      </widgetChanges>
+      <widgetChanges xsi:type="o:Delete" ref="30"/>
+      <widgets ref="26" width="605" height="403"/>
+      <widgets ref="27" x="582" y="4" link="../new/new_document_main1.screen"/>
+      <widgets ref="29" x="12" y="5" text="결재선 지정">
+        <font size="14px" bold="true"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Button" id="116" x="679" y="149" text="자주쓰는 결재선으로 저장" measuredWidth="138" measuredHeight="26" link="apr_line_favorites.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="122" x="504" y="360" width="249" measuredWidth="249" measuredHeight="53">
+    <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Callouts%20&amp;%20Prompts.screen#Tooltip"/>
+    <overrides>
+      <widgets ref="95" width="249" text="  - 사용자: 결재, 확인, 참조, 합의(순차), 합의&#xA;  - 부서: 합의">
+        <attributes key="background" value="#93c47d"/>
+      </widgets>
+    </overrides>
   </widgets>
   <hRuler/>
   <vRuler/>
