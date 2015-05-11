@@ -3,9 +3,6 @@
   <widgets xsi:type="model:Browser" id="158" width="1024" height="1297" text="Browser&#xA;http://..." locked="true" measuredWidth="1024" measuredHeight="1297">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Group" id="474" x="342" y="494" width="644" height="146" text="부서 지정" measuredWidth="644" measuredHeight="146">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Panel" id="194" x="8" y="59" width="1001" height="41" locked="true" measuredWidth="1001" measuredHeight="41"/>
   <widgets xsi:type="model:Button" id="195" x="18" y="65" width="63" height="28" text="회사로고" locked="true" measuredWidth="63" measuredHeight="28">
     <font/>
@@ -39,20 +36,8 @@
   <widgets xsi:type="model:Text" id="399" x="259" y="196" text="위치" measuredWidth="25" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="299" x="573" y="1233" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="300" x="621" y="1233" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Combo" id="377" x="344" y="192" width="234" text="제니엘" measuredWidth="234" measuredHeight="23">
     <font/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="417" x="346" y="458" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="418" x="407" y="458" text="사용안함" measuredWidth="64" measuredHeight="21">
-    <font size="11px"/>
   </widgets>
   <widgets xsi:type="model:Label" id="457" x="248" y="122" width="165" text="게시판 추가" measuredWidth="165" measuredHeight="36">
     <font size="20px"/>
@@ -91,85 +76,10 @@
   <widgets xsi:type="model:Text" id="470" x="259" y="334" text="관리자" measuredWidth="37" measuredHeight="15">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="471" x="259" y="461" text="공유" measuredWidth="25" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="479" x="346" y="975" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="480" x="407" y="975" text="사용안함" measuredWidth="64" measuredHeight="21">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:Text" id="481" x="259" y="978" text="비공개" measuredWidth="37" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="485" x="363" y="511" text="공유부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Table" id="487" x="364" y="541" width="602" height="87" text="부서명, 작성권한, 삭제&#xD;&#xA;전체,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="488" x="469" y="511" text="하위부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Text" id="489" x="259" y="1162" text="댓글 작성" measuredWidth="53" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="490" x="345" y="1162" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="491" x="406" y="1162" text="사용안함" measuredWidth="64" measuredHeight="21">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="492" x="346" y="1188" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:RadioButton" id="493" x="407" y="1188" text="사용안함" measuredWidth="64" measuredHeight="21">
-    <font size="11px"/>
-  </widgets>
-  <widgets xsi:type="model:Text" id="494" x="259" y="1191" text="위젯" measuredWidth="25" measuredHeight="15">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Group" id="500" x="342" y="1003" width="644" height="146" text="White List" measuredWidth="644" measuredHeight="146">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="495" x="364" y="1027" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Table" id="496" x="364" y="1051" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;김재환,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Group" id="501" x="342" y="807" width="644" height="146" text="Black List" measuredWidth="644" measuredHeight="146">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="502" x="364" y="831" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Table" id="503" x="364" y="855" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;정종석,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Label" id="504" x="344" y="330" text="관리자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
   <widgets xsi:type="model:Table" id="505" x="344" y="354" width="602" height="87" text="관리자명, 삭제&#xD;&#xA;김재환,{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Group" id="509" x="342" y="651" width="644" height="146" text="White List" measuredWidth="644" measuredHeight="146">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="510" x="364" y="675" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Table" id="511" x="364" y="699" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;김재환,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="512" x="481" y="974" text="비공개를 설정할 경우 허용된 사용자와 공유된 부서와 사용자만 게시판 접근을 허용합니다." measuredWidth="509" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="513" x="481" y="457" text="공유를 사용할 경우 현재 부서 외에 다른 부서와 사람들에게 게시판을 공유할 수 있습니다." measuredWidth="505" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="514" x="481" y="1187" text="위젯을 사용할 경우 홈에서 게시판 위젯을 추가 하실 수 있습니다." measuredWidth="373" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="515" x="259" y="166" text="구분선" measuredWidth="37" measuredHeight="15">
@@ -223,6 +133,87 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="549" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../../statistic/statistic-근태통계.screen"/>
+  <widgets xsi:type="model:Group" id="550" x="342" y="515" width="644" height="146" text="부서 지정" measuredWidth="644" measuredHeight="146">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="551" x="573" y="1071" text="저장" measuredWidth="44" measuredHeight="25" background="#cccccc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="552" x="621" y="1071" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="553" x="346" y="479" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="554" x="407" y="479" text="사용안함" measuredWidth="64" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="555" x="259" y="482" text="공유" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="556" x="346" y="452" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="557" x="407" y="452" text="사용안함" measuredWidth="64" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="558" x="259" y="455" text="비공개" measuredWidth="37" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="559" x="363" y="532" text="공유부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="560" x="364" y="562" width="602" height="87" text="부서명, 작성권한, 삭제&#xD;&#xA;전체,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="561" x="469" y="532" text="하위부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="562" x="259" y="1000" text="댓글 작성" measuredWidth="53" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="563" x="345" y="1000" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="564" x="406" y="1000" text="사용안함" measuredWidth="64" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="565" x="346" y="1026" text="사용" measuredWidth="42" measuredHeight="21" selected="true">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:RadioButton" id="566" x="407" y="1026" text="사용안함" measuredWidth="64" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Text" id="567" x="259" y="1029" text="위젯" measuredWidth="25" measuredHeight="15">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="568" x="342" y="828" width="644" height="146" text="Black List" measuredWidth="644" measuredHeight="146">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="569" x="364" y="852" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="570" x="364" y="876" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;정종석,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Group" id="571" x="342" y="672" width="644" height="146" text="White List" measuredWidth="644" measuredHeight="146">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="572" x="364" y="696" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="573" x="364" y="720" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;김재환,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="574" x="481" y="451" text="비공개를 설정할 경우 허용된 사용자와 공유된 부서와 사용자만 게시판 접근을 허용합니다." measuredWidth="509" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="575" x="481" y="478" text="공유를 사용할 경우 현재 부서 외에 다른 부서와 사람들에게 게시판을 공유할 수 있습니다." measuredWidth="505" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="576" x="481" y="1025" text="위젯을 사용할 경우 홈에서 게시판 위젯을 추가 하실 수 있습니다." measuredWidth="373" measuredHeight="23" textAlignment="Center" icon="brightness (small)">
+    <font/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
