@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
+  <widgets xsi:type="model:Panel" id="1" x="216" y="64" width="849" height="513" measuredWidth="849" measuredHeight="513"/>
+  <widgets xsi:type="model:WidgetGroup" id="2" x="24" y="31" measuredWidth="1041" measuredHeight="34">
+    <widgets xsi:type="model:WidgetGroup" id="3" measuredWidth="1041" measuredHeight="34">
+      <widgets xsi:type="model:Master" id="4" measuredWidth="1041" measuredHeight="34">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Navigation.screen#Navbar%20Inverse"/>
+        <overrides>
+          <widgetChanges xsi:type="o:Delete" ref="42"/>
+          <widgetChanges xsi:type="o:Delete" ref="41"/>
+          <widgetChanges xsi:type="o:Delete" ref="40"/>
+          <widgetChanges xsi:type="o:Delete" ref="39"/>
+          <widgets ref="37" width="1041" height="34">
+            <attributes key="background" value="#eeeeee"/>
+          </widgets>
+          <widgets ref="38" x="112" y="4" height="30" text="전자우편,일정관리,전자결재,업무관리,커뮤니티,자원관리,문서관리,주소록">
+            <attributes key="background" value="#999999"/>
+            <attributes key="selection" value="2"/>
+            <font size="12px"/>
+            <items ref="@items.0" text="전자우편"/>
+            <items ref="@items.1" text="일정관리"/>
+            <items ref="@items.2" text="전자결재" link="../workflow_main.screen"/>
+            <itemChanges xsi:type="o:Insert" newIndex="3">
+              <object xsi:type="model:Item" text="주소록"/>
+            </itemChanges>
+            <itemChanges xsi:type="o:Insert" newIndex="3">
+              <object xsi:type="model:Item" text="문서관리"/>
+            </itemChanges>
+            <itemChanges xsi:type="o:Insert" newIndex="3">
+              <object xsi:type="model:Item" text="자원관리"/>
+            </itemChanges>
+            <itemChanges xsi:type="o:Insert" newIndex="3">
+              <object xsi:type="model:Item" text="커뮤니티"/>
+            </itemChanges>
+            <itemChanges xsi:type="o:Insert" newIndex="3">
+              <object xsi:type="model:Item" text="업무관리"/>
+            </itemChanges>
+          </widgets>
+        </overrides>
+      </widgets>
+      <widgets xsi:type="model:Button" id="5" x="878" y="6" width="49" text="Admin" measuredWidth="49" measuredHeight="22" layoutParams="anchor-left|anchor-bottom" background="#eeeeee">
+        <font size="10px"/>
+      </widgets>
+      <widgets xsi:type="model:Icon" id="6" x="993" y="9" measuredWidth="16" measuredHeight="16" icon="options (small)"/>
+      <widgets xsi:type="model:Icon" id="7" x="1017" y="10" measuredWidth="16" measuredHeight="16" icon="shutdown (small)"/>
+      <widgets xsi:type="model:Icon" id="8" x="967" y="9" measuredWidth="16" measuredHeight="16" icon="bar-chart (small)"/>
+      <widgets xsi:type="model:Icon" id="9" x="931" y="5" measuredWidth="24" measuredHeight="24" icon="user (medium)"/>
+    </widgets>
+    <widgets xsi:type="model:Image" id="10" x="14" y="6" width="80" height="23" measuredWidth="80" measuredHeight="23" src="../../assets/footer_logo.jpg"/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="20" x="24" y="64" measuredWidth="193" measuredHeight="513">
+    <widgets xsi:type="model:Panel" id="21" width="193" height="513" measuredWidth="193" measuredHeight="513"/>
+    <widgets xsi:type="model:Label" id="22" x="48" y="10" text="전자결재" measuredWidth="90" measuredHeight="37">
+      <font size="24px"/>
+    </widgets>
+    <widgets xsi:type="model:HLine" id="23" y="46" width="193" measuredWidth="193" measuredHeight="6"/>
+    <widgets xsi:type="model:Master" id="24" y="98" measuredWidth="193" measuredHeight="405">
+      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Buttons.screen#Dropdown"/>
+      <overrides>
+        <widgets ref="49" width="193" text="* 개인결재&#xA;> 대기 문서&#xA;> 진행 문서&#xA;--&#xA;* 부서결재&#xA;> 미처리문서함&#xA;>> 일반기안문&#xA;>> 영업관련&#xA;--&#xA;* 개인문서함&#xA;> 기안문서함&#xA;> 결재문서함&#xA;> 참조문서함&#xA;--&#xA;* 부서문서함&#xA;> 솔루션사업팀&#xA;>> 품의함&#xA;>> 수신함&#xA;>> 발신함">
+          <items ref="@items.0" text="* 개인결재"/>
+          <items ref="@items.1" text="> 결재문서함" link="../workflow_pers_folder2_main.screen"/>
+          <items ref="@items.2" text="> 참조문서함" link="../workflow_pers_folder3_main.screen"/>
+          <items ref="@items.3" text="--"/>
+          <items ref="@items.4" text="* 부서문서함"/>
+          <items ref="@items.5" text="> 솔루션사업팀"/>
+          <itemChanges xsi:type="o:Insert" newIndex="6">
+            <object xsi:type="model:Item" text=">> 발신함"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="6">
+            <object xsi:type="model:Item" text=">> 수신함"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="6">
+            <object xsi:type="model:Item" text=">> 품의함"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" link="../workflow_pers_folder1_main.screen" text="> 기안문서함"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" text="* 개인문서함"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" text="--"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" text=">> 영업관련"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" text=">> 일반기안문"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" link="../workflow_dept_appr1.screen" text="> 미처리문서함"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" text="* 부서결재"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" text="--"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" link="../workflow_pers_appr2.screen" text="> 진행 문서"/>
+          </itemChanges>
+          <itemChanges xsi:type="o:Insert" newIndex="1">
+            <object xsi:type="model:Item" link="../workflow_pers_appr1.screen" text="> 대기 문서"/>
+          </itemChanges>
+        </widgets>
+      </overrides>
+    </widgets>
+    <widgets xsi:type="model:Button" id="25" x="10" y="56" width="173" height="33" text="기안 상신" measuredWidth="173" measuredHeight="33">
+      <font bold="true"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="41" x="216" y="112" width="625" height="465" measuredWidth="625" measuredHeight="465"/>
+  <widgets xsi:type="model:TabbedPane" id="42" x="840" y="112" width="225" height="465" text="결재선,수신처,정보,변경이력" measuredWidth="225" measuredHeight="465" selection="0">
+    <items link="" x="10" y="0" width="51" height="27" text="결재선"/>
+    <items link="document_viewer_main2.screen" x="61" y="0" width="51" height="27" text="수신처"/>
+    <items link="document_viewer_main3.screen" x="112" y="0" width="41" height="27" text="정보"/>
+    <items link="document_viewer_main4_1.screen" x="153" y="0" width="61" height="27" text="변경이력"/>
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="43" x="226" y="80" width="63" height="23" text="목록" measuredWidth="63" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="46" x="288" y="80" width="63" height="23" text="재기안" measuredWidth="63" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="49" x="350" y="80" width="63" height="23" text="메일발송" measuredWidth="63" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="91" x="850" y="155" measuredWidth="167" measuredHeight="54">
+    <widgets xsi:type="model:Icon" id="89" y="11" width="32" height="32" measuredWidth="32" measuredHeight="32" icon="user (large)"/>
+    <widgets xsi:type="model:TextArea" id="90" x="38" width="129" text="기사원 &#xA;솔루션사업팀&#xA;기안" measuredWidth="129" measuredHeight="54" borderColor="#eeeeee">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="92" x="850" y="224" measuredWidth="167" measuredHeight="53">
+    <widgets xsi:type="model:Icon" id="93" y="11" width="32" height="32" measuredWidth="32" measuredHeight="32" icon="user (large)"/>
+    <widgets xsi:type="model:TextArea" id="94" x="38" width="129" text="기과장&#xA;솔루션사업팀&#xA;확인" measuredWidth="129" measuredHeight="53" borderColor="#eeeeee">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="120" x="256" y="122" measuredWidth="513" measuredHeight="439">
+    <widgets xsi:type="model:Label" id="50" x="218" text="업 무 기 안" measuredWidth="93" measuredHeight="33">
+      <font size="20px" bold="true"/>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="78" x="310" y="33" measuredWidth="201" measuredHeight="86">
+      <widgets xsi:type="model:WidgetGroup" id="55" measuredWidth="51" measuredHeight="85">
+        <widgets xsi:type="model:Shape" id="52" width="51" height="15" text="사원" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font size="10px"/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="53" y="14" width="51" height="57" text="기사원" measuredWidth="51" measuredHeight="57" shapeType="rectangle">
+          <font/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="54" y="70" width="51" height="15" text="05/12" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font/>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="56" x="50" y="1" measuredWidth="51" measuredHeight="85">
+        <widgets xsi:type="model:Shape" id="57" width="51" height="15" text="과장" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font size="10px"/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="59" y="70" width="51" height="15" text="05/12" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="119" y="14" width="51" height="57" text="기과장" measuredWidth="51" measuredHeight="57" shapeType="rectangle">
+          <font/>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="60" x="100" y="1" measuredWidth="51" measuredHeight="85">
+        <widgets xsi:type="model:Shape" id="61" width="51" height="15" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font size="10px"/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="63" y="70" width="51" height="15" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font/>
+        </widgets>
+        <widgets xsi:type="model:WidgetGroup" id="75" y="14" measuredWidth="51" measuredHeight="57">
+          <widgets xsi:type="model:Shape" id="76" width="50" height="57" measuredWidth="50" measuredHeight="57" rotation="270" shapeType="triangle-right">
+            <font/>
+          </widgets>
+          <widgets xsi:type="model:Shape" id="77" width="51" height="57" measuredWidth="51" measuredHeight="57" rotation="90" shapeType="triangle-right">
+            <font/>
+          </widgets>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="64" x="150" y="1" measuredWidth="51" measuredHeight="85">
+        <widgets xsi:type="model:Shape" id="65" width="51" height="15" text="팀장" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font size="10px"/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="66" y="14" width="51" height="57" text="기팀장" measuredWidth="51" measuredHeight="57" shapeType="rectangle">
+          <font/>
+        </widgets>
+        <widgets xsi:type="model:Shape" id="67" y="70" width="51" height="15" text="05/12" measuredWidth="51" measuredHeight="15" shapeType="rectangle">
+          <font/>
+        </widgets>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:Master" id="87" y="392" measuredWidth="102" measuredHeight="24">
+      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#h6.%20Heading"/>
+      <overrides>
+        <widgets ref="16" text="첨부파일 %(font:9)~첨부파일1.txt~%"/>
+      </overrides>
+    </widgets>
+    <widgets xsi:type="model:Master" id="88" y="415" measuredWidth="88" measuredHeight="24">
+      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#h6.%20Heading"/>
+      <overrides>
+        <widgets ref="16" text="관련문서 %(font:9)~결재문서1~%"/>
+      </overrides>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="95" y="20" measuredWidth="145" measuredHeight="112">
+      <widgets xsi:type="model:WidgetGroup" id="96" measuredWidth="145" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="97" width="59" measuredWidth="59" measuredHeight="19">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+          <overrides>
+            <widgets ref="64" width="59" text="기안자">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="98" x="64" width="81" measuredWidth="81" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Typography.screen#Label%20Secondary"/>
+          <overrides>
+            <widgets ref="63" width="81" text="기사원">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="99" y="29" measuredWidth="145" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="100" measuredWidth="57" measuredHeight="19">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+          <overrides>
+            <widgets ref="64" text="소속부서">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="101" x="64" width="81" measuredWidth="81" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Typography.screen#Label%20Secondary"/>
+          <overrides>
+            <widgets ref="63" width="81" text="솔루션사업팀">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="102" y="59" measuredWidth="145" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="103" width="57" measuredWidth="57" measuredHeight="19">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+          <overrides>
+            <widgets ref="64" width="57" text="기안일">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="104" x="64" width="81" measuredWidth="81" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Typography.screen#Label%20Secondary"/>
+          <overrides>
+            <widgets ref="63" width="81" noText="true">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="105" y="92" measuredWidth="145" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="106" measuredWidth="57" measuredHeight="19">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+          <overrides>
+            <widgets ref="64" text="문서번호">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="107" x="64" width="81" measuredWidth="81" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Typography.screen#Label%20Secondary"/>
+          <overrides>
+            <widgets ref="63" width="81" noText="true">
+              <attributes key="textAlignment" value="Left"/>
+            </widgets>
+          </overrides>
+        </widgets>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="111" y="142" measuredWidth="513" measuredHeight="20">
+      <widgets xsi:type="model:Master" id="112" width="57" measuredWidth="57" measuredHeight="19">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+        <overrides>
+          <widgets ref="64" width="57" text="제목">
+            <attributes key="textAlignment" value="Left"/>
+          </widgets>
+        </overrides>
+      </widgets>
+      <widgets xsi:type="model:Master" id="113" x="64" measuredWidth="449" measuredHeight="20">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Typography.screen#Label%20Secondary"/>
+        <overrides>
+          <widgets ref="63" width="449" text="소프트웨어 구매 신청">
+            <attributes key="textAlignment" value="Left"/>
+          </widgets>
+        </overrides>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:Master" id="114" y="174" height="209" measuredWidth="511" measuredHeight="209">
+      <screen xsi:type="model:WidgetGroup" href="../../assets/Foundation/Typography.screen#Label%20Secondary"/>
+      <overrides>
+        <widgets ref="63" width="511" height="209" text="소프트웨어 구매 신청">
+          <attributes key="textAlignment" value="Left"/>
+        </widgets>
+      </overrides>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="115" x="850" y="294" measuredWidth="167" measuredHeight="53">
+    <widgets xsi:type="model:Icon" id="116" y="11" width="32" height="32" measuredWidth="32" measuredHeight="32" icon="user (large)"/>
+    <widgets xsi:type="model:TextArea" id="117" x="38" width="129" text="기팀장&#xA;솔루션사업팀&#xA;결재" measuredWidth="129" measuredHeight="53" borderColor="#eeeeee">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Button" id="118" x="412" y="80" width="63" height="23" text="인쇄" measuredWidth="63" measuredHeight="23">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

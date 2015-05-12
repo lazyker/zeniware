@@ -59,8 +59,8 @@
       <overrides>
         <widgets ref="49" width="193" text="* 개인결재&#xA;> 대기 문서&#xA;> 진행 문서&#xA;--&#xA;* 부서결재&#xA;> 미처리문서함&#xA;>> 일반기안문&#xA;>> 영업관련&#xA;--&#xA;* 개인문서함&#xA;> 기안문서함&#xA;> 결재문서함&#xA;> 참조문서함&#xA;--&#xA;* 부서문서함&#xA;> 솔루션사업팀&#xA;>> 품의함&#xA;>> 수신함&#xA;>> 발신함">
           <items ref="@items.0" text="* 개인결재"/>
-          <items ref="@items.1" text="> 결재문서함"/>
-          <items ref="@items.2" text="> 참조문서함"/>
+          <items ref="@items.1" text="> 결재문서함" link="../workflow_pers_folder2_main.screen"/>
+          <items ref="@items.2" text="> 참조문서함" link="../workflow_pers_folder3_main.screen"/>
           <items ref="@items.3" text="--"/>
           <items ref="@items.4" text="* 부서문서함"/>
           <items ref="@items.5" text="> 솔루션사업팀"/>
@@ -221,108 +221,120 @@
       <widgets ref="16" text="관련문서 %(font:9)~결재문서1~%"/>
     </overrides>
   </widgets>
-  <widgets xsi:type="model:Master" id="98" x="850" y="155" measuredWidth="57" measuredHeight="19">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
-    <overrides>
-      <widgets ref="64" text="공개여부"/>
-    </overrides>
-  </widgets>
-  <widgets xsi:type="model:Master" id="100" x="850" y="192" measuredWidth="57" measuredHeight="19">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
-    <overrides>
-      <widgets ref="64" text="보안등급"/>
-    </overrides>
-  </widgets>
-  <widgets xsi:type="model:Master" id="101" x="850" y="232" measuredWidth="57" measuredHeight="19">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
-    <overrides>
-      <widgets ref="64" text="보존연한"/>
-    </overrides>
-  </widgets>
-  <widgets xsi:type="model:Master" id="102" x="850" y="271" measuredWidth="57" measuredHeight="19">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
-    <overrides>
-      <widgets ref="64" text="긴급결재"/>
-    </overrides>
-  </widgets>
-  <widgets xsi:type="model:Master" id="103" x="850" y="311" measuredWidth="57" measuredHeight="19">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
-    <overrides>
-      <widgets ref="64" text="수정여부"/>
-    </overrides>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="106" x="920" y="155" measuredWidth="107" measuredHeight="20">
-    <widgets xsi:type="model:Master" id="104" measuredWidth="38" measuredHeight="20">
-      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
-      <overrides>
-        <widgets ref="20" text="공개">
-          <attributes key="selected" value="true"/>
-          <font size="10px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-    <widgets xsi:type="model:Master" id="105" x="60" measuredWidth="47" measuredHeight="20">
-      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
-      <overrides>
-        <widgets ref="20" text="비공개">
-          <font size="10px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="107" x="920" y="311" measuredWidth="98" measuredHeight="20">
-    <widgets xsi:type="model:Master" id="108" measuredWidth="38" measuredHeight="20">
-      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
-      <overrides>
-        <widgets ref="20" text="가능">
-          <attributes key="selected" value="true"/>
-          <font size="10px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-    <widgets xsi:type="model:Master" id="109" x="60" measuredWidth="38" measuredHeight="20">
-      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
-      <overrides>
-        <widgets ref="20" text="불가">
-          <font size="10px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="110" x="920" y="271" measuredWidth="98" measuredHeight="20">
-    <widgets xsi:type="model:Master" id="111" measuredWidth="38" measuredHeight="20">
-      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
-      <overrides>
-        <widgets ref="20" text="긴급">
-          <font size="10px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-    <widgets xsi:type="model:Master" id="112" x="60" measuredWidth="38" measuredHeight="20">
-      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
-      <overrides>
-        <widgets ref="20" text="일반">
-          <attributes key="selected" value="true"/>
-          <font size="10px"/>
-        </widgets>
-      </overrides>
-    </widgets>
-  </widgets>
-  <widgets xsi:type="model:Master" id="114" x="920" y="190" width="107" measuredWidth="107" measuredHeight="24">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Select"/>
-    <overrides>
-      <widgets ref="24" width="107" text="전직원">
-        <font size="10px"/>
+  <widgets xsi:type="model:WidgetGroup" id="147" x="850" y="155" measuredWidth="177" measuredHeight="176">
+    <widgets xsi:type="model:WidgetGroup" id="142" measuredWidth="177" measuredHeight="20">
+      <widgets xsi:type="model:Master" id="98" measuredWidth="57" measuredHeight="19">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+        <overrides>
+          <widgets ref="64" text="공개여부"/>
+        </overrides>
       </widgets>
-    </overrides>
-  </widgets>
-  <widgets xsi:type="model:Master" id="115" x="920" y="230" measuredWidth="107" measuredHeight="27">
-    <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Select"/>
-    <overrides>
-      <widgets ref="24" width="107" text="1년">
-        <font size="10px"/>
+      <widgets xsi:type="model:WidgetGroup" id="106" x="70" measuredWidth="107" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="104" measuredWidth="38" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
+          <overrides>
+            <widgets ref="20" text="공개">
+              <attributes key="selected" value="true"/>
+              <font size="10px"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="105" x="60" measuredWidth="47" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
+          <overrides>
+            <widgets ref="20" text="비공개">
+              <font size="10px"/>
+            </widgets>
+          </overrides>
+        </widgets>
       </widgets>
-    </overrides>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="146" y="156" measuredWidth="168" measuredHeight="20">
+      <widgets xsi:type="model:Master" id="103" measuredWidth="57" measuredHeight="19">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+        <overrides>
+          <widgets ref="64" text="수정여부"/>
+        </overrides>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="107" x="70" measuredWidth="98" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="108" measuredWidth="38" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
+          <overrides>
+            <widgets ref="20" text="가능">
+              <attributes key="selected" value="true"/>
+              <font size="10px"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="109" x="60" measuredWidth="38" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
+          <overrides>
+            <widgets ref="20" text="불가">
+              <font size="10px"/>
+            </widgets>
+          </overrides>
+        </widgets>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="145" y="116" measuredWidth="168" measuredHeight="20">
+      <widgets xsi:type="model:Master" id="102" measuredWidth="57" measuredHeight="19">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+        <overrides>
+          <widgets ref="64" text="긴급결재"/>
+        </overrides>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="110" x="70" measuredWidth="98" measuredHeight="20">
+        <widgets xsi:type="model:Master" id="111" measuredWidth="38" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
+          <overrides>
+            <widgets ref="20" text="긴급">
+              <font size="10px"/>
+            </widgets>
+          </overrides>
+        </widgets>
+        <widgets xsi:type="model:Master" id="112" x="60" measuredWidth="38" measuredHeight="20">
+          <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Radio%20Button"/>
+          <overrides>
+            <widgets ref="20" text="일반">
+              <attributes key="selected" value="true"/>
+              <font size="10px"/>
+            </widgets>
+          </overrides>
+        </widgets>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="143" y="35" measuredWidth="177" measuredHeight="24">
+      <widgets xsi:type="model:Master" id="100" y="2" measuredWidth="57" measuredHeight="19">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+        <overrides>
+          <widgets ref="64" text="보안등급"/>
+        </overrides>
+      </widgets>
+      <widgets xsi:type="model:Master" id="114" x="70" width="107" measuredWidth="107" measuredHeight="24">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Select"/>
+        <overrides>
+          <widgets ref="24" width="107" text="전직원">
+            <font size="10px"/>
+          </widgets>
+        </overrides>
+      </widgets>
+    </widgets>
+    <widgets xsi:type="model:WidgetGroup" id="144" y="75" measuredWidth="177" measuredHeight="27">
+      <widgets xsi:type="model:Master" id="101" y="2" measuredWidth="57" measuredHeight="19">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Typography.screen#Label"/>
+        <overrides>
+          <widgets ref="64" text="보존연한"/>
+        </overrides>
+      </widgets>
+      <widgets xsi:type="model:Master" id="115" x="70" measuredWidth="107" measuredHeight="27">
+        <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Forms.screen#Select"/>
+        <overrides>
+          <widgets ref="24" width="107" text="1년">
+            <font size="10px"/>
+          </widgets>
+        </overrides>
+      </widgets>
+    </widgets>
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="129" x="256" y="142" measuredWidth="145" measuredHeight="112">
     <widgets xsi:type="model:WidgetGroup" id="130" measuredWidth="145" measuredHeight="20">

@@ -51,7 +51,7 @@
   <widgets xsi:type="model:WidgetGroup" id="144" x="226" y="74" height="493" measuredWidth="829" measuredHeight="493">
     <widgets xsi:type="model:TabbedPane" id="143" width="829" height="493" text="전체,진행,완료,반려" measuredWidth="829" measuredHeight="493" selection="1">
       <items link="workflow_pers_folder2_main.screen" x="10" y="0" width="41" height="27" text="전체"/>
-      <items link="" x="51" y="0" width="41" height="27" text="진행"/>
+      <items x="51" y="0" width="41" height="27" text="진행"/>
       <items link="workflow_pers_folder2_2.screen" x="92" y="0" width="41" height="27" text="완료"/>
       <items link="workflow_pers_folder2_3.screen" x="133" y="0" width="41" height="27" text="반려"/>
       <font/>
@@ -82,7 +82,7 @@
           <attributes key="selection" value="11"/>
           <items ref="@items.0" text="* 개인결재"/>
           <items ref="@items.1" text="> 결재문서함"/>
-          <items ref="@items.2" text="> 참조문서함"/>
+          <items ref="@items.2" text="> 참조문서함" link="workflow_pers_folder3_main.screen"/>
           <items ref="@items.3" text="--"/>
           <items ref="@items.4" text="* 부서문서함"/>
           <items ref="@items.5" text="> 솔루션사업팀"/>
