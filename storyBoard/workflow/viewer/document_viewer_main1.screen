@@ -135,7 +135,7 @@
   </widgets>
   <widgets xsi:type="model:WidgetGroup" id="92" x="850" y="224" measuredWidth="167" measuredHeight="53">
     <widgets xsi:type="model:Icon" id="93" y="11" width="32" height="32" measuredWidth="32" measuredHeight="32" icon="user (large)"/>
-    <widgets xsi:type="model:TextArea" id="94" x="38" width="129" text="기과장&#xA;솔루션사업팀&#xA;확인" measuredWidth="129" measuredHeight="53" borderColor="#eeeeee">
+    <widgets xsi:type="model:TextArea" id="94" x="38" width="129" text="기과장&#xA;솔루션사업팀&#xA;결재" measuredWidth="129" measuredHeight="53" borderColor="#eeeeee">
       <font/>
     </widgets>
   </widgets>
