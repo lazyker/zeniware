@@ -131,7 +131,7 @@
             <object xsi:type="model:Item" text=">> 품의함"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
-            <object xsi:type="model:Item" link="../workflow_pers_folder1_main.screen" text="> 기안문서함"/>
+            <object xsi:type="model:Item" text="> 기안문서함"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
             <object xsi:type="model:Item" text="* 개인문서함"/>
@@ -146,7 +146,7 @@
             <object xsi:type="model:Item" text=">> 일반기안문"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
-            <object xsi:type="model:Item" link="../workflow_dept_appr1.screen" text="> 미처리문서함"/>
+            <object xsi:type="model:Item" text="> 미처리문서함"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
             <object xsi:type="model:Item" text="* 부서결재"/>
@@ -155,10 +155,10 @@
             <object xsi:type="model:Item" text="--"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
-            <object xsi:type="model:Item" link="../workflow_pers_appr2.screen" text="> 진행 문서"/>
+            <object xsi:type="model:Item" text="> 진행 문서"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
-            <object xsi:type="model:Item" link="../workflow_pers_appr1.screen" text="> 대기 문서"/>
+            <object xsi:type="model:Item" text="> 대기 문서"/>
           </itemChanges>
         </widgets>
       </overrides>

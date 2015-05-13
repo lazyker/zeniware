@@ -55,7 +55,7 @@
       <items link="workflow_pers_folder1_2.screen" x="92" y="0" width="41" height="27" text="완료"/>
       <items link="workflow_pers_folder1_3.screen" x="133" y="0" width="41" height="27" text="반려"/>
       <items link="workflow_pers_folder1_4.screen" x="174" y="0" width="41" height="27" text="회수"/>
-      <items link="" x="215" y="0" width="61" height="27" text="임시저장"/>
+      <items x="215" y="0" width="61" height="27" text="임시저장"/>
       <font/>
     </widgets>
     <widgets xsi:type="model:SearchField" id="135" x="622" y="1" width="207" text="제목, 기안자, 양식" measuredWidth="207" measuredHeight="24">
@@ -83,8 +83,8 @@
         <widgets ref="49" width="193" text="* 개인결재&#xA;> 대기 문서&#xA;> 진행 문서&#xA;--&#xA;* 부서결재&#xA;> 미처리문서함&#xA;>> 일반기안문&#xA;>> 영업관련&#xA;--&#xA;* 개인문서함&#xA;> 기안문서함&#xA;> 결재문서함&#xA;> 참조문서함&#xA;--&#xA;* 부서문서함&#xA;> 솔루션사업팀&#xA;>> 품의함&#xA;>> 수신함&#xA;>> 발신함">
           <attributes key="selection" value="10"/>
           <items ref="@items.0" text="* 개인결재"/>
-          <items ref="@items.1" text="> 결재문서함"/>
-          <items ref="@items.2" text="> 참조문서함"/>
+          <items ref="@items.1" text="> 결재문서함" link="workflow_pers_folder2_main.screen"/>
+          <items ref="@items.2" text="> 참조문서함" link="workflow_pers_folder3_main.screen"/>
           <items ref="@items.3" text="--"/>
           <items ref="@items.4" text="* 부서문서함"/>
           <items ref="@items.5" text="> 솔루션사업팀"/>
@@ -98,7 +98,7 @@
             <object xsi:type="model:Item" text=">> 품의함"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
-            <object xsi:type="model:Item" text="> 기안문서함"/>
+            <object xsi:type="model:Item" link="workflow_pers_folder1_main.screen" text="> 기안문서함"/>
           </itemChanges>
           <itemChanges xsi:type="o:Insert" newIndex="1">
             <object xsi:type="model:Item" text="* 개인문서함"/>
