@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
+  <widgets xsi:type="model:WidgetGroup" id="123" x="48" y="48" height="505" measuredWidth="841" measuredHeight="505">
+    <widgets xsi:type="model:Panel" id="124" width="841" height="505" measuredWidth="841" measuredHeight="505"/>
+    <widgets xsi:type="model:WidgetGroup" id="125" x="812" y="10" measuredWidth="16" measuredHeight="16" layoutParams="anchor-right|anchor-top" name="Close">
+      <widgets xsi:type="model:Icon" id="126" measuredWidth="16" measuredHeight="16" foreground="#666666" icon="delete (small)"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="127" x="12" y="5" text="전자결재 기본 설정" measuredWidth="110" measuredHeight="26" layoutParams="anchor-left|anchor-top">
+      <font size="14px" bold="true"/>
+    </widgets>
+    <widgets xsi:type="model:Master" id="134" x="15" y="48" measuredWidth="816" measuredHeight="417">
+      <screen xsi:type="model:WidgetGroup" href="../../assets/Bootstrap/Content.screen#Alert%20Info"/>
+      <overrides>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="384">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*문서함 or 문서 이동* 조직 구조 변경으로 특정 부서의 결재완료문서를 다른 문서함 혹은 개편된 부서의 문서함으로 이동시켜주는 기능" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:HLine" y="164" width="816"/>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="344">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*보존연한 관리* 1년, 2년, 3년, 5년, 준영구, 영구 등 보존연한 기준 관리" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="307">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*보안등급 관리* 1(최고)~10(최하) 등급까지 보안등급 체계 설정. 각 등급별 명칭 부여(1:보안문서, 10:전직원열람 등)" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="267">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*문서번호 채번 규칙 설정* 부서명-연도(4자리)-일련번호(5자리), 회사명-연도(2자리)-일련번호(3자리) 등" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="227">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*부서 문서함 관리* 특수문서함 관리, 문서함 공유 관리" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="184">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*결재 양식 관리* 회사별 결재 양식 관리(폴더별 관리). 양식별 고정수신처 및 고정결재선 관리 포함" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="117">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*합의 결재 옵션* 1.반대 시 결재 진행 2.반대 시 결재 중단 - 반대 시 결재 진행 선택 시 차상위결재자가 진행 여부 판단" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="80">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*결재칸 직위 표기* 1.직위 사용 2.직책 사용 - 직책이 존재하지 않을 경우 직위로 표현" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:WidgetGroup" y="40">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*결재 암호 사용* 1.사용함 2.사용안함 - 결재 암호 사용 시 결재자 결재 행위 직전에 암호 확인" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Insert" newIndex="2">
+          <object xsi:type="model:WidgetGroup">
+            <widgets xsi:type="model:Shape" width="816" height="33" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" background="#d9edf7" foreground="#bce8f1" shapeType="rectangle-rounded">
+              <font/>
+            </widgets>
+            <widgets xsi:type="model:Text" x="16" y="9" width="785" text="*서명 옵션* 1.서명 사용 2.서명 사용하지 않음 - 서명을 사용하지 않을 경우 서명란에 결재자 성명 기입" layoutParams="anchor-left,anchor-right|anchor-top,anchor-bottom" foreground="#31708f">
+              <font size="12px"/>
+            </widgets>
+          </object>
+        </widgetChanges>
+        <widgetChanges xsi:type="o:Delete" ref="17"/>
+        <widgetChanges xsi:type="o:Delete" ref="16"/>
+        <widgets ref="22" y="0"/>
+      </overrides>
+    </widgets>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
