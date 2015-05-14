@@ -1,5 +1,6 @@
 package zeniware.common.login;
 
+import java.security.Principal;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -29,8 +30,10 @@ public class LoginController {
 		}
 		
 		@RequestMapping("/main")
-		public String main(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable{
-			logger.info("Welcome home! The client locale is {}.", paramMap);
+		public String main(@RequestParam Map<String, Object> paramMap, ModelMap model, Principal principal) throws Throwable{
+			logger.info("login success.", principal);
+			
+			System.out.println(principal.getName());
 			
 			return "/main";
 		}

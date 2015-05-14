@@ -17,6 +17,7 @@
 			password-parameter="loginpwd"
 			login-page="/login"
 			default-target-url="/main"
+			always-use-default-target="true"
 		/>
 
 	</http>
