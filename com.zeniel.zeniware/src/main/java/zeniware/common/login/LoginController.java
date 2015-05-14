@@ -14,7 +14,7 @@ import zeniware.sample.HomeController;
 import zeniware.sample.service.MainService;
 
 @Controller
-public class login {
+public class LoginController {
 	
 		private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 		

@@ -1,4 +1,4 @@
-package zeniware.common;
+package zeniware.common.message;
 
 import java.util.Locale;
 

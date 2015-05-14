@@ -59,8 +59,8 @@
       <overrides>
         <widgets ref="49" width="193" text="* 개인결재&#xA;> 대기 문서&#xA;> 진행 문서&#xA;--&#xA;* 부서결재&#xA;> 미처리문서함&#xA;>> 일반기안문&#xA;>> 영업관련&#xA;--&#xA;* 개인문서함&#xA;> 기안문서함&#xA;> 결재문서함&#xA;> 참조문서함&#xA;--&#xA;* 부서문서함&#xA;> 솔루션사업팀&#xA;>> 품의함&#xA;>> 수신함&#xA;>> 발신함">
           <items ref="@items.0" text="* 개인결재"/>
-          <items ref="@items.1" text="> 결재문서함"/>
-          <items ref="@items.2" text="> 참조문서함"/>
+          <items ref="@items.1" text="> 결재문서함" link="../workflow_pers_folder2_main.screen"/>
+          <items ref="@items.2" text="> 참조문서함" link="../workflow_pers_folder3_main.screen"/>
           <items ref="@items.3" text="--"/>
           <items ref="@items.4" text="* 부서문서함"/>
           <items ref="@items.5" text="> 솔루션사업팀"/>

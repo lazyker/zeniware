@@ -29,7 +29,7 @@
     <items x="58" y="0" width="57" height="29" text="주간"/>
     <items x="115" y="0" width="62" height="29" text="월간"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="138" x="848" y="512" text="클릭" measuredWidth="30" measuredHeight="23" link="CreatecarRent.screen">
+  <widgets xsi:type="model:Label" id="138" x="848" y="512" text="클릭" measuredWidth="30" measuredHeight="23" link="createcarRent.screen">
     <font/>
   </widgets>
   <hRuler/>

@@ -5,7 +5,7 @@
                 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<!-- 메시지소스빈 설정 -->
-	<bean id="commonMessageSource" class="zeniware.common.CommonMessageSource">
+	<bean id="commonMessageSource" class="zeniware.common.message.CommonMessageSource">
 		<property name="reloadableResourceBundleMessageSource">
 			<ref bean="messageSource" />
 		</property> 

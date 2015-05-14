@@ -3,10 +3,10 @@
   <widgets xsi:type="model:Panel" id="60" x="242" y="169" width="799" height="585" measuredWidth="799" measuredHeight="585"/>
   <widgets xsi:type="model:Panel" id="22" x="40" y="168" width="201" height="586" measuredWidth="201" measuredHeight="586"/>
   <widgets xsi:type="model:HLine" id="40" x="40" y="216" width="197" measuredWidth="197" measuredHeight="6"/>
-  <widgets xsi:type="model:Master" id="64" x="251" y="222" width="742" measuredWidth="742" measuredHeight="152">
+  <widgets xsi:type="model:Master" id="64" x="251" y="222" width="742" measuredWidth="742" measuredHeight="189">
     <screen xsi:type="model:WidgetGroup" href="../assets/Foundation/Content.screen#Table"/>
     <overrides>
-      <widgets ref="34" width="742" text="*자산*, *예약 시간*, *취소/반납*&#xA;3F-대회의실, 2015-05-07 16:00 ~ 2015-05-07 17:00, &#xA;BF-소회의실, 2015-05-08 10:00 ~ 2015-05-08 12:00,&#xA;빔프로젝트, 2015-05-07 11:00,"/>
+      <widgets ref="34" width="742" text="*자산*, *예약 시간*, *취소/반납*&#xA;3F-대회의실, 2015-05-07 16:00 ~ 2015-05-07 17:00, &#xA;BF-소회의실, 2015-05-08 10:00 ~ 2015-05-08 12:00,&#xA;빔프로젝트, 2015-05-07 11:00 ~ 2015-05-07 14:00,&#xA;26허6689, 2015-05-11 09:00 ~ 2015-05-11 13:10,"/>
     </overrides>
   </widgets>
   <widgets xsi:type="model:Label" id="65" x="252" y="180" text="내 예약/대여 현황" measuredWidth="136" measuredHeight="29">
@@ -21,45 +21,45 @@
   <widgets xsi:type="model:Button" id="68" x="910" y="342" width="40" height="22" text="반납" measuredWidth="40" measuredHeight="22">
     <font/>
   </widgets>
-  <widgets xsi:type="model:HLine" id="69" x="242" y="408" width="799" measuredWidth="799" measuredHeight="6"/>
-  <widgets xsi:type="model:Icon" id="73" x="251" y="426" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
-  <widgets xsi:type="model:Icon" id="74" x="252" y="453" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
-  <widgets xsi:type="model:Icon" id="75" x="252" y="480" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
-  <widgets xsi:type="model:Icon" id="76" x="252" y="504" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
-  <widgets xsi:type="model:Label" id="78" x="272" y="423" text="3F-대회의실" measuredWidth="72" measuredHeight="23">
+  <widgets xsi:type="model:HLine" id="69" x="242" y="459" width="799" measuredWidth="799" measuredHeight="6"/>
+  <widgets xsi:type="model:Icon" id="73" x="251" y="477" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
+  <widgets xsi:type="model:Icon" id="74" x="252" y="504" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
+  <widgets xsi:type="model:Icon" id="75" x="252" y="531" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
+  <widgets xsi:type="model:Icon" id="76" x="252" y="555" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
+  <widgets xsi:type="model:Label" id="78" x="272" y="474" text="3F-대회의실" measuredWidth="72" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="79" x="272" y="450" text="BF-대회의실" measuredWidth="72" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="79" x="272" y="501" text="BF-대회의실" measuredWidth="72" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="80" x="272" y="476" text="BF-소회의실" measuredWidth="72" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="80" x="272" y="527" text="BF-소회의실" measuredWidth="72" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="81" x="272" y="500" text="사무자산" measuredWidth="54" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="81" x="272" y="551" text="사무자산" measuredWidth="54" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="83" x="376" y="423" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="83" x="376" y="474" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="84" x="504" y="423" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22" link="meetingRoom.screen">
+  <widgets xsi:type="model:Button" id="84" x="504" y="474" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22" link="meetingRoom.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="85" x="376" y="451" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="85" x="376" y="502" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="86" x="504" y="451" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
+  <widgets xsi:type="model:Button" id="86" x="504" y="502" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="87" x="376" y="477" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="87" x="376" y="528" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="88" x="504" y="477" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
+  <widgets xsi:type="model:Button" id="88" x="504" y="528" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="89" x="376" y="501" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="89" x="376" y="552" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="90" x="504" y="501" width="40" height="22" text="대여" measuredWidth="40" measuredHeight="22">
+  <widgets xsi:type="model:Button" id="90" x="504" y="552" width="40" height="22" text="대여" measuredWidth="40" measuredHeight="22">
     <font/>
   </widgets>
   <widgets xsi:type="model:Master" id="94" x="44" y="233" measuredWidth="117" measuredHeight="125">
@@ -77,17 +77,29 @@
   <widgets xsi:type="model:Label" id="100" x="141" y="331" text="클릭" measuredWidth="30" measuredHeight="23" link="corporateCar.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Icon" id="101" x="252" y="529" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
-  <widgets xsi:type="model:Label" id="102" x="272" y="525" text="영업차량" measuredWidth="54" measuredHeight="23">
+  <widgets xsi:type="model:Icon" id="101" x="252" y="580" measuredWidth="16" measuredHeight="16" icon="submenu (small)"/>
+  <widgets xsi:type="model:Label" id="102" x="272" y="576" text="영업차량" measuredWidth="54" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="103" x="376" y="526" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="103" x="376" y="577" text="담당자 : 김재환" measuredWidth="89" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="104" x="504" y="526" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
+  <widgets xsi:type="model:Button" id="104" x="504" y="577" width="40" height="22" text="예약" measuredWidth="40" measuredHeight="22">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="105" x="170" y="233" text="클릭" measuredWidth="30" measuredHeight="23" link="meetingRoom.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="106" x="720" y="341" text="반납기한이 지났습니다." measuredWidth="133" measuredHeight="23" foreground="#ff0000">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Tooltip" id="107" x="736" y="363" text="반납기간이 지날 경우 표시" measuredWidth="155" measuredHeight="40" background="#cccccc" position="topLeft">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="108" x="910" y="381" width="40" height="22" text="취소" measuredWidth="40" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Tooltip" id="109" x="760" y="402" text="차량예약의 경우&#xD;&#xA;예약 시간이 지나면 운행일지 &#xD;&#xA;작성 버튼으로 활성화" measuredWidth="171" measuredHeight="70" background="#cccccc" position="topRight">
     <font/>
   </widgets>
   <hRuler/>

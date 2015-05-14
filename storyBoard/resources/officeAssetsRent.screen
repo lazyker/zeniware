@@ -36,15 +36,26 @@
       <widgets ref="61" width="1001" height="585"/>
     </overrides>
   </widgets>
-  <widgets xsi:type="model:WidgetGroup" id="109" x="432" y="392" measuredWidth="400" measuredHeight="137">
-    <widgets xsi:type="model:Window" id="110" height="97" text="대여" measuredWidth="400" measuredHeight="97"/>
-    <widgets xsi:type="model:TextArea" id="111" y="21" width="400" height="116" text=" &#xD;&#xA;   대여일          2015-05-08 14:20&#xD;&#xA;   &#xD;&#xA;   대여자          정종석&#xD;&#xA;" measuredWidth="400" measuredHeight="116">
+  <widgets xsi:type="model:WidgetGroup" id="109" x="360" y="392" measuredWidth="472" measuredHeight="137">
+    <widgets xsi:type="model:Window" id="110" width="472" height="137" text="대여" measuredWidth="472" measuredHeight="137"/>
+    <widgets xsi:type="model:TextArea" id="111" y="21" width="472" height="116" text=" &#xD;&#xA;   대여일&#xD;&#xA;   &#xD;&#xA;   대여자     정종석&#xD;&#xA;" measuredWidth="472" measuredHeight="116">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Button" id="112" x="161" y="96" text="확인" measuredWidth="44" measuredHeight="25" background="#cccccc">
+    <widgets xsi:type="model:Button" id="112" x="192" y="96" text="확인" measuredWidth="44" measuredHeight="25" background="#cccccc">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Button" id="113" x="207" y="96" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
+    <widgets xsi:type="model:Button" id="113" x="238" y="96" text="취소" measuredWidth="44" measuredHeight="25" background="#999999">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:DateField" id="121" x="72" y="37" text="  2015-05-07" measuredWidth="104" measuredHeight="23"/>
+    <widgets xsi:type="model:DateField" id="122" x="282" y="37" text="  2015-05-07" measuredWidth="104" measuredHeight="23"/>
+    <widgets xsi:type="model:Combo" id="123" x="185" y="37" text="14:30" measuredWidth="58" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="124" x="258" y="37" text="~" measuredWidth="14" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="125" x="394" y="37" text="15:00" measuredWidth="58" measuredHeight="23">
       <font/>
     </widgets>
   </widgets>
