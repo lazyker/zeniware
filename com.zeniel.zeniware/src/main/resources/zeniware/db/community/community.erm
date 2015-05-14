@@ -21,15 +21,9 @@
 		<right_margin>30</right_margin>
 	</page_setting>
 	<category_index>0</category_index>
-<<<<<<< HEAD
-	<zoom>0.25</zoom>
-	<x>0</x>
-	<y>1035</y>
-=======
 	<zoom>0.1</zoom>
 	<x>0</x>
-	<y>39</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
+	<y>21</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -106,18 +100,10 @@
 				<category>
 					<id></id>
 					<height>1418</height>
-<<<<<<< HEAD
-					<width>2030</width>
-=======
 					<width>1526</width>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<font_name>맑은 고딕</font_name>
 						<font_size>9</font_size>
-<<<<<<< HEAD
-					<x>1452</x>
-=======
 					<x>1956</x>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<y>456</y>
 					<color>
 						<r>128</r>
@@ -128,26 +114,16 @@
 					</connections>
 					<name>설문</name>
 					<selected>true</selected>
-<<<<<<< HEAD
-					<node_element>35</node_element>
-=======
 					<node_element>37</node_element>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<node_element>5</node_element>
 					<node_element>15</node_element>
 					<node_element>16</node_element>
 					<node_element>20</node_element>
 					<node_element>23</node_element>
 					<node_element>17</node_element>
-<<<<<<< HEAD
-					<node_element>22</node_element>
-					<node_element>26</node_element>
-					<node_element>38</node_element>
-=======
 					<node_element>32</node_element>
 					<node_element>22</node_element>
 					<node_element>26</node_element>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				</category>
 				<category>
 					<id></id>
@@ -196,18 +172,10 @@
 				<category>
 					<id></id>
 					<height>875</height>
-<<<<<<< HEAD
-					<width>1790</width>
-=======
 					<width>1298</width>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<font_name>맑은 고딕</font_name>
 						<font_size>9</font_size>
-<<<<<<< HEAD
-					<x>1524</x>
-=======
 					<x>2015</x>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<y>3431</y>
 					<color>
 						<r>128</r>
@@ -221,15 +189,9 @@
 					<node_element>14</node_element>
 					<node_element>28</node_element>
 					<node_element>2</node_element>
-<<<<<<< HEAD
-					<node_element>27</node_element>
-					<node_element>25</node_element>
-					<node_element>3</node_element>
-=======
 					<node_element>3</node_element>
 					<node_element>27</node_element>
 					<node_element>25</node_element>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				</category>
 				<category>
 					<id></id>
@@ -272,23 +234,12 @@
 					<selected>true</selected>
 					<node_element>0</node_element>
 					<node_element>1</node_element>
-<<<<<<< HEAD
-					<node_element>37</node_element>
-					<node_element>33</node_element>
-					<node_element>32</node_element>
-					<node_element>34</node_element>
-=======
 					<node_element>33</node_element>
 					<node_element>35</node_element>
 					<node_element>34</node_element>
 					<node_element>36</node_element>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<node_element>13</node_element>
-<<<<<<< HEAD
-					<node_element>36</node_element>
-=======
 					<node_element>38</node_element>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				</category>
 			</categories>
 		</category_settings>
@@ -317,11 +268,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2015-05-06 10:40:36</creation_date>
-<<<<<<< HEAD
-			<updated_date>2015-05-14 16:53:11</updated_date>
-=======
-			<updated_date>2015-05-14 16:45:47</updated_date>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
+			<updated_date>2015-05-14 16:39:12</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -1738,36 +1685,6 @@
 			<physical_name>WEGET_YN</physical_name>
 			<type>varchar(n)</type>
 		</word>
-		<word>
-			<id>92</id>
-			<length>1</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<description></description>
-			<logical_name>쓰기_권한_YN</logical_name>
-			<physical_name>WRITE_AUTH_YN</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>93</id>
-			<length>1</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<description></description>
-			<logical_name>쓰기_권한_YN</logical_name>
-			<physical_name>WRITE_AUTH_YN</physical_name>
-			<type>varchar(n)</type>
-		</word>
 	</dictionary>
 	<tablespace_set>
 	</tablespace_set>
@@ -1802,11 +1719,7 @@
 						<bendpoint>
 							<relative>false</relative>
 							<x>1686</x>
-<<<<<<< HEAD
-							<y>5200</y>
-=======
 							<y>5189</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -1838,11 +1751,7 @@
 						<bendpoint>
 							<relative>false</relative>
 							<x>3094</x>
-<<<<<<< HEAD
-							<y>5200</y>
-=======
 							<y>5189</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -1868,11 +1777,7 @@
 			<columns>
 				<normal_column>
 					<id>0</id>
-<<<<<<< HEAD
-					<referenced_column>21</referenced_column>
-=======
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>0</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1906,11 +1811,7 @@
 				</normal_column>
 				<normal_column>
 					<id>1</id>
-<<<<<<< HEAD
-					<referenced_column>98</referenced_column>
-=======
 					<referenced_column>97</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>1</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1943,46 +1844,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<word_id>92</word_id>
-					<id>2</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>Y</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>45</word_id>
-					<id>3</id>
-=======
 					<word_id>45</word_id>
 					<id>2</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2113,13 +1976,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>4</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>3</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>3</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2152,13 +2010,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>5</id>
-					<referenced_column>98</referenced_column>
-=======
 					<id>4</id>
 					<referenced_column>97</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>2</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2192,11 +2045,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>47</word_id>
-<<<<<<< HEAD
-					<id>6</id>
-=======
 					<id>5</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2327,13 +2176,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>7</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>6</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>4</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2366,44 +2210,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>8</id>
-					<referenced_column>143</referenced_column>
-					<relation>5</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_클래식_목록_번호</logical_name>
-					<physical_name>FC_BOARD_CLASSIC_LIST_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>42</word_id>
-					<id>9</id>
-=======
 					<id>7</id>
 					<referenced_column>142</referenced_column>
 					<relation>5</relation>
@@ -2440,7 +2246,6 @@
 				<normal_column>
 					<word_id>42</word_id>
 					<id>8</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2490,13 +2295,8 @@
 			<width>314</width>
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
-<<<<<<< HEAD
-			<x>2052</x>
-			<y>3756</y>
-=======
 			<x>2999</x>
 			<y>3624</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -2505,18 +2305,12 @@
 			<connections>
 				<relation>
 					<id>6</id>
-<<<<<<< HEAD
-					<source>32</source>
-=======
 					<source>34</source>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<target>3</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
-<<<<<<< HEAD
-=======
 						<bendpoint>
 							<relative>false</relative>
 							<x>2209</x>
@@ -2527,7 +2321,6 @@
 							<x>3156</x>
 							<y>4637</y>
 						</bendpoint>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<color>
 							<r>0</r>
 							<g>0</g>
@@ -2552,22 +2345,13 @@
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2485</x>
-=======
 							<x>2954</x>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 							<y>3894</y>
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2485</x>
-							<y>3809</y>
-=======
 							<x>2954</x>
 							<y>3677</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -2592,13 +2376,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>10</id>
-					<referenced_column>143</referenced_column>
-=======
 					<id>9</id>
 					<referenced_column>142</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>7</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2631,13 +2410,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>11</id>
-					<referenced_column>180</referenced_column>
-=======
 					<id>10</id>
 					<referenced_column>185</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>6</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2671,11 +2445,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>55</word_id>
-<<<<<<< HEAD
-					<id>12</id>
-=======
 					<id>11</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2806,13 +2576,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>13</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>12</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>9</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2845,13 +2610,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>14</id>
-					<referenced_column>159</referenced_column>
-=======
 					<id>13</id>
 					<referenced_column>158</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>8</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2885,11 +2645,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>56</word_id>
-<<<<<<< HEAD
-					<id>15</id>
-=======
 					<id>14</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2957,11 +2713,7 @@
 			<columns>
 				<normal_column>
 					<word_id>67</word_id>
-<<<<<<< HEAD
-					<id>16</id>
-=======
 					<id>15</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2994,11 +2746,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>22</word_id>
-<<<<<<< HEAD
-					<id>17</id>
-=======
 					<id>16</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3066,11 +2814,7 @@
 			<columns>
 				<normal_column>
 					<word_id>73</word_id>
-<<<<<<< HEAD
-					<id>18</id>
-=======
 					<id>17</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3103,11 +2847,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>21</word_id>
-<<<<<<< HEAD
-					<id>19</id>
-=======
 					<id>18</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3140,11 +2880,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>14</word_id>
-<<<<<<< HEAD
-					<id>20</id>
-=======
 					<id>19</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3212,11 +2948,7 @@
 			<columns>
 				<normal_column>
 					<word_id>74</word_id>
-<<<<<<< HEAD
-					<id>21</id>
-=======
 					<id>20</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3306,11 +3038,7 @@
 			<columns>
 				<normal_column>
 					<word_id>69</word_id>
-<<<<<<< HEAD
-					<id>22</id>
-=======
 					<id>21</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3342,13 +3070,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>23</id>
-					<referenced_column>26</referenced_column>
-=======
 					<id>22</id>
 					<referenced_column>25</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>10</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -3382,42 +3105,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>61</word_id>
-<<<<<<< HEAD
-					<id>24</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>62</word_id>
-					<id>25</id>
-=======
 					<id>23</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -3452,7 +3139,6 @@
 				<normal_column>
 					<word_id>62</word_id>
 					<id>24</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3520,11 +3206,7 @@
 			<columns>
 				<normal_column>
 					<word_id>71</word_id>
-<<<<<<< HEAD
-					<id>26</id>
-=======
 					<id>25</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3557,11 +3239,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>23</word_id>
-<<<<<<< HEAD
-					<id>27</id>
-=======
 					<id>26</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3693,11 +3371,7 @@
 			<columns>
 				<normal_column>
 					<word_id>68</word_id>
-<<<<<<< HEAD
-					<id>28</id>
-=======
 					<id>27</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3729,13 +3403,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>29</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>28</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>11</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -3768,110 +3437,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>30</id>
-					<referenced_column>34</referenced_column>
-					<relation>12</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_피드_목록_번호</logical_name>
-					<physical_name>FC_BOARD_FEED_LIST_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>10</word_id>
-					<id>31</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>1</word_id>
-					<id>32</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>50</word_id>
-					<id>33</id>
-=======
 					<id>29</id>
 					<referenced_column>33</referenced_column>
 					<relation>12</relation>
@@ -3974,7 +3539,6 @@
 				<normal_column>
 					<word_id>50</word_id>
 					<id>32</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4106,11 +3670,7 @@
 			<columns>
 				<normal_column>
 					<word_id>70</word_id>
-<<<<<<< HEAD
-					<id>34</id>
-=======
 					<id>33</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4142,13 +3702,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>35</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>34</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>13</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -4181,13 +3736,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>36</id>
-					<referenced_column>98</referenced_column>
-=======
 					<id>35</id>
 					<referenced_column>97</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>14</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -4221,11 +3771,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>82</word_id>
-<<<<<<< HEAD
-					<id>37</id>
-=======
 					<id>36</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4258,11 +3804,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>9</word_id>
-<<<<<<< HEAD
-					<id>38</id>
-=======
 					<id>37</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4295,75 +3837,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>2</word_id>
-<<<<<<< HEAD
-					<id>39</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>43</word_id>
-					<id>40</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>89</word_id>
-					<id>41</id>
-=======
 					<id>38</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -4431,7 +3904,6 @@
 				<normal_column>
 					<word_id>89</word_id>
 					<id>40</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4563,11 +4035,7 @@
 			<columns>
 				<normal_column>
 					<word_id>68</word_id>
-<<<<<<< HEAD
-					<id>42</id>
-=======
 					<id>41</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4599,78 +4067,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>43</id>
-					<referenced_column>21</referenced_column>
-					<relation>16</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_사용자_번호</logical_name>
-					<physical_name>FH_USER_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>44</id>
-					<referenced_column>159</referenced_column>
-					<relation>15</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_파트너_관리_목록_번호</logical_name>
-					<physical_name>FC_BOARD_PARTER_MANAGEMENT_LIST_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>10</word_id>
-					<id>45</id>
-=======
 					<id>42</id>
 					<referenced_column>20</referenced_column>
 					<relation>16</relation>
@@ -4741,7 +4137,6 @@
 				<normal_column>
 					<word_id>10</word_id>
 					<id>44</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4774,42 +4169,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>1</word_id>
-<<<<<<< HEAD
-					<id>46</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>35</word_id>
-					<id>47</id>
-=======
 					<id>45</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -4844,7 +4203,6 @@
 				<normal_column>
 					<word_id>35</word_id>
 					<id>46</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4904,11 +4262,7 @@
 			<connections>
 				<relation>
 					<id>17</id>
-<<<<<<< HEAD
-					<source>32</source>
-=======
 					<source>34</source>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<target>13</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -4979,13 +4333,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>48</id>
-					<referenced_column>180</referenced_column>
-=======
 					<id>47</id>
 					<referenced_column>185</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>17</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -5018,44 +4367,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>49</id>
-					<referenced_column>98</referenced_column>
-					<relation>18</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_번호</logical_name>
-					<physical_name>FC_BOARD_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>15</word_id>
-					<id>50</id>
-=======
 					<id>48</id>
 					<referenced_column>97</referenced_column>
 					<relation>18</relation>
@@ -5092,7 +4403,6 @@
 				<normal_column>
 					<word_id>15</word_id>
 					<id>49</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -5224,11 +4534,7 @@
 			<columns>
 				<normal_column>
 					<word_id>68</word_id>
-<<<<<<< HEAD
-					<id>51</id>
-=======
 					<id>50</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -5260,13 +4566,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>52</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>51</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>19</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -5299,13 +4600,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>53</id>
-					<referenced_column>143</referenced_column>
-=======
 					<id>52</id>
 					<referenced_column>142</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>20</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -5339,11 +4635,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>10</word_id>
-<<<<<<< HEAD
-					<id>54</id>
-=======
 					<id>53</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -5376,42 +4668,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>1</word_id>
-<<<<<<< HEAD
-					<id>55</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>44</word_id>
-					<id>56</id>
-=======
 					<id>54</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -5446,7 +4702,6 @@
 				<normal_column>
 					<word_id>44</word_id>
 					<id>55</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -5558,11 +4813,7 @@
 			<columns>
 				<normal_column>
 					<word_id>72</word_id>
-<<<<<<< HEAD
-					<id>57</id>
-=======
 					<id>56</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -5594,13 +4845,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>58</id>
-					<referenced_column>113</referenced_column>
-=======
 					<id>57</id>
 					<referenced_column>112</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>22</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -5633,308 +4879,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>59</id>
-					<referenced_column>16</referenced_column>
-					<relation>21</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_설문_목록_내용_타입_번호</logical_name>
-					<physical_name>FC_BOARD_SURVEY_LIST_CONTENT_TYPE_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>83</word_id>
-					<id>60</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>27</word_id>
-					<id>61</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>20</word_id>
-					<id>62</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>81</word_id>
-					<id>63</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>80</word_id>
-					<id>64</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>31</word_id>
-					<id>65</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>30</word_id>
-					<id>66</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>0</word_id>
-					<id>67</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>19</word_id>
-					<id>68</id>
-=======
 					<id>58</id>
 					<referenced_column>15</referenced_column>
 					<relation>21</relation>
@@ -6235,7 +5179,6 @@
 				<normal_column>
 					<word_id>19</word_id>
 					<id>67</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -6347,11 +5290,7 @@
 			<columns>
 				<normal_column>
 					<word_id>66</word_id>
-<<<<<<< HEAD
-					<id>69</id>
-=======
 					<id>68</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -6383,78 +5322,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>70</id>
-					<referenced_column>57</referenced_column>
-					<relation>23</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_설문_목록_질문_번호</logical_name>
-					<physical_name>FC_BOARD_SURVEY_LIST_QUESTION_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>71</id>
-					<referenced_column>57</referenced_column>
-					<relation>24</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>링크_커뮤니티_게시판_설문_목록_질문_번호</logical_name>
-					<physical_name>LINK_FC_BOARD_SURVEY_LIST_QUESTION_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>8</word_id>
-					<id>72</id>
-=======
 					<id>69</id>
 					<referenced_column>56</referenced_column>
 					<relation>23</relation>
@@ -6525,7 +5392,6 @@
 				<normal_column>
 					<word_id>8</word_id>
 					<id>71</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -6656,13 +5522,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>73</id>
-					<referenced_column>113</referenced_column>
-=======
 					<id>72</id>
 					<referenced_column>112</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>25</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -6695,13 +5556,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>74</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>73</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>26</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -6735,11 +5591,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>38</word_id>
-<<<<<<< HEAD
-					<id>75</id>
-=======
 					<id>74</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -6871,11 +5723,7 @@
 			<columns>
 				<normal_column>
 					<word_id>68</word_id>
-<<<<<<< HEAD
-					<id>76</id>
-=======
 					<id>75</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -6907,13 +5755,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>77</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>76</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>27</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -6946,13 +5789,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>78</id>
-					<referenced_column>82</referenced_column>
-=======
 					<id>77</id>
 					<referenced_column>81</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>28</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -6986,11 +5824,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>10</word_id>
-<<<<<<< HEAD
-					<id>79</id>
-=======
 					<id>78</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7023,11 +5857,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>1</word_id>
-<<<<<<< HEAD
-					<id>80</id>
-=======
 					<id>79</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7060,11 +5890,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>48</word_id>
-<<<<<<< HEAD
-					<id>81</id>
-=======
 					<id>80</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7260,11 +6086,7 @@
 			<columns>
 				<normal_column>
 					<word_id>70</word_id>
-<<<<<<< HEAD
-					<id>82</id>
-=======
 					<id>81</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7296,13 +6118,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>83</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>82</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>30</relation>
 					<description>작성자&#x0D;&#x0A;</description>
 					<unique_key_name></unique_key_name>
@@ -7335,13 +6152,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>84</id>
-					<referenced_column>98</referenced_column>
-=======
 					<id>83</id>
 					<referenced_column>97</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>29</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -7374,111 +6186,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>85</id>
-					<referenced_column>26</referenced_column>
-					<relation>31</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_제안_타입_번호</logical_name>
-					<physical_name>FC_SUGGESTION_TYPE_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>86</id>
-					<referenced_column>22</referenced_column>
-					<relation>32</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_제안_결과_번호</logical_name>
-					<physical_name>FC_SUGGESTION_RESULT_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>82</word_id>
-					<id>87</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>9</word_id>
-					<id>88</id>
-=======
 					<id>84</id>
 					<referenced_column>25</referenced_column>
 					<relation>31</relation>
@@ -7582,7 +6289,6 @@
 				<normal_column>
 					<word_id>9</word_id>
 					<id>87</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7615,11 +6321,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>2</word_id>
-<<<<<<< HEAD
-					<id>89</id>
-=======
 					<id>88</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7652,42 +6354,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>53</word_id>
-<<<<<<< HEAD
-					<id>90</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>87</word_id>
-					<id>91</id>
-=======
 					<id>89</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -7722,7 +6388,6 @@
 				<normal_column>
 					<word_id>87</word_id>
 					<id>90</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -7774,7 +6439,6 @@
 				<font_size>9</font_size>
 			<x>2058</x>
 			<y>1692</y>
-<<<<<<< HEAD
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -7854,850 +6518,17 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>68</word_id>
-					<id>92</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>true</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>93</id>
-					<referenced_column>21</referenced_column>
-					<relation>33</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_사용자_번호</logical_name>
-					<physical_name>FH_USER_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>94</id>
-					<referenced_column>113</referenced_column>
-					<relation>34</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_설문_목록_번호</logical_name>
-					<physical_name>FC_BOARD_SURVEY_LIST_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>10</word_id>
-					<id>95</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>1</word_id>
-					<id>96</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>52</word_id>
-					<id>97</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>21</id>
-			<height>5901</height>
-			<width>296</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>3828</x>
-			<y>732</y>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-<<<<<<< HEAD
-					<id>35</id>
-					<source>6</source>
-					<target>21</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>CASCADE</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>36</id>
-					<source>32</source>
-					<target>21</target>
-=======
-					<id>33</id>
-					<source>7</source>
-					<target>20</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2209</x>
-							<y>6088</y>
-=======
-							<x>1687</x>
-							<y>3561</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-<<<<<<< HEAD
-							<x>3976</x>
-							<y>6088</y>
-=======
-							<x>1687</x>
-							<y>1777</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-<<<<<<< HEAD
-			</connections>
-			<physical_name>FC_BOARD</physical_name>
-			<logical_name>커뮤니티_게시판</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>73</word_id>
-					<id>98</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>true</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>99</id>
-					<referenced_column>18</referenced_column>
-					<relation>35</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>FC_BOARD_TYPE_SEQ</logical_name>
-					<physical_name>FC_BOARD_TYPE_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value>0</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>100</id>
-					<referenced_column>180</referenced_column>
-					<relation>36</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_부서_번호</logical_name>
-					<physical_name>FH_DEPT_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>21</word_id>
-					<id>101</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>14</word_id>
-					<id>102</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>65</word_id>
-					<id>103</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>Y</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>76</word_id>
-					<id>104</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>5</word_id>
-					<id>105</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>Y</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>91</word_id>
-					<id>106</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>16</word_id>
-					<id>107</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>39</word_id>
-					<id>108</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>84</word_id>
-					<id>109</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>22</id>
-			<height>107</height>
-			<width>314</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2052</x>
-			<y>1152</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-				<relation>
-<<<<<<< HEAD
-					<id>37</id>
-					<source>23</source>
-					<target>22</target>
-=======
-					<id>34</id>
-					<source>23</source>
-					<target>20</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2485</x>
-=======
-							<x>2482</x>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-							<y>1459</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2485</x>
-							<y>1205</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>38</id>
-					<source>7</source>
-					<target>22</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1684</x>
-							<y>3561</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1684</x>
-							<y>1205</y>
-=======
-							<x>2482</x>
-							<y>1777</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-<<<<<<< HEAD
-			<physical_name>FC_BOARD_SURVEY_LIST_WHITE_USER</physical_name>
-			<logical_name>커뮤니티_게시판_설문_목록_화이트_사용자</logical_name>
-=======
-			<physical_name>FC_BOARD_SURVEY_LIST_COMMENT</physical_name>
-			<logical_name>커뮤니티_게시판_설문_목록_코멘트</logical_name>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-<<<<<<< HEAD
-					<id>110</id>
-					<referenced_column>113</referenced_column>
-					<relation>37</relation>
-=======
 					<word_id>68</word_id>
 					<id>91</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_설문_목록_번호</logical_name>
-					<physical_name>FC_BOARD_SURVEY_LIST_SEQ</physical_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
 					<type>bigint</type>
 					<constraint></constraint>
 					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
+					<auto_increment>true</auto_increment>
+					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>true</primary_key>
 					<unique_key>false</unique_key>
@@ -8720,15 +6551,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>111</id>
-					<referenced_column>21</referenced_column>
-					<relation>38</relation>
-=======
 					<id>92</id>
 					<referenced_column>20</referenced_column>
 					<relation>33</relation>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name>조직도_사용자_번호</logical_name>
@@ -8739,7 +6564,7 @@
 					<auto_increment>false</auto_increment>
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
-					<primary_key>true</primary_key>
+					<primary_key>false</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
 					<collation></collation>
@@ -8760,15 +6585,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<word_id>54</word_id>
-					<id>112</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-=======
 					<id>93</id>
 					<referenced_column>112</referenced_column>
 					<relation>34</relation>
@@ -8843,7 +6659,6 @@
 					<logical_name></logical_name>
 					<physical_name></physical_name>
 					<type>char</type>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
@@ -8869,7 +6684,39 @@
 						<decimal_size>0</decimal_size>
 					</sequence>
 				</normal_column>
-<<<<<<< HEAD
+				<normal_column>
+					<word_id>52</word_id>
+					<id>96</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>date</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>false</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<nocache>false</nocache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
 			</columns>
 			<indexes>
 			</indexes>
@@ -8884,13 +6731,13 @@
 			</table_properties>
 		</table>
 		<table>
-			<id>23</id>
-			<height>806</height>
-			<width>305</width>
+			<id>21</id>
+			<height>5901</height>
+			<width>296</width>
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
-			<x>2604</x>
-			<y>1056</y>
+			<x>3828</x>
+			<y>732</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -8898,23 +6745,13 @@
 			</color>
 			<connections>
 				<relation>
-					<id>39</id>
-					<source>21</source>
-					<target>23</target>
+					<id>35</id>
+					<source>6</source>
+					<target>21</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>3368</x>
-							<y>3682</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>3368</x>
-							<y>1459</y>
-						</bendpoint>
 						<color>
 							<r>0</r>
 							<g>0</g>
@@ -8925,27 +6762,27 @@
 					<reference_for_pk>true</reference_for_pk>
 					<name></name>
 					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
+					<on_update_action>CASCADE</on_update_action>
 					<referenced_column>null</referenced_column>
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 				<relation>
-					<id>40</id>
-					<source>7</source>
-					<target>23</target>
+					<id>36</id>
+					<source>34</source>
+					<target>21</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-							<x>1960</x>
-							<y>3561</y>
+							<x>2209</x>
+							<y>6088</y>
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-							<x>1960</x>
-							<y>1459</y>
+							<x>3976</x>
+							<y>6088</y>
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -8962,28 +6799,20 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 			</connections>
-			<physical_name>FC_BOARD_SURVEY_LIST</physical_name>
-			<logical_name>커뮤니티_게시판_설문_목록</logical_name>
+			<physical_name>FC_BOARD</physical_name>
+			<logical_name>커뮤니티_게시판</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				<normal_column>
-<<<<<<< HEAD
-					<word_id>70</word_id>
-					<id>113</id>
-=======
-					<word_id>52</word_id>
-					<id>96</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
+					<word_id>73</word_id>
+					<id>97</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-<<<<<<< HEAD
 					<type>bigint</type>
 					<constraint></constraint>
 					<default_value></default_value>
@@ -9011,854 +6840,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>114</id>
-					<referenced_column>21</referenced_column>
-					<relation>40</relation>
-					<description>작성자</description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_사용자_번호</logical_name>
-					<physical_name>FH_USER_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>115</id>
-					<referenced_column>98</referenced_column>
-					<relation>39</relation>
-					<description>게시판 번호</description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_번호</logical_name>
-					<physical_name>FC_BOARD_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>78</word_id>
-					<id>116</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>79</word_id>
-					<id>117</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>82</word_id>
-					<id>118</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>9</word_id>
-					<id>119</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>2</word_id>
-					<id>120</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>26</word_id>
-					<id>121</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>25</word_id>
-					<id>122</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>24</word_id>
-					<id>123</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>34</word_id>
-					<id>124</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>33</word_id>
-					<id>125</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>32</word_id>
-					<id>126</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>17</word_id>
-					<id>127</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>63</word_id>
-					<id>128</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>64</word_id>
-					<id>129</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>3</word_id>
-					<id>130</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varbinary(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>90</word_id>
-					<id>131</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>40</word_id>
-					<id>132</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>85</word_id>
-					<id>133</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-<<<<<<< HEAD
-			<id>24</id>
-			<height>86</height>
-			<width>391</width>
-=======
-			<id>21</id>
-			<height>5901</height>
-			<width>296</width>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-<<<<<<< HEAD
-			<x>2013</x>
-			<y>4488</y>
-=======
-			<x>3828</x>
-			<y>732</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-<<<<<<< HEAD
-					<id>41</id>
-					<source>7</source>
-					<target>24</target>
-=======
-					<id>35</id>
-					<source>6</source>
-					<target>21</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-<<<<<<< HEAD
-						<bendpoint>
-							<relative>false</relative>
-							<x>1664</x>
-							<y>3561</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1664</x>
-							<y>4531</y>
-						</bendpoint>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>CASCADE</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-<<<<<<< HEAD
-					<id>42</id>
-					<source>29</source>
-					<target>24</target>
-=======
-					<id>36</id>
-					<source>34</source>
-					<target>21</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2504</x>
-							<y>4568</y>
-=======
-							<x>2209</x>
-							<y>6088</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2504</x>
-							<y>4531</y>
-=======
-							<x>3976</x>
-							<y>6088</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-<<<<<<< HEAD
-			<physical_name>FC_BOARD_PARTER_MANAGEMENT_LIST_LIKE</physical_name>
-			<logical_name>커뮤니티_게시판_파트너_관리_목록_좋아요</logical_name>
-=======
-			<physical_name>FC_BOARD</physical_name>
-			<logical_name>커뮤니티_게시판</logical_name>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-<<<<<<< HEAD
-					<id>134</id>
-					<referenced_column>159</referenced_column>
-					<relation>42</relation>
-=======
-					<word_id>73</word_id>
-					<id>97</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_파트너_관리_목록_번호</logical_name>
-					<physical_name>FC_BOARD_PARTER_MANAGEMENT_LIST_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-<<<<<<< HEAD
-					<id>135</id>
-					<referenced_column>21</referenced_column>
-					<relation>41</relation>
-=======
 					<id>98</id>
 					<referenced_column>17</referenced_column>
 					<relation>35</relation>
@@ -9995,7 +6976,6 @@
 				<normal_column>
 					<word_id>65</word_id>
 					<id>102</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -10026,8 +7006,6 @@
 						<decimal_size>0</decimal_size>
 					</sequence>
 				</normal_column>
-<<<<<<< HEAD
-=======
 				<normal_column>
 					<word_id>76</word_id>
 					<id>103</id>
@@ -10426,7 +7404,6 @@
 						<decimal_size>0</decimal_size>
 					</sequence>
 				</normal_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			</columns>
 			<indexes>
 			</indexes>
@@ -10441,24 +7418,13 @@
 			</table_properties>
 		</table>
 		<table>
-<<<<<<< HEAD
-			<id>25</id>
-			<height>86</height>
-			<width>309</width>
-=======
 			<id>23</id>
 			<height>806</height>
 			<width>305</width>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
-<<<<<<< HEAD
-			<x>2054</x>
-			<y>3924</y>
-=======
 			<x>2604</x>
 			<y>1056</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -10466,30 +7432,15 @@
 			</color>
 			<connections>
 				<relation>
-<<<<<<< HEAD
-					<id>43</id>
-					<source>7</source>
-					<target>25</target>
-=======
 					<id>39</id>
 					<source>21</source>
 					<target>23</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>1685</x>
-							<y>3561</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1685</x>
-							<y>3967</y>
-=======
 							<x>3368</x>
 							<y>3682</y>
 						</bendpoint>
@@ -10497,7 +7448,6 @@
 							<relative>false</relative>
 							<x>3368</x>
 							<y>1459</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -10514,38 +7464,22 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 				<relation>
-<<<<<<< HEAD
-					<id>44</id>
-					<source>28</source>
-					<target>25</target>
-=======
 					<id>40</id>
 					<source>7</source>
 					<target>23</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2483</x>
-							<y>3894</y>
-=======
 							<x>1960</x>
 							<y>3561</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2483</x>
-							<y>3967</y>
-=======
 							<x>1960</x>
 							<y>1459</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -10562,38 +7496,27 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 			</connections>
-<<<<<<< HEAD
-			<physical_name>FC_BOARD_CLASSIC_LIST_LIKE</physical_name>
-			<logical_name>커뮤니티_게시판_클래식_목록_좋아요</logical_name>
-=======
 			<physical_name>FC_BOARD_SURVEY_LIST</physical_name>
 			<logical_name>커뮤니티_게시판_설문_목록</logical_name>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>136</id>
-					<referenced_column>143</referenced_column>
-					<relation>44</relation>
-=======
 					<word_id>70</word_id>
 					<id>112</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_클래식_목록_번호</logical_name>
-					<physical_name>FC_BOARD_CLASSIC_LIST_SEQ</physical_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
 					<type>bigint</type>
 					<constraint></constraint>
 					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
+					<auto_increment>true</auto_increment>
+					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
-					<primary_key>false</primary_key>
+					<primary_key>true</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
 					<collation></collation>
@@ -10614,17 +7537,10 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>137</id>
-					<referenced_column>21</referenced_column>
-					<relation>43</relation>
-					<description></description>
-=======
 					<id>113</id>
 					<referenced_column>20</referenced_column>
 					<relation>40</relation>
 					<description>작성자</description>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<unique_key_name></unique_key_name>
 					<logical_name>조직도_사용자_번호</logical_name>
 					<physical_name>FH_USER_SEQ</physical_name>
@@ -10634,8 +7550,6 @@
 					<auto_increment>false</auto_increment>
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
-<<<<<<< HEAD
-=======
 					<primary_key>false</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
@@ -10835,7 +7749,6 @@
 					<auto_increment>false</auto_increment>
 					<foreign_key>false</foreign_key>
 					<not_null>false</not_null>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<primary_key>false</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
@@ -10856,140 +7769,19 @@
 						<decimal_size>0</decimal_size>
 					</sequence>
 				</normal_column>
-<<<<<<< HEAD
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>26</id>
-			<height>170</height>
-			<width>302</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2058</x>
-			<y>1499</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>45</id>
-					<source>23</source>
-					<target>26</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>2482</x>
-							<y>1459</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>2482</x>
-							<y>1584</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>46</id>
-					<source>7</source>
-					<target>26</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1687</x>
-							<y>3561</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1687</x>
-							<y>1584</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>FC_BOARD_SURVEY_LIST_LIKE</physical_name>
-			<logical_name>커뮤니티_게시판_설문_목록_좋아요</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				<normal_column>
-<<<<<<< HEAD
-					<id>138</id>
-					<referenced_column>113</referenced_column>
-					<relation>45</relation>
-=======
 					<word_id>26</word_id>
 					<id>120</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
-<<<<<<< HEAD
-					<logical_name>커뮤니티_게시판_설문_목록_번호</logical_name>
-					<physical_name>FC_BOARD_SURVEY_LIST_SEQ</physical_name>
-					<type>bigint</type>
-=======
 					<logical_name></logical_name>
 					<physical_name></physical_name>
 					<type>varchar(n)</type>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<constraint></constraint>
-<<<<<<< HEAD
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-=======
 					<default_value>N</default_value>
 					<auto_increment>false</auto_increment>
 					<foreign_key>false</foreign_key>
 					<not_null>false</not_null>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<primary_key>false</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
@@ -11011,14 +7803,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>139</id>
-					<referenced_column>21</referenced_column>
-					<relation>46</relation>
-=======
 					<word_id>25</word_id>
 					<id>121</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -11027,8 +7813,6 @@
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
-<<<<<<< HEAD
-=======
 					<foreign_key>false</foreign_key>
 					<not_null>false</not_null>
 					<primary_key>false</primary_key>
@@ -11893,7 +8677,6 @@
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>false</primary_key>
@@ -12016,13 +8799,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>140</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>139</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>47</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -12055,13 +8833,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>141</id>
-					<referenced_column>143</referenced_column>
-=======
 					<id>140</id>
 					<referenced_column>142</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>48</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -12095,11 +8868,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>58</word_id>
-<<<<<<< HEAD
-					<id>142</id>
-=======
 					<id>141</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -12231,11 +9000,7 @@
 			<columns>
 				<normal_column>
 					<word_id>70</word_id>
-<<<<<<< HEAD
-					<id>143</id>
-=======
 					<id>142</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -12267,13 +9032,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>144</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>143</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>49</relation>
 					<description>작성자</description>
 					<unique_key_name></unique_key_name>
@@ -12306,13 +9066,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>145</id>
-					<referenced_column>98</referenced_column>
-=======
 					<id>144</id>
 					<referenced_column>97</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>50</relation>
 					<description>소속 게시판&#x0D;&#x0A;</description>
 					<unique_key_name></unique_key_name>
@@ -12346,42 +9101,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>82</word_id>
-<<<<<<< HEAD
-					<id>146</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>9</word_id>
-					<id>147</id>
-=======
 					<id>145</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -12416,7 +9135,6 @@
 				<normal_column>
 					<word_id>9</word_id>
 					<id>146</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -12449,11 +9167,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>2</word_id>
-<<<<<<< HEAD
-					<id>148</id>
-=======
 					<id>147</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -12486,306 +9200,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>26</word_id>
-<<<<<<< HEAD
-					<id>149</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>25</word_id>
-					<id>150</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>24</word_id>
-					<id>151</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>34</word_id>
-					<id>152</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>33</word_id>
-					<id>153</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>32</word_id>
-					<id>154</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>17</word_id>
-					<id>155</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>90</word_id>
-					<id>156</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>57</word_id>
-					<id>157</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>86</word_id>
-					<id>158</id>
-=======
 					<id>148</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -13084,7 +9498,6 @@
 				<normal_column>
 					<word_id>86</word_id>
 					<id>157</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -13216,42 +9629,6 @@
 			<columns>
 				<normal_column>
 					<word_id>75</word_id>
-<<<<<<< HEAD
-					<id>159</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>true</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>160</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>158</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -13286,7 +9663,6 @@
 				<normal_column>
 					<id>159</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>51</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -13319,13 +9695,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>161</id>
-					<referenced_column>98</referenced_column>
-=======
 					<id>160</id>
 					<referenced_column>97</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>52</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -13359,438 +9730,6 @@
 				</normal_column>
 				<normal_column>
 					<word_id>82</word_id>
-<<<<<<< HEAD
-					<id>162</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>9</word_id>
-					<id>163</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>2</word_id>
-					<id>164</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>12</word_id>
-					<id>165</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>13</word_id>
-					<id>166</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>59</word_id>
-					<id>167</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>4</word_id>
-					<id>168</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>28</word_id>
-					<id>169</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>29</word_id>
-					<id>170</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>6</word_id>
-					<id>171</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>18</word_id>
-					<id>172</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>11</word_id>
-					<id>173</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>51</word_id>
-					<id>174</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>88</word_id>
-					<id>175</id>
-=======
 					<id>161</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -14221,7 +10160,6 @@
 				<normal_column>
 					<word_id>88</word_id>
 					<id>174</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -14352,13 +10290,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>176</id>
-					<referenced_column>34</referenced_column>
-=======
 					<id>175</id>
 					<referenced_column>33</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>54</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -14391,13 +10324,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>177</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>176</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>53</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -14529,13 +10457,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>178</id>
-					<referenced_column>82</referenced_column>
-=======
 					<id>177</id>
 					<referenced_column>81</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>56</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -14568,13 +10491,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>179</id>
-					<referenced_column>21</referenced_column>
-=======
 					<id>178</id>
 					<referenced_column>20</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>55</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -14586,7 +10504,6 @@
 					<auto_increment>false</auto_increment>
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
-<<<<<<< HEAD
 					<primary_key>false</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
@@ -14621,127 +10538,13 @@
 			</table_properties>
 		</table>
 		<table>
-			<id>32</id>
-			<height>801</height>
-			<width>284</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2067</x>
-			<y>5544</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-			</connections>
-			<physical_name>FC_DEPT</physical_name>
-			<logical_name>커뮤니티_부서</logical_name>
-			<description>부서 정보</description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>75</word_id>
-					<id>180</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>true</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>77</word_id>
-					<id>181</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>N</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-=======
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-<<<<<<< HEAD
-			<id>33</id>
-			<height>108</height>
-			<width>305</width>
-=======
 			<id>32</id>
 			<height>107</height>
 			<width>314</width>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
-<<<<<<< HEAD
-			<x>2604</x>
-			<y>6084</y>
-=======
 			<x>3036</x>
 			<y>1092</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -14750,36 +10553,21 @@
 			<connections>
 				<relation>
 					<id>57</id>
-<<<<<<< HEAD
-					<source>21</source>
-					<target>33</target>
-=======
 					<source>23</source>
 					<target>32</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>3368</x>
-							<y>3682</y>
-=======
 							<x>2972</x>
 							<y>1459</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>3368</x>
-							<y>6138</y>
-=======
 							<x>2972</x>
 							<y>1145</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -14797,36 +10585,21 @@
 				</relation>
 				<relation>
 					<id>58</id>
-<<<<<<< HEAD
-					<source>32</source>
-					<target>33</target>
-=======
 					<source>34</source>
 					<target>32</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2477</x>
-							<y>5944</y>
-=======
 							<x>2209</x>
 							<y>3371</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>2477</x>
-							<y>6138</y>
-=======
 							<x>3193</x>
 							<y>3371</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -14851,13 +10624,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>182</id>
-					<referenced_column>98</referenced_column>
-=======
 					<id>179</id>
 					<referenced_column>112</referenced_column>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<relation>57</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -14890,17 +10658,10 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>183</id>
-					<referenced_column>180</referenced_column>
-					<relation>58</relation>
-					<description>이전되는 부서 키</description>
-=======
 					<id>180</id>
 					<referenced_column>185</referenced_column>
 					<relation>58</relation>
 					<description></description>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<unique_key_name></unique_key_name>
 					<logical_name>조직도_부서_번호</logical_name>
 					<physical_name>FC_DEPT_SEQ</physical_name>
@@ -14931,13 +10692,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<word_id>60</word_id>
-					<id>184</id>
-=======
 					<word_id>49</word_id>
 					<id>181</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -14982,24 +10738,13 @@
 			</table_properties>
 		</table>
 		<table>
-<<<<<<< HEAD
-			<id>34</id>
-			<height>107</height>
-			<width>296</width>
-=======
 			<id>33</id>
 			<height>128</height>
 			<width>305</width>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
-<<<<<<< HEAD
-			<x>1569</x>
-			<y>5661</y>
-=======
 			<x>2056</x>
 			<y>4920</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -15008,36 +10753,21 @@
 			<connections>
 				<relation>
 					<id>59</id>
-<<<<<<< HEAD
-					<source>7</source>
-					<target>34</target>
-=======
 					<source>21</source>
 					<target>33</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>1442</x>
-							<y>3561</y>
-=======
 							<x>3094</x>
 							<y>3682</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>1442</x>
-							<y>5714</y>
-=======
 							<x>3094</x>
 							<y>4984</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -15055,36 +10785,21 @@
 				</relation>
 				<relation>
 					<id>60</id>
-<<<<<<< HEAD
-					<source>32</source>
-					<target>34</target>
-=======
 					<source>7</source>
 					<target>33</target>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
 						<target_yp>-1</target_yp>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>1966</x>
-							<y>5944</y>
-=======
 							<x>1686</x>
 							<y>3561</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<bendpoint>
 							<relative>false</relative>
-<<<<<<< HEAD
-							<x>1966</x>
-							<y>5714</y>
-=======
 							<x>1686</x>
 							<y>4984</y>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 						</bendpoint>
 						<color>
 							<r>0</r>
@@ -15101,24 +10816,14 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 			</connections>
-<<<<<<< HEAD
-			<physical_name>FC_DEPT_ADMINISTRATOR</physical_name>
-			<logical_name>커뮤니티_부서_관리자</logical_name>
-=======
 			<physical_name>FC_BOARD_ADMINISTRATOR</physical_name>
 			<logical_name>커뮤니티_게시판_관리자</logical_name>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-<<<<<<< HEAD
-					<id>185</id>
-					<referenced_column>180</referenced_column>
-					<relation>60</relation>
-=======
 					<id>182</id>
 					<referenced_column>20</referenced_column>
 					<relation>60</relation>
@@ -15257,16 +10962,15 @@
 				<normal_column>
 					<word_id>75</word_id>
 					<id>185</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_부서_번호</logical_name>
-					<physical_name>FC_DEPT_SEQ</physical_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
 					<type>bigint</type>
 					<constraint></constraint>
 					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
+					<auto_increment>true</auto_increment>
+					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>true</primary_key>
 					<unique_key>false</unique_key>
@@ -15289,11 +10993,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>186</id>
-					<referenced_column>21</referenced_column>
-					<relation>59</relation>
-=======
 					<word_id>77</word_id>
 					<id>186</id>
 					<description></description>
@@ -15663,7 +11362,6 @@
 					<id>191</id>
 					<referenced_column>20</referenced_column>
 					<relation>63</relation>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name>조직도_사용자_번호</logical_name>
@@ -15696,11 +11394,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>46</word_id>
-<<<<<<< HEAD
-					<id>187</id>
-=======
 					<id>192</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -15745,87 +11439,6 @@
 			</table_properties>
 		</table>
 		<table>
-<<<<<<< HEAD
-			<id>35</id>
-			<height>128</height>
-			<width>360</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2029</x>
-			<y>924</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>61</id>
-					<source>16</source>
-					<target>35</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>62</id>
-					<source>7</source>
-					<target>35</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1672</x>
-							<y>3561</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1672</x>
-							<y>988</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>FC_BOARD_SURVEY_LIST_QUESTION_ANSWER_LIST</physical_name>
-			<logical_name>커뮤니티_게시판_설문_목록_질문_답변_목록</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<id>188</id>
-					<referenced_column>69</referenced_column>
-					<relation>61</relation>
-=======
 			<id>37</id>
 			<height>128</height>
 			<width>360</width>
@@ -15905,7 +11518,6 @@
 					<id>193</id>
 					<referenced_column>68</referenced_column>
 					<relation>65</relation>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name>커뮤니티_게시판_설문_목록_질문_답변_번호</logical_name>
@@ -15937,44 +11549,6 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-<<<<<<< HEAD
-					<id>189</id>
-					<referenced_column>21</referenced_column>
-					<relation>62</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_사용자_번호</logical_name>
-					<physical_name>FH_USER_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>7</word_id>
-					<id>190</id>
-=======
 					<id>194</id>
 					<referenced_column>20</referenced_column>
 					<relation>66</relation>
@@ -16011,7 +11585,6 @@
 				<normal_column>
 					<word_id>7</word_id>
 					<id>195</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -16044,11 +11617,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>37</word_id>
-<<<<<<< HEAD
-					<id>191</id>
-=======
 					<id>196</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -16093,587 +11662,6 @@
 			</table_properties>
 		</table>
 		<table>
-<<<<<<< HEAD
-			<id>36</id>
-			<height>107</height>
-			<width>305</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2604</x>
-			<y>5628</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>63</id>
-					<source>32</source>
-					<target>36</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>2477</x>
-							<y>5944</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>2477</x>
-							<y>5681</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>64</id>
-					<source>21</source>
-					<target>36</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>3368</x>
-							<y>3682</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>3368</x>
-							<y>5681</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>FC_BOARD_WHITE_DEPT</physical_name>
-			<logical_name>커뮤니티_화이트_부서</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<id>192</id>
-					<referenced_column>98</referenced_column>
-					<relation>64</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_번호</logical_name>
-					<physical_name>FC_BOARD_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>193</id>
-					<referenced_column>180</referenced_column>
-					<relation>63</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_부서_번호</logical_name>
-					<physical_name>FC_DEPT_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>36</word_id>
-					<id>194</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>37</id>
-			<height>128</height>
-			<width>305</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2056</x>
-			<y>4920</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>65</id>
-					<source>21</source>
-					<target>37</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>3094</x>
-							<y>3682</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>3094</x>
-							<y>4984</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>66</id>
-					<source>7</source>
-					<target>37</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1686</x>
-							<y>3561</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>1686</x>
-							<y>4984</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>FC_BOARD_ADMINISTRATOR</physical_name>
-			<logical_name>커뮤니티_게시판_관리자</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<id>195</id>
-					<referenced_column>21</referenced_column>
-					<relation>66</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_사용자_번호</logical_name>
-					<physical_name>FH_USER_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>196</id>
-					<referenced_column>98</referenced_column>
-					<relation>65</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_번호</logical_name>
-					<physical_name>FC_BOARD_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>93</word_id>
-					<id>197</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value>Y</default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>41</word_id>
-					<id>198</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>38</id>
-			<height>107</height>
-			<width>314</width>
-				<font_name>맑은 고딕</font_name>
-				<font_size>9</font_size>
-			<x>2052</x>
-			<y>1296</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>67</id>
-					<source>23</source>
-					<target>38</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<bendpoint>
-							<relative>false</relative>
-							<x>2485</x>
-							<y>1459</y>
-						</bendpoint>
-						<bendpoint>
-							<relative>false</relative>
-							<x>2485</x>
-							<y>1349</y>
-						</bendpoint>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>68</id>
-					<source>32</source>
-					<target>38</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>FC_BOARD_SURVEY_LIST_WHITE_DEPT</physical_name>
-			<logical_name>커뮤니티_게시판_설문_목록_화이트_부서</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<id>199</id>
-					<referenced_column>113</referenced_column>
-					<relation>67</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>커뮤니티_게시판_설문_목록_번호</logical_name>
-					<physical_name>FC_BOARD_SURVEY_LIST_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>200</id>
-					<referenced_column>180</referenced_column>
-					<relation>68</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name>조직도_부서_번호</logical_name>
-					<physical_name>FC_DEPT_SEQ</physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>49</word_id>
-					<id>201</id>
-=======
 			<id>38</id>
 			<height>107</height>
 			<width>305</width>
@@ -16830,7 +11818,6 @@
 				<normal_column>
 					<word_id>36</word_id>
 					<id>199</id>
->>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
