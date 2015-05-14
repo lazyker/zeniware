@@ -116,6 +116,7 @@
     <font/>
   </widgets>
   <widgets xsi:type="model:Icon" id="409" x="936" y="67" width="22" height="22" locked="true" measuredWidth="22" measuredHeight="22" icon="bar-chart (custom)" link="../../../statistic/statistic-근태통계.screen"/>
+  <widgets xsi:type="model:Hotspot" id="410" x="248" y="195" width="751" height="22" measuredWidth="751" measuredHeight="22" link="Community-공지사항-설문-글%20읽기.screen"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

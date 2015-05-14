@@ -153,7 +153,7 @@
   <widgets xsi:type="model:Label" id="565" x="362" y="678" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="566" x="362" y="702" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;정종석,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="566" x="362" y="702" width="602" height="87" text="사용자명, 삭제&#xD;&#xA;정종석,{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
     <font/>
   </widgets>
   <widgets xsi:type="model:Group" id="567" x="347" y="498" width="630" height="146" text="White List" measuredWidth="630" measuredHeight="146">
@@ -162,7 +162,7 @@
   <widgets xsi:type="model:Label" id="568" x="362" y="522" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="569" x="362" y="546" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;김재환,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="569" x="362" y="546" width="602" height="87" text="사용자명, 삭제&#xD;&#xA;김재환,{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
     <font/>
   </widgets>
   <widgets xsi:type="model:RadioButton" id="570" x="458" y="311" text="사용" measuredWidth="42" measuredHeight="21">
@@ -189,7 +189,7 @@
   <widgets xsi:type="model:Label" id="577" x="362" y="355" text="공유부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="578" x="362" y="385" width="609" height="87" text="부서명, 작성권한, 삭제&#xD;&#xA;전체,{checked},{trash}" measuredWidth="609" measuredHeight="87" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="578" x="362" y="385" width="609" height="87" text="부서명, 삭제&#xD;&#xA;전체,{trash}" measuredWidth="609" measuredHeight="87" alternative="#eeeeee">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="579" x="468" y="355" text="하위부서 추가" measuredWidth="98" measuredHeight="23" textAlignment="Center" icon="add (small)">
