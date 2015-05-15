@@ -178,11 +178,6 @@
       </widgets>
     </overrides>
   </widgets>
-  <widgets xsi:type="model:Alert" id="143" x="627" y="96" text="Alert&#xA;This is an alert message&#xA;OK,Cancel" measuredWidth="227" measuredHeight="132" icon="warning (large)">
-    <items x="37" y="93" width="80" height="24" text="OK"/>
-    <items x="132" y="93" width="80" height="24" text="Cancel"/>
-    <font/>
-  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
