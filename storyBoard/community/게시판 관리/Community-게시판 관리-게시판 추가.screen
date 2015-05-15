@@ -193,7 +193,7 @@
   <widgets xsi:type="model:Label" id="569" x="364" y="852" text="사용자 추가" measuredWidth="86" measuredHeight="23" textAlignment="Center" icon="add (small)">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="570" x="364" y="876" width="602" height="87" text="사용자명, 작성권한, 삭제&#xD;&#xA;정종석,{checked},{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
+  <widgets xsi:type="model:Table" id="570" x="364" y="876" width="602" height="87" text="사용자명, 삭제&#xD;&#xA;정종석,{trash}" measuredWidth="602" measuredHeight="87" alternative="#eeeeee">
     <font/>
   </widgets>
   <widgets xsi:type="model:Group" id="571" x="342" y="672" width="644" height="146" text="White List" measuredWidth="644" measuredHeight="146">
