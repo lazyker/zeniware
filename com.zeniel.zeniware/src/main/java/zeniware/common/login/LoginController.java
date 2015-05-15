@@ -11,13 +11,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zeniware.sample.HomeController;
 import zeniware.sample.service.MainService;
 
 @Controller
 public class LoginController {
 	
-		private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+		private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 		
 		@Autowired
 		private MainService mainService;
@@ -33,7 +32,7 @@ public class LoginController {
 		public String main(@RequestParam Map<String, Object> paramMap, ModelMap model, Principal principal) throws Throwable{
 			logger.info("login success.", principal);
 			
-			System.out.println(principal.getName());
+//			System.out.println(principal.getName()); //id 가져온다
 			
 			return "/main";
 		}
