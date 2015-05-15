@@ -33,7 +33,16 @@
 <html>
 <head>
 	<title>login</title>
+	
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	<script>
+	
+		$(document).ready(function() {
+			
+			$("#target").focus();
+			
+		});	
+	
 		function doLogin() {
 			
 			frm.submit();
@@ -46,14 +55,14 @@
 <table>
 <tr>
 	<td> 아이디</td>
-	<td> <input type="text" name="loginid"> </td>
+	<td> <input type="text" id="loginid" name="loginid" value="test"> </td>
 </tr>
 <tr>
 	<td> 패스워드</td>
-	<td> <input type="text"  name="loginpwd"> </td>
+	<td> <input type="text"  name="loginpwd" value="1234"> </td>
 </tr>
 <tr>
-	<td colspan="2" align="center"><input type="button" value="로그인" onclick="doLogin()"></td>
+	<td colspan="2" align="center"><input id="target" type="button" value="로그인" onclick="doLogin()"></td>
 </tr>
 </table>
 </form>
