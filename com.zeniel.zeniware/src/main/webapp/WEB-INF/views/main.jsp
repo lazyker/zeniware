@@ -8,28 +8,35 @@
 <%
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-    Object principal = auth.getPrincipal();
-    String name = "";
+	Object principal = auth.getPrincipal();
+	String name = "";
 
-    if (principal != null && principal instanceof MemberInfo) {
-        name = ((MemberInfo) principal).getName();
-    }
+	if (principal != null && principal instanceof MemberInfo) {
+		name = ((MemberInfo) principal).getName();
+	}
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>그룹웨어</title>
+    <title>그룹웨어</title>
 	<link type="text/css" rel="stylesheet" href="resources/css/common_style.css" />
-    <link type="text/css" rel="stylesheet" href="resources/css/layout.css" />
+	<link type="text/css" rel="stylesheet" href="resources/css/layout.css" />
+    
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		});
+	</script>
+
 </head>
 <body>
-	<!--상단시작-->
+    <!--상단시작-->
     <div id="wrapper">
-    	<h1><a href="index.html" title="">제니엘그룹웨어</a></h1>
+        <h1><a href="index.html" title="">제니엘그룹웨어</a></h1>
         <div class="nav">
             <ul class="menu">
-                <li><a href="">전자우편</a></li>
+                <li><a href="${pageContext.request.contextPath}/today ">전자우편</a></li>
                 <li><a href="">일정관리</a></li>
                 <li><a href="">전자결재</a></li>
                 <li><a href="">업무관리</a></li>
@@ -52,12 +59,12 @@
     </div>
     <!--상단끝-->
     <!--좌측시작-->
-	<div id="inb">
+    <div id="inb">
         <div class="title">
         전자우편
         </div>
-    	<!--메뉴리스트시작-->
-    	<div class="tree">
+        <!--메뉴리스트시작-->
+        <div class="tree">
             <div class="new">
                 <p class="m_write"><a href=""><span class="new_ic"><img src="resources/images/main/ic_new.png" /></span>메일쓰기</a></p>
             </div>
@@ -73,22 +80,22 @@
                 <li><a href=""><span class="sm_ic"><img src="resources/images/main/ic_smail.png" /></span>보낸메일함</a></li>
                 <li><a href=""><span class="sm_ic"><img src="resources/images/main/ic_delmail.png" /></span>지운메일함</a></li>
             </ul>
-    		<div class="b_f">
+            <div class="b_f">
             자주쓰는 메뉴
             <div class="fr mr10 pt5">
-            	<span class="m_set"><a href="">메뉴셋팅</a></span>
-            	<span class="m_skip"><a href="">메뉴접기</a></span>
+                <span class="m_set"><a href="">메뉴셋팅</a></span>
+                <span class="m_skip"><a href="">메뉴접기</a></span>
             </div>
-    		</div>
-        	<!--하단검색시작-->
+            </div>
+            <!--하단검색시작-->
             <div class="mem_search">
                 <input type="text" class="in" placeholder="이름, 부서, 전화" style="width:185px; height:25px;" />
                 <span class="btn_sr"><a href="" title="조직도보기">결과보기</a></span>
             </div>
             <!--하단검색끝-->
-    	</div>
-    	<!--메뉴리스트끝-->
-	</div>
+        </div>
+        <!--메뉴리스트끝-->
+    </div>
     <!--좌측끝-->
         <!--숨김버튼시작
         <div class="hidden">
@@ -100,7 +107,7 @@
         <div id="subContents">
             <p class="title">받은메일함
                 <!--검색시작-->
-                <span class="allb">         	
+                <span class="allb">             
                     <select name="" class="sel01" style="width:80px; height:21px; margin-right:0px;">
                     <option>통합검색</option>
                     <option>전자우편</option>
