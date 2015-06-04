@@ -44,4 +44,20 @@ public class BoardController {
 		
 		return "home";
 	}
+	
+	@RequestMapping("/table")
+	public String tableTest() throws Exception {
+		return "/table";
+	}
+	
+	@RequestMapping("/month")
+	public String month() throws Exception {
+		return "schedule/month";
+	}
+	
+	@RequestMapping("/fileForm")
+	public String fileForm() throws Exception { 
+		return "common/fileForm";
+	}
+	
 }

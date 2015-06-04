@@ -14,11 +14,21 @@
 	</context:component-scan>
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+	<annotation-driven conversion-service="conversionService" />
+	
+	<!-- Converter --> 
+	<beans:bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"> 
+		<beans:property name="converters"> 
+			<beans:list> 
+				<beans:bean class="zeniware.common.converter.MultipartFileToFileVOConverter" /> 
+			</beans:list> 
+		</beans:property> 
+	</beans:bean> 
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/assets/**" location="/assets/" />
+	<default-servlet-handler/>
+<!-- 	<resources mapping="/resources/**" location="/resources/" /> -->
+<!-- 	<resources mapping="/assets/**" location="/assets/" /> -->
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
