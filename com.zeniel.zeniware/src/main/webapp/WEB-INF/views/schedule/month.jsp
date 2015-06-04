@@ -269,7 +269,48 @@
 		<%@ include file="../common/leftForm.jsp" %>
 		
 		<div class="main-content">
-			<div id='calendar'></div>
+		
+		<div class="page-title">
+			
+				<div class="title-env">
+					<h1 class="title">Calendar</h1>
+					<p class="description">Events management calendar</p>
+				</div>
+			
+					<div class="breadcrumb-env">
+			
+								<ol class="breadcrumb bc-1" >
+									<li>
+							<a href="dashboard-1.html"><i class="fa-home"></i>Home</a>
+						</li>
+								<li>
+			
+										<a href="extra-gallery.html">Extra</a>
+								</li>
+							<li class="active">
+			
+										<strong>Calendar</strong>
+								</li>
+								</ol>
+						
+				</div>
+				
+			</div>
+		
+			<section class="calendar-env">
+				
+				<div class="col-sm-12">
+					
+					<div class="calendar-main">
+						
+						<div id="calendar"></div>
+						
+					</div>
+					
+				</div>
+				
+				
+			</section>
 		</div>
 		
 	</div>

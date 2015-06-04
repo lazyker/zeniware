@@ -16,4 +16,10 @@ public class ScheduleController {
 		return "schedule/month";
 	}
 	
+	@RequestMapping("schedule/getMonth2")
+	public String getMonth2(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
+		
+		return "schedule/month2";
+	}
+	
 }

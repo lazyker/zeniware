@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <nav class="navbar horizontal-menu navbar-minimal"><!-- set fixed position by adding class "navbar-fixed-top" -->
-	
+		
 	<div class="navbar-inner">
 	
 		<!-- Navbar Brand -->
 		<div class="navbar-brand">
 			<a href="dashboard-1.html" class="logo">
-				<img src="${pageContext.request.contextPath}/assets/images/logo@2x.png" width="80" alt="" class="hidden-xs" />
+				<img src="${pageContext.request.contextPath}/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
 				<img src="${pageContext.request.contextPath}/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
 			</a>
 			<a href="#" data-toggle="settings-pane" data-animate="true">
@@ -109,7 +109,7 @@
 	
 			<li class="dropdown user-profile">
 				<a href="#" data-toggle="dropdown">
-					<img src="${pageContext.request.contextPath}/resources/images/main/photo.png" alt="user-image" class="img-circle img-inline userpic-32" width="35" />
+					<img src="${pageContext.request.contextPath}/resources/images/main/photo.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 				</a>
 			</li>
 			
