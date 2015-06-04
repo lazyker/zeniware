@@ -36,7 +36,7 @@
         <h1><a href="index.html" title="">제니엘그룹웨어</a></h1>
         <div class="nav">
             <ul class="menu">
-                <li><a href="${pageContext.request.contextPath}/today ">전자우편</a></li>
+                <li><a href="${pageContext.request.contextPath}/file.do ">전자우편</a></li>
                 <li><a href="">일정관리</a></li>
                 <li><a href="">전자결재</a></li>
                 <li><a href="">업무관리</a></li>
