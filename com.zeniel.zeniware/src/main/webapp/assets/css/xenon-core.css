@@ -1664,7 +1664,7 @@ html, body {
 }
 
 .navbar.horizontal-menu .navbar-inner>.nav>li>a.notification-icon {
-	padding: 0 20px
+	padding: 20px 20px
 }
 
 .navbar.horizontal-menu .navbar-inner>.nav>li>a.notification-icon:before
