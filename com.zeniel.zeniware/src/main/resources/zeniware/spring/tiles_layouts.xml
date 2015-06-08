@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="template" template="/WEB-INF/views/template.jsp"/>
+	<!-- Main 선언 -->
+	<definition name="zeniware_main" template="/WEB-INF/layout/main_layout.jsp">
+		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" />
+	</definition>
+
+	<!-- Sub 선언 -->
+	<definition name="zeniware_sub" template="/WEB-INF/layout/sub_layout.jsp">
+		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/sub_topForm.jsp" />
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" />
+	</definition>
+
+	<!-- Sub LEFT 직접 선언 -->
+	<definition name="zeniware_subInMenu" template="/WEB-INF/layout/sub_layout.jsp">
+		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/sub_topForm.jsp" />
+		<put-attribute name="leftFm" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" />
+	</definition>
+
+	<!-- Main 예외 -->
+	<definition name="zeniware_main_notype" template="/WEB-INF/layout/main_notype_layout.jsp">
+		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<!-- Sub 예외 -->
+	<definition name="zeniware_sub_notype" template="/WEB-INF/layout/sub_notype_layout.jsp">
+		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="/maintype/*.tiles" extends="zeniware_main">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="/maintype/*/*.tiles" extends="zeniware_main">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="/maintype/*/*/*.tiles" extends="zeniware_main">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+
+	<!-- Sub html type -->
+	<definition name="/subtype/*.tiles" extends="zeniware_sub">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="/subtype/*/*.tiles" extends="zeniware_sub">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="/subtype/*/*/*.tiles" extends="zeniware_sub">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+
+	<!-- Main 예외 html type -->
+	<definition name="/mainNoType/*.tiles" extends="zeniware_main_notype">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="/mainNoType/*/*.tiles" extends="zeniware_main_notype">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="/mainNoType/*/*/*.tiles" extends="zeniware_main_notype">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+
+	<!-- Sub 예외 html type -->
+	<definition name="/subNoType/*.tiles" extends="zeniware_sub_notype">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="/subNoType/*/*.tiles" extends="zeniware_sub_notype">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="/subNoType/*/*/*.tiles" extends="zeniware_sub_notype">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+
+	<!-- Sub 메뉴 직접 선언 -->
+	<definition name="/subInMenu/*/*.tiles" extends="zeniware_subInMenu">
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{2}.jsp" />
+	</definition>
+	<definition name="/subInTitle/*.tiles" extends="zeniware_subInMenu">
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="/subInTitle/*/*.tiles" extends="zeniware_subInMenu">
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="/subInTitle/*/*/*.tiles" extends="zeniware_subInMenu">
+		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+</tiles-definitions>
