@@ -19,31 +19,31 @@ public class TilesTestController {
 	//@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getTest(@RequestParam Map<String, Object>paramMap, ModelMap model) {
 		logger.info("Welcome Tiles! The client locale is {}.", paramMap);
-		return "/maintype/main_test.tiles";
+		return "/maintype/main_test";
 	}
 
 	@RequestMapping(value = "/test2")
 	//@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getTest2(@RequestParam Map<String, Object>paramMap, ModelMap model) {
 		logger.info("Welcome Tiles! The client locale is {}.", paramMap);
-		return "/subtype/main_test2.tiles";
+		return "/subtype/main_test2";
 	}
 
 	@RequestMapping(value = "/test3")
 	public String getTest3(@RequestParam Map<String, Object>paramMap, ModelMap model) {
 		logger.info("Welcome Tiles! The client locale is {}.", paramMap);
-		return "/mainNoType/main_test2.tiles";
+		return "/mainNoType/main_test2";
 	}
 
 	@RequestMapping(value = "/test4")
 	public String getTest4(@RequestParam Map<String, Object>paramMap, ModelMap model) {
 		logger.info("Welcome Tiles! The client locale is {}.", paramMap);
-		return "/subInTitle/sub_test.tiles";
+		return "/subInTitle/sub_test";
 	}
 
 	@RequestMapping(value = "/test5")
 	public String getTest5(@RequestParam Map<String, Object>paramMap, ModelMap model) {
 		logger.info("Welcome Tiles! The client locale is {}.", paramMap);
-		return "/subInMenu/sub_order/sub_test.tiles";
+		return "/subInMenu/sub_order/sub_test";
 	}
 }
