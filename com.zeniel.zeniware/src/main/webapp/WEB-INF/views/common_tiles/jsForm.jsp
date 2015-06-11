@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/xenon-forms.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/xenon-components.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/xenon-skins.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/custom.css">
 	
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.1.min.js"></script>
 	
