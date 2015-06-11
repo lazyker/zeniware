@@ -9,3 +9,24 @@ body {
 
 a {
 }
+
+
+/**
+ *
+ * Calendar custom
+ *
+*/
+.fc-sat {
+	color: #1974db!important;
+}
+
+.fc-sun {
+	color: #d42403!important;
+}
+
+.sidebar-menu .calendar-env {
+	border-bottom: 1px solid #c0c0c0
+}
+
+.fc-today-button {
+}
