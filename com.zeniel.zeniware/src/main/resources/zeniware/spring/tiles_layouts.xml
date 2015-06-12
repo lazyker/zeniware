@@ -15,7 +15,7 @@
 	<!-- Sub 선언 -->
 	<definition name="zeniware_sub" template="/WEB-INF/layout/sub_layout.jsp">
 		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
-		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/sub_topForm.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" />
 		<put-attribute name="body" value="" />
 <!-- 		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" /> -->
@@ -24,7 +24,7 @@
 	<!-- Sub LEFT 직접 선언 -->
 	<definition name="zeniware_subInMenu" template="/WEB-INF/layout/sub_layout.jsp">
 		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
-		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/sub_topForm.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
 		<put-attribute name="leftFm" value="" />
 		<put-attribute name="body" value="" />
 <!-- 		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" /> -->
