@@ -100,7 +100,6 @@
 							method: 'POST',
 							dataType: 'json',
 							data: {
-								do_login: true,
 								loginid: $(form).find('#loginid').val(),
 								loginpwd: $(form).find('#loginpwd').val(),
 							},
@@ -141,7 +140,7 @@
 								}
 							},
 							error : function(request) {
-								alert("통신 실패");
+								alert("로그인 오류 발생 [관리자에게 문의 하세요.]");
 							}
 						});
 
@@ -152,10 +151,6 @@
 				$("form#login .form-group:has(.form-control):first .form-control").focus();
 			});
 			
-			function doLogin() {
-				
-				form.submit();
-			}
 		</script>
 </head>
 <body class="page-body login-page login-light">
