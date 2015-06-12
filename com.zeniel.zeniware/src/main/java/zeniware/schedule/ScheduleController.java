@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ScheduleController {
 
-	@RequestMapping("schedule/getMonth")
+	@RequestMapping(value = "/schedule/getMonth")
 	public String getMonth(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
 		
 		return "/subInMenu/schedule/month";

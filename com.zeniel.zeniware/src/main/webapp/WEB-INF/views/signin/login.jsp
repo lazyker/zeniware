@@ -67,82 +67,85 @@
 
 					messages: {
 						loginid: {
-							required: 'a'
+							required: 'ID를 입력하세요.'
 						},
 
 						loginpwd: {
-							required: 'b'
+							required: '패스워드를 입력하세요.'
 						}
-					}
+					},
 
 					// Form Processing via AJAX
-// 					submitHandler: function(form)
-// 					{
-// 						show_loading_bar(70); // Fill progress bar to 70% (just a given value)
+					submitHandler: function(form)
+					{
+						show_loading_bar(70); // Fill progress bar to 70% (just a given value)
 
-// 						var opts = {
-// 							"closeButton": true,
-// 							"debug": false,
-// 							"positionClass": "toast-top-full-width",
-// 							"onclick": null,
-// 							"showDuration": "300",
-// 							"hideDuration": "1000",
-// 							"timeOut": "5000",
-// 							"extendedTimeOut": "1000",
-// 							"showEasing": "swing",
-// 							"hideEasing": "linear",
-// 							"showMethod": "fadeIn",
-// 							"hideMethod": "fadeOut"
-// 						};
+						var opts = {
+							"closeButton": true,
+							"debug": false,
+							"positionClass": "toast-top-full-width",
+							"onclick": null,
+							"showDuration": "300",
+							"hideDuration": "1000",
+							"timeOut": "5000",
+							"extendedTimeOut": "1000",
+							"showEasing": "swing",
+							"hideEasing": "linear",
+							"showMethod": "fadeIn",
+							"hideMethod": "fadeOut"
+						};
+						
+						$.ajax({
+							url: "j_spring_security_check",
+							method: 'POST',
+							dataType: 'json',
+							data: {
+								do_login: true,
+								loginid: $(form).find('#loginid').val(),
+								loginpwd: $(form).find('#loginpwd').val(),
+							},
+							success: function(resp)
+							{
+								show_loading_bar({
+									delay: .5,
+									pct: 100,
+									finish: function(){
 
-// 						$.ajax({
-// 							url: "j_spring_security_check",
-// 							method: 'POST',
-// 							dataType: 'json',
-// 							data: {
-// 								do_login: true,
-// 								loginid: $(form).find('#loginid').val(),
-// 								loginpwd: $(form).find('#loginpwd').val(),
-// 							},
-// 							success: function(resp)
-// 							{
-// 								show_loading_bar({
-// 									delay: .5,
-// 									pct: 100,
-// 									finish: function(){
-
-// 										// Redirect after successful login page (when progress bar reaches 100%)
-// 										if(resp.accessGranted)
-// 										{
-// 																							window.location.href = 'dashboard-1.html';
-// 																						}
-// 																				}
-// 								});
+										// Redirect after successful login page (when progress bar reaches 100%)
+										if(resp.accessGranted)
+										{
+											window.location.href = '${pageContext.request.contextPath}/main';
+										}
+									}
+								});
 
 								
-// 								// Remove any alert
-// 								$(".errors-container .alert").slideUp('fast');
+								// Remove any alert
+								$(".errors-container .alert").slideUp('fast');
 
 
-// 								// Show errors
-// 								if(resp.accessGranted == false)
-// 								{
-// 									$(".errors-container").html('<div class="alert alert-danger">\
-// 										<button type="button" class="close" data-dismiss="alert">\
-// 											<span aria-hidden="true">&times;</span>\
-// 											<span class="sr-only">Close</span>\
-// 										</button>\
-// 										' + resp.errors + '\
-// 									</div>');
+								// Show errors
+								if(resp.accessGranted == false)
+								{
+									$(".errors-container").html('<div class="alert alert-danger">\
+										<button type="button" class="close" data-dismiss="alert">\
+											<span aria-hidden="true">&times;</span>\
+											<span class="sr-only">Close</span>\
+										</button>\
+										' + resp.errors + '\
+									</div>');
 
 
-// 									$(".errors-container .alert").hide().slideDown();
-// 									$(form).find('#passwd').select();
-// 								}
-// 																}
-// 						});
+									$(".errors-container .alert").hide().slideDown();
+									$(form).find('#passwd').select();
+								}
+							},
+							error : function(request) {
+								alert("통신 실패");
+							}
+						});
 
-// 					}
+					}
 				});
 
 				// Set Form focus
@@ -157,7 +160,6 @@
 </head>
 <body class="page-body login-page login-light">
 
-	
 	<div class="login-container">
 	
 		<div class="row">
@@ -166,12 +168,11 @@
 	
 				<!-- Errors container -->
 				<div class="errors-container">
-	
-					
+				
 				</div>
 	
 				<!-- Add class "fade-in-effect" for login form effect -->
-				<form method="post" role="form" name="form" id="login" class="login-form fade-in-effect" action="j_spring_security_check">
+				<form method="post" role="form" name="form" id="login" class="login-form fade-in-effect">
 	
 					<div class="login-header">
 						<a href="dashboard-1.html" class="logo">
@@ -183,16 +184,16 @@
 	
 					<div class="form-group">
 						<label class="control-label" for="username">Username</label>
-						<input type="text" class="form-control" name="loginid" id="loginid" autocomplete="off" value="test" />
+						<input type="text" class="form-control" name="loginid" id="loginid" autocomplete="off" value="" />
 					</div>
 	
 					<div class="form-group">
 						<label class="control-label" for="passwd">Password</label>
-						<input type="password" class="form-control" name="loginpwd" id="loginpwd" autocomplete="off" />
+						<input type="password" class="form-control" name="loginpwd" id="loginpwd" autocomplete="off" value="" />
 					</div>
 	
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary  btn-block text-left" onclick="doLogin();">
+						<button type="submit" class="btn btn-primary  btn-block text-left">
 							<i class="fa-lock"></i>
 							Log In
 						</button>
