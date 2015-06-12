@@ -36,6 +36,9 @@
 							format: "yyyy-mm-dd",
 							language: 'kr'
 							});
+						 
+						 $('.datepicker-days .table-condensed tbody').css('background','#b1b1b1');
+						 
 					 });
 					 
 					 
@@ -52,15 +55,61 @@
 <!-- 	<div class="sidebar-menu-inner"> -->
 	
 
-		<div class="calendar-env">
-
-		</div>
-				
-		<ul id="main-menu" class="main-menu">
-			<!-- add class "multiple-expanded" to allow multiple submenus to open -->
-			<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+		<div class="calendar-env"></div>
+		
+		<div class="text-right" style="margin-right:15px">
+			<a href="#" style="margin-right:3px">
+				<i class="fa fa-plus"></i>
+			</a>
 			
-			<li>a</li>
+			<a href="#">
+				<i class="fa fa-minus"></i>
+			</a>
+		</div>
+		
+				
+		<ul id="calendar-menu" class="calendar-menu">
+		
+			<li>
+				<label>
+					<input type="checkbox" class="cbr cbr-info"> 개인 스케줄
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" class="cbr cbr-danger"> 회사 스케줄
+				</label>
+			</li>
+			
+		</ul>
+		
+		<div class="calendar-env"></div>
+		
+		<div style="margin-bottom: 10px;">
+			<div style="margin-left:17px;float:left;">할 일</div>
+			<div class="text-right" style="margin-right:15px;">
+				<a href="#" style="margin-right:3px;">
+					<i class="fa fa-plus"></i>
+				</a>
+				
+				<a href="#">
+					<i class="fa fa-minus"></i>
+				</a>
+			</div>
+		</div>
+		
+		<ul id="calendar-menu" class="calendar-menu">
+		
+			<li>
+				<label>
+					<input type="checkbox" class="cbr cbr-info"> 개인 스케줄
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" class="cbr cbr-danger"> 회사 스케줄
+				</label>
+			</li>
 			
 		</ul>
 		

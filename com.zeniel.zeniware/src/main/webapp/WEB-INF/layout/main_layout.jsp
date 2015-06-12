@@ -11,6 +11,7 @@
 	<title>그룹웨어</title>
 
 	<tiles:insertAttribute name="jsFm" />
+	
 </head>
 
 <body class="page-body horizontal-menu-skin-navy">
@@ -21,6 +22,11 @@
 			<tiles:insertAttribute name="body" />
 <%-- 			<tiles:insertAttribute name="footer" /> --%>
 		</div>
+	</div>
+	
+	<!-- Page Loading Overlay -->
+	<div class="page-loading-overlay">
+		<div class="loader-2"></div>
 	</div>
 </body>
 </html>

@@ -28,5 +28,13 @@ a {
 	border-bottom: 1px solid #c0c0c0
 }
 
+.sidebar-menu .calendar-menu {
+	padding-left: 20px;
+	padding-right: 40px;
+	margin-top: 1px;
+	margin-bottom: 20px;
+	list-style: none
+}
+
 .fc-today-button {
 }

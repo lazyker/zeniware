@@ -53,7 +53,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="<c:url value= '/schedule/getMonth'/>">
+				<a href="${pageContext.request.contextPath}/schedule/getMonth">
 					<i class="linecons-desktop"></i>
 					<span class="title">일정관리</span>
 				</a>
@@ -126,7 +126,7 @@
 			</li>
 			
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/logout">
 					<i class="fa fa-sign-out"></i>
 				</a>
 			</li>
