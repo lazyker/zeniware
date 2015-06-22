@@ -30,6 +30,14 @@
 <!-- 		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" /> -->
 	</definition>
 
+	<!-- Admin 선언 -->
+	<definition name="zeniware_admin" template="/WEB-INF/layout/admin_layout.jsp">
+		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/admin_topForm.jsp" />
+		<put-attribute name="leftFm" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+
  	<!-- Main 예외 -->
 <!-- 	<definition name="zeniware_main_notype" template="/WEB-INF/layout/main_notype_layout.jsp"> -->
 <!-- 		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" /> -->
@@ -109,5 +117,11 @@
 	<definition name="/subInTitle/*/*/*" extends="zeniware_subInMenu">
 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+
+	<!-- Admin 구분 Tiles 호출 -->
+	<definition name="/adminType/*/*" extends="zeniware_admin">
+		<put-attribute name="leftFm"  value="/WEB-INF/views/adminware/common/admleft_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/adminware/{1}/{2}.jsp" />
 	</definition>
 </tiles-definitions>

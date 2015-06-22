@@ -941,6 +941,11 @@ html, body {
 	margin-right: 10px
 }
 
+.sidebar-menu .main-menu a>j {
+	display: inline-block;
+	margin-right: 0px
+}
+
 .sidebar-menu .main-menu a>i+span {
 	padding-right: 10px
 }
@@ -1280,7 +1285,7 @@ html, body {
 
 .navbar.horizontal-menu {
 	position: relative;
-	height: 85px;
+	height: 55px;
 	background: #fff;
 	margin: 0;
 	padding: 0;
@@ -1299,7 +1304,8 @@ html, body {
 }
 
 .navbar.horizontal-menu.navbar-fixed-top+.page-container {
-	margin-top: 85px
+	/* margin-top: 85px */
+	margin-top: 55px
 }
 
 .navbar.horizontal-menu.navbar-fixed-top+.page-container>.sidebar-menu.fixed .sidebar-menu-inner
@@ -1335,7 +1341,8 @@ html, body {
 	padding: 0 30px;
 	margin: 0;
 	float: left;
-	height: 85px;
+	/* height: 85px; */
+	height: 55px;
 	display: table
 }
 
@@ -1465,7 +1472,8 @@ html, body {
 	}
 	.navbar.horizontal-menu .navbar-inner .navbar-nav>li>a {
 		padding: 0 15px;
-		line-height: 85px
+		/* line-height: 85px */
+		line-height: 55px
 	}
 	.navbar.horizontal-menu .navbar-inner .navbar-nav>li>ul {
 		position: absolute;
@@ -6141,7 +6149,7 @@ label.cbr-inline+.cbr-inline {
 	.panel-group .panel .panel-heading .accordion-toggle:before {
 	float: right;
 	display: block;
-	content: '–';
+	content: '��;
 	font-size: 18px;
 	width: 25px;
 	text-align: right
@@ -6182,7 +6190,7 @@ label.cbr-inline+.cbr-inline {
 }
 
 .panel.expanded .accordion-toggle:before {
-	content: '–' !important
+	content: '�� !important
 }
 
 .tabs-vertical-env {
@@ -7187,7 +7195,7 @@ blockquote small {
 
 .dataTables_wrapper tr .yadcf-filter-wrapper .yadcf-filter-wrapper-inner .yadcf-filter-range-number-seperator:after
 	{
-	content: '–';
+	content: '��;
 	color: #979898;
 	font-size: 11px;
 	font-weight: 400

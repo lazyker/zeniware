@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<nav class="navbar horizontal-menu navbar-minimal"><!-- set fixed position by adding class "navbar-fixed-top" -->
+<nav class="navbar horizontal-menu navbar-fixed-top""><!-- set fixed position by adding class "navbar-fixed-top" -->
 		
 	<div class="navbar-inner">
 	
 		<!-- Navbar Brand -->
 		<div class="navbar-brand">
-			<a href="dashboard-1.html" class="logo">
+			<a href="${pageContext.request.contextPath}/main" class="logo">
 				<img src="${pageContext.request.contextPath}/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
 				<img src="${pageContext.request.contextPath}/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
 			</a>
@@ -47,21 +47,28 @@
 		<!-- main menu -->
 		<ul class="navbar-nav">
 			<li>
-				<a href="dashboard-1.html">
-					<i class="linecons-cog"></i>
-					<span class="title">전자우편</span>
-				</a>
-			</li>
-			<li>
-				<a href="${pageContext.request.contextPath}/schedule/getMonth">
+				<%-- <a href="<c:url value= '/schedule/getMonth'/>"> --%>
+				<a href="#">
 					<i class="linecons-desktop"></i>
-					<span class="title">일정관리</span>
+					<span class="title">환경설정</span>
 				</a>
+				<ul>
+					<li>
+						<a href="">
+							<span class="title">공통코드관리</span>
+						</a>
+					</li>
+					<li>
+						<a href="dashboard-1.html">
+							<span class="title">회원관리</span>
+						</a>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<a href="ui-panels.html">
 					<i class="linecons-note"></i>
-					<span class="title">전자결재</span>
+					<span class="title">게시판관리</span>
 				</a>
 			</li>
 			<li>
@@ -71,73 +78,32 @@
 				</a>
 			</li>
 			<li>
-				<a href="">
+				<a href="/adminwr/comunity/defailt">
 					<i class="linecons-diamond"></i>
-					<span class="title">커뮤니티</span>
+					<span class="title">커뮤니티관리</span>
 				</a>
+				<ul>
+					<li>
+						<a href="forms-native.html">
+						<i class="linecons-diamond"></i>
+						<span class="title">기본설정</span>
+						</a>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<a href="">
-					<i class="linecons-diamond"></i>
+					<i class="fa fa-plus-square"></i>
 					<span class="title">자원관리</span>
 				</a>
 			</li>
 			<li>
 				<a href="">
-					<i class="linecons-diamond"></i>
-					<span class="title">문서관리</span>
-				</a>
-			</li>
-			<li>
-				<a href="">
-					<i class="linecons-diamond"></i>
-					<span class="title">주소록</span>
-				</a>
-			</li>
-			<li>
-				<a href="${pageContext.request.contextPath}/adminwr/comunity/defailt">
-					<i class="fa fa-anchor"></i>
-					<span class="title">관리자</span>
+					<i class="fa fa-file-excel-o"></i>
+					<span class="title">전자결재관리</span>
 				</a>
 			</li>
 		</ul>
-				
-		
-		<!-- notifications and other links -->
-		<ul class="nav nav-userinfo navbar-right">
-			
-			<li class="dropdown xs-left">
-				<a href="#" data-toggle="dropdown" class="notification-icon notification-icon-messages">
-					<i class="fa-bell-o"></i>
-					<span class="badge badge-purple">7</span>
-				</a>
-			</li>
-	
-			<li class="dropdown user-profile">
-				<a href="#" data-toggle="dropdown">
-					<img src="${pageContext.request.contextPath}/resources/images/main/photo.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
-				</a>
-			</li>
-			
-			<li>
-				<a href="#">
-					<i class="fa fa-bar-chart"></i>
-				</a>
-			</li>
-			
-			<li>
-				<a href="#">
-					<i class="fa fa-cog"></i>
-				</a>
-			</li>
-			
-			<li>
-				<a href="${pageContext.request.contextPath}/logout">
-					<i class="fa fa-sign-out"></i>
-				</a>
-			</li>
-		</ul>
-
 	</div>
-	
+
 </nav>
