@@ -3,33 +3,39 @@
     "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
     "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-	<definition name="template" template="/WEB-INF/views/template.jsp"/>
-	<!-- Main 선언 -->
-	<definition name="zeniware_main" template="/WEB-INF/layout/main_layout.jsp">
-		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
-		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
-		<put-attribute name="body" value="" />
-<!-- 		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" /> -->
-	</definition>
 
-	<!-- Sub 선언 -->
-	<definition name="zeniware_sub" template="/WEB-INF/layout/sub_layout.jsp">
-		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+	<!-- Left 고정 레이아웃 -->
+	<definition name="main_layout" template="/WEB-INF/layout/main_layout.jsp">
+		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />
 		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" />
 		<put-attribute name="body" value="" />
-<!-- 		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" /> -->
 	</definition>
-
-	<!-- Sub LEFT 직접 선언 -->
-	<definition name="zeniware_subInMenu" template="/WEB-INF/layout/sub_layout.jsp">
-		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+	
+	<definition name="/mainLayout/*" extends="main_layout">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="/mainLayout/*/*" extends="main_layout">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="/mainLayout/*/*/*" extends="main_layout">
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	
+	<!-- 일정관리 레이아웃 -->
+	<definition name="schedule_layout" template="/WEB-INF/layout/schedule_layout.jsp">
+		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />
 		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
 		<put-attribute name="leftFm" value="" />
 		<put-attribute name="body" value="" />
-<!-- 		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footerForm.jsp" /> -->
 	</definition>
-
+	
+	<definition name="/scheduleLayout/*/*" extends="schedule_layout">
+		<put-attribute name="leftFm" value="/WEB-INF/views/{1}/left_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	
 	<!-- Admin 선언 -->
 	<definition name="zeniware_admin" template="/WEB-INF/layout/admin_layout.jsp">
 		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
@@ -38,90 +44,30 @@
 		<put-attribute name="body" value="" />
 	</definition>
 
- 	<!-- Main 예외 -->
-<!-- 	<definition name="zeniware_main_notype" template="/WEB-INF/layout/main_notype_layout.jsp"> -->
-<!-- 		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" /> -->
-<!-- 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" /> -->
-<!-- 		<put-attribute name="body" value="" /> -->
-<!-- 	</definition> -->
-
-	<!-- Sub 예외 -->
-<!-- 	<definition name="zeniware_sub_notype" template="/WEB-INF/layout/sub_notype_layout.jsp"> -->
-<!-- 		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" /> -->
-<!-- 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/leftForm.jsp" /> -->
-<!-- 		<put-attribute name="body" value="" /> -->
-<!-- 	</definition> -->
-
-	<definition name="/maintype/*" extends="zeniware_main">
-		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
-	</definition>
-	<definition name="/maintype/*/*" extends="zeniware_main">
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
-	</definition>
-	<definition name="/maintype/*/*/*" extends="zeniware_main">
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
-	</definition>
-
-	<!-- Sub html type -->
-	<definition name="/subtype/*" extends="zeniware_sub">
-		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
-	</definition>
-	<definition name="/subtype/*/*" extends="zeniware_sub">
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
-	</definition>
-	<definition name="/subtype/*/*/*" extends="zeniware_sub">
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
-	</definition>
-
-	<!-- Main 예외 html type -->
-<!-- 	<definition name="/mainNoType/*" extends="zeniware_main_notype"> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" /> -->
-<!-- 	</definition> -->
-<!-- 	<definition name="/mainNoType/*/*" extends="zeniware_main_notype"> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" /> -->
-<!-- 	</definition> -->
-<!-- 	<definition name="/mainNoType/*/*/*" extends="zeniware_main_notype"> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" /> -->
-<!-- 	</definition> -->
-
-	<!-- Sub 예외 html type -->
-<!-- 	<definition name="/subNoType/*" extends="zeniware_sub_notype"> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" /> -->
-<!-- 	</definition> -->
-<!-- 	<definition name="/subNoType/*/*" extends="zeniware_sub_notype"> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" /> -->
-<!-- 	</definition> -->
-<!-- 	<definition name="/subNoType/*/*/*" extends="zeniware_sub_notype"> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" /> -->
-<!-- 	</definition> -->
-
-	<!-- Left 메뉴 직접 선언 -->
-	<definition name="/subInMenu/*/*" extends="zeniware_subInMenu">
-		<put-attribute name="leftFm" value="/WEB-INF/views/{1}/left_{1}.jsp" />
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
-	</definition>
-
-	<!-- Sub 메뉴 직접 선언 -->
-<!-- 	<definition name="/subInMenu/*/*" extends="zeniware_subInMenu"> -->
-<!-- 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/{1}.jsp" /> -->
-<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{2}.jsp" /> -->
-<!-- 	</definition> -->
-	<definition name="/subInTitle/*" extends="zeniware_subInMenu">
-		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
-		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" />
-	</definition>
-	<definition name="/subInTitle/*/*" extends="zeniware_subInMenu">
-		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
-	</definition>
-	<definition name="/subInTitle/*/*/*" extends="zeniware_subInMenu">
-		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" />
-		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
-	</definition>
-
 	<!-- Admin 구분 Tiles 호출 -->
 	<definition name="/adminType/*/*" extends="zeniware_admin">
 		<put-attribute name="leftFm"  value="/WEB-INF/views/adminware/common/admleft_{1}.jsp" />
 		<put-attribute name="body"  value="/WEB-INF/views/adminware/{1}/{2}.jsp" />
 	</definition>
+	
+	<!-- 일정관리 Ajax Body 레이아웃 -->
+<!-- 	<definition name="/scheduleAjaxLayout/*/*" template="/WEB-INF/layout/ajax_body_layout.jsp"> -->
+<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" /> -->
+<!-- 	</definition> -->
+	
+
+
+<!-- 	<definition name="/subInTitle/*" extends="zeniware_subInMenu"> -->
+<!-- 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" /> -->
+<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="/subInTitle/*/*" extends="zeniware_subInMenu"> -->
+<!-- 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" /> -->
+<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="/subInTitle/*/*/*" extends="zeniware_subInMenu"> -->
+<!-- 		<put-attribute name="leftFm" value="/WEB-INF/views/common_tiles/left_{1}.jsp" /> -->
+<!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}/{3}.jsp" /> -->
+<!-- 	</definition> -->
+
 </tiles-definitions>
