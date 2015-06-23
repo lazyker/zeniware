@@ -1,13 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-	<link rel='stylesheet' type='text/css' href='${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.css' />
-	<link rel='stylesheet' type='text/css' href='${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.print.css' media='print' />
-	
-	<script src="${pageContext.request.contextPath}/assets/js/moment.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/colorpicker/bootstrap-colorpicker.min.js"></script>
 	
 	<script>
 	
@@ -42,26 +33,38 @@
 			},
 			selectable: true,
 			selectHelper: true,
-			dayClick: function(date, allDay, jsEvent, view) {
-				alert('Clicked on: ' + date.format());
+			dayClick: function(date, allDay, view) {
+				
+// 				alert('Clicked on: ' + date.format());
+
+				var form = "";
+				var url = "${pageContext.request.contextPath}/schedule/write";
+// 				var target = ".main-content";
+				var target = ".page-body";
+				var Type = "GET";
+				var returnType = "html";
+				var contentType = null;
+				var async = false;
+				var $result = callAjax(form, url, target, Type, returnType, contentType, async);
+				
 				calendar.fullCalendar('unselect');
 			},
 			eventClick: function(calEvent, jsEvent, view) {
 				window.alert("eventClick");
 			},
 			select: function(start, end, allDay) {
-				var title = prompt('Event Title:');
-				if (title) {
-					calendar.fullCalendar('renderEvent',
-						{
-							title: title,
-							start: start,
-							end: end,
-							allDay: allDay
-						},
-						true // make the event "stick"
-					);
-				}
+// 				var title = prompt('Event Title:');
+// 				if (title) {
+// 					calendar.fullCalendar('renderEvent',
+// 						{
+// 							title: title,
+// 							start: start,
+// 							end: end,
+// 							allDay: allDay
+// 						},
+// 						true // make the event "stick"
+// 					);
+// 				}
 				calendar.fullCalendar('unselect');
 			},
 			eventMouseover: function( event, jsEvent, view) { 
@@ -94,16 +97,42 @@
 			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
 	 		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
 	 		buttonText: {today: '오늘', month: '월간', week: '주간', day: '일간'},
-	 		contentHeight: 650,
-	 		events: [
-				{
-					title: 'All Day Event',
-					start: '2015-06-08 10:30:00',
-			        textColor: 'red'
-				}
-			]
+	 		contentHeight: 650
+// 	 		events: [
+// 				{
+// 					title: 'All Day Event',
+// 					start: '2015-06-08 10:30:00',
+// 			        textColor: 'red'
+// 				}
+// 			]
 		});
+		
 	}); //End ready
+	
+	function checkForHash() {
+		if(document.location.hash){
+			var HashLocationName = document.location.hash;
+	        HashLocationName.replace("#","");
+	        
+		}	
+	}
+	
+	$(document).ready(function() {
+		
+// 		alert($('.navbar-nav').find('a').html());
+// 		alert($('.fc-day .fc-widget-content').find('td').html());
+		
+// 		//Top 메뉴 클릭시 ajax 처리를 위한  location.hash값 저장
+// 		var currentPage = $('.title-env > h1').text();
+		
+// 		checkForHash();
+		
+// 		$('.fc-day .fc-widget-content').find('td').on("click", function(e) {
+// 			document.location.hash = "#" + currentPage;
+// 		});
+		
+		
+	});
 	
 	</script>
 	

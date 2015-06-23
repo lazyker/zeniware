@@ -19,7 +19,7 @@ public class TilesTestController {
 	//@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getTest(@RequestParam Map<String, Object>paramMap, ModelMap model) {
 		logger.info("Welcome Tiles! The client locale is {}.", paramMap);
-		return "/maintype/main_test";
+		return "/mainLayout/main_test";
 	}
 
 	@RequestMapping(value = "/test2")
