@@ -53,7 +53,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/schedule/getMonth">
+				<a href="${pageContext.request.contextPath}/schedule/scheduleMain">
 					<i class="linecons-desktop"></i>
 					<span class="title">일정관리</span>
 				</a>
@@ -92,6 +92,12 @@
 				<a href="">
 					<i class="linecons-diamond"></i>
 					<span class="title">주소록</span>
+				</a>
+			</li>
+			<li>
+				<a href="${pageContext.request.contextPath}/adminwr/comunity/defailt">
+					<i class="fa fa-anchor"></i>
+					<span class="title">관리자</span>
 				</a>
 			</li>
 		</ul>
