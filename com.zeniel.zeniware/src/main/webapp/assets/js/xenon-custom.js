@@ -370,6 +370,7 @@ var public_vars = public_vars || {};
 						endDate: attrDefault($this, 'endDate', ''),
 						daysOfWeekDisabled: attrDefault($this, 'disabledDays', ''),
 						startView: attrDefault($this, 'startView', 0),
+						language: "kr",
 						rtl: rtl()
 					},
 					$n = $this.next(),
