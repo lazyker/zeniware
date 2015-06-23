@@ -99,7 +99,7 @@ public class LoginController {
 		
 			System.out.println(principal.getName()); //id 가져온다
 		
-		return "/maintype/main_test";
+		return "/mainLayout/main";
 	}
 	
 	@RequestMapping(value = "/logoutSuccess")

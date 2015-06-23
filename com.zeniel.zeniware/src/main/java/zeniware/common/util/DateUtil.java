@@ -28,6 +28,11 @@ public class DateUtil {
 		return date.substring(0, 7) + "-01";
 	}
     
+    public static String getToDay(Date date) throws Exception {
+    	FastDateFormat fdf = FastDateFormat.getInstance("yyyyMMdd");
+    	return fdf.format(date);
+    }
+    
     public static String getYear(Date date) throws Exception {
     	FastDateFormat fdf = FastDateFormat.getInstance("yyyy");
     	return fdf.format(date);
