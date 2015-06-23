@@ -53,7 +53,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/schedule/scheduleMain">
+				<a href="${pageContext.request.contextPath}/schedule/getMonth">
 					<i class="linecons-desktop"></i>
 					<span class="title">일정관리</span>
 				</a>
