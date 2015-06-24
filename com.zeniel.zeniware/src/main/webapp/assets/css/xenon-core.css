@@ -1304,8 +1304,7 @@ html, body {
 }
 
 .navbar.horizontal-menu.navbar-fixed-top+.page-container {
-	/* margin-top: 85px */
-	margin-top: 55px
+	margin-top: 85px
 }
 
 .navbar.horizontal-menu.navbar-fixed-top+.page-container>.sidebar-menu.fixed .sidebar-menu-inner
@@ -1341,8 +1340,7 @@ html, body {
 	padding: 0 30px;
 	margin: 0;
 	float: left;
-	/* height: 85px; */
-	height: 55px;
+	height: 85px;
 	display: table
 }
 
@@ -1472,8 +1470,7 @@ html, body {
 	}
 	.navbar.horizontal-menu .navbar-inner .navbar-nav>li>a {
 		padding: 0 15px;
-		/* line-height: 85px */
-		line-height: 55px
+		line-height: 85px
 	}
 	.navbar.horizontal-menu .navbar-inner .navbar-nav>li>ul {
 		position: absolute;
