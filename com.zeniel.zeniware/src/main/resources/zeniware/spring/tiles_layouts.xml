@@ -38,7 +38,7 @@
 	
 	<!-- Admin 선언 -->
 	<definition name="zeniware_admin" template="/WEB-INF/layout/admin_layout.jsp">
-		<put-attribute name="jsFm"  value="/WEB-INF/views/common_tiles/jsForm.jsp" />
+		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />
 		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/admin_topForm.jsp" />
 		<put-attribute name="leftFm" value="" />
 		<put-attribute name="body" value="" />

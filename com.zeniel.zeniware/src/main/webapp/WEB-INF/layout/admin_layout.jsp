@@ -2,23 +2,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>그룹웨어</title>
-	<tiles:insertAttribute name="jsFm" />
-</head>
-<body class="page-body">
-<tiles:insertAttribute name="top" />
-<div class="page-container">
-	<tiles:insertAttribute name="leftFm" />
+<!DOCTYPE html>
+<html>
+	<tiles:insertAttribute name="header" />
 	
-	<div class="main-content">
-		<tiles:insertAttribute name="body" />
+<body class="page-body">
+	
+	<tiles:insertAttribute name="top" />
+
+	<div class="page-container">
+		<tiles:insertAttribute name="leftFm" />
+	
+		<div class="main-content">
+			<tiles:insertAttribute name="body" />
+		</div>
 	</div>
-</div>
+	
+	<!-- Bottom Scripts -->
+	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/TweenMax.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/resizeable.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/joinable.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-api.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-toggles.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/moment.min.js"></script>
 </body>
 </html>
