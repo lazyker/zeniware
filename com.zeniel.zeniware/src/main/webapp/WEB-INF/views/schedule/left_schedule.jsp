@@ -1,29 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<div class="sidebar-menu toggle-others" style="background-color:#dadada">
+<div class="sidebar-menu toggle-others" style="background-color:#E3E3E3;">
 
-	<div class="panel-body">
-		<div class="form-group">
-			<div class="col-sm-5">
-			
-				<div class="datepickerCal no-border" id="datepickerCal"></div>
-				
-				<script>
-					$(function() {
-						//미니달력 한글화 
-						 $('.datepickerCal').datepicker({
-							format: "yyyy-mm-dd",
-							language: "kr"
-							});
-						 
-						 $('.datepicker-days .table-condensed tbody').css('background','#b1b1b1');
-					 });
-				</script>
-
+	<div class="sidebar-menu-inner">
+		<div class="panel-body">
+			<div class="form-group">
+				<div class="col-sm-12">
+					<div class="btn-group" style="width:100%">
+						<a class="btn btn-primary btn-lg" style="width:100%">일정 등록</a>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="datepicker no-border" id="datepickerCal"></div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
+
 	<div class="calendar-env"></div>
 	
 	<div class="text-right" style="margin-right:15px">

@@ -45,7 +45,9 @@
 				var returnType = "html";
 				var contentType = null;
 				var async = false;
-				var $result = callAjax(form, url, target, Type, returnType, contentType, async);
+// 				var $result = callAjax(form, url, target, Type, returnType, contentType, async);
+
+				window.location.href = "${pageContext.request.contextPath}/schedule/write?startYmd=" + date.format();
 				
 				calendar.fullCalendar('unselect');
 			},
@@ -202,3 +204,4 @@
 	$("#log").append( printObj(object1) );
 	
 	</script>
+	
