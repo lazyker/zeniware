@@ -3,6 +3,7 @@ package zeniware.sample;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,19 @@ public class BoardController {
 		String name = mainService.getEmpInfo(map);
 		
 		Employee vo = new Employee();
-		vo.setId(2);
-		vo = mainService.getEmpInfoMap(vo);
+		vo.setId(1);
+		Employee resultVo = mainService.getEmpInfoMap(vo);
 		
 		model.put("today", today);
 		model.put("name", name);
+		model.put("vo", resultVo);
+		
+		ObjectMapper om = new ObjectMapper();
+		
+		String toJson = om.writeValueAsString(resultVo);
+		model.put("toJson", toJson);
+		
+//		model.addAttribute("serverTime", resultVo );
 		
 		return "home";
 	}
