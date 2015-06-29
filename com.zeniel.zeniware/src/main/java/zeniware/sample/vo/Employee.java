@@ -4,7 +4,31 @@ public class Employee {
 		private int id;
 		private String first_name; 
 		private String last_name;   
-		private int salary;  
+		private int salary;
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public String getFirst_name() {
+			return first_name;
+		}
+		public void setFirst_name(String first_name) {
+			this.first_name = first_name;
+		}
+		public String getLast_name() {
+			return last_name;
+		}
+		public void setLast_name(String last_name) {
+			this.last_name = last_name;
+		}
+		public int getSalary() {
+			return salary;
+		}
+		public void setSalary(int salary) {
+			this.salary = salary;
+		}  
 
 //	   /* Define constructors for the Employee class. */
 //	   public Employee() {}
@@ -16,36 +40,6 @@ public class Employee {
 //	   }
 
 	   /* Here are the required method definitions */
-	   public int getId() {
-	      return id;
-	   }
-		
-	   public void setId(int id) {
-	      this.id = id;
-	   }
-		
-	   public String getFirstName() {
-	      return first_name;
-	   }
-		
-	   public void setFirstName(String fname) {
-	      this.first_name = fname;
-	   }
-		
-	   public String getLastName() {
-	      return last_name;
-	   }
-		
-	   public void setlastName(String lname) {
-	      this.last_name = lname;
-	   }
-		
-	   public int getSalary() {
-	      return salary;
-	   }
-		
-	   public void setSalary(int salary) {
-	      this.salary = salary;
-	   }
+	
 
 }
