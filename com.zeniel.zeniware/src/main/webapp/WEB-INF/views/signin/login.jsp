@@ -148,12 +148,16 @@
 				});
 
 				// Set Form focus
-				$("form#login .form-group:has(.form-control):first .form-control").focus();
+// 				$("form#login .form-group:has(.form-control):first .form-control").focus();
+				
+				$('#loginSubmit').focus();
+				
 			});
 			
 		</script>
 </head>
 <body class="page-body login-page login-light">
+
 
 	<div class="login-container">
 	
@@ -179,16 +183,16 @@
 	
 					<div class="form-group">
 						<label class="control-label" for="username">Username</label>
-						<input type="text" class="form-control" name="loginid" id="loginid" autocomplete="off" value="" />
+						<input type="text" class="form-control" name="loginid" id="loginid" autocomplete="off" value="zeniel" />
 					</div>
 	
 					<div class="form-group">
 						<label class="control-label" for="passwd">Password</label>
-						<input type="password" class="form-control" name="loginpwd" id="loginpwd" autocomplete="off" value="" />
+						<input type="password" class="form-control" name="loginpwd" id="loginpwd" autocomplete="off" value="1234" />
 					</div>
 	
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary  btn-block text-left">
+						<button type="submit" class="btn btn-primary  btn-block text-left" id="loginSubmit">
 							<i class="fa-lock"></i>
 							Log In
 						</button>
