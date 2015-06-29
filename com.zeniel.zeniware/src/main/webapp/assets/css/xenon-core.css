@@ -1791,7 +1791,7 @@ html, body {
 	}
 	.navbar.horizontal-menu .navbar-inner .navbar-nav>li>a {
 		padding: 0 10px;
-		font-size: 12px
+		font-size: 9px
 	}
 	.navbar.horizontal-menu .navbar-inner .navbar-nav>li>a>.badge {
 		display: none

@@ -10,9 +10,6 @@
 				<img src="${pageContext.request.contextPath}/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
 				<img src="${pageContext.request.contextPath}/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
 			</a>
-			<a href="#" data-toggle="settings-pane" data-animate="true">
-				<i class="linecons-cog"></i>
-			</a>
 		</div>
 			
 		<!-- Mobile Toggles Links -->

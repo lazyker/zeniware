@@ -3,7 +3,7 @@
 <div class="sidebar-menu toggle-others">
 		
 	<div class="sidebar-menu-inner">
-	
+		
 		<header class="logo-env">
 			
 				<!-- logo -->
@@ -17,6 +17,7 @@
 					</a>
 				</div>
 	
+				<!-- 이부분이 모바일 LEFT 메뉴 구성 -->
 				<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
 				<div class="mobile-menu-toggle visible-xs">
 					<a href="#" data-toggle="user-info-menu">
