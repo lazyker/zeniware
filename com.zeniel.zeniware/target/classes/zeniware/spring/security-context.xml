@@ -13,7 +13,8 @@
 		<intercept-url pattern="/manager/**" access="hasRole('manager')" />
 		<intercept-url pattern="/admin/**" access="hasRole('admin')" />
 		<intercept-url pattern="/login" access="permitAll" />
-		<intercept-url pattern="/main" access="hasRole('admin')" />
+		<intercept-url pattern="/main" access="hasRole('anonymous')" />
+		<intercept-url pattern="/zeniware/**" access="hasRole('anonymous')" />
 
 		<form-login
 			username-parameter="loginid"
@@ -54,7 +55,7 @@
 	<beans:bean id="customJdbcDao" class="zeniware.common.login.dao.CustomJdbcDao">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="rolePrefix" value="" />
-		<beans:property name="usersByUsernameQuery" value="SELECT ID, PASSWORD, NAME FROM MEMBERINFO WHERE ID=?" />
+		<beans:property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, USER_NM FROM FH_USER WHERE USER_ID=?" />
 		<beans:property name="authoritiesByUsernameQuery" value="SELECT ID, AUTHORITY FROM MEMBER_AUTHORITY WHERE ID=?" />
 		<beans:property name="enableGroups" value="false" />
 	</beans:bean>

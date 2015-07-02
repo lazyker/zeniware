@@ -1,4 +1,4 @@
-package zeniware.adminware.community;
+package zeniware.admin.community;
 
 import java.util.Map;
 
@@ -14,8 +14,8 @@ public class CommunityAdmController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CommunityAdmController.class);
 
-	@RequestMapping("/adminwr/comunity/defailt")
+	@RequestMapping("/admin/community/default")
 	public String getCommunityAdmDefailt(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable{
-		return "/adminType/comunity/defailt";
+		return "/adminLayout/community/default";
 	}
 }

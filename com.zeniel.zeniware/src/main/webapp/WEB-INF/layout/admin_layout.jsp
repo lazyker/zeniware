@@ -6,7 +6,13 @@
 <html>
 	<tiles:insertAttribute name="header" />
 	
-<body class="page-body">
+	<!-- Imported styles on this page -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
+	
+	<!-- JavaScripts initializations and stuff -->
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
+	
+<body class="page-body skin-aero">
 	
 	<tiles:insertAttribute name="top" />
 
@@ -25,6 +31,14 @@
 	<script src="${pageContext.request.contextPath}/assets/js/joinable.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-api.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-toggles.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/moment.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
+
+
+	<!-- Imported scripts on this page -->
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>	
+	<script src="${pageContext.request.contextPath}/assets/js/ajax.js"></script>
+
 </body>
 </html>
