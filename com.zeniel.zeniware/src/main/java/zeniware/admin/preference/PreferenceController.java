@@ -23,10 +23,15 @@ public class PreferenceController {
   @Autowired
   PreferenceService preferenceService;
 
-  @RequestMapping("/admin/preference/default")
-  public String getPreferenceAdmDefault(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable{
+  @RequestMapping("/admin/preference/commonCode")
+  public String redirectCommonCodeMain(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    return "/adminLayout/preference/default";
+    return "/adminLayout/preference/commonCodeMain";
+  }
+  
+  @RequestMapping("/admin/preference/commonCodeNew")
+  public String redirectCommonCodeNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+    return "/adminLayout/preference/commonCodeNew";
   }
   
   @RequestMapping("/admin/preference/ajax")
