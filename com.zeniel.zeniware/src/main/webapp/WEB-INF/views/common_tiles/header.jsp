@@ -18,4 +18,3 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.1.min.js"></script>
 
 </head>
-				

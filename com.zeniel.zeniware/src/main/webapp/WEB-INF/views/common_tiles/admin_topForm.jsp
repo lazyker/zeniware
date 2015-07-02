@@ -47,7 +47,7 @@
 		<!-- main menu -->
 		<ul class="navbar-nav">
 			<li>
-				<a href="${pageContext.request.contextPath}/admin/preference/default">
+				<a href="${pageContext.request.contextPath}/admin/preference/commonCode">
 					<i class="linecons-cog"></i>
 					<span class="title">환경설정</span>
 				</a>

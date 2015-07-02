@@ -33,12 +33,13 @@
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-toggles.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
 
-
 	<!-- Imported scripts on this page -->
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>	
-	<script src="${pageContext.request.contextPath}/assets/js/ajax.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
+	
+<%-- 	<script src="${pageContext.request.contextPath}/assets/js/datatables_origin/media/js/jquery.dataTables.js"></script> --%>
+<%-- 	<script src="${pageContext.request.contextPath}/assets/js/datatables_origin/extensions/TableTools/js/dataTables.tableTools.js"></script> --%>
 
 </body>
 </html>
