@@ -44,8 +44,8 @@
 									<i class="linecons-calendar"></i>
 								</div>
 								<div class="date-and-time">
-									<input type="text" class="form-control datepicker" id="startYmd" data-format="yyyy-mm-dd" value="${param.startYmd} ">
-									<input type="text" class="form-control timepicker" id="startTm" data-template="dropdown"  data-show-meridian="true" data-minute-step="5" data-second-step="5" />
+									<input type="text" class="form-control datepicker" id="startYmd" data-format="yyyy-mm-dd" value="${startYmd}">
+									<input type="text" class="form-control timepicker" id="startTm" data-template="dropdown"  data-show-meridian="false" data-minute-step="30" />
 								</div>
 							</div>
 						</div>
@@ -56,8 +56,8 @@
 									<i class="linecons-calendar"></i>
 								</div>
 								<div class="date-and-time">
-									<input type="text" class="form-control datepicker" id="endYmd" data-format="yyyy-mm-dd" value="${param.startYmd} + 1">
-									<input type="text" class="form-control timepicker" id="endTm" data-template="dropdown" data-show-meridian="true" data-minute-step="5" data-second-step="5" />
+									<input type="text" class="form-control datepicker" id="endYmd" data-format="yyyy-mm-dd" value="${endYmd}">
+									<input type="text" class="form-control timepicker" id="endTm" data-template="dropdown" data-show-meridian="false" data-minute-step="30" />
 								</div>
 							</div>
 						</div>
@@ -412,6 +412,13 @@
 					$state.prop('checked', false);
 				}
 			});
+			
+// 			 $('#startTm').timepicker().on('changeTime.timepicker', function(e) {
+// 				    console.log('The time is ' + e.time.value);
+// 				    console.log('The hour is ' + e.time.hour);
+// 				    console.log('The minute is ' + e.time.minute);
+// 				    console.log('The meridian is ' + e.time.meridian);
+// 			});
 			
 		});
 		

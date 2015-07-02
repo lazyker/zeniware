@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 
@@ -144,5 +145,27 @@ public class DateUtil {
         int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
         return dayOfWeek;
     }
+    
+    
+    /**
+     * FullCalendar의 EndDate의 경우 -1을 해야 정상 날짜가 된다.
+     * @param date
+     * @return
+     * @throws ParseException
+     */
+    public static String getCalEndYmd(String date) throws ParseException {
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    	Date endDate = sdf.parse(date);
+    	
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(endDate);
+		cal.add(Calendar.DATE, -1);
+		
+		String endYmd= sdf.format(cal.getTime());
+    	
+    	return endYmd;
+    }
+    
+     
     
 }
