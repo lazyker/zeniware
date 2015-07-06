@@ -13,8 +13,8 @@
 		<result column="SORT_ORDER" property="sortOrder" />
 		<result column="USE_YN" property="useYn" />
 		<result column="DESCRIPTION" property="description" />
-		<result column="REG_DATE" property="regDate" />
-		<result column="MOD_DATE" property="modDate" />
+		<result column="REG_DATE" property="regDate" javaType="java.sql.Date" />
+		<result column="MOD_DATE" property="modDate" javaType="java.sql.Date" />
 	</resultMap>
 	
 	<select id="getCommonCodes" parameterType="map" resultMap="commonCodeResultMap">
