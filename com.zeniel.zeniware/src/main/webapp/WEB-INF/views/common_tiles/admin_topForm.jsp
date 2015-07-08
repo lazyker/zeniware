@@ -47,7 +47,7 @@
 		<!-- main menu -->
 		<ul class="navbar-nav">
 			<li>
-				<a href="${pageContext.request.contextPath}/admin/preference/commonCode">
+				<a href="${pageContext.request.contextPath}/admin/preference/commonCodeMain">
 					<i class="linecons-cog"></i>
 					<span class="title">환경설정</span>
 				</a>
@@ -70,7 +70,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/admin/community/default">
 					<i class="linecons-user"></i>
 					<span class="title">커뮤니티</span>
 				</a>
