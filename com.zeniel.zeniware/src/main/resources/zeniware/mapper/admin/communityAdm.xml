@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cmutadmin">
+	<resultMap type="zeniware.admin.community.CommunityVO" id="cmutBasicResultMap">
+		<id column="COMP_ID"			property="compId" />
+		<result column="FC_ADM_SEQ"		property="fcAdmSeq" />
+		<result column="COMP_ID"		property="compId" />
+		<result column="CUMT_TYPE"		property="cumtType" />
+		<result column="FILE_SIZE_YN"	property="fileSizeYn" />
+		<result column="FILE_SIZE"		property="fileSize" />
+		<result column="FILE_ADD_YN"	property="fileAddYn" />
+		<result column="FILE_ADD_CNT"	property="fileAddCnt" />
+		<result column="FILE_NOT_NAME"	property="fileNotName" />
+		<result column="REG_DATE"		property="regDate" />
+		<result column="ADM_USER_ID"	property="admUserId" />
+	</resultMap>
+
+	<select id="cmutadmin.getCommunityBasic" parameterType="map" resultMap="cmutBasicResultMap">
+		SELECT
+			FC_ADM_SEQ, COMP_ID, CUMT_TYPE, FILE_SIZE_YN, FILE_SIZE,
+			FILE_ADD_YN, FILE_ADD_CNT, FILE_NOT_NAME, REG_DATE, ADM_USER_ID
+		FROM
+			FC_ADMN_MAST
+		WHERE 1 = 1
+			AND COMP_ID = #{compId}
+	</select>
+
+	<select id="cmutadmin.getCommunityCnt" parameterType="map" resultType="int">
+		SELECT
+			COUNT(FC_ADM_SEQ) AS CNT
+		FROM
+			FC_ADMN_MAST
+		WHERE 1 = 1
+			AND COMP_ID = #{compId}
+	</select>
+
+	<insert id="cmutadmin.insertCommunityBasic" parameterType="map">
+		INSERT INTO FC_ADMN_MAST
+			SELECT
+				ifnull ( MAX(FC_ADM_SEQ), 1)
+				,#{compId}
+				,'Y'
+				,'N'
+				,0
+				,'N'
+				,0
+				,#{fileNotName, javaType=STRING, jdbcType=VARCHAR}
+				,SYSDATE()
+				,'admin'
+			FROM FC_ADMN_MAST
+	</insert>
+</mapper>

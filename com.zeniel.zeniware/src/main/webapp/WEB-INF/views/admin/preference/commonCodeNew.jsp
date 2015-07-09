@@ -90,7 +90,7 @@
 	$(document).ready(function() {
 		
 		$("#btnClose").click(function() {
-			$(location).attr('href', '${pageContext.request.contextPath}/admin/preference/commonCode');
+			$(location).attr('href', '${pageContext.request.contextPath}/admin/preference/commonCodeMain');
 			return false;
 		});
 		
