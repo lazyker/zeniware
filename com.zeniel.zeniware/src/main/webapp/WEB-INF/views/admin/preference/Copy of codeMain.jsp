@@ -49,16 +49,15 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		
-		var table = $('#example').dataTable({
-			ajax: {"url": "${pageContext.request.contextPath}/admin/preference/ajax", "dataSrc": ""}, 
+		var table = $('#example').DataTable({
+			ajax: {"url": "../ajax/getCodelist", "dataSrc": ""}, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
         { "mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; } }, 
       	{ "mData": "groupId" }, 
       	{ "mData": "codeId" }, 
-      	{ "mData": "codeNameKo" },
+      	{ "mData": "codeNameKo" }, 
       	{ "mData": "codeNameEn" }, 
       	{ "mData": "codeNameCn" }, 
       	{ "mData": "codeNameJp" }, 
@@ -76,27 +75,64 @@
 						"sButtonClass": "btn-primary",
 						"sButtonText": "Create New", 
 						"fnClick": function(nButton, oConfig, oFlash) {
-							$(location).attr('href', '${pageContext.request.contextPath}/admin/preference/commonCodeNew');
+							$(location).attr('href', 'newCode');
 						}
 					}, 
 					{
+// 						"sExtends": "ajax", 
+// 						"sButtonClass": "btn-primary", 
+// 						"sButtonText": "Delete Selection", 
+// 						"sAjaxUrl" : "../ajax/deleteCodelist", 
+// 						"mColumns": [0, 1, 2], 
+// 						"fnClick": function(nButton, oConfig) {
+// 							$.ajax({
+// 								dataType: 'json', 
+// 								type: 'POST', 
+// 								url: oConfig.sAjaxUrl, 
+// 								data: oConfig.mColumns, 
+// 								success: oConfig.fnAjaxComplete
+// 							});
+// 						}, 
+// 						"fnAjaxComplete": function(json) {
+// 							alert(json);
+// 						}
 						"sExtends": "text", 
 						"sButtonClass": "btn-primary", 
 						"sButtonText": "Delete Selection", 
 						"fnClick": function(nButton, oConfig, oFlash) {
-							alert(table.fnGetNodes());
-						}
-					}, 
-					{
-						"sExtends": "text", 
-						"sButtonClass": "btn-primary",
-						"sButtonText": "Export Selection", 
-						"fnClick": function(nButton, oConfig, oFlash) {
-							alert(table.fnGetNodes());
+// 							var arrChecked = [];
+// 							$("#example tbody tr").each(function() {
+// 								var curChecked = $("input[type='checkbox']:checked", this).length;
+// 								if (curChecked == 1) arrChecked.push($('td', this).eq(1).text() + ":" + $('td', this).eq(2).text());
+// 							});
+							
+// 							$(location).attr('href', 'deleteCodelist?codelist=' + arrChecked);
+
+								$("#example tbody tr").each(function() {
+									var curChecked = $("input[type='checkbox']:checked", this).length;
+									
+									if (curChecked == 1) $(this).addClass('selected');
+									else $(this).removeClass('selected');
+								});
+								
+								$("#example").DataTable().rows('.selected').remove().draw(false);
 						}
 					}
 				]
 			}
+		});
+		
+		$("#example tbody").on('click', 'tr td:not(:first-child)', function() {
+// 			var groupId = $(this).parent().find('td').eq(1).text();
+// 			var codeId = $(this).parent().find('td').eq(2).text();
+
+// 			$(location).attr('href', 'newCode?groupId=' + groupId + '&codeId=' + codeId);
+			
+			$.ajax({
+				dataType: 'json', 
+				type: 'POST', 
+				url: 
+			});
 		});
 		
 		var $state = $("#example thead input[type='checkbox']");
@@ -124,6 +160,7 @@
 	Button options: http://datatables.net/extensions/tabletools/button_options
 	Flat array data source: http://datatables.net/examples/ajax/custom_data_flat.html
 	Deferred rendering for speed: http://datatables.net/examples/ajax/defer_render.html
+	Making row clickable except for the last column: http://stackoverflow.com/questions/7525120
 */
 
 </script>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="admin">
+
+	<resultMap type="zeniware.admin.codeman.vo.CommonGroup" id="commonGroupResultMap">
+		<id column="CODE_ID" property="value" />
+		<result column="CODE_NM_KO" property="text" />
+	</resultMap>
+
+	<resultMap type="zeniware.admin.codeman.vo.CommonCode" id="commonCodeResultMap">
+		<id column="GROUP_ID" property="groupId" />
+		<id column="CODE_ID" property="codeId" />
+		<result column="PARENT_GROUP_ID" property="parentGroupId" />
+ 		<result column="CODE_NM_KO" property="codeNameKo" />
+		<result column="CODE_NM_EN" property="codeNameEn" />
+		<result column="CODE_NM_CN" property="codeNameCn" />
+		<result column="CODE_NM_JP" property="codeNameJp" />
+		<result column="SORT_ORDER" property="sortOrder" />
+		<result column="USE_YN" property="useYn" />
+		<result column="DESCRIPTION" property="description" />
+		<result column="REG_DATE" property="regDate" javaType="java.sql.Date" />
+		<result column="MOD_DATE" property="modDate" javaType="java.sql.Date" />
+	</resultMap>
+	
+	<select id="getGroupList" parameterType="map" resultMap="commonGroupResultMap">
+		SELECT CODE_ID, CODE_NM_KO FROM NC_CODE WHERE GROUP_ID = #{groupId} ORDER BY CODE_NM_KO;
+	</select>
+	
+	<select id="getCodeList" parameterType="map" resultMap="commonCodeResultMap">
+		SELECT 
+			GROUP_ID, CODE_ID, PARENT_GROUP_ID, CODE_NM_KO, CODE_NM_EN, CODE_NM_CN, CODE_NM_JP, 
+			SORT_ORDER, USE_YN, DESCRIPTION, REG_DATE, MOD_DATE 
+		FROM NC_CODE 
+		WHERE GROUP_ID = #{groupId} 
+		ORDER BY GROUP_ID, CODE_ID
+	</select>
+	
+	<select id="getSingleCode" parameterType="map" resultMap="commonCodeResultMap">
+		SELECT 
+			GROUP_ID, CODE_ID, PARENT_GROUP_ID, CODE_NM_KO, CODE_NM_EN, CODE_NM_CN, CODE_NM_JP, 
+			SORT_ORDER, USE_YN, DESCRIPTION, REG_DATE, MOD_DATE 
+		FROM NC_CODE 
+		WHERE GROUP_ID = #{groupId} AND CODE_ID = #{codeId}
+	</select>
+	
+	<insert id="insertSingleCode" parameterType="map">
+		INSERT INTO NC_CODE VALUES(
+			#{groupId}, 
+			#{codeId}, 
+			#{parentGroupId}, 
+			NULLIF(#{codeNameKo}, ''), 
+			NULLIF(#{codeNameEn}, ''), 
+			NULLIF(#{codeNameCn}, ''), 
+			NULLIF(#{codeNameJp}, ''), 
+			#{sortOrder}, 
+			#{useYn}, 
+			NULLIF(#{description}, ''), 
+			NOW(), 
+			NOW()
+		) 
+		ON DUPLICATE KEY UPDATE 
+			PARENT_GROUP_ID = #{parentGroupId}, 
+			CODE_NM_KO = NULLIF(#{codeNameKo}, ''), 
+			CODE_NM_EN = NULLIF(#{codeNameEn}, ''), 
+			CODE_NM_CN = NULLIF(#{codeNameCn}, ''), 
+			CODE_NM_JP = NULLIF(#{codeNameJp}, ''), 
+			SORT_ORDER = #{sortOrder}, 
+			USE_YN = #{useYn}, 
+			DESCRIPTION = NULLIF(#{description}, ''), 
+			MOD_DATE = NOW() 
+	</insert>
+		
+	<delete id="deleteSingleCode" parameterType="map">
+		DELETE FROM NC_CODE 
+		WHERE GROUP_ID = #{groupId} AND CODE_ID = #{codeId}
+	</delete>
+
+</mapper>

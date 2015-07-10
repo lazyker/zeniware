@@ -3,7 +3,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<tiles:insertAttribute name="header" />
 	
 	<!-- Imported styles on this page -->
@@ -31,15 +31,15 @@
 	<script src="${pageContext.request.contextPath}/assets/js/joinable.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-api.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-toggles.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
 
 	<!-- Imported scripts on this page -->
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
-	
-<%-- 	<script src="${pageContext.request.contextPath}/assets/js/datatables_origin/media/js/jquery.dataTables.js"></script> --%>
-<%-- 	<script src="${pageContext.request.contextPath}/assets/js/datatables_origin/extensions/TableTools/js/dataTables.tableTools.js"></script> --%>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
 
 </body>
 </html>

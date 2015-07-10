@@ -70,7 +70,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/admin/community/default">
+				<a href="#">
 					<i class="linecons-user"></i>
 					<span class="title">커뮤니티</span>
 				</a>

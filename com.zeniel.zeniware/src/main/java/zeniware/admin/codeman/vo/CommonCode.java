@@ -1,19 +1,27 @@
-package zeniware.admin.preference;
+package zeniware.admin.codeman.vo;
 
 import java.sql.Date;
 
 public class CommonCode {
   private String groupId;
   private String codeId;
+  private String parentGroupId;
   private String codeNameKo;
   private String codeNameEn;
   private String codeNameCn;
   private String codeNameJp;
   private int sortOrder;
-  private Boolean useYn;
+  private boolean useYn;
   private String description;
   private Date regDate;
   private Date modDate;
+  
+  public CommonCode() { }
+  
+  public CommonCode(int sortOrder, boolean useYn) {
+    this.sortOrder = sortOrder;
+    this.useYn = useYn;
+  }
   
   public String getGroupId() {
     return this.groupId;
@@ -29,6 +37,14 @@ public class CommonCode {
   
   public void setCodeId(String codeId) {
     this.codeId = codeId;
+  }
+  
+  public String getParentGroupId() {
+    return this.parentGroupId;
+  }
+  
+  public void setParentGroupId(String parentGroupId) {
+    this.parentGroupId = parentGroupId;
   }
   
   public String getCodeNameKo() {
@@ -71,11 +87,11 @@ public class CommonCode {
     this.sortOrder = sortOrder;
   }
   
-  public Boolean getUseYn() {
+  public boolean getUseYn() {
     return this.useYn;
   }
   
-  public void setUseYn(Boolean useYn) {
+  public void setUseYn(boolean useYn) {
     this.useYn = useYn;
   }
   
