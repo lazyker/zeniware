@@ -1,9 +1,6 @@
 package zeniware.admin.codeman;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -105,12 +102,17 @@ public class CodeManController {
   public void getCodelist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws IOException {
     
-    List<CommonCode> list = codemanService.getCodeList(paramMap);
+    if (paramMap.isEmpty()) return;
     
-    ObjectMapper mapper = new ObjectMapper();
-    response.setContentType("application/json");
-    mapper.writeValue(response.getOutputStream(), list);
-    
+    try {
+      List<CommonCode> list = codemanService.getCodeList(paramMap);
+      
+      ObjectMapper mapper = new ObjectMapper();
+      response.setContentType("application/json");
+      mapper.writeValue(response.getOutputStream(), list);
+    } catch (Exception e) {
+      throw e;
+    }
 //    try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(response.getOutputStream(), "UTF-8"))) {
 //      List<CommonCode> list = codemanService.getCodeList(paramMap);
 //      ObjectMapper mapper = new ObjectMapper();
@@ -121,13 +123,10 @@ public class CodeManController {
   @RequestMapping("/admin/ajax/deleteCodelist")
   public void deleteCodelist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws IOException {
-    
+
     ObjectMapper mapper = new ObjectMapper();
-    String str = mapper.writeValueAsString(paramMap);
-    
-    try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(response.getOutputStream(), "UTF-8"))) {
-      bw.write("Response Text...");
-    }
+    response.setContentType("application/json");
+    mapper.writeValue(response.getOutputStream(), paramMap);
     
 //    int cnt = 0;
 //    String[] strParam = ((String)paramMap.get("codelist")).split(",");
