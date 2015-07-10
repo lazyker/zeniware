@@ -13,6 +13,6 @@ public class CommunityAdmDao extends AbstractDao {
 		if(res == 0) {
 			selectOne("cmutadmin.insertCommunityBasic", param);
 		}
-		return (Map<String, Object>) selectList("cmutadmin.getCommunityBasic", param);
+		return (Map<String, Object>) selectOne("cmutadmin.getCommunityBasic", param);
 	}
 }
