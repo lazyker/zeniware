@@ -98,7 +98,7 @@
 		});
 
 		var table = $('#example').DataTable({
-			ajax: {"url": null, "dataSrc": ""}, 
+			ajax: {"url": "../ajax/getCodelist", "dataSrc": ""}, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -128,38 +128,37 @@
 						}
 					}, 
 					{
-						"sExtends": "text", 
+						"sExtends": "ajax", 
 						"sButtonClass": "btn-primary", 
 						"sButtonText": "Delete", 
-						"fnClick": function(nButton, oConfig, oFlash) {
-							$("#example tbody tr").each(function() {
-								var curChecked = $("input[type='checkbox']:checked", this).length;
-								
-								if (curChecked == 1) $(this).addClass('selected');
-								else $(this).removeClass('selected');
-							});
-							
-							
-							table.rows('.selected').remove().draw(false);
+						"sAjaxUrl" : "../ajax/deleteCodelist", 
+						"mColumns": [1, 2], 
+						"bSelectedOnly" : true, 
+						"fnAjaxComplete": function(json) {
+							//console.log(json);
 						}
 					}
 				]
 			}
 		});
 		
+		// SelectBoxIt OnChange Event
 		$("#sboxit").on("change", function() {
 			table.ajax.url('../ajax/getCodelist?groupId=' + $(this).val()).load();
 		});
 		
-		$("#example tbody").on('click', 'tr td:not(:first-child)', function() {
-			
-		});
-		
+		// Table Row OnClick Event
 		$("#example tbody").on('click', 'tr td:not(:first-child)', function() {
 			var groupId = $(this).parent().find('td').eq(1).text();
 			var codeId = $(this).parent().find('td').eq(2).text();
 
 			$(location).attr('href', 'newCode?groupId=' + groupId + '&codeId=' + codeId);
+		});
+		
+		// Checkbox OnChange Event
+		$("#example tbody").on('change', "tr td:first-child input[type='checkbox']", function() {
+				if ($(this).is(':checked')) $(this).parents('tr').addClass('selected');
+				else $(this).parents('tr').removeClass('selected');				
 		});
 		
 		var $state = $("#example thead input[type='checkbox']");
