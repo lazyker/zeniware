@@ -43,6 +43,7 @@
 	
 	<!-- JavaScripts initializations and stuff -->
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
-	
+	<script src="${pageContext.request.contextPath}/assets/js/schedule-custom.js"></script>
+		
 </body>
 </html>

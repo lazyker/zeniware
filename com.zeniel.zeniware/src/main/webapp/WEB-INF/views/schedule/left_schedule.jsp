@@ -7,7 +7,7 @@
 			<div class="form-group">
 				<div class="col-sm-12">
 					<div class="btn-group" style="width:100%">
-						<a class="btn btn-primary btn-lg" style="width:100%">일정 등록</a>
+						<a class="btn btn-primary btn-lg" id="scheduleWrite" style="width:100%">일정 등록</a>
 					</div>
 				</div>
 				<div class="col-sm-12">
@@ -16,7 +16,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<div class="calendar-env"></div>
 	

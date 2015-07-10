@@ -17,6 +17,7 @@
         <property name="url" value="#{globals['jdbc.Url']}" />
         <property name="username" value="#{globals['jdbc.UserName']}" />
         <property name="password" value="#{globals['jdbc.Password']}" />
+<!--         <property name="defaultAutoCommit" value="false" /> -->
     </bean>
 
 	<!-- log를 인터셉터하여 출력 -->

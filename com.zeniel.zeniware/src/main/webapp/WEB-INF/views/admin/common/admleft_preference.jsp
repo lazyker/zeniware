@@ -5,16 +5,7 @@
 	<div class="sidebar-menu-inner">
 
 		<ul id="main-menu" class="main-menu">
-			<li>
-				<a href="${pageContext.request.contextPath}/admin/preference/codeMain">
-					<i class="linecons-cog"></i><span class="title">공통코드관리</span>
-				</a>
-			</li>
-			<li>
-				<a href="${pageContext.request.contextPath}/admin/preference/codeMainFlat">
-					<i class="linecons-cog"></i><span class="title">공통코드관리</span>
-				</a>
-			</li>
+			<li><a href="#"><i class="linecons-cog"></i><span class="title">공통코드관리</span></a></li>
 			<li><a href="#"><i class="linecons-cog"></i><span class="title">조직관리</span></a></li>
 		</ul>
 		

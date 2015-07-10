@@ -9,7 +9,9 @@
 			</div>
 			
 			<div class="panel-body">
-				<form role="form" class="form-horizontal">
+				<form role="form" id="frm" class="form-horizontal" method="POST" action="setScheduleData">
+				
+				<input type="hidden" name="fstFrmigrId" value="lazyker"/>
 				
 					<div class="form-group">
 						<label class="col-sm-1 control-label">제목</label>
@@ -31,7 +33,7 @@
 						<label class="col-sm-1 control-label">장소</label>
 						
 						<div class="col-sm-11">
-							<input type="text" class="form-control" name="place" />
+							<input type="text" class="form-control" name="apntPlc" />
 						</div>
 					</div>
 				
@@ -44,8 +46,8 @@
 									<i class="linecons-calendar"></i>
 								</div>
 								<div class="date-and-time">
-									<input type="text" class="form-control datepicker" id="startYmd" data-format="yyyy-mm-dd" value="${startYmd}">
-									<input type="text" class="form-control timepicker" id="startTm" data-template="dropdown"  data-show-meridian="false" data-minute-step="30" />
+									<input type="text" class="form-control datepicker" name="startYmd" id="startYmd" data-format="yyyy-mm-dd" value="${startYmd}">
+									<input type="text" class="form-control timepicker" name="startTm" id="startTm" data-template="dropdown"  data-show-meridian="false" data-minute-step="30" value="${startTm}" />
 								</div>
 							</div>
 						</div>
@@ -56,8 +58,8 @@
 									<i class="linecons-calendar"></i>
 								</div>
 								<div class="date-and-time">
-									<input type="text" class="form-control datepicker" id="endYmd" data-format="yyyy-mm-dd" value="${endYmd}">
-									<input type="text" class="form-control timepicker" id="endTm" data-template="dropdown" data-show-meridian="false" data-minute-step="30" />
+									<input type="text" class="form-control datepicker" name="endYmd" id="endYmd" data-format="yyyy-mm-dd" value="${endYmd}">
+									<input type="text" class="form-control timepicker" name="endTm" id="endTm" data-template="dropdown" data-show-meridian="false" data-minute-step="30" value="${endTm}" />
 								</div>
 							</div>
 						</div>
@@ -92,9 +94,9 @@
 						</script>
 						
 						<div class="col-sm-5">
-							<select class="form-control" id="calendarList">
+							<select class="form-control" name="cldrId" id="calendarList">
 								<option>개인 스케줄</option>
-								<option>Option 2</option>
+								<option selected>Option 2</option>
 								<option>Option 3</option>
 								<option>Option 4</option>
 								<option>Option 5</option>
@@ -106,7 +108,7 @@
 						<label class="col-sm-1 control-label" for="field-5">설명</label>
 						
 						<div class="col-sm-11">
-							<textarea class="form-control" rows="3" cols="5" id="field-5" name="memo"></textarea>
+							<textarea class="form-control" rows="3" cols="5" id="field-5" name="memoCont"></textarea>
 						</div>
 					</div>
 					
@@ -116,7 +118,7 @@
 						<div class="col-sm-11">
 							<div class="form-block">
 								<label>
-									<input type="checkbox" class="cbr" id="rpetYn">
+									<input type="checkbox" class="cbr" name="rpetYn" id="rpetYn">
 								</label>
 							</div>
 						</div>
@@ -352,8 +354,10 @@
 					
 					<div class="row">
 						<div class="col-md-12 align-center">
-							<button class="btn btn-turquoise">저장</button>
-							<button class="btn btn-gray">취소</button>
+<!-- 							<input type="button" class="btn btn-turquoise" id="saveSchedule" value="저장"> -->
+							
+							<button type="submit" class="btn btn-turquoise" id="saveSchedule">저장</button>
+							<button type="button" class="btn btn-gray" id="cancel" >취소</button>
 						</div>
 					</div>
 				</form>
@@ -413,12 +417,17 @@
 				}
 			});
 			
-// 			 $('#startTm').timepicker().on('changeTime.timepicker', function(e) {
-// 				    console.log('The time is ' + e.time.value);
-// 				    console.log('The hour is ' + e.time.hour);
-// 				    console.log('The minute is ' + e.time.minute);
-// 				    console.log('The meridian is ' + e.time.meridian);
+// 			$('#saveSchedule').on('click', function() {
+// 				$('#frm').attr('action', '${pageContext.request.contextPath}/schedule/setScheduleData');
+// 				$('#frm').submit();
 // 			});
+			
+			$('.nav-tabs').find('li').each(function(idx) {
+				  if($(this).hasClass('active')) {
+					  var title = $(this).context.innerText;
+				  }
+								
+				});
 			
 		});
 		
@@ -439,6 +448,7 @@
 		function repeatEvent(opt) {
 			if(opt.is(':checked')) {
 				$('#rpetOption').show();
+				$('#rpetYn').val("Y");
 			}
 			else {
 				$('#rpetOption').hide();

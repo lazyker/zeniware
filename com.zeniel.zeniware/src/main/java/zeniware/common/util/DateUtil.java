@@ -166,6 +166,39 @@ public class DateUtil {
     	return endYmd;
     }
     
+    
+    /**
+     * 현재 시간 기준으로 시간을 인자값으로 계산
+     * @return
+     */
+    public static String addMinuteStep(String option, int minuteStep) {
+    	Date date = new Date();
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		
+		if("startTm".equals(option)) {
+			cal.add(Calendar.HOUR, +1);
+		}else{
+			cal.add(Calendar.HOUR, +2);
+		}
+		
+		FastDateFormat sdf = FastDateFormat.getInstance("HH:mm", Locale.getDefault());
+		String time = sdf.format(cal.getTime());
+		String times[] = time.split(":");
+		
+		int hh = Integer.parseInt(times[0]);
+		double mm = Integer.parseInt(times[1]);
+		
+		String Mn = "";
+		int  endMm = (int) Math.ceil(mm / minuteStep) * minuteStep;
+		if(endMm == 60) 	Mn = "00";	else	Mn = String.valueOf(endMm);
+		
+		StringBuilder sb = new StringBuilder(hh + ":");
+		sb.append(Mn);
+		
+		return sb.toString();
+    }
+    
      
     
 }
