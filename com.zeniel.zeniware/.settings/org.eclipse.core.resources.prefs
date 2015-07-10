@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/schedule/month.jsp=UTF-8
 encoding/<project>=UTF-8
+=======
+eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views/schedule/month.jsp=UTF-8
+encoding/<project>=UTF-8
+>>>>>>> branch 'master' of git@61.97.131.25:root/zeniware.git
