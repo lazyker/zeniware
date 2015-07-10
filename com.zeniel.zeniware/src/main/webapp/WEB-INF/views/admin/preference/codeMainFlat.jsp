@@ -139,6 +139,7 @@
 								else $(this).removeClass('selected');
 							});
 							
+							
 							table.rows('.selected').remove().draw(false);
 						}
 					}
