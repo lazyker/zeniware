@@ -40,16 +40,18 @@ function repeatSizeEvent(ev) {
 						<label class="col-sm-2 control-label">개설방식</label>
 						<div class="col-sm-10">
 							<div class="radio">
-								<label>
+								<!-- <label>
 									<input type="radio" name="radio-1" class="cbr cbr-blue">
 									관리자 승인 후 개설 
-								</label>
+								</label> -->
+								<input type="radio" name="radio-1" class="cbr cbr-blue"> 관리자 승인 후 개설
 							</div>
 							<div class="radio">
-								<label>
+								<!-- <label>
 									<input type="radio" name="radio-1" class="cbr cbr-danger" checked>
 									관리자 승인없이 개설 
-								</label>
+								</label> -->
+								<input type="radio" name="radio-1" class="cbr cbr-danger" checked> 관리자 승인없이 개설
 							</div>
 						</div>
 					</div>
@@ -58,14 +60,15 @@ function repeatSizeEvent(ev) {
 						<label class="col-sm-2 control-label">파일 용량제한<br/>(파일1개)</label>
 						<div class="col-sm-10">
 							<div class="radio">
-								<label>
+								<!-- <label>
 									<input type="radio" name="radio-2" class="cbr cbr-danger"> 제한없음 
-								</label>
+								</label> -->
+								<input type="radio" name="radio-2" class="cbr cbr-danger"> 제한없음
 							</div>
 							<div class="radio" id="test1">
+								<input type="radio" name="radio-2" class="cbr cbr-blue" checked> 용량제한
+								&nbsp;&nbsp;
 								<label>
-									<input type="radio" name="radio-2" class="cbr cbr-blue" checked> 용량제한
-									&nbsp;&nbsp;
 									<span class="title" id="fileSizeGet"><c:out value="${file_size}" /> <i id="editIcon" class="fa fa-file-text"></i>
 									<%-- <div class="row">
 										<div class="col-md-6">
@@ -82,8 +85,8 @@ function repeatSizeEvent(ev) {
 									</div> --%>
 									</span>
 									<%-- <input type="text" class="form-control" name="file_size" value="<c:out value='${file_size}' />" id="sizeFiled" style="display:none;" /> --%>
-									MB 이하
 								</label>
+								MB 이하
 							</div>
 							<div class="radio" id="test2" style="display:none;">
 								<input type="radio" name="radio-2" class="cbr cbr-blue"> 용량제한
@@ -104,13 +107,13 @@ function repeatSizeEvent(ev) {
 								<input type="radio" name="radio-3" class="cbr cbr-danger"> 제한없음 
 							</div>
 							<div class="radio">
-								
 									<input type="radio" name="radio-3" class="cbr cbr-blue" checked> 개수제한
 									&nbsp;&nbsp;
 								<label>
 									<span class="title"><c:out value="${cmutBasic.FILE_ADD_CNT}" /></span>
-									<i class="fa fa-file-text"></i> 개 이하
+									<i class="fa fa-file-text"></i>
 								</label>
+								 개 이하
 							</div>
 						</div>
 					</div>
