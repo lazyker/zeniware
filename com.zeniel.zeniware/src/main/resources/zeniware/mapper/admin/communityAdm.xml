@@ -16,7 +16,7 @@
 		<result column="ADM_USER_ID"	property="admUserId" />
 	</resultMap>
 
-	<select id="cmutadmin.getCommunityBasic" parameterType="map" resultMap="cmutBasicResultMap">
+	<select id="cmutadmin.getCommunityBasic" parameterType="map" resultType="hashmap">
 		SELECT
 			FC_ADM_SEQ, COMP_ID, CUMT_TYPE, FILE_SIZE_YN, FILE_SIZE,
 			FILE_ADD_YN, FILE_ADD_CNT, FILE_NOT_NAME, REG_DATE, ADM_USER_ID

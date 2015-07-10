@@ -66,7 +66,7 @@ function repeatSizeEvent(ev) {
 								<label>
 									<input type="radio" name="radio-2" class="cbr cbr-blue" checked> 용량제한
 									&nbsp;&nbsp;
-									<span class="title" id="fileSizeGet"><c:out value="${file_size}" /> <i id="editIcon" class="fa fa-file-o"></i>
+									<span class="title" id="fileSizeGet"><c:out value="${file_size}" /> <i id="editIcon" class="fa fa-file-text"></i>
 									<%-- <div class="row">
 										<div class="col-md-6">
 											<div class="input-group spinner" data-step="1" data-min="0" data-max="100">
@@ -98,16 +98,18 @@ function repeatSizeEvent(ev) {
 						<label class="col-sm-2 control-label" for="field-1">파일 개수제한<br/>(게시물당)</label>
 						<div class="col-sm-10">
 							<div class="radio">
-								<label>
+								<!-- <label>
 									<input type="radio" name="radio-3" class="cbr cbr-danger"> 제한없음 
-								</label>
+								</label> -->
+								<input type="radio" name="radio-3" class="cbr cbr-danger"> 제한없음 
 							</div>
 							<div class="radio">
-								<label>
+								
 									<input type="radio" name="radio-3" class="cbr cbr-blue" checked> 개수제한
 									&nbsp;&nbsp;
-									<i class="fa fa-file-o"></i>
-									<span class="title">1</span> 개 이하
+								<label>
+									<span class="title"><c:out value="${cmutBasic.FILE_ADD_CNT}" /></span>
+									<i class="fa fa-file-text"></i> 개 이하
 								</label>
 							</div>
 						</div>
