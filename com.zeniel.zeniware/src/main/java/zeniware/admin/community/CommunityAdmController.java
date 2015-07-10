@@ -24,7 +24,7 @@ public class CommunityAdmController {
 		paramMap.put("compId", "001");
 
 		Map<String, Object> cmutBasic = null;
-		cmutBasic = communityAdmService.getCommunityBasic(paramMap);
+		//cmutBasic = communityAdmService.getCommunityBasic(paramMap);
 
 		model.put("file_add_cnt", "3");
 		model.put("file_size", "4");
