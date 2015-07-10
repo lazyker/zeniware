@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" > 
+
+<mapper namespace="schedule">
+
+<resultMap type="zeniware.schedule.vo.ScheduleVo" id="scheduleList">
+		<id property="schedId" column="SCHED_ID"/>
+		<id property="cldrId" column="CLDR_ID"/>
+		<id property="title" column="TITLE"/>
+		<id property="start" column="START"/>
+		<id property="end" column="END"/>
+		<id property="fstFrmigrId" column="FST_FRMIGR_ID"/>
+		<id property="startTm" column="START_TM"/>
+		<id property="endTm" column="END_TM"/>
+		<id property="apntPlc" column="APNT_PLC"/>
+</resultMap>
+
+<insert id="insertTest" parameterType="String">
+	INSERT INTO MYBATIS_TABLE(title) VALUES(#{value, jdbcType=VARCHAR})
+</insert>
+
+	<!-- 일정 상세 -->
+	<select id="getScheduleList" parameterType="map" resultMap="scheduleList">
+	<![CDATA[
+		SELECT
+			SCHED_ID,
+			CLDR_ID,
+			SCHED_NM AS TITLE,
+			CONCAT(START_YMD,'T', LEFT(START_TM, 2), ':', RIGHT(START_TM, 2)) AS START,
+			CONCAT(END_YMD,'T', LEFT(END_TM, 2), ':', RIGHT(END_TM, 2)) AS END, 
+			FST_FRMIGR_ID,
+			START_TM,
+			END_TM,
+			APNT_PLC
+		FROM  
+			FS_SCHED
+		WHERE 
+			START_YMD >= #{startYmd, jdbcType=VARCHAR} AND END_YMD <= #{endYmd, jdbcType=VARCHAR}
+	]]>
+	</select>
+	
+	<!-- 일정 등록 -->
+	<insert id="setScheduleData" parameterType="zeniware.schedule.vo.ScheduleVo">
+		INSERT INTO FS_SCHED
+		(
+			CLDR_ID, 
+			SCHED_NM, 
+			START_YMD, 
+			END_YMD, 
+			REG_DATE, 
+			MOD_DATE, 
+			FST_FRMIGR_ID, 
+			LST_MODR_ID, 
+			START_TM, 
+			END_TM, 
+			RPET_YN, 
+			RPET_END_YMD, 
+			RPET_TYPE, 
+			RPET_CYC, 
+			APNT_PLC, 
+			MEMO_CONT
+		)
+		VALUES
+		(
+			#{cldrId, javaType=STRING, jdbcType=VARCHAR},
+		 	#{schedNm, jdbcType=VARCHAR},
+		 	#{startYmd, jdbcType=VARCHAR},
+		 	#{endYmd, jdbcType=VARCHAR},
+		 	NOW(),
+		 	NOW(),
+		 	#{fstFrmigrId, jdbcType=VARCHAR},
+		 	#{lstModrId, jdbcType=VARCHAR}, 
+			#{startTm, jdbcType=VARCHAR},
+			#{endTm, jdbcType=VARCHAR},
+			#{rpetYn, jdbcType=VARCHAR},
+			#{rpetEndYmd, jdbcType=VARCHAR},
+			#{rpetType, jdbcType=VARCHAR},
+			#{rpetCyc, jdbcType=NUMERIC},
+			#{apntPlc, jdbcType=VARCHAR},
+			#{memoCont, jdbcType=VARCHAR}
+		)
+	</insert>
+
+</mapper>
