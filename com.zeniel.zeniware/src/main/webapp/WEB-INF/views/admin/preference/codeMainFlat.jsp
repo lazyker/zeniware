@@ -28,8 +28,13 @@
 			
 			<div class="panel-body">
 				<div class="form-group">
-					<label class="control-label"></label>
+					<div class="btn-group">
+						<button class="btn btn-primary" id="btnGroupAdd">New</button>
+						<button class="btn btn-secondary" id="btnGroupEdit">Edit</button>
+						<button class="btn btn-primary" id="btnGroupDelete">Delete</button>
+					</div>
 					<select class="form-control" id="sboxit">
+						<option>그룹코드를 선택하세요.</option>
 					</select>
 				</div>
 			</div>
@@ -53,16 +58,12 @@
 							<th class="no-sorting"><input type="checkbox" class="cbr"></th>
 							<th>그룹ID</th>
 							<th>코드ID</th>
-							<th>상위그룹ID</th>
 		 					<th>코드명(Ko)</th>
 							<th>코드명(En)</th>
 							<th>코드명(Cn)</th>
 							<th>코드명(Jp)</th>
 							<th>정렬순서</th>
 							<th>사용여부</th>
-							<th>상세설명</th>
-							<th>등록일시</th>
-							<th>변경일시</th>
 						</tr>
 					</thead>
 				</table>
@@ -76,21 +77,32 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
+		
+		/* Modal Dialog Config */
+		$("#modl h4").html("공통코드 삭제");
+		$("#modlBody").html("삭제하시겠습니까?");
+		$("#btnOk").html("저장");
+		$("#btnCancel").html("취소");
 
 		var sboxit = $("#sboxit").selectBoxIt({
 			showEffect: 'fadeIn', 
 			hideEffect: 'fadeOut', 
-			defaultText: 'Select your code group...', 
+			showFirstOption: false, 
 			populate: function() {
 				var deferred = $.Deferred(), arr = [], x = -1;
 				
 				$.ajax({
 					url: '../ajax/getGrouplist', 
 					type: 'POST', 
-					data: 'groupId=B0000', 
+					data: 'groupId=00000', 
 					dataType: 'json'
 				}).done(function(data) {
 					deferred.resolve(data);
+					
+					var groupId = "${groupId}";
+					
+					if (groupId != "" && groupId != "00000")
+						sboxit.selectBoxIt('selectOption', groupId);
 				});
 				
 				return deferred;
@@ -105,40 +117,88 @@
         { "mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; } }, 
       	{ "mData": "groupId" }, 
       	{ "mData": "codeId" }, 
-      	{ "mData": "parentGroupId", "bVisible": false }, 
       	{ "mData": "codeNameKo" }, 
       	{ "mData": "codeNameEn" }, 
       	{ "mData": "codeNameCn" }, 
       	{ "mData": "codeNameJp" }, 
       	{ "mData": "sortOrder" }, 
-      	{ "mData": "useYn" }, 
-      	{ "mData": "description", "bVisible": false }, 
-      	{ "mData": "regDate", "bVisible": false }, 
-      	{ "mData": "modDate", "bVisible": false }
+      	{ "mData": "useYn" } 
       ], 
- 			sDom: "<'row'<'col-sm-3'<'pull-left'T>><'col-sm-6'f><'col-sm-3'<'pull-right'l>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>", 
+ 			//sDom: "<'row'<'col-sm-3'<'pull-left'T>><'col-sm-6'f><'col-sm-3'<'pull-right'l>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>",
+ 			sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>", 
 			oTableTools: {
 				"aButtons": [
 					{ 
 						"sExtends": "text", 
 						"sButtonClass": "btn-primary",
 						"sButtonText": "New", 
-						"fnClick": function(nButton, oConfig, oFlash) {
-							$(location).attr('href', 'newCode');
+						"fnClick": function(nButton, oConfig) {
+							$(location).prop('href', 'newCode?groupId=' + $("#sboxit").val());
 						}
 					}, 
 					{
-						"sExtends": "ajax", 
+						"sExtends": "text", 
 						"sButtonClass": "btn-primary", 
-						"sButtonText": "Delete", 
-						"sAjaxUrl" : "../ajax/deleteCodelist", 
-						"mColumns": [1, 2], 
-						"bSelectedOnly" : true, 
-						"fnAjaxComplete": function(json) {
-							//console.log(json);
+						"sButtonText": "Delete",  
+						"fnClick": function(nButton, oConfig) {
+							if (getCodelistCount() > 0) {
+								jQuery('#modl').modal('show', {backdrop: 'fade'});
+								$("#btnOk").addClass('deleteCode');
+							} else {
+								toastr.options.closeButton = true;
+								toastr.options.positionClass = "toast-top-full-width";
+								toastr.error("<div align='center'><b>최소 1개 이상의 코드를 선택하세요.</b></div>", null);
+							}
 						}
 					}
 				]
+			}
+		});
+		
+		$("#btnGroupAdd").on('click', function() {
+			$(location).prop('href', 'newCode?groupId=00000');
+		});
+		
+		$("#btnGroupEdit").on('click', function() {
+			$(location).attr('href', 'newCode?groupId=00000&codeId=' + $("#sboxit").val());
+		})
+		
+		$("#btnGroupDelete").on('click', function(event) {
+			if ($("#sboxit").val() != null) {
+					jQuery("#modl").modal('show', {backdrop: 'fade'});
+					$("#btnOk").addClass('deleteGroup');
+			} else {
+ 				event.preventDefault();
+				
+ 				toastr.options.closeButton = true;
+ 				toastr.options.positionClass = "toast-top-full-width";
+				toastr.error("<div align='center'><b>삭제할 코드그룹을 선택하세요.</b></div>", null);
+			}
+		});
+		
+		// Delete Button OnClick Event
+		$("#btnOk").on('click', function() {
+			if ($(this).hasClass("deleteGroup")) {
+				$.ajax({
+					dataType: "json", 
+					type: "POST", 
+					url: "../ajax/deleteCodelist", 
+					data: { codelist: createJsonGrouplist() }, 
+					success: function(data) {
+						$(location).prop('href', 'codeMainFlat')
+					}
+				});
+			} else {
+				$.ajax({
+					dataType: "json", 
+					type: "POST", 
+					url: "../ajax/deleteCodelist", 
+					data: { codelist: createJsonCodelist() }, 
+					success: function(data) {
+						$("#modl").modal("hide");
+						table.rows(".selected").remove().draw(false);
+					} 
+				});
 			}
 		});
 		
@@ -157,8 +217,10 @@
 		
 		// Checkbox OnChange Event
 		$("#example tbody").on('change', "tr td:first-child input[type='checkbox']", function() {
-				if ($(this).is(':checked')) $(this).parents('tr').addClass('selected');
-				else $(this).parents('tr').removeClass('selected');				
+				if ($(this).is(':checked'))
+					$(this).parents('tr').addClass('selected');
+				else
+					$(this).parents('tr').removeClass('selected');
 		});
 		
 		var $state = $("#example thead input[type='checkbox']");
@@ -177,6 +239,49 @@
 				$chcks.prop('checked', false).trigger('change');
 			}
 		});
+		
+		function createJsonGrouplist() {
+			var jsonObj = [];
+			var jsonItem = {};
+			
+			jsonItem["groupId"] = "00000";
+			jsonItem["codeId"] = sboxit.val();
+			
+			jsonObj.push(jsonItem);
+			
+			return JSON.stringify(jsonObj);
+		}
+		
+		function createJsonCodelist() {
+			var jsonObj = [];
+
+			$("#example tbody tr").each(function() {
+				var chked = $("input[type='checkbox']:checked", this).length;
+				
+				if (chked == 1) {
+					var jsonItem = {};
+					
+					jsonItem["groupId"] = $('td', this).eq(1).text();
+					jsonItem["codeId"] = $('td', this).eq(2).text();
+					
+					jsonObj.push(jsonItem);
+				}
+			});
+			
+			return JSON.stringify(jsonObj);
+		}
+		
+		function getCodelistCount() {
+			var cnt = 0;
+			
+			$("#example tbody tr").each(function() {
+				cnt+= $("input[type='checkbox']:checked", this).length;
+			})
+			
+			return cnt;
+		}
+		
+		
 		
 	});
 
