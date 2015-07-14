@@ -4,27 +4,60 @@
 <mapper namespace="schedule">
 
 <resultMap type="zeniware.schedule.vo.ScheduleVo" id="scheduleList">
-		<id property="schedId" column="SCHED_ID"/>
-		<id property="cldrId" column="CLDR_ID"/>
-		<id property="title" column="TITLE"/>
-		<id property="start" column="START"/>
-		<id property="end" column="END"/>
-		<id property="fstFrmigrId" column="FST_FRMIGR_ID"/>
-		<id property="startTm" column="START_TM"/>
-		<id property="endTm" column="END_TM"/>
-		<id property="apntPlc" column="APNT_PLC"/>
+		<result property="schedId" column="SCHED_ID"/>
+		<result property="cldrId" column="CLDR_ID"/>
+		<result property="schedNm" column="SCHED_NM"/>
+		<result property="title" column="TITLE"/>
+		<result property="start" column="START"/>
+		<result property="end" column="END"/>
+		<result property="fstFrmigrId" column="FST_FRMIGR_ID"/>
+		<result property="startTm" column="START_TM"/>
+		<result property="endTm" column="END_TM"/>
+		<result property="apntPlc" column="APNT_PLC"/>
 </resultMap>
 
 <insert id="insertTest" parameterType="String">
 	INSERT INTO MYBATIS_TABLE(title) VALUES(#{value, jdbcType=VARCHAR})
 </insert>
+	
+	<!-- 캘린더 등록 -->
+	<insert id="addCalendar" parameterType="zeniware.schedule.vo.CalendarVo">
+		INSERT INTO FS_CLDR
+		(
+			CLDR_ID,
+			CLDR_NM,
+			CLDR_COLOR_VAL,
+			COMP_ID,
+			USER_ID,
+			COLSE_YN,
+			SHRE_YN,
+			REG_DATE,
+			MOD_DATE
+		)
+		VALUES
+		(
+			#{cldrId, jdbcType=VARCHAR},
+			#{cldrNm, jdbcType=VARCHAR},
+			#{cldrColorVal, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{closeYn, jdbcType=VARCHAR},
+			#{shreYn, jdbcType=VARCHAR},
+			NOW(),
+			NOW()
+		)
+	</insert>
+
+
+
+
 
 	<!-- 일정 상세 -->
 	<select id="getScheduleList" parameterType="map" resultMap="scheduleList">
-	<![CDATA[
 		SELECT
 			SCHED_ID,
 			CLDR_ID,
+			SCHED_NM,
 			SCHED_NM AS TITLE,
 			CONCAT(START_YMD,'T', LEFT(START_TM, 2), ':', RIGHT(START_TM, 2)) AS START,
 			CONCAT(END_YMD,'T', LEFT(END_TM, 2), ':', RIGHT(END_TM, 2)) AS END, 
@@ -35,8 +68,7 @@
 		FROM  
 			FS_SCHED
 		WHERE 
-			START_YMD >= #{startYmd, jdbcType=VARCHAR} AND END_YMD <= #{endYmd, jdbcType=VARCHAR}
-	]]>
+			START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
 	</select>
 	
 	<!-- 일정 등록 -->
