@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.common.util.DateUtil;
 import zeniware.schedule.service.ScheduleService;
+import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
 
 @Controller
@@ -34,6 +36,29 @@ public class ScheduleController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 	
+	/** 캘린더 추가 **/
+	@RequestMapping(value="/schedule/addCalendar") 
+	public void addCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response) throws IOException {
+		String uid = UUID.randomUUID().toString().replace("-", "");
+		
+		//값 세팅 해야 함
+		calendarVo.setCldrId(uid);
+		calendarVo.setCompId("회사아이디");
+		calendarVo.setUserId("lazyker");
+		calendarVo.setCloseYn("N");
+		calendarVo.setShreYn("N");
+		
+		scheduleService.addCalendar(calendarVo);
+		
+		ObjectMapper om = new ObjectMapper();
+		
+		String jsonString = om.writeValueAsString(calendarVo);
+		
+		OutputStream out = response.getOutputStream();
+		out.write(jsonString.getBytes());
+	}
+	
+	/** 일정 등록 **/
 	@RequestMapping(value="/schedule/setScheduleData", method = RequestMethod.POST) 
 	public String setScheduleData(@ModelAttribute ScheduleVo scheduleVo) {
 		

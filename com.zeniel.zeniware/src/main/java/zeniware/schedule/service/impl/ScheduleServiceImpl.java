@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import zeniware.schedule.dao.ScheduleDao;
 import zeniware.schedule.service.ScheduleService;
+import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
 
 @Service
@@ -16,7 +17,11 @@ public class ScheduleServiceImpl implements ScheduleService {
 	@Autowired
 	private ScheduleDao scheduleDao;
 	
-	
+	@Override
+	public void addCalendar(CalendarVo paramVo) {
+		scheduleDao.addCalendar(paramVo);
+	}
+
 	@Override
 	public List<ScheduleVo> getScheduleList(Map<String, Object>paramMap) {
 		

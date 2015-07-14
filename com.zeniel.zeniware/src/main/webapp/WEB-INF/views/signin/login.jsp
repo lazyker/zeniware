@@ -183,7 +183,7 @@
 	
 	
 					<div class="form-group">
-						<label class="control-label" for="username">Username</label>
+						<label class="control-label" for="username">UserName</label>
 						<input type="text" class="form-control" name="loginid" id="loginid" autocomplete="off" value="zeniel" />
 					</div>
 	

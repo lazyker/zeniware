@@ -1,8 +1,14 @@
 package zeniware.schedule.vo;
 
+import java.io.Serializable;
 
-public class ScheduleVo {
+
+public class ScheduleVo implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String cldrId;
 	private String schedId;
 	private String schedNm;
@@ -24,7 +30,6 @@ public class ScheduleVo {
 	private String title;
 	private String start;
 	private String end;
-	
 	
 	public String getTitle() {
 		return title;

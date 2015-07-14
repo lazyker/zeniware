@@ -6,10 +6,19 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import zeniware.common.sql.AbstractDao;
+import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
 
 @Repository
 public class ScheduleDao extends AbstractDao {
+	
+	/**
+	 * 캘린더 추가
+	 * @param paramVo
+	 */
+	public void addCalendar(CalendarVo paramVo) {
+		insert("schedule.addCalendar", paramVo);
+	}
 	
 	/**
 	 * 일정 리스트

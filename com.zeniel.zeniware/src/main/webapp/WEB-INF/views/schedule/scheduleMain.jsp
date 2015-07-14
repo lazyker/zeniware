@@ -70,6 +70,7 @@
 				window.alert("eventClick");
 			},
 			select: function(start, end, allDay, view) {
+				
 				if(view.name == "month") {
 					//end 날짜를 -1 해야 정상 날짜로 보여진다.(FullCalendr는 00:00 이면 -1일이 됨)
 					var date = new Date(end.format());

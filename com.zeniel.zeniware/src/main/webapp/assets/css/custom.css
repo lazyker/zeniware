@@ -4,44 +4,46 @@
  *
 */
 
-body {	
-}
 
-a {
-}
-
-
-/**
- *
- * Calendar custom
- *
-*/
-.fc-sat {
-	color: #1974db!important;
-}
-
-.fc-sun {
-	color: #d42403!important;
-}
-
-.sidebar-menu .calendar-env {
-	border-bottom: 1px solid #c0c0c0
-}
-
-.sidebar-menu .calendar-menu {
-	padding-left: 20px;
-	padding-right: 40px;
-	margin-top: 1px;
-	margin-bottom: 20px;
-	list-style: none
-}
-
-.fc-today-button {
-}
-
-.text-align7 {
-	padding-top:7px;
-}
-.align-center {
-	text-align:center;
-}
+	/**
+	 *
+	 * Calendar custom
+	 *
+	*/
+	.fc-sat {
+		color: #1974db!important;
+	}
+	
+	.fc-sun {
+		color: #d42403!important;
+	}
+	
+	.sidebar-menu .calendar-env {
+		border-bottom: 1px solid #c0c0c0
+	}
+	
+	.sidebar-menu .calendar-menu {
+		padding-left: 20px;
+		padding-right: 40px;
+		margin-top: 1px;
+		margin-bottom: 20px;
+		list-style: none
+	}
+	
+	.fc-today-button {
+	}
+	
+	.text-align7 {
+		padding-top:7px;
+	}
+	.align-center {
+		text-align:center;
+	}
+	
+	.sidebar-menu.collapsed .panel-body .form-group.logo-expanded {
+			display: none
+	}
+	
+	.sidebar-menu.collapsed .panel-body .form-group.logo-collapsed {
+		display: block;
+	}

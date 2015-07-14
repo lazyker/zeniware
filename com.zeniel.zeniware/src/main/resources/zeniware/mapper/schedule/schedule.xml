@@ -2,23 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" > 
 
 <mapper namespace="schedule">
-
-<resultMap type="zeniware.schedule.vo.ScheduleVo" id="scheduleList">
-		<result property="schedId" column="SCHED_ID"/>
+	
+	<resultMap type="zeniware.schedule.vo.CalendarVo" id="calendarVo">
 		<result property="cldrId" column="CLDR_ID"/>
-		<result property="schedNm" column="SCHED_NM"/>
-		<result property="title" column="TITLE"/>
-		<result property="start" column="START"/>
-		<result property="end" column="END"/>
-		<result property="fstFrmigrId" column="FST_FRMIGR_ID"/>
-		<result property="startTm" column="START_TM"/>
-		<result property="endTm" column="END_TM"/>
-		<result property="apntPlc" column="APNT_PLC"/>
-</resultMap>
+		<result property="cldrNm" column="CLDR_NM"/>
+		<result property="cldrColorVal" column="CLDR_COLOR_VAL"/>
+		<result property="compId" column="COMP_ID"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="closeYn" column="COLSE_YN"/>
+		<result property="shreYn" column="SHRE_YN"/>
+		<result property="regDate" column="REG_DATE"/>
+		<result property="modDate" column="MOD_DATE"/>
+	</resultMap>
 
-<insert id="insertTest" parameterType="String">
-	INSERT INTO MYBATIS_TABLE(title) VALUES(#{value, jdbcType=VARCHAR})
-</insert>
+	<resultMap type="zeniware.schedule.vo.ScheduleVo" id="scheduleVo">
+			<result property="schedId" column="SCHED_ID"/>
+			<result property="cldrId" column="CLDR_ID"/>
+			<result property="schedNm" column="SCHED_NM"/>
+			<result property="title" column="TITLE"/>
+			<result property="start" column="START"/>
+			<result property="end" column="END"/>
+			<result property="fstFrmigrId" column="FST_FRMIGR_ID"/>
+			<result property="startTm" column="START_TM"/>
+			<result property="endTm" column="END_TM"/>
+			<result property="apntPlc" column="APNT_PLC"/>
+	</resultMap>
+
+	<insert id="insertTest" parameterType="String">
+		INSERT INTO MYBATIS_TABLE(title) VALUES(#{value, jdbcType=VARCHAR})
+	</insert>
 	
 	<!-- 캘린더 등록 -->
 	<insert id="addCalendar" parameterType="zeniware.schedule.vo.CalendarVo">
@@ -48,19 +60,34 @@
 		)
 	</insert>
 
-
-
-
+	<!-- 캘린더 리스트를 가져온다.  -->
+	<select id="getCalendarList" parameterType="map" resultMap="calendarVo">
+		SELECT 
+			CLDR_ID,
+			CLDR_NM,
+			CLDR_COLOR_VAL,
+			COMP_ID,
+			USER_ID,
+			COLSE_YN,
+			SHRE_YN
+		FROM 
+			FS_CLDR
+		WHERE
+			COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId, jdbcType=VARCHAR}
+	</select>
 
 	<!-- 일정 상세 -->
-	<select id="getScheduleList" parameterType="map" resultMap="scheduleList">
+	<select id="getScheduleList" parameterType="map" resultMap="scheduleVo">
+	SELECT T.*
+	FROM (
 		SELECT
 			SCHED_ID,
 			CLDR_ID,
 			SCHED_NM,
-			SCHED_NM AS TITLE,
 			CONCAT(START_YMD,'T', LEFT(START_TM, 2), ':', RIGHT(START_TM, 2)) AS START,
 			CONCAT(END_YMD,'T', LEFT(END_TM, 2), ':', RIGHT(END_TM, 2)) AS END, 
+			SCHED_NM AS TITLE,
 			FST_FRMIGR_ID,
 			START_TM,
 			END_TM,
@@ -69,6 +96,8 @@
 			FS_SCHED
 		WHERE 
 			START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
+		)T
+
 	</select>
 	
 	<!-- 일정 등록 -->
