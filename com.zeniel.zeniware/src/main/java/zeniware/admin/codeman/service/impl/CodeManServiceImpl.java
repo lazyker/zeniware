@@ -28,6 +28,11 @@ public class CodeManServiceImpl implements CodeManService {
   }
   
   @Override
+  public int getSingleCodeExists(Map<String, Object> paramMap) {
+    return codemanDao.getSingleCodeExists(paramMap);
+  }
+  
+  @Override
   public CommonCode getSingleCode(Map<String, Object> paramMap) {
     return codemanDao.getSingleCode(paramMap);
   }
@@ -38,8 +43,17 @@ public class CodeManServiceImpl implements CodeManService {
   }
   
   @Override
-  public int delSingleCode(Map<String, Object> paramMap) {
-    return codemanDao.delSingleCode(paramMap);
+  public int delCodeList(List<CommonCode> codelist) throws Throwable {
+    
+    int affectedRows = -1;
+    
+    try {
+      for (CommonCode commonCode : codelist) {
+        affectedRows += codemanDao.delSingleCode(commonCode);
+      }
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
   }
   
 }

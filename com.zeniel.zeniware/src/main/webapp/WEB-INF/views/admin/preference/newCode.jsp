@@ -23,6 +23,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="codeId">코드ID</label>
 				<div class="col-sm-10">
+					<input type="hidden" name="orgCodeId" value="${orgCodeId}">
 					<input type="text" class="form-control" name="codeId" id="txtCodeId" 
 						value="${commonCode.codeId}" data-validate="required,maxlength[5]" placeholder="CodeID">
 				</div>
@@ -100,7 +101,7 @@
 			<div class="form-group-separator"></div>
 			
 			<div class="form-group text-right">
-				<button type="submit" class="btn btn-primary" id="btnSave">Save changes</button>
+				<button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
 				<button type="reset" class="btn btn-white" id="btnClose">Close</button>
 			</div>
 			
@@ -118,12 +119,29 @@
 		$("#chkUseYn").prop('checked', useYn);
 		
 		$("#btnClose").click(function() {
-			$(location).prop('href', 'codeMain');
+			$(location).prop('href', 'codeMainFlat');
 			return false;
 		});
 		
-		$("#btnSave").click(function() {
-			$("#frm").prop('action', 'newCode').submit();
+		$("#btnSave").click(function(event) {
+			$.ajax({
+				url: '../ajax/getSingleCodeExists', 
+				type: 'POST', 
+				data: {
+					groupId: $("#txtGroupId").val(), 
+					codeId: $("#txtCodeId").val() 
+				}, 
+				dataType: 'json'
+			}).done(function(data) {
+				if (data > 0) {
+					toastr.options.closeButton = true;
+					toastr.options.positionClass = "toast-top-full-width";
+					toastr.error("<div align='center'><b>이미 등록된 코드입니다.</b></div>", null);
+				}
+				else {
+					$("#frm").prop('action', 'newCode').submit();
+				}
+			});
 		});
 	});
 	

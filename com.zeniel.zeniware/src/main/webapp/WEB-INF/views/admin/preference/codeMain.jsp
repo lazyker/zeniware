@@ -104,35 +104,12 @@
 						}
 					}
 				]
-			}, 
-			fnDrawCallback: function() {
-				clickRowHandler();
 			}
 		});
 		
-// 		$("#example tbody").on('click', 'tr td:not(:first-child)', function() {
-// 			alert('aaa');
-// 		});
-
-		function clickRowHandler() {
-			
-			
-// 			$("#example tbody").on('click', 'tr td:not(:first-child)', function() {
-// 				table.ajax.url('../ajax/getCodelist?groupId=' + $(this).parent().find('td').eq(2).text()).load();
-// 			});
-			$("#example tbody").on('click', 'tr td:not(:first-child, :last-child)', function() {
-				alert('dblclick');
-			});
-			
-			$("#example tbody").on('click', 'tr dt(:last-child)', function() {
-				//table.ajax.url('../ajax/getCodelist?groupId=' + $(this).parent().find('td').eq(2).text()).load();
-				alert('click');
-			});
-			
-			
-		}
-		
-		
+		$("#example tbody").on('click', 'tr td:not(:first-child)', function() {
+			table.ajax.url('../ajax/getCodelist?groupId=' + $(this).parent().find('td').eq(2).text()).load();
+		});
 		
 		var $state = $("#example thead input[type='checkbox']");
 		

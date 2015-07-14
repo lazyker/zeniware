@@ -14,24 +14,39 @@ public class CodeManDao extends AbstractDao {
   
   @SuppressWarnings("unchecked")
   public List<CommonGroup> getGroupList(Map<String, Object> paramMap) {
+    
     return (List<CommonGroup>)selectList("admin.getGroupList", paramMap);
   }
 
   @SuppressWarnings("unchecked")
   public List<CommonCode> getCodeList(Map<String, Object> paramMap) {
+    
     return (List<CommonCode>)selectList("admin.getCodeList", paramMap);
   }
   
+  public int getSingleCodeExists(Map<String, Object> paramMap) {
+    
+    return (int)selectOne("admin.getSingleCodeExists", paramMap);
+  }
+  
   public CommonCode getSingleCode(Map<String, Object> paramMap) {
+    
     return (CommonCode)selectOne("admin.getSingleCode", paramMap); 
   }
   
   public int setSingleCode(CommonCode commonCode) {
-    return (int)insert("admin.insertSingleCode", commonCode);
+    
+    if (commonCode.getOrgCodeId().isEmpty()) {
+      return (int)insert("admin.insertSingleCode", commonCode);
+      
+    } else {
+      return (int)update("admin.updateSingleCode", commonCode);
+    }    
   }
   
-  public int delSingleCode(Map<String, Object> paramMap) {
-    return (int)delete("admin.deleteSingleCode", paramMap);
+  public int delSingleCode(CommonCode commonCode) {
+    
+    return (int)delete("admin.deleteSingleCode", commonCode);
   }
   
 }

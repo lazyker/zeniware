@@ -5,7 +5,7 @@ import java.sql.Date;
 public class CommonCode {
   private String groupId;
   private String codeId;
-  private String parentGroupId;
+  private String orgCodeId;
   private String codeNameKo;
   private String codeNameEn;
   private String codeNameCn;
@@ -18,9 +18,10 @@ public class CommonCode {
   
   public CommonCode() { }
   
-  public CommonCode(int sortOrder, boolean useYn) {
-    this.sortOrder = sortOrder;
-    this.useYn = useYn;
+  public CommonCode(String groupId) {
+    this.groupId = groupId;
+    this.sortOrder = 0;
+    this.useYn = true;
   }
   
   public String getGroupId() {
@@ -39,12 +40,12 @@ public class CommonCode {
     this.codeId = codeId;
   }
   
-  public String getParentGroupId() {
-    return this.parentGroupId;
+  public String getOrgCodeId() {
+    return this.orgCodeId;
   }
   
-  public void setParentGroupId(String parentGroupId) {
-    this.parentGroupId = parentGroupId;
+  public void setOrgCodeId(String orgCodeId) {
+    this.orgCodeId = orgCodeId;
   }
   
   public String getCodeNameKo() {

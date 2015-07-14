@@ -24,6 +24,23 @@
 		</div>
 	</div>
 	
+	<div class="modal fade" id="modl">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title"></h4>
+				</div>
+				<div class="modal-body" id="modlBody">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" id="btnOk"></button>
+					<button type="button" class="btn btn-white" id="btnCancel" data-dismiss="modal"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<!-- Bottom Scripts -->
 	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/TweenMax.min.js"></script>
@@ -34,6 +51,7 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 
 	<!-- Imported scripts on this page -->
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
