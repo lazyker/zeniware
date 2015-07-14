@@ -1,4 +1,4 @@
-package zeniware.admin.community;
+package zeniware.admin.community.vo;
 
 public class CommunityVO {
 	private String adminCode;
@@ -7,14 +7,32 @@ public class CommunityVO {
 	private String cumtType;
 	private String fileSizeYn;
 	private String fileSize;
+	private String fileOldSize;
 	private String fileAddYn;
 	private String fileAddCnt;
+	private String fileOldAddCnt;
 	private String fileNotName;
 	private String regDate;
 	private String admUserId;
 
 	public String getCompId() {
 		return compId;
+	}
+
+	public String getFileOldSize() {
+		return fileOldSize;
+	}
+
+	public void setFileOldSize(String fileOldSize) {
+		this.fileOldSize = fileOldSize;
+	}
+
+	public String getFileOldAddCnt() {
+		return fileOldAddCnt;
+	}
+
+	public void setFileOldAddCnt(String fileOldAddCnt) {
+		this.fileOldAddCnt = fileOldAddCnt;
 	}
 
 	public void setCompId(String compId) {
