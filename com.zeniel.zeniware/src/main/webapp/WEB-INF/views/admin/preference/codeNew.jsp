@@ -119,7 +119,7 @@
 		$("#chkUseYn").prop('checked', useYn);
 		
 		$("#btnClose").click(function() {
-			$(location).prop('href', 'codeMainFlat');
+			$(location).prop('href', 'codeMain');
 			return false;
 		});
 		

@@ -31,18 +31,12 @@ public class CodeManController {
   @RequestMapping("/admin/preference/codeMain")
   public String redirectCodeMain(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    return "/adminLayout/preference/codeMain";
-  }
-  
-  @RequestMapping("/admin/preference/codeMainFlat")
-  public String redirectCodeMainFlat(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-    
     model.put("groupId", paramMap.get("groupId"));
     
-    return "/adminLayout/preference/codeMainFlat";
+    return "/preferenceLayout/preference/codeMain";
   }
   
-  @RequestMapping(value="/admin/preference/newCode", method=RequestMethod.GET)
+  @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.GET)
   public String setSingleCodeForm(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
 
     try {
@@ -54,10 +48,10 @@ public class CodeManController {
       
     } catch (Exception e) { throw e; }
 
-    return "/adminLayout/preference/newCode";
+    return "/preferenceLayout/preference/codeNew";
   }
   
-  @RequestMapping(value="/admin/preference/newCode", method=RequestMethod.POST)
+  @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.POST)
   public String setSingleCodeSubmit(@ModelAttribute CommonCode commonCode, ModelMap model) throws Throwable {
     
     try {
@@ -67,7 +61,7 @@ public class CodeManController {
       
     } catch (Exception e) { throw e; }
     
-    return "redirect:/admin/preference/codeMainFlat";
+    return "redirect:/admin/preference/codeMain";
   }
     
   @RequestMapping("/admin/ajax/getGrouplist")

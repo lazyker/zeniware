@@ -12,7 +12,7 @@
 				</a> 
 			</li> 
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/admin/preference/memberMain">
 					<i class="linecons-cog"></i><span class="title">조직관리</span>
 				</a>
 			</li> 

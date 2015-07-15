@@ -50,6 +50,19 @@
 		<put-attribute name="body"  value="/WEB-INF/views/admin/{1}/{2}.jsp" />
 	</definition>
 	
+	<!-- 관리자 환경설정 Layout -->
+	<definition name="preference_layout" template="/WEB-INF/layout/preference_layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/common_tiles/headerNew.jsp" />
+		<put-attribute name="top" value="/WEB-INF/views/common_tiles/admin_topForm.jsp" />
+		<put-attribute name="leftFm" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="/preferenceLayout/*/*" extends="preference_layout">
+		<put-attribute name="leftFm" value="/WEB-INF/views/admin/{1}/{1}Left.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/{1}/{2}.jsp" />
+	</definition>
+	
 	<!-- 일정관리 Ajax Body 레이아웃 -->
 <!-- 	<definition name="/scheduleAjaxLayout/*/*" template="/WEB-INF/layout/ajax_body_layout.jsp"> -->
 <!-- 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" /> -->

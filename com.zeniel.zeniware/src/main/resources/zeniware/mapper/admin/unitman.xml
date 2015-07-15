@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="admin">
+
+	<resultMap type="zeniware.admin.unitman.vo.TreeNode" id="treeNodeResultMap">
+		<id column="" property="id" />
+		<result column="" property="parent" />
+		<result column="" property="text" />
+	</resultMap>
+	
+	<select id="getTreeNodeList" parameterType="map" resultMap="commonGroupResultMap">
+		SELECT 
+			CONCAT(COMP_ID, DEPT_ID) AS ID, 
+			CONCAT(COMP_ID, PARENT_DEPT_ID) AS PARENT, 
+			DEPT_NM AS TEXT 
+		FROM FH_DEPT  
+		ORDER BY DEPT_LEVEL, SORT_ORDER 
+	</select>
+
+</mapper>
