@@ -101,8 +101,8 @@
 			<div class="form-group-separator"></div>
 			
 			<div class="form-group text-right">
-				<button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
-				<button type="reset" class="btn btn-white" id="btnClose">Close</button>
+				<button type="button" class="btn btn-primary" id="btnSave">확인</button>
+				<button type="reset" class="btn btn-white" id="btnClose">닫기</button>
 			</div>
 			
 		</form>

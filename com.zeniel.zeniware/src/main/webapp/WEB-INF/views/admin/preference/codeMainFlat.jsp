@@ -16,7 +16,7 @@
 	</div>
 	
 </div>
-<div>양초이엔찡따오</div>
+
 <div class="row">
 	<div class="col-sm-4">
 	
@@ -29,9 +29,9 @@
 			<div class="panel-body">
 				<div class="form-group">
 					<div class="btn-group">
-						<button class="btn btn-primary" id="btnGroupAdd">New</button>
-						<button class="btn btn-secondary" id="btnGroupEdit">Edit</button>
-						<button class="btn btn-primary" id="btnGroupDelete">Delete</button>
+						<button class="btn btn-primary" id="btnGroupAdd">추가</button>
+						<button class="btn btn-secondary" id="btnGroupEdit">변경</button>
+						<button class="btn btn-primary" id="btnGroupDelete">삭제</button>
 					</div>
 					<select class="form-control" id="sboxit">
 						<option>그룹코드를 선택하세요.</option>
@@ -131,7 +131,7 @@
 					{ 
 						"sExtends": "text", 
 						"sButtonClass": "btn-primary",
-						"sButtonText": "New", 
+						"sButtonText": "추가", 
 						"fnClick": function(nButton, oConfig) {
 							$(location).prop('href', 'newCode?groupId=' + $("#sboxit").val());
 						}
@@ -139,7 +139,7 @@
 					{
 						"sExtends": "text", 
 						"sButtonClass": "btn-primary", 
-						"sButtonText": "Delete",  
+						"sButtonText": "삭제",  
 						"fnClick": function(nButton, oConfig) {
 							if (getCodelistCount() > 0) {
 								jQuery('#modl').modal('show', {backdrop: 'fade'});
