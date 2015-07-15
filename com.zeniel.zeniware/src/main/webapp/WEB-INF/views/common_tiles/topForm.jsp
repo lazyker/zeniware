@@ -92,7 +92,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/admin/preference/codeMainFlat">
+				<a href="${pageContext.request.contextPath}/admin/preference/codeMain">
 					<i class="fa fa-anchor"></i>
 					<span class="title">관리자</span>
 				</a>
