@@ -33,19 +33,38 @@
 		</a>
 	</div>
 	
+	<c:forEach items="${vo}"  var="vo"  varStatus="status">
+	${vo.name}
+	</c:forEach>
+	<c:forEach items="${calendarList}"  var="list"  varStatus="status">
+	<c:out value="${list[0].name}"/>
+	</c:forEach>
+	
+	<c:forEach items="${calendarList}" var="detail" >
+<c:out value="${detail.name}"/>
+</c:forEach>
 			
 	<ul id="calendar-menu" class="calendar-menu">
-	
+	<c:forEach items="${calendarList}"  var="list"  varStatus="status">
 		<li>
 			<label>
-				<input type="checkbox" class="cbr cbr-info"> 개인 스케줄
+			${list[0]}
+			<c:out value="${status.count}"/>
+			<c:out value="${list.name}"/>
+<%-- 				<input type="checkbox" class="cbr cbr-info"> ${cldrNm} --%>
 			</label>
 		</li>
-		<li>
-			<label>
-				<input type="checkbox" class="cbr cbr-danger"> 회사 스케줄
-			</label>
-		</li>
+	</c:forEach>
+<!-- 		<li> -->
+<!-- 			<label> -->
+<!-- 				<input type="checkbox" class="cbr cbr-info"> 개인 스케줄 -->
+<!-- 			</label> -->
+<!-- 		</li> -->
+<!-- 		<li> -->
+<!-- 			<label> -->
+<!-- 				<input type="checkbox" class="cbr cbr-gray"> 회사 스케줄 -->
+<!-- 			</label> -->
+<!-- 		</li> -->
 		
 	</ul>
 	
@@ -181,7 +200,7 @@
 						var calendarListStr = 
 							"<li>" +
 							"<label>" +
-							"<input type='checkbox' class='cbr cbr-gray'>" + obj.cldrNm + 
+							"<input type='checkbox' class='cbr cbr-info'>" + obj.cldrNm + 
 							"</label>" +
 							"</li>"
 						
