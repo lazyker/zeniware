@@ -117,6 +117,33 @@ public class ScheduleController {
 	@RequestMapping(value = "/schedule/scheduleMain")
 	public String getMonth(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
 		
+		paramMap.put("compId", "회사아이디");
+		paramMap.put("userId", "lazyker");
+		
+//		List<CalendarVo> list = new ArrayList<CalendarVo>();
+//		
+//		list = scheduleService.getCalendarList(paramMap);
+		
+		
+		ArrayList list = new ArrayList();
+		  Map author1 = new HashMap();
+		  author1.put("name", "A");
+		  author1.put("id", new Integer(1));
+		  list.add(author1);
+		  Map author2 = new HashMap();
+		  author2.put("name", "B");
+		  author2.put("id", new Integer(2));
+		  list.add(author2);
+		  Map author3 = new HashMap();
+		  author3.put("name", "C");
+		  author3.put("id", new Integer(3));
+		  list.add(author3);
+		
+		
+		
+		model.put("calendarList", list);
+		model.put("vo", author1);
+		
  		return "/scheduleLayout/schedule/scheduleMain";
 	}
 	
