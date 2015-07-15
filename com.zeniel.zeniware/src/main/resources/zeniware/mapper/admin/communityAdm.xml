@@ -19,10 +19,10 @@
 	<resultMap type="zeniware.admin.community.vo.CumtInfoVO" id="cumtInfoResultMap">
 		<id column="COMP_ID"			property="compId" />
 		<id column="FC_BOARD_ID"		property="fcBoardId" />
-		<result	column="FC_BOARD_ID"	property="fcBordId" />
+		<result	column="FC_BOARD_ID"	property="fcBoardId" />
 		<result	column="FC_ADM_SEQ"		property="fcAdmSeq" />
 		<result column="COMP_ID"		property="compId" />
-		<result column="UMT_NM"			property="cumtNm" />
+		<result column="CUMT_NM"		property="cumtNm" />
 		<result column="CUMT_COMMENT"	property="cumtComent" />
 		<result column="ADM_OPEN_YN"	property="admOpenYn" />
 		<result column="OPEN_YN"		property="openYn" />
@@ -110,7 +110,7 @@
 		FROM
 			FC_CUMT_INFO 
 		WHERE COMP_ID = #{compId}
-			AND OPEN_YN = 'N'
+			AND ADM_OPEN_YN = 'N'
 		ORDER BY FC_BOARD_ID DESC
 	</select>
 </mapper>

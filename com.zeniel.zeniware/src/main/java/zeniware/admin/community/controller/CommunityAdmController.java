@@ -73,6 +73,7 @@ public class CommunityAdmController {
 
 	@RequestMapping(value = "/getCumtListData")
 	public void getCumtListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
+		logger.debug("여기 호출이 제대로 되는것만 확인");
 		List<CumtInfoVO> list = new ArrayList<CumtInfoVO>();
 		try {
 			list = communityAdmService.getCumtListData(paramMap);

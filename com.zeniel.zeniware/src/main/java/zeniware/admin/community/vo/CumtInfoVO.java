@@ -1,7 +1,7 @@
 package zeniware.admin.community.vo;
 
 public class CumtInfoVO {
-	private int fcBordId;			//FC_BOARD_ID
+	private int fcBoardId;			//FC_BOARD_ID
 	private int fcAdmSeq;			//FC_ADM_SEQ
 	private String compId;			//COMP_ID
 	private String cumtNm;			//CUMT_NM
@@ -12,11 +12,11 @@ public class CumtInfoVO {
 	private String modDate;			//MOD_DATE
 	private String regUserId;		//REG_USER_ID
 	private String modUserId;		//MOD_USER_ID
-	public int getFcBordId() {
-		return fcBordId;
+	public int getFcBoardId() {
+		return fcBoardId;
 	}
-	public void setFcBordId(int fcBordId) {
-		this.fcBordId = fcBordId;
+	public void setFcBoardId(int fcBoardId) {
+		this.fcBoardId = fcBoardId;
 	}
 	public int getFcAdmSeq() {
 		return fcAdmSeq;

@@ -70,7 +70,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/admin/community/default">
 					<i class="linecons-user"></i>
 					<span class="title">커뮤니티</span>
 				</a>
@@ -79,6 +79,12 @@
 						<a href="${pageContext.request.contextPath}/admin/community/default">
 						<i class="linecons-diamond"></i>
 						<span class="title">기본설정</span>
+						</a>
+					</li>
+					<li>
+						<a href="${pageContext.request.contextPath}/admin/community/cumtInfoList">
+						<i class="linecons-diamond"></i>
+						<span class="title">개설신청목록</span>
 						</a>
 					</li>
 				</ul>
