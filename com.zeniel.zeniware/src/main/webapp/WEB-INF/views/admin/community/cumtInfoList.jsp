@@ -32,24 +32,18 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	var table = $('#cumtInfo').DataTable({
-		ajax: {"url": "./getCumtList?compId=001", "dataSrc": ""},
+		ajax: {"url": "../community/getCumtListData?compId=001", "dataSrc": ""},
 		deferRender: true,
 		pagingType: "simple_numbers",
 		aoColumns: [
 			{ "mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; } },
-			{ "mData": "fcBordId" },
-	      	{ "mData": "fcAdmSeq" },
-	      	{ "mData": "compId" },
-	      	{ "mData": "cumtNm" },
-	      	{ "mData": "cumtComent" },
-	      	{ "mData": "admOpenYn" },
-	      	{ "mData": "openYn" },
-	      	{ "mData": "regDate" },
-	      	{ "mData": "modDate" },
+			{ "mData": "cumtNm" },
 	      	{ "mData": "regUserId" },
-	      	{ "mData": "modUserId" }
+	      	{ "mData": "regDate" },
+	      	{ "mData": "cumtComent" }
 		],
-		sDom: "<'row'<'col-sm-4'<'pull-left'T>><'col-sm-6'f><'col-sm-2'<'pull-right'l>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>",
+		//sDom: "<'row'<'col-sm-4'<'pull-left'T>><'col-sm-6'f><'col-sm-2'<'pull-right'l>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>",
+		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>",
 		oTableTools: {
 			"aButtons": [
 				{
@@ -76,10 +70,10 @@ $(document).ready(function() {
 					}
 				}
 			]
-		},
-		fnDrawCallback: function() {
-			clickRowHandler();
 		}
+	});
+	$("#cumtInfo tbody").on('click', 'tr td:not(:first-child)', function() {
+		table.ajax.url('./getCumtList?compId=' + $(this).parent().find('td').eq(2).text()).load();
 	});
 });
 </script>
