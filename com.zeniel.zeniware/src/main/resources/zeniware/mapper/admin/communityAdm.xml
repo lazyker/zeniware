@@ -113,4 +113,17 @@
 			AND ADM_OPEN_YN = 'N'
 		ORDER BY FC_BOARD_ID DESC
 	</select>
+
+	<update id="cmutadmin.updateCumtAdmlist" parameterType="map">
+		UPDATE FC_CUMT_INFO SET
+			ADM_OPEN_YN = 'Y'
+		WHERE FC_BOARD_ID = #{fcBoardId}
+			AND COMP_ID = #{compId}
+	</update>
+
+	<delete id="cmutadmin.deleteCumtAdmlist" parameterType="map">
+		DELETE FROM FC_CUMT_INFO
+		WHERE COMP_ID = #{compId}
+			AND FC_BOARD_ID = #{fcBoardId}
+	</delete>
 </mapper>

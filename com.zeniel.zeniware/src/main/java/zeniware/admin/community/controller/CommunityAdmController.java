@@ -65,8 +65,7 @@ public class CommunityAdmController {
 	@RequestMapping(value = "/cumtInfoList", method=RequestMethod.GET)
 	public String getCommunityInfoList(@RequestParam Map<String, Object> paramMap, ModelMap model) throws IOException{
 		paramMap.put("compId", "001");
-
-		List<CumtInfoVO> list = new ArrayList<CumtInfoVO>();
+		model.put("compId", "001");
 
 		return "/adminLayout/community/cumtInfoList";
 	}
@@ -84,5 +83,39 @@ public class CommunityAdmController {
 	    } catch (Exception e) {
 	      throw e;
 	    }
+	}
+
+	//개설신청 수락 처리 Ajax
+	@RequestMapping(value = "updateCumtAdmlist")
+	public void updateCumtAdmlist(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		try {
+			String jsonString = (String)paramMap.get("cumtlist");
+			ObjectMapper objectMapper = new ObjectMapper();
+			List<CumtInfoVO> cumtlist = objectMapper.readValue(jsonString,
+					objectMapper.getTypeFactory().constructCollectionType(List.class, CumtInfoVO.class));
+			int addRow = communityAdmService.updateCumtAdmlist(cumtlist);
+
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), addRow);
+		}
+		catch (Exception e) { throw e; }
+	}
+
+	//개설신청 반려 처리 Ajax
+	@RequestMapping(value = "deleteCumtAdmlist")
+	public void deleteCumtAdmlist(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		try {
+			String jsonString = (String)paramMap.get("cumtlist");
+			ObjectMapper objectMapper = new ObjectMapper();
+			List<CumtInfoVO> cumtlist = objectMapper.readValue(jsonString,
+					objectMapper.getTypeFactory().constructCollectionType(List.class, CumtInfoVO.class));
+			int addRow = communityAdmService.deleteCumtAdmlist(cumtlist);
+
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), addRow);
+		}
+		catch (Exception e) { throw e; }
 	}
 }

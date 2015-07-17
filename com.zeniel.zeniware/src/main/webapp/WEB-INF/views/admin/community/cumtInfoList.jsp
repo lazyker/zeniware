@@ -48,6 +48,7 @@ $(document).ready(function() {
 		pagingType: "simple_numbers",
 		aoColumns: [
 			{ "mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; } },
+			//{ "mData": "fcBoardId", "visible" : false },
 			{ "mData": "fcBoardId" },
 			{ "mData": "cumtNm" },
 	      	{ "mData": "regUserId" },
@@ -56,8 +57,9 @@ $(document).ready(function() {
 		],
 		"columnDefs": [
 			{
-				"targets": [ 1 ],
+				"targets": 1,
 				"visible": false,
+				"data": "fcBoardId",
 				"searchable": false
 			}
 		],
@@ -72,7 +74,7 @@ $(document).ready(function() {
 					"fnClick": function(nButton, oConfig) {
 						if (getCumtCount() > 0) {
 							jQuery('#modl').modal('show', {backdrop: 'fade'});
-							$("#btnOk").addClass('deleteCode');
+							$("#btnOk").addClass('updateCumt');
 						} else {
 							toastr.options.closeButton = true;
 							toastr.options.positionClass = "toast-top-full-width";
@@ -87,7 +89,7 @@ $(document).ready(function() {
 					"fnClick": function(nButton, oConfig) {
 						if (getCumtCount() > 0) {
 							jQuery('#mod2').modal('show', {backdrop: 'fade'});
-							$("#btnOk").addClass('deleteCode');
+							$("#btnOk2").addClass('deleteCumt');
 						} else {
 							toastr.options.closeButton = true;
 							toastr.options.positionClass = "toast-top-full-width";
@@ -98,10 +100,79 @@ $(document).ready(function() {
 			]
 		}
 	});
+
+	// 개설신청 반려 Button OnClick Event
+	$("#btnOk2").on('click', function() {
+		if ($(this).hasClass("deleteCumt")) {
+			$.ajax({
+				dataType: "json", 
+				type: "POST", 
+				url: "./deleteCumtAdmlist", 
+				data: { cumtlist: createJsonCumtlist() }, 
+				success: function(data) {
+					$("#mod2").modal("hide");
+					table.rows(".selected").remove().draw(false);
+				}
+			});
+		}
+	});
+
+	// 개설신청 수락  Button OnClick Event
+	$("#btnOk").on('click', function() {
+		if ($(this).hasClass("updateCumt")) {
+			$.ajax({
+				dataType: "json", 
+				type: "POST", 
+				url: "./updateCumtAdmlist", 
+				data: { cumtlist: createJsonCumtlist() }, 
+				/* success: function(data) {
+					$(location).prop('href', 'cumtInfoList')
+				} */
+				success: function(data) {
+					$("#modl").modal("hide");
+					table.rows(".selected").remove().draw(false);
+				}
+			});
+		}
+	});
+
+	function createJsonCumtlist() {
+		var jsonObj = [];
+
+		$("#cumtInfo tbody tr").each(function() {
+			var chked = $("input[type='checkbox']:checked", this).length;
+			
+			if (chked == 1) {
+				var aTable = $('#cumtInfo').dataTable();
+				var pos = aTable.fnGetPosition(this);
+//				var data = aTable.fnGetData(pos).fcBoardId;
+				var jsonItem = {};
+				jsonItem["fcBoardId"] = aTable.fnGetData(pos).fcBoardId;
+				jsonItem["compId"] = "${compId}";
+				
+				jsonObj.push(jsonItem);
+			}
+		});
+		
+		return JSON.stringify(jsonObj);
+	}
+
+	// Checkbox OnChange Event
+	$("#cumtInfo tbody").on('change', "tr td:first-child input[type='checkbox']", function() {
+			if ($(this).is(':checked'))
+				$(this).parents('tr').addClass('selected');
+			else
+				$(this).parents('tr').removeClass('selected');
+	});
+
 	var $state = $("#cumtInfo thead input[type='checkbox']");
+	$("#cumtInfo").on('draw.dt', function() {
+		cbr_replace();
+		$state.trigger('change');
+	});
+
 	$state.on('change', function(ev) {
 		var $chcks = $("#cumtInfo tbody input[type='checkbox']");
-		
 		if ($state.is(':checked')) {
 			$chcks.prop('checked', true).trigger('change');
 		} else {
@@ -109,18 +180,11 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#cumtInfo tbody").on('click', 'tr td:not(:first-child)', function() {
-		alert($(this).parent().find('td').eq(3).text());
-		return;
-		table.ajax.url('./getCumtList?compId=' + $(this).parent().find('td').eq(2).text()).load();
-	});
 	function getCumtCount() {
 		var cnt = 0;
-		
 		$("#cumtInfo tbody tr").each(function() {
 			cnt+= $("input[type='checkbox']:checked", this).length;
 		})
-		
 		return cnt;
 	}
 });

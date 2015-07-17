@@ -35,4 +35,28 @@ public class CommunityAdmServiceImpl implements CommunityAdmService {
 	public List<CumtInfoVO> getCumtListData(Map<String, Object> param) {
 		return communityAdmDao.getCumtListData(param);
 	}
+
+	@Override
+	public int updateCumtAdmlist(List<CumtInfoVO> cumtlist) throws Throwable {
+		int addRows = -1;
+		try {
+			for(CumtInfoVO cumtInfoVO: cumtlist) {
+				addRows += communityAdmDao.updateCumtAdmlist(cumtInfoVO);
+			}
+		}
+		catch (Exception e) { throw e; }
+		return addRows;
+	}
+
+	@Override
+	public int deleteCumtAdmlist(List<CumtInfoVO> cumtlist) throws Throwable {
+		int addRows = -1;
+		try {
+			for(CumtInfoVO cumtInfoVO: cumtlist) {
+				addRows += communityAdmDao.deleteCumtAdmlist(cumtInfoVO);
+			}
+		}
+		catch (Exception e) { throw e; }
+		return addRows;
+	}
 }

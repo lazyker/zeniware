@@ -46,8 +46,25 @@ public class CommunityAdmDao extends AbstractDao {
 
 	/**
 	 * 커뮤니티 개설신청 목록 조회
+	 * @param list
 	*/
 	public List<CumtInfoVO> getCumtListData(Map<String, Object> param) {
 		return (List<CumtInfoVO>) selectList("cmutadmin.getCumtListData", param);
+	}
+
+	/**
+	 * 커뮤니티 개설신청 승인 처리
+	 * @param int
+	*/
+	public int updateCumtAdmlist(CumtInfoVO cumtInfoVO) {
+		return (int) update("cmutadmin.updateCumtAdmlist", cumtInfoVO);
+	}
+
+	/**
+	 * 커뮤니티 개설신청 반려 처리
+	 * @param
+	*/
+	public int deleteCumtAdmlist(CumtInfoVO cumtInfoVO) {
+		return (int) delete("cmutadmin.deleteCumtAdmlist", cumtInfoVO);
 	}
 }
