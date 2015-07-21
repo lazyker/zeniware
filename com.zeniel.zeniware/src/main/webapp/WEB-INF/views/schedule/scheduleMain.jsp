@@ -220,6 +220,10 @@
 				</div>
 			</section>
 			
+			<c:forEach var="i" begin="1" end="5">
+   Item <c:out value="${i}"/><p>
+</c:forEach>
+			
 			<div id="log"></div>
 			
 	<script>

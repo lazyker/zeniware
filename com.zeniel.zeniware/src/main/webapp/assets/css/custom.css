@@ -24,7 +24,7 @@
 	
 	.sidebar-menu .calendar-menu {
 		padding-left: 20px;
-		padding-right: 40px;
+		padding-right: 15px;
 		margin-top: 1px;
 		margin-bottom: 20px;
 		list-style: none
@@ -46,4 +46,14 @@
 	
 	.sidebar-menu.collapsed .panel-body .form-group.logo-collapsed {
 		display: block;
+	}
+	
+	.calendarList {
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: 5px;
+	}
+	
+	.cbr-replaced {
+		margin-right: 4px;
 	}

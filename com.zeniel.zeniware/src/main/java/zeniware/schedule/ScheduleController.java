@@ -39,16 +39,27 @@ public class ScheduleController {
 	/** 캘린더 추가 **/
 	@RequestMapping(value="/schedule/addCalendar") 
 	public void addCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response) throws IOException {
-		String uid = UUID.randomUUID().toString().replace("-", "");
+		String type = (null == calendarVo.getCldrId() ? "New" : "Modify");
 		
-		//값 세팅 해야 함
-		calendarVo.setCldrId(uid);
-		calendarVo.setCompId("회사아이디");
-		calendarVo.setUserId("lazyker");
-		calendarVo.setCloseYn("N");
-		calendarVo.setShreYn("N");
-		
-		scheduleService.addCalendar(calendarVo);
+		if( "New".equals(type) ) {
+			//값 세팅 해야 함
+			String uid = UUID.randomUUID().toString().replace("-", "");
+			calendarVo.setCldrId(uid);
+			calendarVo.setCompId("회사아이디");
+			calendarVo.setUserId("lazyker");
+			calendarVo.setCloseYn("N");
+			calendarVo.setShreYn("N");
+			calendarVo.setRunType("New");
+			
+			scheduleService.addCalendar(calendarVo);
+		}
+		else {
+			calendarVo.setCompId("회사아이디");
+			calendarVo.setUserId("lazyker");
+			calendarVo.setRunType("Modify");
+			
+			scheduleService.updateCalendar(calendarVo);
+		}
 		
 		ObjectMapper om = new ObjectMapper();
 		
@@ -56,6 +67,37 @@ public class ScheduleController {
 		
 		OutputStream out = response.getOutputStream();
 		out.write(jsonString.getBytes());
+	}
+	
+	/** 캘린더 리스트 조회 **/
+	public List<CalendarVo> getCalendarList() {
+		
+		Map<String, Object>paramMap = new HashMap<String, Object>();
+		
+		paramMap.put("compId", "회사아이디");
+		paramMap.put("userId", "lazyker");
+		
+		List<CalendarVo> calList  = scheduleService.getCalendarList(paramMap);
+		
+		return calList;
+	}
+	
+	/** 캘린더 삭제 **/
+	@RequestMapping(value="/schedule/delCalendar") 
+	public void delCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response) throws IOException {
+		
+		//값 세팅 해야 함
+		calendarVo.setCompId("회사아이디");
+		calendarVo.setUserId("lazyker");
+		
+		scheduleService.delCalendar(calendarVo);
+		
+//		ObjectMapper om = new ObjectMapper();
+//		
+//		String jsonString = om.writeValueAsString(calendarVo);
+//		
+//		OutputStream out = response.getOutputStream();
+//		out.write(jsonString.getBytes());
 	}
 	
 	/** 일정 등록 **/
@@ -117,32 +159,9 @@ public class ScheduleController {
 	@RequestMapping(value = "/schedule/scheduleMain")
 	public String getMonth(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
 		
-		paramMap.put("compId", "회사아이디");
-		paramMap.put("userId", "lazyker");
-		
-//		List<CalendarVo> list = new ArrayList<CalendarVo>();
-//		
-//		list = scheduleService.getCalendarList(paramMap);
-		
-		
-		ArrayList list = new ArrayList();
-		  Map author1 = new HashMap();
-		  author1.put("name", "A");
-		  author1.put("id", new Integer(1));
-		  list.add(author1);
-		  Map author2 = new HashMap();
-		  author2.put("name", "B");
-		  author2.put("id", new Integer(2));
-		  list.add(author2);
-		  Map author3 = new HashMap();
-		  author3.put("name", "C");
-		  author3.put("id", new Integer(3));
-		  list.add(author3);
-		
-		
-		
-		model.put("calendarList", list);
-		model.put("vo", author1);
+		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
+		List<CalendarVo> calList = getCalendarList();
+		model.addAttribute("calList", calList);
 		
  		return "/scheduleLayout/schedule/scheduleMain";
 	}
@@ -222,6 +241,10 @@ public class ScheduleController {
 		model.put("endYmd", endYmd);
 		model.put("startTm", startTm);
 		model.put("endTm", endTm);
+		
+		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
+		List<CalendarVo> calList = getCalendarList();
+		model.addAttribute("calList", calList);
 		
  		return "/scheduleLayout/schedule/write";
 	}

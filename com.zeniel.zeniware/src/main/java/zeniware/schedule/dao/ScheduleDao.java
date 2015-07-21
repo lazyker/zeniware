@@ -13,11 +13,36 @@ import zeniware.schedule.vo.ScheduleVo;
 public class ScheduleDao extends AbstractDao {
 	
 	/**
+	 * 캘린더 리스트
+	 * @param paramMap
+	 * @return List<CalendarVo>
+	 */
+	public List<CalendarVo> getCalendarList(Map<String, Object>paramMap) {
+		return (List<CalendarVo>) selectList("schedule.getCalendarList", paramMap);
+	}
+	
+	/**
 	 * 캘린더 추가
 	 * @param paramVo
 	 */
 	public void addCalendar(CalendarVo paramVo) {
 		insert("schedule.addCalendar", paramVo);
+	}
+	
+	/**
+	 * 캘린더 수정
+	 * @param paramVo
+	 */
+	public void updateCalendar(CalendarVo paramVo) {
+		insert("schedule.updateCalendar", paramVo);
+	}
+	
+	/**
+	 * 캘린더 삭제
+	 * @param paramVo
+	 */
+	public void delCalendar(CalendarVo paramVo) {
+		delete("schedule.delCalendar", paramVo);
 	}
 	
 	/**

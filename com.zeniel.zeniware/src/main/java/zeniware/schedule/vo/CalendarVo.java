@@ -13,6 +13,14 @@ public class CalendarVo {
 	private String regDate;				//등록일시
 	private String modDate;			//수정일시
 	
+	private String runType;			//실행타입
+	
+	public String getRunType() {
+		return runType;
+	}
+	public void setRunType(String runType) {
+		this.runType = runType;
+	}
 	public String getCldrId() {
 		return cldrId;
 	}

@@ -32,6 +32,24 @@
 		INSERT INTO MYBATIS_TABLE(title) VALUES(#{value, jdbcType=VARCHAR})
 	</insert>
 	
+	<!-- 캘린더 리스트를 가져온다.  -->
+	<select id="getCalendarList" parameterType="map" resultMap="calendarVo">
+		SELECT 
+			CLDR_ID,
+			CLDR_NM,
+			CLDR_COLOR_VAL,
+			COMP_ID,
+			USER_ID,
+			COLSE_YN,
+			SHRE_YN
+		FROM 
+			FS_CLDR
+		WHERE
+			COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId, jdbcType=VARCHAR}
+		ORDER BY REG_DATE ASC
+	</select>
+	
 	<!-- 캘린더 등록 -->
 	<insert id="addCalendar" parameterType="zeniware.schedule.vo.CalendarVo">
 		INSERT INTO FS_CLDR
@@ -59,23 +77,27 @@
 			NOW()
 		)
 	</insert>
-
-	<!-- 캘린더 리스트를 가져온다.  -->
-	<select id="getCalendarList" parameterType="map" resultMap="calendarVo">
-		SELECT 
-			CLDR_ID,
-			CLDR_NM,
-			CLDR_COLOR_VAL,
-			COMP_ID,
-			USER_ID,
-			COLSE_YN,
-			SHRE_YN
-		FROM 
-			FS_CLDR
+	
+	<!-- 캘린더 수정 -->
+	<update id="updateCalendar">
+		UPDATE FS_CLDR
+		SET
+			CLDR_NM = #{cldrNm, jdbcType=VARCHAR},
+			CLDR_COLOR_VAL = #{cldrColorVal, jdbcType=VARCHAR},
+			MOD_DATE = NOW()
 		WHERE
-			COMP_ID = #{compId, jdbcType=VARCHAR}
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 			AND USER_ID = #{userId, jdbcType=VARCHAR}
-	</select>
+	</update>
+
+	<!-- 캘린더 삭제 -->
+	<delete id="delCalendar" parameterType="zeniware.schedule.vo.CalendarVo">
+		DELETE 
+			FROM FS_CLDR
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+	</delete>
 
 	<!-- 일정 상세 -->
 	<select id="getScheduleList" parameterType="map" resultMap="scheduleVo">

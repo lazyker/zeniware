@@ -9,6 +9,8 @@
 	<!-- Imported styles on this page -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.min.css">
 	<link rel="stylesheet" href='${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.print.css' media='print' />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/simplecolorpicker/css/jquery.simplecolorpicker.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/simplecolorpicker/css/jquery.simplecolorpicker-glyphicons.css">
 
 <body class="page-body horizontal-menu-skin-navy">
 
@@ -37,9 +39,11 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/timepicker/bootstrap-timepicker.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/colorpicker/bootstrap-colorpicker.min.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath}/assets/js/colorpicker/bootstrap-colorpicker.min.js"></script> --%>
+	<script src="${pageContext.request.contextPath}/assets/js/simplecolorpicker/jquery.simplecolorpicker.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/ajax.js"></script>
 	
 	<!-- JavaScripts initializations and stuff -->

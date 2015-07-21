@@ -18,8 +18,26 @@ public class ScheduleServiceImpl implements ScheduleService {
 	private ScheduleDao scheduleDao;
 	
 	@Override
+	public List<CalendarVo> getCalendarList(Map<String, Object> paramMap) {
+		
+		List<CalendarVo> list = scheduleDao.getCalendarList(paramMap);
+		return list;
+	}
+	
+	@Override
 	public void addCalendar(CalendarVo paramVo) {
 		scheduleDao.addCalendar(paramVo);
+	}
+	
+	@Override
+	public void updateCalendar(CalendarVo paramVo) {
+		scheduleDao.updateCalendar(paramVo);
+	}
+	
+	@Override
+	public void delCalendar(CalendarVo paramVo) {
+		scheduleDao.delCalendar(paramVo);
+		
 	}
 
 	@Override

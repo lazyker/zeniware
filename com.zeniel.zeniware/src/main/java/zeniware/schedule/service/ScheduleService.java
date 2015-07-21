@@ -11,10 +11,29 @@ import zeniware.schedule.vo.ScheduleVo;
 public interface ScheduleService {
 	
 	/**
+	 * 캘린더 리스트
+	 * @param paramMap
+	 * @return
+	 */
+	public List<CalendarVo> getCalendarList(Map<String, Object>paramMap);
+	
+	/**
 	 * 캘린더 추가
 	 * @param calendarVo
 	 */
 	public void addCalendar(CalendarVo paramVo);
+	
+	/**
+	 * 캘린더 수정
+	 * @param calendarVo
+	 */
+	public void updateCalendar(CalendarVo paramVo);
+	
+	/**
+	 * 캘린더 삭제
+	 * @param calendarVo
+	 */
+	public void delCalendar(CalendarVo paramVo);
 	
 	
 	/**
