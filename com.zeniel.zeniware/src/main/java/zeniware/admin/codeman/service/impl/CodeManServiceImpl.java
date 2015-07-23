@@ -18,8 +18,8 @@ public class CodeManServiceImpl implements CodeManService {
   private CodeManDao codemanDao;
   
   @Override
-  public List<CommonGroup> getGroupList(Map<String, Object> paramMap) {
-    return codemanDao.getGroupList(paramMap);
+  public List<CommonGroup> getGroupList() {
+    return codemanDao.getGroupList();
   }
   
   @Override

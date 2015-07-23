@@ -2,25 +2,25 @@ package zeniware.admin.codeman.vo;
 
 public class CommonGroup {
   
-  private String value;
-  private String text;
+  private String groupId;
+  private String groupName;
   
   public CommonGroup() { }
   
-  public String getValue() {
-    return this.value;
+  public String getGroupId() {
+    return this.groupId;
   }
   
-  public void setValue(String value) {
-    this.value = value;
+  public void setGroupId(String groupId) {
+    this.groupId = groupId;
   }
   
-  public String getText() {
-    return this.text;
+  public String getGroupName() {
+    return this.groupName;
   }
   
-  public void setText(String text) {
-    this.text = text;
+  public void setGroupName(String groupName) {
+    this.groupName = groupName;
   }
 
 }

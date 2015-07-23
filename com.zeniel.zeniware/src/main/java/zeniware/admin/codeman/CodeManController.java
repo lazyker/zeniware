@@ -33,7 +33,7 @@ public class CodeManController {
     
     model.put("groupId", paramMap.get("groupId"));
     
-    return "/preferenceLayout/preference/codeMain";
+    return "/preferenceLayout/codeMain";
   }
   
   @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.GET)
@@ -48,7 +48,7 @@ public class CodeManController {
       
     } catch (Exception e) { throw e; }
 
-    return "/preferenceLayout/preference/codeNew";
+    return "/preferenceLayout/codeNew";
   }
   
   @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.POST)
@@ -69,7 +69,7 @@ public class CodeManController {
       HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      List<CommonGroup> list = codemanService.getGroupList(paramMap);
+      List<CommonGroup> list = codemanService.getGroupList();
       
       ObjectMapper mapper = new ObjectMapper();
       response.setContentType("application/json");

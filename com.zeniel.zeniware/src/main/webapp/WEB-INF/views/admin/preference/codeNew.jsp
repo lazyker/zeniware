@@ -48,18 +48,18 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="codeNameCn">코드명(Cn)</label>
+				<label class="col-sm-2 control-label" for="codeNameZh">코드명(Zh)</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" name="codeNameCn" 
-						value="${commonCode.codeNameCn}" data-validate="maxlength[50]" placeholder="CodeName - Chinese">
+					<input type="text" class="form-control" name="codeNameZh" 
+						value="${commonCode.codeNameZh}" data-validate="maxlength[50]" placeholder="CodeName - Chinese">
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="codeNameJp">코드명(Jp)</label>
+				<label class="col-sm-2 control-label" for="codeNameJa">코드명(Ja)</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" name="codeNameJp" 
-						value="${commonCode.codeNameJp}" data-validate="maxlength[50]" placeholder="CodeName - Japanese">
+					<input type="text" class="form-control" name="codeNameJa" 
+						value="${commonCode.codeNameJa}" data-validate="maxlength[50]" placeholder="CodeName - Japanese">
 				</div>
 			</div>
 						
@@ -119,7 +119,7 @@
 		$("#chkUseYn").prop('checked', useYn);
 		
 		$("#btnClose").click(function() {
-			$(location).prop('href', 'codeMain');
+			$(location).prop('href', './codeMain');
 			return false;
 		});
 		
@@ -133,14 +133,15 @@
 				}, 
 				dataType: 'json'
 			}).done(function(data) {
-				if (data > 0) {
-					toastr.options.closeButton = true;
-					toastr.options.positionClass = "toast-top-full-width";
-					toastr.error("<div align='center'><b>이미 등록된 코드입니다.</b></div>", null);
-				}
-				else {
-					$("#frm").prop('action', 'newCode').submit();
-				}
+// 				if (data > 0) {
+// 					toastr.options.closeButton = true;
+// 					toastr.options.positionClass = "toast-top-full-width";
+// 					toastr.error("<div align='center'><b>이미 등록된 코드입니다.</b></div>", null);
+// 				}
+// 				else {
+// 					$("#frm").prop('action', 'codeNew').submit();
+// 				}
+				$("#frm").prop('action', 'codeNew').submit();
 			});
 		});
 	});

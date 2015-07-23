@@ -8,8 +8,8 @@ public class CommonCode {
   private String orgCodeId;
   private String codeNameKo;
   private String codeNameEn;
-  private String codeNameCn;
-  private String codeNameJp;
+  private String codeNameZh;
+  private String codeNameJa;
   private int sortOrder;
   private boolean useYn;
   private String description;
@@ -64,20 +64,20 @@ public class CommonCode {
     this.codeNameEn = codeNameEn;
   }
   
-  public String getCodeNameCn() {
-    return this.codeNameCn;
+  public String getCodeNameZh() {
+    return this.codeNameZh;
   }
   
-  public void setCodeNameCn(String codeNameCn) {
-    this.codeNameCn = codeNameCn;
+  public void setCodeNameZh(String codeNameZh) {
+    this.codeNameZh = codeNameZh;
   }
   
-  public String getCodeNameJp() {
-    return this.codeNameJp;
+  public String getCodeNameJa() {
+    return this.codeNameJa;
   }
   
-  public void setCodeNameJp(String codeNameJp) {
-    this.codeNameJp = codeNameJp;
+  public void setCodeNameJa(String codeNameJa) {
+    this.codeNameJa = codeNameJa;
   }
   
   public int getSortOrder() {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="admin.pluginman">
+
+	<resultMap id="sboxResultMap" type="zeniware.admin.pluginman.vo.SelectOption">
+		<id column="VALUE" property="value" />
+		<result column="TEXT" property="text" />
+	</resultMap>
+	
+	<select id="getSboxCodeList" parameterType="map" resultMap="sboxResultMap">
+		CALL UP_PLUGINMAN_SBOX_CODE_LIST(#{groupId}, #{langCode});
+	</select>
+	
+</mapper>

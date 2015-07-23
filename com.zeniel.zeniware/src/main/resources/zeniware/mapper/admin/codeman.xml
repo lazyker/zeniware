@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="admin">
+<mapper namespace="admin.codeman">
 
 	<resultMap type="zeniware.admin.codeman.vo.CommonGroup" id="commonGroupResultMap">
-		<id column="CODE_ID" property="value" />
-		<result column="CODE_NM_KO" property="text" />
+		<id column="CODE_ID" property="groupId" />
+		<result column="CODE_NM_KO" property="groupName" />
 	</resultMap>
 
 	<resultMap type="zeniware.admin.codeman.vo.CommonCode" id="commonCodeResultMap">
@@ -14,8 +14,8 @@
 		<result column="ORG_CODE_ID" property="orgCodeId" />
  		<result column="CODE_NM_KO" property="codeNameKo" />
 		<result column="CODE_NM_EN" property="codeNameEn" />
-		<result column="CODE_NM_CN" property="codeNameCn" />
-		<result column="CODE_NM_JP" property="codeNameJp" />
+		<result column="CODE_NM_ZH" property="codeNameZh" />
+		<result column="CODE_NM_JA" property="codeNameJa" />
 		<result column="SORT_ORDER" property="sortOrder" />
 		<result column="USE_YN" property="useYn" />
 		<result column="DESCRIPTION" property="description" />
@@ -24,37 +24,37 @@
 	</resultMap>
 	
 	<select id="getGroupList" parameterType="map" resultMap="commonGroupResultMap">
-		CALL UP_CODEMAN_GROUP_LIST(#{groupId})
+		CALL UP_CODEMAN_GROUP_LIST();
 	</select>
 	
 	<select id="getCodeList" parameterType="map" resultMap="commonCodeResultMap">
-		CALL UP_CODEMAN_CODE_LIST(#{groupId})
+		CALL UP_CODEMAN_CODE_LIST(#{groupId});
 	</select>
 	
 	<select id="getSingleCode" parameterType="map" resultMap="commonCodeResultMap">
-		CALL UP_CODEMAN_SINGLE_CODE(#{groupId}, #{codeId})
+		CALL UP_CODEMAN_SINGLE_CODE(#{groupId}, #{codeId});
 	</select>
 	
 	<select id="getSingleCodeExists" parameterType="map" resultType="int">
-		CALL UP_CODEMAN_SINGLE_CODE_EXISTS(#{groupId}, #{codeId})
+		CALL UP_CODEMAN_SINGLE_CODE_EXISTS(#{groupId}, #{codeId});
 	</select>
 	
 	<insert id="insertSingleCode" parameterType="map">
 		CALL UP_CODEMAN_SINGLE_CODE_INSERT(
-			#{groupId}, #{codeId}, #{codeNameKo}, #{codeNameEn}, #{codeNameCn}, #{codeNameJp}, 
+			#{groupId}, #{codeId}, #{codeNameKo}, #{codeNameEn}, #{codeNameZh}, #{codeNameJa}, 
 			#{sortOrder}, #{useYn}, #{description}
-		)
+		);
 	</insert>
 	
 	<update id="updateSingleCode" parameterType="map">
 		CALL UP_CODEMAN_SINGLE_CODE_UPDATE(
-			#{groupId}, #{codeId}, #{orgCodeId}, #{codeNameKo}, #{codeNameEn}, #{codeNameCn}, #{codeNameJp}, 
+			#{groupId}, #{codeId}, #{orgCodeId}, #{codeNameKo}, #{codeNameEn}, #{codeNameZh}, #{codeNameJa}, 
 			#{sortOrder}, #{useYn}, #{description} 
-		)
+		);
 	</update>
 		
 	<delete id="deleteSingleCode" parameterType="map">
-		CALL UP_CODEMAN_SINGLE_CODE_DELETE(#{groupId}, #{codeId})
+		CALL UP_CODEMAN_SINGLE_CODE_DELETE(#{groupId}, #{codeId});
 	</delete>
 
 </mapper>
