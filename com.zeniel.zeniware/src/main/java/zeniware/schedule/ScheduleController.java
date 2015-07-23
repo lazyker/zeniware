@@ -16,6 +16,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import zeniware.common.login.MemberInfo;
 import zeniware.common.util.DateUtil;
 import zeniware.schedule.service.ScheduleService;
 import zeniware.schedule.vo.CalendarVo;
@@ -38,15 +40,18 @@ public class ScheduleController {
 	
 	/** 캘린더 추가 **/
 	@RequestMapping(value="/schedule/addCalendar") 
-	public void addCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response) throws IOException {
+	public void addCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response, Authentication authentication) throws IOException {
 		String type = (null == calendarVo.getCldrId() ? "New" : "Modify");
 		
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		
+		calendarVo.setCompId(memberInfo.getCompId());
+		calendarVo.setUserId(memberInfo.getUserId());
+		
 		if( "New".equals(type) ) {
-			//값 세팅 해야 함
 			String uid = UUID.randomUUID().toString().replace("-", "");
 			calendarVo.setCldrId(uid);
-			calendarVo.setCompId("회사아이디");
-			calendarVo.setUserId("lazyker");
 			calendarVo.setCloseYn("N");
 			calendarVo.setShreYn("N");
 			calendarVo.setRunType("New");
@@ -54,8 +59,6 @@ public class ScheduleController {
 			scheduleService.addCalendar(calendarVo);
 		}
 		else {
-			calendarVo.setCompId("회사아이디");
-			calendarVo.setUserId("lazyker");
 			calendarVo.setRunType("Modify");
 			
 			scheduleService.updateCalendar(calendarVo);
@@ -70,12 +73,12 @@ public class ScheduleController {
 	}
 	
 	/** 캘린더 리스트 조회 **/
-	public List<CalendarVo> getCalendarList() {
+	public List<CalendarVo> getCalendarList(MemberInfo memberInfo) {
 		
 		Map<String, Object>paramMap = new HashMap<String, Object>();
 		
-		paramMap.put("compId", "회사아이디");
-		paramMap.put("userId", "lazyker");
+		paramMap.put("compId", memberInfo.getCompId());
+		paramMap.put("userId", memberInfo.getUserId());
 		
 		List<CalendarVo> calList  = scheduleService.getCalendarList(paramMap);
 		
@@ -84,11 +87,12 @@ public class ScheduleController {
 	
 	/** 캘린더 삭제 **/
 	@RequestMapping(value="/schedule/delCalendar") 
-	public void delCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response) throws IOException {
+	public void delCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response, Authentication authentication) throws IOException {
 		
-		//값 세팅 해야 함
-		calendarVo.setCompId("회사아이디");
-		calendarVo.setUserId("lazyker");
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		
+		calendarVo.setCompId(memberInfo.getCompId());
+		calendarVo.setUserId(memberInfo.getUserId());
 		
 		scheduleService.delCalendar(calendarVo);
 		
@@ -157,17 +161,18 @@ public class ScheduleController {
 	} 
 	
 	@RequestMapping(value = "/schedule/scheduleMain")
-	public String getMonth(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
+	public String getMonth(@RequestParam Map<String, Object>paramMap, ModelMap model, Authentication authentication) throws Throwable {
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		
 		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
-		List<CalendarVo> calList = getCalendarList();
+		List<CalendarVo> calList = getCalendarList(memberInfo);
 		model.addAttribute("calList", calList);
 		
  		return "/scheduleLayout/schedule/scheduleMain";
 	}
 	
 	@RequestMapping(value = "/schedule/write")
-	public String scheduleWirte(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
+	public String scheduleWirte(@RequestParam Map<String, Object>paramMap, ModelMap model, Authentication authentication) throws Throwable {
 		String paramStaYmd = String.valueOf(paramMap.get("startYmd"));
 		String paramEndYmd = String.valueOf(paramMap.get("endYmd"));
 		
@@ -175,6 +180,8 @@ public class ScheduleController {
 		String endYmd= "";
 		String startTm = "";
 		String endTm= "";
+		
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		
 		//주간, 일간일 경우
 		if( paramStaYmd.length() > 10 ) {
@@ -243,10 +250,15 @@ public class ScheduleController {
 		model.put("endTm", endTm);
 		
 		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
-		List<CalendarVo> calList = getCalendarList();
+		List<CalendarVo> calList = getCalendarList(memberInfo);
 		model.addAttribute("calList", calList);
 		
  		return "/scheduleLayout/schedule/write";
+	}
+	
+	@RequestMapping(value="/schedule/updateAjaxSchedData")
+	public void updateAjaxSchedData(@ModelAttribute ScheduleVo scheduleVo) {
+		System.out.println(":::::::::::::::::::: " + scheduleVo.getSchedId());
 	}
 	
 }

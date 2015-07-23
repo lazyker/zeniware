@@ -25,6 +25,8 @@
 			authentication-failure-url="/loginProcess?success=fail"
 		/>
 		
+		<session-management  invalid-session-url="/login" />
+		
 		<logout
 		  	invalidate-session="true"
 		  	logout-url="/logout"
@@ -55,7 +57,10 @@
 	<beans:bean id="customJdbcDao" class="zeniware.common.login.dao.CustomJdbcDao">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="rolePrefix" value="" />
-		<beans:property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, USER_NM FROM FH_USER WHERE USER_ID=?" />
+		<beans:property name="usersByUsernameQuery" 
+			value="SELECT USER_ID, PASSWORD, USER_NM, COMP_ID, DEPT_ID, EMP_NUMBER, MAIL_ID, SECURITY_LEVEL, JOB_TITLE_CD, 
+						JOB_GRADE_CD, JOB_ROLE_CD, ENTITLEMENT, MANAGER_ID, BIRTH_DATE, LANGUAGE_CD, USE_YN, ACTIVATE_YN  FROM FH_USER 
+						WHERE USER_ID=?" />
 		<beans:property name="authoritiesByUsernameQuery" value="SELECT ID, AUTHORITY FROM MEMBER_AUTHORITY WHERE ID=?" />
 		<beans:property name="enableGroups" value="false" />
 	</beans:bean>

@@ -3,6 +3,7 @@ package zeniware.common.login;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.security.Principal;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,10 +50,15 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/loginProcess")
 	public void loginSuccess(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response,
-			Authentication authentication) throws IOException {
+			 Authentication authentication) throws IOException {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
-		
+//		HttpSession session = request.getSession();
+//		Enumeration attributeNames = session.getAttributeNames();
+//		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+//		
+//		session.setAttribute("compId", memberInfo.getCompId());
+//		System.out.println(memberInfo.getCompId());
 		
 		if("fail".equals(paramMap.get("success")))  
 		{ //로그인 실패 시
@@ -95,9 +101,9 @@ public class LoginController {
 	
 	@RequestMapping(value = "/main")
 	public String main(@RequestParam Map<String, Object> paramMap, ModelMap model, Principal principal) throws Throwable{
-		logger.debug("login success.", principal);
+//		logger.debug("login success.", principal);
 		
-			System.out.println(principal.getName()); //id 가져온다
+//			System.out.println(principal.getName()); //id 가져온다
 		
 		return "/mainLayout/main";
 	}
