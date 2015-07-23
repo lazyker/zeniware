@@ -16,7 +16,7 @@
 		<result column="ADM_USER_ID"	property="admUserId" />
 	</resultMap>
 
-	<resultMap type="zeniware.admin.community.vo.CumtInfoVO" id="cumtInfoResultMap">
+	<resultMap type="zeniware.admin.community.vo.ComtInfoVO" id="cumtInfoResultMap">
 		<id column="COMP_ID"			property="compId" />
 		<id column="FC_BOARD_ID"		property="fcBoardId" />
 		<result	column="FC_BOARD_ID"	property="fcBoardId" />

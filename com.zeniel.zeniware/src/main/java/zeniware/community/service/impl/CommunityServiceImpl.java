@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import zeniware.community.dao.CommunityDao;
 import zeniware.community.service.CommunityService;
-import zeniware.community.vo.CumtVo;
+import zeniware.community.vo.ComtVo;
 
 @Service
 public class CommunityServiceImpl implements CommunityService {
@@ -17,8 +17,8 @@ public class CommunityServiceImpl implements CommunityService {
 	private CommunityDao communityDao;
 
 	@Override
-	public List<CumtVo> getCumntUserJoinList(Map<String, Object> paramMap) {
-		List<CumtVo> list = communityDao.getCumntUserJoinList(paramMap);
+	public List<ComtVo> getCumntUserJoinList(Map<String, Object> paramMap) {
+		List<ComtVo> list = communityDao.getCumntUserJoinList(paramMap);
 		return list;
 	}
 }

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.transaction.annotation.Transactional;
 
 import zeniware.admin.community.vo.CommunityVO;
-import zeniware.admin.community.vo.CumtInfoVO;
+import zeniware.admin.community.vo.ComtInfoVO;
 
 public interface CommunityAdmService {
 	
@@ -16,11 +16,11 @@ public interface CommunityAdmService {
 
 	public void updateCumtAdmInfoList(Map<String, Object> param);
 
-	public List<CumtInfoVO> getCumtListData(Map<String, Object> param);
+	public List<ComtInfoVO> getCumtListData(Map<String, Object> param);
 
 	@Transactional(value="transactionManager")
-	public int updateCumtAdmlist(List<CumtInfoVO> cumtlist) throws Throwable;
+	public int updateCumtAdmlist(List<ComtInfoVO> cumtlist) throws Throwable;
 
 	@Transactional(value="transactionManager")
-	public int deleteCumtAdmlist(List<CumtInfoVO> cumtlist) throws Throwable;
+	public int deleteCumtAdmlist(List<ComtInfoVO> cumtlist) throws Throwable;
 }

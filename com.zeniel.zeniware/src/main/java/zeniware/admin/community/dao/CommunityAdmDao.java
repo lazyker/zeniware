@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import zeniware.admin.community.vo.CommunityVO;
-import zeniware.admin.community.vo.CumtInfoVO;
+import zeniware.admin.community.vo.ComtInfoVO;
 import zeniware.common.sql.AbstractDao;
 
 @Repository
@@ -48,23 +48,23 @@ public class CommunityAdmDao extends AbstractDao {
 	 * 커뮤니티 개설신청 목록 조회
 	 * @param list
 	*/
-	public List<CumtInfoVO> getCumtListData(Map<String, Object> param) {
-		return (List<CumtInfoVO>) selectList("cmutadmin.getCumtListData", param);
+	public List<ComtInfoVO> getCumtListData(Map<String, Object> param) {
+		return (List<ComtInfoVO>) selectList("cmutadmin.getCumtListData", param);
 	}
 
 	/**
 	 * 커뮤니티 개설신청 승인 처리
 	 * @param int
 	*/
-	public int updateCumtAdmlist(CumtInfoVO cumtInfoVO) {
-		return (int) update("cmutadmin.updateCumtAdmlist", cumtInfoVO);
+	public int updateCumtAdmlist(ComtInfoVO comtInfoVO) {
+		return (int) update("cmutadmin.updateCumtAdmlist", comtInfoVO);
 	}
 
 	/**
 	 * 커뮤니티 개설신청 반려 처리
 	 * @param
 	*/
-	public int deleteCumtAdmlist(CumtInfoVO cumtInfoVO) {
-		return (int) delete("cmutadmin.deleteCumtAdmlist", cumtInfoVO);
+	public int deleteCumtAdmlist(ComtInfoVO comtInfoVO) {
+		return (int) delete("cmutadmin.deleteCumtAdmlist", comtInfoVO);
 	}
 }

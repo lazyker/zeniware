@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.admin.community.service.CommunityAdmService;
 import zeniware.admin.community.vo.CommunityVO;
-import zeniware.admin.community.vo.CumtInfoVO;
+import zeniware.admin.community.vo.ComtInfoVO;
 
 @Controller
 @RequestMapping(value = {"/admin/community"})
@@ -73,7 +73,7 @@ public class CommunityAdmController {
 	@RequestMapping(value = "/getCumtListData")
 	public void getCumtListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
 		logger.debug("여기 호출이 제대로 되는것만 확인");
-		List<CumtInfoVO> list = new ArrayList<CumtInfoVO>();
+		List<ComtInfoVO> list = new ArrayList<ComtInfoVO>();
 		try {
 			list = communityAdmService.getCumtListData(paramMap);
 
@@ -91,8 +91,8 @@ public class CommunityAdmController {
 		try {
 			String jsonString = (String)paramMap.get("cumtlist");
 			ObjectMapper objectMapper = new ObjectMapper();
-			List<CumtInfoVO> cumtlist = objectMapper.readValue(jsonString,
-					objectMapper.getTypeFactory().constructCollectionType(List.class, CumtInfoVO.class));
+			List<ComtInfoVO> cumtlist = objectMapper.readValue(jsonString,
+					objectMapper.getTypeFactory().constructCollectionType(List.class, ComtInfoVO.class));
 			int addRow = communityAdmService.updateCumtAdmlist(cumtlist);
 
 			ObjectMapper mapper = new ObjectMapper();
@@ -108,8 +108,8 @@ public class CommunityAdmController {
 		try {
 			String jsonString = (String)paramMap.get("cumtlist");
 			ObjectMapper objectMapper = new ObjectMapper();
-			List<CumtInfoVO> cumtlist = objectMapper.readValue(jsonString,
-					objectMapper.getTypeFactory().constructCollectionType(List.class, CumtInfoVO.class));
+			List<ComtInfoVO> cumtlist = objectMapper.readValue(jsonString,
+					objectMapper.getTypeFactory().constructCollectionType(List.class, ComtInfoVO.class));
 			int addRow = communityAdmService.deleteCumtAdmlist(cumtlist);
 
 			ObjectMapper mapper = new ObjectMapper();

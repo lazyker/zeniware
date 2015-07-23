@@ -1,8 +1,8 @@
-package zeniware.admin.community.vo;
+package zeniware.community.vo;
 
 import java.io.Serializable;
 
-public class CumtInfoVO implements Serializable {
+public class ComtVo implements Serializable {
 	private int fcBoardId;			//FC_BOARD_ID
 	private int fcAdmSeq;			//FC_ADM_SEQ
 	private String compId;			//COMP_ID

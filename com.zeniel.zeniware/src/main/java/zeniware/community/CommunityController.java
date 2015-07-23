@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.community.service.CommunityService;
-import zeniware.community.vo.CumtVo;
+import zeniware.community.vo.ComtVo;
 
 @Controller
 @RequestMapping(value = "/cumnity")
@@ -26,8 +26,8 @@ public class CommunityController {
 	@RequestMapping(value = "/cumtMain")
 	public String getCumtMain(@RequestParam Map<String, Object>paramMap, ModelMap model) throws Throwable {
 		//cumt left 메뉴 조회
-		List<CumtVo> list = new ArrayList<CumtVo>();
-		//list = communityService.
+		List<ComtVo> list = new ArrayList<ComtVo>();
+		list = communityService.getCumntUserJoinList(paramMap);
 
 		return "/cumtLayout/community/cumtMain";
 	}

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import zeniware.admin.community.dao.CommunityAdmDao;
 import zeniware.admin.community.vo.CommunityVO;
-import zeniware.admin.community.vo.CumtInfoVO;
+import zeniware.admin.community.vo.ComtInfoVO;
 
 @Service
 public class CommunityAdmServiceImpl implements CommunityAdmService {
@@ -32,16 +32,16 @@ public class CommunityAdmServiceImpl implements CommunityAdmService {
 	}
 
 	@Override
-	public List<CumtInfoVO> getCumtListData(Map<String, Object> param) {
+	public List<ComtInfoVO> getCumtListData(Map<String, Object> param) {
 		return communityAdmDao.getCumtListData(param);
 	}
 
 	@Override
-	public int updateCumtAdmlist(List<CumtInfoVO> cumtlist) throws Throwable {
+	public int updateCumtAdmlist(List<ComtInfoVO> cumtlist) throws Throwable {
 		int addRows = -1;
 		try {
-			for(CumtInfoVO cumtInfoVO: cumtlist) {
-				addRows += communityAdmDao.updateCumtAdmlist(cumtInfoVO);
+			for(ComtInfoVO comtInfoVO: cumtlist) {
+				addRows += communityAdmDao.updateCumtAdmlist(comtInfoVO);
 			}
 		}
 		catch (Exception e) { throw e; }
@@ -49,11 +49,11 @@ public class CommunityAdmServiceImpl implements CommunityAdmService {
 	}
 
 	@Override
-	public int deleteCumtAdmlist(List<CumtInfoVO> cumtlist) throws Throwable {
+	public int deleteCumtAdmlist(List<ComtInfoVO> cumtlist) throws Throwable {
 		int addRows = -1;
 		try {
-			for(CumtInfoVO cumtInfoVO: cumtlist) {
-				addRows += communityAdmDao.deleteCumtAdmlist(cumtInfoVO);
+			for(ComtInfoVO comtInfoVO: cumtlist) {
+				addRows += communityAdmDao.deleteCumtAdmlist(comtInfoVO);
 			}
 		}
 		catch (Exception e) { throw e; }
