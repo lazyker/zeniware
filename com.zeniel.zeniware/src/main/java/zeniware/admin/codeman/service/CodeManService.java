@@ -10,7 +10,7 @@ import zeniware.admin.codeman.vo.CommonGroup;
 
 public interface CodeManService {
   
-  public List<CommonGroup> getGroupList(Map<String, Object> paramMap);
+  public List<CommonGroup> getGroupList();
 
   public List<CommonCode> getCodeList(Map<String, Object> paramMap);
   

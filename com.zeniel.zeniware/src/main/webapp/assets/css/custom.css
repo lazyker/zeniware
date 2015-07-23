@@ -4,6 +4,21 @@
  *
 */
 
+	/* dataTable customized */
+	table.dataTable tbody tr.selected {
+	  background-color: #b0bed9;
+		color: #fff;
+		border-color: #63b026
+	}
+	
+	/* page-title customized */
+	.page-container .main-content .page-title .title-env .title {
+		font-size: 22px
+	}
+	
+	.page-container .main-content .page-title {
+		padding-bottom: 0;
+	}
 
 	/**
 	 *

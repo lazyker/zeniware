@@ -1,21 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="admin">
+<mapper namespace="admin.unitman">
 
-	<resultMap type="zeniware.admin.unitman.vo.TreeNode" id="treeNodeResultMap">
-		<id column="" property="id" />
-		<result column="" property="parent" />
-		<result column="" property="text" />
+	<resultMap id="treeNodeResultMap" type="zeniware.admin.unitman.vo.TreeNode">
+		<id column="ID" property="id" />
+		<result column="PARENT" property="parent" />
+		<result column="TEXT" property="text" />
+		<result column="ICOM" property="icon" />
 	</resultMap>
 	
-	<select id="getTreeNodeList" parameterType="map" resultMap="commonGroupResultMap">
-		SELECT 
-			CONCAT(COMP_ID, DEPT_ID) AS ID, 
-			CONCAT(COMP_ID, PARENT_DEPT_ID) AS PARENT, 
-			DEPT_NM AS TEXT 
-		FROM FH_DEPT  
-		ORDER BY DEPT_LEVEL, SORT_ORDER 
+	<resultMap id="compResultMap" type="zeniware.admin.unitman.vo.Company">
+		<id column="COMP_ID" property="compId" />
+		<result column="COMP_NM" property="compName" />
+		<result column="SORT_ORDER" property="sortOrder" />
+		<result column="REG_DATE" property="regDate" />
+		<result column="MOD_DATE" property="modDate" />
+		<result column="DEL_DATE" property="delDate" />
+	</resultMap>
+	
+	<resultMap id="userResultMap" type="zeniware.admin.unitman.vo.User">
+		<id column="USER_ID" property="userId" />
+	  <id column="COMP_ID" property="compId" />
+	  <result column="DEPT_ID" property="deptId" />
+	  <result column="USER_NM" property="userName" />
+	  <result column="EMP_NUMBER" property="empNo" />
+	  <result column="MAIL_ID" property="mailId" />
+	  <result column="OFFICE_PHONE" property="officePhone" />
+	  <result column="HOME_PHONE" property="homePhone" />
+	  <result column="FAX" property="fax" />
+	  <result column="MOBILE" property="mobile" />
+	  <result column="POSTCODE" property="postCode" />
+	  <result column="ADDRESS1" property="address1" />
+	  <result column="ADDRESS2" property="address2" />
+	  <result column="PHOTO_FILE_ID" property="photoFileId" />
+	  <result column="SIGN_FILE_ID" property="signFileId" />
+	  <result column="SECURITY_LEVEL" property="securityLevel" />
+	  <result column="JOB_TITLE_CD" property="jobTitleCode" />
+	  <result column="JOB_GRADE_CD" property="jobGradeCode" />
+	  <result column="JOB_ROLE_CD" property="jobRoleCode" />
+	  <result column="ENTITLEMENT" property="entitlement" />
+	  <result column="MANAGER_ID" property="managerId" />
+	  <result column="PASSWORD" property="password" />
+	  <result column="DESCRIPTION" property="description" />
+	  <result column="BIRTH_DATE" property="birthDate" />
+	  <result column="USE_LUNAR_YN" property="useLunarYn" />
+	  <result column="LANGUAGE_CD" property="languageCode" />
+	  <result column="SORT_ORDER" property="sortOrder" />
+	  <result column="USE_YN" property="useYn" />
+	  <result column="ACTIVATE_YN" property="activateYn" />
+	  <result column="REG_DATE" property="regDate" />
+	  <result column="MOD_DATE" property="modDate" />
+	</resultMap>
+	
+	<select id="getTreeNodeList" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_UNITMAN_NODE_LIST(#{compId});
+	</select>
+	
+	<select id="getCompList" parameterType="map" resultMap="compResultMap">
+		CALL UP_UNITMAN_COMP_LIST();
+	</select>
+	
+	<select id="getUserList" parameterType="map" resultMap="userResultMap">
+		CALL UP_UNITMAN_USER_LIST(#{compId}, #{deptId}, #{keyword});
 	</select>
 
 </mapper>

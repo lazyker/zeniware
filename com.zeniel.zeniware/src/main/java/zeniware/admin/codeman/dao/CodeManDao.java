@@ -13,40 +13,40 @@ import zeniware.common.sql.AbstractDao;
 public class CodeManDao extends AbstractDao {
   
   @SuppressWarnings("unchecked")
-  public List<CommonGroup> getGroupList(Map<String, Object> paramMap) {
+  public List<CommonGroup> getGroupList() {
     
-    return (List<CommonGroup>)selectList("admin.getGroupList", paramMap);
+    return (List<CommonGroup>)selectList("admin.codeman.getGroupList");
   }
 
   @SuppressWarnings("unchecked")
   public List<CommonCode> getCodeList(Map<String, Object> paramMap) {
     
-    return (List<CommonCode>)selectList("admin.getCodeList", paramMap);
+    return (List<CommonCode>)selectList("admin.codeman.getCodeList", paramMap);
   }
   
   public int getSingleCodeExists(Map<String, Object> paramMap) {
     
-    return (int)selectOne("admin.getSingleCodeExists", paramMap);
+    return (int)selectOne("admin.codeman.getSingleCodeExists", paramMap);
   }
   
   public CommonCode getSingleCode(Map<String, Object> paramMap) {
     
-    return (CommonCode)selectOne("admin.getSingleCode", paramMap); 
+    return (CommonCode)selectOne("admin.codeman.getSingleCode", paramMap); 
   }
   
   public int setSingleCode(CommonCode commonCode) {
     
     if (commonCode.getOrgCodeId().isEmpty()) {
-      return (int)insert("admin.insertSingleCode", commonCode);
+      return (int)insert("admin.codeman.insertSingleCode", commonCode);
       
     } else {
-      return (int)update("admin.updateSingleCode", commonCode);
+      return (int)update("admin.codeman.updateSingleCode", commonCode);
     }    
   }
   
   public int delSingleCode(CommonCode commonCode) {
     
-    return (int)delete("admin.deleteSingleCode", commonCode);
+    return (int)delete("admin.codeman.deleteSingleCode", commonCode);
   }
   
 }

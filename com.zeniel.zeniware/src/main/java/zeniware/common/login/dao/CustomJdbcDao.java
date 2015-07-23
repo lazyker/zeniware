@@ -65,9 +65,24 @@ public class CustomJdbcDao extends JdbcDaoImpl {
             public UserDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
                 String username = rs.getString(1);
                 String password = rs.getString(2);
-                String name = rs.getString(3);
+                String userNm = rs.getString(3);
+                String compId = rs.getString(4);
+                String deptId = rs.getString(5);
+                String empNumber = rs.getString(6);
+                String mailId = rs.getString(7);
+                String securityLevel = rs.getString(8);
+                String jobTitleCd = rs.getString(9);
+                String jobGradeCd = rs.getString(10);
+                String jobRoleCd = rs.getString(11);
+                String entitlement = rs.getString(12);
+                String managerId = rs.getString(13);
+                String birthDate = rs.getString(14);
+                String languageCd = rs.getString(15);
+                String useYn = rs.getString(16);
+                String activateYn = rs.getString(17);
                 
-                return new MemberInfo(username, password, name, AuthorityUtils.NO_AUTHORITIES);
+                return new MemberInfo(username, password, userNm, compId, deptId, empNumber, mailId, securityLevel, jobTitleCd, jobGradeCd, jobRoleCd,
+                									entitlement, managerId, birthDate, languageCd, useYn, activateYn, AuthorityUtils.NO_AUTHORITIES);
             }
 
         });

@@ -96,11 +96,9 @@
 						
 						<div class="col-sm-5">
 							<select class="form-control" name="cldrId" id="calendarList">
-								<option>개인 스케줄</option>
-								<option selected>Option 2</option>
-								<option>Option 3</option>
-								<option>Option 4</option>
-								<option>Option 5</option>
+								<c:forEach items="${calList}" var="detail">
+									<option value="<c:out value="${detail.cldrId}" />"><c:out value="${detail.cldrNm}"></c:out> </option>
+								</c:forEach>
 							</select>
 						</div>
 					</div>
