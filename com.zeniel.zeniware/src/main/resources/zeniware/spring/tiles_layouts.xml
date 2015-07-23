@@ -61,6 +61,32 @@
 	<definition name="/preferenceLayout/*" extends="preference_layout">
 		<put-attribute name="body" value="/WEB-INF/views/admin/preference/{1}.jsp" />
 	</definition>
+
+	<!-- 커뮤니티 레이아웃 -->
+	<definition name="cumt_layout" template="/WEB-INF/layout/community_layout.jsp">
+		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
+		<put-attribute name="leftFm" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="/cumtLayout/*/*" extends="cumt_layout">
+		<put-attribute name="leftFm" value="/WEB-INF/views/{1}/left_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+
+	<!-- Sub Menu 레이아웃 -->
+	<definition name="sub_layout" template="/WEB-INF/layout/sub_layout.jsp">
+		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/topForm.jsp" />
+		<put-attribute name="leftFm" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+	
+	<definition name="/subLayout/*/*" extends="sub_layout">
+		<put-attribute name="leftFm" value="/WEB-INF/views/{1}/left_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
 	
 	<!-- 일정관리 Ajax Body 레이아웃 -->
 <!-- 	<definition name="/scheduleAjaxLayout/*/*" template="/WEB-INF/layout/ajax_body_layout.jsp"> -->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="">
+
+	<resultMap type="zeniware.community.vo.CumtVo" id="cumtVoMap">
+		<id column="COMP_ID"			property="compId" />
+		<id column="FC_BOARD_ID"		property="fcBoardId" />
+		<result	column="FC_BOARD_ID"	property="fcBoardId" />
+		<result	column="FC_ADM_SEQ"		property="fcAdmSeq" />
+		<result column="COMP_ID"		property="compId" />
+		<result column="CUMT_NM"		property="cumtNm" />
+		<result column="CUMT_COMMENT"	property="cumtComent" />
+		<result column="ADM_OPEN_YN"	property="admOpenYn" />
+		<result column="OPEN_YN"		property="openYn" />
+		<result column="REG_DATE"		property="regDate" />
+		<result column="MOD_DATE"		property="modDate" />
+		<result column="REG_USER_ID"	property="regUserId" />
+		<result column="MOD_USER_ID"	property="modUserId" />
+	</resultMap>
+
+	<select id="cmutadmin.getCumtListData" parameterType="map" resultMap="cumtInfoResultMap">
+		SELECT 
+			FC_BOARD_ID, FC_ADM_SEQ, COMP_ID, CUMT_NM, CUMT_COMMENT, ADM_OPEN_YN,
+			OPEN_YN, REG_DATE, MOD_DATE, REG_USER_ID, MOD_USER_ID
+		FROM
+			FC_CUMT_INFO 
+		WHERE COMP_ID = #{compId}
+			AND REG_USER_ID = #{regUserId}
+		ORDER BY CUMT_NM
+	</select>
+</mapper>

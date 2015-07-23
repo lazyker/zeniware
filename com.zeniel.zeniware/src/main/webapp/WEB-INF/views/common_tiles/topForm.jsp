@@ -6,7 +6,7 @@
 	
 		<!-- Navbar Brand -->
 		<div class="navbar-brand">
-			<a href="dashboard-1.html" class="logo">
+			<a href="${pageContext.request.contextPath}" class="logo">
 				<img src="${pageContext.request.contextPath}/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
 				<img src="${pageContext.request.contextPath}/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
 			</a>
@@ -68,7 +68,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="">
+				<a href="${pageContext.request.contextPath}/cumnity/cumtMain">
 					<i class="linecons-diamond"></i>
 					<span class="title">커뮤니티</span>
 				</a>

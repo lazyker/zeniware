@@ -1,6 +1,8 @@
 package zeniware.admin.community.vo;
 
-public class CommunityVO {
+import java.io.Serializable;
+
+public class CommunityVO implements Serializable {
 	private String adminCode;
 	private String compId;
 	private int fcAdmSeq;
