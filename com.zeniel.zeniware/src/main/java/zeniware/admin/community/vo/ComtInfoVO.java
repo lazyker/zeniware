@@ -3,22 +3,22 @@ package zeniware.admin.community.vo;
 import java.io.Serializable;
 
 public class ComtInfoVO implements Serializable {
-	private int fcBoardId;			//FC_BOARD_ID
+	private int fcComtId;			//FC_COMT_ID
 	private int fcAdmSeq;			//FC_ADM_SEQ
 	private String compId;			//COMP_ID
 	private String cumtNm;			//CUMT_NM
 	private String cumtComent;		//CUMT_COMMENT
-	private String admOpenYn;		//ADM_OPEN_YN
+	private String admActYn;		//ADM_ACT_YN
 	private String openYn;			//OPEN_YN
 	private String regDate;			//REG_DATE
 	private String modDate;			//MOD_DATE
 	private String regUserId;		//REG_USER_ID
 	private String modUserId;		//MOD_USER_ID
-	public int getFcBoardId() {
-		return fcBoardId;
+	public int getFcComtId() {
+		return fcComtId;
 	}
-	public void setFcBoardId(int fcBoardId) {
-		this.fcBoardId = fcBoardId;
+	public void setFcComtId(int fcComtId) {
+		this.fcComtId = fcComtId;
 	}
 	public int getFcAdmSeq() {
 		return fcAdmSeq;
@@ -44,11 +44,11 @@ public class ComtInfoVO implements Serializable {
 	public void setCumtComent(String cumtComent) {
 		this.cumtComent = cumtComent;
 	}
-	public String getAdmOpenYn() {
-		return admOpenYn;
+	public String getAdmActYn() {
+		return admActYn;
 	}
-	public void setAdmOpenYn(String admOpenYn) {
-		this.admOpenYn = admOpenYn;
+	public void setAdmActYn(String admActYn) {
+		this.admActYn = admActYn;
 	}
 	public String getOpenYn() {
 		return openYn;

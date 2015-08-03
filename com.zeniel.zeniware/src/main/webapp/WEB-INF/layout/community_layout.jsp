@@ -40,11 +40,15 @@
 	<script src="${pageContext.request.contextPath}/assets/js/colorpicker/bootstrap-colorpicker.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/ajax.js"></script>
-	
+
 	<!-- JavaScripts initializations and stuff -->
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/cumt-custom.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
 		
 </body>
 </html>

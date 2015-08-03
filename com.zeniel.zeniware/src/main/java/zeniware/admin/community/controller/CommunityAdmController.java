@@ -13,6 +13,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import zeniware.admin.community.service.CommunityAdmService;
 import zeniware.admin.community.vo.CommunityVO;
 import zeniware.admin.community.vo.ComtInfoVO;
+import zeniware.common.login.MemberInfo;
 
 @Controller
 @RequestMapping(value = {"/admin/community"})
@@ -34,8 +36,10 @@ public class CommunityAdmController {
 	CommunityAdmService communityAdmService;
 
 	@RequestMapping("/default")
-	public String getCommunityAdmDefailt(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable{
-		paramMap.put("compId", "001");
+	public String getCommunityAdmDefailt(@RequestParam Map<String, Object> paramMap, ModelMap model, Authentication authentication) throws Throwable{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId", memberInfo.getCompId());
 
 		Map<String, Object> cmutBasic = null;
 		cmutBasic = communityAdmService.getCommunityBasic(paramMap);
@@ -48,9 +52,11 @@ public class CommunityAdmController {
 	}
 
 	@RequestMapping(value = "/editBasic", method=RequestMethod.POST)
-	public String setEditCumtBasic(@ModelAttribute CommunityVO communityVO) throws Throwable {
+	public String setEditCumtBasic(@ModelAttribute CommunityVO communityVO, Authentication authentication) throws Throwable {
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("compId", "001");
+		paramMap.put("compId", memberInfo.getCompId());
 
 		//관리자 승인없이 커뮤니티 개설일 경우 신청한 커뮤니티 전부 승인으로 바꾸어 주기
 		if(communityVO.getCumtType().equals("Y")) {
@@ -63,16 +69,17 @@ public class CommunityAdmController {
 	}
 
 	@RequestMapping(value = "/cumtInfoList", method=RequestMethod.GET)
-	public String getCommunityInfoList(@RequestParam Map<String, Object> paramMap, ModelMap model) throws IOException{
-		paramMap.put("compId", "001");
-		model.put("compId", "001");
+	public String getCommunityInfoList(@RequestParam Map<String, Object> paramMap, ModelMap model, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId", memberInfo.getCompId());
+		model.put("compId", memberInfo.getCompId());
 
 		return "/adminLayout/community/cumtInfoList";
 	}
 
 	@RequestMapping(value = "/getCumtListData")
 	public void getCumtListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
-		logger.debug("여기 호출이 제대로 되는것만 확인");
 		List<ComtInfoVO> list = new ArrayList<ComtInfoVO>();
 		try {
 			list = communityAdmService.getCumtListData(paramMap);

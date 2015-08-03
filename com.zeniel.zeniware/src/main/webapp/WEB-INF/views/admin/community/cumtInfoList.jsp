@@ -49,7 +49,7 @@ $(document).ready(function() {
 		aoColumns: [
 			{ "mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; } },
 			//{ "mData": "fcBoardId", "visible" : false },
-			{ "mData": "fcBoardId" },
+			{ "mData": "fcComtId" },
 			{ "mData": "cumtNm" },
 	      	{ "mData": "regUserId" },
 	      	{ "mData": "regDate" },
@@ -147,7 +147,7 @@ $(document).ready(function() {
 				var pos = aTable.fnGetPosition(this);
 //				var data = aTable.fnGetData(pos).fcBoardId;
 				var jsonItem = {};
-				jsonItem["fcBoardId"] = aTable.fnGetData(pos).fcBoardId;
+				jsonItem["fcComtId"] = aTable.fnGetData(pos).fcComtId;
 				jsonItem["compId"] = "${compId}";
 				
 				jsonObj.push(jsonItem);

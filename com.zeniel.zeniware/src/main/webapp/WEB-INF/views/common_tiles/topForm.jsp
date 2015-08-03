@@ -68,7 +68,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="${pageContext.request.contextPath}/cumnity/cumtMain">
+				<a href="${pageContext.request.contextPath}/cumnity/comtMain">
 					<i class="linecons-diamond"></i>
 					<span class="title">커뮤니티</span>
 				</a>

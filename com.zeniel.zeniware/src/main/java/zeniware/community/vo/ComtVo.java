@@ -3,22 +3,35 @@ package zeniware.community.vo;
 import java.io.Serializable;
 
 public class ComtVo implements Serializable {
-	private int fcBoardId;			//FC_BOARD_ID
+	private String fcComtId;		//FC_COMT_ID
 	private int fcAdmSeq;			//FC_ADM_SEQ
 	private String compId;			//COMP_ID
+	private String deptId;			//DEPT_ID
 	private String cumtNm;			//CUMT_NM
-	private String cumtComent;		//CUMT_COMMENT
-	private String admOpenYn;		//ADM_OPEN_YN
+	private String cumtComment;		//CUMT_COMMENT
+	private String admActYn;		//ADM_ACT_YN
 	private String openYn;			//OPEN_YN
 	private String regDate;			//REG_DATE
 	private String modDate;			//MOD_DATE
 	private String regUserId;		//REG_USER_ID
 	private String modUserId;		//MOD_USER_ID
-	public int getFcBoardId() {
-		return fcBoardId;
+	private String mastGubun;		//MAST_GUBUN
+	private int boardInfoId;		// BOARD_INFO_ID
+	private String typeGubun;		// TYPE_GUBUN
+	private String joinYn;			// JOIN_YN
+	private int talNumCnt;			//TOTAL_NUMBER_CNT(가입총인원)
+	private String userNm;			//USER_NAME
+	public String getFcComtId() {
+		return fcComtId;
 	}
-	public void setFcBoardId(int fcBoardId) {
-		this.fcBoardId = fcBoardId;
+	public void setFcComtId(String fcComtId) {
+		this.fcComtId = fcComtId;
+	}
+	public String getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(String deptId) {
+		this.deptId = deptId;
 	}
 	public int getFcAdmSeq() {
 		return fcAdmSeq;
@@ -38,17 +51,17 @@ public class ComtVo implements Serializable {
 	public void setCumtNm(String cumtNm) {
 		this.cumtNm = cumtNm;
 	}
-	public String getCumtComent() {
-		return cumtComent;
+	public String getCumtComment() {
+		return cumtComment;
 	}
-	public void setCumtComent(String cumtComent) {
-		this.cumtComent = cumtComent;
+	public void setCumtComment(String cumtComment) {
+		this.cumtComment = cumtComment;
 	}
-	public String getAdmOpenYn() {
-		return admOpenYn;
+	public String getAdmActYn() {
+		return admActYn;
 	}
-	public void setAdmOpenYn(String admOpenYn) {
-		this.admOpenYn = admOpenYn;
+	public void setAdmActYn(String admActYn) {
+		this.admActYn = admActYn;
 	}
 	public String getOpenYn() {
 		return openYn;
@@ -79,5 +92,41 @@ public class ComtVo implements Serializable {
 	}
 	public void setModUserId(String modUserId) {
 		this.modUserId = modUserId;
+	}
+	public String getMastGubun() {
+		return mastGubun;
+	}
+	public void setMastGubun(String mastGubun) {
+		this.mastGubun = mastGubun;
+	}
+	public int getBoardInfoId() {
+		return boardInfoId;
+	}
+	public void setBoardInfoId(int boardInfoId) {
+		this.boardInfoId = boardInfoId;
+	}
+	public String getTypeGubun() {
+		return typeGubun;
+	}
+	public void setTypeGubun(String typeGubun) {
+		this.typeGubun = typeGubun;
+	}
+	public String getJoinYn() {
+		return joinYn;
+	}
+	public void setJoinYn(String joinYn) {
+		this.joinYn = joinYn;
+	}
+	public int getTalNumCnt() {
+		return talNumCnt;
+	}
+	public void setTalNumCnt(int talNumCnt) {
+		this.talNumCnt = talNumCnt;
+	}
+	public String getUserNm() {
+		return userNm;
+	}
+	public void setUserNm(String userNm) {
+		this.userNm = userNm;
 	}
 }

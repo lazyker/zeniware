@@ -17,8 +17,35 @@ public class CommunityServiceImpl implements CommunityService {
 	private CommunityDao communityDao;
 
 	@Override
-	public List<ComtVo> getCumntUserJoinList(Map<String, Object> paramMap) {
-		List<ComtVo> list = communityDao.getCumntUserJoinList(paramMap);
+	public List<ComtVo> getComntUserJoinList(Map<String, Object> paramMap) {
+		List<ComtVo> list = communityDao.getComntUserJoinList(paramMap);
+		return list;
+	}
+
+	@Override
+	public Map<String, Object> getBasicComtInfo(Map<String, Object>paramMap) {
+		return communityDao.getBasicComtInfo(paramMap);
+	}
+
+	@Override
+	public int insertNewComtInfo(ComtVo comtVo) {
+		return communityDao.insertNewComtInfo(comtVo);
+	}
+
+	@Override
+	public int getCommunityCnt(Map<String, Object>paramMap) {
+		return communityDao.getCommunityCnt(paramMap);
+	}
+
+	@Override
+	public List<ComtVo> getComtAllListData(Map<String, Object>paramMap) {
+		List<ComtVo> list = communityDao.getComtAllListData(paramMap);
+		return list;
+	}
+
+	@Override
+	public List<Map<String, Object>> getComtInofUserMastList(Map<String, Object> listMap) {
+		List<Map<String, Object>> list = communityDao.getComtInofUserMastList(listMap);
 		return list;
 	}
 }

@@ -18,13 +18,13 @@
 
 	<resultMap type="zeniware.admin.community.vo.ComtInfoVO" id="cumtInfoResultMap">
 		<id column="COMP_ID"			property="compId" />
-		<id column="FC_BOARD_ID"		property="fcBoardId" />
-		<result	column="FC_BOARD_ID"	property="fcBoardId" />
+		<id column="FC_COMT_ID"			property="fcComtId" />
+		<result	column="FC_COMT_ID"		property="fcComtId" />
 		<result	column="FC_ADM_SEQ"		property="fcAdmSeq" />
 		<result column="COMP_ID"		property="compId" />
 		<result column="CUMT_NM"		property="cumtNm" />
 		<result column="CUMT_COMMENT"	property="cumtComent" />
-		<result column="ADM_OPEN_YN"	property="admOpenYn" />
+		<result column="ADM_ACT_YN"		property="admActYn" />
 		<result column="OPEN_YN"		property="openYn" />
 		<result column="REG_DATE"		property="regDate" />
 		<result column="MOD_DATE"		property="modDate" />
@@ -88,7 +88,7 @@
 	<!-- 커뮤니티 관리자 승인없이 개설일 경우 개설신청목록의 관리자 승인으로 처리 -->
 	<select id="cmutadmin.getCCumtAdmInfoListCnt" parameterType="map" resultType="int">
 		SELECT
-			COUNT(FC_BOARD_ID) AS CNT
+			COUNT(FC_COMT_ID) AS CNT
 		FROM
 			FC_CUMT_INFO
 		WHERE 1 = 1
@@ -98,32 +98,32 @@
 
 	<update id="cmutadmin.updateCumtAdmInfoList" parameterType="map">
 		UPDATE FC_CUMT_INFO SET
-			ADM_OPEN_YN = 'Y'
+			ADM_ACT_YN = 'Y'
 		WHERE 1 = 1
 			AND COMP_ID = #{compId}
 	</update>
 
 	<select id="cmutadmin.getCumtListData" parameterType="map" resultMap="cumtInfoResultMap">
 		SELECT 
-			FC_BOARD_ID, FC_ADM_SEQ, COMP_ID, CUMT_NM, CUMT_COMMENT, ADM_OPEN_YN,
+			FC_COMT_ID, FC_ADM_SEQ, COMP_ID, CUMT_NM, CUMT_COMMENT, ADM_ACT_YN,
 			OPEN_YN, REG_DATE, MOD_DATE, REG_USER_ID, MOD_USER_ID
 		FROM
 			FC_CUMT_INFO 
 		WHERE COMP_ID = #{compId}
-			AND ADM_OPEN_YN = 'N'
-		ORDER BY FC_BOARD_ID DESC
+			AND ADM_ACT_YN = 'N'
+		ORDER BY FC_COMT_ID DESC
 	</select>
 
 	<update id="cmutadmin.updateCumtAdmlist" parameterType="map">
 		UPDATE FC_CUMT_INFO SET
-			ADM_OPEN_YN = 'Y'
-		WHERE FC_BOARD_ID = #{fcBoardId}
+			ADM_ACT_YN = 'Y'
+		WHERE FC_COMT_ID = #{fcBoardId}
 			AND COMP_ID = #{compId}
 	</update>
 
 	<delete id="cmutadmin.deleteCumtAdmlist" parameterType="map">
 		DELETE FROM FC_CUMT_INFO
 		WHERE COMP_ID = #{compId}
-			AND FC_BOARD_ID = #{fcBoardId}
+			AND FC_COMT_ID = #{fcComtId}
 	</delete>
 </mapper>
