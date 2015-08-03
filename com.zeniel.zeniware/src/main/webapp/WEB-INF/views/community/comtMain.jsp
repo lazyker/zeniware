@@ -69,7 +69,7 @@
 					</div>
 
 					<div class="tab-pane" id="admComtList">
-						<table id="comtAllList" class="table table-hover members-table middle-align">
+						<table id="comtAllList" class="table table-small-font table-striped table-bordered">
 							<thead>
 								<tr>
 									<th>커뮤니티ID</th>

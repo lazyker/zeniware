@@ -29,26 +29,18 @@
 	<script src="${pageContext.request.contextPath}/assets/js/joinable.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-api.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-toggles.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/moment.min.js"></script>
-	
-	<!-- Imported scripts on this page -->
-	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/timepicker/bootstrap-timepicker.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/colorpicker/bootstrap-colorpicker.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/ajax.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 
-	<!-- JavaScripts initializations and stuff -->
+	<!-- Imported scripts on this page -->
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/cumt-custom.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
 		
 </body>
 </html>
