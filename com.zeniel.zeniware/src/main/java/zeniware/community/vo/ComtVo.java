@@ -19,7 +19,7 @@ public class ComtVo implements Serializable {
 	private int boardInfoId;		// BOARD_INFO_ID
 	private String typeGubun;		// TYPE_GUBUN
 	private String joinYn;			// JOIN_YN
-	private int talNumCnt;			//TOTAL_NUMBER_CNT(가입총인원)
+	private String talNum;			//TOTAL_NUMBER_CNT(가입총인원)
 	private String userNm;			//USER_NAME
 	public String getFcComtId() {
 		return fcComtId;
@@ -117,11 +117,11 @@ public class ComtVo implements Serializable {
 	public void setJoinYn(String joinYn) {
 		this.joinYn = joinYn;
 	}
-	public int getTalNumCnt() {
-		return talNumCnt;
+	public String getTalNum() {
+		return talNum;
 	}
-	public void setTalNumCnt(int talNumCnt) {
-		this.talNumCnt = talNumCnt;
+	public void setTalNum(String talNum) {
+		this.talNum = talNum;
 	}
 	public String getUserNm() {
 		return userNm;
