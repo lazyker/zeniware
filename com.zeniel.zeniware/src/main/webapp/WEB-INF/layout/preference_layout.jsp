@@ -11,7 +11,7 @@
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.min.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2-bootstrap.css">
 	
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
@@ -30,19 +30,22 @@
 		</div>
 	</div>
 	
-	<div class="modal fade" id="modl">
+	<div class="modal fade" id="mdl">
 		<div class="modal-dialog">
 			<div class="modal-content">
+			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title"></h4>
 				</div>
-				<div class="modal-body" id="modlBody">
-				</div>
+				
+				<div class="modal-body"></div>
+				
 				<div class="modal-footer">
-					<button type="button" class="btn btn-info" id="btnOk"></button>
-					<button type="button" class="btn btn-white" id="btnCancel" data-dismiss="modal"></button>
+					<button type="button" class="btn btn-info"></button>
+					<button type="button" class="btn btn-white" data-dismiss="modal"></button>
 				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -61,12 +64,14 @@
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
+	
+	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
 
 </body>
 

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import zeniware.admin.codeman.service.CodeManService;
 import zeniware.admin.codeman.vo.CommonCode;
 import zeniware.admin.codeman.vo.CommonGroup;
+import zeniware.common.login.MemberInfo;
 
 @Controller
 public class CodeManController {
@@ -27,24 +29,30 @@ public class CodeManController {
 
   /*********************
    * Public Procedures
-   */
+   *********************/
   @RequestMapping("/admin/preference/codeMain")
-  public String redirectCodeMain(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-    
-    model.put("groupId", paramMap.get("groupId"));
+  public String requestCodeMain(
+    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+
+    try {
+      model.put("currentUser", auth.getPrincipal());
+      model.put("groupId", paramMap.get("groupId"));
+      System.out.println("entitlement: " + ((MemberInfo)auth.getPrincipal()).getEntitlement());
+    } catch (Exception e) { throw e; }
     
     return "/preferenceLayout/codeMain";
   }
   
   @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.GET)
-  public String setSingleCodeForm(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  public String requestSingleCodeForm(
+    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
 
     try {
-      String groupId = (String)paramMap.get("groupId");
-      String codeId = (String)paramMap.get("codeId");
+      String paramGroupId = (String)paramMap.get("groupId");
+      String paramCodeId = (String)paramMap.get("codeId");
       
-      model.put("orgCodeId", codeId);
-      model.put("commonCode", (codeId == null) ? this.codeMaker(groupId) : this.codeMaker(paramMap));
+      model.put("currentUser", auth.getPrincipal());
+      model.put("commonCode", (paramCodeId == null) ? this.codeMaker(paramGroupId) : this.codeMaker(paramMap));
       
     } catch (Exception e) { throw e; }
 
@@ -52,12 +60,10 @@ public class CodeManController {
   }
   
   @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.POST)
-  public String setSingleCodeSubmit(@ModelAttribute CommonCode commonCode, ModelMap model) throws Throwable {
+  public String requestSingleCodeSubmit(@ModelAttribute CommonCode commonCode, ModelMap model) throws Throwable {
     
     try {
       codemanService.setSingleCode(commonCode);
-      
-      model.put("groupId", commonCode.getGroupId());
       
     } catch (Exception e) { throw e; }
     
@@ -65,8 +71,8 @@ public class CodeManController {
   }
     
   @RequestMapping("/admin/ajax/getGrouplist")
-  public void getAjaxGroupList(@RequestParam Map<String, Object> paramMap, 
-      HttpServletRequest request, HttpServletResponse response) throws Throwable {
+  public void getGroupList(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
       List<CommonGroup> list = codemanService.getGroupList();
@@ -79,7 +85,7 @@ public class CodeManController {
   }
   
   @RequestMapping("/admin/ajax/getCodelist")
-  public void getAjaxCodelist(@RequestParam Map<String, Object> paramMap, 
+  public void getCodelist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     if (paramMap.isEmpty()) return;
@@ -95,7 +101,7 @@ public class CodeManController {
   }
   
   @RequestMapping("/admin/ajax/getSingleCodeExists")
-  public void getAjaxSingleCodeExists(@RequestParam Map<String, Object> paramMap, 
+  public void getSingleCodeExists(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
@@ -109,7 +115,7 @@ public class CodeManController {
   }
   
   @RequestMapping("/admin/ajax/deleteCodelist")
-  public void deleteAjaxCodelist(@RequestParam Map<String, Object> paramMap, 
+  public void deleteCodelist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
@@ -130,7 +136,7 @@ public class CodeManController {
   
   /*********************
    * Private Procedures
-   */
+   *********************/
   private CommonCode codeMaker(String groupID) {
     
     return new CommonCode(groupID);

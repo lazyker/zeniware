@@ -91,25 +91,19 @@
 
 	$(document).ready(function() {
 		
+		toastrInit();
+		
 		var msg01 = "공통코드 삭제";
 		var msg02 = "삭제하시겠습니까?";
 		var msg03 = "확인";
 		var msg04 = "취소";
 		var msg05 = "변경할 코드그룹을 선택하세요.";
 		var msg06 = "삭제할 코드그룹을 선택하세요.";
-		var msg07 = "코드그룹을 먼저 선택하세요.";
-		var msg08 = "변경할 코드를 선택하세요.";
-		var msg09 = "변경할 코드를 하나만 선택하세요."
-		var msg10 = "최소 1개 이상의 코드를 선택하세요.";
-		
-		toastr.options.closeButton = true;
-		toastr.options.positionClass = "toast-top-full-width";
-		
-		/* Modal Dialog Config */
-		$("#modl h4").html(msg01);
-		$("#modlBody").html(msg02);
-		$("#btnOk").html(msg03);
-		$("#btnCancel").html(msg04);
+		var msg07 = "등록된 코드가 있을 경우 코드그룹을 삭제할 수 없습니다."
+		var msg08 = "코드그룹을 먼저 선택하세요.";
+		var msg09 = "변경할 코드를 선택하세요.";
+		var msg10 = "변경할 코드를 하나만 선택하세요."
+		var msg11 = "최소 1개 이상의 코드를 선택하세요.";
 		
 		/* Grouplist Data Binding */
 		$('#tblGroup').dataTable({
@@ -160,6 +154,7 @@
 			
 			if (selData.length == 0) {
 				toastr.error("<div align='center'><b>" + msg05 + "</b></div>", null);
+				
 			} else {
 				$(location).prop('href', 'codeNew?groupId=00000&codeId=' + selData[0].groupId);
 			}
@@ -171,9 +166,17 @@
 			
 			if (selData.length == 0) {
 				toastr.error("<div align='center'><b>" + msg06 + "</b></div>", null);
+				
 			} else {
-				jQuery("#modl").modal('show', { backdrop: 'fade' });
-				$("#btnOk").addClass('deleteGroup');
+				var selChildData = $('#tblCode').DataTable().rows().data();
+				
+				if (selChildData.length > 0) {
+					toastr.error("<div align='center'><b>" + msg07 + "</b></div>", null);
+					
+				} else {
+	 				modalInit(true, '그룹 삭제', '코드그룹을 삭제하시겠습니까?', '확인', '취소');
+	 				$("#btnOk").addClass('deleteGroup');
+				}
 			}
 		});
 		
@@ -182,7 +185,8 @@
 			var selData = $("#tblGroup").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {
-				toastr.error("<div align='center'><b>" + msg07 + "</b></div>", null);
+				toastr.error("<div align='center'><b>" + msg08 + "</b></div>", null);
+				
 			} else {
 				$(location).prop('href', 'codeNew?groupId=' + selData[0].groupId);
 			}
@@ -193,9 +197,11 @@
 			var selData = $("#tblCode").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {				
-				toastr.error("<div align='center'><b>" + msg08 + "</b></div>", null);
-			} else if (selData.length > 1) {
 				toastr.error("<div align='center'><b>" + msg09 + "</b></div>", null);
+				
+			} else if (selData.length > 1) {
+				toastr.error("<div align='center'><b>" + msg10 + "</b></div>", null);
+				
 			} else {
 				$(location).attr('href', 'codeNew?groupId=' + selData[0].groupId + '&codeId=' + selData[0].codeId);
 			}
@@ -206,10 +212,11 @@
 			var selData = $("#tblCode").DataTable().rows(".selected").data();
 			
 			if (selData.length > 0) {
-				jQuery('#modl').modal('show', {backdrop: 'fade'});
+				modalInit(true, msg01, msg02, msg03, msg04);
 				$("#btnOk").addClass('deleteCode');
+				
 			} else {
-				toastr.error("<div align='center'><b>" + msg10 + "</b></div>", null);
+				toastr.error("<div align='center'><b>" + msg11 + "</b></div>", null);
 			}
 		});
 		
@@ -222,7 +229,7 @@
 					url: "../ajax/deleteCodelist", 
 					data: { codelist: createJsonGrouplist() }, 
 					success: function(data) {
-						$("#modl").modal("hide");
+						modalInit(false);
 						$("#tblGroup").DataTable().ajax.url('../ajax/getGrouplist').load();
 					}
 				});
@@ -233,7 +240,7 @@
 					url: "../ajax/deleteCodelist", 
 					data: { codelist: createJsonCodelist() }, 
 					success: function(data) {
-						$("#modl").modal("hide");
+						modalInit(false);
 						$("#tblCode").DataTable().rows(".selected").remove().draw(false);
 					} 
 				});
@@ -246,14 +253,14 @@
 			var position = tbl.fnGetPosition(this);
 			var selectedGroupId = tbl.fnGetData(position).groupId;
 			
-			$("#tblGroup").DataTable().$('tr.selected').removeClass('selected');
+			$('#tblGroup').DataTable().$('tr.selected').removeClass('selected');
 			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');			
 
-			$("#tblCode").DataTable().ajax.url('../ajax/getCodelist?groupId=' + selectedGroupId).load();
+			$('#tblCode').DataTable().ajax.url('../ajax/getCodelist?groupId=' + selectedGroupId).load();
 		});
 		
 		/* 코드 선택 */
-		$("#tblCode tbody").on('click', 'tr', function() {
+		$('#tblCode tbody').on('click', 'tr', function() {
 			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
 		});
 		
@@ -264,6 +271,7 @@
 			
 			jsonItem["groupId"] = "00000";
 			jsonItem["codeId"] = $("#tblGroup").DataTable().rows(".selected").data()[0].groupId;
+			
 			jsonObj.push(jsonItem);
 			
 			return JSON.stringify(jsonObj);
@@ -273,7 +281,7 @@
 		function createJsonCodelist() {
 			var jsonObj = [];
 			
-			$("#tblCode").DataTable().rows(".selected").data().each(function(selData) {
+			$('#tblCode').DataTable().rows(".selected").data().each(function(selData) {
 				var jsonItem = {};
 				
 				jsonItem["groupId"] = selData.groupId;

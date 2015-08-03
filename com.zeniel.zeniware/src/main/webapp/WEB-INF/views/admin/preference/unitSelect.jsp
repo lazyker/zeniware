@@ -91,7 +91,7 @@
 				toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
 			} else {
 				console.log(selData[0].compId);
-				$(location).prop('href', 'unitMain?compId=' + selData[0].compId);
+				$(location).prop('href', './unitMain?compId=' + selData[0].compId);
 			}
 		});
 		
@@ -103,7 +103,7 @@
 				toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
 			} else {
 				console.log(selData[0].compId);
-				$(location).prop('href', 'unitClosedDept?compId=' + selData[0].compId);
+				$(location).prop('href', './unitClosedDept?compId=' + selData[0].compId);
 			}
 		});
 		
@@ -114,7 +114,7 @@
 			if (selData.length == 0) {
 				toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
 			} else {
-				$(location).prop('href', 'unitDeletedUser?compId=' + selData[0].compId);
+				$(location).prop('href', './unitResignedUser?compId=' + selData[0].compId);
 			}
 		});
 

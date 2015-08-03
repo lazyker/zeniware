@@ -11,7 +11,6 @@
 	<resultMap type="zeniware.admin.codeman.vo.CommonCode" id="commonCodeResultMap">
 		<id column="GROUP_ID" property="groupId" />
 		<id column="CODE_ID" property="codeId" />
-		<result column="ORG_CODE_ID" property="orgCodeId" />
  		<result column="CODE_NM_KO" property="codeNameKo" />
 		<result column="CODE_NM_EN" property="codeNameEn" />
 		<result column="CODE_NM_ZH" property="codeNameZh" />

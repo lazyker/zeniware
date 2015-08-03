@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.admin.pluginman.service.PluginManService;
 import zeniware.admin.pluginman.vo.SelectOption;
+import zeniware.admin.pluginman.vo.TreeNode;
 
 @Controller
 public class PluginManController {
@@ -22,11 +23,25 @@ public class PluginManController {
   PluginManService pluginmanService;
   
   @RequestMapping("/admin/ajax/getSboxCodelist")
-  public void getAjaxSboxContent(@RequestParam Map<String, Object> paramMap, 
+  public void getSboxCodelist(@RequestParam Map<String, Object> paramMap, 
       HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
       List<SelectOption> list = pluginmanService.getSboxCodeList(paramMap);
+      
+      ObjectMapper mapper = new ObjectMapper();
+      response.setContentType("application/json");
+      mapper.writeValue(response.getOutputStream(), list);
+      
+    } catch (Exception e) { throw e; }
+  }
+  
+  @RequestMapping("/admin/ajax/getNodelist")
+  public void getTreeNodelist(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {
+      List<TreeNode> list = pluginmanService.getTreeNodeList(paramMap);
       
       ObjectMapper mapper = new ObjectMapper();
       response.setContentType("application/json");

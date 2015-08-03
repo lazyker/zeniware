@@ -1,15 +1,13 @@
 package zeniware.admin.unitman.vo;
 
-import java.sql.Date;
-
 public class Company {
   
   private String compId;
   private String compName;
   private int sortOrder;
-  private Date regDate;
-  private Date modDate;
-  private Date delDate;
+  private String regDate;
+  private String modDate;
+  private String delDate;
   
   public String getCompId() {
     return this.compId;
@@ -24,7 +22,7 @@ public class Company {
   }
   
   public void setCompName(String compName) {
-    this.compName = compName;
+    this.compName = compName; 
   }
   
   public int getSortOrder() {
@@ -35,27 +33,27 @@ public class Company {
     this.sortOrder = sortOrder;
   }
   
-  public Date getRegDate() {
+  public String getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(Date regDate) {
+  public void setRegDate(String regDate) {
     this.regDate = regDate;
   }
   
-  public Date getModDate() {
+  public String getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(Date modDate) {
+  public void setModDate(String modDate) {
     this.modDate = modDate;
   }
   
-  public Date getDelDate() {
+  public String getDelDate() {
     return this.delDate;
   }
   
-  public void setDelDate(Date delDate) {
+  public void setDelDate(String delDate) {
     this.delDate = delDate;
   }
 

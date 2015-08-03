@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import zeniware.admin.pluginman.dao.PluginManDao;
 import zeniware.admin.pluginman.service.PluginManService;
 import zeniware.admin.pluginman.vo.SelectOption;
+import zeniware.admin.pluginman.vo.TreeNode;
 
 @Service
 public class PluginManServiceImpl implements PluginManService {
@@ -20,4 +21,10 @@ public class PluginManServiceImpl implements PluginManService {
   public List<SelectOption> getSboxCodeList(Map<String, Object> paramMap) {
     return pluginmanDao.getSboxCodeList(paramMap);
   }
+  
+  @Override
+  public List<TreeNode> getTreeNodeList(Map<String, Object> paramMap) {
+    return pluginmanDao.getTreeNodeList(paramMap);
+  }
+  
 }

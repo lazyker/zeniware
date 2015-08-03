@@ -3,16 +3,25 @@ package zeniware.admin.unitman.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import zeniware.admin.unitman.vo.Company;
-import zeniware.admin.unitman.vo.TreeNode;
+import zeniware.admin.unitman.vo.Department;
 import zeniware.admin.unitman.vo.User;
 
 public interface UnitManService {
   
-  public List<TreeNode> getTreeNodeList(Map<String, Object> paramMap);
-  
   public List<Company> getCompList(Map<String, Object> paramMap);
   
   public List<User> getUserList(Map<String, Object> paramMap);
+  
+  public Department getSingleDept(Map<String, Object> paramMap);
+
+  public User getSingleUser(Map<String, Object> paramMap);
+  
+  public int setSingleUser(User user);
+  
+  @Transactional(value="transactionManager")
+  public int resignUserList(List<User> userlist);
 
 }

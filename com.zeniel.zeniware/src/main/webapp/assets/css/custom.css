@@ -11,6 +11,14 @@
 		border-color: #63b026
 	}
 	
+	table.dataTable th, table.dataTable td {
+		min-width: 50px;
+		max-width: 350px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
 	/* page-title customized */
 	.page-container .main-content .page-title .title-env .title {
 		font-size: 22px

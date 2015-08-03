@@ -2,27 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="admin.unitman">
-
-	<resultMap id="treeNodeResultMap" type="zeniware.admin.unitman.vo.TreeNode">
-		<id column="ID" property="id" />
-		<result column="PARENT" property="parent" />
-		<result column="TEXT" property="text" />
-		<result column="ICOM" property="icon" />
-	</resultMap>
 	
 	<resultMap id="compResultMap" type="zeniware.admin.unitman.vo.Company">
 		<id column="COMP_ID" property="compId" />
 		<result column="COMP_NM" property="compName" />
 		<result column="SORT_ORDER" property="sortOrder" />
+		<result column="USE_YN" property="useYn" />
 		<result column="REG_DATE" property="regDate" />
 		<result column="MOD_DATE" property="modDate" />
 		<result column="DEL_DATE" property="delDate" />
+	</resultMap>
+	
+	<resultMap id="deptResultMap" type="zeniware.admin.unitman.vo.Department">
+		<id column="DEPT_ID" property="deptId" />
+		<id column="COMP_ID" property="compId" />
+		<result column="DEPT_NM" property="deptName" />
+		<result column="SIMPLE_NM" property="simpleName" />
+		<result column="PARENT_DEPT_ID" property="parentDeptId" />
+		<result column="PARENT_DEPT_NM" property="parentDeptName" />
+		<result column="DEPT_LEVEL" property="deptLevel" />
+		<result column="SORT_ORDER" property="sortOrder" />
+		<result column="MAIL_ID" property="mailId" />
+		<result column="MANAGER_ID" property="managerId" />
+		<result column="USE_YN" property="useYn" />
+		<result column="ACTIVATE_YN" property="activateYn" />
+		<result column="REG_DATE" property="regDate" />
+		<result column="MOD_DATE" property="modDate" />
+		<result column="DEL_DATE" property="delDAte" />
 	</resultMap>
 	
 	<resultMap id="userResultMap" type="zeniware.admin.unitman.vo.User">
 		<id column="USER_ID" property="userId" />
 	  <id column="COMP_ID" property="compId" />
 	  <result column="DEPT_ID" property="deptId" />
+	  <result column="DEPT_NM" property="deptName" />
 	  <result column="USER_NM" property="userName" />
 	  <result column="EMP_NUMBER" property="empNo" />
 	  <result column="MAIL_ID" property="mailId" />
@@ -33,10 +46,13 @@
 	  <result column="POSTCODE" property="postCode" />
 	  <result column="ADDRESS1" property="address1" />
 	  <result column="ADDRESS2" property="address2" />
+	  <result column="JOIN_DATE" property="joinDate" />
+	  <result column="RESIGN_DATE" property="resignDate" />
 	  <result column="PHOTO_FILE_ID" property="photoFileId" />
 	  <result column="SIGN_FILE_ID" property="signFileId" />
 	  <result column="SECURITY_LEVEL" property="securityLevel" />
 	  <result column="JOB_TITLE_CD" property="jobTitleCode" />
+	  <result column="JOB_TITLE_NM" property="jobTitleName" />
 	  <result column="JOB_GRADE_CD" property="jobGradeCode" />
 	  <result column="JOB_ROLE_CD" property="jobRoleCode" />
 	  <result column="ENTITLEMENT" property="entitlement" />
@@ -51,18 +67,40 @@
 	  <result column="ACTIVATE_YN" property="activateYn" />
 	  <result column="REG_DATE" property="regDate" />
 	  <result column="MOD_DATE" property="modDate" />
+	  <result column="DEL_DATE" property="delDate" />
 	</resultMap>
-	
-	<select id="getTreeNodeList" parameterType="map" resultMap="treeNodeResultMap">
-		CALL UP_UNITMAN_NODE_LIST(#{compId});
-	</select>
 	
 	<select id="getCompList" parameterType="map" resultMap="compResultMap">
 		CALL UP_UNITMAN_COMP_LIST();
 	</select>
 	
 	<select id="getUserList" parameterType="map" resultMap="userResultMap">
-		CALL UP_UNITMAN_USER_LIST(#{compId}, #{deptId}, #{keyword});
+		CALL UP_UNITMAN_USER_LIST(#{compId}, #{deptId}, #{resigned}, #{keyword});
 	</select>
+	
+	<select id="getSingleComp" parameterType="map" resultMap="compResultMap">
+		CALL UP_UNITMAN_COMP_ONE(#{compId});
+	</select>
+	
+	<select id="getSingleDept" parameterType="map" resultMap="deptResultMap">
+		CALL UP_UNITMAN_DEPT_ONE(#{compId}, #{deptId});
+	</select>
+	
+	<select id="getSingleUser" parameterType="map" resultMap="userResultMap">
+		CALL UP_UNITMAN_USER_ONE(#{compId}, #{userId});
+	</select>
+	
+	<insert id="setSingleUser" parameterType="map">
+		CALL UP_UNITMAN_USER_SET(
+			#{userId}, #{compId}, #{deptId}, #{userName}, #{empNumber}, #{mailId}, #{officePhone}, #{homePhone}, 
+			#{fax}, #{mobile}, #{postCode}, #{address1}, #{address2}, #{photoFileId}, #{signFileId}, #{securityLevel}, 
+			#{jobTitleCode}, #{jobGradeCode}, #{jobRoleCode}, #{joinDate}, #{resignDate}, #{entitlement}, #{password}, 
+			#{description}, #{birthDate}, #{useLunarYn}, #{languageCode}, #{sortOrder}, #{activateYn} 
+		);
+	</insert>
+	
+	<update id="resignSingleUser" parameterType="map">
+		CALL UP_UNITMAN_USER_RESIGNED(#{compId}, #{userId}, #{useYn});
+	</update>
 
 </mapper>

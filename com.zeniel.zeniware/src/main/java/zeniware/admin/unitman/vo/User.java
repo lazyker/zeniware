@@ -1,16 +1,21 @@
 package zeniware.admin.unitman.vo;
 
-import java.sql.Date;
+import java.util.Collection;
 
-//import java.sql.Date;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-public class User {
+public class User implements UserDetails {
+  
+  private static final long serialVersionUID = 1L;
   
   private String userId;
   private String deptId;
+  private String deptName;
   private String compId;
   private String userName;
-  private String empNo;
+  private String password;
+  private String empNumber;
   private String mailId;
   private String officePhone;
   private String homePhone;
@@ -19,24 +24,37 @@ public class User {
   private int postCode;
   private String address1;
   private String address2;
+  private String joinDate;
+  private String resignDate;
+  private boolean useLunarYn;
+  private String birthDate;
   private String photoFileId;
   private String signFileId;
   private int securityLevel;
   private String jobTitleCode;
+  private String jobTitleName;
   private String jobGradeCode;
   private String jobRoleCode;
-  private int entitlement;
-  private String managerId;
-  private String password;
-  private String description;
-  private Date birthDate;
-  private boolean useLunarYn;
+  private String entitlement;
+  private String description;  
   private String languageCode;
   private int sortOrder;
   private boolean useYn;
   private boolean activateYn;
-  private Date regDate;
-  private Date modDate;
+  private String regDate;
+  private String modDate;
+  private String delDate;
+  
+  public User() { }
+  
+  public User(String compId, String deptId) {
+    this.compId = compId;
+    this.deptId = deptId;
+    this.activateYn = true;
+    this.useLunarYn = false;
+    this.securityLevel = 10;
+    this.sortOrder = 0;
+  }
   
   public String getUserId() {
     return this.userId;
@@ -52,6 +70,14 @@ public class User {
   
   public void setDeptId(String deptId) {
     this.deptId = deptId;
+  }
+  
+  public String getDeptName() {
+    return this.deptName;
+  }
+  
+  public void setDeptName(String deptName) {
+    this.deptName = deptName;
   }
   
   public String getCompId() {
@@ -70,12 +96,20 @@ public class User {
     this.userName = userName;
   }
   
-  public String getEmpNo() {
-    return this.empNo;
+  public String getPassword() {
+    return this.password;
   }
   
-  public void setEmpNo(String empNo) {
-    this.empNo = empNo;
+  public void setPassword(String password) {
+    this.password = password;
+  }
+  
+  public String getEmpNumber() {
+    return this.empNumber;
+  }
+  
+  public void setEmpNumber(String empNumber) {
+    this.empNumber = empNumber;
   }
   
   public String getMailId() {
@@ -142,6 +176,22 @@ public class User {
     this.address2 = address2;
   }
   
+  public String getJoinDate() {
+    return this.joinDate;
+  }
+  
+  public void setJoinDate(String joinDate) {
+    this.joinDate = joinDate;
+  }
+  
+  public String getResignDate() {
+    return this.resignDate;
+  }
+  
+  public void setResignDate(String resignDate) {
+    this.resignDate = resignDate;
+  }
+  
   public String getPhotoFileId() {
     return this.photoFileId;
   }
@@ -174,6 +224,14 @@ public class User {
     this.jobTitleCode = jobTitleCode;
   }
   
+  public String getJobTitleName() {
+    return this.jobTitleName;
+  }
+  
+  public void setJobTitleName(String jobTitleName) {
+    this.jobTitleName = jobTitleName;
+  }
+  
   public String getJobGradeCode() {
     return this.jobGradeCode;
   }
@@ -190,28 +248,12 @@ public class User {
     this.jobRoleCode = jobRoleCode;
   }
   
-  public int getEntitlement() {
+  public String getEntitlement() {
     return this.entitlement;
   }
   
-  public void setEntitlement(int entitlement) {
+  public void setEntitlement(String entitlement) {
     this.entitlement = entitlement;
-  }
-  
-  public String getManagerId() {
-    return this.managerId;
-  }
-  
-  public void setManagerId(String managerId) {
-    this.managerId = managerId;
-  }
-  
-  public String getPassword() {
-    return this.password;
-  }
-  
-  public void setPassword(String password) {
-    this.password = password;
   }
   
   public String getDescription() {
@@ -222,11 +264,11 @@ public class User {
     this.description = description;
   }
   
-  public Date getBirthDate() {
+  public String getBirthDate() {
     return this.birthDate;
   }
   
-  public void setBirthDate(Date birthDate) {
+  public void setBirthDate(String birthDate) {
     this.birthDate = birthDate;
   }
   
@@ -269,20 +311,64 @@ public class User {
     this.activateYn = activateYn;
   }
   
-  public Date getRegDate() {
+  public String getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(Date regDate) {
+  public void setRegDate(String regDate) {
     this.regDate = regDate;
   }
   
-  public Date getModDate() {
+  public String getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(Date modDate) {
+  public void setModDate(String modDate) {
     this.modDate = modDate;
+  }
+  
+  public String getDelDate() {
+    return this.delDate;
+  }
+  
+  public void setDelDate(String delDate) {
+    this.delDate = delDate;
+  }
+
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public String getUsername() {
+    // TODO Auto-generated method stub
+    return getUserId();
+  }
+
+  @Override
+  public boolean isAccountNonExpired() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public boolean isAccountNonLocked() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    // TODO Auto-generated method stub
+    return false;
   }
 
 }

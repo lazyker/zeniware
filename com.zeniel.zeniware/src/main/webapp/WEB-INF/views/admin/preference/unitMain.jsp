@@ -27,9 +27,9 @@
 				
 				<div class="panel-options">
 					<div class="btn-group">
-						<button class="btn btn-gray btn-sm" id="btnGroupAdd">추가</button>
-						<button class="btn btn-white btn-sm" id="btnGroupEdit">변경</button>
-						<button class="btn btn-gray btn-sm" id="btnGroupDelete">삭제</button>
+						<button class="btn btn-gray btn-sm" id="btnDeptAdd">추가</button>
+						<button class="btn btn-white btn-sm" id="btnDeptEdit">변경</button>
+						<button class="btn btn-gray btn-sm" id="btnDeptDelete">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -60,13 +60,19 @@
 			</div>
 			
 			<div class="panel-body">
-				<table id="tblUser" class="table table-small-font table-striped table-hover">
+				<div id="draggable" class="ui-widget-content">
+				  <p>Drag me around</p>
+				</div>
+				<table id="tblUser" class="table table-small-font middle-align table-hover">
 					<thead>
 						<tr>
+							<th class="no-sorting hidden-xs hidden-sm"></th>
+							<th>회사ID</th>
+							<th>부서명</th>
 							<th>성명</th>
 							<th>ID</th>
 		 					<th>직위</th>
-							<th>메일</th>
+							<th class="hidden-xs hidden-sm">메일</th>
 						</tr>
 					</thead>
 				</table>
@@ -81,14 +87,14 @@
 
 	$(document).ready(function() {
 		
+		toastrInit();
+		
 		var paramCompId = "${compId}";
-		var paramDeptId = "${deptId}";
 		
 		var msg01 = "검색어를 입력하세요.";
 		var msg02 = "부서를 먼저 선택하세요.";
-		
-		toastr.options.closeButton = true;
-		toastr.options.positionClass = "toast-top-full-width";
+		var msg03 = "편집할 사용자를 선택하세요.";
+		var msg04 = "사용자를 한 명만 선택하세요.";
 		
 		/* jsTree Data Binding */
 		$("#jstree_demo_div").jstree({
@@ -98,6 +104,23 @@
 					data: { compId: paramCompId }
 				}
 			}
+		});
+		
+		/* userlist Data Binding */
+		var tbl = $('#tblUser').DataTable({
+			ajax: { "url": "../ajax/getUserlist", "dataSrc": "" }, 
+			deferRender: true, 
+			pagingType: "simple_numbers",  
+			aoColumns: [
+				{ "mRender": function(data, type, full) { return rendering(data, type, full); } }, 
+				{ "mData": "compId", "visible": false }, 
+        { "mData": "deptName" }, 
+      	{ "mData": "userName", "sClass": "user-name" }, 
+      	{ "mData": "userId" }, 
+      	{ "mData": "jobTitleName" }, 
+      	{ "mData": "mailId" }
+      ],  
+ 			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 		});
 		
 		/* jsTree Node Click */
@@ -115,27 +138,28 @@
 				$('#tblUser').DataTable().search("").draw();
 			}
 			
-			$('#tblUser').DataTable().ajax.url('../ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId).load();			
+			tbl.ajax.url('../ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId + '&resigned=0').load();			
 		});
 		
-		/* userlist Data Binding */
-		$('#tblUser').DataTable({
-			ajax: { "url": "../ajax/getUserlist", "dataSrc": "" }, 
-			deferRender: true, 
-			pagingType: "simple_numbers", 
-			aoColumns: [
-      	{ "mData": "userName" }, 
-      	{ "mData": "userId" }, 
-      	{ "mData": "jobTitleCode" }, 
-      	{ "mData": "mailId" }
-      ], 
- 			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
-		});
+		var rendering = function(data, type, full) {
+			var result = "";
+			
+			if (type == 'display') {
+				result += "<a href='#'>";
+				result += "<img src='${pageContext.request.contextPath}";
+				result += "/assets/images/user-3.png' class='img-circle' alt='user-pic' />";
+				result += "</a>";
+			}
+			
+			return result;
+		};
 		
 		/* 사용자 선택 */
-		$("#tblUser tbody").on('click', 'tr', function() {
+		$('#tblUser tbody').on('click', 'tr', function() {
 			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
 		});
+		
+		$('.ui-widget-content').draggable();
 		
 		/* 사용자 검색 */
 		$('.dataTables_filter input').unbind().keyup(function(e) {
@@ -143,7 +167,7 @@
 				if ($(this).val().length == 0) {
 					toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
 				} else {
-					var strUrl = '../ajax/getUserlist?compId=' + paramCompId + '&keyword=' + $(this).val();
+					var strUrl = '../ajax/getUserlist?compId=' + paramCompId + '&resigned=0&keyword=' + $(this).val();
 					$('#tblUser').DataTable().ajax.url(strUrl).load();
 				}
 			}
@@ -160,9 +184,104 @@
 				var selDeptId = selNode[0].substr(3, 4);
 				var selDeptName = $('#' + selNode[0]).text();
 				
-				$(location).prop('href', 'unitAddUser?compId=' + selCompId + '&deptId=' + selDeptId + '&deptName=' + selDeptName);
+				$(location).prop('href', 'unitNewUser?compId=' + selCompId + '&deptId=' + selDeptId + '&deptName=' + selDeptName);
 			}
 		});
+		
+		/* 사용자 변경 */
+		$('#btnUserEdit').on('click', function() {
+			var selRow = $('#tblUser').DataTable().rows('.selected').data();
+			
+			if (selRow.length == 0) {				
+				toastr.error("<div align='center'><b>" + msg03 + "</b></div>", null);
+				
+			} else if (selRow.length > 1) {
+				toastr.error("<div align='center'><b>" + msg04 + "</b></div>", null);
+				
+			} else {
+				var sUrl = './unitNewUser?compId=' + selRow[0].compId + '&userId=' + selRow[0].userId + '&deptName=' + selRow[0].deptName;
+				$(location).attr('href', sUrl);
+			}
+		});
+		
+		/* 사용자 삭제(Soft Delete) */
+		$('#btnUserDelete').on('click', function() {
+			var selRow = $('#tblUser').DataTable().rows('.selected').data();
+			
+			if (selRow.length > 0) {
+				modalInit(true, '사용자 삭제', '삭제하시겠습니까?', '확인', '취소');
+				$('#btnOk').addClass('deleteUser');
+				
+			} else {
+				toastr.error("<div align='center'><b>" + "삭제할 사용자를 선택하세요." + "</b></div>", null);
+			}
+		});
+		
+		/* 부서 추가 */
+		$('#btnDeptAdd').on('click', function() {
+			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
+			var selCompId = selNode[0].id.substr(0, 3);
+			var selDeptId = selNode[0].id.substr(3, 4);
+			var selDeptName = selNode[0].text;
+			
+			$.get('./unitNewDept?compId=' + selCompId + '&prtDeptId=' + selDeptId + '&prtDeptName=' + selDeptName, function(data) {
+				modalInit(true, '부서 추가', data, '확인', '취소');
+			});
+		});
+		
+		$('#btnDeptEdit').on('click', function() {
+			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
+			var selCompId = selNode[0].id.substr(0, 3);
+			var selDeptId = selNode[0].id.substr(3, 4);
+			
+			$.get('./unitNewDept?compId=' + selCompId + '&deptId=' + selDeptId, function(data) {
+				modalInit(true, '부서 변경', data, '확인', '취소');
+			});
+		});
+		
+		/* 삭제 진행 */
+		$('#btnOk').on('click', function() {
+			if ($(this).hasClass("deleteDept")) {
+// 				$.ajax({
+// 					dataType: "json", 
+// 					type: "POST", 
+// 					url: "../ajax/deleteCodelist", 
+// 					data: { codelist: createJsonGrouplist() }, 
+// 					success: function(data) {
+// 						$("#modl").modal("hide");
+// 						$("#tblGroup").DataTable().ajax.url('../ajax/getGrouplist').load();
+// 					}
+// 				});
+			} else {
+				$.ajax({
+					dataType: "json", 
+					type: "POST", 
+					url: "../ajax/resignUserlist", 
+					data: { userlist: createJsonUserlist() }, 
+					success: function(data) {
+						modalInit(false);
+						$('#tblUser').DataTable().rows(".selected").remove().draw(false);
+					} 
+				});
+			}
+		});
+		
+		/* 사용자 Json Object 생성 */
+		function createJsonUserlist() {
+			var jsonObj = [];
+			
+			$('#tblUser').DataTable().rows(".selected").data().each(function(selData) {
+				var jsonItem = {};
+				
+				jsonItem["compId"] = selData.compId;
+				jsonItem["userId"] = selData.userId;
+				jsonItem["useYn"] = 0;
+				
+				jsonObj.push(jsonItem);
+			});
+			
+			return JSON.stringify(jsonObj);
+		}
 
 	});
 
