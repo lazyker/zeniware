@@ -20,7 +20,7 @@
 		<result column="MAST_GUBUN"		property="mastGubun" />
 		<result column="JOIN_YN"		property="joinYn" />
 		<result column="TYPE_GUBUN"		property="typeGubun" />
-		<result column="TOTAL_CNT"		property="talNumCnt" />
+		<result column="TOTAL_NUM"		property="talNum" />
 		<result column="USER_NAME"		property="userNm" />
 	</resultMap>
 
@@ -41,15 +41,6 @@
 
 	<!-- 커뮤니티 생성 전채(사용자 조회 시) 조회 -->
 	<select id="comtUser.getComtAllListData" parameterType="map" resultMap="comtVoMap">
-		<!-- SELECT
-			FC_COMT_ID, FC_ADM_SEQ, CUMT_NM, CUMT_COMMENT, ADM_ACT_YN, OPEN_YN,
-			REG_DATE, REG_USER_ID
-		FROM
-			FC_CUMT_INFO
-		WHERE 1 = 1
-			AND ADM_ACT_YN = #{admActYn, jdbcType=VARCHAR}
-			AND COMP_ID = #{compId, jdbcType=VARCHAR}
-		ORDER BY CUMT_NM  ASC -->
 		SELECT
 			CI.FC_COMT_ID, CI.FC_ADM_SEQ, CI.COMP_ID, CI.CUMT_NM, CI.CUMT_COMMENT, CI.ADM_ACT_YN,
 			CI.OPEN_YN, CI.REG_DATE, CI.MOD_DATE, CI.REG_USER_ID, CI.MOD_USER_ID,
@@ -63,11 +54,11 @@
 					AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
 			) AS USER_NAME,
 			(
-				SELECT COUNT(USER_ID) FROM FC_CUMT_ADD_INFO A
+				SELECT COUNT(USER_ID) + '명' FROM FC_CUMT_ADD_INFO A
 				WHERE A.FC_COMT_ID = CI.FC_COMT_ID
 					AND A.TYPE_GUBUN = 'C'
 					AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
-			) AS TOTAL_CNT,
+			) AS TOTAL_NUM,
 			(
 				SELECT JOIN_YN FROM FC_CUMT_ADD_INFO A
 				WHERE A.FC_COMT_ID = CI.FC_COMT_ID

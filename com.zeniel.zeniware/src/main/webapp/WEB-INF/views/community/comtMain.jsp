@@ -105,12 +105,36 @@ $(document).ready(function() {
 			{ "mData": "fcComtId", "visible" : false },
 			{ "mData": "cumtNm" },
 			{ "mData": "userNm" },
-			{ "mData": "talNumCnt" },
+			{ "mData": "talNum" },
 			{ "mData": "joinYn" },
 			{ "mData": "regDate" }
 		],
-		sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
+		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 //		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 	});
+
+	$("#comtAllList tbody").on('click', "tr td", function() {
+		alert("호출11");
+	});
 });
+
+/* ***References***
+DOM positioning: 
+	http://datatables.net/examples/basic_init/dom.html
+	
+Alternative pagination: 
+	http://datatables.net/examples/basic_init/alt_pagination.html#
+	
+Button options: 
+	http://datatables.net/extensions/tabletools/button_options
+	
+Flat array data source: 
+	http://datatables.net/examples/ajax/custom_data_flat.html
+	
+Deferred rendering for speed: 
+	http://datatables.net/examples/ajax/defer_render.html
+	
+Making row clickable except for the last column: 
+	http://stackoverflow.com/questions/7525120
+*/
 </script>
