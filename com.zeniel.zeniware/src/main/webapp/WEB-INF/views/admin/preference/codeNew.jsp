@@ -23,7 +23,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="codeId">코드ID</label>
 				<div class="col-sm-10">
-					<input type="hidden" name="orgCodeId" value="${orgCodeId}">
+					<input type="hidden" name="orgCodeId" value="${commonCode.codeId}">
 					<input type="text" class="form-control" name="codeId" id="txtCodeId" 
 						value="${commonCode.codeId}" data-validate="required,maxlength[5]" placeholder="CodeID">
 				</div>
@@ -115,34 +115,42 @@
 	
 	$(document).ready(function() {
 		
+		toastrInit();
+		
 		var useYn = ${commonCode.useYn};
 		$("#chkUseYn").prop('checked', useYn);
 		
 		$("#btnClose").click(function() {
-			$(location).prop('href', './codeMain');
+			var curGroupId = "${commonCode.groupId}";
+			$(location).prop('href', './codeMain?groupId=' + curGroupId);
+			
 			return false;
 		});
 		
-		$("#btnSave").click(function(event) {
-			$.ajax({
-				url: '../ajax/getSingleCodeExists', 
-				type: 'POST', 
-				data: {
-					groupId: $("#txtGroupId").val(), 
-					codeId: $("#txtCodeId").val() 
-				}, 
-				dataType: 'json'
-			}).done(function(data) {
-// 				if (data > 0) {
-// 					toastr.options.closeButton = true;
-// 					toastr.options.positionClass = "toast-top-full-width";
-// 					toastr.error("<div align='center'><b>이미 등록된 코드입니다.</b></div>", null);
-// 				}
-// 				else {
-// 					$("#frm").prop('action', 'codeNew').submit();
-// 				}
-				$("#frm").prop('action', 'codeNew').submit();
-			});
+		$("#btnSave").click(function() {
+			var orgCodeId = "${commonCode.codeId}";
+			var curCodeId = $('#txtCodeId').val();
+			var curGroupId = $('#txtGroupId').val();
+			
+			if (jQuery.isEmptyObject(orgCodeId) || curCodeId != orgCodeId) {
+				$.ajax({
+					url: '../ajax/getSingleCodeExists', 
+					type: 'POST', 
+					data: { groupId: curGroupId, codeId: curCodeId }, 
+					dataType: 'json'
+					
+				}).done(function(data) {
+					if (data > 0) {
+						toastr.error("<div align='center'><b>이미 등록된 코드입니다.</b></div>", null);
+						
+					} else {
+						$("#frm").prop('action', './codeNew').submit();
+					}
+				});
+				
+			} else {
+				$("#frm").prop('action', './codeNew').submit();
+			}
 		});
 	});
 	

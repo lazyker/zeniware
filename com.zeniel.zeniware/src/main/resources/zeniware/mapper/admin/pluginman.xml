@@ -4,12 +4,23 @@
 <mapper namespace="admin.pluginman">
 
 	<resultMap id="sboxResultMap" type="zeniware.admin.pluginman.vo.SelectOption">
-		<id column="VALUE" property="value" />
+		<id column="ID" property="id" />
 		<result column="TEXT" property="text" />
+	</resultMap>
+	
+	<resultMap id="treeNodeResultMap" type="zeniware.admin.pluginman.vo.TreeNode">
+		<id column="ID" property="id" />
+		<result column="PARENT" property="parent" />
+		<result column="TEXT" property="text" />
+		<result column="ICON" property="icon" />
 	</resultMap>
 	
 	<select id="getSboxCodeList" parameterType="map" resultMap="sboxResultMap">
 		CALL UP_PLUGINMAN_SBOX_CODE_LIST(#{groupId}, #{langCode});
+	</select>
+	
+	<select id="getTreeNodeList" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_PLUGINMAN_NODE_LIST(#{compId});
 	</select>
 	
 </mapper>

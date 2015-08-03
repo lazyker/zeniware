@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page import = "javax.servlet.ServletException" %>
+<%@ page isErrorPage = "true" %>
 
 <!DOCTYPE html>
 <html>
@@ -30,11 +32,29 @@
 		
 		<h2>
 			Error 500
-			<small>Page not found!</small>
+			<small>Error Messages</small>
 		</h2>
 		
-		<p>We did not find the page you were looking for!</p>
-		<p>You can search again or contact one of our agents to help you!</p>
+<!-- 		<p>We did not find the page you were looking for!</p> -->
+<!-- 		<p>You can search again or contact one of our agents to help you!</p> -->
+		<p><%= exception.getMessage()%></p>
+		<p><%
+			    Throwable rootCause = null;
+			    if (exception instanceof ServletException) {
+			        rootCause = ((ServletException)exception).getRootCause();
+			    } else {
+			        rootCause = exception.getCause();
+			    }
+			    if (rootCause != null) {
+			        do {
+			%>
+				예외 추적: <%= rootCause.getMessage() %><br>
+			<%
+			            rootCause = rootCause.getCause();
+			        } while(rootCause != null);
+			    }
+			%>
+	</p>
 		
 	</div>
 	

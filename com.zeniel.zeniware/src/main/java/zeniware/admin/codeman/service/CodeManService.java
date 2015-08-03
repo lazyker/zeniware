@@ -18,6 +18,7 @@ public interface CodeManService {
   
   public CommonCode getSingleCode(Map<String, Object> paramMap);
 
+  @Transactional(value="transactionManager")
   int setSingleCode(CommonCode commonCode);
   
   @Transactional(value="transactionManager")

@@ -62,6 +62,39 @@ public class ScheduleDao extends AbstractDao {
 		insert("schedule.setScheduleData", paramVo);
 	}
 	
+	/**
+	 * 일정 수정화면 데이터
+	 * @param paramVo
+	 * @return ScheduleVo
+	 */
+	public ScheduleVo scheduleModifyData(ScheduleVo paramVo) {
+		return (ScheduleVo) selectOne("schedule.scheduleModifyData", paramVo);
+	}
+	
+	/**
+	 * 일정 수정
+	 * @param paramVo
+	 */
+	public void updateScheduleData(ScheduleVo paramVo) {
+		update("schedule.updateScheduleData", paramVo);
+	}
+	
+	/**
+	 * 일정 이동
+	 * @param paramVo
+	 */
+	public void updateDropResizeSchedData(ScheduleVo paramVo) {
+		update("schedule.updateDropResizeSchedData", paramVo);
+	}
+	
+	/**
+	 * 일정 삭제
+	 * @param paramVo
+	 */
+	public void delScheduleData(ScheduleVo paramVo) {
+		update("schedule.delScheduleData", paramVo);
+	}
+	
 	
 	
 	//트랜잭션 테스트

@@ -1,7 +1,5 @@
 package zeniware.admin.unitman.vo;
 
-import java.sql.Date;
-
 public class Department {
   
   private String deptId;
@@ -9,14 +7,24 @@ public class Department {
   private String deptName;
   private String simpleName;
   private String parentDeptId;
+  private String parentDeptName;
   private int deptLevel;
   private int sortOrder;
   private String mailId;
   private String managerId;
   private boolean useYn;
   private boolean activateYn;
-  private Date regDate;
-  private Date modDate;
+  private String regDate;
+  private String modDate;
+  private String delDate;
+  
+  public Department() { }
+  
+  public Department(String compId, String parentDeptId, String parentDeptName) {
+    this.compId = compId;
+    this.parentDeptId = parentDeptId;
+    this.parentDeptName = parentDeptName;
+  }
   
   public String getDeptId() {
     return this.deptId;
@@ -56,6 +64,14 @@ public class Department {
   
   public void setParentDeptId(String parentDeptId) {
     this.parentDeptId = parentDeptId;
+  }
+  
+  public String getParentDeptName() {
+    return this.parentDeptName;
+  }
+  
+  public void setParentDeptName(String parentDeptName) {
+    this.parentDeptName = parentDeptName;
   }
   
   public int getDeptLevel() {
@@ -106,20 +122,28 @@ public class Department {
     this.activateYn = activateYn;
   }
   
-  public Date getRegDate() {
+  public String getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(Date regDate) {
+  public void setRegDate(String regDate) {
     this.regDate = regDate;
   }
   
-  public Date getModDate() {
+  public String getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(Date modDate) {
+  public void setModDate(String modDate) {
     this.modDate = modDate;
+  }
+  
+  public String getDelDate() {
+    return this.delDate;
+  }
+  
+  public void setDelDate(String delDate) {
+    this.delDate = delDate;
   }
 
 }

@@ -49,14 +49,30 @@ public class ScheduleServiceImpl implements ScheduleService {
 
 	@Override
 	public void setScheduleData(ScheduleVo paramVo) {
-		
 		scheduleDao.setScheduleData(paramVo);
 	}
 	
+	@Override
+	public ScheduleVo scheduleModifyData(ScheduleVo paramVo) {
+		return scheduleDao.scheduleModifyData(paramVo);
+	}
 	
+	@Override
+	public void updateScheduleData(ScheduleVo paramVo) {
+		scheduleDao.updateScheduleData(paramVo);
+	}
+
+	@Override
+	public void updateDropResizeSchedData(ScheduleVo paramVo) {
+		scheduleDao.updateDropResizeSchedData(paramVo);
+	}
 	
-	
-	
+	@Override
+	public void delScheduleData(ScheduleVo paramVo) {
+		scheduleDao.delScheduleData(paramVo);
+		
+	}
+
 	@Override
 	public void test(String param) throws Exception {
 		

@@ -26,6 +26,7 @@
 			<result property="startTm" column="START_TM"/>
 			<result property="endTm" column="END_TM"/>
 			<result property="apntPlc" column="APNT_PLC"/>
+			<result property="memoCont" column="MEMO_CONT"/>
 	</resultMap>
 
 	<insert id="insertTest" parameterType="String">
@@ -47,6 +48,7 @@
 		WHERE
 			COMP_ID = #{compId, jdbcType=VARCHAR}
 			AND USER_ID = #{userId, jdbcType=VARCHAR}
+			AND SHRE_YN = #{shreYn, jdbcType=VARCHAR}
 		ORDER BY REG_DATE ASC
 	</select>
 	
@@ -99,27 +101,27 @@
 			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
 	</delete>
 
-	<!-- 일정 상세 -->
+	<!-- 일정 리스트 -->
 	<select id="getScheduleList" parameterType="map" resultMap="scheduleVo">
-	SELECT T.*
-	FROM (
-		SELECT
-			SCHED_ID,
-			CLDR_ID,
-			SCHED_NM,
-			CONCAT(START_YMD,'T', LEFT(START_TM, 2), ':', RIGHT(START_TM, 2)) AS START,
-			CONCAT(END_YMD,'T', LEFT(END_TM, 2), ':', RIGHT(END_TM, 2)) AS END, 
-			SCHED_NM AS TITLE,
-			FST_FRMIGR_ID,
-			START_TM,
-			END_TM,
-			APNT_PLC
-		FROM  
-			FS_SCHED
-		WHERE 
-			START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
-		)T
-
+		SELECT T.*
+		FROM (
+			SELECT
+				SCHED_ID,
+				CLDR_ID,
+<!-- 				SCHED_NM, -->
+				CONCAT(START_YMD,'T', IFNULL(LEFT(START_TM, 2), '00'), ':', IFNULL(RIGHT(START_TM, 2), '00')) AS START,
+				CONCAT(END_YMD,'T', IFNULL(LEFT(END_TM, 2), '00'), ':', IFNULL(RIGHT(END_TM, 2), '00')) AS END, 
+				SCHED_NM AS TITLE,
+				FST_FRMIGR_ID,
+				START_TM,
+				END_TM,
+				APNT_PLC,
+				MEMO_CONT
+			FROM  
+				FS_SCHED
+			WHERE 
+				START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
+			)T
 	</select>
 	
 	<!-- 일정 등록 -->
@@ -163,5 +165,69 @@
 			#{memoCont, jdbcType=VARCHAR}
 		)
 	</insert>
+	
+	<!-- 일정 수정화면 데이터 -->
+	<select id="scheduleModifyData" parameterType="zeniware.schedule.vo.ScheduleVo" resultMap="scheduleVo">
+		SELECT
+			SCHED_ID,
+			CLDR_ID,
+			SCHED_NM,
+			START_YMD AS START,
+			END_YMD AS END,
+			FST_FRMIGR_ID,
+			START_TM,
+			END_TM,
+			APNT_PLC,
+			MEMO_CONT
+		FROM  
+			FS_SCHED
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 일정 수정 -->
+	<update id="updateScheduleData" parameterType="zeniware.schedule.vo.ScheduleVo">
+		UPDATE FS_SCHED
+		SET
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR},
+			SCHED_NM = #{schedNm, jdbcType=VARCHAR},
+			START_YMD = #{startYmd, jdbcType=VARCHAR},
+			END_YMD = #{endYmd, jdbcType=VARCHAR},
+			START_TM =  #{startTm, jdbcType=VARCHAR},
+			END_TM = #{endTm, jdbcType=VARCHAR},
+			LST_MODR_ID = #{lstModrId, jdbcType=VARCHAR},
+			MOD_DATE = NOW(),
+			APNT_PLC = #{apntPlc, jdbcType=VARCHAR},
+			MEMO_CONT = #{memoCont, jdbcType=VARCHAR}
+		WHERE 
+			SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 일정 이동 및 시간변경 수정 -->
+	<update id="updateDropResizeSchedData" parameterType="zeniware.schedule.vo.ScheduleVo">
+		UPDATE FS_SCHED
+		SET
+			START_YMD = #{startYmd, jdbcType=VARCHAR},
+			END_YMD = #{endYmd, jdbcType=VARCHAR},
+			START_TM =  #{startTm, jdbcType=VARCHAR},
+			END_TM = #{endTm, jdbcType=VARCHAR},
+			LST_MODR_ID = #{lstModrId, jdbcType=VARCHAR},
+			MOD_DATE = NOW()
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 일정 삭제 -->
+	<delete id="delScheduleData" parameterType="zeniware.schedule.vo.ScheduleVo">
+		DELETE 
+			FROM FS_SCHED
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+			AND FST_FRMIGR_ID = #{fstFrmigrId, jdbcType=VARCHAR}
+	</delete>
+	
 
 </mapper>
