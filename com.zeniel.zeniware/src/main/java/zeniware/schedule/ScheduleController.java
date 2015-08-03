@@ -79,8 +79,11 @@ public class ScheduleController {
 		
 		paramMap.put("compId", memberInfo.getCompId());
 		paramMap.put("userId", memberInfo.getUserId());
+		paramMap.put("shreYn", "N");
 		
 		List<CalendarVo> calList  = scheduleService.getCalendarList(paramMap);
+		List<CalendarVo> shareCalList  = scheduleService.getCalendarList(paramMap);
+		
 		
 		return calList;
 	}
@@ -113,7 +116,14 @@ public class ScheduleController {
 			scheduleVo.setEndTm(scheduleVo.getEndTm().replace(":", ""));
 		}
 		
-		scheduleService.setScheduleData(scheduleVo);
+		if("".equals(scheduleVo.getSchedId())) {
+			//신규 일정 저장
+			scheduleService.setScheduleData(scheduleVo);
+		}
+		else {
+			//수정 일정 저장
+			scheduleService.updateScheduleData(scheduleVo);
+		}
 		
 		return "redirect:/schedule/scheduleMain";
 		
@@ -139,7 +149,6 @@ public class ScheduleController {
 		List<ScheduleVo> list = new ArrayList<ScheduleVo>();
 		
 		list = scheduleService.getScheduleList(paramMap);
-		
 		
 //		Map<String, Object> map = new HashMap<String, Object>();
 //		map.put("title", "테스트");
@@ -256,9 +265,71 @@ public class ScheduleController {
  		return "/scheduleLayout/schedule/write";
 	}
 	
-	@RequestMapping(value="/schedule/updateAjaxSchedData")
-	public void updateAjaxSchedData(@ModelAttribute ScheduleVo scheduleVo) {
-		System.out.println(":::::::::::::::::::: " + scheduleVo.getSchedId());
+	@RequestMapping(value="/schedule/modify")
+	public String scheduleModifyData(@ModelAttribute ScheduleVo scheduleVo, ModelMap model, Authentication authentication) {
+		
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+
+		ScheduleVo schedVo = scheduleService.scheduleModifyData(scheduleVo);
+		
+		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
+		List<CalendarVo> calList = getCalendarList(memberInfo);
+		model.addAttribute("calList", calList);
+		
+		//fullCalendar name에 맞추기위해
+		model.addAttribute("schedVo", schedVo);
+		
+		model.addAttribute("startYmd", schedVo.getStart());
+		model.addAttribute("endYmd", schedVo.getEnd());
+		model.addAttribute("startTm", schedVo.getStartTm());
+		model.addAttribute("endTm", schedVo.getEndTm());
+		
+		
+		return "/scheduleLayout/schedule/write";
+	}
+	
+	/** drop & resize 수정 이번트 **/
+	@RequestMapping(value="/schedule/updateDropResizeSchedData")
+	public void updateDropResizeSchedData(@ModelAttribute ScheduleVo scheduleVo, HttpServletResponse response, 
+			Authentication authentication) throws Exception  {
+		
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		scheduleVo.setLstModrId(memberInfo.getUserId());
+		
+		//2015-00-00T1730 값을 VO에 Setting
+		String[] startYmdHHss = scheduleVo.getStartYmd().split("T");
+		String[] endYmdHHss = scheduleVo.getEndYmd().split("T");
+		
+		scheduleVo.setStartYmd(startYmdHHss[0]);
+		scheduleVo.setEndYmd(endYmdHHss[0]);
+		scheduleVo.setStartTm(startYmdHHss[1].replace(":", "").substring(0,4));
+		scheduleVo.setEndTm(endYmdHHss[1].replace(":", "").substring(0,4));
+		
+		scheduleService.updateDropResizeSchedData(scheduleVo);
+		
+		ObjectMapper om = new ObjectMapper();
+		String jsonString = om.writeValueAsString(new HashMap<String, String>());
+		
+		OutputStream out = response.getOutputStream();
+		out.write(jsonString.getBytes());
+		
+	}
+	
+	/** 일정 삭제 **/
+	@RequestMapping(value="/schedule/delScheduleData")
+	public void delScheduleData(@ModelAttribute ScheduleVo scheduleVo, HttpServletResponse response, 
+	Authentication authentication) throws Exception  {
+		
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		scheduleVo.setFstFrmigrId(memberInfo.getUserId());
+		
+		scheduleService.delScheduleData(scheduleVo);
+		
+		ObjectMapper om = new ObjectMapper();
+		String jsonString = om.writeValueAsString(new HashMap<String, String>());
+		
+		OutputStream out = response.getOutputStream();
+		out.write(jsonString.getBytes());
 	}
 	
 }

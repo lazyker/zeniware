@@ -24,18 +24,18 @@
 	function loadCal() {
 		
 		var calendar = null;
-// 		var events = null;
+		var events = null;
 		var current_url = null;
 		
-// 	 	events = [
-// 					{
-// 						title : 'All Day Event',
-// 						start : '2015-07-14',
-// 						end : '2015-07-16',
-// 				        textColor : 'red',
-// 				        allDay : false
-// 					}
-// 			]
+	 	events = [
+					{
+						title : 'All Day Event',
+						start : '2015-07-14',
+						end : '2015-07-16',
+				        textColor : 'red',
+				        allDay : false
+					}
+			]
 		
 		calendar = $('#calendar').fullCalendar({
 			header: {
@@ -67,8 +67,66 @@
 				
 // 				calendar.fullCalendar('unselect');
 // 			},
-			eventClick: function(calEvent, jsEvent, view) {
-				window.alert("eventClick");
+			eventClick: function(calEventData, jsEvent, view) {
+				var DataHtml;
+				
+				$('#schedModal').on('show.bs.modal', function (event) {
+					var modal = $(this);
+					var startYmdTemp, 
+						startYmd, 
+						endYmdTemp, 
+						endYmd;
+					
+					var start = calEventData.start.format();
+					var end = calEventData.end.format();
+					
+					if( start.length > 11) {
+						startYmdTemp = start.replace("T", " ");
+						startYmd = startYmdTemp.substring(0, startYmdTemp.length-3);
+						endYmdTemp = end.replace("T", " ");
+						endYmd = endYmdTemp.substring(0, endYmdTemp.length-3);
+						
+					} else {
+						startYmd = start;
+						endYmd = end;
+					}
+				  
+					modal.find('.modal-title').text(calEventData.title);
+					
+					{ //modal body 영역 
+						DataHtml = '<div class="row">' +
+						'<div class="col-md-12">' +
+						'<div class="form-group" style="margin-bottom:0px;">' +
+						'<label for="field-1" class="control-label"><p>일시</p></label>' +
+						'<span style="margin-left:20px">' + startYmd + ' ~ ' + endYmd + '</span>' +
+						'</div></div></div>' +
+						'<input type="hidden" id="cldrId" value="' + calEventData.cldrId + '" />' +
+						'<input type="hidden" id="schedId" value="' + calEventData.schedId + '" />';
+
+						if( calEventData.apntPlc != "" ) {
+							DataHtml += '<div class="row">' +
+											'<div class="col-md-12">' +
+											'<div class="form-group" style="margin-bottom:0px;">' +
+											'<label for="field-1" class="control-label"><p>장소</p></label>' +
+											'<span style="margin-left:20px">' + calEventData.apntPlc + '</span>' +
+											'</div></div></div>';
+						}
+						if( calEventData.memoCont != "" ) {
+							DataHtml += '<div class="row">' +
+							'<div class="col-md-12">' +
+							'<div class="form-group" style="margin-bottom:0px;">' +
+							'<label for="field-1" class="control-label"><p>설명</p></label>' +
+							'<span style="margin-left:20px">' + calEventData.memoCont + '</span>' +
+							'</div></div></div>';
+						}
+	
+					}
+					
+					modal.find('.modal-body').html(DataHtml);
+				  
+				}).modal('show', {backdrop: 'static'});
+				
+				
 			},
 			select: function(start, end, allDay, view) {
 				
@@ -105,10 +163,10 @@
 // 				window.alert("eventMouseout");
 // 			},
 			eventDrop: function( event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view ) {
-				window.alert("eventDrop");
+				dropResizeEvent(event);
 			},
 			eventResize:function( event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view ) { 
-				window.alert("eventResize");
+				dropResizeEvent(event);
 			},
 	 		editable: true,
 			firstDay: 0,				//---	0. 일요일
@@ -120,7 +178,7 @@
 			defaultEventMinutes: 60,
 			firstHour: 9,
 			timeFormat: 'HH:mm',
-			columnFormat: {month: 'ddd', week: 'M/d ddd', day: 'M/d dddd'},
+			columnFormat: {month: 'ddd', week: 'M/D ddd', day: 'M월D일 dddd'},
 			titleFormat: {month: 'YYYY.MM', week: 'MM.DD', day: 'YYYY.MM.DD'},
 			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'] ,
 			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], 
@@ -128,32 +186,9 @@
 	 		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
 	 		buttonText: {today: '오늘', month: '월간', week: '주간', day: '일간'},
 	 		contentHeight: 650,
+// 	 		eventLimit: true,
 	 		events: function(start, end, timezone, callback) {
-	 			var year = String(end.year()) + end.month();
-	 			var new_url = '${pageContext.request.contextPath}/schedule/getScheduleData';
-
-	 				if( new_url != current_url ){
-	 					
-	 	                $.ajax({
-	 	                    url: new_url,
-	 	                    dataType: 'json',
-	 	                    type: 'POST',
-							data: {
-								startYmd : start.format(),
-								endYmd : end.format()
-							},
-	 	                    success: function( data ) {
-								var events = [];
-// 	 	                        current_url = new_url;
-// 	 	                        user_events = response;
-// 	 	                        events.push(data);
-								callback(data);
-	 	                    }
-	 	                }); //end ajax
-	 	              
-	 	           }else{
-	 	               callback(user_events);
-	 	           }
+	 			schedData(start, end, callback);
 	 		}
 		});
 		
@@ -169,6 +204,34 @@
 	
 	$(document).ready(function() {
 		
+		$('#schedDelBtn').on('click', function() {
+			var url = "${pageContext.request.contextPath}/schedule/delScheduleData";
+			
+			if(confirm("삭제 하시겠습니까?")) {
+				$.ajax({
+					 url: url,
+						data: {
+							cldrId : $('#cldrId').val(),
+							schedId : $('#schedId').val()
+						},
+						success : function(data) {
+							window.location.reload();
+						},
+						error : function(request) {
+							alert("삭제 중 오류 발생 [관리자에게 문의 하세요.]");
+						}
+				});
+			}
+			
+		});
+		
+		$('#schedModifyBtn').on('click', function() {
+				var cldrId = $('#cldrId').val();
+				var schedId = $('#schedId').val();
+			
+			window.location.href = "${pageContext.request.contextPath}/schedule/modify?cldrId=" + cldrId + "&schedId=" + schedId;
+		});
+		
 // 		alert($('.navbar-nav').find('a').html());
 // 		alert($('.fc-day .fc-widget-content').find('td').html());
 		
@@ -183,6 +246,55 @@
 		
 		
 	});
+	
+	var schedData = function(start, end, callback) {
+		
+		var year = String(end.year()) + end.month();
+		var current_url = null;
+		var new_url = '${pageContext.request.contextPath}/schedule/getScheduleData';
+		
+				if( new_url != current_url ){
+					
+	                $.ajax({
+	                    url: new_url,
+	                    dataType: 'json',
+	                    type: 'POST',
+						data: {
+							startYmd : start.format(),
+							endYmd : end.format()
+						},
+	                    success: function( data ) {
+							//시간이 없는 경우 종일일정 표시	                    	
+							$.each(data, function(i) {
+								if( $(this)[0].startTm === null ) {
+									$(this)[0].allDay = true;
+								}
+							}) 	                    	
+
+							callback(data);
+	                    }
+					}); //end ajax
+				}
+	}
+	
+	//Drop & Resize 이벤트
+	var dropResizeEvent = function(event) {
+		
+		var param = event;
+		var url = "${pageContext.request.contextPath}/schedule/updateDropResizeSchedData";
+		$.ajax({
+			 url: url,
+				data: {
+					cldrId : param.cldrId,
+					schedId : param.schedId,
+					startYmd : param.start.format(),
+					endYmd : param.end.format()
+				},
+				error : function(request) {
+					alert("저장 중 오류 발생 [관리자에게 문의 하세요.]");
+				}
+		});
+	}
 	
 	</script>
 	
@@ -220,10 +332,6 @@
 					
 				</div>
 			</section>
-			
-			<c:forEach var="i" begin="1" end="5">
-   Item <c:out value="${i}"/><p>
-</c:forEach>
 			
 			<div id="log"></div>
 			

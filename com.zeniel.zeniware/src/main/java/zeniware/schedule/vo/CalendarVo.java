@@ -1,18 +1,27 @@
 package zeniware.schedule.vo;
 
+import java.util.List;
+
 
 public class CalendarVo {
 	
-	private String cldrId;				//캘린더 아이디
-	private String cldrNm;				//캘린더 이름
-	private String cldrColorVal;		//갤린더 색상(RGB);
-	private String compId;				//회사 아이디
-	private String userId;				//사용자 아이디
-	private String closeYn;				//비공개 여부
-	private String shreYn;				//공유여부(Y면 공유캘린더)
-	private String regDate;				//등록일시
-	private String modDate;			//수정일시
+	private String cldrId;					//캘린더 아이디
+	private String cldrNm;					//캘린더 이름
+	private String cldrColorVal;			//갤린더 색상(RGB);
+	private String compId;					//회사 아이디
+	private String userId;					//사용자 아이디
+	private String closeYn;					//비공개 여부
+	private String shreYn;					//공유여부(Y면 공유캘린더)
+	private String regDate;					//등록일시
+	private String modDate;				//수정일시
+	private List<CalendarVo> calList;	//캘린더 리스트
 	
+	public List<CalendarVo> getCalList() {
+		return calList;
+	}
+	public void setCalList(List<CalendarVo> calList) {
+		this.calList = calList;
+	}
 	private String runType;			//실행타입
 	
 	public String getRunType() {

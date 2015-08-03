@@ -370,7 +370,8 @@ var public_vars = public_vars || {};
 						endDate: attrDefault($this, 'endDate', ''),
 						daysOfWeekDisabled: attrDefault($this, 'disabledDays', ''),
 						startView: attrDefault($this, 'startView', 0),
-						language: "kr",
+						language: "kr",		//2015-07 lazyker 추가
+						autoclose: true,	//2015-07 lazyker 추가
 						rtl: rtl()
 					},
 					$n = $this.next(),

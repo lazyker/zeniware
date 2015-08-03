@@ -13,7 +13,7 @@
 	String name = "";
 	
 	if(principal != null && principal instanceof MemberInfo){
-		name = ((MemberInfo)principal).getName();
+		name = ((MemberInfo)principal).getUserId();
 	}
 	
 	//HttpServletRequest
@@ -24,7 +24,7 @@
 	}else{
 		Object principal2 = auth.getPrincipal();
 		if(principal2 != null && principal2 instanceof MemberInfo){
-			name2 = ((MemberInfo)principal2).getName();
+			name2 = ((MemberInfo)principal2).getUserId();
 		}
 	}
 %>

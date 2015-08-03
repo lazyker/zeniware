@@ -24,6 +24,43 @@
 		</div>
 	</div>
 	
+	<!-- 스케줄 상세 모달 -->
+	<div class="modal fade" id="schedModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Dynamic Content</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12">
+							
+							<div class="form-group">
+								<label for="field-1" class="control-label"><p>일시</p></label>
+								djlfkdsjfl
+							</div>	
+							
+							<div class="form-group">
+								<label for="field-1" class="control-label">캘린더 이름</label>
+								
+								djlfkdsjfl
+							</div>	
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" id="schedDelBtn">삭제</button>
+					<button type="button" class="btn btn-white" id="schedModifyBtn">수정</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
 	<!-- Bottom Scripts -->
 	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/TweenMax.min.js"></script>

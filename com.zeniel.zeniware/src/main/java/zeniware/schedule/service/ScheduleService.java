@@ -43,10 +43,35 @@ public interface ScheduleService {
 	public List<ScheduleVo> getScheduleList(Map<String, Object>paramMap);
 
 	/**
-	 * 일정을 등록한다
+	 * 일정 등록
 	 * @param  ScheduleVo
 	 */
 	public void setScheduleData(ScheduleVo paramVo);
+	
+	/**
+	 * 일정수정 화면 데이터
+	 * @param  ScheduleVo
+	 */
+	public ScheduleVo scheduleModifyData(ScheduleVo paramVo);
+	
+	/**
+	 * 일정 수정
+	 * @param  ScheduleVo
+	 */
+	public void updateScheduleData(ScheduleVo paramVo);
+	
+	/**
+	 * 일정 이동
+	 * @param  ScheduleVo
+	 */
+	public void updateDropResizeSchedData(ScheduleVo paramVo);
+	
+	/**
+	 * 일정 삭제
+	 * @param  ScheduleVo
+	 */
+	public void delScheduleData(ScheduleVo paramVo);
+	
 	
 	
 	
