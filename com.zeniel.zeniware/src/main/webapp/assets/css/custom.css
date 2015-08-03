@@ -80,3 +80,12 @@
 	.cbr-replaced {
 		margin-right: 4px;
 	}
+
+.mailbox-env .mail-single .mail-single-reply2 {
+	/*border: 1px solid #e4e4e4;*/
+	padding: 15px 20px;
+	margin: 15px 20px;
+	padding-right: 5px !important;
+	min-height: 22px;
+	color: #979898
+}

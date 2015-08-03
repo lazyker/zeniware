@@ -45,27 +45,31 @@
 							</div>
 							</a>
 							<a href="#" class="thumb">
-							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="120" height="150" class="img-thumbnail" />
+							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="80" height="80" alt='user-pic' class="img-circle" />
 							</a>
-							<div class="mailbox-right">
+							<div class="mail-single-reply2 mailbox-right">
 								2015-07-28
 							</div>
-							<h5>${memberInfo.userNm}</h5>
+							<h5 style="padding-left:20px;">${memberInfo.userNm}</h5>
 						</div>
 						<br />
 						<div class="mail-single-reply">
+							<a href="./comtBoardView?fcBoardId=2">
 							<div class="col-sm-10 mailbox-right">
+								제목 나오는곳 <br />
 								최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치
 								dssfsf sdshdhdhdhdhdhhhhhhhsewrfwfshfhfweh
 							</div>
-							<a href="#" class="thumb">
-							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="120" height="150" class="img-thumbnail" />
 							</a>
-							<div class="mailbox-right">
+							<a href="#" class="thumb">
+							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="80" height="80" alt='user-pic' class="img-circle" />
+							</a>
+							<div class="mail-single-reply2 mailbox-right">
 								2015-07-28
 							</div>
-							<h5>${memberInfo.userNm}</h5>
+							<h5 style="padding-left:20px;">${memberInfo.userNm}</h5>
 						</div>
+						<br />
 					</div>
 
 					<div class="tab-pane" id="admComtList">
@@ -90,12 +94,19 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var msg01 = "커뮤니티 삭제";
-	var msg02 = "삭제하시겠습니까?";
-	var msg03 = "가입하시겠습니까?";
-	var msg04 = "취소";
-	var msg05 = "확인";
-	var msg06 = "취소";
+	toastrInit();
+
+	var msg01 = "가입하시겠습니까?";
+	var msg02 = "확인";
+	var msg03 = "취소";
+
+	/* Modal Dialog Config */
+	$("#modl h4").html("커뮤니티 신청이 완료 되었습니다.");
+	$("#modlBody").html("승인 처리하시겠습니까?");
+
+	var paramCompId = "${compId}";
+
+	
 
 	$('#comtAllList').DataTable({
 		ajax: { "url": "./getComtAllList", "dataSrc": "" }, 
@@ -106,19 +117,39 @@ $(document).ready(function() {
 			{ "mData": "cumtNm" },
 			{ "mData": "userNm" },
 			{ "mData": "talNum" },
-			{ "mData": "joinYn" },
+			{ "mData": "joinYn" , "mRender" : function(data,type, full){
+					if(data == 'Y') {
+						return "--";
+					} else if(data == 'N') {
+						return "가입대기";
+					} else {
+						return "<input type='button' value='가입' />" 	
+					}
+				}
+			},
 			{ "mData": "regDate" }
 		],
 		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 //		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 	});
 
-	$("#comtAllList tbody").on('click', "tr td", function() {
-		alert("호출11");
+	$("#comtAllList tbody").on('click', "tr td:not(:nth-child(4))", function() {
+		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
+		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
+		$(location).prop('href', './comtView?comtId='+ fcComtId);
+		//comtView
+
+	}).on('click', "tr td:nth-child(4)", function() {
+		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
+		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
+		alert(fcComtId);
+		jQuery('#mdl').modal('show', {backdrop: 'static'});
+		//var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
+		//modalInit(true, '부서 변경', data, '확인', '취소');
 	});
 });
 
-/* ***References***
+/****References***
 DOM positioning: 
 	http://datatables.net/examples/basic_init/dom.html
 	
@@ -138,3 +169,18 @@ Making row clickable except for the last column:
 	http://stackoverflow.com/questions/7525120
 */
 </script>
+
+<!-- Confirm to Close Modal -->
+<div class="modal fade" id="comtAllModal" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				커뮤니티에 가입신청 하시겠습니까?
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-info" id="sendOk" data-dismiss="modal">확인</button>
+				<button type="button" class="btn btn-info" id="canse" data-dismiss="modal">취소</button>
+			</div>
+		</div>
+	</div>
+</div>
