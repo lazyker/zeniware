@@ -3,6 +3,7 @@ package zeniware.community.service;
 import java.util.List;
 import java.util.Map;
 
+import zeniware.community.vo.ComtAddInfoVo;
 import zeniware.community.vo.ComtVo;
 
 public interface CommunityService {
@@ -42,4 +43,10 @@ public interface CommunityService {
 	 * @param List<Map<String, Object>>
 	*/
 	public List<Map<String, Object>> getComtInofUserMastList(Map<String, Object> listMap);
+
+	/**
+	 * 커뮤니티 가입 신청
+	 * @param ComtAddInfoVo
+	*/
+	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo);
 }

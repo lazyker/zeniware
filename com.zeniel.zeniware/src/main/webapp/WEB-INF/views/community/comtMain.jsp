@@ -94,19 +94,8 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	toastrInit();
-
-	var msg01 = "가입하시겠습니까?";
-	var msg02 = "확인";
-	var msg03 = "취소";
-
-	/* Modal Dialog Config */
-	$("#modl h4").html("커뮤니티 신청이 완료 되었습니다.");
-	$("#modlBody").html("승인 처리하시겠습니까?");
 
 	var paramCompId = "${compId}";
-
-	
 
 	$('#comtAllList').DataTable({
 		ajax: { "url": "./getComtAllList", "dataSrc": "" }, 
@@ -119,7 +108,7 @@ $(document).ready(function() {
 			{ "mData": "talNum" },
 			{ "mData": "joinYn" , "mRender" : function(data,type, full){
 					if(data == 'Y') {
-						return "--";
+						return "완료";
 					} else if(data == 'N') {
 						return "가입대기";
 					} else {
@@ -127,9 +116,17 @@ $(document).ready(function() {
 					}
 				}
 			},
-			{ "mData": "regDate" }
+			{ "mData": "regDate" }/* ,
+			{ "mData": "mastGubun" , "mRender" : function(data,type, full){
+					if(data = "M") {
+						return "<i class='fa fa-edit'></i>";
+					} else {
+						return "";
+					}
+				}
+			} */
 		],
-		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
+		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-9'i><'col-xs-3'p>>"
 //		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 	});
 
@@ -142,10 +139,30 @@ $(document).ready(function() {
 	}).on('click', "tr td:nth-child(4)", function() {
 		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
 		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
+		var joinYn = $('#comtAllList').dataTable().fnGetData(pos).joinYn;
+		if(joinYn == 'Y' || joinYn == 'N') {
+		} else {
+			var data = "가입하시겠습니까?" + "<input type='hidden' name='joinYn' id='modlJoin' value='" + fcComtId + "' />";
+			modalInit(true, '커뮤니티 가입신청', data, '확인', '취소');
+		}
+	});
+
+	$('#mdl .btn-info').on('click', function() {
+		var fcComtId = $("#modlJoin").val();
 		alert(fcComtId);
-		jQuery('#mdl').modal('show', {backdrop: 'static'});
-		//var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
-		//modalInit(true, '부서 변경', data, '확인', '취소');
+		var param = {};
+		param.fcComtId = fcComtId;
+		param.compId = paramCompId;
+		$.ajax({
+			dataType: "json",
+			type: "POST",
+			url: "./insertComtAllInfoUserAdd",
+			data: param,
+			success: function(data) {
+				$("#mdl").modal("hide");
+				$(location).prop('href', './comtMain');
+			}
+		});
 	});
 });
 
@@ -169,18 +186,3 @@ Making row clickable except for the last column:
 	http://stackoverflow.com/questions/7525120
 */
 </script>
-
-<!-- Confirm to Close Modal -->
-<div class="modal fade" id="comtAllModal" data-backdrop="static">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-body">
-				커뮤니티에 가입신청 하시겠습니까?
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-info" id="sendOk" data-dismiss="modal">확인</button>
-				<button type="button" class="btn btn-info" id="canse" data-dismiss="modal">취소</button>
-			</div>
-		</div>
-	</div>
-</div>

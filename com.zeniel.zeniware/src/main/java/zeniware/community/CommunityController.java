@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import zeniware.common.converter.DateTimeUniqueConverter;
 import zeniware.common.login.MemberInfo;
 import zeniware.community.service.CommunityService;
+import zeniware.community.vo.ComtAddInfoVo;
 import zeniware.community.vo.ComtVo;
 
 @Controller
@@ -99,6 +100,7 @@ public class CommunityController {
 		comtVo.setTypeGubun("C");
 		comtVo.setMastGubun("M");
 		comtVo.setJoinYn("Y");
+		comtVo.setInviteYn("40");
 		comtVo.setFcComtId(DateTimeUniqueConverter.UNIQUEKEY15());
 		
 		int addRow = communityService.insertNewComtInfo(comtVo);
@@ -150,14 +152,49 @@ public class CommunityController {
 		paramMap.put("admActYn", "Y");
 
 		List<ComtVo> list = communityService.getComtAllListData(paramMap);
-		/*Map<String, Object> listMap = new HashMap<String, Object>();
-		for(int i = 0; i < list.size(); i++) {
-			listMap.put("fcComtId", list.get(i).getCompId());
-			List<Map<String, Object>> userList = communityService.getComtInofUserMastList(listMap);
-			listMap.put("userNm", userList);
-			list.get(i).put("userNm", listMap);
-		}*/
 
 		return list;
+	}
+
+	//커뮤니티 가입신청 처리
+	@RequestMapping(value = "/insertComtAllInfoUserAdd")
+	public void setInsertComtAllInfoUserAdd(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("userId",		memberInfo.getUserId());
+		paramMap.put("deptId",		memberInfo.getDeptId());
+		paramMap.put("compId",		memberInfo.getCompId());
+		paramMap.put("typeGubun",	"C");
+		paramMap.put("mastGubun",	"U");
+		paramMap.put("inviteYn",	"40");
+		paramMap.put("joinYn",		"N");
+
+		int rows = 0;
+		rows = communityService.setInsertComtAllInfoUserAdd(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), rows);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	//커뮤니티 상세 VIEW
+	@RequestMapping(value = "/comtInfoEdit")
+	public String getComtInfoEditView(@RequestParam Map<String, Object>paramMap, ModelMap model, Authentication authentication) throws Throwable {
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+
+		//cumt view left 메뉴 조회
+		List<ComtVo> list = getCumntUserJoinList(memberInfo);
+		model.addAttribute("comtlist", list);
+		model.addAttribute("memberInfo", memberInfo);
+
+		model.put("compId", memberInfo.getCompId());
+
+		//return "/comtLayout/comtViewMain";
+		return "/cumtLayout/community/comtViewMain";
 	}
 }

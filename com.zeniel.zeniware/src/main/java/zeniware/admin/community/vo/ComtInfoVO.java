@@ -7,7 +7,7 @@ public class ComtInfoVO implements Serializable {
 	private int fcAdmSeq;			//FC_ADM_SEQ
 	private String compId;			//COMP_ID
 	private String cumtNm;			//CUMT_NM
-	private String cumtComent;		//CUMT_COMMENT
+	private String cumtComment;		//CUMT_COMMENT
 	private String admActYn;		//ADM_ACT_YN
 	private String openYn;			//OPEN_YN
 	private String regDate;			//REG_DATE
@@ -38,11 +38,11 @@ public class ComtInfoVO implements Serializable {
 	public void setCumtNm(String cumtNm) {
 		this.cumtNm = cumtNm;
 	}
-	public String getCumtComent() {
-		return cumtComent;
+	public String getCumtComment() {
+		return cumtComment;
 	}
-	public void setCumtComent(String cumtComent) {
-		this.cumtComent = cumtComent;
+	public void setCumtComment(String cumtComment) {
+		this.cumtComment = cumtComment;
 	}
 	public String getAdmActYn() {
 		return admActYn;

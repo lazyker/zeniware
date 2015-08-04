@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import zeniware.common.sql.AbstractDao;
+import zeniware.community.vo.ComtAddInfoVo;
 import zeniware.community.vo.ComtVo;
 
 @Repository
@@ -63,9 +64,18 @@ public class CommunityDao extends AbstractDao {
 
 	/**
 	 * 커뮤니티 운영자 전체 이름 조회
-	 * @param List<Map<String, Object>>
+	 * @param listMap
+	 * @return List<Map<String, Object>>
 	*/
 	public List<Map<String, Object>> getComtInofUserMastList(Map<String, Object> listMap) {
 		return (List<Map<String, Object>>) selectList("comtUser.getComtInofUserMastList", listMap);
+	}
+
+	/**
+	 * 커뮤니티 가입 신청
+	 * @param paramVo
+	*/
+	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo) {
+		return (int) insert("comtUser.setInsertComtAllInfoUserAdd", paramVo);
 	}
 }
