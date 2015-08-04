@@ -1,82 +1,105 @@
 /**
- *
  * Apply your custom CSS here
- *
 */
 
-	/* dataTable customized */
-	table.dataTable tbody tr.selected {
-	  background-color: #b0bed9;
-		color: #fff;
-		border-color: #63b026
-	}
-	
-	table.dataTable th, table.dataTable td {
-		min-width: 50px;
-		max-width: 350px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-	
-	/* page-title customized */
-	.page-container .main-content .page-title .title-env .title {
-		font-size: 22px
-	}
-	
-	.page-container .main-content .page-title {
-		padding-bottom: 0;
-	}
+/**
+ * 공통 custom
+*/
+/* dataTable customized */
+table.dataTable tbody tr.selected {
+  background-color: #b0bed9;
+	color: #fff;
+	border-color: #63b026
+}
 
-	/**
-	 *
-	 * Calendar custom
-	 *
-	*/
-	.fc-sat {
-		color: #1974db!important;
-	}
-	
-	.fc-sun {
-		color: #d42403!important;
-	}
-	
-	.sidebar-menu .calendar-env {
-		border-bottom: 1px solid #c0c0c0
-	}
-	
-	.sidebar-menu .calendar-menu {
-		padding-left: 20px;
-		padding-right: 15px;
-		margin-top: 1px;
-		margin-bottom: 20px;
-		list-style: none
-	}
-	
-	.fc-today-button {
-	}
-	
-	.text-align7 {
-		padding-top:7px;
-	}
-	.align-center {
-		text-align:center;
-	}
-	
-	.sidebar-menu.collapsed .panel-body .form-group.logo-expanded {
-			display: none
-	}
-	
-	.sidebar-menu.collapsed .panel-body .form-group.logo-collapsed {
-		display: block;
-	}
-	
-	.calendarList {
-		display: inline-block;
-		max-width: 100%;
-		margin-bottom: 5px;
-	}
-	
-	.cbr-replaced {
-		margin-right: 4px;
-	}
+table.dataTable th, table.dataTable td {
+	min-width: 50px;
+	max-width: 350px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* page-title customized */
+.page-container .main-content .page-title .title-env .title {
+	font-size: 22px
+}
+
+.page-container .main-content .page-title {
+	padding-bottom: 0;
+}
+
+/**
+ * End 공통 custom
+*/
+
+
+/**
+ * Calendar custom
+*/
+.fc-sat {
+	color: #1974db!important;
+}
+
+.fc-sun {
+	color: #d42403!important;
+}
+
+.sidebar-menu .calendar-env {
+	border-bottom: 1px solid #c0c0c0
+}
+
+.sidebar-menu .calendar-menu {
+	padding-left: 20px;
+	padding-right: 15px;
+	margin-top: 1px;
+	margin-bottom: 20px;
+	list-style: none
+}
+
+.fc-today-button {
+}
+
+.text-align7 {
+	padding-top:7px;
+}
+.align-center {
+	text-align:center;
+}
+
+.sidebar-menu.collapsed .panel-body .form-group.logo-expanded {
+	display: none
+}
+
+.sidebar-menu.collapsed .panel-body .form-group.logo-collapsed {
+	display: block;
+}
+
+.calendarList {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+}
+
+.cbr-replaced {
+	margin-right: 4px;
+}
+
+/**
+ * End Calendar custom
+*/
+
+/**
+ * Community custom
+*/
+.mailbox-env .mail-single .mail-single-reply2 {
+	/*border: 1px solid #e4e4e4;*/
+	padding: 15px 20px;
+	margin: 15px 20px;
+	padding-right: 5px !important;
+	min-height: 22px;
+	color: #979898
+}
+/**
+ * End Community custom
+*/
