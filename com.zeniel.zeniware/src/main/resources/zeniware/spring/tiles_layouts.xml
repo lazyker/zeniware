@@ -70,7 +70,7 @@
 	
 	<!-- 관리자 환경설정 Layout -->
 	<definition name="preference_layout" template="/WEB-INF/layout/preference_layout.jsp">
-		<put-attribute name="header" value="/WEB-INF/views/common_tiles/headerNew.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common_tiles/header.jsp" />
 		<put-attribute name="top" value="/WEB-INF/views/common_tiles/admin_topForm.jsp" />
 		<put-attribute name="leftFm" value="/WEB-INF/views/admin/preference/preferenceLeft.jsp" />
 		<put-attribute name="body" value="" />
