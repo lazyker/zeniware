@@ -1117,7 +1117,20 @@ var public_vars = public_vars || {};
 
 })(jQuery, window);
 
-
+//2015-08-04 lazyker
+var toastrAlert = function(type, message){
+	toastr.options = {
+			"closeButton": true,
+			"positionClass": "toast-top-full-width",
+	};		
+	
+	if (type == 'success')
+		toastr.success("<div align='center'><b>" + message + "</b></div>", null);
+	else if (type == 'error')
+		toastr.error("<div align='center'><b>" + message + "</b></div>", null);
+		
+}
+	
 
 // Sideber Menu Setup function
 var sm_duration = .2,
