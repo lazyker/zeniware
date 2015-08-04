@@ -21,6 +21,7 @@ public class ComtVo implements Serializable {
 	private String joinYn;			// JOIN_YN
 	private String talNum;			//TOTAL_NUMBER_CNT(가입총인원)
 	private String userNm;			//USER_NAME
+	private String inviteYn;		//INVITE_YN(초대여부 - 10: 초대,20: 미 초대,30 : 일반가입,40 : 가입요청)
 	public String getFcComtId() {
 		return fcComtId;
 	}
@@ -128,5 +129,11 @@ public class ComtVo implements Serializable {
 	}
 	public void setUserNm(String userNm) {
 		this.userNm = userNm;
+	}
+	public String getInviteYn() {
+		return inviteYn;
+	}
+	public void setInviteYn(String inviteYn) {
+		this.inviteYn = inviteYn;
 	}
 }

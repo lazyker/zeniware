@@ -53,7 +53,7 @@ $(document).ready(function() {
 			{ "mData": "cumtNm" },
 	      	{ "mData": "regUserId" },
 	      	{ "mData": "regDate" },
-	      	{ "mData": "cumtComent" }
+	      	{ "mData": "cumtComment" }
 		],
 		"columnDefs": [
 			{

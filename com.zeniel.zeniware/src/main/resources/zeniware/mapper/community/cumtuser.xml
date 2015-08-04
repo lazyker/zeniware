@@ -65,7 +65,15 @@
 					AND A.COMP_ID = CI.COMP_ID
 					AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
 					AND A.USER_ID = #{userId, jdbcType=VARCHAR}
-			) AS JOIN_YN
+			) AS JOIN_YN,
+			(
+				SELECT MAST_GUBUN FROM FC_CUMT_ADD_INFO A
+				WHERE A.FC_COMT_ID = CI.FC_COMT_ID
+					AND A.COMP_ID = CI.COMP_ID
+					AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
+					AND A.USER_ID = #{userId, jdbcType=VARCHAR}
+					AND A.JOIN_YN = 'Y'
+			) AS MAST_GUBUN
 		FROM
 			FC_CUMT_INFO CI
 		WHERE 1 = 1
@@ -157,7 +165,35 @@
 			#{typeGubun, jdbcType=VARCHAR},
 			#{boardInfoId, jdbcType=NUMERIC},
 			#{mastGubun, jdbcType=VARCHAR},
-			'30',
+			#{inviteYn, jdbcType=VARCHAR},
+			#{joinYn, jdbcType=VARCHAR},
+			NOW()
+		)
+	</insert>
+
+	<!-- 커뮤니티 가입신청 -->
+	<insert id="comtUser.setInsertComtAllInfoUserAdd" parameterType="hashmap">
+		INSERT INTO FC_CUMT_ADD_INFO
+		(
+			FC_COMT_ID,
+			COMP_ID,
+			USER_ID,
+			DEPT_ID,
+			TYPE_GUBUN,
+			BOARD_INFO_ID,
+			MAST_GUBUN,
+			INVITE_YN,
+			JOIN_YN,
+			REG_DATE
+		) VALUES (
+			#{fcComtId, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{deptId, jdbcType=VARCHAR},
+			#{typeGubun, jdbcType=VARCHAR},
+			#{boardInfoId, jdbcType=NUMERIC},
+			#{mastGubun, jdbcType=VARCHAR},
+			#{inviteYn, jdbcType=VARCHAR},
 			#{joinYn, jdbcType=VARCHAR},
 			NOW()
 		)

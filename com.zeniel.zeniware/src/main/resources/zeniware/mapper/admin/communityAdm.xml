@@ -23,7 +23,7 @@
 		<result	column="FC_ADM_SEQ"		property="fcAdmSeq" />
 		<result column="COMP_ID"		property="compId" />
 		<result column="CUMT_NM"		property="cumtNm" />
-		<result column="CUMT_COMMENT"	property="cumtComent" />
+		<result column="CUMT_COMMENT"	property="cumtComment" />
 		<result column="ADM_ACT_YN"		property="admActYn" />
 		<result column="OPEN_YN"		property="openYn" />
 		<result column="REG_DATE"		property="regDate" />

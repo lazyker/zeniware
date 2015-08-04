@@ -23,7 +23,6 @@ $(document).ready(function() {
 
 	$("#btnSave").click(function() {
 		if($("#cumtNm").val() == "") {
-			alert("호출");
 			toastr.options.closeButton = true;
 			toastr.options.positionClass = "toast-top-full-width";
 			toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
@@ -90,10 +89,6 @@ function sendComtInfo() {
 			}
 		}
 	});
-}
-
-function resend(num) {
-	return num;
 }
 </script>
 

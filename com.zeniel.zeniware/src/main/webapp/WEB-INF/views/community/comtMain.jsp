@@ -45,27 +45,31 @@
 							</div>
 							</a>
 							<a href="#" class="thumb">
-							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="120" height="150" class="img-thumbnail" />
+							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="80" height="80" alt='user-pic' class="img-circle" />
 							</a>
-							<div class="mailbox-right">
+							<div class="mail-single-reply2 mailbox-right">
 								2015-07-28
 							</div>
-							<h5>${memberInfo.userNm}</h5>
+							<h5 style="padding-left:20px;">${memberInfo.userNm}</h5>
 						</div>
 						<br />
 						<div class="mail-single-reply">
+							<a href="./comtBoardView?fcBoardId=2">
 							<div class="col-sm-10 mailbox-right">
+								제목 나오는곳 <br />
 								최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치 최신글이 나오도록 호과적으로 배치
 								dssfsf sdshdhdhdhdhdhhhhhhhsewrfwfshfhfweh
 							</div>
-							<a href="#" class="thumb">
-							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="120" height="150" class="img-thumbnail" />
 							</a>
-							<div class="mailbox-right">
+							<a href="#" class="thumb">
+							<img src="${pageContext.request.contextPath}/assets/images/attach-1.png" width="80" height="80" alt='user-pic' class="img-circle" />
+							</a>
+							<div class="mail-single-reply2 mailbox-right">
 								2015-07-28
 							</div>
-							<h5>${memberInfo.userNm}</h5>
+							<h5 style="padding-left:20px;">${memberInfo.userNm}</h5>
 						</div>
+						<br />
 					</div>
 
 					<div class="tab-pane" id="admComtList">
@@ -90,12 +94,8 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var msg01 = "커뮤니티 삭제";
-	var msg02 = "삭제하시겠습니까?";
-	var msg03 = "가입하시겠습니까?";
-	var msg04 = "취소";
-	var msg05 = "확인";
-	var msg06 = "취소";
+
+	var paramCompId = "${compId}";
 
 	$('#comtAllList').DataTable({
 		ajax: { "url": "./getComtAllList", "dataSrc": "" }, 
@@ -106,19 +106,67 @@ $(document).ready(function() {
 			{ "mData": "cumtNm" },
 			{ "mData": "userNm" },
 			{ "mData": "talNum" },
-			{ "mData": "joinYn" },
-			{ "mData": "regDate" }
+			{ "mData": "joinYn" , "mRender" : function(data,type, full){
+					if(data == 'Y') {
+						return "완료";
+					} else if(data == 'N') {
+						return "가입대기";
+					} else {
+						return "<input type='button' value='가입' />" 	
+					}
+				}
+			},
+			{ "mData": "regDate" }/* ,
+			{ "mData": "mastGubun" , "mRender" : function(data,type, full){
+					if(data = "M") {
+						return "<i class='fa fa-edit'></i>";
+					} else {
+						return "";
+					}
+				}
+			} */
 		],
-		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
+		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-9'i><'col-xs-3'p>>"
 //		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 	});
 
-	$("#comtAllList tbody").on('click', "tr td", function() {
-		alert("호출11");
+	$("#comtAllList tbody").on('click', "tr td:not(:nth-child(4))", function() {
+		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
+		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
+		$(location).prop('href', './comtView?comtId='+ fcComtId);
+		//comtView
+
+	}).on('click', "tr td:nth-child(4)", function() {
+		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
+		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
+		var joinYn = $('#comtAllList').dataTable().fnGetData(pos).joinYn;
+		if(joinYn == 'Y' || joinYn == 'N') {
+		} else {
+			var data = "가입하시겠습니까?" + "<input type='hidden' name='joinYn' id='modlJoin' value='" + fcComtId + "' />";
+			modalInit(true, '커뮤니티 가입신청', data, '확인', '취소');
+		}
+	});
+
+	$('#mdl .btn-info').on('click', function() {
+		var fcComtId = $("#modlJoin").val();
+		alert(fcComtId);
+		var param = {};
+		param.fcComtId = fcComtId;
+		param.compId = paramCompId;
+		$.ajax({
+			dataType: "json",
+			type: "POST",
+			url: "./insertComtAllInfoUserAdd",
+			data: param,
+			success: function(data) {
+				$("#mdl").modal("hide");
+				$(location).prop('href', './comtMain');
+			}
+		});
 	});
 });
 
-/* ***References***
+/****References***
 DOM positioning: 
 	http://datatables.net/examples/basic_init/dom.html
 	

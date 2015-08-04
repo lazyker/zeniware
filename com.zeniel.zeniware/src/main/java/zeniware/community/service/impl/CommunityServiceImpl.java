@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import zeniware.community.dao.CommunityDao;
 import zeniware.community.service.CommunityService;
+import zeniware.community.vo.ComtAddInfoVo;
 import zeniware.community.vo.ComtVo;
 
 @Service
@@ -47,5 +48,10 @@ public class CommunityServiceImpl implements CommunityService {
 	public List<Map<String, Object>> getComtInofUserMastList(Map<String, Object> listMap) {
 		List<Map<String, Object>> list = communityDao.getComtInofUserMastList(listMap);
 		return list;
+	}
+
+	@Override
+	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo) {
+		return communityDao.setInsertComtAllInfoUserAdd(paramVo);
 	}
 }
