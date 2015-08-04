@@ -43,6 +43,8 @@ public class CommunityController {
 		model.addAttribute("comtlist", list);
 		model.addAttribute("memberInfo", memberInfo);
 
+		model.put("compId", memberInfo.getCompId());
+
 		return "/cumtLayout/community/comtMain";
 	}
 
@@ -129,7 +131,7 @@ public class CommunityController {
 
 		//cumt left 메뉴 조회
 		List<ComtVo> list = getCumntAllJoinList(memberInfo);
-		logger.debug("여기 호출 자체가 안되는것 같은데===================>");
+
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			response.setContentType("application/json");
