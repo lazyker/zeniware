@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -37,47 +36,37 @@ public class UnitManController {
    * Public Procedures
    *********************/
   @RequestMapping("/admin/preference/unitSelect")
-  public String requestUnitSelect(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
-    
-    model.put("currentUser", auth.getPrincipal());
+  public String requestUnitSelect(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     return "/preferenceLayout/unitSelect";
   }
   
   @RequestMapping("/admin/preference/unitMain")
-  public String requestUnitMain(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+  public String requestUnitMain(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    model.put("currentUser", auth.getPrincipal());
     model.put("compId", paramMap.get("compId"));
     
     return "/preferenceLayout/unitMain";
   }
   
   @RequestMapping("/admin/preference/unitResignedUser")
-  public String requestUnitResignedUser(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+  public String requestUnitResignedUser(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    model.put("currentUser", auth.getPrincipal());
     model.put("compId", paramMap.get("compId"));
     
     return "/preferenceLayout/unitResignedUser";
   }
   
   @RequestMapping("/admin/preference/unitClosedDept")
-  public String requestUnitClosedDept(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+  public String requestUnitClosedDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    model.put("currentUser", auth.getPrincipal());
     model.put("compId", paramMap.get("compId"));
     
     return "/preferenceLayout/unitClosedDept";
   }
   
   @RequestMapping(value="/admin/preference/unitNewUser", method=RequestMethod.GET)
-  public String requestUnitNewUserForm(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+  public String requestUnitNewUserForm(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
 
     try {
       String paramCompId = (String)paramMap.get("compId");
@@ -85,7 +74,6 @@ public class UnitManController {
       String paramDeptId = (String)paramMap.get("deptId");
       String paramDeptName = (String)paramMap.get("deptName");
       
-      model.put("currentUser", auth.getPrincipal());
       model.put("user", paramUserId == null ? this.userMaker(paramCompId, paramDeptId) : this.userMaker(paramMap));
       
       model.put("compId", paramCompId);

@@ -115,8 +115,6 @@
 	
 	$(document).ready(function() {
 		
-		toastrInit();
-		
 		var useYn = ${commonCode.useYn};
 		$("#chkUseYn").prop('checked', useYn);
 		

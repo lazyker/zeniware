@@ -1,5 +1,5 @@
 .ps-container .ps-scrollbar-x-rail {
-	position: yabsolute;
+	position: absolute;
 	bottom: 3px;
 	height: 5px;
 	zoom: 1;

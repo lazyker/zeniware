@@ -91,8 +91,6 @@
 
 	$(document).ready(function() {
 		
-		toastrInit();
-		
 		var msg01 = "공통코드 삭제";
 		var msg02 = "삭제하시겠습니까?";
 		var msg03 = "확인";

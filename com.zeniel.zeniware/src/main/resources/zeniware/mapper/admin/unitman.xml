@@ -90,6 +90,10 @@
 		CALL UP_UNITMAN_USER_ONE(#{compId}, #{userId});
 	</select>
 	
+	<update id="moveSingleDept" parameterType="map">
+		CALL UP_UNITMAN_DEPT_MOVE(#{compId}, #{deptId}, #{parentDeptId});
+	</update>
+	
 	<insert id="setSingleUser" parameterType="map">
 		CALL UP_UNITMAN_USER_SET(
 			#{userId}, #{compId}, #{deptId}, #{userName}, #{empNumber}, #{mailId}, #{officePhone}, #{homePhone}, 

@@ -1133,7 +1133,7 @@
 	};
 
 	var defaults = $.fn.datepicker.defaults = {
-		autoclose: true,
+		autoclose: false,
 		beforeShowDay: $.noop,
 		calendarWeeks: false,
 		clearBtn: false,

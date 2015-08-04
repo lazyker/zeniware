@@ -59,10 +59,7 @@
 				</div>
 			</div>
 			
-			<div class="panel-body">
-				<div id="draggable" class="ui-widget-content">
-				  <p>Drag me around</p>
-				</div>
+			<div class="panel-body" id="divTable">
 				<table id="tblUser" class="table table-small-font middle-align table-hover">
 					<thead>
 						<tr>
@@ -87,8 +84,6 @@
 
 	$(document).ready(function() {
 		
-		toastrInit();
-		
 		var paramCompId = "${compId}";
 		
 		var msg01 = "검색어를 입력하세요.";
@@ -99,11 +94,31 @@
 		/* jsTree Data Binding */
 		$("#jstree_demo_div").jstree({
 			"core": {
+				"multiple": false, 
+				"check_callback": function(op, node, par, pos, more) {
+					if (op == 'move_node') {
+						if (more && more.core) {
+							if (confirm('옮기시겠습니까?')) {
+								return true;
+							}
+						} else {
+							return true;
+						}
+					}
+					
+					return false;
+				}, 
 				"data": { 
 					url: "../ajax/getNodelist", 
 					data: { compId: paramCompId }
 				}
-			}
+			}, 
+			"dnd": {
+				"drop_finish": function() {
+					console.log('dropped!!!');
+				}
+			}, 
+			"plugins": ["dnd"] 
 		});
 		
 		/* userlist Data Binding */
@@ -115,12 +130,12 @@
 				{ "mRender": function(data, type, full) { return rendering(data, type, full); } }, 
 				{ "mData": "compId", "visible": false }, 
         { "mData": "deptName" }, 
-      	{ "mData": "userName", "sClass": "user-name" }, 
+      	{ "mData": "userName" }, 
       	{ "mData": "userId" }, 
       	{ "mData": "jobTitleName" }, 
       	{ "mData": "mailId" }
-      ],  
- 			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
+      ], 
+ 			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>" 
 		});
 		
 		/* jsTree Node Click */
@@ -141,25 +156,45 @@
 			tbl.ajax.url('../ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId + '&resigned=0').load();			
 		});
 		
-		var rendering = function(data, type, full) {
-			var result = "";
+		/* 부서 추가 */
+		$('#btnDeptAdd').on('click', function() {
+			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
 			
-			if (type == 'display') {
-				result += "<a href='#'>";
-				result += "<img src='${pageContext.request.contextPath}";
-				result += "/assets/images/user-3.png' class='img-circle' alt='user-pic' />";
-				result += "</a>";
+			if (selNode.length == 0) {
+				toastr.error("<div align='center'><b>" + "부서를 선택하세요." + "</b></div>", null);
+				
+			} else {
+				var selCompId = selNode[0].id.substr(0, 3);
+				var selDeptId = selNode[0].id.substr(3, 4);
+				var selDeptName = selNode[0].text;
+				
+				$.get('./unitNewDept?compId=' + selCompId + '&prtDeptId=' + selDeptId + '&prtDeptName=' + selDeptName, function(data) {
+					modalInit(true, '부서 추가', data, '확인', '취소');
+				});
 			}
+		});
+		
+		/* 부서 변경 */
+		$('#btnDeptEdit').on('click', function() {
+			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
 			
-			return result;
-		};
+			if (selNode.length == 0) {
+				toastr.error("<div align='center'><b>" + "부서를 선택하세요." + "</b></div>", null);
+				
+			} else {
+				var selCompId = selNode[0].id.substr(0, 3);
+				var selDeptId = selNode[0].id.substr(3, 4);
+				
+				$.get('./unitNewDept?compId=' + selCompId + '&deptId=' + selDeptId, function(data) {
+					modalInit(true, '부서 변경', data, '확인', '취소');
+				});
+			}
+		});
 		
 		/* 사용자 선택 */
 		$('#tblUser tbody').on('click', 'tr', function() {
 			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
 		});
-		
-		$('.ui-widget-content').draggable();
 		
 		/* 사용자 검색 */
 		$('.dataTables_filter input').unbind().keyup(function(e) {
@@ -217,28 +252,6 @@
 			}
 		});
 		
-		/* 부서 추가 */
-		$('#btnDeptAdd').on('click', function() {
-			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
-			var selCompId = selNode[0].id.substr(0, 3);
-			var selDeptId = selNode[0].id.substr(3, 4);
-			var selDeptName = selNode[0].text;
-			
-			$.get('./unitNewDept?compId=' + selCompId + '&prtDeptId=' + selDeptId + '&prtDeptName=' + selDeptName, function(data) {
-				modalInit(true, '부서 추가', data, '확인', '취소');
-			});
-		});
-		
-		$('#btnDeptEdit').on('click', function() {
-			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
-			var selCompId = selNode[0].id.substr(0, 3);
-			var selDeptId = selNode[0].id.substr(3, 4);
-			
-			$.get('./unitNewDept?compId=' + selCompId + '&deptId=' + selDeptId, function(data) {
-				modalInit(true, '부서 변경', data, '확인', '취소');
-			});
-		});
-		
 		/* 삭제 진행 */
 		$('#btnOk').on('click', function() {
 			if ($(this).hasClass("deleteDept")) {
@@ -267,10 +280,10 @@
 		});
 		
 		/* 사용자 Json Object 생성 */
-		function createJsonUserlist() {
+		var createJsonUserlist = function() {
 			var jsonObj = [];
 			
-			$('#tblUser').DataTable().rows(".selected").data().each(function(selData) {
+			$('#tblUser').DataTable().rows('.selected').data().each(function(selData) {
 				var jsonItem = {};
 				
 				jsonItem["compId"] = selData.compId;
@@ -281,7 +294,33 @@
 			});
 			
 			return JSON.stringify(jsonObj);
-		}
+		};
+		
+		/* 사용자 이미지 Rendering... */
+		var rendering = function(data, type, full) {
+			var result = "";
+			
+			if (type == 'display') {
+				result += "<a href='#'>";
+				result += "<img src='${pageContext.request.contextPath}";
+				result += "/assets/images/user-3.png' class='img-circle' alt='user-pic' />";
+				result += "</a>";
+			}
+			
+			return result;
+		};
+		
+		var c = {};
+		
+		$('#tblUser tbody').sortable({
+			items: "> tr", 
+			appendTo: "parent", 
+			helper: "clone", 
+			start: function(e, ui) {
+			}
+		}).disableSelection();
+		
+		/* Draggable & Droppable */
 
 	});
 

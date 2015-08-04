@@ -1,19 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <sec:authentication var="currentUser" property="principal" />
  
-<div class="sidebar-menu toggle-others fixed"> 
+<div class="sidebar-menu toggle-others"> 
 		 
-	<div class="sidebar-menu-inner"> 
- 
-		<ul id="main-menu" class="main-menu"> 
+	<div class="sidebar-menu-inner">
+	
+		<div class="panel panel-flat">
+			<div class="panel-body">
+				<div class="vertical-top">
+					<button class="btn btn-secondary btn-icon btn-icon-standalone btn-icon-standalone-right btn-block">
+						<i class="fa-pencil"></i>
+						<span>새 문서</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<ul id="main-menu" class="main-menu">
 			
 			<li> 
 				<a href="${pageContext.request.contextPath}/admin/preference/codeMain"> 
 					<i class="linecons-tag"></i><span class="title">공통코드관리</span>
-					 
 				</a> 
 			</li> 
 			

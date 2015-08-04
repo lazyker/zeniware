@@ -6,7 +6,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import zeniware.admin.codeman.vo.CommonCode;
 import zeniware.admin.unitman.dao.UnitManDao;
 import zeniware.admin.unitman.service.UnitManService;
 import zeniware.admin.unitman.vo.Company;

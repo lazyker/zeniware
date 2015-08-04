@@ -29,6 +29,33 @@ table.dataTable th, table.dataTable td {
 	padding-bottom: 0;
 }
 
+/* panel-flat customized */
+.panel.panel-flat {
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px
+}
+
+/* footer customized */
+.footer-sticked-chat {
+/* 		left: 0; */
+	right: 30px;
+	bottom: 0;
+	z-index: 1000
+}
+
+.footer-sticked-chat .chat-conversations>li.open>a {
+	width: 270px
+}
+
+.footer-sticked-chat .chat-conversations>li .chat-user {
+	width: 200px
+}
+
+.footer-sticked-chat .chat-conversations>li .conversation-window .conversation-messages {
+	max-height: 350px
+}
+
 /**
  * End 공통 custom
 */

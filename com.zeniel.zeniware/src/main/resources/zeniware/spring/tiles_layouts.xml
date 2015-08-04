@@ -36,6 +36,24 @@
 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
 	
+	<!-- 전자결재 Layout -->
+	<definition name="workflow_layout" template="/WEB-INF/layout/workflow_layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/common_tiles/header.jsp" />
+		<put-attribute name="top" value="/WEB-INF/views/common_tiles/topForm.jsp" />
+		<put-attribute name="leftFm" value="/WEB-INF/views/workflow/workflowLeft.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common_tiles/footer.jsp" />
+	</definition>
+	
+	<definition name="/workflowLayout/*" extends="workflow_layout">
+		<put-attribute name="body" value="/WEB-INF/views/workflow/{1}.jsp" />
+	</definition>
+	
+	<definition name="/workflowLayout/*/*" extends="workflow_layout">
+		<put-attribute name="body" value="/WEB-INF/views/workflow/{1}/{2}.jsp" />
+	</definition>
+	<!-- 전자결재 Layout -->
+	
 	<!-- Admin 선언 -->
 	<definition name="admin_layout" template="/WEB-INF/layout/admin_layout.jsp">
 		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />

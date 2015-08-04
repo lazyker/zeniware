@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import zeniware.admin.codeman.service.CodeManService;
 import zeniware.admin.codeman.vo.CommonCode;
 import zeniware.admin.codeman.vo.CommonGroup;
-import zeniware.common.login.MemberInfo;
 
 @Controller
 public class CodeManController {
@@ -31,27 +29,23 @@ public class CodeManController {
    * Public Procedures
    *********************/
   @RequestMapping("/admin/preference/codeMain")
-  public String requestCodeMain(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+  public String requestCodeMain(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
 
     try {
-      model.put("currentUser", auth.getPrincipal());
       model.put("groupId", paramMap.get("groupId"));
-      System.out.println("entitlement: " + ((MemberInfo)auth.getPrincipal()).getEntitlement());
+
     } catch (Exception e) { throw e; }
     
     return "/preferenceLayout/codeMain";
   }
   
   @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.GET)
-  public String requestSingleCodeForm(
-    @RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) throws Throwable {
+  public String requestSingleCodeForm(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
 
     try {
       String paramGroupId = (String)paramMap.get("groupId");
       String paramCodeId = (String)paramMap.get("codeId");
       
-      model.put("currentUser", auth.getPrincipal());
       model.put("commonCode", (paramCodeId == null) ? this.codeMaker(paramGroupId) : this.codeMaker(paramMap));
       
     } catch (Exception e) { throw e; }

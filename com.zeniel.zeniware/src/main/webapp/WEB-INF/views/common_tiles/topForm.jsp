@@ -56,7 +56,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="ui-panels.html">
+				<a href="${pageContext.request.contextPath}/workflow/workflowMain">
 					<i class="linecons-note"></i>
 					<span class="title">전자결재</span>
 				</a>

@@ -17,17 +17,18 @@ var modalInit = function(show, title, message, primary, secondary) {
 	}
 };
 
-/* select2 initialize */
-$('select').select2({
-	placeholder: "선택하세요...", 
-	allowClear: true
+$(document).ready(function() {
 	
-}).on('select2-open', function() {
-	$(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
-});
-
-/* toastr initialize */
-var toastrInit = function() {
+	/* select2 initialize */
+	$('select').select2({
+		placeholder: "선택하세요...", 
+		allowClear: true
+	}).on('select2-open', function() {
+		$(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+	});
+	
+	/* toastr initialize */
 	toastr.options.closeButton = true;
 	toastr.options.positionClass = "toast-top-full-width";
-}
+
+});
