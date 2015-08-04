@@ -4,11 +4,9 @@
 
 <!DOCTYPE html>
 <html>
+<head>
 	<tiles:insertAttribute name="header" />
-	
-	<!-- Imported styles on this page -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.min.css">
-	<link rel="stylesheet" href='${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.print.css' media='print' />
+</head>
 
 <body class="page-body horizontal-menu-skin-navy">
 

@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
 	<tiles:insertAttribute name="header" />
 	
 	<!-- Imported styles on this page -->
@@ -11,7 +12,8 @@
 	
 	<!-- JavaScripts initializations and stuff -->
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
-	
+</head>
+
 <body class="page-body skin-aero">
 	
 	<tiles:insertAttribute name="top" />

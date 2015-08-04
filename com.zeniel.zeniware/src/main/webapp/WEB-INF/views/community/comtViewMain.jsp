@@ -16,7 +16,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="panel-body">
-			<div class="col-sm-6">
+			<div class="col-sm-12">
 				<ul class="nav nav-tabs nav-tabs-justified">
 					<li class="active">
 						<a href="#comtInfoEd" data-toggle="tab">
