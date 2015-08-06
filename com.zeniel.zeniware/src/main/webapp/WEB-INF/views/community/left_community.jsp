@@ -19,7 +19,7 @@
 					<li style="color:#FFFFFF;">
 						<i class="fa fa-cube"></i>
 						<label>
-						<a href="./comtView?comtId=<c:out value="${comtlist.fcComtId}" />" style="padding:0px !important;">
+						<a href="./comtView?fcComtId=<c:out value="${comtlist.fcComtId}" />" style="padding:0px !important;">
 						<c:out value="${comtlist.cumtNm}" />
 						</a>
 						</label>
@@ -34,7 +34,7 @@
 						</span>
 						<c:if test="${comtlist.mastGubun != 'U'}">
 						<span class="pull-right hidden-collapsed">
-						<a href="./comtInfoEdit?comtId=<c:out value="${comtlist.fcComtId}" />" style="padding:0 !important;">
+						<a href="./comtInfoEdit?fcComtId=<c:out value="${comtlist.fcComtId}" />" style="padding:0 !important;">
 							<i class="fa fa-edit"></i>
 						</a>
 						</span>

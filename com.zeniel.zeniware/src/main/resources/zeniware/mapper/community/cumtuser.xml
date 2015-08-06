@@ -86,12 +86,13 @@
 		SELECT
 			CAI.USER_ID,
 			(
-				SELECT USER_NAME FROM FH_USER WHERE USER_ID = CAI.USER_ID
+				SELECT USER_NM FROM FH_USER WHERE USER_ID = CAI.USER_ID
 			) AS USER_NAME
 		FROM
 			FC_CUMT_ADD_INFO CAI
 		WHERE 1 = 1
 			AND CAI.COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND CAI.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 			AND CAI.TYPE_GUBUN = 'C'
 			AND CAI.MAST_GUBUN = 'M'
 	</select>
@@ -198,4 +199,17 @@
 			NOW()
 		)
 	</insert>
+
+	<!-- 커뮤니티 상세정보view(fcComtId) -->
+	<select id="comtUser.comtview.getComtInfoDetail" parameterType="hashmap" resultMap="comtVoMap">
+		SELECT
+			FC_COMT_ID, FC_ADM_SEQ, COMP_ID, CUMT_NM, CUMT_COMMENT, ADM_ACT_YN,
+			OPEN_YN, REG_DATE, MOD_DATE, REG_USER_ID, MOD_USER_ID
+		FROM
+			FC_CUMT_INFO
+		WHERE 1 = 1
+			AND COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+		ORDER BY CUMT_NM  ASC
+	</select>
 </mapper>
