@@ -109,16 +109,16 @@
 			}
 		});
 		
-// 		$('#jstreeMember').on('open_node.jstree', function(e, data) {
-// 			e.preventDefault();
+		$('#jstreeMember').on('open_node.jstree', function(e, data) {
+			e.preventDefault();
 			
-// 			$('.footer-sticked-chat').popover({
-// 				html: true, 
-// 				title: function() { return $('#popover-head').html(); }, 
-// 				content: function() { return $('#popover-content').html(); }, 
-// 				placement: 'left'
-// 			});
-// 		});
+			$('.footer-sticked-chat').popover({
+				html: true, 
+				title: function() { return $('#popover-head').html(); }, 
+				content: function() { return $('#popover-content').html(); }, 
+				placement: 'left'
+			});
+		});
 		
 		/* jsTree Search... */
 		$('#txtSearch').on('keyup', function(event) {
@@ -133,7 +133,7 @@
 						return node.id == '#' ?
 							keyword.length == 0 ? 
 								'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
-								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + keyword : 
+								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
 							'../admin/ajax/getDeferredNodelist?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child';
 					}, 
 					'data': function(node) {
