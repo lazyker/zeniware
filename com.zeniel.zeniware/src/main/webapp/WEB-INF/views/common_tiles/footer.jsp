@@ -109,16 +109,16 @@
 			}
 		});
 		
-		$('#jstreeMember').on('open_node.jstree', function(e, data) {
-			e.preventDefault();
+// 		$('#jstreeMember').on('open_node.jstree', function(e, data) {
+// 			e.preventDefault();
 			
-			$('.footer-sticked-chat').popover({
-				html: true, 
-				title: function() { return $('#popover-head').html(); }, 
-				content: function() { return $('#popover-content').html(); }, 
-				placement: 'left'
-			});
-		});
+// 			$('.footer-sticked-chat').popover({
+// 				html: true, 
+// 				title: function() { return $('#popover-head').html(); }, 
+// 				content: function() { return $('#popover-content').html(); }, 
+// 				placement: 'left'
+// 			});
+// 		});
 		
 		/* jsTree Search... */
 		$('#txtSearch').on('keyup', function(event) {
