@@ -11,16 +11,18 @@ public class CommonGroup {
     return this.groupId;
   }
   
-  public void setGroupId(String groupId) {
+  public CommonGroup setGroupId(String groupId) {
     this.groupId = groupId;
+    return this;
   }
   
   public String getGroupName() {
     return this.groupName;
   }
   
-  public void setGroupName(String groupName) {
+  public CommonGroup setGroupName(String groupName) {
     this.groupName = groupName;
+    return this;
   }
 
 }

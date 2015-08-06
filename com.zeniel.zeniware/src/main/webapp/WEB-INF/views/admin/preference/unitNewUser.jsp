@@ -369,9 +369,8 @@
 			}			
 		});
 		
-		$('.datepicker').on('changeDate', function() {
-			var hiddenObj = $(this).prop('id').substr(3); 
-			$('#hdn' + hiddenObj).val($(this).data('datepicker').getFormattedDate('yyyy-mm-dd'));
+		$('.datepicker').datepicker({
+			startDate: '+3d'
 		});
 				
 		$('.btn-cancel').click(function() {

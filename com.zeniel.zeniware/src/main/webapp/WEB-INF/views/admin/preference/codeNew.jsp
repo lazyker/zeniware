@@ -139,7 +139,7 @@
 					
 				}).done(function(data) {
 					if (data > 0) {
-						toastr.error("<div align='center'><b>이미 등록된 코드입니다.</b></div>", null);
+						toastrAlert('error', '이미 등록된 코드입니다.');
 						
 					} else {
 						$("#frm").prop('action', './codeNew').submit();

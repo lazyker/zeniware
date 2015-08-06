@@ -42,7 +42,7 @@
 				<div class="modal-body"></div>
 				
 				<div class="modal-footer">
-					<button type="button" class="btn btn-info"></button>
+					<button type="button" class="btn btn-info" id="btnOk"></button>
 					<button type="button" class="btn btn-white" data-dismiss="modal"></button>
 				</div>
 				

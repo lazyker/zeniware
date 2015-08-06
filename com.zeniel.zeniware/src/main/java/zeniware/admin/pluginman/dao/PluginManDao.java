@@ -19,7 +19,17 @@ public class PluginManDao extends AbstractDao {
   
   @SuppressWarnings("unchecked")
   public List<TreeNode> getTreeNodeList(Map<String, Object> paramMap) {
-    return (List<TreeNode>)selectList("admin.pluginman.getTreeNodeList", paramMap);
+    return (List<TreeNode>)selectList("admin.pluginman.getNodeListRecursive", paramMap);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public List<TreeNode> getNodeListSearch(Map<String, Object> paramMap) {
+    return (List<TreeNode>)selectList("admin.pluginman.getNodeListSearch", paramMap);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public List<TreeNode> getDeferredNodeList(Map<String, Object> paramMap) {
+    return (List<TreeNode>)selectList("admin.pluginman.getNodeListDeferred", paramMap);
   }
   
 }

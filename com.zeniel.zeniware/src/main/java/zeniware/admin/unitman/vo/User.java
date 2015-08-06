@@ -47,292 +47,318 @@ public class User implements UserDetails {
   
   public User() { }
   
-  public User(String compId, String deptId) {
-    this.compId = compId;
-    this.deptId = deptId;
-    this.activateYn = true;
-    this.useLunarYn = false;
-    this.securityLevel = 10;
-    this.sortOrder = 0;
-  }
-  
   public String getUserId() {
     return this.userId;
   }
   
-  public void setUserId(String userId) {
+  public User setUserId(String userId) {
     this.userId = userId;
+    return this;
   }
   
   public String getDeptId() {
     return this.deptId;
   }
   
-  public void setDeptId(String deptId) {
+  public User setDeptId(String deptId) {
     this.deptId = deptId;
+    return this;
   }
   
   public String getDeptName() {
     return this.deptName;
   }
   
-  public void setDeptName(String deptName) {
+  public User setDeptName(String deptName) {
     this.deptName = deptName;
+    return this;
   }
   
   public String getCompId() {
     return this.compId;
   }
   
-  public void setCompId(String compId) {
+  public User setCompId(String compId) {
     this.compId = compId;
+    return this;
   }
   
   public String getUserName() {
     return this.userName;
   }
   
-  public void setUserName(String userName) {
+  public User setUserName(String userName) {
     this.userName = userName;
+    return this;
   }
   
   public String getPassword() {
     return this.password;
   }
   
-  public void setPassword(String password) {
+  public User setPassword(String password) {
     this.password = password;
+    return this;
   }
   
   public String getEmpNumber() {
     return this.empNumber;
   }
   
-  public void setEmpNumber(String empNumber) {
+  public User setEmpNumber(String empNumber) {
     this.empNumber = empNumber;
+    return this;
   }
   
   public String getMailId() {
     return this.mailId;
   }
   
-  public void setMailId(String mailId) {
+  public User setMailId(String mailId) {
     this.mailId = mailId;
+    return this;
   }
   
   public String getOfficePhone() {
     return this.officePhone;
   }
   
-  public void setOfficePhone(String officePhone) {
+  public User setOfficePhone(String officePhone) {
     this.officePhone = officePhone;
+    return this;
   }
   
   public String getHomePhone() {
     return this.homePhone;
   }
   
-  public void setHomePhone(String homePhone) {
+  public User setHomePhone(String homePhone) {
     this.homePhone = homePhone;
+    return this;
   }
   
   public String getFax() {
     return this.fax;
   }
   
-  public void setFax(String fax) {
+  public User setFax(String fax) {
     this.fax = fax;
+    return this;
   }
   
   public String getMobile() {
     return this.mobile;
   }
   
-  public void setMobile(String mobile) {
+  public User setMobile(String mobile) {
     this.mobile = mobile;
+    return this;
   }
   
   public int getPostCode() {
     return this.postCode;
   }
   
-  public void setPostCode(int postCode) {
+  public User setPostCode(int postCode) {
     this.postCode = postCode;
+    return this;
   }
   
   public String getAddress1() {
     return this.address1;
   }
   
-  public void setAddress1(String address1) {
+  public User setAddress1(String address1) {
     this.address1 = address1;
+    return this;
   }
   
   public String getAddress2() {
     return this.address2;
   }
   
-  public void setAddress2(String address2) {
+  public User setAddress2(String address2) {
     this.address2 = address2;
+    return this;
   }
   
   public String getJoinDate() {
     return this.joinDate;
   }
   
-  public void setJoinDate(String joinDate) {
+  public User setJoinDate(String joinDate) {
     this.joinDate = joinDate;
+    return this;
   }
   
   public String getResignDate() {
     return this.resignDate;
   }
   
-  public void setResignDate(String resignDate) {
+  public User setResignDate(String resignDate) {
     this.resignDate = resignDate;
+    return this;
   }
   
   public String getPhotoFileId() {
     return this.photoFileId;
   }
   
-  public void setPhotoFileId(String photoFileId) {
+  public User setPhotoFileId(String photoFileId) {
     this.photoFileId = photoFileId;
+    return this;
   }
   
   public String getSignFileId() {
     return this.signFileId;
   }
   
-  public void setSignFileId(String signFileId) {
+  public User setSignFileId(String signFileId) {
     this.signFileId = signFileId;
+    return this;
   }
   
   public int getSecurityLevel() {
     return this.securityLevel;
   }
   
-  public void setSecurityLevel(int securityLevel) {
+  public User setSecurityLevel(int securityLevel) {
     this.securityLevel = securityLevel;
+    return this;
   }
   
   public String getJobTitleCode() {
     return this.jobTitleCode;
   }
   
-  public void setJobTitleCode(String jobTitleCode) {
+  public User setJobTitleCode(String jobTitleCode) {
     this.jobTitleCode = jobTitleCode;
+    return this;
   }
   
   public String getJobTitleName() {
     return this.jobTitleName;
   }
   
-  public void setJobTitleName(String jobTitleName) {
+  public User setJobTitleName(String jobTitleName) {
     this.jobTitleName = jobTitleName;
+    return this;
   }
   
   public String getJobGradeCode() {
     return this.jobGradeCode;
   }
   
-  public void setJobGradeCode(String jobGradeCode) {
+  public User setJobGradeCode(String jobGradeCode) {
     this.jobGradeCode = jobGradeCode;
+    return this;
   }
   
   public String getJobRoleCode() {
     return this.jobRoleCode;
   }
   
-  public void setJobRoleCode(String jobRoleCode) {
+  public User setJobRoleCode(String jobRoleCode) {
     this.jobRoleCode = jobRoleCode;
+    return this;
   }
   
   public String getEntitlement() {
     return this.entitlement;
   }
   
-  public void setEntitlement(String entitlement) {
+  public User setEntitlement(String entitlement) {
     this.entitlement = entitlement;
+    return this;
   }
   
   public String getDescription() {
     return this.description;
   }
   
-  public void setDescription(String description) {
+  public User setDescription(String description) {
     this.description = description;
+    return this;
   }
   
   public String getBirthDate() {
     return this.birthDate;
   }
   
-  public void setBirthDate(String birthDate) {
+  public User setBirthDate(String birthDate) {
     this.birthDate = birthDate;
+    return this;
   }
   
   public boolean getUseLunarYn() {
     return this.useLunarYn;
   }
-  public void setUseLunarYn(boolean useLunarYn) {
+  public User setUseLunarYn(boolean useLunarYn) {
     this.useLunarYn = useLunarYn;
+    return this;
   }
   
   public String getLanguageCode() {
     return this.languageCode;
   }
   
-  public void setLanguageCode(String languageCode) {
+  public User setLanguageCode(String languageCode) {
     this.languageCode = languageCode;
+    return this;
   }
   
   public int getSortOrder() {
     return this.sortOrder;
   }
   
-  public void setSortOrder(int sortOrder) {
+  public User setSortOrder(int sortOrder) {
     this.sortOrder = sortOrder;
+    return this;
   }
   
   public boolean getUseYn() {
     return this.useYn;
   }
   
-  public void setUseYn(boolean useYn) {
+  public User setUseYn(boolean useYn) {
     this.useYn = useYn;
+    return this;
   }
   
   public boolean getActivateYn() {
     return this.activateYn;
   }
   
-  public void setActivateYn(boolean activateYn) {
+  public User setActivateYn(boolean activateYn) {
     this.activateYn = activateYn;
+    return this;
   }
   
   public String getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(String regDate) {
+  public User setRegDate(String regDate) {
     this.regDate = regDate;
+    return this;
   }
   
   public String getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(String modDate) {
+  public User setModDate(String modDate) {
     this.modDate = modDate;
+    return this;
   }
   
   public String getDelDate() {
     return this.delDate;
   }
   
-  public void setDelDate(String delDate) {
+  public User setDelDate(String delDate) {
     this.delDate = delDate;
+    return this;
   }
 
   @Override

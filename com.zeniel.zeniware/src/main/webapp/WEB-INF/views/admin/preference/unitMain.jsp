@@ -118,7 +118,7 @@
 					console.log('dropped!!!');
 				}
 			}, 
-			"plugins": ["dnd"] 
+			"plugins": [ "dnd" ] 
 		});
 		
 		/* userlist Data Binding */
@@ -161,7 +161,7 @@
 			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
 			
 			if (selNode.length == 0) {
-				toastr.error("<div align='center'><b>" + "부서를 선택하세요." + "</b></div>", null);
+				toastrAlert('error', '부서를 선택하세요.');
 				
 			} else {
 				var selCompId = selNode[0].id.substr(0, 3);
@@ -179,7 +179,7 @@
 			var selNode = $('#jstree_demo_div').jstree(true).get_selected('full', true);
 			
 			if (selNode.length == 0) {
-				toastr.error("<div align='center'><b>" + "부서를 선택하세요." + "</b></div>", null);
+				toastrAlert('error', '부서를 선택하세요.');
 				
 			} else {
 				var selCompId = selNode[0].id.substr(0, 3);
@@ -200,7 +200,7 @@
 		$('.dataTables_filter input').unbind().keyup(function(e) {
 			if (e.keyCode == 13) {
 				if ($(this).val().length == 0) {
-					toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
+					toastrAlert('error', msg01);
 				} else {
 					var strUrl = '../ajax/getUserlist?compId=' + paramCompId + '&resigned=0&keyword=' + $(this).val();
 					$('#tblUser').DataTable().ajax.url(strUrl).load();
@@ -213,7 +213,8 @@
 			var selNode = $('#jstree_demo_div').jstree('get_selected');
 			
 			if (selNode.length == 0) {
-				toastr.error("<div align='center'><b>" + msg02 + "</b></div>", null);
+				toastrAlert('error', msg02);
+				
 			} else {
 				var selCompId = selNode[0].substr(0, 3);
 				var selDeptId = selNode[0].substr(3, 4);
@@ -228,10 +229,10 @@
 			var selRow = $('#tblUser').DataTable().rows('.selected').data();
 			
 			if (selRow.length == 0) {				
-				toastr.error("<div align='center'><b>" + msg03 + "</b></div>", null);
+				toastrAlert('error', msg03);
 				
 			} else if (selRow.length > 1) {
-				toastr.error("<div align='center'><b>" + msg04 + "</b></div>", null);
+				toastrAlert('error', msg04);
 				
 			} else {
 				var sUrl = './unitNewUser?compId=' + selRow[0].compId + '&userId=' + selRow[0].userId + '&deptName=' + selRow[0].deptName;
@@ -248,7 +249,7 @@
 				$('#btnOk').addClass('deleteUser');
 				
 			} else {
-				toastr.error("<div align='center'><b>" + "삭제할 사용자를 선택하세요." + "</b></div>", null);
+				toastrAlert('error', '삭제할 사용자를 선택하세요.');
 			}
 		});
 		

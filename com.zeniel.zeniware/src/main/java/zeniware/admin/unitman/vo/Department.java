@@ -20,130 +20,139 @@ public class Department {
   
   public Department() { }
   
-  public Department(String compId, String parentDeptId, String parentDeptName) {
-    this.compId = compId;
-    this.parentDeptId = parentDeptId;
-    this.parentDeptName = parentDeptName;
-  }
-  
   public String getDeptId() {
     return this.deptId;
   }
   
-  public void setDeptId(String deptId) {
+  public Department setDeptId(String deptId) {
     this.deptId = deptId;
+    return this;
   }
   
   public String getCompId() {
     return this.compId;
   }
   
-  public void setCompId(String compId) {
+  public Department setCompId(String compId) {
     this.compId = compId;
+    return this;
   }
   
   public String getDeptName() {
     return this.deptName;
   }
   
-  public void setDeptName(String deptName) {
+  public Department setDeptName(String deptName) {
     this.deptName = deptName;
+    return this;
   }
   
   public String getSimpleName() {
     return this.simpleName;
   }
   
-  public void setSimpleName(String simpleName) {
+  public Department setSimpleName(String simpleName) {
     this.simpleName = simpleName;
+    return this;
   }
   
   public String getParentDeptId() {
     return this.parentDeptId;
   }
   
-  public void setParentDeptId(String parentDeptId) {
+  public Department setParentDeptId(String parentDeptId) {
     this.parentDeptId = parentDeptId;
+    return this;
   }
   
   public String getParentDeptName() {
     return this.parentDeptName;
   }
   
-  public void setParentDeptName(String parentDeptName) {
+  public Department setParentDeptName(String parentDeptName) {
     this.parentDeptName = parentDeptName;
+    return this;
   }
   
   public int getDeptLevel() {
     return this.deptLevel;
   }
   
-  public void setDeptLevel(int deptLevel) {
+  public Department setDeptLevel(int deptLevel) {
     this.deptLevel = deptLevel;
+    return this;
   }
   
   public int getSortOrder() {
     return this.sortOrder;
   }
   
-  public void setSortOrder(int sortOrder) {
+  public Department setSortOrder(int sortOrder) {
     this.sortOrder = sortOrder;
+    return this;
   }
   
   public String getMailId() {
     return this.mailId;
   }
   
-  public void setMainId(String mailId) {
+  public Department setMainId(String mailId) {
     this.mailId = mailId;
+    return this;
   }
   
   public String getMamagerId() {
     return this.managerId;
   }
   
-  public void setManagerId(String managerId) {
+  public Department setManagerId(String managerId) {
     this.managerId = managerId;
+    return this;
   }
   
   public boolean getUseYn() {
     return this.useYn;
   }
   
-  public void setUseYn(boolean useYn) {
+  public Department setUseYn(boolean useYn) {
     this.useYn = useYn;
+    return this;
   }
   
   public boolean getActivateYn() {
     return this.activateYn;
   }
   
-  public void setActivateYn(boolean activateYn) {
+  public Department setActivateYn(boolean activateYn) {
     this.activateYn = activateYn;
+    return this;
   }
   
   public String getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(String regDate) {
+  public Department setRegDate(String regDate) {
     this.regDate = regDate;
+    return this;
   }
   
   public String getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(String modDate) {
+  public Department setModDate(String modDate) {
     this.modDate = modDate;
+    return this;
   }
   
   public String getDelDate() {
     return this.delDate;
   }
   
-  public void setDelDate(String delDate) {
+  public Department setDelDate(String delDate) {
     this.delDate = delDate;
+    return this;
   }
 
 }

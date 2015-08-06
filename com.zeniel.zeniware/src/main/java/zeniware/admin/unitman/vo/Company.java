@@ -9,52 +9,60 @@ public class Company {
   private String modDate;
   private String delDate;
   
+  public Company() { }
+  
   public String getCompId() {
     return this.compId;
   }
   
-  public void setCompId(String compId) {
+  public Company setCompId(String compId) {
     this.compId = compId;
+    return this;
   }
   
   public String getCompName() {
     return this.compName;
   }
   
-  public void setCompName(String compName) {
-    this.compName = compName; 
+  public Company setCompName(String compName) {
+    this.compName = compName;
+    return this;
   }
   
   public int getSortOrder() {
     return this.sortOrder;
   }
   
-  public void setSortOrder(int sortOrder) {
+  public Company setSortOrder(int sortOrder) {
     this.sortOrder = sortOrder;
+    return this;
   }
   
   public String getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(String regDate) {
+  public Company setRegDate(String regDate) {
     this.regDate = regDate;
+    return this;
   }
   
   public String getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(String modDate) {
+  public Company setModDate(String modDate) {
     this.modDate = modDate;
+    return this;
   }
   
   public String getDelDate() {
     return this.delDate;
   }
   
-  public void setDelDate(String delDate) {
+  public Company setDelDate(String delDate) {
     this.delDate = delDate;
+    return this;
   }
 
 }

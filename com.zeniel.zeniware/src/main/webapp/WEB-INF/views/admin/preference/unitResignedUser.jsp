@@ -96,7 +96,7 @@
 				$('#btnOk').addClass('restoreUser');
 				
 			} else {
-				toastr.error("<div align='center'><b>" + "복원할 사용자를 선택하세요." + "</b></div>", null);
+				toastrAlert('error', '복원할 사용자를 선택하세요.');
 			}
 		});
 		

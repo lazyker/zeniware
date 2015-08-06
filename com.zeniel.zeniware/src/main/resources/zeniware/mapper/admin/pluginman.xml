@@ -13,14 +13,23 @@
 		<result column="PARENT" property="parent" />
 		<result column="TEXT" property="text" />
 		<result column="ICON" property="icon" />
+		<result column="CHILDREN" property="children" />
 	</resultMap>
 	
 	<select id="getSboxCodeList" parameterType="map" resultMap="sboxResultMap">
 		CALL UP_PLUGINMAN_SBOX_CODE_LIST(#{groupId}, #{langCode});
 	</select>
 	
-	<select id="getTreeNodeList" parameterType="map" resultMap="treeNodeResultMap">
-		CALL UP_PLUGINMAN_NODE_LIST(#{compId});
+	<select id="getNodeListRecursive" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_PLUGINMAN_NODE_LIST_RECURSIVE(#{compId});
+	</select>
+	
+	<select id="getNodeListSearch" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_PLUGINMAN_NODE_LIST_SEARCH(#{compId}, #{keyword});
+	</select>
+	
+	<select id="getNodeListDeferred" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_PLUGINMAN_NODE_LIST_DEFERRED(#{compId}, #{deptId}, #{nodeType});
 	</select>
 	
 </mapper>

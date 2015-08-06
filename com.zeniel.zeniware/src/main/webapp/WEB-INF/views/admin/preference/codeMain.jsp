@@ -151,7 +151,7 @@
 			var selData = $("#tblGroup").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {
-				toastr.error("<div align='center'><b>" + msg05 + "</b></div>", null);
+				toastrAlert('error', msg05);
 				
 			} else {
 				$(location).prop('href', 'codeNew?groupId=00000&codeId=' + selData[0].groupId);
@@ -163,13 +163,13 @@
 			var selData = $("#tblGroup").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {
-				toastr.error("<div align='center'><b>" + msg06 + "</b></div>", null);
+				toastrAlert('error', msg06);
 				
 			} else {
 				var selChildData = $('#tblCode').DataTable().rows().data();
 				
 				if (selChildData.length > 0) {
-					toastr.error("<div align='center'><b>" + msg07 + "</b></div>", null);
+					toastrAlert('error', msg07);
 					
 				} else {
 	 				modalInit(true, '그룹 삭제', '코드그룹을 삭제하시겠습니까?', '확인', '취소');
@@ -183,7 +183,7 @@
 			var selData = $("#tblGroup").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {
-				toastr.error("<div align='center'><b>" + msg08 + "</b></div>", null);
+				toastrAlert('error', msg08);
 				
 			} else {
 				$(location).prop('href', 'codeNew?groupId=' + selData[0].groupId);
@@ -195,10 +195,10 @@
 			var selData = $("#tblCode").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {				
-				toastr.error("<div align='center'><b>" + msg09 + "</b></div>", null);
+				toastrAlert('error', msg09);
 				
 			} else if (selData.length > 1) {
-				toastr.error("<div align='center'><b>" + msg10 + "</b></div>", null);
+				toastrAlert('error', msg10);
 				
 			} else {
 				$(location).attr('href', 'codeNew?groupId=' + selData[0].groupId + '&codeId=' + selData[0].codeId);
@@ -214,12 +214,12 @@
 				$("#btnOk").addClass('deleteCode');
 				
 			} else {
-				toastr.error("<div align='center'><b>" + msg11 + "</b></div>", null);
+				toastrAlert('error', msg11);
 			}
 		});
 		
 		/* 삭제 진행 */
-		$("#btnOk").on('click', function() {
+		$('#btnOk').on('click', function() {
 			if ($(this).hasClass("deleteGroup")) {
 				$.ajax({
 					dataType: "json", 

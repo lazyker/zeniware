@@ -27,4 +27,14 @@ public class PluginManServiceImpl implements PluginManService {
     return pluginmanDao.getTreeNodeList(paramMap);
   }
   
+  @Override
+  public List<TreeNode> getNodeListSearch(Map<String, Object> paramMap) {
+    return pluginmanDao.getNodeListSearch(paramMap);
+  }
+  
+  @Override
+  public List<TreeNode> getDeferredNodeList(Map<String, Object> paramMap) {
+    return pluginmanDao.getDeferredNodeList(paramMap);
+  }
+  
 }

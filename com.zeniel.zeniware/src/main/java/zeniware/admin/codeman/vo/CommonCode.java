@@ -17,107 +17,113 @@ public class CommonCode {
   private Date modDate;
   
   public CommonCode() { }
-  
-  public CommonCode(String groupId) {
-    this.groupId = groupId;
-    this.sortOrder = 0;
-    this.useYn = true;
-  }
-  
+    
   public String getGroupId() {
     return this.groupId;
   }
   
-  public void setGroupId(String groupId) {
+  public CommonCode setGroupId(String groupId) {
     this.groupId = groupId;
+    return this;
   }
   
   public String getCodeId() {
     return this.codeId;
   }
   
-  public void setCodeId(String codeId) {
+  public CommonCode setCodeId(String codeId) {
     this.codeId = codeId;
+    return this;
   }
   
   public String getOrgCodeId() {
     return this.orgCodeId;
   }
   
-  public void setOrgCodeId(String orgCodeId) {
+  public CommonCode setOrgCodeId(String orgCodeId) {
     this.orgCodeId = orgCodeId;
+    return this;
   }
   
   public String getCodeNameKo() {
     return this.codeNameKo;
   }
   
-  public void setCodeNameKo(String codeNameKo) {
+  public CommonCode setCodeNameKo(String codeNameKo) {
     this.codeNameKo = codeNameKo;
+    return this;
   }
   
   public String getCodeNameEn() {
     return this.codeNameEn;
   }
   
-  public void setCodeNameEn(String codeNameEn) {
+  public CommonCode setCodeNameEn(String codeNameEn) {
     this.codeNameEn = codeNameEn;
+    return this;
   }
   
   public String getCodeNameZh() {
     return this.codeNameZh;
   }
   
-  public void setCodeNameZh(String codeNameZh) {
+  public CommonCode setCodeNameZh(String codeNameZh) {
     this.codeNameZh = codeNameZh;
+    return this;
   }
   
   public String getCodeNameJa() {
     return this.codeNameJa;
   }
   
-  public void setCodeNameJa(String codeNameJa) {
+  public CommonCode setCodeNameJa(String codeNameJa) {
     this.codeNameJa = codeNameJa;
+    return this;
   }
   
   public int getSortOrder() {
     return this.sortOrder;
   }
   
-  public void setSortOrder(int sortOrder) {
+  public CommonCode setSortOrder(int sortOrder) {
     this.sortOrder = sortOrder;
+    return this;
   }
   
   public boolean getUseYn() {
     return this.useYn;
   }
   
-  public void setUseYn(boolean useYn) {
+  public CommonCode setUseYn(boolean useYn) {
     this.useYn = useYn;
+    return this;
   }
   
   public String getDescription() {
     return this.description;
   }
   
-  public void setDescription(String description) {
+  public CommonCode setDescription(String description) {
     this.description = description;
+    return this;
   }
   
   public Date getRegDate() {
     return this.regDate;
   }
   
-  public void setRegDate(Date regDate) {
+  public CommonCode setRegDate(Date regDate) {
     this.regDate = regDate;
+    return this;
   }
   
   public Date getModDate() {
     return this.modDate;
   }
   
-  public void setModDate(Date modDate) {
+  public CommonCode setModDate(Date modDate) {
     this.modDate = modDate;
+    return this;
   }
   
 }

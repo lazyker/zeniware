@@ -11,5 +11,9 @@ public interface PluginManService {
   public List<SelectOption> getSboxCodeList(Map<String, Object> paramMap);
   
   public List<TreeNode> getTreeNodeList(Map<String, Object> paramMap);
+  
+  public List<TreeNode> getNodeListSearch(Map<String, Object> paramMap);
+  
+  public List<TreeNode> getDeferredNodeList(Map<String, Object> paramMap);
 
 }

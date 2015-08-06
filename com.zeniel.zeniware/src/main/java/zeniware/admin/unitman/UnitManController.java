@@ -187,7 +187,7 @@ public class UnitManController {
   }
   
   private Department deptMaker(String compId, String parentDeptId, String parentDeptName) {
-    return new Department(compId, parentDeptId, parentDeptName);
+    return new Department().setCompId(compId).setParentDeptId(parentDeptId).setParentDeptName(parentDeptName);
   }
   
   private Department deptMaker(Map<String, Object> paramMap) {
@@ -195,7 +195,13 @@ public class UnitManController {
   }
   
   private User userMaker(String compId, String deptId) {
-    return new User(compId, deptId);
+    return new User()
+      .setCompId(compId)
+      .setDeptId(deptId)
+      .setActivateYn(true)
+      .setUseLunarYn(false)
+      .setSecurityLevel(10)
+      .setSortOrder(0);
   }
   
   private User userMaker(Map<String, Object> paramMap) {

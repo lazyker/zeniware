@@ -5,7 +5,8 @@
 /**
  * 공통 custom
 */
-/* dataTable customized */
+
+/*** dataTable customized ***/
 table.dataTable tbody tr.selected {
   background-color: #b0bed9;
 	color: #fff;
@@ -20,7 +21,7 @@ table.dataTable th, table.dataTable td {
 	white-space: nowrap;
 }
 
-/* page-title customized */
+/*** page-title customized ***/
 .page-container .main-content .page-title .title-env .title {
 	font-size: 22px
 }
@@ -29,14 +30,25 @@ table.dataTable th, table.dataTable td {
 	padding-bottom: 0;
 }
 
-/* panel-flat customized */
-.panel.panel-flat {
+/*** panel-flat-custom added ***/
+.panel.panel-flat-custom {
+	background: 0 0;
 	padding-top: 20px;
-	padding-left: 30px;
-	padding-right: 30px
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	margin: 0
 }
 
-/* footer customized */
+.panel.panel-flat-custom .panel-heading {
+	border-bottom-color: #ddd
+}
+
+.panel.panel-flat-custom .panel-disabled {
+	background: rgba(238, 238, 238, .6)
+}
+
+/*** footer customized ***/
 .footer-sticked-chat {
 /* 		left: 0; */
 	right: 30px;
@@ -54,6 +66,10 @@ table.dataTable th, table.dataTable td {
 
 .footer-sticked-chat .chat-conversations>li .conversation-window .conversation-messages {
 	max-height: 350px
+}
+
+.footer-sticked-chat .chat-conversations>li .custom-jstree {
+	width: 200px
 }
 
 /**

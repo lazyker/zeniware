@@ -86,7 +86,7 @@
 			var selData = $("#tblComp").DataTable().rows(".selected").data();
 			
 			if (selData.length == 0) {
-				toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
+				toastrAlert('error', msg01);
 			} else {
 				console.log(selData[0].compId);
 				$(location).prop('href', 'unitMain?compId=' + selData[0].compId);

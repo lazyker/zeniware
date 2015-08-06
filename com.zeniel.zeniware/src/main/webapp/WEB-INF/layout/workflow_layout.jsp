@@ -69,7 +69,7 @@
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 	

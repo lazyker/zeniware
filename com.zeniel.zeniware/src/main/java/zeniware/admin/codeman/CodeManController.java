@@ -131,9 +131,9 @@ public class CodeManController {
   /*********************
    * Private Procedures
    *********************/
-  private CommonCode codeMaker(String groupID) {
-    
-    return new CommonCode(groupID);
+  private CommonCode codeMaker(String groupId) {
+
+    return new CommonCode().setGroupId(groupId).setSortOrder(0).setUseYn(true);
   }
   
   private CommonCode codeMaker(Map<String, Object> paramMap) {
