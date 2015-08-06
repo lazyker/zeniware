@@ -186,15 +186,27 @@ public class CommunityController {
 	public String getComtInfoEditView(@RequestParam Map<String, Object>paramMap, ModelMap model, Authentication authentication) throws Throwable {
 		//Spring Security의 Authentication 객를 주입
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
-
+		paramMap .put("compId",	memberInfo.getCompId());
+		paramMap .put("userId",	memberInfo.getUserId());
+		
 		//cumt view left 메뉴 조회
 		List<ComtVo> list = getCumntUserJoinList(memberInfo);
 		model.addAttribute("comtlist", list);
 		model.addAttribute("memberInfo", memberInfo);
 
-		model.put("compId", memberInfo.getCompId());
+		model.put("compId",		memberInfo.getCompId());
+		model.put("comtVo",		this.comtMaker(paramMap));
+		model.addAttribute("useList", this.comtUserMaster(paramMap));
 
 		//return "/comtLayout/comtViewMain";
 		return "/cumtLayout/community/comtViewMain";
+	}
+
+	private ComtVo comtMaker(Map<String, Object> paramMap) {
+		return communityService.getComtInfoDetail(paramMap);
+	}
+
+	private List<Map<String, Object>> comtUserMaster(Map<String, Object> paramMap) {
+		return communityService.getComtInofUserMastList(paramMap);
 	}
 }

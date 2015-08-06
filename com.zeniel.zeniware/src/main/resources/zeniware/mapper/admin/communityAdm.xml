@@ -17,19 +17,19 @@
 	</resultMap>
 
 	<resultMap type="zeniware.admin.community.vo.ComtInfoVO" id="cumtInfoResultMap">
-		<id column="COMP_ID"			property="compId" />
-		<id column="FC_COMT_ID"			property="fcComtId" />
-		<result	column="FC_COMT_ID"		property="fcComtId" />
-		<result	column="FC_ADM_SEQ"		property="fcAdmSeq" />
-		<result column="COMP_ID"		property="compId" />
-		<result column="CUMT_NM"		property="cumtNm" />
-		<result column="CUMT_COMMENT"	property="cumtComment" />
-		<result column="ADM_ACT_YN"		property="admActYn" />
-		<result column="OPEN_YN"		property="openYn" />
-		<result column="REG_DATE"		property="regDate" />
-		<result column="MOD_DATE"		property="modDate" />
-		<result column="REG_USER_ID"	property="regUserId" />
-		<result column="MOD_USER_ID"	property="modUserId" />
+		<id column="COMP_ID"						property="compId" />
+		<id column="FC_COMT_ID"					property="fcComtId" />
+		<result	column="FC_COMT_ID"			property="fcComtId" />
+		<result	column="FC_ADM_SEQ"			property="fcAdmSeq" />
+		<result column="COMP_ID"					property="compId" />
+		<result column="CUMT_NM"				property="cumtNm" />
+		<result column="CUMT_COMMENT"		property="cumtComment" />
+		<result column="ADM_ACT_YN"			property="admActYn" />
+		<result column="OPEN_YN"					property="openYn" />
+		<result column="REG_DATE"				property="regDate" />
+		<result column="MOD_DATE"				property="modDate" />
+		<result column="REG_USER_ID"			property="regUserId" />
+		<result column="MOD_USER_ID"			property="modUserId" />
 	</resultMap>
 
 	<select id="cmutadmin.getCommunityBasic" parameterType="map" resultType="hashmap">

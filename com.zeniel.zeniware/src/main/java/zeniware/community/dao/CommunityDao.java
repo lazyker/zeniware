@@ -78,4 +78,11 @@ public class CommunityDao extends AbstractDao {
 	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo) {
 		return (int) insert("comtUser.setInsertComtAllInfoUserAdd", paramVo);
 	}
+
+	/**
+	 * 커뮤니티 정보 상세 view 조회
+	*/
+	public ComtVo getComtInfoDetail(Map<String, Object> paramMap) {
+		return (ComtVo) selectOne("comtUser.comtview.getComtInfoDetail", paramMap);
+	}
 }

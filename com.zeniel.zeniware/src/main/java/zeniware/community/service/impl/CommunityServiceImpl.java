@@ -54,4 +54,9 @@ public class CommunityServiceImpl implements CommunityService {
 	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo) {
 		return communityDao.setInsertComtAllInfoUserAdd(paramVo);
 	}
+
+	@Override
+	public ComtVo getComtInfoDetail(Map<String, Object> paramMap) {
+		return communityDao.getComtInfoDetail(paramMap);
+	}
 }

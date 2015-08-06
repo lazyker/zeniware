@@ -49,4 +49,6 @@ public interface CommunityService {
 	 * @param ComtAddInfoVo
 	*/
 	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo);
+
+	public ComtVo getComtInfoDetail(Map<String, Object> paramMap);
 }

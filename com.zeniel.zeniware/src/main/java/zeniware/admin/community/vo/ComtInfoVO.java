@@ -3,7 +3,7 @@ package zeniware.admin.community.vo;
 import java.io.Serializable;
 
 public class ComtInfoVO implements Serializable {
-	private int fcComtId;			//FC_COMT_ID
+	private String fcComtId;			//FC_COMT_ID
 	private int fcAdmSeq;			//FC_ADM_SEQ
 	private String compId;			//COMP_ID
 	private String cumtNm;			//CUMT_NM
@@ -14,10 +14,10 @@ public class ComtInfoVO implements Serializable {
 	private String modDate;			//MOD_DATE
 	private String regUserId;		//REG_USER_ID
 	private String modUserId;		//MOD_USER_ID
-	public int getFcComtId() {
+	public String getFcComtId() {
 		return fcComtId;
 	}
-	public void setFcComtId(int fcComtId) {
+	public void setFcComtId(String fcComtId) {
 		this.fcComtId = fcComtId;
 	}
 	public int getFcAdmSeq() {
