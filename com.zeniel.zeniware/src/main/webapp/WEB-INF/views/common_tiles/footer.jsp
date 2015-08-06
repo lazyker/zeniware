@@ -41,6 +41,13 @@
 
 </div>
 
+<div id="popover-head" class="hide">Search stock</div>
+<div id="popover-content" class="hide">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Search"> <button class="btn btn-default btn-add-panel">Submit</button>
+	</div>
+</div>
+
 <script type="text/javascript">
 
 	function toggleSampleChatWindow()
@@ -102,8 +109,15 @@
 			}
 		});
 		
-		$('#jstreeMember').on('dblclick.jstree', function(e, data) {
+		$('#jstreeMember').on('open_node.jstree', function(e, data) {
 			e.preventDefault();
+			
+			$('.footer-sticked-chat').popover({
+				html: true, 
+				title: function() { return $('#popover-head').html(); }, 
+				content: function() { return $('#popover-content').html(); }, 
+				placement: 'left'
+			});
 		});
 		
 		/* jsTree Search... */
