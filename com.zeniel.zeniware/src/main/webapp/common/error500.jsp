@@ -12,14 +12,20 @@
 <title>ERROR</title>
 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
-	<link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
-	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
-	<link rel="stylesheet" href="assets/css/xenon-core.css">
-	<link rel="stylesheet" href="assets/css/xenon-forms.css">
-	<link rel="stylesheet" href="assets/css/xenon-components.css">
-	<link rel="stylesheet" href="assets/css/xenon-skins.css">
-	<link rel="stylesheet" href="assets/css/custom.css">
+	<link rel="stylesheet" href="../assets/css/fonts/linecons/css/linecons.css">
+	<link rel="stylesheet" href="../assets/css/fonts/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/css/xenon-core.css">
+	<link rel="stylesheet" href="../assets/css/xenon-forms.css">
+	<link rel="stylesheet" href="../assets/css/xenon-components.css">
+	<link rel="stylesheet" href="../assets/css/xenon-skins.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	
+	<script>
+			function page_back(){
+				window.history.back();
+			}
+		</script>
 
 </head>
 <body class="page-body page-error-env">
@@ -59,7 +65,7 @@
 	</div>
 	
 	<div class="page-error-search centered">
-		<a href="#" class="go-back">
+		<a href="javascript:;" class="go-back" onclick="page_back();">
 			<i class="fa-angle-left"></i>
 			Go Back
 		</a>

@@ -89,22 +89,44 @@
 						<script type="text/javascript">
 							jQuery(document).ready(function($)
 							{
-								//selectboxit 모듈 활성화 전에 data bind
-								$('#calendarList').val('<c:out value="${schedVo.cldrId}"></c:out>');
-								
-								$("#calendarList").selectBoxIt().on('open', function()
-								{
-									// Adding Custom Scrollbar
-									$(this).data('selectBoxSelectBoxIt').list.perfectScrollbar();
+								$.ajax({
+									url: './getCalendarList',
+									data : {
+										userId : '<c:out value="${user.userId}"/>',
+										compId : '<c:out value="${user.compId}"/>'
+										
+									},
+									success : function(data) {
+										var calendarList = $('#calendarList');
+										var obj = JSON.parse(data);
+										
+										$.each(obj, function(i) {
+											var shreYn = obj[i].shreYn;
+											
+											calendarList.append(
+													'<option value="'+ obj[i].cldrId +'">' + obj[i].cldrNm + '</option>'
+													);
+										});
+										
+										//selectboxit 모듈 활성화 전에 data bind
+										$('#calendarList').val('<c:out value="${schedVo.cldrId}"></c:out>');
+										
+										$("#calendarList").selectBoxIt().on('open', function()
+										{
+											// Adding Custom Scrollbar
+											$(this).data('selectBoxSelectBoxIt').list.perfectScrollbar();
+										});
+										
+									}
 								});
 							});
 						</script>
 						
 						<div class="col-sm-5">
 							<select class="form-control" name="cldrId" id="calendarList" data-size="10">
-								<c:forEach items="${calList}" var="detail">
-									<option value="<c:out value="${detail.cldrId}" />"><c:out value="${detail.cldrNm}"></c:out> </option>
-	 							</c:forEach>
+<%-- 								<c:forEach items="${calList}" var="detail"> --%>
+<!-- 									<option value=""></option> -->
+<%-- 	 							</c:forEach> --%>
 							</select>
 						</div>
 					</div>
@@ -166,7 +188,7 @@
 								<div class="tab-pane active" id="daily">
 									<div class="form-group">
 										<div class="col-md-2">
-												<select class="form-control" id="repeat">
+												<select class="form-control" id="dailyRpetCyc">
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -184,7 +206,7 @@
 										
 										<div class="col-md-4">
 											<div class="input-group">
-												<input type="text" class="form-control datepicker" name="rpetEndYmd" id="rpetEndYmd" data-format="yyyy-mm-dd">
+												<input type="text" class="form-control datepicker" id="dailyEndYmd" data-format="yyyy-mm-dd">
 												
 												<div class="input-group-addon">
 													<a href="#"><i class="linecons-calendar"></i></a>
@@ -207,7 +229,7 @@
 								<div class="tab-pane" id="weekly">
 									<div class="form-group">
 										<div class="col-md-2">
-												<select class="form-control" id="repeat">
+												<select class="form-control" id="weeklyRpetCyc">
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -222,25 +244,25 @@
 										<div class="col-md-10">
 										<p>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 일
+												<input type="checkbox" class="cbr" name="rpetDd" value="0"> 일
 											</label>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 월
+												<input type="checkbox" class="cbr" name="rpetDd" value="1"> 월
 											</label>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 화
+												<input type="checkbox" class="cbr" name="rpetDd" value="2"> 화
 											</label>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 수
+												<input type="checkbox" class="cbr" name="rpetDd" value="3"> 수
 											</label>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 목
+												<input type="checkbox" class="cbr" name="rpetDd" value="4"> 목
 											</label>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 금
+												<input type="checkbox" class="cbr" name="rpetDd" value="5"> 금
 											</label>
 											<label class="cbr-inline">
-												<input type="checkbox" class="cbr"> 토
+												<input type="checkbox" class="cbr" name="rpetDd" value="6"> 토
 											</label>
 										</p>
 										</div>
@@ -253,7 +275,7 @@
 										
 										<div class="col-md-4">
 											<div class="input-group">
-												<input type="text" class="form-control datepicker" name="rpetEndYmd" id="rpetEndYmd" data-format="yyyy-mm-dd">
+												<input type="text" class="form-control datepicker" id="weeklyEndYmd" data-format="yyyy-mm-dd">
 												
 												<div class="input-group-addon">
 													<a href="#"><i class="linecons-calendar"></i></a>
@@ -266,7 +288,7 @@
 										<div class="col-md-4">
 											<div class="form-block">
 												<label>
-													<input type="checkbox" name="infinite"> 무한반복
+													<input type="checkbox" name="infinite" > 무한반복
 												</label>
 											</div>
 										</div>
@@ -276,7 +298,7 @@
 								<div class="tab-pane" id="monthly">
 									<div class="form-group">
 										<div class="col-md-2">
-												<select class="form-control" id="repeat">
+												<select class="form-control" id="monthlyRpetCyc">
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -294,7 +316,7 @@
 										
 										<div class="col-md-4">
 											<div class="input-group">
-												<input type="text" class="form-control datepicker" name="rpetEndYmd" id="rpetEndYmd" data-format="yyyy-mm-dd">
+												<input type="text" class="form-control datepicker" id="monthlyEndYmd" data-format="yyyy-mm-dd">
 												
 												<div class="input-group-addon">
 													<a href="#"><i class="linecons-calendar"></i></a>
@@ -307,7 +329,7 @@
 										<div class="col-md-4">
 											<div class="form-block">
 												<label>
-													<input type="checkbox" name="infinite"> 무한반복
+													<input type="checkbox" name="infinite" > 무한반복
 												</label>
 											</div>
 										</div>
@@ -317,7 +339,7 @@
 								<div class="tab-pane" id="yearly">
 									<div class="form-group">
 										<div class="col-md-2">
-												<select class="form-control" id="repeat">
+												<select class="form-control" id="yearlyRpetCyc">
 													<option value="1">1</option>
 												</select>
 										</div>
@@ -333,7 +355,7 @@
 										
 										<div class="col-md-4">
 											<div class="input-group">
-												<input type="text" class="form-control datepicker" name="rpetEndYmd" id="rpetEndYmd" data-format="yyyy-mm-dd">
+												<input type="text" class="form-control datepicker" id="yearlyEndYmd"  data-format="yyyy-mm-dd">
 												
 												<div class="input-group-addon">
 													<a href="#"><i class="linecons-calendar"></i></a>
@@ -346,7 +368,7 @@
 										<div class="col-md-4">
 											<div class="form-block">
 												<label>
-													<input type="checkbox" name="infinite"> 무한반복
+													<input type="checkbox" name="infinite" > 무한반복
 												</label>
 											</div>
 										</div>
@@ -359,12 +381,17 @@
 					
 					<div class="row">
 						<div class="col-md-12 align-center">
-<!-- 							<input type="button" class="btn btn-turquoise" id="saveSchedule" value="저장"> -->
-							
 							<button type="button" class="btn btn-turquoise" id="saveSchedule">저장</button>
 							<button type="button" class="btn btn-gray" id="cancel" >취소</button>
 						</div>
 					</div>
+					
+					<!-- 반복일정 data -->
+<!-- 					<input type="text" name="rpetCyc" id="rpetCyc" value="0" placeholder="반복주기"> -->
+					<input type="text" name="rpetEndYmd" id="rpetEndYmd" placeholder="반복종료일">
+					<input type="text" name="rpetType" id="rpetType" placeholder="반복유형">
+					<input type="text" name="unlmtRpetYn" id="unlmtRpetYn" value="N" placeholder="무한반복">
+					<input type="text" name="rpetDateType" id="rpetDateType" value="0" placeholder="반복날짜형태">
 				</form>
 			</div>
 		</div>
@@ -409,14 +436,13 @@
 					$('#endTm').attr('disabled', true);
 				}
 			}
-			
-			
-			/** 종일 체크박스 클릭 이벤트 **/
+									
+			//종일 체크박스 클릭 이벤트
 			$('#allDay').on('change', function() {
 				allDayEvent($(this));
 			});
 			
-			/** 반복 체크박스 클릭 이벤트 **/
+			//반복 체크박스 클릭 이벤트
 			$('#rpetYn').on('change', function() {
 				repeatEvent($(this));
 			});
@@ -427,33 +453,102 @@
 			$state.on('change', function(ev)
 			{
 				if($(this).is(':checked')) {
-					$('input[name=rpetEndYmd]').attr('disabled', true);
+					$('#dailyEndYmd').attr('disabled', true);
+					$('#weeklyEndYmd').attr('disabled', true);
+					$('#monthlyEndYmd').attr('disabled', true);
+					$('#yearlyEndYmd').attr('disabled', true);
 					$state.prop('checked', true);  
 				}
 				else {
-					$('input[name=rpetEndYmd]').attr('disabled', false);
+					$('#dailyEndYmd').attr('disabled', false);
+					$('#weeklyEndYmd').attr('disabled', false);
+					$('#monthlyEndYmd').attr('disabled', false);
+					$('#yearlyEndYmd').attr('disabled', false);
 					$state.prop('checked', false);
 				}
 			});
 			
-			/** 저장 이벤트 **/
+			//반복 옵션 탭 이벤트
+			$('.nav-tabs').find('li').on('click', function() {
+				var dayOption	= $(this).find('a').prop('href').split('#');
+				
+				rpetTitleEvent(dayOption[1]);
+			});
+			
+			
+			//저장 이벤트
 			$('#saveSchedule').on('click', function() {
+
+				if ( $("#calendarList option:selected").val() == undefined )
+					$("#calendarList option:eq(0)").prop("selected", "selected");
+				
+				//시간이 한자리일 경우 앞에 0을 추가
+				{
+					var startTmVal = $('#startTm');
+					var endTmVal = $('#endTm');
+					
+					if (startTmVal.val().length == 4)
+						startTmVal.val(addZero(startTmVal.val()));
+						
+					if (endTmVal.val().length == 4)
+						endTmVal.val(addZero(endTmVal.val()));
+				}
+							
+// 				var $rpetCyc = $('#rpetCyc'); //반복주기
+				var $rpetEndYmd = $('#rpetEndYmd'); //반복 종료일
+				var repeatOps = repeatOption();
+				$('#rpetDateType').val('0'); //default
+				
+				if (repeatOps == 'daily') {
+					
+// 					$rpetCyc.val(Number($('#dailyRpetCyc').val())); //반복주기 bind
+// 					$rpetEndYmd.val($('#dailyEndYmd').val()); //반복종료일 bind
+// 					$('#rpetType').val('D'); //반복유형 bind
+					
+				} else if (repeatOps == 'weekly') {
+					
+// 					if ($('input[name="rpetDd"]').is(':checked') == true) {
+// 						$('#rpetDateType').val('1'); //반복날짜 형태를 요일로 변경(0:날짜, 1:요일)
+// 					} 
+					
+// 					$rpetEndYmd.val($('#weeklyEndYmd').val());
+// 					$('#rpetType').val('W');
+					
+				} else if (repeatOps == 'monthly') {
+					
+// 					$rpetEndYmd.val($('#monthlyEndYmd').val());
+// 					$('#rpetType').val('M');
+					
+				} else if (repeatOps == 'yearly') {
+// 					alert(Number($('#yearlyRpetCyc').val()) * 365);
+					
+// 					$rpetCyc.val($('yearlyRpetCyc').val());
+// 					$rpetEndYmd.val($('#yearlyEndYmd').val());
+// 					$('#rpetType').val('Y');
+				}
+				
+// 				validateRpetEndYmd(); //반복 종료일 유효성 검사
+				
+// 				return;
 				
 				//schedId가 없으면 신규, 있으면 수정으로 controller에서 처리한다.
-				$('#frm').attr('action', '${pageContext.request.contextPath}/schedule/setScheduleData');
-				$('#frm').submit();
+				$('#frm').prop('action', './setScheduleData').submit();
 				
 			});
 			
-			$('.nav-tabs').find('li').each(function(idx) {
-				  if($(this).hasClass('active')) {
-					  var title = $(this).context.innerText;
-				  }
-								
-				});
-					
+			//취소 이벤트
+			$("#cancel").on('click', function() {
+				
+				$(location).prop('href', './scheduleMain');
+				
+			});
+			
 		}); //ready End
 		
+		function addZero(obj) {
+			obj= '0'+obj;
+			return obj;
+		}
 		
 		/** 종일 체크박스 이벤트 함수 **/
 		function allDayEvent(allDay) {
@@ -469,6 +564,16 @@
 		
 		/** 반복 체크박스 이벤트 함수 **/
 		function repeatEvent(opt) {
+			 {
+				//종료일 bind
+				var startYmd = $('#startYmd').val();
+				var date = new Date(startYmd);
+				date.setMonth(date.getMonth()+1);
+				var rpetEndYmd = date.format("yyyy-MM-dd");
+				
+				$('#dailyEndYmd').datepicker('update', rpetEndYmd);
+			 }
+			
 			if(opt.is(':checked')) {
 				$('#rpetOption').show();
 				$('#rpetYn').val("Y");
@@ -478,5 +583,82 @@
 			}
 		}
 		
+		function repeatOption() {
+			var option;
+			
+			$('.nav-tabs').find('li').each(function(idx) {
+				  if($(this).hasClass('active'))
+					  option = $(this).find('a').prop('href').split('#');
+			});
+			
+			return option[1];
+		}
+		
+		//** 반복 옵션 클릭시 종료일 bind Event **//
+		function rpetTitleEvent(dayOption) {
+			var startYmd = $('#startYmd').val(); //일시
+			var date = new Date(startYmd);
+			var rpetEndYmd;
+			
+			if (dayOption == 'daily') {
+				date.setMonth(date.getMonth()+1);
+				rpetEndYmd = date.format("yyyy-MM-dd");
+				
+				$('#dailyEndYmd').datepicker('update', rpetEndYmd);
+				
+			} else if (dayOption == 'weekly') {
+				date.setMonth(date.getMonth()+1);
+				rpetEndYmd = date.format("yyyy-MM-dd");
+				
+				$('#weeklyEndYmd').datepicker('update', rpetEndYmd);
+				
+			} else if (dayOption == 'monthly') {
+				date.setFullYear(date.getFullYear()+1);
+				rpetEndYmd = date.format("yyyy-MM-dd");
+				
+				$('#monthlyEndYmd').datepicker('update', rpetEndYmd);
+				
+			} else if (dayOption == 'yearly') {
+				date.setFullYear(date.getFullYear()+1);
+				rpetEndYmd = date.format("yyyy-MM-dd");
+				
+				$('#yearlyEndYmd').datepicker('update', rpetEndYmd);
+			}
+			
+		}
+		
+		//** 반복 종료일 유효성 검사 **//
+		function validateRpetEndYmd() {
+			var $state = $('input[name=infinite]');
+			var rpetInfinite = $state.is(':checked'); //무한반복 체크박스
+			var $rpetEndYmd = $('#rpetEndYmd'); //반복 종료일
+			
+			if ($('#rpetYn').is(':checked')) 
+			{
+				var rpetEndYmdVal = $rpetEndYmd.val();
+				$('#unlmtRpetYn').val('N'); //무한반복 default 'N
+				
+				if (rpetEndYmdVal== "" && rpetInfinite == false) {
+					
+					toastrAlert('error', '종료일을 입력해주세요.');
+					return false;
+				}
+				else 
+				{
+					if(rpetInfinite == false) {
+						var rpetStartYmd = $('#startYmd').val().replace(/-/g, ''); //반복 시작일
+						
+						if (rpetStartYmd > rpetEndYmdVal.replace(/-/g, '')) {
+							toastrAlert('error', '시작일이 종료일보다 작을 수 없습니다.');
+							return false;
+						}
+					} else {
+						$('#unlmtRpetYn').val('Y'); //무한반복 
+					}
+					
+				}
+			}
+			
+		}
+		
 	</script>
-	

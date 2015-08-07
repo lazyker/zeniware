@@ -1,5 +1,6 @@
 package zeniware.schedule.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,8 +21,18 @@ public class ScheduleServiceImpl implements ScheduleService {
 	@Override
 	public List<CalendarVo> getCalendarList(Map<String, Object> paramMap) {
 		
-		List<CalendarVo> list = scheduleDao.getCalendarList(paramMap);
-		return list;
+		List<CalendarVo> calList = scheduleDao.getCalendarList(paramMap);
+		List<CalendarVo> shareCalList  = scheduleDao.getShreCalendarList(paramMap);
+		List<CalendarVo> mergeResult = new ArrayList<>();
+		
+		mergeResult.addAll(calList);
+		
+		//공유 캘린더(회사 캘린더)를 두번째에 넣는다.
+		for(CalendarVo vo : shareCalList) {
+			mergeResult.add(1, vo);
+		}
+		
+		return mergeResult;
 	}
 	
 	@Override
@@ -72,6 +83,12 @@ public class ScheduleServiceImpl implements ScheduleService {
 		scheduleDao.delScheduleData(paramVo);
 		
 	}
+	
+	@Override
+	public void setRpetSchedule(ScheduleVo paramVo) {
+		scheduleDao.setRpetSchedule(paramVo);
+	}
+	
 
 	@Override
 	public void test(String param) throws Exception {

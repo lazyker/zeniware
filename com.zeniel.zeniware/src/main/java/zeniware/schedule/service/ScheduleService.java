@@ -72,7 +72,11 @@ public interface ScheduleService {
 	 */
 	public void delScheduleData(ScheduleVo paramVo);
 	
-	
+	/**
+	 * 반복일정 등록
+	 * @param  ScheduleVo
+	 */
+	public void setRpetSchedule(ScheduleVo paramVo);
 	
 	
 	

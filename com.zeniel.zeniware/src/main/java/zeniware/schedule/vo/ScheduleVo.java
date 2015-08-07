@@ -21,6 +21,7 @@ public class ScheduleVo implements Serializable {
 	private String startTm;
 	private String endTm;
 	private String rpetYn;
+	private String unlmtRpetYn;
 	private String rpetEndYmd;
 	private String rpetType;
 	private int rpetCyc;
@@ -31,6 +32,28 @@ public class ScheduleVo implements Serializable {
 	private String start;
 	private String end;
 	
+	private String rpetDateType;
+	private String rpetDd;
+	
+	
+	public String getUnlmtRpetYn() {
+		return unlmtRpetYn;
+	}
+	public void setUnlmtRpetYn(String unlmtRpetYn) {
+		this.unlmtRpetYn = unlmtRpetYn;
+	}
+	public String getRpetDateType() {
+		return rpetDateType;
+	}
+	public void setRpetDateType(String rpetDateType) {
+		this.rpetDateType = rpetDateType;
+	}
+	public String getRpetDd() {
+		return rpetDd;
+	}
+	public void setRpetDD(String rpetDd) {
+		this.rpetDd = rpetDd;
+	}
 	public String getTitle() {
 		return title;
 	}
