@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.*" %>
+
+<sec:authentication var="user" property="principal" />
 
 <div class="sidebar-menu toggle-others" style="background-color:#E3E3E3;">
 
@@ -119,7 +122,7 @@
 	</ul>
 					
 </div>
-
+	
 	<!-- 캘린더 추가 Modal -->
 	<form role="form" id="calForm" class="validate">
 	<div class="modal fade" id="calendarModal">
@@ -184,6 +187,41 @@
 		<script type="text/javascript">
 		
 		$(document).ready(function() {
+			
+			$.ajax({
+				url: './getCalendarList',
+				data : {
+					userId : '<c:out value="${user.userId}"/>',
+					compId : '<c:out value="${user.compId}"/>'
+					
+				},
+				success : function(data){
+					
+					var strCal = $('#calendar-menu');
+					var obj = JSON.parse(data);
+					
+					$.each(obj, function(i) {
+						strCal.append(
+								'<li  id="' + obj[i].cldrId + '">'
+								+ '<input type="checkbox" class="cbr cbr-'+ obj[i].cldrColorVal +'" checked>'
+								+ '<a href="#" class="calendarList" data-toggle="modal" data-target="#calendarModal" data-whatever="'+ obj[i].cldrId +',' + obj[i].cldrNm +',' + obj[i].cldrColorVal +'">&nbsp'
+								+ obj[i].cldrNm
+								+ '</a></li>'
+								);
+					});
+					
+					cbr_replace();
+					
+// 					<li  id="<c:out value="${detail.cldrId}"/>">
+// 					<input type="checkbox" class="cbr cbr-<c:out value="${detail.cldrColorVal}"/>" checked> 
+// 					<a href="#" class="calendarList" data-toggle="modal" data-target="#calendarModal" data-whatever="<c:out value="${detail.cldrId},${detail.cldrNm},${detail.cldrColorVal}" />" >
+// 						<c:out value="${detail.cldrNm}" />
+// 					</a>
+// 				</li>					
+					
+				}
+					
+			})
 			
 			//simplecolorpicker 적용
 			$('select[name="colorpicker-option-selected"]').simplecolorpicker({theme: 'glyphicons'});
@@ -278,7 +316,7 @@
 				}
 				
 				$.ajax({
-					url: '${pageContext.request.contextPath}/schedule/addCalendar',
+					url: './addCalendar',
 					contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
 					data: data,
 					success: function(data)
@@ -374,14 +412,13 @@
 			//캘린더 삭제 버튼 활성화 이벤트
 			function showDelCalBtn() {
 		 		if($('.del').length <= 0) {
-		 			$.each($('#calendar-menu > li'), function(i, element) {
-		 				var index = i + 1;
+		 			$.each($('#calendar-menu > li'), function(idx, element) {
 		 				var cldrId = $(element).attr('id');
 		 				
-		 				if( index > 1 ) {
+		 				if( idx > 1 ) {
 				 			var delHtml = 
 				 				"<span class=\"pull-right del\">" +
-				 				"<a href=\"javascript:;\" onclick=\"delCalendar(" + index + ", \'" + cldrId + "\');\">" +
+				 				"<a href=\"javascript:;\" onclick=\"delCalendar(" + idx + ", \'" + cldrId + "\');\">" +
 				 				"<i class=\"fa fa-times\"></i></a>" +
 				 				"</span>";
 			 				

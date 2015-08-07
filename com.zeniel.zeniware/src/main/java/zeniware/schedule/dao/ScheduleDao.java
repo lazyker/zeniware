@@ -22,6 +22,15 @@ public class ScheduleDao extends AbstractDao {
 	}
 	
 	/**
+	 * 공유 캘린더 리스트
+	 * @param paramMap
+	 * @return List<CalendarVo>
+	 */
+	public List<CalendarVo> getShreCalendarList(Map<String, Object>paramMap) {
+		return (List<CalendarVo>) selectList("schedule.getShreCalendarList", paramMap);
+	}	
+	
+	/**
 	 * 캘린더 추가
 	 * @param paramVo
 	 */
@@ -95,6 +104,13 @@ public class ScheduleDao extends AbstractDao {
 		update("schedule.delScheduleData", paramVo);
 	}
 	
+	/**
+	 * 반복일정 등록
+	 * @param paramVo
+	 */
+	public void setRpetSchedule(ScheduleVo paramVo) {
+		insert("schedule.setRpetSchedule", paramVo);
+	}
 	
 	
 	//트랜잭션 테스트

@@ -38,6 +38,35 @@ public class ScheduleController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 	
+	/** 캘린더 리스트 조회 **/
+	@RequestMapping(value="/schedule/getCalendarList") 
+	public void getCalendarList(@RequestParam Map<String, Object>paramMap, HttpServletResponse response) throws IOException {
+		
+		List<CalendarVo> mergeCalList  = scheduleService.getCalendarList(paramMap);
+		
+		ObjectMapper om = new ObjectMapper();
+		
+		String jsonString = om.writeValueAsString(mergeCalList);
+		
+		OutputStream out = response.getOutputStream();
+		out.write(jsonString.getBytes());
+	}
+	
+//	/** 캘린더 리스트 조회 **/
+//	public List<CalendarVo> getCalendarList(MemberInfo memberInfo) {
+//		
+//		Map<String, Object>paramMap = new HashMap<String, Object>();
+//		
+//		paramMap.put("compId", memberInfo.getCompId());
+//		paramMap.put("userId", memberInfo.getUserId());
+//		
+//		List<CalendarVo> calList  = scheduleService.getCalendarList(paramMap);
+//		List<CalendarVo> shareCalList  = scheduleService.getCalendarList(paramMap);
+//		
+//		
+//		return calList;
+//	}
+	
 	/** 캘린더 추가 **/
 	@RequestMapping(value="/schedule/addCalendar") 
 	public void addCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response, Authentication authentication) throws IOException {
@@ -72,22 +101,6 @@ public class ScheduleController {
 		out.write(jsonString.getBytes());
 	}
 	
-	/** 캘린더 리스트 조회 **/
-	public List<CalendarVo> getCalendarList(MemberInfo memberInfo) {
-		
-		Map<String, Object>paramMap = new HashMap<String, Object>();
-		
-		paramMap.put("compId", memberInfo.getCompId());
-		paramMap.put("userId", memberInfo.getUserId());
-		paramMap.put("shreYn", "N");
-		
-		List<CalendarVo> calList  = scheduleService.getCalendarList(paramMap);
-		List<CalendarVo> shareCalList  = scheduleService.getCalendarList(paramMap);
-		
-		
-		return calList;
-	}
-	
 	/** 캘린더 삭제 **/
 	@RequestMapping(value="/schedule/delCalendar") 
 	public void delCalendar(@ModelAttribute CalendarVo calendarVo, HttpServletResponse response, Authentication authentication) throws IOException {
@@ -111,14 +124,17 @@ public class ScheduleController {
 	@RequestMapping(value="/schedule/setScheduleData", method = RequestMethod.POST) 
 	public String setScheduleData(@ModelAttribute ScheduleVo scheduleVo) {
 		
-		if(null != scheduleVo.getStartTm()) {
+		if (null != scheduleVo.getStartTm()) {
 			scheduleVo.setStartTm(scheduleVo.getStartTm().replace(":", ""));
 			scheduleVo.setEndTm(scheduleVo.getEndTm().replace(":", ""));
 		}
 		
-		if("".equals(scheduleVo.getSchedId())) {
+		if ("".equals(scheduleVo.getSchedId())) {
 			//신규 일정 저장
 			scheduleService.setScheduleData(scheduleVo);
+			if ("Y".equals(scheduleVo.getRpetYn())) {
+//				scheduleService.setRpetSchedule(scheduleVo);
+			}
 		}
 		else {
 			//수정 일정 저장
@@ -143,8 +159,13 @@ public class ScheduleController {
 	
 
 	@RequestMapping(value = "/schedule/getScheduleData")
-	public void getScheduleData(@RequestParam Map<String, Object>paramMap, HttpServletRequest request, HttpServletResponse response)throws IOException {
-		String year = String.valueOf(paramMap.get("year"));
+	public void getScheduleData(@RequestParam Map<String, Object>paramMap, HttpServletResponse response, Authentication authentication) throws IOException {
+//		String year = String.valueOf(paramMap.get("year"));
+		
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		
+		paramMap.put("compId", memberInfo.getCompId());
+		paramMap.put("userId", memberInfo.getUserId());
 		
 		List<ScheduleVo> list = new ArrayList<ScheduleVo>();
 		
@@ -171,12 +192,6 @@ public class ScheduleController {
 	
 	@RequestMapping(value = "/schedule/scheduleMain")
 	public String getMonth(@RequestParam Map<String, Object>paramMap, ModelMap model, Authentication authentication) throws Throwable {
-		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
-		
-		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
-		List<CalendarVo> calList = getCalendarList(memberInfo);
-		model.addAttribute("calList", calList);
-		
  		return "/scheduleLayout/schedule/scheduleMain";
 	}
 	
@@ -258,9 +273,9 @@ public class ScheduleController {
 		model.put("startTm", startTm);
 		model.put("endTm", endTm);
 		
-		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
-		List<CalendarVo> calList = getCalendarList(memberInfo);
-		model.addAttribute("calList", calList);
+//		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
+//		List<CalendarVo> calList = getCalendarList(memberInfo);
+//		model.addAttribute("calList", calList);
 		
  		return "/scheduleLayout/schedule/write";
 	}
@@ -272,9 +287,9 @@ public class ScheduleController {
 
 		ScheduleVo schedVo = scheduleService.scheduleModifyData(scheduleVo);
 		
-		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
-		List<CalendarVo> calList = getCalendarList(memberInfo);
-		model.addAttribute("calList", calList);
+//		//캘린더 리스트 조회(ajax로 바꿔야 하는데..)
+//		List<CalendarVo> calList = getCalendarList(memberInfo);
+//		model.addAttribute("calList", calList);
 		
 		//fullCalendar name에 맞추기위해
 		model.addAttribute("schedVo", schedVo);

@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html>
+<head>
 	<tiles:insertAttribute name="header" />
 	
 	<!-- Imported styles on this page -->
@@ -12,6 +13,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/simplecolorpicker/css/jquery.simplecolorpicker.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/simplecolorpicker/css/jquery.simplecolorpicker-glyphicons.css">
 
+</head>
 <body class="page-body horizontal-menu-skin-navy">
 
 	<tiles:insertAttribute name="top" />
@@ -40,13 +42,10 @@
 							
 							<div class="form-group">
 								<label for="field-1" class="control-label"><p>일시</p></label>
-								djlfkdsjfl
 							</div>	
 							
 							<div class="form-group">
 								<label for="field-1" class="control-label">캘린더 이름</label>
-								
-								djlfkdsjfl
 							</div>	
 							
 						</div>
