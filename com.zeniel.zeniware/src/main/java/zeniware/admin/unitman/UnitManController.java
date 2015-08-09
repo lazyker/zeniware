@@ -148,6 +148,20 @@ public class UnitManController {
     } catch (Exception e) { throw e; }
   }
   
+  @RequestMapping("/admin/ajax/getSingleUser")
+  public void getSingleUser(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {
+      User user = this.userMaker(paramMap);
+      
+      ObjectMapper mapper = new ObjectMapper();
+      response.setContentType("application/json");
+      mapper.writeValue(response.getOutputStream(), user);
+      
+    } catch (Exception e) { throw e; }
+  }
+  
   @RequestMapping("/admin/ajax/resignUserlist")
   public void resignUserlist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {

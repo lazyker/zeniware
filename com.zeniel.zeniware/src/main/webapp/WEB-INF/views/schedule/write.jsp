@@ -387,7 +387,7 @@
 					</div>
 					
 					<!-- 반복일정 data -->
-<!-- 					<input type="text" name="rpetCyc" id="rpetCyc" value="0" placeholder="반복주기"> -->
+					<input type="text" name="rpetCyc" id="rpetCyc" placeholder="반복주기">
 					<input type="text" name="rpetEndYmd" id="rpetEndYmd" placeholder="반복종료일">
 					<input type="text" name="rpetType" id="rpetType" placeholder="반복유형">
 					<input type="text" name="unlmtRpetYn" id="unlmtRpetYn" value="N" placeholder="무한반복">
@@ -422,6 +422,8 @@
 	<script>
 	
 		$(document).ready(function() {
+			
+			$('input[name="schedNm"]').focus();
 			
 			//수정일 경우..
 			if($('#schedId').val() != "") {
@@ -494,40 +496,40 @@
 						endTmVal.val(addZero(endTmVal.val()));
 				}
 							
-// 				var $rpetCyc = $('#rpetCyc'); //반복주기
+				var $rpetCyc = $('#rpetCyc'); //반복주기
 				var $rpetEndYmd = $('#rpetEndYmd'); //반복 종료일
 				var repeatOps = repeatOption();
 				$('#rpetDateType').val('0'); //default
 				
 				if (repeatOps == 'daily') {
 					
-// 					$rpetCyc.val(Number($('#dailyRpetCyc').val())); //반복주기 bind
-// 					$rpetEndYmd.val($('#dailyEndYmd').val()); //반복종료일 bind
-// 					$('#rpetType').val('D'); //반복유형 bind
+					$rpetCyc.val(Number($('#dailyRpetCyc').val())); //반복주기 bind
+					$rpetEndYmd.val($('#dailyEndYmd').val()); //반복종료일 bind
+					$('#rpetType').val('D'); //반복유형 bind
 					
 				} else if (repeatOps == 'weekly') {
 					
-// 					if ($('input[name="rpetDd"]').is(':checked') == true) {
-// 						$('#rpetDateType').val('1'); //반복날짜 형태를 요일로 변경(0:날짜, 1:요일)
-// 					} 
+					if ($('input[name="rpetDd"]').is(':checked') == true) {
+						$('#rpetDateType').val('1'); //반복날짜 형태를 요일로 변경(0:날짜, 1:요일)
+					} 
 					
-// 					$rpetEndYmd.val($('#weeklyEndYmd').val());
-// 					$('#rpetType').val('W');
+					$rpetEndYmd.val($('#weeklyEndYmd').val());
+					$('#rpetType').val('W');
 					
 				} else if (repeatOps == 'monthly') {
 					
-// 					$rpetEndYmd.val($('#monthlyEndYmd').val());
-// 					$('#rpetType').val('M');
+					$rpetEndYmd.val($('#monthlyEndYmd').val());
+					$('#rpetType').val('M');
 					
 				} else if (repeatOps == 'yearly') {
-// 					alert(Number($('#yearlyRpetCyc').val()) * 365);
+					alert(Number($('#yearlyRpetCyc').val()) * 365);
 					
-// 					$rpetCyc.val($('yearlyRpetCyc').val());
-// 					$rpetEndYmd.val($('#yearlyEndYmd').val());
-// 					$('#rpetType').val('Y');
+					$rpetCyc.val($('yearlyRpetCyc').val());
+					$rpetEndYmd.val($('#yearlyEndYmd').val());
+					$('#rpetType').val('Y');
 				}
 				
-// 				validateRpetEndYmd(); //반복 종료일 유효성 검사
+				validateRpetEndYmd(); //반복 종료일 유효성 검사
 				
 // 				return;
 				

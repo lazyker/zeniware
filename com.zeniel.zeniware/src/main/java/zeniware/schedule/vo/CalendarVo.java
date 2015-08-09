@@ -15,7 +15,14 @@ public class CalendarVo {
 	private String regDate;					//등록일시
 	private String modDate;				//수정일시
 	private List<CalendarVo> calList;	//캘린더 리스트
+	private List<CalendarVo> shreList;	//공유 캘린더 리스트
 	
+	public List<CalendarVo> getShreList() {
+		return shreList;
+	}
+	public void setShreList(List<CalendarVo> shreList) {
+		this.shreList = shreList;
+	}
 	public List<CalendarVo> getCalList() {
 		return calList;
 	}

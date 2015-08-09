@@ -23,9 +23,12 @@
 			<result property="start" column="START"/>
 			<result property="end" column="END"/>
 			<result property="fstFrmigrId" column="FST_FRMIGR_ID"/>
+			<result property="startYmd" column="START_YMD"/>
+			<result property="endYmd" column="END_YMD"/>
 			<result property="startTm" column="START_TM"/>
 			<result property="endTm" column="END_TM"/>
 			<result property="rpetYn" column="RPET_YN"/>
+			<result property="rpetEndYmd" column="RPET_END_YMD"/>
 			<result property="unlmtRpetYn" column="UNLMT_RPET_YN"/>
 			<result property="rpetType" column="RPET_TYPE"/>
 			<result property="rpetCyc" column="RPET_CYC"/>
@@ -127,24 +130,39 @@
 
 	<!-- 일정 리스트 -->
 	<select id="getScheduleList" parameterType="map" resultMap="scheduleVo">
-		SELECT 
-			S.SCHED_ID,
-			S.CLDR_ID,
-			CONCAT(START_YMD,'T', IFNULL(LEFT(START_TM, 2), '00'), ':', IFNULL(RIGHT(START_TM, 2), '00')) AS START,
-			CONCAT(END_YMD,'T', IFNULL(LEFT(END_TM, 2), '00'), ':', IFNULL(RIGHT(END_TM, 2), '00')) AS END, 
-			SCHED_NM AS TITLE,
-			FST_FRMIGR_ID,
-			IF(LENGTH(START_TM) &lt; 4, CONCAT('0', START_TM), START_TM) AS START_TM,
-			IF(LENGTH(END_TM) &lt; 4, CONCAT('0', END_TM), END_TM) AS END_TM,
-			APNT_PLC,
-			MEMO_CONT
-		FROM 
-			FS_CLDR C
-			INNER JOIN FS_SCHED S ON S.CLDR_ID = C.CLDR_ID
-		WHERE 
-			(C.COMP_ID = #{compId, jdbcType=VARCHAR} AND C.SHRE_YN = 'Y') 
-			OR S.FST_FRMIGR_ID = #{userId, jdbcType=VARCHAR}
-			AND START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
+		SELECT T.*
+		FROM (
+			SELECT 
+				S.SCHED_ID,
+				S.CLDR_ID,
+				CONCAT(START_YMD,'T', IFNULL(LEFT(START_TM, 2), '00'), ':', IFNULL(RIGHT(START_TM, 2), '00')) AS START,
+				CONCAT(END_YMD,'T', IFNULL(LEFT(END_TM, 2), '00'), ':', IFNULL(RIGHT(END_TM, 2), '00')) AS END, 
+				SCHED_NM AS TITLE,
+				FST_FRMIGR_ID,
+				START_YMD,
+				END_YMD,
+				IF(LENGTH(START_TM) &lt; 4, CONCAT('0', START_TM), START_TM) AS START_TM,
+				IF(LENGTH(END_TM) &lt; 4, CONCAT('0', END_TM), END_TM) AS END_TM,
+				RPET_YN,
+				RPET_END_YMD,
+				UNLMT_RPET_YN,
+				RPET_TYPE,
+				RPET_CYC,
+				APNT_PLC,
+				MEMO_CONT,
+				R.RPET_DATE_TYPE,
+				R.RPET_DD
+			FROM 
+				FS_CLDR C
+				INNER JOIN FS_SCHED S 
+				ON S.CLDR_ID = C.CLDR_ID
+				LEFT JOIN FS_SCHED_RPET R 
+				ON S.CLDR_ID = R.CLDR_ID AND S.SCHED_ID = R.SCHED_ID
+			WHERE 
+				(C.COMP_ID = #{compId, jdbcType=VARCHAR} AND C.SHRE_YN = 'Y') 
+				OR S.FST_FRMIGR_ID = #{userId, jdbcType=VARCHAR}
+				AND START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
+		) T
 	</select>
 	
 	<!-- 일정 등록 -->
@@ -165,7 +183,7 @@
 			UNLMT_RPET_YN, 
 			RPET_END_YMD, 
 			RPET_TYPE, 
-<!-- 			RPET_CYC,  -->
+			RPET_CYC, 
 			APNT_PLC, 
 			MEMO_CONT
 		)
@@ -185,7 +203,7 @@
 			#{unlmtRpetYn, jdbcType=VARCHAR},
 			#{rpetEndYmd, jdbcType=VARCHAR},
 			#{rpetType, jdbcType=VARCHAR},
-<!-- 			#{rpetCyc, jdbcType=NUMERIC}, -->
+			#{rpetCyc, jdbcType=NUMERIC},
 			#{apntPlc, jdbcType=VARCHAR},
 			#{memoCont, jdbcType=VARCHAR}
 		)

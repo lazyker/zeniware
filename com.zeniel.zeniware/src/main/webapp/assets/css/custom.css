@@ -21,6 +21,14 @@ table.dataTable th, table.dataTable td {
 	white-space: nowrap;
 }
 
+table-ellipsis th, .table-ellipsis td {
+	min-width: 50px;
+	max-width: 160px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 /*** page-title customized ***/
 .page-container .main-content .page-title .title-env .title {
 	font-size: 22px
@@ -46,6 +54,12 @@ table.dataTable th, table.dataTable td {
 
 .panel.panel-flat-custom .panel-disabled {
 	background: rgba(238, 238, 238, .6)
+}
+
+/*** panel-flat customized ***/
+.panel.panel-flat {
+	margin: 0;
+	padding: 0
 }
 
 /*** footer customized ***/

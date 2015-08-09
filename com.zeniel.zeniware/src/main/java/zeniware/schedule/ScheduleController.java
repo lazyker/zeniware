@@ -2,16 +2,20 @@ package zeniware.schedule;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -133,7 +137,7 @@ public class ScheduleController {
 			//신규 일정 저장
 			scheduleService.setScheduleData(scheduleVo);
 			if ("Y".equals(scheduleVo.getRpetYn())) {
-//				scheduleService.setRpetSchedule(scheduleVo);
+				scheduleService.setRpetSchedule(scheduleVo);
 			}
 		}
 		else {
@@ -167,9 +171,76 @@ public class ScheduleController {
 		paramMap.put("compId", memberInfo.getCompId());
 		paramMap.put("userId", memberInfo.getUserId());
 		
-		List<ScheduleVo> list = new ArrayList<ScheduleVo>();
+		List<ScheduleVo> resultList = new ArrayList<ScheduleVo>();
 		
-		list = scheduleService.getScheduleList(paramMap);
+		List<ScheduleVo> list = scheduleService.getScheduleList(paramMap);
+		
+		for( int i=0;  i < list.size(); i++ ) {
+			ScheduleVo scheduleVo = list.get(i);
+			resultList.add(scheduleVo);
+			
+			//반복일정이면..
+			if ("Y".equals(scheduleVo.getRpetYn())) {
+				
+				//반복 시작 일정 리스트에 추가
+//				resultList.add(scheduleVo);
+				
+				try {
+					String[] start = scheduleVo.getStart().split("T");
+					String[] end = scheduleVo.getEnd().split("T");
+					
+					String startYmd = start[0];
+					String startTm = start[1];
+					String endYmd = end[0];
+					String endTm = end[1];
+					String rpetEndYmd = scheduleVo.getRpetEndYmd();
+					
+					Date startDate = DateUtil.parseDate(startYmd, "yyyy-MM-dd");
+					Date endtDate = DateUtil.parseDate(rpetEndYmd, "yyyy-MM-dd");
+					
+					int days = DateUtil.DateDiff(startDate, endtDate);
+					int rpetcyc = scheduleVo.getRpetCyc();
+					
+					Calendar cal = Calendar.getInstance();
+					FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd", Locale.getDefault());
+					cal.setTime(startDate);
+					
+					for ( int j = 0 ; j < days; j ++ ) {
+						ScheduleVo scheduleVoNew = new ScheduleVo();
+						
+						cal.add(Calendar.DATE, + rpetcyc);
+						startYmd= sdf.format(cal.getTime());
+						System.out.println("startYmd ::: " + startYmd);
+						
+						scheduleVoNew.setSchedId(scheduleVo.getSchedId());
+						scheduleVoNew.setCldrId(scheduleVo.getCldrId());
+						scheduleVoNew.setTitle(scheduleVo.getTitle());
+						scheduleVoNew.setFstFrmigrId(scheduleVo.getFstFrmigrId());
+						scheduleVoNew.setStartTm(scheduleVo.getStartTm());
+						scheduleVoNew.setEndTm(scheduleVo.getEndTm());
+						scheduleVoNew.setRpetYn(scheduleVo.getRpetYn());
+						scheduleVoNew.setRpetEndYmd(scheduleVo.getRpetEndYmd());
+						scheduleVoNew.setUnlmtRpetYn(scheduleVo.getUnlmtRpetYn());
+						scheduleVoNew.setRpetType(scheduleVo.getRpetType());
+						scheduleVoNew.setStart(startYmd + "T" + startTm);
+						scheduleVoNew.setEnd(startYmd + "T" + endTm);
+						scheduleVoNew.setApntPlc(scheduleVo.getApntPlc());
+						scheduleVoNew.setMemoCont(scheduleVo.getMemoCont());
+						scheduleVoNew.setRpetDateType(scheduleVo.getRpetDateType());
+						scheduleVoNew.setRpetDD(scheduleVo.getRpetDd());
+						
+						resultList.add(scheduleVoNew);
+						
+					}
+					
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				
+			}
+			
+			
+		}
 		
 //		Map<String, Object> map = new HashMap<String, Object>();
 //		map.put("title", "테스트");
@@ -183,7 +254,7 @@ public class ScheduleController {
 		
 		ObjectMapper om = new ObjectMapper();
 		
-		String jsonString = om.writeValueAsString(list);
+		String jsonString = om.writeValueAsString(resultList);
 		
 		OutputStream out = response.getOutputStream();
 		out.write(jsonString.getBytes());
@@ -317,8 +388,11 @@ public class ScheduleController {
 		
 		scheduleVo.setStartYmd(startYmdHHss[0]);
 		scheduleVo.setEndYmd(endYmdHHss[0]);
-		scheduleVo.setStartTm(startYmdHHss[1].replace(":", "").substring(0,4));
-		scheduleVo.setEndTm(endYmdHHss[1].replace(":", "").substring(0,4));
+		
+		if (null != scheduleVo.getStartTm()) {
+			scheduleVo.setStartTm(startYmdHHss[1].replace(":", "").substring(0,4));
+			scheduleVo.setEndTm(endYmdHHss[1].replace(":", "").substring(0,4));
+		}
 		
 		scheduleService.updateDropResizeSchedData(scheduleVo);
 		

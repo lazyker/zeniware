@@ -22,7 +22,7 @@
 
 		<ul id="main-menu" class="main-menu">
 			
-			<li> 
+			<li class="opened active">
 				<a href="#"> 
 					<i class="linecons-desktop"></i><span class="title">개인결재</span>
 				</a>

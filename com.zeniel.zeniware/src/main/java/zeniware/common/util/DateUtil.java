@@ -199,6 +199,22 @@ public class DateUtil {
 		return sb.toString();
     }
     
-     
+    /**
+     * 두 날짜의 차이를 일수로 구하기
+     * @return int days
+     */
+    public static int DateDiff(Date startDate, Date endDate) throws ParseException {
+    	Calendar cal = Calendar.getInstance( );
+		cal.setTime (startDate);
+		long d1 = cal.getTime().getTime(); //초로 변환
+		 
+		Calendar cal2 = Calendar.getInstance( );
+		cal2.setTime(endDate);
+		long d2 = cal2.getTime().getTime();
+		 
+		int days =(int)((d2-d1)/(1000*60*60*24)); 
+			
+		return days;
+    }
     
 }
