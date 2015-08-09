@@ -70,6 +70,7 @@
 			eventClick: function(calEventData, jsEvent, view) {
 				var DataHtml;
 				
+				//스케줄 상세 modal(수정, 삭제)
 				$('#schedModal').on('show.bs.modal', function (event) {
 					var modal = $(this);
 					var startYmdTemp, 
@@ -136,10 +137,10 @@
 					date.setDate(date.getDate() - 1);
 					end = date.format("yyyy-MM-dd");	
 					
-					window.location.href = "${pageContext.request.contextPath}/schedule/write?startYmd=" + start.format() + "&endYmd=" + end;
+					window.location.href = "./write?startYmd=" + start.format() + "&endYmd=" + end;
 				}
 				else {
-					window.location.href = "${pageContext.request.contextPath}/schedule/write?startYmd=" + start.format() + "&endYmd=" + end.format();				
+					window.location.href = "./write?startYmd=" + start.format() + "&endYmd=" + end.format();				
 				}
 				
 				
@@ -205,7 +206,7 @@
 	$(document).ready(function() {
 		
 		$('#schedDelBtn').on('click', function() {
-			var url = "${pageContext.request.contextPath}/schedule/delScheduleData";
+			var url = "./delScheduleData";
 			
 			if(confirm("삭제 하시겠습니까?")) {
 				$.ajax({
@@ -229,7 +230,7 @@
 				var cldrId = $('#cldrId').val();
 				var schedId = $('#schedId').val();
 			
-			window.location.href = "${pageContext.request.contextPath}/schedule/modify?cldrId=" + cldrId + "&schedId=" + schedId;
+			window.location.href = "./modify?cldrId=" + cldrId + "&schedId=" + schedId;
 		});
 		
 // 		alert($('.navbar-nav').find('a').html());
@@ -251,7 +252,7 @@
 		
 		var year = String(end.year()) + end.month();
 		var current_url = null;
-		var new_url = '${pageContext.request.contextPath}/schedule/getScheduleData';
+		var new_url = './getScheduleData';
 		
 				if( new_url != current_url ){
 					
@@ -281,7 +282,7 @@
 	var dropResizeEvent = function(event) {
 		
 		var param = event;
-		var url = "${pageContext.request.contextPath}/schedule/updateDropResizeSchedData";
+		var url = "./updateDropResizeSchedData";
 		$.ajax({
 			 url: url,
 				data: {
