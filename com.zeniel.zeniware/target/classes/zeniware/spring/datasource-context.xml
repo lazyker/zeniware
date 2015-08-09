@@ -17,6 +17,11 @@
         <property name="url" value="#{globals['jdbc.Url']}" />
         <property name="username" value="#{globals['jdbc.UserName']}" />
         <property name="password" value="#{globals['jdbc.Password']}" />
+        
+        <!-- 특정 시간마다 validationQuery를 실행 셋팅 시작 -->
+        <property name="validationQuery" value="select 1"/>
+        <property name="timeBetweenEvictionRunsMillis" value="7200000"/>
+        <!-- 특정 시간마다 validationQuery를 실행 셋팅 끝 -->
 <!--         <property name="defaultAutoCommit" value="false" /> -->
     </bean>
 
