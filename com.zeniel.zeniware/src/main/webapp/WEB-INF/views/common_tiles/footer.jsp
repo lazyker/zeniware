@@ -41,17 +41,87 @@
 
 </div>
 
-<div id="popover-head" class="hide">Search stock</div>
-<div id="popover-content" class="hide">
-	<div class="form-group">
-		<input type="text" class="form-control" placeholder="Search"> <button class="btn btn-default btn-add-panel">Submit</button>
+<div class="hide" id="popover-head">
+	<a href="#" id="anchorDetail" onclick="$('.footer-sticked-chat').popover('hide');">
+		<span class="close">&times;</span>
+		상세 정보
+	</a>
+</div>
+
+<div class="hide" id="popover-content">
+
+	<section class="profile-env">
+
+		<div class="row">
+
+			<div class="col-sm-12">
+
+				<div class="user-info-sidebar">
+					
+					<a href="#" class="user-img">
+						<img src="${pageContext.request.contextPath}/assets/images/user-4.png" 
+							alt="user-img" class="img-cirlce img-responsive img-thumbnail" />
+					</a>
+					<a href="#" class="user-name" id="profileUserName">Art Ramadani</a>
+					<span class="user-title" id="profileJobTitle">CEO at <strong>Google</strong></span>
+					
+					<div class="panel panel-flat">
+						<div class="panel-body">
+							<table class="table table-ellipsis">
+								<tbody>
+									<tr>
+										<td class="middle-align" width="30%">Phone</td>
+										<td id="profilePhone"></td>
+									</tr>
+									<tr>
+										<td class="middle-align">Mobile</td>
+										<td id="profileMobile"></td>
+									</tr>
+									<tr>
+										<td class="middle-align">Email</td>
+										<td id="profileMailId"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</section>
+	
+	<div class="vertical-top">
+		<button class="btn btn-secondary btn-icon btn-icon-standalone btn-icon-standalone-right btn-block">
+			<i class="fa-at"></i>
+			<span>메일 보내기</span>
+		</button>
+		<button class="btn btn-secondary btn-icon btn-icon-standalone btn-icon-standalone-right btn-block">
+			<i class="fa-calendar"></i>
+			<span>일정 초대</span>
+		</button>
 	</div>
+	
 </div>
 
 <script type="text/javascript">
 
-	function toggleSampleChatWindow()
-	{
+	function togglePopover(visible) {
+		if (visible) {
+			if (!$('.popover').hasClass('in')) {
+				$('.footer-sticked-chat').popover('show');
+			}
+		} else {
+			if ($('.popover').hasClass('in')) {
+				$('.footer-sticked-chat').popover('hide');
+			}
+		}
+	}
+	
+	function toggleSampleChatWindow() {
 		var $chat_win = jQuery("#member-window");
 
 		$chat_win.toggleClass('open');
@@ -69,34 +139,29 @@
 					$chat_win.find('.form-control').focus();
 				}, 300);
 			}
+		} else {
+			togglePopover(false);
 		}
 	}
 	
 	jQuery(document).ready(function($)
 	{
+		var curCompId = "${currentUser.compId}";
 
+		/* footer member window toggle */
 		$(".footer-sticked-chat .chat-user, .other-conversations-list a").on('click', function(ev)
 		{
 			ev.preventDefault();
 			toggleSampleChatWindow();
 		});
-
-		$(".mobile-chat-toggle").on('click', function(ev)
-		{
-			ev.preventDefault();
-
-			$(".footer-sticked-chat").toggleClass('mobile-is-visible');
-		});
-		
-		var curCompId = "${currentUser.compId}";
 		
 		/* jsTree Data Binding */
 		$('#jstreeMember').jstree({
 			'core': {
 				'data': {
 					'url': function(node) {
-						var paramCompId = node.id.substr(0, 3);
-						var paramDeptId = node.id.substr(3, 4);
+						var paramCompId = node.id.substr(1, 3);
+						var paramDeptId = node.id.substr(4, 4);
 						
 						return node.id == '#' ? 
 							'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
@@ -109,15 +174,37 @@
 			}
 		});
 		
-		$('#jstreeMember').on('open_node.jstree', function(e, data) {
-			e.preventDefault();
-			
-			$('.footer-sticked-chat').popover({
-				html: true, 
-				title: function() { return $('#popover-head').html(); }, 
-				content: function() { return $('#popover-content').html(); }, 
-				placement: 'left'
-			});
+		$('.footer-sticked-chat').popover({
+			html: true, 
+			title: function() { return $('#popover-head').html(); }, 
+			content: function() { return $('#popover-content').html(); }, 
+			trigger: 'manual', 
+			placement: 'left'
+		});
+		
+		/* Detail View */
+		$('#jstreeMember').on('changed.jstree', function(e, data) {
+			if (data.node != null) {
+				if (data.node.id.substr(0, 1) == 'U') {
+					$.ajax({
+						dataType: "json", 
+						type: "post", 
+						url: "../admin/ajax/getSingleUser", 
+						data: { compId: data.node.id.substr(1, 3), userId: data.node.id.substr(4) }, 
+						success: function(result) {
+							$('#profileUserName').html(result.userName);
+							$('#profileJobTitle').html(result.jobTitleName + ' <strong>' + result.deptName + '</strong>');
+							$('#profilePhone').html(result.officePhone);
+							$('#profileMobile').html(result.mobile);
+ 							$('#profileMailId').html(result.mailId);
+						}
+					});
+					
+					togglePopover(true);
+				} else {
+					togglePopover(false);
+				}
+			}
 		});
 		
 		/* jsTree Search... */
@@ -127,19 +214,21 @@
 				
 				$('#jstreeMember').jstree().settings.core.data = {
 					'url': function(node) {
-						var paramCompId = node.id.substr(0, 3);
-						var paramDeptId = node.id.substr(3, 4);
-						
+						var paramCompId = node.id.substr(1, 3);
+						var paramDeptId = node.id.substr(4, 4);
+
 						return node.id == '#' ?
 							keyword.length == 0 ? 
 								'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
-								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
+								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + keyword : 
 							'../admin/ajax/getDeferredNodelist?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };
 					}
 				}
+				
+				togglePopover(false);
 
 				$('#jstreeMember').jstree().refresh();
 				$('#member-window .ps-scrollbar').perfectScrollbar('destroy');
