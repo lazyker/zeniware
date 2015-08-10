@@ -196,6 +196,7 @@ public class CommunityController {
 
 		model.put("compId",		memberInfo.getCompId());
 		model.put("comtVo",		this.comtMaker(paramMap));
+		model.put("fcComtId",	paramMap.get("fcComtId"));
 		model.addAttribute("useList", this.comtUserMaster(paramMap));
 
 		//return "/comtLayout/comtViewMain";
@@ -208,5 +209,49 @@ public class CommunityController {
 
 	private List<Map<String, Object>> comtUserMaster(Map<String, Object> paramMap) {
 		return communityService.getComtInofUserMastList(paramMap);
+	}
+
+	//커뮤니티 상세보기의 정보 수정
+	@RequestMapping(value = "/insertUserComtBasicInfo")
+	public void setInsertUserComtBasicInfo(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId",		memberInfo.getCompId());
+		String txtMastGubun		= (String) paramMap.get("txtMastGubun");
+		String[] mg_arr = ((String) paramMap.get("txtMastGubun")).split(",");
+
+		int rows = 0;
+		rows = communityService.setInsertUserComtBasicInfo(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), rows);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	/*
+	 * @RequestMapping(value = "/getComtAllList")
+	public void getComtAllListData(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+
+		//cumt left 메뉴 조회
+		List<ComtVo> list = getCumntAllJoinList(memberInfo);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), list);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+	 */
+	@RequestMapping(value = "/getComtAddUsrAllList")
+	public void getComtAddUsrAllListData(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		
 	}
 }

@@ -51,4 +51,7 @@ public interface CommunityService {
 	public int setInsertComtAllInfoUserAdd(Map<String, Object> paramVo);
 
 	public ComtVo getComtInfoDetail(Map<String, Object> paramMap);
+
+	//커뮤니티 상세보기의 정보 수정
+	public int setInsertUserComtBasicInfo(Map<String, Object> paramMap);
 }

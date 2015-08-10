@@ -50,7 +50,7 @@
 						<div class="form-group">
 							<label for="txtCumtNm" class="col-sm-2 control-label">커뮤니티 명</label>
 							<div class="col-sm-10">
-								<input type="hidden" name="fcComtId" value="${comtVo.fcComtId}">
+								<input type="hidden" id="fcComtId" name="fcComtId" value="${comtVo.fcComtId}">
 								<input type="text" class="form-control" data-validate="maxlength[50]" name="cumtNm" id="txtCumtNm" value="${comtVo.cumtNm}" />
 							</div>
 						</div>
@@ -61,56 +61,22 @@
 								<div class="col-sm-2">
 									<label for="txtCumtComment" class="control-label">커뮤니티<br />상세소개</label>
 								</div>
-								<div class="col-md-9">
-									<textarea class="form-control" id="txtCumtComment" rows="5" data-validate="maxlength[50]">${comtVo.cumtComment}</textarea>
+								<div class="col-md-10">
+									<textarea class="form-control" id="txtCumtComment" rows="5" data-validate="maxlength[150]">${comtVo.cumtComment}</textarea>
 								</div>
 								
 							</div>
 						</p>
 					</div>
-<script type="text/javascript">
-										jQuery(document).ready(function($)
-										{
-											var i = -1,
-												colors = ['primary', 'secondary', 'red', 'blue', 'warning', 'success', 'purple'];
-											
-											colors = shuffleArray(colors);
-											
-											$("#txtMastGubun").tagsinput({
-												tagClass: function()
-												{
-													i++;
-													return "label label-" + colors[i%colors.length];
-												}
-											});
-										});
-										
-										// Just for demo purpose
-										function shuffleArray(array)
-										{
-											for (var i = array.length - 1; i > 0; i--) 
-											{
-												var j = Math.floor(Math.random() * (i + 1));
-												var temp = array[i];
-												array[i] = array[j];
-												array[j] = temp;
-											}
-											return array;
-										}
-									</script>
 					<div class="row">
 						<p>
 							<div class="form-group">
 								<div class="col-md-2">
 									<label for="txtMastGubun" class="control-label">운영자</label>
 								</div>
-								<div class="col-md-9">
-									<%-- <c:forEach items="${useList}"  var="detail"  varStatus="status">
-									<c:if test="${status.index == '0'}">
-									</c:if>
-									${detail.USER_NAME}
-									</c:forEach> --%>
-									<input type="text" class="form-control" data-role="tagsinput" id="txtMastGubun" value="<c:forEach items="${useList}"  var="detail"  varStatus="status">${detail.USER_NAME}</c:forEach>" />
+								<div class="col-md-10">
+									<input type="text" class="form-control" data-role="tagsinput" id="txtMastGubun" value="<c:forEach items="${useList}"  var="detail"  varStatus="status">${detail.USER_NAME},</c:forEach>" />
+									<input type="hidden" id="userId" name="userId" value="<c:forEach items="${useList}"  var="detail"  varStatus="status">${detail.USER_ID},</c:forEach>">
 								</div>
 								<div class="form-group-separator"></div>
 							</div>
@@ -122,7 +88,7 @@
 								<div class="col-md-2">
 									<label for="radioOpenYn" class="control-label">공개유무</label>
 								</div>
-								<div class="col-md-9">
+								<div class="col-md-10">
 									<label class="control-label">
 										<input type="radio" id="radioOpenYn" name="openYn" value="Y" class="cbr cbr-success" <c:if test="${comtVo.openYn == 'Y'}">checked</c:if> /> 공개
 									</label>
@@ -135,33 +101,101 @@
 					</div>
 					<p>
 					<div class="row">
-						
 							<div class="form-group text-right">
-								<button class="btn btn-primary btn-icon" id="infoEdSave">Save changes</button>
+								<button class="btn btn-secondary btn-icon" id="infoEdSave">Save changes</button>
 								<button class="btn btn-gray btn-icon" id="infoEdCanse">Canse</button>
 							</div>
-						
 					</div>
 					</p>
 				</div>
 			</div>
-
 <script type="text/javascript">
 $(document).ready(function() {
+	var fcComtId = "${fcComtId}";
+	var msg01 = "운영자를 입력해 주세요.";
+	var msg02 = "커뮤니티 정보 수정이 실해 하였습니다.";
+	var msg03 = "커뮤니티 정보를 수정 하였습니다.";
+	var param = {};
+
 	$("#infoEdSave").on("click",  function() {
+		if($("#txtMastGubun").val() == "") {
+			toastr.options.positionClass = "toast-top-full-width";
+			toastr.error("<div align='center'><b>" + msg01 + "</b></div>", null);
+			return false;
+		}
+
+		param.fcComtId			= $("#fcComtId").val();
+		param.cumtNm				= $("#txtCumtNm").val();
+		param.cumtComment		= $("#txtCumtComment").val();
+		param.openYn				= $("input[name=openYn]").val();
+		var mastgu					= $("#txtMastGubun").val();
+		var mastGuArr				= mastgu.split(",");
+		param.txtMastGubun		= mastgu;
 		
+		alert($("#txtCumtNm").val());
+
+		$.ajax({
+			dataType: "json",
+			type: "POST",
+			url: "./insertUserComtBasicInfo",
+			data: param,
+			success: function(data) {
+				if(data == 0) {
+					toastr.options.positionClass = "toast-top-full-width";
+					toastr.error("<div align='center'><b>" + msg02 + "</b></div>", null);
+					return false;
+				} else {
+					toastr.options.positionClass = "toast-top-full-width";
+					toastr.error("<div align='center'><b>" + msg03 + "</b></div>", null);
+					return false;
+				}
+			}
+		});
+	});
+
+	$("#infoEdCanse").click(function() {
+		$(location).prop('href', './comtMain');
+		return false;
+	});
+
+	$("#UserIf").on("click",  function() {
+		alert("여기 클릭");
+		param.fcComtId			= fcComtId;
+		$('#comtMemList').DataTable({
+			ajax: { "url": "./getComtAddUsrAllList", "dataSrc": "" },
+			deferRender: true,
+			pagingType: "simple_numbers",
+			data: param,
+			aoColumns: [
+				{ "mData": "fcComtId", "visible" : false },
+				{ "mData": "userNm" },
+				{ "mData": "userId", "visible" : false },
+				{ "mData": "deptNm", "visible" : false },
+				{ "mData": "talNum" },
+				{ "mData": "mastGubun" , "mRender" : function(data,type, full){
+						if(data == 'M') {
+							return "운영자";
+						} else {
+							return "<input type='button' value='탈퇴처리' />" 	
+						}
+					}
+				}
+			],
+			sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-9'i><'col-xs-3'p>>"
+		});
 	});
 });
 </script>
-
 			<div class="tab-pane" id="comtAddUserIf">
 				<table id="comtMemList" class="table table-small-font table-striped table-bordered">
 					<thead>
 						<tr>
+							<th>커뮤니티ID</th>
 							<th>이름</th>
+							<th>아이디</th>
 							<th>부서명</th>
 							<th>작성글 수</th>
-							<th>가입일</th>
+							<th>탈퇴처리</th>
 						</tr>
 					</thead>
 				</table>

@@ -85,4 +85,17 @@ public class CommunityDao extends AbstractDao {
 	public ComtVo getComtInfoDetail(Map<String, Object> paramMap) {
 		return (ComtVo) selectOne("comtUser.comtview.getComtInfoDetail", paramMap);
 	}
+
+	/**
+	 * 커뮤니티 가입여부 조회(fcComtId로 해당 커뮤니티 전체 조회)
+	*/
+	public int getComtAddInfoCnt(Map<String, Object> paramMap) {
+		return (int) selectOne("comtUser.getComtAddInfoCnt", paramMap);
+	}
+	/**
+	 * 커뮤니티 상세보기의 정보 수정
+	*/
+	public int setInsertUserComtBasicInfo(Map<String, Object> paramMap) {
+		return (int) update("comtUser.setInsertUserComtBasicInfo", paramMap);
+	}
 }

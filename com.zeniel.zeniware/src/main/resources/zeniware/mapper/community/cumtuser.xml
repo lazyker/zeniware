@@ -52,6 +52,7 @@
 					AND A.MAST_GUBUN = 'M'
 					AND A.TYPE_GUBUN = 'C'
 					AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
+					AND A.USER_ID = #{userId, jdbcType=VARCHAR}
 			) AS USER_NAME,
 			(
 				SELECT COUNT(USER_ID) + '명' FROM FC_CUMT_ADD_INFO A
@@ -211,5 +212,17 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 		ORDER BY CUMT_NM  ASC
+	</select>
+
+	<!-- 커뮤니티 가입여부 조회 -->
+	<select id="comtUser.getComtAddInfoCnt" parameterType="hashmap" resultType="int">
+		SELECT
+			COUNT(USER_ID) AS CNT
+		FROM
+			FC_CUMT_INFO
+		WHERE 1 = 1
+			AND COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId, jdbcType=VARCHAR}
 	</select>
 </mapper>
