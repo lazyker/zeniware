@@ -216,11 +216,11 @@
 					'url': function(node) {
 						var paramCompId = node.id.substr(1, 3);
 						var paramDeptId = node.id.substr(4, 4);
-						
+						console.log(encodeURIComponent(keyword));
 						return node.id == '#' ?
 							keyword.length == 0 ? 
 								'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
-								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + keyword : 
+								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
 							'../admin/ajax/getDeferredNodelist?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child';
 					}, 
 					'data': function(node) {
