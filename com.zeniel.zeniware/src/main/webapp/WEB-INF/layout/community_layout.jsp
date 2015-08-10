@@ -63,6 +63,7 @@
 
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/comt-custom.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/tagsinput/bootstrap-tagsinput.min.js"></script>
 		
 </body>
 </html>
