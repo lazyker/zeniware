@@ -158,11 +158,10 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$("#UserIf").on("click",  function() {
-		alert("여기 클릭");
+	/* $("#UserIf").on("click",  function() {
 		param.fcComtId			= fcComtId;
 		$('#comtMemList').DataTable({
-			ajax: { "url": "./getComtAddUsrAllList", "dataSrc": "" },
+			ajax: { "url": "./getComtAddUsrAllList?fcComtId="+fcComtId, "dataSrc": "" },
 			deferRender: true,
 			pagingType: "simple_numbers",
 			data: param,
@@ -170,19 +169,42 @@ $(document).ready(function() {
 				{ "mData": "fcComtId", "visible" : false },
 				{ "mData": "userNm" },
 				{ "mData": "userId", "visible" : false },
-				{ "mData": "deptNm", "visible" : false },
+				{ "mData": "deptNm" },
 				{ "mData": "talNum" },
 				{ "mData": "mastGubun" , "mRender" : function(data,type, full){
 						if(data == 'M') {
 							return "운영자";
 						} else {
-							return "<input type='button' value='탈퇴처리' />" 	
+							return "<input type='button' value='탈퇴처리' />";
 						}
 					}
 				}
 			],
 			sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-9'i><'col-xs-3'p>>"
 		});
+	}); */
+	param.fcComtId			= fcComtId;
+	$('#comtMemList').DataTable({
+		ajax: { "url": "./getComtAddUsrAllList?fcComtId="+fcComtId, "dataSrc": "" },
+		deferRender: true,
+		pagingType: "simple_numbers",
+		data: param,
+		aoColumns: [
+			{ "mData": "fcComtId", "visible" : false },
+			{ "mData": "userNm" },
+			{ "mData": "userId", "visible" : false },
+			{ "mData": "deptNm" },
+			{ "mData": "talNum" },
+			{ "mData": "mastGubun" , "mRender" : function(data,type, full){
+					if(data == 'M') {
+						return "운영자";
+					} else {
+						return "<input type='button' value='탈퇴처리' />";
+					}
+				}
+			}
+		],
+		sDom: "<'row'<'col-sm-6'l><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-9'i><'col-xs-3'p>>"
 	});
 });
 </script>

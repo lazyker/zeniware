@@ -225,4 +225,34 @@
 			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 			AND USER_ID = #{userId, jdbcType=VARCHAR}
 	</select>
+
+	<!-- 커뮤니티 멤버 전체 조회 -->
+	<select id="comtUser.getComtInfoMemberAllList" parameterType="hashmap" resultType="hashmap">
+		SELECT
+			FC_COMT_ID AS fcComtId,
+			COMP_ID AS compId,
+			USER_ID AS userId,
+			(
+				SELECT USER_NM FROM FH_USER WHERE USER_ID = A.USER_ID AND COMP_ID = A.COMP_ID
+			) AS userNm,
+			DEPT_ID AS deptId,
+			(
+				SELECT DEPT_NM FROM FH_DEPT WHERE DEPT_ID = A.DEPT_ID AND COMP_ID = A.COMP_ID
+			) AS deptNm,
+			(
+				SELECT COUNT(C.BOARD_SEQ) FROM FC_BORD_INFO B, FC_CUMT_BOAD_INFO C
+				WHERE B.BOARD_INFO_ID = C.BOARD_INFO_ID
+					AND A.FC_COMT_ID = B.FC_COMT_ID
+			) AS talNum,
+			TYPE_GUBUN AS typeGubun,
+			BOARD_INFO_ID AS boardInfOId,
+			MAST_GUBUN AS mastGubun,
+			INVITE_YN AS inviteYn,
+			JOIN_YN AS joinYn,
+			REG_DATE AS regDate
+		FROM
+			FC_CUMT_ADD_INFO A
+		WHERE 1 = 1
+			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+	</select>
 </mapper>

@@ -250,8 +250,24 @@ public class CommunityController {
 		}
 	}
 	 */
+
+	private List<Map<String, Object>> comtInfoMemberList(Map<String, Object> paramMap) {
+		return communityService.getComtInfoMemberAllList(paramMap);
+	}
+
 	@RequestMapping(value = "/getComtAddUsrAllList")
 	public void getComtAddUsrAllListData(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
-		
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+
+		List<Map<String, Object>> memList = comtInfoMemberList(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), memList);
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 }

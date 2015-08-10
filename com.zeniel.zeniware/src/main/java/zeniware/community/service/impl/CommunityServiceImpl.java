@@ -85,4 +85,9 @@ public class CommunityServiceImpl implements CommunityService {
 		//}
 		return communityDao.setInsertUserComtBasicInfo(paramMap);
 	}
+
+	@Override
+	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap) {
+		return communityDao.getComtInfoMemberAllList(listMap);
+	}
 }
