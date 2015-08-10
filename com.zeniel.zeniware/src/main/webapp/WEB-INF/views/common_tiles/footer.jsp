@@ -216,7 +216,7 @@
 					'url': function(node) {
 						var paramCompId = node.id.substr(1, 3);
 						var paramDeptId = node.id.substr(4, 4);
-
+						
 						return node.id == '#' ?
 							keyword.length == 0 ? 
 								'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
@@ -232,7 +232,7 @@
 
 				$('#jstreeMember').jstree().refresh();
 				$('#member-window .ps-scrollbar').perfectScrollbar('destroy');
-				$('#member-window .ps-scrollbar').perfectScrollbar();;
+				$('#member-window .ps-scrollbar').perfectScrollbar();
 			}
 		});
 		
