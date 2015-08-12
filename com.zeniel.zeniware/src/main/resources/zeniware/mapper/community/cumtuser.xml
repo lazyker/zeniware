@@ -247,6 +247,9 @@
 			TYPE_GUBUN AS typeGubun,
 			BOARD_INFO_ID AS boardInfOId,
 			MAST_GUBUN AS mastGubun,
+			CASE WHEN MAST_GUBUN = 'M' AND JOIN_YN = 'Y' THEN 'Y'
+			WHEN MAST_GUBUN = 'U' AND JOIN_YN = 'Y' THEN 'D'
+			ELSE 'N' END AS taltelGubun,
 			INVITE_YN AS inviteYn,
 			JOIN_YN AS joinYn,
 			REG_DATE AS regDate
@@ -255,4 +258,71 @@
 		WHERE 1 = 1
 			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 	</select>
+
+	<!-- 커뮤니티 멤버 탈퇴 처리 -->
+	<delete id="comtUser.setDeleteComtInfoMemUser" parameterType="hashmap">
+		DELETE FROM FC_CUMT_ADD_INFO
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId, jdbcType=VARCHAR}
+	</delete>
+
+	<!-- 커뮤니티 가입승인 처리 -->
+	<update id="comtUser.setUpdateComtInfoMemUser" parameterType="hashmap">
+		UPDATE FC_CUMT_ADD_INFO SET
+			JOIN_YN = 'Y',
+			JOIN_USER_ID = #{reguserId, jdbcType=VARCHAR},
+			JOIN_REG_DATE = NOW()
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId, jdbcType=VARCHAR}
+	</update>
+
+	<!-- 커뮤니티 페쇄 신청 처리 -->
+	<insert id="comtUser.setInsertComtInfoBasicClose" parameterType="hashmap">
+		INSERT INTO FC_COMT_CLOSE_CEMT
+		(
+			FC_COMT_ID,
+			COMP_ID,
+			USER_ID,
+			CLOSE_TITLE,
+			CLOSE_COMMENT,
+			REG_DATE
+		) VALUES (
+			#{fcComtId, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{closeTitle, jdbcType=VARCHAR},
+			#{closeComment, jdbcType=VARCHAR},
+			NOW()
+		)
+	</insert>
+
+	<!-- 커뮤니티 페쇄 처리 -->
+	<update id="comtUser.setUpdateComtInfoBasicClose" parameterType="hashmap">
+		UPDATE FC_CUMT_INFO SET
+			ADM_ACT_YN = 'P',
+			MOD_DATE = NOW(),
+			REG_USER_ID = #{userId, jdbcType=VARCHAR}
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND COMP_ID = #{compId, jdbcType=VARCHAR}
+	</update>
+
+	<!-- 커뮤니티 메일 발송 내용 DB 저장 처리 -->
+	<insert id="comtUser.setInsertComtInfoMailSend" parameterType="hashmap">
+		INSERT INTO FC_COMT_MAIL_SEND
+		(
+			FC_COMT_ID,
+			COMP_ID,
+			USER_ID,
+			MAIL_TITLE,
+			MAIL_TEXT,
+			REG_DATE
+		) VALUES (
+			#{fcComtId, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{mailTitle, jdbcType=VARCHAR},
+			#{mailText, jdbcType=VARCHAR},
+			NOW()
+		)
+	</insert>
 </mapper>

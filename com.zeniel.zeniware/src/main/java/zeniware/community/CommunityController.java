@@ -270,4 +270,79 @@ public class CommunityController {
 			throw e;
 		}
 	}
+
+	//커뮤니티 탈퇴 처리
+	@RequestMapping(value = "deleteComtInfoMemUser")
+	public void setDeleteComtInfoMemUser(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		int rows = 0;
+		rows = communityService.setDeleteComtInfoMemUser(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), rows);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	//커뮤니티 가입승인 처리
+	@RequestMapping(value = "/updateComtInfoMemUser")
+	public void setUpdateComtInfoMemUse(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+
+		paramMap.put("reguserId", memberInfo.getUserId());
+
+		int rows = 0;
+		rows = communityService.setUpdateComtInfoMemUser(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), rows);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	//커뮤니티 페쇄 신청 처리
+	@RequestMapping(value = "/insertComtInfoBasicClose")
+	public void setInsertComtInfoBasicClose(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("userId", memberInfo.getUserId());
+		paramMap.put("compId", memberInfo.getCompId());
+
+		int rows = 0;
+		rows = communityService.setInsertComtInfoBasicClose(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), rows);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	//커뮤니티 메일 발송 처리
+	@RequestMapping(value = "/insertComtInfoMailSend")
+	public void setInsertComtInfoMailSend(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("userId", memberInfo.getUserId());
+		paramMap.put("compId", memberInfo.getCompId());
+
+		int rows = 0;
+		rows = communityService.setInsertComtInfoMailSend(paramMap);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), rows);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 }

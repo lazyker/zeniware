@@ -103,4 +103,28 @@ public class CommunityDao extends AbstractDao {
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap) {
 		return (List<Map<String, Object>>) selectList("comtUser.getComtInfoMemberAllList", listMap);
 	}
+
+	//커뮤니티 멤버 탈퇴 처리
+	public int setDeleteComtInfoMemUser(Map<String, Object> paramMap) {
+		return (int) delete("comtUser.setDeleteComtInfoMemUser", paramMap);
+	}
+
+	//커뮤니티 가입승인 처리
+	public int setUpdateComtInfoMemUser(Map<String, Object> paramMap) {
+		return (int) update("comtUser.setUpdateComtInfoMemUser", paramMap);
+	}
+
+	//커뮤니티 페쇄 신청 처리
+	public int setInsertComtInfoBasicClose(Map<String, Object> paramMap) {
+		int rw =  (int) update("comtUser.setUpdateComtInfoBasicClose", paramMap);
+		if(rw > 0) {
+			insert("comtUser.setInsertComtInfoBasicClose", paramMap);
+		}
+		return rw;
+	}
+
+	//커뮤니티 메일 발송 내용 DB 저장 처리
+	public int setInsertComtInfoMailSend(Map<String, Object> paramMap) {
+		return (int) update("comtUser.setInsertComtInfoMailSend", paramMap);
+	}
 }

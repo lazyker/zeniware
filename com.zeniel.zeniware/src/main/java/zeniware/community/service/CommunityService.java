@@ -57,4 +57,16 @@ public interface CommunityService {
 
 	//커뮤니티 멤버 전체 조회
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap);
+
+	//커뮤니티 멤버 탈퇴 처리
+	public int setDeleteComtInfoMemUser(Map<String, Object> paramMap);
+
+	//커뮤니티 가입승인 처리
+	public int setUpdateComtInfoMemUser(Map<String, Object> paramMap);
+
+	//커뮤니티 페쇄 신청 처리
+	public int setInsertComtInfoBasicClose(Map<String, Object> paramMap);
+
+	//커뮤니티 메일 발송 내용 DB 저장 처리
+	public int setInsertComtInfoMailSend(Map<String, Object> paramMap);
 }

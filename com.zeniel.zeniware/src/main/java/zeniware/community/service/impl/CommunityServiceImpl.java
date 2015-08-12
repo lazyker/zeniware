@@ -90,4 +90,24 @@ public class CommunityServiceImpl implements CommunityService {
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap) {
 		return communityDao.getComtInfoMemberAllList(listMap);
 	}
+
+	@Override
+	public int setDeleteComtInfoMemUser(Map<String, Object> paramMap) {
+		return communityDao.setDeleteComtInfoMemUser(paramMap);
+	}
+
+	@Override
+	public int setUpdateComtInfoMemUser(Map<String, Object> paramMap) {
+		return communityDao.setUpdateComtInfoMemUser(paramMap);
+	}
+
+	@Override
+	public int setInsertComtInfoBasicClose(Map<String, Object> paramMap) {
+		return communityDao.setInsertComtInfoBasicClose(paramMap);
+	}
+
+	@Override
+	public int setInsertComtInfoMailSend(Map<String, Object> paramMap) {
+		return communityDao.setInsertComtInfoMailSend(paramMap);
+	}
 }
