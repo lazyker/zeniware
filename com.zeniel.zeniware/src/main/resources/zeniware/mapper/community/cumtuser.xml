@@ -214,6 +214,16 @@
 		ORDER BY CUMT_NM  ASC
 	</select>
 
+	<!-- 커뮤니티 운영자 정보 전체 삭제  -->
+	<delete id="comtUser.setUpdateComtInfoAddUserAll" parameterType="hashmap">
+		UPDATE FC_CUMT_ADD_INFO SET
+			MAST_GUBUN = 'U'
+		WHERE COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND TYPE_GUBUN = 'C'
+			AND MAST_GUBUN = 'M'
+	</delete>
+
 	<!-- 커뮤니티 가입여부 조회 -->
 	<select id="comtUser.getComtAddInfoCnt" parameterType="hashmap" resultType="int">
 		SELECT

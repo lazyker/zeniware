@@ -87,6 +87,18 @@ public class CommunityDao extends AbstractDao {
 	}
 
 	/**
+	 * 커뮤니티 운영자 정보 전체 변경
+	*/
+	public int setUpdateComtInfoAddUserAll(Map<String, Object> paramMap) {
+		return (int) update("comtUser.setUpdateComtInfoAddUserAll", paramMap);
+	}
+
+	//커뮤니티 가입자 운영자 변경 처리
+	public int setUpdateComtInfoAddUser(Map<String, Object> paramMap) {
+		return (int) update("comtUser.setUpdateComtInfoAddUser", paramMap);
+	}
+
+	/**
 	 * 커뮤니티 가입여부 조회(fcComtId로 해당 커뮤니티 전체 조회)
 	*/
 	public int getComtAddInfoCnt(Map<String, Object> paramMap) {
