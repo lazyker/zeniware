@@ -24,7 +24,6 @@
 			
 			<div class="panel-heading">
 				<h3 class="panel-title">조직도 목록</h3>
-				
 				<div class="panel-options">
 					<div class="btn-group">
 						<button class="btn btn-gray btn-sm" id="btnDeptAdd">추가</button>
@@ -36,9 +35,10 @@
 			
 			<div class="panel-body">
 				<div class="scrollable" data-max-height="500">
-					<div id="jstree_demo_div"></div>
+					<div class="custom-jstree" id="jstree_demo_div"></div>
 				</div>
 			</div>
+			
 		</div>
 	
 	</div>
@@ -52,6 +52,8 @@
 				
 				<div class="panel-options">
 					<div class="btn-group">
+						<button class="btn btn-gray btn-sm" id="btnUserMove">부서이동</button>
+						<button class="btn btn-white btn-sm" id="btnRelocation">정렬순서</button>
 						<button class="btn btn-gray btn-sm" id="btnUserAdd">추가</button>
 						<button class="btn btn-white btn-sm" id="btnUserEdit">변경</button>
 						<button class="btn btn-gray btn-sm" id="btnUserDelete">삭제</button>
@@ -92,13 +94,13 @@
 		var msg04 = "사용자를 한 명만 선택하세요.";
 		
 		/* jsTree Data Binding */
-		$("#jstree_demo_div").jstree({
+		$('#jstree_demo_div').jstree({
 			"core": {
 				"multiple": false, 
-				"check_callback": function(op, node, par, pos, more) {
-					if (op == 'move_node') {
+				"check_callback": function(operation, node, parent, position, more) {
+					if (operation == 'move_node' && parent.id != '#') {
 						if (more && more.core) {
-							if (confirm('옮기시겠습니까?')) {
+							if (confirm("이동하시겠습니까?")) {
 								return true;
 							}
 						} else {
@@ -109,20 +111,43 @@
 					return false;
 				}, 
 				"data": { 
-					url: "../ajax/getNodelist", 
-					data: { compId: paramCompId }
-				}
-			}, 
-			"dnd": {
-				"drop_finish": function() {
-					console.log('dropped!!!');
+					'url': function(node) {
+						var curCompId = node.id.substr(1, 3);
+						var curDeptId = node.id.substr(4, 4);
+
+						return node.id == '#' ? 
+							'../ajax/getNodelistDefer?compId=' + paramCompId + '&nodeType=root&resultType=D' : 
+							'../ajax/getNodelistDefer?compId=' + curCompId + '&deptId=' + curDeptId + '&nodeType=child&resultType=D';
+					}, 
+					'data': function(node) {
+						return { 'id': node.id };
+					}
 				}
 			}, 
 			"plugins": [ "dnd" ] 
+		}).on('move_node.jstree', function(e, data) {
+			var curCompId = data.node.id.substr(1, 3);
+			var curDeptId = data.node.id.substr(4, 4);
+			var curParentDeptId = data.parent == '#' ? data.parent : data.parent.substr(4, 4);
+			
+			$.ajax({
+				dataType: "json", 
+				type: "post", 
+				url: "../ajax/moveSingleDept", 
+				data: { 
+					compId: curCompId,  
+					deptId: curDeptId, 
+					parentDeptId: curParentDeptId, 
+					children: createJsonChildren(data.instance.get_node(data.parent)) 
+				}, 
+				success: function(data) {
+					toastrAlert('success', '이동되었습니다.');
+				} 
+			});
 		});
 		
 		/* userlist Data Binding */
-		var tbl = $('#tblUser').DataTable({
+		$('#tblUser').DataTable({
 			ajax: { "url": "../ajax/getUserlist", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers",  
@@ -146,14 +171,14 @@
 				r.push(data.instance.get_node(data.selected[i]).text);
 			}
 			
-			var curCompId = data.selected[0].substr(0, 3);
-			var curDeptId = data.selected[0].substr(3, 4);
+			var curCompId = data.selected[0].substr(1, 3);
+			var curDeptId = data.selected[0].substr(4, 4);
 			
 			if ($('.dataTables_filter input').val().length > 0) {
 				$('#tblUser').DataTable().search("").draw();
 			}
 			
-			tbl.ajax.url('../ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId + '&resigned=0').load();			
+			$('#tblUser').DataTable().ajax.url('../ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId + '&resigned=0').load();
 		});
 		
 		/* 부서 추가 */
@@ -164,11 +189,11 @@
 				toastrAlert('error', '부서를 선택하세요.');
 				
 			} else {
-				var selCompId = selNode[0].id.substr(0, 3);
-				var selDeptId = selNode[0].id.substr(3, 4);
+				var selCompId = selNode[0].id.substr(1, 3);
+				var selDeptId = selNode[0].id.substr(4, 4);
 				var selDeptName = selNode[0].text;
 				
-				$.get('./unitNewDept?compId=' + selCompId + '&prtDeptId=' + selDeptId + '&prtDeptName=' + selDeptName, function(data) {
+				$.get('../../modal/deptNew?compId=' + selCompId + '&parDeptId=' + selDeptId + '&parDeptName=' + selDeptName, function(data) {
 					modalInit(true, '부서 추가', data, '확인', '취소');
 				});
 			}
@@ -182,10 +207,10 @@
 				toastrAlert('error', '부서를 선택하세요.');
 				
 			} else {
-				var selCompId = selNode[0].id.substr(0, 3);
-				var selDeptId = selNode[0].id.substr(3, 4);
+				var selCompId = selNode[0].id.substr(1, 3);
+				var selDeptId = selNode[0].id.substr(4, 4);
 				
-				$.get('./unitNewDept?compId=' + selCompId + '&deptId=' + selDeptId, function(data) {
+				$.get('../../modal/deptNew?compId=' + selCompId + '&deptId=' + selDeptId, function(data) {
 					modalInit(true, '부서 변경', data, '확인', '취소');
 				});
 			}
@@ -206,6 +231,21 @@
 					$('#tblUser').DataTable().ajax.url(strUrl).load();
 				}
 			}
+		});
+		
+		/* 부서원 이동 */
+		$('#btnUserMove').on('click', function() {
+			$.get('../../modal/jstreeDept', function(data) {
+				modalInit(true, '부서원 이동', data, '저장', '취소', '30%', '300px');
+			});
+		});
+		
+		/* 정렬순서 변경 */
+		$('#btnRelocation').on('click', function() {
+			$.get('../../modal/deptMemberSort', function(data) {
+				modalInit(true, '정렬순서 변경', data, '저장', '취소', '60%', '400px');
+				$('#tblSortableUser').DataTable().ajax.url('../ajax/getUserlist?compId=' + '001' + '&deptId=' + '0043' + '&resigned=0').load();
+			});
 		});
 		
 		/* 사용자 추가 */
@@ -253,12 +293,12 @@
 			}
 		});
 		
-		/* 삭제 진행 */
+		/* Button click event handler */
 		$('#btnOk').on('click', function() {
-			if ($(this).hasClass("deleteDept")) {
+			if ($(this).hasClass('deleteDept')) {
 // 				$.ajax({
 // 					dataType: "json", 
-// 					type: "POST", 
+// 					type: "post", 
 // 					url: "../ajax/deleteCodelist", 
 // 					data: { codelist: createJsonGrouplist() }, 
 // 					success: function(data) {
@@ -266,10 +306,10 @@
 // 						$("#tblGroup").DataTable().ajax.url('../ajax/getGrouplist').load();
 // 					}
 // 				});
-			} else {
+			} else if ($(this).hasClass('deleteUser')) {
 				$.ajax({
 					dataType: "json", 
-					type: "POST", 
+					type: "post", 
 					url: "../ajax/resignUserlist", 
 					data: { userlist: createJsonUserlist() }, 
 					success: function(data) {
@@ -277,8 +317,27 @@
 						$('#tblUser').DataTable().rows(".selected").remove().draw(false);
 					} 
 				});
+			} else if ($(this).hasClass('moveDept')) {
+				console.log('department moved!!!');
 			}
 		});
+		
+		/* Child node list 생성 */
+		var createJsonChildren = function(parentNode) {
+			var jsonObj = [];
+
+			$.each(parentNode.children, function(index, element) {
+				var jsonItem = {};
+				
+				jsonItem["compId"] = element.substr(1, 3);
+				jsonItem["deptId"] = element.substr(4, 4);
+				jsonItem["sortOrder"] = index;
+				
+				jsonObj.push(jsonItem);
+			});
+			
+			return JSON.stringify(jsonObj);
+		}
 		
 		/* 사용자 Json Object 생성 */
 		var createJsonUserlist = function() {
@@ -310,18 +369,6 @@
 			
 			return result;
 		};
-		
-		var c = {};
-		
-		$('#tblUser tbody').sortable({
-			items: "> tr", 
-			appendTo: "parent", 
-			helper: "clone", 
-			start: function(e, ui) {
-			}
-		}).disableSelection();
-		
-		/* Draggable & Droppable */
 
 	});
 

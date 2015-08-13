@@ -16,21 +16,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zeniware.admin.pluginman.service.PluginManService;
-import zeniware.admin.pluginman.vo.SelectOption;
+import zeniware.common.plugin.service.PluginService;
+import zeniware.common.plugin.vo.SelectOption;
 import zeniware.admin.unitman.service.UnitManService;
 import zeniware.admin.unitman.vo.Company;
-import zeniware.admin.unitman.vo.Department;
 import zeniware.admin.unitman.vo.User;
 
 @Controller
 public class UnitManController {
   
   @Autowired
-  UnitManService unitmanService;
+  PluginService pluginService;
   
   @Autowired
-  PluginManService pluginmanService;
+  UnitManService unitmanService;
   
   /*********************
    * Public Procedures
@@ -101,23 +100,6 @@ public class UnitManController {
     return "redirect:/admin/preference/unitMain?compId=" + user.getCompId();
   }
   
-  @RequestMapping(value="/admin/preference/unitNewDept", method=RequestMethod.GET)
-  public String requestUnitNewDeptForm(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-    
-    try {
-      String paramCompId = (String)paramMap.get("compId");
-      String paramDeptId = (String)paramMap.get("deptId");
-      String paramPrtDeptId = (String)paramMap.get("prtDeptId");
-      String paramPrtDeptName = (String)paramMap.get("prtDeptName");
-      
-      model.put("dept", paramDeptId == null ? 
-        this.deptMaker(paramCompId, paramPrtDeptId, paramPrtDeptName) : this.deptMaker(paramMap));
-      
-    } catch (Exception e) { throw e; }
-    
-    return "/admin/preference/unitNewDept";
-  }
-    
   @RequestMapping("/admin/ajax/getComplist")
   public void getCompList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -162,6 +144,34 @@ public class UnitManController {
     } catch (Exception e) { throw e; }
   }
   
+  @RequestMapping("/admin/ajax/moveSingleDept")
+  public void moveSingleDept(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {
+      int affectedRows = unitmanService.moveSingleDept(paramMap);
+      
+      ObjectMapper objectMapper = new ObjectMapper();
+      response.setContentType("application/json");
+      objectMapper.writeValue(response.getOutputStream(), affectedRows);
+      
+    } catch (Exception e) { throw e; }
+  }
+  
+  @RequestMapping("/admin/ajax/setUserListSort")
+  public void setUserListSort(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {
+      int affectedRows = unitmanService.setUserListSort(paramMap);
+      
+      ObjectMapper objectMapper = new ObjectMapper();
+      response.setContentType("application/json");
+      objectMapper.writeValue(response.getOutputStream(), affectedRows);
+      
+    } catch (Exception e) { throw e; }
+  }
+  
   @RequestMapping("/admin/ajax/resignUserlist")
   public void resignUserlist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -193,19 +203,11 @@ public class UnitManController {
       paramMap.put("groupId", groupId);
       paramMap.put("langCode", langCode);
       
-      list = pluginmanService.getSboxCodeList(paramMap);
+      list = pluginService.getSboxCodeList(paramMap);
       
     } catch (Exception e) { throw e; }
     
     return list;
-  }
-  
-  private Department deptMaker(String compId, String parentDeptId, String parentDeptName) {
-    return new Department().setCompId(compId).setParentDeptId(parentDeptId).setParentDeptName(parentDeptName);
-  }
-  
-  private Department deptMaker(Map<String, Object> paramMap) {
-    return unitmanService.getSingleDept(paramMap);
   }
   
   private User userMaker(String compId, String deptId) {

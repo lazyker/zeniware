@@ -4,70 +4,70 @@
 <mapper namespace="admin.unitman">
 	
 	<resultMap id="compResultMap" type="zeniware.admin.unitman.vo.Company">
-		<id column="COMP_ID" property="compId" />
-		<result column="COMP_NM" property="compName" />
-		<result column="SORT_ORDER" property="sortOrder" />
-		<result column="USE_YN" property="useYn" />
-		<result column="REG_DATE" property="regDate" />
-		<result column="MOD_DATE" property="modDate" />
-		<result column="DEL_DATE" property="delDate" />
+		<id property="compId" column="COMP_ID" />
+		<result property="compName" column="COMP_NM" />
+		<result property="sortOrder" column="SORT_ORDER" />
+		<result property="useYn" column="USE_YN" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+		<result property="delDate" column="DEL_DATE" />
 	</resultMap>
 	
 	<resultMap id="deptResultMap" type="zeniware.admin.unitman.vo.Department">
-		<id column="DEPT_ID" property="deptId" />
-		<id column="COMP_ID" property="compId" />
-		<result column="DEPT_NM" property="deptName" />
-		<result column="SIMPLE_NM" property="simpleName" />
-		<result column="PARENT_DEPT_ID" property="parentDeptId" />
-		<result column="PARENT_DEPT_NM" property="parentDeptName" />
-		<result column="DEPT_LEVEL" property="deptLevel" />
-		<result column="SORT_ORDER" property="sortOrder" />
-		<result column="MAIL_ID" property="mailId" />
-		<result column="MANAGER_ID" property="managerId" />
-		<result column="USE_YN" property="useYn" />
-		<result column="ACTIVATE_YN" property="activateYn" />
-		<result column="REG_DATE" property="regDate" />
-		<result column="MOD_DATE" property="modDate" />
-		<result column="DEL_DATE" property="delDAte" />
+		<id property="deptId" column="DEPT_ID" />
+		<id property="compId" column="COMP_ID" />
+		<result property="deptName" column="DEPT_NM" />
+		<result property="simpleName" column="SIMPLE_NM" />
+		<result property="parentDeptId" column="PARENT_DEPT_ID" />
+		<result property="parentDeptName" column="PARENT_DEPT_NM" />
+		<result property="deptLevel" column="DEPT_LEVEL" />
+		<result property="sortOrder" column="SORT_ORDER" />
+		<result property="mailId" column="MAIL_ID" />
+		<result property="managerId" column="MANAGER_ID" />
+		<result property="useYn" column="USE_YN" />
+		<result property="activateYn" column="ACTIVATE_YN" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+		<result property="delDAte" column="DEL_DATE" />
 	</resultMap>
 	
 	<resultMap id="userResultMap" type="zeniware.admin.unitman.vo.User">
-		<id column="USER_ID" property="userId" />
-	  <id column="COMP_ID" property="compId" />
-	  <result column="DEPT_ID" property="deptId" />
-	  <result column="DEPT_NM" property="deptName" />
-	  <result column="USER_NM" property="userName" />
-	  <result column="EMP_NUMBER" property="empNo" />
-	  <result column="MAIL_ID" property="mailId" />
-	  <result column="OFFICE_PHONE" property="officePhone" />
-	  <result column="HOME_PHONE" property="homePhone" />
-	  <result column="FAX" property="fax" />
-	  <result column="MOBILE" property="mobile" />
-	  <result column="POSTCODE" property="postCode" />
-	  <result column="ADDRESS1" property="address1" />
-	  <result column="ADDRESS2" property="address2" />
-	  <result column="JOIN_DATE" property="joinDate" />
-	  <result column="RESIGN_DATE" property="resignDate" />
-	  <result column="PHOTO_FILE_ID" property="photoFileId" />
-	  <result column="SIGN_FILE_ID" property="signFileId" />
-	  <result column="SECURITY_LEVEL" property="securityLevel" />
-	  <result column="JOB_TITLE_CD" property="jobTitleCode" />
-	  <result column="JOB_TITLE_NM" property="jobTitleName" />
-	  <result column="JOB_GRADE_CD" property="jobGradeCode" />
-	  <result column="JOB_ROLE_CD" property="jobRoleCode" />
-	  <result column="ENTITLEMENT" property="entitlement" />
-	  <result column="MANAGER_ID" property="managerId" />
-	  <result column="PASSWORD" property="password" />
-	  <result column="DESCRIPTION" property="description" />
-	  <result column="BIRTH_DATE" property="birthDate" />
-	  <result column="USE_LUNAR_YN" property="useLunarYn" />
-	  <result column="LANGUAGE_CD" property="languageCode" />
-	  <result column="SORT_ORDER" property="sortOrder" />
-	  <result column="USE_YN" property="useYn" />
-	  <result column="ACTIVATE_YN" property="activateYn" />
-	  <result column="REG_DATE" property="regDate" />
-	  <result column="MOD_DATE" property="modDate" />
-	  <result column="DEL_DATE" property="delDate" />
+		<id property="userId" column="USER_ID" />
+	  <id property="compId" column="COMP_ID" />
+	  <result property="deptId" column="DEPT_ID" />
+	  <result property="deptName" column="DEPT_NM" />
+	  <result property="userName" column="USER_NM" />
+	  <result property="empNo" column="EMP_NUMBER" />
+	  <result property="mailId" column="MAIL_ID" />
+	  <result property="officePhone" column="OFFICE_PHONE" />
+	  <result property="homePhone" column="HOME_PHONE" />
+	  <result property="fax" column="FAX" />
+	  <result property="mobile" column="MOBILE" />
+	  <result property="postCode" column="POSTCODE" />
+	  <result property="address1" column="ADDRESS1" />
+	  <result property="address2" column="ADDRESS2" />
+	  <result property="joinDate" column="JOIN_DATE" />
+	  <result property="resignDate" column="RESIGN_DATE" />
+	  <result property="photoFileId" column="PHOTO_FILE_ID" />
+	  <result property="signFileId" column="SIGN_FILE_ID" />
+	  <result property="securityLevel" column="SECURITY_LEVEL" />
+	  <result property="jobTitleCode" column="JOB_TITLE_CD" />
+	  <result property="jobTitleName" column="JOB_TITLE_NM" />
+	  <result property="jobGradeCode" column="JOB_GRADE_CD" />
+	  <result property="jobRoleCode" column="JOB_ROLE_CD" />
+	  <result property="entitlement" column="ENTITLEMENT" />
+	  <result property="managerId" column="MANAGER_ID" />
+	  <result property="password" column="PASSWORD" />
+	  <result property="description" column="DESCRIPTION" />
+	  <result property="birthDate" column="BIRTH_DATE" />
+	  <result property="useLunarYn" column="USE_LUNAR_YN" />
+	  <result property="languageCode" column="LANGUAGE_CD" />
+	  <result property="sortOrder" column="SORT_ORDER" />
+	  <result property="useYn" column="USE_YN" />
+	  <result property="activateYn" column="ACTIVATE_YN" />
+	  <result property="regDate" column="REG_DATE" />
+	  <result property="modDate" column="MOD_DATE" />
+	  <result property="delDate" column="DEL_DATE" />
 	</resultMap>
 	
 	<select id="getCompList" parameterType="map" resultMap="compResultMap">
@@ -82,6 +82,10 @@
 		CALL UP_UNITMAN_COMP_ONE(#{compId});
 	</select>
 	
+	<select id="getRootDept" parameterType="String" resultType="String">
+		CALL UP_UNITMAN_DEPT_ROOT(#{compId});
+	</select>
+	
 	<select id="getSingleDept" parameterType="map" resultMap="deptResultMap">
 		CALL UP_UNITMAN_DEPT_ONE(#{compId}, #{deptId});
 	</select>
@@ -90,9 +94,12 @@
 		CALL UP_UNITMAN_USER_ONE(#{compId}, #{userId});
 	</select>
 	
-	<update id="moveSingleDept" parameterType="map">
-		CALL UP_UNITMAN_DEPT_MOVE(#{compId}, #{deptId}, #{parentDeptId});
-	</update>
+	<insert id="setSingleDept" parameterType="map">
+		CALL UP_UNITMAN_DEPT_SET(
+			#{deptId}, #{compId}, #{deptName}, #{simpleName}, 
+			#{parentDeptId}, #{sortOrder}, #{mailId}, #{managerId}, #{activateYn} 
+		);
+	</insert>
 	
 	<insert id="setSingleUser" parameterType="map">
 		CALL UP_UNITMAN_USER_SET(
@@ -103,8 +110,20 @@
 		);
 	</insert>
 	
+	<update id="moveSingleDept" parameterType="map">
+		CALL UP_UNITMAN_DEPT_MOVE(#{compId}, #{deptId}, #{parentDeptId});
+	</update>
+	
+	<update id="setSingleDeptSort" parameterType="map">
+		CALL UP_UNITMAN_DEPT_SORT_SET(#{compId}, #{deptId}, #{sortOrder});
+	</update>
+	
 	<update id="resignSingleUser" parameterType="map">
 		CALL UP_UNITMAN_USER_RESIGNED(#{compId}, #{userId}, #{useYn});
+	</update>
+	
+	<update id="setSingleUserSort" parameterType="map">
+		CALL UP_UNITMAN_USER_SORT_SET(#{compId}, #{userId}, #{sortOrder});
 	</update>
 
 </mapper>

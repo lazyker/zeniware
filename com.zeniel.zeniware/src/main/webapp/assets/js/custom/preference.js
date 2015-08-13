@@ -3,17 +3,20 @@
  */
 
 /* bootstrap modal initialize */
-var modalInit = function(show, title, message, primary, secondary) {
+var modalInit = function(show, title, message, primary, secondary, width, height) {
 	if (show == true) {
-		if (!jQuery.isEmptyObject(title)) $('#mdl .modal-title').html(title);
-		if (!jQuery.isEmptyObject(message)) $('#mdl .modal-body').html(message);
-		if (!jQuery.isEmptyObject(primary)) $('#mdl .btn-info').html(primary);
-		if (!jQuery.isEmptyObject(secondary)) $('#mdl .btn-white').html(secondary);
+		if (!jQuery.isEmptyObject(title)) $('.modal .modal-title').html(title);
+		if (!jQuery.isEmptyObject(message)) $('.modal .modal-body').html(message);
+		if (!jQuery.isEmptyObject(primary)) $('.modal .btn-info').html(primary);
+		if (!jQuery.isEmptyObject(secondary)) $('.modal .btn-white').html(secondary);
+		if (!jQuery.isEmptyObject(width)) $('.modal .modal-dialog').width(width);
+		if (!jQuery.isEmptyObject(height)) $('.modal .modal-body').css({ height: height, 'overflow-y': 'auto' });
 		
-		jQuery('#mdl').modal('show', { backdrop: 'fade' });
+		
+		jQuery('.modal').modal('show', { backdrop: 'fade' });
 		
 	} else {
-		jQuery('#mdl').modal('hide');
+		jQuery('.modal').modal('hide');
 	}
 };
 

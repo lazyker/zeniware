@@ -57,17 +57,4 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-
-	$(document).ready(function() {
-		
-		$('select').select2({
-			placeholder: "선택하세요...", 
-			allowClear: true
-		}).on('select2-open', function() {
-			$(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
-		});
-		
-	});
-	
-</script>
+<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>

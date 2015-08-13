@@ -1,4 +1,4 @@
-package zeniware.admin.pluginman.vo;
+package zeniware.common.plugin.vo;
 
 public class SelectOption {
   

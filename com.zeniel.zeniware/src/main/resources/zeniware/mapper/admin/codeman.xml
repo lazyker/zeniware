@@ -4,22 +4,22 @@
 <mapper namespace="admin.codeman">
 
 	<resultMap type="zeniware.admin.codeman.vo.CommonGroup" id="commonGroupResultMap">
-		<id column="CODE_ID" property="groupId" />
-		<result column="CODE_NM_KO" property="groupName" />
+		<id property="groupId" column="CODE_ID" />
+		<result property="groupName" column="CODE_NM_KO" />
 	</resultMap>
 
 	<resultMap type="zeniware.admin.codeman.vo.CommonCode" id="commonCodeResultMap">
-		<id column="GROUP_ID" property="groupId" />
-		<id column="CODE_ID" property="codeId" />
- 		<result column="CODE_NM_KO" property="codeNameKo" />
-		<result column="CODE_NM_EN" property="codeNameEn" />
-		<result column="CODE_NM_ZH" property="codeNameZh" />
-		<result column="CODE_NM_JA" property="codeNameJa" />
-		<result column="SORT_ORDER" property="sortOrder" />
-		<result column="USE_YN" property="useYn" />
-		<result column="DESCRIPTION" property="description" />
-		<result column="REG_DATE" property="regDate" javaType="java.sql.Date" />
-		<result column="MOD_DATE" property="modDate" javaType="java.sql.Date" />
+		<id property="groupId" column="GROUP_ID" />
+		<id property="codeId" column="CODE_ID" />
+ 		<result property="codeNameKo" column="CODE_NM_KO" />
+		<result property="codeNameEn" column="CODE_NM_EN" />
+		<result property="codeNameZh" column="CODE_NM_ZH" />
+		<result property="codeNameJa" column="CODE_NM_JA" />
+		<result property="sortOrder" column="SORT_ORDER" />
+		<result property="useYn" column="USE_YN" />
+		<result property="description" column="DESCRIPTION" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
 	</resultMap>
 	
 	<select id="getGroupList" parameterType="map" resultMap="commonGroupResultMap">

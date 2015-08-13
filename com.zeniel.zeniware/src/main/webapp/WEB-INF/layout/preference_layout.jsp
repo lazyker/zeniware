@@ -2,15 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
-
+	
 	<tiles:insertAttribute name="header" />
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2-bootstrap.css">
 	
@@ -30,7 +29,7 @@
 		</div>
 	</div>
 	
-	<div class="modal fade" id="mdl">
+	<div class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 			
@@ -72,7 +71,7 @@
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
-
+	
 </body>
 
 </html>

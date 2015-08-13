@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="common.plugin">
+
+	<resultMap id="sboxResultMap" type="zeniware.common.plugin.vo.SelectOption">
+		<id property="id" column="ID" />
+		<result property="text" column="TEXT" />
+	</resultMap>
+	
+	<resultMap id="treeNodeResultMap" type="zeniware.common.plugin.vo.TreeNode">
+		<id property="id" column="ID" />
+		<result property="parent" column="PARENT" />
+		<result property="text" column="TEXT" />
+		<result property="icon" column="ICON" />
+		<result property="children" column="CHILDREN" />
+		<association property="state" javaType="zeniware.common.plugin.vo.TreeNodeState">
+			<result property="opened" column="OPENED" />
+			<result property="disabled" column="DISABLED" />
+			<result property="selected" column="SELECTED" />
+		</association>
+	</resultMap>
+	
+	<select id="getSboxCodeList" parameterType="map" resultMap="sboxResultMap">
+		CALL UP_PLUGIN_SBOX_CODE_LIST(#{groupId}, #{langCode});
+	</select>
+	
+	<select id="getNodeListSearch" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_PLUGIN_NODE_LIST_SEARCH(#{compId}, #{keyword});
+	</select>
+	
+	<select id="getNodeListDefer" parameterType="map" resultMap="treeNodeResultMap">
+		CALL UP_PLUGIN_NODE_LIST_DEFER(#{compId}, #{deptId}, #{nodeType}, #{resultType});
+	</select>
+	
+</mapper>

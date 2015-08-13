@@ -1,4 +1,4 @@
-package zeniware.admin.pluginman;
+package zeniware.common.plugin;
 
 import java.util.List;
 import java.util.Map;
@@ -12,36 +12,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zeniware.admin.pluginman.service.PluginManService;
-import zeniware.admin.pluginman.vo.SelectOption;
-import zeniware.admin.pluginman.vo.TreeNode;
+import zeniware.common.plugin.vo.SelectOption;
+import zeniware.common.plugin.vo.TreeNode;
+import zeniware.common.plugin.service.PluginService;
 
 @Controller
-public class PluginManController {
+public class PluginController {
   
   @Autowired
-  PluginManService pluginmanService;
+  PluginService pluginService;
   
   @RequestMapping("/admin/ajax/getSboxCodelist")
   public void getSboxCodelist(@RequestParam Map<String, Object> paramMap, 
       HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      List<SelectOption> list = pluginmanService.getSboxCodeList(paramMap);
-      
-      ObjectMapper mapper = new ObjectMapper();
-      response.setContentType("application/json");
-      mapper.writeValue(response.getOutputStream(), list);
-      
-    } catch (Exception e) { throw e; }
-  }
-  
-  @RequestMapping("/admin/ajax/getNodelist")
-  public void getTreeNodelist(@RequestParam Map<String, Object> paramMap, 
-    HttpServletRequest request, HttpServletResponse response) throws Throwable {
-    
-    try {
-      List<TreeNode> list = pluginmanService.getTreeNodeList(paramMap);
+      List<SelectOption> list = pluginService.getSboxCodeList(paramMap);
       
       ObjectMapper mapper = new ObjectMapper();
       response.setContentType("application/json");
@@ -55,7 +41,7 @@ public class PluginManController {
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      List<TreeNode> list = pluginmanService.getNodeListSearch(paramMap);
+      List<TreeNode> list = pluginService.getNodeListSearch(paramMap);
       
       if (list.size() == 0) {
         list.add(new TreeNode().setId("empty").setText("검색 결과가 없습니다").setParent("#").setIcon("fa fa-exclamation"));
@@ -68,12 +54,12 @@ public class PluginManController {
     } catch (Exception e) { throw e; }
   }
   
-  @RequestMapping("/admin/ajax/getDeferredNodelist")
-  public void getDeferredNodelist(@RequestParam Map<String, Object> paramMap, 
+  @RequestMapping("/admin/ajax/getNodelistDefer")
+  public void getNodelistDefer(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      List<TreeNode> list = pluginmanService.getDeferredNodeList(paramMap);
+      List<TreeNode> list = pluginService.getNodeListDefer(paramMap);
       
       ObjectMapper mapper = new ObjectMapper();
       response.setContentType("application/json");

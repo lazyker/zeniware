@@ -1,6 +1,4 @@
-package zeniware.admin.pluginman.vo;
-
-import java.util.Map;
+package zeniware.common.plugin.vo;
 
 public class TreeNode {
 
@@ -9,7 +7,7 @@ public class TreeNode {
   private String text;
   private String icon;
   private boolean children;
-  private Map<String, Object> state;
+  private TreeNodeState state;
   
   public TreeNode() { }
   
@@ -58,11 +56,11 @@ public class TreeNode {
     return this;
   }
   
-  public Map<String, Object> getState() {
+  public TreeNodeState getState() {
     return this.state;
   }
   
-  public TreeNode setState(Map<String, Object> state) {
+  public TreeNode setState(TreeNodeState state) {
     this.state = state;
     return this;
   }

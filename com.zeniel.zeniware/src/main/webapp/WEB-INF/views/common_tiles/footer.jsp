@@ -144,8 +144,7 @@
 		}
 	}
 	
-	jQuery(document).ready(function($)
-	{
+	jQuery(document).ready(function($) {
 		var curCompId = "${currentUser.compId}";
 
 		/* footer member window toggle */
@@ -164,8 +163,8 @@
 						var paramDeptId = node.id.substr(4, 4);
 						
 						return node.id == '#' ? 
-							'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
-							'../admin/ajax/getDeferredNodelist?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child';
+							'../admin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resultType=U' : 
+							'../admin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resultType=U';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };
@@ -208,7 +207,7 @@
 		});
 		
 		/* jsTree Search... */
-		$('#txtSearch').on('keyup', function(event) {
+		$('#txtSearch').on('keydown', function(event) {
 			if (event.keyCode == 13) {
 				var keyword = $(this).val();
 				
@@ -216,12 +215,12 @@
 					'url': function(node) {
 						var paramCompId = node.id.substr(1, 3);
 						var paramDeptId = node.id.substr(4, 4);
-						console.log(encodeURIComponent(keyword));
+						
 						return node.id == '#' ?
 							keyword.length == 0 ? 
-								'../admin/ajax/getDeferredNodelist?compId=' + curCompId + '&nodeType=root' : 
+								'../admin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resultType=U' : 
 								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
-							'../admin/ajax/getDeferredNodelist?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child';
+							'../admin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resultType=U';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };

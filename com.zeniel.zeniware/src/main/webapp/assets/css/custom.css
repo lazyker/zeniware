@@ -6,6 +6,15 @@
  * 공통 custom
 */
 
+/*** main-content customized(for jstree indicator arrows) ***/
+.page-container .main-content {
+	position: static
+}
+
+.page-container .main-content :not(.custom-jstree) {
+	position: relative
+}
+
 /*** dataTable customized ***/
 table.dataTable tbody tr.selected {
   background-color: #b0bed9;

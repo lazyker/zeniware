@@ -15,13 +15,21 @@ public interface UnitManService {
   
   public List<User> getUserList(Map<String, Object> paramMap);
   
+  public String getRootDept(String compId);
+  
   public Department getSingleDept(Map<String, Object> paramMap);
 
   public User getSingleUser(Map<String, Object> paramMap);
+  
+  @Transactional(value="transactionManager")
+  public int moveSingleDept(Map<String, Object> paramMap) throws Throwable;
   
   public int setSingleUser(User user);
   
   @Transactional(value="transactionManager")
   public int resignUserList(List<User> userlist);
+  
+  @Transactional(value="transactionManager")
+  public int setUserListSort(Map<String, Object> paramMap) throws Throwable;
 
 }

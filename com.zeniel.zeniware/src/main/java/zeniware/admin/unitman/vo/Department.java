@@ -8,7 +8,6 @@ public class Department {
   private String simpleName;
   private String parentDeptId;
   private String parentDeptName;
-  private int deptLevel;
   private int sortOrder;
   private String mailId;
   private String managerId;
@@ -71,15 +70,6 @@ public class Department {
   
   public Department setParentDeptName(String parentDeptName) {
     this.parentDeptName = parentDeptName;
-    return this;
-  }
-  
-  public int getDeptLevel() {
-    return this.deptLevel;
-  }
-  
-  public Department setDeptLevel(int deptLevel) {
-    this.deptLevel = deptLevel;
     return this;
   }
   

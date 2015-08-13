@@ -31,12 +31,28 @@ public class UnitManDao extends AbstractDao {
     return (User)selectOne("admin.unitman.getSingleUser", paramMap);
   }
   
+  public String getRootDept(String compId) {
+    return (String)selectOne("admin.unitman.getRootDept", compId);
+  }
+  
+  public int moveSingleDept(Map<String, Object> paramMap) {
+    return (int)update("admin.unitman.moveSingleDept", paramMap);
+  }
+  
+  public int setSingleDeptSort(Department dept) {
+    return (int)update("admin.unitman.setSingleDeptSort", dept);
+  }
+  
   public int setSingleUser(User user) {
     return (int)insert("admin.unitman.setSingleUser", user);
   }
   
   public int resignSingleUser(User user) {
     return (int)update("admin.unitman.resignSingleUser", user);
+  }
+  
+  public int setSingleUserSort(User user) {
+    return (int)update("admin.unitman.setSingleUserSort", user);
   }
   
 }
