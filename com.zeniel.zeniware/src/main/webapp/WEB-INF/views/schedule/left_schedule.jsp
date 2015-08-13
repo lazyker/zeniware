@@ -399,16 +399,6 @@
 				return result;
 			}
 			
-			//캘린더 수정
-			function modifyCalendar() {
-				$('#calendarModal').on('show.bs.modal', function (event) {
-					
-					  
-				});
-				
-				
-			}
-			
 			//캘린더 삭제 버튼 활성화 이벤트
 			function showDelCalBtn() {
 		 		if($('.del').length <= 0) {

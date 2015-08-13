@@ -201,9 +201,13 @@ public class DateUtil {
     
     /**
      * 두 날짜의 차이를 일수로 구하기
+     * @param Date startDate 시작날짜
+     * @param Date endDate 종료날짜
+     * @param int rpetcyc 반복일수
+     * @param String rpetType 반복타입
      * @return int days
      */
-    public static int DateDiff(Date startDate, Date endDate) throws ParseException {
+    public static int DateDiff(Date startDate, Date endDate, int rpetcyc, String rpetType) throws ParseException {
     	Calendar cal = Calendar.getInstance( );
 		cal.setTime (startDate);
 		long d1 = cal.getTime().getTime(); //초로 변환
@@ -211,9 +215,27 @@ public class DateUtil {
 		Calendar cal2 = Calendar.getInstance( );
 		cal2.setTime(endDate);
 		long d2 = cal2.getTime().getTime();
+		int days = 0;
+		
+		if ("W".equals(rpetType))	//매주
+		{
+			rpetcyc = rpetcyc * 7;
+		}
+		else if ("M".equals(rpetType))	//매월
+		{
+			rpetcyc = rpetcyc * 30;
+		}
+		else if ("Y".equals(rpetType))		//매년
+		{
+			rpetcyc = rpetcyc * 365;
+		}
+		
+		if (rpetcyc == 0) {
+			days =(int)((d2-d1)/(1000*60*60*24));
+		} else {
+			days =(int)((d2-d1)/(1000*60*60*24)) / rpetcyc; 
+		}
 		 
-		int days =(int)((d2-d1)/(1000*60*60*24)); 
-			
 		return days;
     }
     

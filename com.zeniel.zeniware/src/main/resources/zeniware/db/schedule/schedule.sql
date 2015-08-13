@@ -2,10 +2,10 @@ SET SESSION FOREIGN_KEY_CHECKS=0;
 
 /* Drop Tables */
 
-DROP TABLE FS_HLDY;
 DROP TABLE FS_SCHED_RPET;
-DROP TABLE FS_TODO;
 DROP TABLE FS_RPET_EXCPT;
+DROP TABLE FS_TODO;
+DROP TABLE FS_HLDY;
 DROP TABLE FS_SCHED;
 DROP TABLE FS_CLDR;
 
@@ -14,21 +14,10 @@ DROP TABLE FS_CLDR;
 
 /* Create Tables */
 
-CREATE TABLE FS_HLDY
-(
-	HLDY_YMD varchar(10) NOT NULL COMMENT '휴일날짜',
-	HLDY_ID int NOT NULL AUTO_INCREMENT COMMENT '휴일 아이디',
-	HLDY_NM varchar(60) NOT NULL COMMENT '휴일 이름',
-	HLDY_TYPE varchar(1) NOT NULL COMMENT '휴일 타입',
-	REG_DATE datetime COMMENT '등록일시',
-	PRIMARY KEY (HLDY_YMD, HLDY_ID)
-);
-
-
 CREATE TABLE FS_SCHED_RPET
 (
 	CLDR_ID varchar(12) NOT NULL COMMENT '캘린더 아이디',
-	SCHED_ID varchar(20) NOT NULL COMMENT '스케줄 아이디',
+	SCHED_ID int NOT NULL COMMENT '스케줄 아이디',
 	RPET_DATE_TYPE varchar(1) DEFAULT 'N' NOT NULL COMMENT '반복날짜 형태',
 	RPET_DD varchar(15) COMMENT '반복날짜(1 ~ 31) 
 0,1,2,3,4,5,6 -일,월,화,수,목,금,토',
@@ -36,6 +25,20 @@ CREATE TABLE FS_SCHED_RPET
 	RPET_MM varchar(15) COMMENT '반복월',
 	PRIMARY KEY (CLDR_ID, SCHED_ID)
 );
+
+
+-- 반복일정에 대한 예외를 저장하는 테이블로 반복일정에서 특정구간이 변경되는 경우 그 대상일자를 저장한다.
+-- 일정 삭제의 경우는 [스케줄]테이블에 새로운 인스턴스가 생성되지 않지만, 수정의 경우는 새로운 인스턴스가 생성된다. [반복일정예외] 테이블의 경우
+-- 이러한 신 인스턴스와 기존 반복일정 인스턴스간의 관계는 추적하지 않지만 변경(수정/삭제)이 발생시 그 대상일자만 기록하여 [스케줄]과 조인을 통해 필터링 하도록 되어 있다.
+CREATE TABLE FS_RPET_EXCPT
+(
+	CLDR_ID varchar(12) NOT NULL COMMENT '캘린더 아이디',
+	RPET_SCHED_ID int NOT NULL COMMENT '스케줄 아이디',
+	TRGT_YMD varchar(10) NOT NULL COMMENT '예외 대상 일자',
+	MOD_DATE datetime NOT NULL COMMENT '변경일시',
+	PRIMARY KEY (CLDR_ID, RPET_SCHED_ID, TRGT_YMD)
+) COMMENT = '반복일정에 대한 예외를 저장하는 테이블로 반복일정에서 특정구간이 변경되는 경우 그 대상일자를 저장한다.
+일';
 
 
 -- 회원의 할일 정보를 저장하는 테이블로 <캘린더아이디>와는 무관한 
@@ -55,18 +58,15 @@ CREATE TABLE FS_TODO
 테이블이다.';
 
 
--- 반복일정에 대한 예외를 저장하는 테이블로 반복일정에서 특정구간이 변경되는 경우 그 대상일자를 저장한다.
--- 일정 삭제의 경우는 [스케줄]테이블에 새로운 인스턴스가 생성되지 않지만, 수정의 경우는 새로운 인스턴스가 생성된다. [반복일정예외] 테이블의 경우
--- 이러한 신 인스턴스와 기존 반복일정 인스턴스간의 관계는 추적하지 않지만 변경(수정/삭제)이 발생시 그 대상일자만 기록하여 [스케줄]과 조인을 통해 필터링 하도록 되어 있다.
-CREATE TABLE FS_RPET_EXCPT
+CREATE TABLE FS_HLDY
 (
-	CLDR_ID varchar(12) NOT NULL COMMENT '캘린더 아이디',
-	RPET_SCHED_ID varchar(20) NOT NULL COMMENT '스케줄 아이디',
-	TRGT_YMD varchar(10) NOT NULL COMMENT '예외 대상 일자',
-	MOD_DATE datetime NOT NULL COMMENT '변경일시',
-	PRIMARY KEY (CLDR_ID, RPET_SCHED_ID, TRGT_YMD)
-) COMMENT = '반복일정에 대한 예외를 저장하는 테이블로 반복일정에서 특정구간이 변경되는 경우 그 대상일자를 저장한다.
-일';
+	HLDY_YMD varchar(10) NOT NULL COMMENT '휴일날짜',
+	HLDY_ID int NOT NULL AUTO_INCREMENT COMMENT '휴일 아이디',
+	HLDY_NM varchar(60) NOT NULL COMMENT '휴일 이름',
+	HLDY_TYPE varchar(1) NOT NULL COMMENT '휴일 타입',
+	REG_DATE datetime COMMENT '등록일시',
+	PRIMARY KEY (HLDY_YMD, HLDY_ID)
+);
 
 
 -- 캘린더의 그룹정보(카테고리)를 저장하는 테이블로 실제 캘린더의 구성 스케줄은 [스케줄] 테이블에 저장되어 있다. 
@@ -90,7 +90,7 @@ CREATE TABLE FS_CLDR
 CREATE TABLE FS_SCHED
 (
 	CLDR_ID varchar(12) NOT NULL COMMENT '캘린더 아이디',
-	SCHED_ID varchar(20) NOT NULL COMMENT '스케줄 아이디',
+	SCHED_ID int NOT NULL COMMENT '스케줄 아이디',
 	SCHED_NM varchar(400) NOT NULL COMMENT '스케줄 이름',
 	START_YMD varchar(8) NOT NULL COMMENT '스케줄 시작일자',
 	END_YMD varchar(8) NOT NULL COMMENT '스케줄 종료일자',

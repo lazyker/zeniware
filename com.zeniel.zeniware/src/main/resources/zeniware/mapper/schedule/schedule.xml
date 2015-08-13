@@ -17,6 +17,7 @@
 
 	<resultMap type="zeniware.schedule.vo.ScheduleVo" id="scheduleVo">
 			<result property="schedId" column="SCHED_ID"/>
+			<result property="id" column="ID"/>
 			<result property="cldrId" column="CLDR_ID"/>
 			<result property="schedNm" column="SCHED_NM"/>
 			<result property="title" column="TITLE"/>
@@ -134,6 +135,7 @@
 		FROM (
 			SELECT 
 				S.SCHED_ID,
+				S.SCHED_ID AS ID,
 				S.CLDR_ID,
 				CONCAT(START_YMD,'T', IFNULL(LEFT(START_TM, 2), '00'), ':', IFNULL(RIGHT(START_TM, 2), '00')) AS START,
 				CONCAT(END_YMD,'T', IFNULL(LEFT(END_TM, 2), '00'), ':', IFNULL(RIGHT(END_TM, 2), '00')) AS END, 
@@ -162,6 +164,8 @@
 				(C.COMP_ID = #{compId, jdbcType=VARCHAR} AND C.SHRE_YN = 'Y') 
 				OR S.FST_FRMIGR_ID = #{userId, jdbcType=VARCHAR}
 				AND START_YMD &gt;= #{startYmd, jdbcType=VARCHAR} AND END_YMD &lt;= #{endYmd, jdbcType=VARCHAR}
+<!-- 				AND START_YMD BETWEEN #{startYmd, jdbcType=VARCHAR} AND #{endYmd, jdbcType=VARCHAR} -->
+				OR RPET_END_YMD != ''
 		) T
 	</select>
 	
@@ -211,22 +215,38 @@
 	
 	<!-- 일정 수정화면 데이터 -->
 	<select id="scheduleModifyData" parameterType="zeniware.schedule.vo.ScheduleVo" resultMap="scheduleVo">
-		SELECT
-			SCHED_ID,
-			CLDR_ID,
-			SCHED_NM,
-			START_YMD AS START,
-			END_YMD AS END,
-			FST_FRMIGR_ID,
-			START_TM,
-			END_TM,
-			APNT_PLC,
-			MEMO_CONT
-		FROM  
-			FS_SCHED
-		WHERE 
-			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
-			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+		SELECT T.*
+		FROM (
+			SELECT 
+				S.SCHED_ID,
+				S.CLDR_ID,
+				START_YMD START,
+				END_YMD AS END, 
+				SCHED_NM AS TITLE,
+				FST_FRMIGR_ID,
+				START_YMD,
+				END_YMD,
+				START_TM,
+				END_TM,
+				RPET_YN,
+				RPET_END_YMD,
+				UNLMT_RPET_YN,
+				RPET_TYPE,
+				RPET_CYC,
+				APNT_PLC,
+				MEMO_CONT,
+				R.RPET_DATE_TYPE,
+				R.RPET_DD
+			FROM 
+				FS_CLDR C
+				INNER JOIN FS_SCHED S 
+				ON S.CLDR_ID = C.CLDR_ID
+				LEFT JOIN FS_SCHED_RPET R 
+				ON S.CLDR_ID = R.CLDR_ID AND S.SCHED_ID = R.SCHED_ID
+			WHERE 
+				S.CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+				AND S.SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+		)T
 	</select>
 	
 	<!-- 일정 수정 -->
@@ -241,6 +261,11 @@
 			END_TM = #{endTm, jdbcType=VARCHAR},
 			LST_MODR_ID = #{lstModrId, jdbcType=VARCHAR},
 			MOD_DATE = NOW(),
+			RPET_YN = #{rpetYn, jdbcType=VARCHAR},
+			UNLMT_RPET_YN = #{unlmtRpetYn, jdbcType=VARCHAR},  
+			RPET_END_YMD = #{rpetEndYmd, jdbcType=VARCHAR}, 
+			RPET_TYPE = #{rpetType, jdbcType=VARCHAR}, 
+			RPET_CYC = #{rpetCyc, jdbcType=NUMERIC}, 
 			APNT_PLC = #{apntPlc, jdbcType=VARCHAR},
 			MEMO_CONT = #{memoCont, jdbcType=VARCHAR}
 		WHERE 
@@ -292,6 +317,59 @@
 		 	#{rpetDd, jdbcType=VARCHAR}
 		)
 	</insert>
+	
+	<!-- 반복일정 수정 -->
+	<update id="updateRpetSchedule" parameterType="zeniware.schedule.vo.ScheduleVo">
+		UPDATE FS_SCHED_RPET
+		SET
+			RPET_DATE_TYPE = #{rpetDateType, jdbcType=VARCHAR},
+			RPET_DD = #{rpetDd, jdbcType=VARCHAR}
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 반복일정 예외처리 등록 -->
+	<insert id="addRpetExcptSched" parameterType="zeniware.schedule.vo.ScheduleVo">
+		INSERT INTO FS_RPET_EXCPT
+		(
+			CLDR_ID,
+			RPET_SCHED_ID,
+			TRGT_YMD,
+			MOD_DATE
+		)
+		VALUES
+		(
+			#{cldrId, jdbcType=VARCHAR},
+			#{schedId, jdbcType=VARCHAR},
+			#{trgtYmd, jdbcType=VARCHAR},
+			NOW()
+		)
+	</insert>
+	
+	<!-- 반복일정 예외처리 수정 -->
+	<update id="updateRpetExcptSched" parameterType="zeniware.schedule.vo.ScheduleVo">
+		UPDATE FS_RPET_EXCPT
+		SET
+			TRGT_YMD = #{trgtYmd, jdbcType=VARCHAR},
+			MOD_DATE = NOW()
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 반복일정 예외처리 조회 -->
+	<select id="getRpetExcptSched" parameterType="zeniware.schedule.vo.ScheduleVo" resultType="map">
+		SELECT 
+			TRGT_YMD
+		FROM 	
+			FS_RPET_EXCPT
+		WHERE 
+			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
+			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+	</select>
+	
+	
 	
 	<insert id="addTodo">
 		INSERT INTO FS_TODO

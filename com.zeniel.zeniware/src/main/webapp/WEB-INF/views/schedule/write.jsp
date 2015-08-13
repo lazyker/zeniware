@@ -21,7 +21,7 @@
 						<label class="col-sm-1 control-label">제목</label>
 						
 						<div class="col-sm-9">
-							<input type="text" class="form-control" name="schedNm" data-validate="required" value='<c:out value="${schedVo.schedNm}"></c:out>' />
+							<input type="text" class="form-control" name="schedNm" data-validate="required" value='<c:out value="${schedVo.title}"></c:out>' />
 						</div>
 						
 <!-- 						<div class="col-sm-2"> -->
@@ -62,8 +62,8 @@
 									<i class="linecons-calendar"></i>
 								</div>
 								<div class="date-and-time">
-									<input type="text" class="form-control datepicker" name="endYmd" id="endYmd" data-format="yyyy-mm-dd" value="${endYmd}">
-									<input type="text" class="form-control timepicker" name="endTm" id="endTm" data-template="dropdown" data-show-meridian="false" data-minute-step="30" value="${endTm}" />
+									<input type="text" class="form-control datepicker" name="endYmd" id="endYmd" data-format="yyyy-mm-dd" value='<c:out value="${endYmd}"></c:out>' />
+									<input type="text" class="form-control timepicker" name="endTm" id="endTm" data-template="dropdown" data-show-meridian="false" data-minute-step="30" value='<c:out value="${endTm}"></c:out>' />
 								</div>
 							</div>
 						</div>
@@ -145,7 +145,7 @@
 						<div class="col-sm-11">
 							<div class="form-block">
 								<label>
-									<input type="checkbox" class="cbr" name="rpetYn" id="rpetYn">
+									<input type="checkbox" class="cbr" name="rpetYn" id="rpetYn" />
 								</label>
 							</div>
 						</div>
@@ -157,25 +157,25 @@
 						<div class="col-md-11">
 							
 							<ul class="nav nav-tabs">
-								<li class="active">
+								<li class="active" id="liDaily">
 									<a href="#daily" data-toggle="tab">
 										<span class="visible-xs">매일</span>
 										<span class="hidden-xs">매일</span>
 									</a>
 								</li>
-								<li>
+								<li id="liWeekly">
 									<a href="#weekly" data-toggle="tab">
 										<span class="visible-xs">매주</span>
 										<span class="hidden-xs">매주</span>
 									</a>
 								</li>
-								<li>
+								<li id="liMonthly">
 									<a href="#monthly" data-toggle="tab">
 										<span class="visible-xs">매월</span>
 										<span class="hidden-xs">매월</span>
 									</a>
 								</li>
-								<li>
+								<li id="liYearly">
 									<a href="#yearly" data-toggle="tab">
 										<span class="visible-xs">매년</span>
 										<span class="hidden-xs">매년</span>
@@ -192,6 +192,13 @@
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
 												</select>
 										</div>
 										<div class="col-md-2">
@@ -233,6 +240,13 @@
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
 												</select>
 										</div>
 										<div class="col-md-2">
@@ -302,6 +316,13 @@
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
 												</select>
 										</div>
 										<div class="col-md-2">
@@ -340,7 +361,7 @@
 									<div class="form-group">
 										<div class="col-md-2">
 												<select class="form-control" id="yearlyRpetCyc">
-													<option value="1">1</option>
+													<option value="1" selected>1</option>
 												</select>
 										</div>
 										<div class="col-md-2">
@@ -387,11 +408,11 @@
 					</div>
 					
 					<!-- 반복일정 data -->
-					<input type="text" name="rpetCyc" id="rpetCyc" placeholder="반복주기">
-					<input type="text" name="rpetEndYmd" id="rpetEndYmd" placeholder="반복종료일">
-					<input type="text" name="rpetType" id="rpetType" placeholder="반복유형">
-					<input type="text" name="unlmtRpetYn" id="unlmtRpetYn" value="N" placeholder="무한반복">
-					<input type="text" name="rpetDateType" id="rpetDateType" value="0" placeholder="반복날짜형태">
+					<input type="text" name="rpetCyc" id="rpetCyc" value='<c:out value="${schedVo.rpetCyc}"></c:out>' placeholder="반복주기">
+					<input type="text" name="rpetEndYmd" id="rpetEndYmd" value='<c:out value="${schedVo.rpetEndYmd}"></c:out>' placeholder="반복종료일">
+					<input type="text" name="rpetType" id="rpetType" value='<c:out value="${schedVo.rpetType}"></c:out>' placeholder="반복유형">
+					<input type="text" name="unlmtRpetYn" id="unlmtRpetYn" value='<c:out value="${schedVo.unlmtRpetYn}"></c:out>' value="N" placeholder="무한반복">
+					<input type="text" name="rpetDateType" id="rpetDateType" value='<c:out value="${schedVo.rpetDateType}"></c:out>' value="0" placeholder="반복날짜형태">
 				</form>
 			</div>
 		</div>
@@ -426,18 +447,65 @@
 			$('input[name="schedNm"]').focus();
 			
 			//수정일 경우..
-			if($('#schedId').val() != "") {
+			if ($('#schedId').val() != "") 
+			{
 				$('.panel-title').text('일정 수정');
 				
 				//종일 일정의 경우(startTm이 없는 경우) 수정 화면 설정
-				if('<c:out value="${startTm}"></c:out>' == "") {
+				if ('<c:out value="${startTm}"></c:out>' == "") {
 					$('#startTm').val('12:00');
 					$('#endTm').val('12:00');
 					$('#allDay').prop('checked', true);
 					$('#startTm').attr('disabled', true);
 					$('#endTm').attr('disabled', true);
 				}
-			}
+				
+				//반복일정의 경우 수정 화면 설정
+				if ('<c:out value="${schedVo.rpetYn}"></c:out>' == 'Y') {
+					var rpetType = $('#rpetType').val();
+					var $tabs = $('.nav-tabs li');
+					
+					$('#rpetYn').prop('checked', true);
+					$('#rpetOption').show();
+					
+					$('#liDaily').removeClass('active'); //기본탭 설정 제거
+					
+					
+					if (rpetType == "D") {
+						$('#liDaily').prop('class', 'active');					//탭
+						$('#dailyEndYmd').val($('#rpetEndYmd').val());	//반복종료일
+						$('#dailyRpetCyc').val($('#rpetCyc').val());		//반복주기
+						
+						
+					} else if (rpetType == "W") {
+						$('#liWeekly').prop('class', 'active');
+						$('#weeklyEndYmd').val($('#rpetEndYmd').val());
+						$('#weeklyRpetCyc').val($('#rpetCyc').val());
+						
+					} else if (rpetType == "M") {
+						$('#liMonthly').prop('class', 'active');
+						$('#monthlyEndYmd').val($('#rpetEndYmd').val());
+						$('#monthlyRpetCyc').val($('#rpetCyc').val());
+						
+					} else if (rpetType == "Y") {
+						$('#liYearly').prop('class', 'active');
+						$('#yearlyEndYmd').val($('#rpetEndYmd').val());
+						$('#yearlyRpetCyc').val($('#rpetCyc').val());
+						
+					}
+					
+					//무한반복일 경우
+					if ($('#unlmtRpetYn').val() == 'Y') {
+						$('input[name=infinite]').prop('checked', 'checked');
+						$('#dailyEndYmd').attr('disabled', true);
+						$('#weeklyEndYmd').attr('disabled', true);
+						$('#monthlyEndYmd').attr('disabled', true);
+						$('#yearlyEndYmd').attr('disabled', true);
+					}
+					
+				}
+				
+			} //수정일 경우 End
 									
 			//종일 체크박스 클릭 이벤트
 			$('#allDay').on('change', function() {
@@ -477,7 +545,6 @@
 				rpetTitleEvent(dayOption[1]);
 			});
 			
-			
 			//저장 이벤트
 			$('#saveSchedule').on('click', function() {
 
@@ -502,9 +569,8 @@
 				$('#rpetDateType').val('0'); //default
 				
 				if (repeatOps == 'daily') {
-					
-					$rpetCyc.val(Number($('#dailyRpetCyc').val())); //반복주기 bind
-					$rpetEndYmd.val($('#dailyEndYmd').val()); //반복종료일 bind
+					$rpetCyc.val(Number($('#dailyRpetCyc').val()));			//반복주기 bind
+					$rpetEndYmd.val($('#dailyEndYmd').val()); 					//반복종료일 bind
 					$('#rpetType').val('D'); //반복유형 bind
 					
 				} else if (repeatOps == 'weekly') {
@@ -513,22 +579,22 @@
 						$('#rpetDateType').val('1'); //반복날짜 형태를 요일로 변경(0:날짜, 1:요일)
 					} 
 					
+					$rpetCyc.val(Number($('#weeklyRpetCyc').val()));
 					$rpetEndYmd.val($('#weeklyEndYmd').val());
 					$('#rpetType').val('W');
 					
 				} else if (repeatOps == 'monthly') {
-					
+					$rpetCyc.val(Number($('#monthlyRpetCyc').val()));
 					$rpetEndYmd.val($('#monthlyEndYmd').val());
 					$('#rpetType').val('M');
 					
 				} else if (repeatOps == 'yearly') {
-					alert(Number($('#yearlyRpetCyc').val()) * 365);
-					
-					$rpetCyc.val($('yearlyRpetCyc').val());
+					$rpetCyc.val(Number($('#yearlyRpetCyc').val()));
 					$rpetEndYmd.val($('#yearlyEndYmd').val());
 					$('#rpetType').val('Y');
 				}
 				
+				$('#rpetYn').trigger('change');
 				validateRpetEndYmd(); //반복 종료일 유효성 검사
 				
 // 				return;
@@ -539,9 +605,13 @@
 			});
 			
 			//취소 이벤트
-			$("#cancel").on('click', function() {
+			$("#cancel").on('click', function(e) {
 				
-				$(location).prop('href', './scheduleMain');
+// 				renderView();
+// 				history.back();
+// 				e.preventDefault();
+				
+				$(location).prop('href', 'javascript:history.go(-1)');
 				
 			});
 			

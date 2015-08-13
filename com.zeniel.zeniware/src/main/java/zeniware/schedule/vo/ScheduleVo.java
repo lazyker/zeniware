@@ -5,9 +5,6 @@ import java.io.Serializable;
 
 public class ScheduleVo implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String cldrId;
 	private String schedId;
@@ -28,14 +25,29 @@ public class ScheduleVo implements Serializable {
 	private String apntPlc;
 	private String memoCont;
 	
+	//FullCalendar 필수 key
+	private String id;
 	private String title;
 	private String start;
 	private String end;
 	
 	private String rpetDateType;
 	private String rpetDd;
+	private String delType;
 	
 	
+	public String getDelType() {
+		return delType;
+	}
+	public void setDelType(String delType) {
+		this.delType = delType;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getUnlmtRpetYn() {
 		return unlmtRpetYn;
 	}
@@ -51,7 +63,7 @@ public class ScheduleVo implements Serializable {
 	public String getRpetDd() {
 		return rpetDd;
 	}
-	public void setRpetDD(String rpetDd) {
+	public void setRpetDd(String rpetDd) {
 		this.rpetDd = rpetDd;
 	}
 	public String getTitle() {

@@ -136,6 +136,7 @@ public class ScheduleController {
 		if ("".equals(scheduleVo.getSchedId())) {
 			//신규 일정 저장
 			scheduleService.setScheduleData(scheduleVo);
+			
 			if ("Y".equals(scheduleVo.getRpetYn())) {
 				scheduleService.setRpetSchedule(scheduleVo);
 			}
@@ -143,6 +144,11 @@ public class ScheduleController {
 		else {
 			//수정 일정 저장
 			scheduleService.updateScheduleData(scheduleVo);
+			
+			if ("Y".equals(scheduleVo.getRpetYn())) {
+				scheduleService.updateRpetSchedule(scheduleVo);
+			}
+			
 		}
 		
 		return "redirect:/schedule/scheduleMain";
@@ -196,24 +202,74 @@ public class ScheduleController {
 					String rpetEndYmd = scheduleVo.getRpetEndYmd();
 					
 					Date startDate = DateUtil.parseDate(startYmd, "yyyy-MM-dd");
-					Date endtDate = DateUtil.parseDate(rpetEndYmd, "yyyy-MM-dd");
+					Date endDate = DateUtil.parseDate(endYmd, "yyyy-MM-dd");
+					Date rpetEndtDate = DateUtil.parseDate(rpetEndYmd, "yyyy-MM-dd");
 					
-					int days = DateUtil.DateDiff(startDate, endtDate);
+					String rpetType = scheduleVo.getRpetType();
 					int rpetcyc = scheduleVo.getRpetCyc();
+					int days = DateUtil.DateDiff(startDate, rpetEndtDate, rpetcyc, rpetType);
+					int endDays = DateUtil.DateDiff(startDate, endDate, 0, "");	//일정의 종료일을 계산
 					
 					Calendar cal = Calendar.getInstance();
+					Calendar cal2 = Calendar.getInstance();
 					FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd", Locale.getDefault());
 					cal.setTime(startDate);
+					cal2.setTime(endDate);
 					
 					for ( int j = 0 ; j < days; j ++ ) {
 						ScheduleVo scheduleVoNew = new ScheduleVo();
 						
-						cal.add(Calendar.DATE, + rpetcyc);
+						if ("D".equals(rpetType))	//매일
+						{ 
+							cal.add(Calendar.DATE, + rpetcyc);
+							
+							if (endDays == 0) {
+								cal2.add(Calendar.DATE, + rpetcyc);
+							} else {
+								cal2.add(Calendar.DATE, + endDays);
+							}
+							
+						}
+						else if ("W".equals(rpetType))	//매주
+						{
+							cal.add(Calendar.WEDNESDAY, + rpetcyc);
+							
+							if (endDays == 0) {
+								cal2.add(Calendar.WEDNESDAY, + rpetcyc);
+							} else {
+								cal2.add(Calendar.DATE, + endDays);
+							}
+						}
+						else if ("M".equals(rpetType))	//매월
+						{
+							cal.add(Calendar.MONDAY, + rpetcyc);
+							
+							if (endDays == 0) {
+								cal2.add(Calendar.MONDAY, + rpetcyc);
+							} else {
+								cal2.add(Calendar.DATE, + endDays);
+							}
+						}
+						else if ("Y".equals(rpetType))		//매년
+						{
+							cal.add(Calendar.YEAR, + rpetcyc);
+							
+							if (endDays == 0) {
+								cal2.add(Calendar.YEAR, + rpetcyc);
+							} else {
+								cal2.add(Calendar.DATE, + endDays);
+							}
+						}
+						
+						
 						startYmd= sdf.format(cal.getTime());
 						System.out.println("startYmd ::: " + startYmd);
+						endYmd = sdf.format(cal2.getTime());
+						System.out.println("endYmd ::: " + endYmd);
 						
 						scheduleVoNew.setSchedId(scheduleVo.getSchedId());
 						scheduleVoNew.setCldrId(scheduleVo.getCldrId());
+						scheduleVoNew.setId(scheduleVo.getSchedId());
 						scheduleVoNew.setTitle(scheduleVo.getTitle());
 						scheduleVoNew.setFstFrmigrId(scheduleVo.getFstFrmigrId());
 						scheduleVoNew.setStartTm(scheduleVo.getStartTm());
@@ -222,12 +278,13 @@ public class ScheduleController {
 						scheduleVoNew.setRpetEndYmd(scheduleVo.getRpetEndYmd());
 						scheduleVoNew.setUnlmtRpetYn(scheduleVo.getUnlmtRpetYn());
 						scheduleVoNew.setRpetType(scheduleVo.getRpetType());
+						scheduleVoNew.setRpetCyc(scheduleVo.getRpetCyc());
 						scheduleVoNew.setStart(startYmd + "T" + startTm);
-						scheduleVoNew.setEnd(startYmd + "T" + endTm);
+						scheduleVoNew.setEnd(endYmd + "T" + endTm);
 						scheduleVoNew.setApntPlc(scheduleVo.getApntPlc());
 						scheduleVoNew.setMemoCont(scheduleVo.getMemoCont());
 						scheduleVoNew.setRpetDateType(scheduleVo.getRpetDateType());
-						scheduleVoNew.setRpetDD(scheduleVo.getRpetDd());
+						scheduleVoNew.setRpetDd(scheduleVo.getRpetDd());
 						
 						resultList.add(scheduleVoNew);
 						
@@ -412,7 +469,12 @@ public class ScheduleController {
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		scheduleVo.setFstFrmigrId(memberInfo.getUserId());
 		
-		scheduleService.delScheduleData(scheduleVo);
+		if ("rpetAll".equals(scheduleVo.getDelType())) {
+			scheduleService.delScheduleData(scheduleVo);
+		} else if ("rpetOne".equals(scheduleVo.getDelType())){
+			scheduleService.addRpetExcptSched(scheduleVo);
+		}
+		
 		
 		ObjectMapper om = new ObjectMapper();
 		String jsonString = om.writeValueAsString(new HashMap<String, String>());

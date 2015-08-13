@@ -1,5 +1,6 @@
 package zeniware.schedule.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -77,6 +78,31 @@ public interface ScheduleService {
 	 * @param  ScheduleVo
 	 */
 	public void setRpetSchedule(ScheduleVo paramVo);
+	
+	/**
+	 * 반복일정 수정
+	 * @param  ScheduleVo
+	 */
+	public void updateRpetSchedule(ScheduleVo paramVo);
+	
+	/**
+	 * 반복일정 예외처리 등록
+	 * @param  ScheduleVo
+	 */
+	public void addRpetExcptSched(ScheduleVo paramVo);
+	
+	/**
+	 * 반복일정 예외처리 수정
+	 * @param  ScheduleVo
+	 */
+	public void updateRpetExcptSched(ScheduleVo paramVo);
+	
+	/**
+	 * 반복일정 예외처리 조회
+	 * @return List<HashMap<String, String>>
+	 */
+	public List<HashMap<String, String>> getRpetExcptSchedList(ScheduleVo paramVo);
+	
 	
 	
 	

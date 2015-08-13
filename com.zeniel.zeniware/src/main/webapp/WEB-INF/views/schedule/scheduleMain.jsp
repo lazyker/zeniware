@@ -68,69 +68,10 @@
 // 				calendar.fullCalendar('unselect');
 // 			},
 			eventClick: function(calEventData, jsEvent, view) {
-				var DataHtml;
-				
-				//스케줄 상세 modal(수정, 삭제)
-				$('#schedModal').on('show.bs.modal', function (event) {
-					var modal = $(this);
-					var startYmdTemp, 
-						startYmd, 
-						endYmdTemp, 
-						endYmd;
-					
-					var start = calEventData.start.format();
-					var end = calEventData.end.format();
-					
-					if( start.length > 11) {
-						startYmdTemp = start.replace("T", " ");
-						startYmd = startYmdTemp.substring(0, startYmdTemp.length-3);
-						endYmdTemp = end.replace("T", " ");
-						endYmd = endYmdTemp.substring(0, endYmdTemp.length-3);
-						
-					} else {
-						startYmd = start;
-						endYmd = end;
-					}
-				  
-					modal.find('.modal-title').text(calEventData.title);
-					
-					{ //modal body 영역 
-						DataHtml = '<div class="row">' +
-						'<div class="col-md-12">' +
-						'<div class="form-group" style="margin-bottom:0px;">' +
-						'<label for="field-1" class="control-label"><p>일시</p></label>' +
-						'<span style="margin-left:20px">' + startYmd + ' ~ ' + endYmd + '</span>' +
-						'</div></div></div>' +
-						'<input type="hidden" id="cldrId" value="' + calEventData.cldrId + '" />' +
-						'<input type="hidden" id="schedId" value="' + calEventData.schedId + '" />';
-
-						if( calEventData.apntPlc != "" ) {
-							DataHtml += '<div class="row">' +
-											'<div class="col-md-12">' +
-											'<div class="form-group" style="margin-bottom:0px;">' +
-											'<label for="field-1" class="control-label"><p>장소</p></label>' +
-											'<span style="margin-left:20px">' + calEventData.apntPlc + '</span>' +
-											'</div></div></div>';
-						}
-						if( calEventData.memoCont != "" ) {
-							DataHtml += '<div class="row">' +
-							'<div class="col-md-12">' +
-							'<div class="form-group" style="margin-bottom:0px;">' +
-							'<label for="field-1" class="control-label"><p>설명</p></label>' +
-							'<span style="margin-left:20px">' + calEventData.memoCont + '</span>' +
-							'</div></div></div>';
-						}
-	
-					}
-					
-					modal.find('.modal-body').html(DataHtml);
-				  
-				}).modal('show', {backdrop: 'static'});
-				
-				
+				showSchedModal(calEventData);
+				schedEventClick($(this)); //선택한 객체를 전달
 			},
 			select: function(start, end, allDay, view) {
-				
 				if(view.name == "month") {
 					//end 날짜를 -1 해야 정상 날짜로 보여진다.(FullCalendr는 00:00 이면 -1일이 됨)
 					var date = new Date(end.format());
@@ -205,23 +146,16 @@
 	
 	$(document).ready(function() {
 		
+		//일정 상세보기 Modal 삭제 버튼 이벤트
 		$('#schedDelBtn').on('click', function() {
-			var url = "./delScheduleData";
 			
-			if(confirm("삭제 하시겠습니까?")) {
-				$.ajax({
-					 url: url,
-						data: {
-							cldrId : $('#cldrId').val(),
-							schedId : $('#schedId').val()
-						},
-						success : function(data) {
-							window.location.reload();
-						},
-						error : function(request) {
-							alert("삭제 중 오류 발생 [관리자에게 문의 하세요.]");
-						}
-				});
+			if($('#rpet').text() == "") {
+				
+				if(confirm("삭제 하시겠습니까?"))
+					delSched();
+				
+			} else {
+				showSchedRpetModal();
 			}
 			
 		});
@@ -232,6 +166,16 @@
 			
 			window.location.href = "./modify?cldrId=" + cldrId + "&schedId=" + schedId;
 		});
+		
+		$('#schedRpetBtn').on('click', function() {
+			delSched();
+		});
+		
+		//반복일정 삭제 취소 버튼 이벤트
+		$('#schedRpetCanBtn').on('click', function() {
+			$('#schedRpetModal').modal('hide');
+		});
+		
 		
 // 		alert($('.navbar-nav').find('a').html());
 // 		alert($('.fc-day .fc-widget-content').find('td').html());
@@ -245,9 +189,9 @@
 // 			document.location.hash = "#" + currentPage;
 // 		});
 		
-		
 	});
 	
+	//일정 가져오기
 	var schedData = function(start, end, callback) {
 		
 		var year = String(end.year()) + end.month();
@@ -265,8 +209,15 @@
 							endYmd : end.format()
 						},
 	                    success: function( data ) {
+	                    	
 							//시간이 없는 경우 종일일정 표시	                    	
 							$.each(data, function(i) {
+								
+								//null 일 경우에 반복일정처럼 묶여서 프로퍼티 삭제
+// 								if($(this)[0].id === null) {
+// 									delete $(this)[0].id;
+// 								}
+	                    		
 								if( $(this)[0].startTm === null ) {
 									$(this)[0].allDay = true;
 								}
@@ -296,6 +247,158 @@
 				}
 		});
 	}
+	
+	//일정 클릭시 Modal Event
+	var showSchedModal = function(calEventData) {
+		var DataHtml;
+		
+		//스케줄 상세 modal(수정, 삭제)
+		$('#schedModal').on('show.bs.modal', function (event) {
+			var modal = $(this);
+			var startYmdTemp, 
+				startYmd, 
+				endYmdTemp, 
+				endYmd;
+			
+			var start = calEventData.start.format();
+			var end = calEventData.end.format();
+			
+			if( start.length > 11) {
+				startYmdTemp = start.replace("T", " ");
+				startYmd = startYmdTemp.substring(0, startYmdTemp.length-3);
+				endYmdTemp = end.replace("T", " ");
+				endYmd = endYmdTemp.substring(0, endYmdTemp.length-3);
+				
+			} else {
+				startYmd = start;
+				endYmd = end;
+			}
+		  
+			modal.find('.modal-title').text(calEventData.title);
+			
+			var rpetYn = calEventData.rpetYn;
+			var rpetType = calEventData.rpetType;
+			var rpetCyc = calEventData.rpetCyc;
+			var rpetTypeNm;
+			
+			if(rpetType == 'D') 
+				rpetTypeNm = "매일 반복(" + rpetCyc + "일마다)";
+			else if(rpetType == 'W')
+				rpetTypeNm = "매주 반복(" + rpetCyc + "주마다)";
+			else if(rpetType == 'M')
+				rpetTypeNm = "매월 반복(" + rpetCyc + "월마다)";
+			else if(rpetType == 'Y')
+				rpetTypeNm = "매년 반복(" + rpetCyc + "년마다)";
+			
+			{ //modal body 영역 
+				DataHtml = '<div class="row">' +
+				'<div class="col-md-12">' +
+				'<div class="form-group" style="margin-bottom:0px;">' +
+				'<label for="field-1" class="control-label"><p>일시</p></label>' +
+				'<span style="margin-left:20px">' + startYmd + ' ~ ' + endYmd + '</span>' +
+				'</div></div></div>' +
+				'<input type="hidden" id="cldrId" value="' + calEventData.cldrId + '" />' +
+				'<input type="hidden" id="schedId" value="' + calEventData.schedId + '" />' +
+				'<input type="hidden" id="start" value="' + startYmd + '" />' + 
+				'<input type="hidden" id="end" value="' + endYmd + '" />';
+				
+				if( calEventData.rpetYn == "Y" ) {
+					DataHtml += '<div class="row">' +
+									'<div class="col-md-12">' +
+									'<div class="form-group" style="margin-bottom:0px;">' +
+									'<label for="field-1" class="control-label"><p id="rpet">반복</p></label>' +
+									'<span style="margin-left:20px">' + rpetTypeNm + '</span>' +
+									'</div></div></div>';
+
+				}
+
+				if( calEventData.apntPlc != "" ) {
+					DataHtml += '<div class="row">' +
+									'<div class="col-md-12">' +
+									'<div class="form-group" style="margin-bottom:0px;">' +
+									'<label for="field-1" class="control-label"><p>장소</p></label>' +
+									'<span style="margin-left:20px">' + calEventData.apntPlc + '</span>' +
+									'</div></div></div>';
+				}
+				if( calEventData.memoCont != "" ) {
+					DataHtml += '<div class="row">' +
+									'<div class="col-md-12">' +
+									'<div class="form-group" style="margin-bottom:0px;">' +
+									'<label for="field-1" class="control-label"><p>설명</p></label>' +
+									'<span style="margin-left:20px">' + calEventData.memoCont + '</span>' +
+									'</div></div></div>';
+				}
+			}
+			
+			modal.find('.modal-body').html(DataHtml);
+			
+			$('#schedModal').off('show.bs.modal');
+			
+		}).addClass("fade").modal('show', {backdrop: 'static'});
+	}
+	
+	//삭제 
+	var delSched = function() {
+		var url = "./delScheduleData";
+		var delType = $(':radio[name="rpetDelOption"]:checked').val();
+	
+		if (delType == undefined) {
+			delType = "single";
+		}
+		alert(delType);
+		return;
+		$.ajax({
+			 url: url,
+				data: {
+					cldrId : $('#cldrId').val(),
+					schedId : $('#schedId').val(),
+					start : $('#start').val(),
+					end : $('#end').val(),
+					delType : delType
+				},
+				success : function(data) {
+					var delObj= schedEventClick();
+					delObj.remove();
+					
+					$('#schedModal').modal('hide');
+// 					window.location.reload();
+				},
+				error : function(request) {
+					alert("삭제 중 오류 발생 [관리자에게 문의 하세요.]");
+				}
+		});
+	}
+	
+	//반복일정 삭제 옵션 Modal Event 
+	var showSchedRpetModal = function() {
+		$("#schedModal").removeClass("fade").modal("hide");
+		$('#rpetAll').prop('checked', true);
+// 		$(".modal-backdrop").fadeOut("slow");
+	    
+	    $("#schedRpetModal").on('hidden.bs.modal', function (event) {
+	    	$("#schedRpetModal").removeClass("fade");
+	    	$('#rpetAll').prop('checked', false);
+	    	$('#rpetOne').prop('checked', false);
+	    	
+	    	$('#schedRpetModal').off('hidden.bs.modal');
+	    }).modal("show").addClass("fade");
+	    
+	}
+	
+	//객체를 반환하는 클로져
+	var schedEventClick = function() {
+		var privateObj;
+		
+		function getInstance(paramObj) {
+			if (!privateObj || paramObj != undefined) {
+				privateObj = paramObj;
+			}
+			
+			return privateObj;
+		}
+		
+		return getInstance;
+	}();
 	
 	</script>
 	

@@ -1,6 +1,7 @@
 package zeniware.schedule.service.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -89,6 +90,26 @@ public class ScheduleServiceImpl implements ScheduleService {
 		scheduleDao.setRpetSchedule(paramVo);
 	}
 	
+	@Override
+	public void updateRpetSchedule(ScheduleVo paramVo) {
+		scheduleDao.updateRpetSchedule(paramVo);
+	}
+	
+	@Override
+	public void addRpetExcptSched(ScheduleVo paramVo) {
+		scheduleDao.addRpetExcptSched(paramVo);
+	}
+	
+	@Override
+	public void updateRpetExcptSched(ScheduleVo paramVo) {
+		scheduleDao.updateRpetExcptSched(paramVo);
+	}
+	
+	@Override
+	public List<HashMap<String, String>> getRpetExcptSchedList(ScheduleVo paramVo) {
+		List<HashMap<String, String>> result = scheduleDao.getRpetExcptSchedList(paramVo);
+		return result;
+	}
 
 	@Override
 	public void test(String param) throws Exception {

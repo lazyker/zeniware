@@ -1,5 +1,6 @@
 package zeniware.schedule.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -111,6 +112,39 @@ public class ScheduleDao extends AbstractDao {
 	public void setRpetSchedule(ScheduleVo paramVo) {
 		insert("schedule.setRpetSchedule", paramVo);
 	}
+
+	/**
+	 * 반복일정 수정
+	 * @param paramVo
+	 */
+	public void updateRpetSchedule(ScheduleVo paramVo) {
+		update("schedule.updateRpetSchedule", paramVo);
+	}
+	
+	/**
+	 * 반복일정 예외처리 등록
+	 * @param paramVo
+	 */
+	public void addRpetExcptSched(ScheduleVo paramVo) {
+		insert("schedule.addRpetExcptSched", paramVo);
+	}
+	
+	/**
+	 * 반복일정 예외처리 수정
+	 * @param paramVo
+	 */
+	public void updateRpetExcptSched(ScheduleVo paramVo) {
+		update("schedule.updateRpetExcptSched", paramVo);
+	}
+	
+	/**
+	 * 반복일정 예외처리 조회
+	 * @param paramVo
+	 */
+	public List<HashMap<String, String>> getRpetExcptSchedList(ScheduleVo paramVo) {
+		return (List<HashMap<String, String>>) selectList("schedule.getRpetExcptSchedList", paramVo);		
+	}
+	
 	
 	
 	//트랜잭션 테스트
