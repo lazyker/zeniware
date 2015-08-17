@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.admin.unitman.service.UnitManService;
+import zeniware.admin.unitman.vo.Company;
 import zeniware.admin.unitman.vo.Department;
 
 @Controller
@@ -20,8 +21,20 @@ public class ModalController {
   /*********************
    * Public Procedures
    *********************/
+  @RequestMapping("/modal/compNew")
+  public String requestCompNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+    
+    try {
+      String prmCompId = (String)paramMap.get("compId");      
+      model.put("comp", prmCompId == null ? this.compMaker() : this.compMaker(paramMap));
+      
+    } catch (Exception e) { throw e; }
+    
+    return "/modal/compNew";
+  }
+  
   @RequestMapping("/modal/deptNew")
-  public String requestUnitNewDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  public String requestDeptNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
       String prmCompId = (String)paramMap.get("compId");
@@ -37,16 +50,16 @@ public class ModalController {
     return "/modal/deptNew";
   }
   
-  @RequestMapping("/modal/deptMemberSort")
+  @RequestMapping("/modal/userTable")
   public String requestDeptMemberSort(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    return "/modal/deptMemberSort";
+    return "/modal/userTable";
   }
   
-  @RequestMapping("/modal/jstreeDept")
+  @RequestMapping("/modal/deptTree")
   public String requestJstreeDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    return "/modal/jstreeDept";
+    return "/modal/deptTree";
   }
   
   @RequestMapping("/modal/unitTest")
@@ -58,6 +71,14 @@ public class ModalController {
   /*********************
    * Private Procedures
    *********************/
+  private Company compMaker() {
+    return new Company().setActivateYn(true);
+  }
+  
+  private Company compMaker(Map<String, Object> paramMap) {
+    return unitmanService.getSingleComp(paramMap);
+  }
+  
   private Department deptMaker(String compId, String parentDeptId, String parentDeptName) {
     return new Department().setCompId(compId).setParentDeptId(parentDeptId).setParentDeptName(parentDeptName);
   }

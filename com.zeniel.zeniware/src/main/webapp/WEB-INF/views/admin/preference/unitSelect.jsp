@@ -27,9 +27,12 @@
 				
 				<div class="panel-options">
 					<div class="btn-group">
-						<button class="btn btn-gray btn-sm" id="btnUnitMan">부서/사용자 관리</button>
+						<button class="btn btn-white btn-sm" id="btnUnitMan">부서/사용자 관리</button>
 						<button class="btn btn-white btn-sm" id="btnClosedDept">폐쇄부서 관리</button>
-						<button class="btn btn-gray btn-sm" id="btnDeletedUser">퇴직자 관리</button>
+						<button class="btn btn-white btn-sm" id="btnDeletedUser">퇴직자 관리</button>
+						<button class="btn btn-white btn-sm" id="btnCompAdd">추가</button>
+						<button class="btn btn-white btn-sm" id="btnCompEdit">변경</button>
+						<button class="btn btn-white btn-sm" id="btnCompDel">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -38,9 +41,9 @@
 				<table id="tblComp" class="table table-small-font table-striped table-hover">
 					<thead>
 						<tr>
-							<th>회사명</th>
 							<th>회사ID</th>
-							<th>정렬순서</th>
+							<th>회사명</th>
+							<th>활성화</th>
 		 					<th>생성일</th>
 		 					<th>변경일</th>
 							<th>삭제일</th>
@@ -58,19 +61,16 @@
 
 	$(document).ready(function() {
 		
-		var msg01 = "회사를 선택하세요.";
+		var contextPath = "${pageContext.request.contextPath}";
 
-		toastr.options.closeButton = true;
-		toastr.options.positionClass = "toast-top-full-width";
-		
 		$('#tblComp').DataTable({
 			ajax: { "url": "../ajax/getComplist", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
+				{ "mData": "compId" }, 
       	{ "mData": "compName" }, 
-      	{ "mData": "compId" }, 
-      	{ "mData": "sortOrder" }, 
+      	{ "mData": "activateYn" }, 
       	{ "mData": "regDate" }, 
       	{ "mData": "modDate" }, 
       	{ "mData": "delDate" }
@@ -83,15 +83,34 @@
 			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
 		});
 		
+		/* 회사 추가 */
+		$('#btnCompAdd').on('click', function() {
+			$.get(contextPath + '/modal/compNew', function(data) {
+				modalInit(true, '회사 추가', data, '확인', '취소');
+			});
+		});
+		
+		/* 회사 변경 */
+		$('#btnCompEdit').on('click', function () {
+			var selRow = $('#tblComp').DataTable().rows('.selected').data();
+			
+			if (selRow.length == 0) {
+				toastrAlert('error', '회사를 선택하세요.');
+			} else {
+				$.get(contextPath + '/modal/compNew?compId=' + selRow[0].compId, function(data) {
+					modalInit(true, '회사 변경', data, '확인', '취소');
+				});
+			}
+		});
+		
 		/* 부서/사용자관리 */
 		$('#btnUnitMan').on('click', function() {
 			var selData = $('#tblComp').DataTable().rows('.selected').data();
 			
 			if (selData.length == 0) {
-				toastrAlert('error', msg01);
+				toastrAlert('error', '회사를 선택하세요.');
 				
 			} else {
-				console.log(selData[0].compId);
 				$(location).prop('href', './unitMain?compId=' + selData[0].compId);
 			}
 		});
@@ -101,7 +120,7 @@
 			var selData = $('#tblComp').DataTable().rows('.selected').data();
 			
 			if (selData.length == 0) {
-				toastrAlert('error', msg01);
+				toastrAlert('error', '회사를 선택하세요.');
 				
 			} else {
 				console.log(selData[0].compId);
@@ -114,7 +133,7 @@
 			var selData = $('#tblComp').DataTable().rows('.selected').data();
 			
 			if (selData.length == 0) {
-				toastrAlert('error', msg01);
+				toastrAlert('error', '회사를 선택하세요.');
 				
 			} else {
 				$(location).prop('href', './unitResignedUser?compId=' + selData[0].compId);

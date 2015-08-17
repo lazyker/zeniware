@@ -6,9 +6,6 @@
  * 공통 custom
 */
 
-/*** main-content customized(for jstree indicator arrows) ***/
-
-
 /*** dataTable customized ***/
 table.dataTable tbody tr.selected {
   background-color: #b0bed9;

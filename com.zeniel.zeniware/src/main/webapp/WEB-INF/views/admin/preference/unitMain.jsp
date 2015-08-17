@@ -26,9 +26,9 @@
 				<h3 class="panel-title">조직도 목록</h3>
 				<div class="panel-options">
 					<div class="btn-group">
-						<button class="btn btn-gray btn-sm" id="btnDeptAdd">추가</button>
+						<button class="btn btn-white btn-sm" id="btnDeptAdd">추가</button>
 						<button class="btn btn-white btn-sm" id="btnDeptEdit">변경</button>
-						<button class="btn btn-gray btn-sm" id="btnDeptDelete">삭제</button>
+						<button class="btn btn-white btn-sm" id="btnDeptDelete">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -52,11 +52,11 @@
 				
 				<div class="panel-options">
 					<div class="btn-group">
-						<button class="btn btn-gray btn-sm" id="btnUserMove">부서이동</button>
+						<button class="btn btn-white btn-sm" id="btnUserMove">부서이동</button>
 						<button class="btn btn-white btn-sm" id="btnRelocation">정렬순서</button>
-						<button class="btn btn-gray btn-sm" id="btnUserAdd">추가</button>
+						<button class="btn btn-white btn-sm" id="btnUserAdd">추가</button>
 						<button class="btn btn-white btn-sm" id="btnUserEdit">변경</button>
-						<button class="btn btn-gray btn-sm" id="btnUserDelete">삭제</button>
+						<button class="btn btn-white btn-sm" id="btnUserDelete">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -235,15 +235,15 @@
 		
 		/* 부서원 이동 */
 		$('#btnUserMove').on('click', function() {
-			$.get('../../modal/jstreeDept', function(data) {
+			$.get('../../modal/deptTree', function(data) {
 				modalInit(true, '부서원 이동', data, '저장', '취소', '30%', '300px');
 			});
 		});
 		
 		/* 정렬순서 변경 */
 		$('#btnRelocation').on('click', function() {
-			$.get('../../modal/deptMemberSort', function(data) {
-				modalInit(true, '정렬순서 변경', data, '저장', '취소', '60%', '400px');
+			$.get('../../modal/userTable', function(data) {
+				modalInit(true, '정렬순서 변경', data, '저장', '취소', '60%');
 				$('#tblSortableUser').DataTable().ajax.url('../ajax/getUserlist?compId=' + '001' + '&deptId=' + '0043' + '&resigned=0').load();
 			});
 		});
@@ -378,3 +378,10 @@
 */
 
 </script>
+
+<style>
+	/*** main-content customized(for jstree indicator arrows) ***/
+	.page-container .main-content {
+		position: static;
+	}
+</style>

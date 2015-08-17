@@ -10,8 +10,12 @@ var modalInit = function(show, title, message, primary, secondary, width, height
 		if (!jQuery.isEmptyObject(primary)) $('.modal .btn-info').html(primary);
 		if (!jQuery.isEmptyObject(secondary)) $('.modal .btn-white').html(secondary);
 		if (!jQuery.isEmptyObject(width)) $('.modal .modal-dialog').width(width);
-		if (!jQuery.isEmptyObject(height)) $('.modal .modal-body').css({ height: height, 'overflow-y': 'auto' });
 		
+		if (!jQuery.isEmptyObject(height)) {
+			$('.modal .modal-body').css({ 'height': height, 'overflow-y': 'auto' });
+		} else {
+			$('.modal .modal-body').css({ 'height': '100%', 'overflow-y': 'hidden' });
+		}
 		
 		jQuery('.modal').modal('show', { backdrop: 'fade' });
 		
