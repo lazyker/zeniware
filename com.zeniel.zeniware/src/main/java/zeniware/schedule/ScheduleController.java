@@ -267,6 +267,21 @@ public class ScheduleController {
 						endYmd = sdf.format(cal2.getTime());
 						System.out.println("endYmd ::: " + endYmd);
 						
+						
+						List<HashMap<String, String>> rpetExcptList = scheduleService.getRpetExcptSchedList(scheduleVo);
+						
+						if (0 != rpetExcptList.size()) {
+							for (int excp = 0; excp < rpetExcptList.size(); excp++) {
+								HashMap<String, String> hm = rpetExcptList.get(excp);
+								String trgtYmd = hm.get("TRGT_YMD");
+								
+								if (startYmd.equals(trgtYmd)) {
+									startYmd = "";
+								}
+								
+							}
+						}
+						
 						scheduleVoNew.setSchedId(scheduleVo.getSchedId());
 						scheduleVoNew.setCldrId(scheduleVo.getCldrId());
 						scheduleVoNew.setId(scheduleVo.getSchedId());
@@ -469,12 +484,15 @@ public class ScheduleController {
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		scheduleVo.setFstFrmigrId(memberInfo.getUserId());
 		
-		if ("rpetAll".equals(scheduleVo.getDelType())) {
+		if ("single".equals(scheduleVo.getDelType())) {
 			scheduleService.delScheduleData(scheduleVo);
-		} else if ("rpetOne".equals(scheduleVo.getDelType())){
+		} else if ("rpetAll".equals(scheduleVo.getDelType())) {
+			scheduleService.delScheduleData(scheduleVo);
+		} else if ("rpetOne".equals(scheduleVo.getDelType())) {
+			scheduleVo.setTrgtYmd(scheduleVo.getStart());
+			
 			scheduleService.addRpetExcptSched(scheduleVo);
 		}
-		
 		
 		ObjectMapper om = new ObjectMapper();
 		String jsonString = om.writeValueAsString(new HashMap<String, String>());

@@ -341,12 +341,13 @@
 	var delSched = function() {
 		var url = "./delScheduleData";
 		var delType = $(':radio[name="rpetDelOption"]:checked').val();
-	
+		var delObj= schedEventClick();
+		
+		//일반 일정의 경우
 		if (delType == undefined) {
 			delType = "single";
 		}
-		alert(delType);
-		return;
+
 		$.ajax({
 			 url: url,
 				data: {
@@ -357,11 +358,16 @@
 					delType : delType
 				},
 				success : function(data) {
-					var delObj= schedEventClick();
-					delObj.remove();
+					if (delType == 'rpetAll') {
+						window.location.reload();
+					} else if (delType == 'rpetOne'){
+						delObj.remove();
+						$('#schedRpetModal').modal('hide');
+					} else {
+						delObj.remove();
+						$('#schedModal').modal('hide');
+					}
 					
-					$('#schedModal').modal('hide');
-// 					window.location.reload();
 				},
 				error : function(request) {
 					alert("삭제 중 오류 발생 [관리자에게 문의 하세요.]");

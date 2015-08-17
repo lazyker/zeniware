@@ -35,7 +35,21 @@ public class ScheduleVo implements Serializable {
 	private String rpetDd;
 	private String delType;
 	
+	private String rpetSchedId;
+	private String trgtYmd;
 	
+	public String getRpetSchedId() {
+		return rpetSchedId;
+	}
+	public void setRpetSchedId(String rpetSchedId) {
+		this.rpetSchedId = rpetSchedId;
+	}
+	public String getTrgtYmd() {
+		return trgtYmd;
+	}
+	public void setTrgtYmd(String trgtYmd) {
+		this.trgtYmd = trgtYmd;
+	}
 	public String getDelType() {
 		return delType;
 	}

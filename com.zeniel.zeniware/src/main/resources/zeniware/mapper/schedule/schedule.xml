@@ -359,14 +359,14 @@
 	</update>
 	
 	<!-- 반복일정 예외처리 조회 -->
-	<select id="getRpetExcptSched" parameterType="zeniware.schedule.vo.ScheduleVo" resultType="map">
+	<select id="getRpetExcptSchedList" parameterType="zeniware.schedule.vo.ScheduleVo" resultType="map">
 		SELECT 
 			TRGT_YMD
 		FROM 	
 			FS_RPET_EXCPT
 		WHERE 
 			CLDR_ID = #{cldrId, jdbcType=VARCHAR}
-			AND SCHED_ID =  #{schedId, jdbcType=VARCHAR}
+			AND RPET_SCHED_ID =  #{schedId, jdbcType=VARCHAR}
 	</select>
 	
 	
