@@ -78,6 +78,31 @@ public class CommunityAdmController {
 		return "/adminLayout/community/cumtInfoList";
 	}
 
+	//관리자에서 전체 커뮤니티 목록 조회
+	@RequestMapping(value = "/cumtAllList", method=RequestMethod.GET)
+	public String getCommunityAllList(@RequestParam Map<String, Object> paramMap, ModelMap model, Authentication authentication) throws IOException{
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId", memberInfo.getCompId());
+		model.put("compId", memberInfo.getCompId());
+
+		return "/adminLayout/community/cumtAllList";
+	}
+
+	@RequestMapping(value = "/getCumtAllListData")
+	public void getCumtAllListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
+		List<ComtInfoVO> list = new ArrayList<ComtInfoVO>();
+		try {
+			list = communityAdmService.getCumtALLListData(paramMap);
+
+			ObjectMapper mapper = new ObjectMapper();
+			response.setContentType("application/json");
+			mapper.writeValue(response.getOutputStream(), list);
+	    } catch (Exception e) {
+	      throw e;
+	    }
+	}
+
 	@RequestMapping(value = "/getCumtListData")
 	public void getCumtListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
 		List<ComtInfoVO> list = new ArrayList<ComtInfoVO>();
@@ -100,6 +125,7 @@ public class CommunityAdmController {
 			ObjectMapper objectMapper = new ObjectMapper();
 			List<ComtInfoVO> cumtlist = objectMapper.readValue(jsonString,
 					objectMapper.getTypeFactory().constructCollectionType(List.class, ComtInfoVO.class));
+			logger.debug("cumtlist.get(0).getFcComtId()============================>" + cumtlist.get(0).getFcComtId());
 			int addRow = communityAdmService.updateCumtAdmlist(cumtlist);
 
 			ObjectMapper mapper = new ObjectMapper();

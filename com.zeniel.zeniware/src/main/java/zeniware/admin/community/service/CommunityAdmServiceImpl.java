@@ -3,6 +3,8 @@ package zeniware.admin.community.service;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import zeniware.admin.community.vo.ComtInfoVO;
 
 @Service
 public class CommunityAdmServiceImpl implements CommunityAdmService {
+
+	private static final Logger logger = LoggerFactory.getLogger(CommunityAdmServiceImpl.class);
 
 	@Autowired
 	private CommunityAdmDao communityAdmDao;
@@ -36,11 +40,18 @@ public class CommunityAdmServiceImpl implements CommunityAdmService {
 		return communityAdmDao.getCumtListData(param);
 	}
 
+	//관리자에서 전체 커뮤니티 목록 조회
+	@Override
+	public List<ComtInfoVO> getCumtALLListData(Map<String, Object> param) {
+		return communityAdmDao.getCumtALLListData(param);
+	}
+
 	@Override
 	public int updateCumtAdmlist(List<ComtInfoVO> cumtlist) throws Throwable {
 		int addRows = -1;
 		try {
 			for(ComtInfoVO comtInfoVO: cumtlist) {
+				logger.debug("comtInfoVO =====================>" + comtInfoVO.getFcComtId());
 				addRows += communityAdmDao.updateCumtAdmlist(comtInfoVO);
 			}
 		}

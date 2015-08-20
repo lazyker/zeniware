@@ -132,37 +132,32 @@ $(document).ready(function() {
 
 	$("#comtAllList tbody").on('click', "tr td:not(:nth-child(4))", function() {
 		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
-		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
+		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos[0]).fcComtId;
 		$(location).prop('href', './comtView?comtId='+ fcComtId);
 		//comtView
 
 	}).on('click', "tr td:nth-child(4)", function() {
 		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
-		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos).fcComtId;
-		var joinYn = $('#comtAllList').dataTable().fnGetData(pos).joinYn;
+		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos[0]).fcComtId;
+		var joinYn = $('#comtAllList').dataTable().fnGetData(pos[0]).joinYn;
 		if(joinYn == 'Y' || joinYn == 'N') {
 		} else {
-			var data = "가입하시겠습니까?" + "<input type='hidden' name='joinYn' id='modlJoin' value='" + fcComtId + "' />";
-			modalInit(true, '커뮤니티 가입신청', data, '확인', '취소');
+			bootbox.confirm("가입하시겠습니까?", function(result) {
+				var param = {};
+				param.fcComtId = fcComtId;
+				param.compId = paramCompId;
+				$.ajax({
+					dataType: "json",
+					type: "POST",
+					url: "./insertComtAllInfoUserAdd",
+					data: param,
+					success: function(data) {
+						$(location).prop('href', './comtMain');
+						return;
+					}
+				});
+			});
 		}
-	});
-
-	$('#mdl .btn-info').on('click', function() {
-		var fcComtId = $("#modlJoin").val();
-		alert(fcComtId);
-		var param = {};
-		param.fcComtId = fcComtId;
-		param.compId = paramCompId;
-		$.ajax({
-			dataType: "json",
-			type: "POST",
-			url: "./insertComtAllInfoUserAdd",
-			data: param,
-			success: function(data) {
-				$("#mdl").modal("hide");
-				$(location).prop('href', './comtMain');
-			}
-		});
 	});
 });
 

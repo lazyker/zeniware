@@ -114,15 +114,28 @@
 		ORDER BY FC_COMT_ID DESC
 	</select>
 
+	<!--  -->
+	<select id="cmutadmin.getCumtALLListData" parameterType="map" resultMap="cumtInfoResultMap">
+		/* cmutadmin.getCumtALLListData */
+		SELECT 
+			FC_COMT_ID, FC_ADM_SEQ, COMP_ID, CUMT_NM, CUMT_COMMENT, ADM_ACT_YN,
+			OPEN_YN, REG_DATE, MOD_DATE, REG_USER_ID, MOD_USER_ID
+		FROM
+			FC_CUMT_INFO 
+		WHERE COMP_ID = #{compId}
+		ORDER BY FC_COMT_ID DESC
+	</select>
+
 	<update id="cmutadmin.updateCumtAdmlist" parameterType="map">
 		UPDATE FC_CUMT_INFO SET
 			ADM_ACT_YN = 'Y'
-		WHERE FC_COMT_ID = #{fcBoardId}
+		WHERE FC_COMT_ID = #{fcComtId}
 			AND COMP_ID = #{compId}
 	</update>
 
 	<delete id="cmutadmin.deleteCumtAdmlist" parameterType="map">
-		DELETE FROM FC_CUMT_INFO
+		UPDATE FC_CUMT_INFO SET
+			ADM_ACT_YN = 'D'
 		WHERE COMP_ID = #{compId}
 			AND FC_COMT_ID = #{fcComtId}
 	</delete>

@@ -52,6 +52,11 @@ public class CommunityAdmDao extends AbstractDao {
 		return (List<ComtInfoVO>) selectList("cmutadmin.getCumtListData", param);
 	}
 
+	//관리자에서 전체 커뮤니티 목록 조회
+	public List<ComtInfoVO> getCumtALLListData(Map<String, Object> param) {
+		return (List<ComtInfoVO>) selectList("cmutadmin.getCumtALLListData", param);
+	}
+
 	/**
 	 * 커뮤니티 개설신청 승인 처리
 	 * @param int

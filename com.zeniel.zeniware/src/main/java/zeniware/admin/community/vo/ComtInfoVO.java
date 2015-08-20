@@ -14,6 +14,7 @@ public class ComtInfoVO implements Serializable {
 	private String modDate;			//MOD_DATE
 	private String regUserId;		//REG_USER_ID
 	private String modUserId;		//MOD_USER_ID
+	private String fcBoardId;
 	public String getFcComtId() {
 		return fcComtId;
 	}
@@ -79,5 +80,11 @@ public class ComtInfoVO implements Serializable {
 	}
 	public void setModUserId(String modUserId) {
 		this.modUserId = modUserId;
+	}
+	public String getFcBoardId() {
+		return fcBoardId;
+	}
+	public void setFcBoardId(String fcBoardId) {
+		this.fcBoardId = fcBoardId;
 	}
 }

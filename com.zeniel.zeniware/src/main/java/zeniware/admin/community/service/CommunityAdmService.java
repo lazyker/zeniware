@@ -18,6 +18,9 @@ public interface CommunityAdmService {
 
 	public List<ComtInfoVO> getCumtListData(Map<String, Object> param);
 
+	//관리자에서 전체 커뮤니티 목록 조회
+	public List<ComtInfoVO> getCumtALLListData(Map<String, Object> param);
+
 	@Transactional(value="transactionManager")
 	public int updateCumtAdmlist(List<ComtInfoVO> cumtlist) throws Throwable;
 

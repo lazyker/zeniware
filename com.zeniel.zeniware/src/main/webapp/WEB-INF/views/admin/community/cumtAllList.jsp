@@ -3,7 +3,7 @@
 
 <div class="page-title">
 	<div class="title-env">
-		<h1 class="title">개설신청 커뮤니티</h1>
+		<h1 class="title">개설전체 커뮤니티</h1>
 		<p class="description">Dynamic table variants with pagination and other controls</p>
 	</div>
 	<div class="breadcrumb-env">
@@ -16,7 +16,7 @@
 </div>
 <div class="panel panel-default">
 	<div class="panel-body">
-		<table id="cumtInfo" class="table table-small-font table-striped table-bordered">
+		<table id="cumtAll" class="table table-small-font table-striped table-bordered">
 			<thead>
 				<tr>
 					<th class="no-sorting"><input type="checkbox" class="cbr"></th>
@@ -25,6 +25,7 @@
 					<th>신청자</th>
 					<th>신청일</th>
 					<th>커뮤니티소개</th>
+					<th>상태</th>
 				</tr>
 			</thead>
 		</table>
@@ -42,63 +43,33 @@ $(document).ready(function() {
 	$("#btnOk2").html("반려");
 	$("#btnCancel2").html("취소");
 
-	var table = $('#cumtInfo').DataTable({
-		ajax: {"url": "../community/getCumtListData?compId="+${compId}, "dataSrc": ""},
+	var table = $('#cumtAll').DataTable({
+//		ajax: {"url": "../community/getCumtAllListData?compId="+${compId}, "dataSrc": ""},
+		ajax: {"url": "../community/getCumtAllListData?compId=001", "dataSrc": ""},
 		deferRender: true,
 		pagingType: "simple_numbers",
 		aoColumns: [
 			{ "mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; } },
-			//{ "mData": "fcBoardId", "visible" : false },
-			{ "mData": "fcComtId" },
+			{ "mData": "fcComtId", "visible" : false },
 			{ "mData": "cumtNm" },
 	      	{ "mData": "regUserId" },
 	      	{ "mData": "regDate" },
-	      	{ "mData": "cumtComment" }
-		],
-		"columnDefs": [
-			{
-				"targets": 1,
-				"visible": false,
-				"data": "fcBoardId",
-				"searchable": false
+	      	{ "mData": "cumtComment" },
+	      	{ "mData": "admActYn" , "mRender" : function(data,type, full){
+				if(data == 'Y') {
+					return "사용중";
+				} else if(data == 'N') {
+					return "승인대기";
+				} else if(data == 'P') {
+					return "페쇄";
+				} else if(data == 'D') {
+					return "반려";
+				} 
 			}
+		},
 		],
 		//sDom: "<'row'<'col-sm-4'<'pull-left'T>><'col-sm-6'f><'col-sm-2'<'pull-right'l>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>",
-		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>",
-		oTableTools: {
-			"aButtons": [
-				{
-					"sExtends": "text",
-					"sButtonClass": "btn-primary",
-					"sButtonText": "개설신청 수락",
-					"fnClick": function(nButton, oConfig) {
-						if (getCumtCount() > 0) {
-							jQuery('#modl').modal('show', {backdrop: 'fade'});
-							$("#btnOk").addClass('updateCumt');
-						} else {
-							toastr.options.closeButton = true;
-							toastr.options.positionClass = "toast-top-full-width";
-							toastr.error("<div align='center'><b>최소 1개 이상의 커뮤니티를 선택하세요.</b></div>", null);
-						}
-					}
-				},
-				{
-					"sExtends": "text",
-					"sButtonClass": "btn-red",
-					"sButtonText": "개설신청 반려",
-					"fnClick": function(nButton, oConfig) {
-						if (getCumtCount() > 0) {
-							jQuery('#mod2').modal('show', {backdrop: 'fade'});
-							$("#btnOk2").addClass('deleteCumt');
-						} else {
-							toastr.options.closeButton = true;
-							toastr.options.positionClass = "toast-top-full-width";
-							toastr.error("<div align='center'><b>최소 1개 이상의 커뮤니티를 선택하세요.</b></div>", null);
-						}
-					}
-				}
-			]
-		}
+		sDom: "<'row'<'col-sm-6'<'pull-left'T>><'col-sm-6'<'pull-right'f>>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 	});
 
 	// 개설신청 반려 Button OnClick Event
@@ -124,10 +95,7 @@ $(document).ready(function() {
 				dataType: "json", 
 				type: "POST", 
 				url: "./updateCumtAdmlist", 
-				data: { cumtlist: createJsonCumtlist() }, 
-				/* success: function(data) {
-					$(location).prop('href', 'cumtInfoList')
-				} */
+				data: { cumtlist: createJsonCumtlist() },
 				success: function(data) {
 					$("#modl").modal("hide");
 					table.rows(".selected").remove().draw(false);
@@ -139,7 +107,7 @@ $(document).ready(function() {
 	function createJsonCumtlist() {
 		var jsonObj = [];
 
-		$("#cumtInfo tbody tr").each(function() {
+		$("#cumtAll tbody tr").each(function() {
 			var chked = $("input[type='checkbox']:checked", this).length;
 			
 			if (chked == 1) {
@@ -158,7 +126,7 @@ $(document).ready(function() {
 	}
 
 	// Checkbox OnChange Event
-	$("#cumtInfo tbody").on('change', "tr td:first-child input[type='checkbox']", function() {
+	$("#cumtAll tbody").on('change', "tr td:first-child input[type='checkbox']", function() {
 			if ($(this).is(':checked'))
 				$(this).parents('tr').addClass('selected');
 			else
@@ -166,13 +134,13 @@ $(document).ready(function() {
 	});
 
 	var $state = $("#cumtInfo thead input[type='checkbox']");
-	$("#cumtInfo").on('draw.dt', function() {
+	$("#cumtAll").on('draw.dt', function() {
 		cbr_replace();
 		$state.trigger('change');
 	});
 
 	$state.on('change', function(ev) {
-		var $chcks = $("#cumtInfo tbody input[type='checkbox']");
+		var $chcks = $("#cumtAll tbody input[type='checkbox']");
 		if ($state.is(':checked')) {
 			$chcks.prop('checked', true).trigger('change');
 		} else {
@@ -182,7 +150,7 @@ $(document).ready(function() {
 
 	function getCumtCount() {
 		var cnt = 0;
-		$("#cumtInfo tbody tr").each(function() {
+		$("#cumtAll tbody tr").each(function() {
 			cnt+= $("input[type='checkbox']:checked", this).length;
 		})
 		return cnt;
