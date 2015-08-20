@@ -171,18 +171,7 @@
 					}
 				}
 			}
-		});
-		
-		$('.footer-sticked-chat').popover({
-			html: true, 
-			title: function() { return $('#popover-head').html(); }, 
-			content: function() { return $('#popover-content').html(); }, 
-			trigger: 'manual', 
-			placement: 'left'
-		});
-		
-		/* Detail View */
-		$('#jstreeMember').on('changed.jstree', function(e, data) {
+		}).on('changed.jstree', function(e, data) {
 			if (data.node != null) {
 				if (data.node.id.substr(0, 1) == 'U') {
 					$.ajax({
@@ -201,9 +190,19 @@
 					
 					togglePopover(true);
 				} else {
+					data.instance.toggle_node(data.node);
+					
 					togglePopover(false);
 				}
 			}
+		});
+		
+		$('.footer-sticked-chat').popover({
+			html: true, 
+			title: function() { return $('#popover-head').html(); }, 
+			content: function() { return $('#popover-content').html(); }, 
+			trigger: 'manual', 
+			placement: 'left'
 		});
 		
 		/* jsTree Search... */

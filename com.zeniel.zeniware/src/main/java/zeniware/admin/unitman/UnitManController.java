@@ -144,6 +144,24 @@ public class UnitManController {
     } catch (Exception e) { throw e; }
   }
   
+  @RequestMapping("/admin/ajax/setSingleComp")
+  public void setSingleComp(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {      
+      String jsonString = (String) paramMap.get("comp");
+      ObjectMapper objectMapper = new ObjectMapper();
+      Company comp = objectMapper.readValue(jsonString, objectMapper.getTypeFactory().constructType(Company.class));
+      
+      
+      int affectedRows = unitmanService.setSingleComp(comp);
+      
+      response.setContentType("application/json");
+      objectMapper.writeValue(response.getOutputStream(), affectedRows);
+      
+    } catch (Exception e) { throw e; }
+  }
+  
   @RequestMapping("/admin/ajax/moveSingleDept")
   public void moveSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
