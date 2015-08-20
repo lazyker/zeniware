@@ -53,7 +53,7 @@
 			deferRender: true, 
 			paging: false, 
 			ordering: false, 
-			rowReorder: { selector: 'tr', snapX: 10, update: true, dataSrc: 'sequence' }, 
+			rowReorder: { selector: 'tr', snapX: 10, update: false }, 
 			aoColumns: [
 				{ "mRender": function(data, type, full) { return rendering(data, type, full); } }, 
 				{ "mData": "compId", "visible": false }, 
