@@ -145,6 +145,24 @@ table-ellipsis th, .table-ellipsis td {
 	margin-right: 4px;
 }
 
+label>span {
+	position: relative;
+	display: inline-block;
+	color: #7d7f7f
+}
+
+/* todo-list */
+li.done span>a:after {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 9px;
+	height: 1px;
+	background: #8a8b8b;
+	content: ''
+}
+
 /**
  * End Calendar custom
 */
