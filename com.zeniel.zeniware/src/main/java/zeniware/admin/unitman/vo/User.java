@@ -26,7 +26,7 @@ public class User implements UserDetails {
   private String address2;
   private String joinDate;
   private String resignDate;
-  private boolean useLunarYn;
+  private boolean useSolarYn;
   private String birthDate;
   private String photoFileId;
   private String signFileId;
@@ -290,11 +290,11 @@ public class User implements UserDetails {
     return this;
   }
   
-  public boolean getUseLunarYn() {
-    return this.useLunarYn;
+  public boolean getUseSolarYn() {
+    return this.useSolarYn;
   }
-  public User setUseLunarYn(boolean useLunarYn) {
-    this.useLunarYn = useLunarYn;
+  public User setUseSolarYn(boolean useSolarYn) {
+    this.useSolarYn = useSolarYn;
     return this;
   }
   

@@ -91,7 +91,7 @@ public class Department {
     return this;
   }
   
-  public String getMamagerId() {
+  public String getManagerId() {
     return this.managerId;
   }
   

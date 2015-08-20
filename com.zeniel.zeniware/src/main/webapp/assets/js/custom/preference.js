@@ -2,21 +2,15 @@
  * 
  */
 
-/* bootstrap modal initialize */
-var modalInit = function(show, title, message, primary, secondary, width, height) {
-	if (show == true) {
-		if (!jQuery.isEmptyObject(title)) $('.modal .modal-title').html(title);
-		if (!jQuery.isEmptyObject(message)) $('.modal .modal-body').html(message);
-		if (!jQuery.isEmptyObject(primary)) $('.modal .btn-info').html(primary);
-		if (!jQuery.isEmptyObject(secondary)) $('.modal .btn-white').html(secondary);
-		if (!jQuery.isEmptyObject(width)) $('.modal .modal-dialog').width(width);
+/* bootstrap modal toggle */
+function modalToggle(option, data, title) {
+	if (option == true) {
+		$('.modal .modal-content').html(data);
 		
-		if (!jQuery.isEmptyObject(height)) {
-			$('.modal .modal-body').css({ 'height': height, 'overflow-y': 'auto' });
-		} else {
-			$('.modal .modal-body').css({ 'height': '100%', 'overflow-y': 'hidden' });
+		if (!jQuery.isEmptyObject(title)) {
+			$('.modal .modal-title').html(title);
 		}
-		
+
 		jQuery('.modal').modal('show', { backdrop: 'fade' });
 		
 	} else {
@@ -24,13 +18,37 @@ var modalInit = function(show, title, message, primary, secondary, width, height
 	}
 };
 
-$(document).ready(function() {
-	
+/* create json object from named elements inside form tag */
+function createNameElements() {
+	var jsonItem = {};
+
+	$.each($('form *[name]'), function(index, element) {
+		if (element.name.length > 0) {
+			if (element.type == 'checkbox') {
+				jsonItem[element.name] = element.checked;
+			} else {
+				jsonItem[element.name] = element.value;
+			}
+		}
+	});
+
+	return JSON.stringify(jsonItem);
+}
+
+function sboxInit() {
 	$('select').select2({
 		placeholder: "선택하세요...", 
 		allowClear: true
 	}).on('select2-open', function() {
 		$(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
 	});
+}
 
+$(document).ready(function() {
+	
+	$('.modal').on('hidden.bs.modal', function (event) {
+		$('.modal .modal-content').html("");
+	});
+	
+	sboxInit();
 });

@@ -4,7 +4,7 @@
 
 <sec:authentication var="currentUser" property="principal" />
  
-<div class="sidebar-menu toggle-others fixed"> 
+<div class="sidebar-menu toggle-others"> 
 		 
 	<div class="sidebar-menu-inner"> 
  

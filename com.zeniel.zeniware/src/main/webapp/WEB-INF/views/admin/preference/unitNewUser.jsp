@@ -351,14 +351,14 @@
 		var paramJoinDate = "${user.joinDate.substring(0, 10)}";
 		var paramResignDate = "${user.resignDate.substring(0, 10)}";
 		var paramBirthDate = "${user.birthDate.substring(0, 10)}";
-		var paramUseLunarYn = ${user.useLunarYn};
+		var paramUseSolarYn = ${user.useSolarYn};
 		
 		$('#txtUserId').prop('readonly', jQuery.isEmptyObject(paramUserId) ? false : true);
 		$('.anchor-user-name').html(jQuery.isEmptyObject(paramUserName) ? '신규 사용자' : paramUserName);
 		$('#txtJoinDate').datepicker(jQuery.isEmptyObject(paramJoinDate) ? '' : 'update', paramJoinDate);
 		$('#txtResignDate').datepicker(jQuery.isEmptyObject(paramResignDate) ? '' : 'update', paramResignDate);
 		$('#txtBirthDate').datepicker(jQuery.isEmptyObject(paramBirthDate) ? '' : 'update', paramBirthDate);
-		paramUseLunarYn == true ? $('#radioLunar').prop('checked', true) : $('#radioSolar').prop('checked', true);
+		paramUseSolarYn == true ? $('#radioSolar').prop('checked', true) : $('#radioLunar').prop('checked', true);
 		
 		$('#txtUserName').on('input', function() {
 			if ($(this).val().length == 0) {

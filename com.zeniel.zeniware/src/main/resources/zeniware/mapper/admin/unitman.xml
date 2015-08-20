@@ -8,6 +8,7 @@
 		<result property="compName" column="COMP_NM" />
 		<result property="sortOrder" column="SORT_ORDER" />
 		<result property="useYn" column="USE_YN" />
+		<result property="activateYn" column="ACTIVATE_YN" />
 		<result property="regDate" column="REG_DATE" />
 		<result property="modDate" column="MOD_DATE" />
 		<result property="delDate" column="DEL_DATE" />
@@ -28,7 +29,7 @@
 		<result property="activateYn" column="ACTIVATE_YN" />
 		<result property="regDate" column="REG_DATE" />
 		<result property="modDate" column="MOD_DATE" />
-		<result property="delDAte" column="DEL_DATE" />
+		<result property="delDate" column="DEL_DATE" />
 	</resultMap>
 	
 	<resultMap id="userResultMap" type="zeniware.admin.unitman.vo.User">
@@ -60,7 +61,7 @@
 	  <result property="password" column="PASSWORD" />
 	  <result property="description" column="DESCRIPTION" />
 	  <result property="birthDate" column="BIRTH_DATE" />
-	  <result property="useLunarYn" column="USE_LUNAR_YN" />
+	  <result property="useSolarYn" column="USE_SOLAR_YN" />
 	  <result property="languageCode" column="LANGUAGE_CD" />
 	  <result property="sortOrder" column="SORT_ORDER" />
 	  <result property="useYn" column="USE_YN" />
@@ -71,7 +72,11 @@
 	</resultMap>
 	
 	<select id="getCompList" parameterType="map" resultMap="compResultMap">
-		CALL UP_UNITMAN_COMP_LIST();
+		CALL UP_UNITMAN_COMP_LIST(#{mode});
+	</select>
+	
+	<select id="getDeptList" parameterType="map" resultMap="deptResultMap">
+		CALL UP_UNITMAN_DEPT_LIST(#{mode}, #{compId});
 	</select>
 	
 	<select id="getUserList" parameterType="map" resultMap="userResultMap">
@@ -82,10 +87,6 @@
 		CALL UP_UNITMAN_COMP_ONE(#{compId});
 	</select>
 	
-	<select id="getRootDept" parameterType="String" resultType="String">
-		CALL UP_UNITMAN_DEPT_ROOT(#{compId});
-	</select>
-	
 	<select id="getSingleDept" parameterType="map" resultMap="deptResultMap">
 		CALL UP_UNITMAN_DEPT_ONE(#{compId}, #{deptId});
 	</select>
@@ -94,10 +95,18 @@
 		CALL UP_UNITMAN_USER_ONE(#{compId}, #{userId});
 	</select>
 	
+	<select id="getRootDept" parameterType="String" resultType="String">
+		CALL UP_UNITMAN_DEPT_ROOT(#{compId});
+	</select>
+	
+	<insert id="setSingleComp" parameterType="map">
+		CALL UP_UNITMAN_COMP_SET(#{compId}, #{compName}, #{description}, #{activateYn});
+	</insert>
+	
 	<insert id="setSingleDept" parameterType="map">
 		CALL UP_UNITMAN_DEPT_SET(
 			#{deptId}, #{compId}, #{deptName}, #{simpleName}, 
-			#{parentDeptId}, #{sortOrder}, #{mailId}, #{managerId}, #{activateYn} 
+			#{parentDeptId}, #{mailId}, #{managerId}, #{activateYn}
 		);
 	</insert>
 	
@@ -106,7 +115,7 @@
 			#{userId}, #{compId}, #{deptId}, #{userName}, #{empNumber}, #{mailId}, #{officePhone}, #{homePhone}, 
 			#{fax}, #{mobile}, #{postCode}, #{address1}, #{address2}, #{photoFileId}, #{signFileId}, #{securityLevel}, 
 			#{jobTitleCode}, #{jobGradeCode}, #{jobRoleCode}, #{joinDate}, #{resignDate}, #{entitlement}, #{password}, 
-			#{description}, #{birthDate}, #{useLunarYn}, #{languageCode}, #{sortOrder}, #{activateYn} 
+			#{description}, #{birthDate}, #{useSolarYn}, #{languageCode}, #{sortOrder}, #{activateYn} 
 		);
 	</insert>
 	
@@ -118,12 +127,24 @@
 		CALL UP_UNITMAN_DEPT_SORT_SET(#{compId}, #{deptId}, #{sortOrder});
 	</update>
 	
-	<update id="resignSingleUser" parameterType="map">
-		CALL UP_UNITMAN_USER_RESIGNED(#{compId}, #{userId}, #{useYn});
+	<update id="softDeleteSingleUser" parameterType="map">
+		CALL UP_UNITMAN_USER_DELETE_SOFT(#{compId}, #{userId}, #{useYn});
 	</update>
 	
 	<update id="setSingleUserSort" parameterType="map">
 		CALL UP_UNITMAN_USER_SORT_SET(#{compId}, #{userId}, #{sortOrder});
 	</update>
+	
+	<delete id="deleteSingleComp" parameterType="map">
+		CALL UP_UNITMAN_COMP_DELETE(#{mode}, #{compId});
+	</delete>
+	
+	<delete id="deleteSingleDept" parameterType="map">
+		CALL UP_UNITMAN_DEPT_DELETE(#{mode}, #{compId}, #{deptId});
+	</delete>
+	
+	<delete id="restoreSingleComp" parameterType="map">
+		CALL UP_UNITMAN_COMP_RESTORE(#{compId});
+	</delete>
 
 </mapper>

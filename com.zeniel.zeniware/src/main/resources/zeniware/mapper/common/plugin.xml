@@ -30,7 +30,11 @@
 	</select>
 	
 	<select id="getNodeListDefer" parameterType="map" resultMap="treeNodeResultMap">
-		CALL UP_PLUGIN_NODE_LIST_DEFER(#{compId}, #{deptId}, #{nodeType}, #{resultType});
+		CALL UP_PLUGIN_NODE_LIST_DEFER(#{compId}, #{deptId}, #{nodeType}, #{resType});
+	</select>
+	
+	<select id="getChildNodeCount" parameterType="map" resultType="int">
+		CALL UP_PLUGIN_CHILD_NODE_COUNT(#{compId}, #{deptId});
 	</select>
 	
 </mapper>

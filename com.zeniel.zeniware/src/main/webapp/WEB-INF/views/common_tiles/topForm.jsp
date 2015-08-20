@@ -45,55 +45,49 @@
 		<ul class="navbar-nav">
 			<li>
 				<a href="dashboard-1.html">
-					<i class="linecons-cog"></i>
+					<i class="fa fa-at"></i>
 					<span class="title">전자우편</span>
 				</a>
 			</li>
 			<li>
 				<a href="${pageContext.request.contextPath}/schedule/scheduleMain">
-					<i class="linecons-desktop"></i>
+					<i class="fa fa-calendar"></i>
 					<span class="title">일정관리</span>
 				</a>
 			</li>
 			<li>
 				<a href="${pageContext.request.contextPath}/workflow/workflowMain">
-					<i class="linecons-note"></i>
+					<i class="fa fa-check"></i>
 					<span class="title">전자결재</span>
 				</a>
 			</li>
 			<li>
 				<a href="forms-native.html">
-					<i class="linecons-params"></i>
+					<i class="fa fa-tasks"></i>
 					<span class="title">업무관리</span>
 				</a>
 			</li>
 			<li>
 				<a href="${pageContext.request.contextPath}/cumnity/comtMain">
-					<i class="linecons-diamond"></i>
+					<i class="fa fa-comment"></i>
 					<span class="title">커뮤니티</span>
 				</a>
 			</li>
 			<li>
 				<a href="">
-					<i class="linecons-diamond"></i>
+					<i class="fa fa-car"></i>
 					<span class="title">자원관리</span>
 				</a>
 			</li>
 			<li>
 				<a href="">
-					<i class="linecons-diamond"></i>
+					<i class="fa fa-folder"></i>
 					<span class="title">문서관리</span>
 				</a>
 			</li>
 			<li>
-				<a href="">
-					<i class="linecons-diamond"></i>
-					<span class="title">주소록</span>
-				</a>
-			</li>
-			<li>
 				<a href="${pageContext.request.contextPath}/admin/preference/codeMain">
-					<i class="fa fa-anchor"></i>
+					<i class="fa fa-key"></i>
 					<span class="title">관리자</span>
 				</a>
 			</li>
@@ -103,13 +97,6 @@
 		<!-- notifications and other links -->
 		<ul class="nav nav-userinfo navbar-right">
 			
-			<li class="dropdown xs-left">
-				<a href="#" data-toggle="dropdown" class="notification-icon notification-icon-messages">
-					<i class="fa-bell-o"></i>
-					<span class="badge badge-purple">7</span>
-				</a>
-			</li>
-	
 			<li class="dropdown user-profile">
 				<a href="#" data-toggle="dropdown">
 					<img src="${pageContext.request.contextPath}/resources/images/main/photo.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />

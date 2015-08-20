@@ -29,10 +29,12 @@ public class PluginServiceImpl implements PluginService {
   
   @Override
   public List<TreeNode> getNodeListDefer(Map<String, Object> paramMap) {
-    List<TreeNode> list = pluginDao.getNodeListDefer(paramMap);
-    
-    return list;
-    //return pluginDao.getNodeListDefer(paramMap);
+    return pluginDao.getNodeListDefer(paramMap);
+  }
+  
+  @Override
+  public int getChildNodeCount(Map<String, Object> paramMap) {
+    return pluginDao.getChildNodeCount(paramMap);
   }
   
 }

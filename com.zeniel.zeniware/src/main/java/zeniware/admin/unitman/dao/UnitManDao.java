@@ -22,6 +22,11 @@ public class UnitManDao extends AbstractDao {
   }
   
   @SuppressWarnings("unchecked")
+  public List<Department> getDeptList(Map<String, Object> paramMap) {
+    return (List<Department>)selectList("admin.unitman.getDeptList", paramMap);
+  }
+  
+  @SuppressWarnings("unchecked")
   public List<User> getUserList(Map<String, Object> paramMap) {
     return (List<User>)selectList("admin.unitman.getUserList", paramMap);
   }
@@ -63,6 +68,10 @@ public class UnitManDao extends AbstractDao {
   /*********************
    * Update One
    *********************/
+  public int restoreSingleComp(Map<String, Object> paramMap) {
+    return (int)update("admin.unitman.restoreSingleComp", paramMap);
+  }
+  
   public int moveSingleDept(Map<String, Object> paramMap) {
     return (int)update("admin.unitman.moveSingleDept", paramMap);
   }
@@ -71,8 +80,19 @@ public class UnitManDao extends AbstractDao {
     return (int)update("admin.unitman.setSingleDeptSort", dept);
   }
   
-  public int resignSingleUser(User user) {
-    return (int)update("admin.unitman.resignSingleUser", user);
+  public int softDeleteSingleUser(User user) {
+    return (int)update("admin.unitman.softDeleteSingleUser", user);
+  }
+  
+  /*********************
+   * Update/Delete One
+   *********************/
+  public int deleteSingleComp(Map<String, Object> paramMap) {
+    return (int)delete("admin.unitman.deleteSingleComp", paramMap);
+  }
+  
+  public int deleteSingleDept(Map<String, Object> paramMap) {
+    return (int)delete("admin.unitman.deleteSingleDept", paramMap);
   }
   
   /*********************

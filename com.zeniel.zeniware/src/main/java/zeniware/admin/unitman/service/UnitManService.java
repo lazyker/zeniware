@@ -14,6 +14,8 @@ public interface UnitManService {
   
   public List<Company> getCompList(Map<String, Object> paramMap);
   
+  public List<Department> getDeptList(Map<String, Object> paramMap);
+  
   public List<User> getUserList(Map<String, Object> paramMap);
   
   public Company getSingleComp(Map<String, Object> paramMap);
@@ -34,7 +36,16 @@ public interface UnitManService {
   public int setSingleUser(User user);
   
   @Transactional(value="transactionManager")
-  public int resignUserList(List<User> userlist);
+  public int softDeleteUserList(List<User> userlist);
+  
+  @Transactional(value="transactionManager")
+  public int deleteSingleComp(Map<String, Object> paramMap);
+  
+  @Transactional(value="transactionManager")
+  public int deleteSingleDept(Map<String, Object> paramMap);
+  
+  @Transactional(value="transactionManager")
+  public int restoreSingleComp(Map<String, Object> paramMap);
   
   @Transactional(value="transactionManager")
   public int moveSingleDept(Map<String, Object> paramMap) throws Throwable;

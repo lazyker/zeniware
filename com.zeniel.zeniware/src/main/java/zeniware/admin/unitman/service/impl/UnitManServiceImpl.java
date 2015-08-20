@@ -25,6 +25,11 @@ public class UnitManServiceImpl implements UnitManService {
   }
   
   @Override
+  public List<Department> getDeptList(Map<String, Object> paramMap) {
+    return unitmanDao.getDeptList(paramMap);
+  }
+  
+  @Override
   public List<User> getUserList(Map<String, Object> paramMap) {
     return unitmanDao.getUserList(paramMap);
   }
@@ -62,6 +67,21 @@ public class UnitManServiceImpl implements UnitManService {
   @Override
   public int setSingleUser(User user) {
     return unitmanDao.setSingleUser(user);
+  }
+  
+  @Override
+  public int deleteSingleComp(Map<String, Object> paramMap) {
+    return unitmanDao.deleteSingleComp(paramMap);
+  }
+  
+  @Override
+  public int deleteSingleDept(Map<String, Object> paramMap) {
+    return unitmanDao.deleteSingleDept(paramMap);
+  }
+  
+  @Override
+  public int restoreSingleComp(Map<String, Object> paramMap) {
+    return unitmanDao.restoreSingleComp(paramMap);
   }
   
   @Override
@@ -114,13 +134,13 @@ public class UnitManServiceImpl implements UnitManService {
   }
   
   @Override
-  public int resignUserList(List<User> userlist) {
+  public int softDeleteUserList(List<User> userlist) {
     
     int affectedRows = 0;
     
     try {
       for (User user : userlist) {
-        affectedRows += unitmanDao.resignSingleUser(user);
+        affectedRows += unitmanDao.softDeleteSingleUser(user);
       }
     } catch (Exception e) { throw e; }
     

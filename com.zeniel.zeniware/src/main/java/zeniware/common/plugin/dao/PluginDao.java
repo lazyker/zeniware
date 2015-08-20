@@ -27,4 +27,8 @@ public class PluginDao extends AbstractDao {
     return (List<TreeNode>)selectList("common.plugin.getNodeListDefer", paramMap);
   }
   
+  public int getChildNodeCount(Map<String, Object> paramMap) {
+    return (int)selectOne("common.plugin.getChildNodeCount", paramMap);
+  }
+  
 }

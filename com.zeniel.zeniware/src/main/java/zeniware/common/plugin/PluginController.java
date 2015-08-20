@@ -67,5 +67,19 @@ public class PluginController {
       
     } catch (Exception e) { throw e; }
   }
+  
+  @RequestMapping("/admin/ajax/getChildNodeCount")
+  public void getChildNodeCount(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {
+      int length = pluginService.getChildNodeCount(paramMap);
+      
+      ObjectMapper mapper = new ObjectMapper();
+      response.setContentType("application/json");
+      mapper.writeValue(response.getOutputStream(), length);
+      
+    } catch (Exception e) { throw e; }
+  }
 
 }

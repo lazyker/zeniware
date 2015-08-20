@@ -11,7 +11,7 @@
 			<li><a href="../../admin/preference/codeMain"><i class="fa-home"></i>Home</a></li>
 			<li><a href="./codeMain">환경설정</a></li>
 			<li><a href="./unitSelect">조직관리</a>
-			<li class="active"><strong>퇴직자관리</strong></li>
+			<li class="active"><strong>삭제계정관리</strong></li>
 		</ol>
 	</div>
 	
@@ -24,12 +24,12 @@
 		<div class="panel panel-default">
 		
 			<div class="panel-heading">
-				<h3 class="panel-title">퇴직자 목록</h3>
+				<h3 class="panel-title">삭제계정 목록</h3>
 				
 				<div class="panel-options">
 					<div class="btn-group">
 						<button class="btn btn-gray btn-sm" id="btnRestore">복원</button>
-						<button class="btn btn-white btn-sm">완전삭제</button>
+						<button class="btn btn-white btn-sm" id="btnDelete">완전삭제</button>
 					</div>
 				</div>
 			</div>
@@ -117,7 +117,7 @@
 				$.ajax({
 					dataType: "json", 
 					type: "POST", 
-					url: "../ajax/resignUserlist", 
+					url: "../ajax/softDeleteUserlist", 
 					data: { userlist: createJsonUserlist() }, 
 					success: function(data) {
 						modalInit(false);

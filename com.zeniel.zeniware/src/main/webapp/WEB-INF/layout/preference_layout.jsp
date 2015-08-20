@@ -10,11 +10,10 @@
 	<tiles:insertAttribute name="header" />
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/rowReorder.dataTables.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2-bootstrap.css">
-	
-	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 
 </head>
 
@@ -32,21 +31,7 @@
 	
 	<div class="modal fade">
 		<div class="modal-dialog">
-			<div class="modal-content">
-			
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"></h4>
-				</div>
-				
-				<div class="modal-body"></div>
-				
-				<div class="modal-footer">
-					<button type="button" class="btn btn-info" id="btnOk"></button>
-					<button type="button" class="btn btn-white" data-dismiss="modal"></button>
-				</div>
-				
-			</div>
+			<div class="modal-content"></div>
 		</div>
 	</div>
 
@@ -59,18 +44,22 @@
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-toggles.js"></script>
 	
 	<!-- Imported scripts on this page -->
-	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/bootbox/bootbox.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.rowReorder.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/validator/validator.js"></script>
 	
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
 	
 </body>

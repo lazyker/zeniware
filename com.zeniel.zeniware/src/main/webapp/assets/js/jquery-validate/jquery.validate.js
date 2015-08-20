@@ -244,7 +244,7 @@ $.extend( $.validator, {
 		rules: {},
 		errorClass: "error",
 		validClass: "valid",
-		errorElement: "label",
+		errorElement: "span", // SpeedOffice Customized - Default: label
 		focusInvalid: true,
 		errorContainer: $( [] ),
 		errorLabelContainer: $( [] ),
@@ -290,6 +290,9 @@ $.extend( $.validator, {
 			} else {
 				$( element ).addClass( errorClass ).removeClass( validClass );
 			}
+			
+			// SpeedOffice Customized
+			$(element).closest('.form-group').addClass('validate-has-error');
 		},
 		unhighlight: function( element, errorClass, validClass ) {
 			if ( element.type === "radio" ) {
@@ -297,6 +300,9 @@ $.extend( $.validator, {
 			} else {
 				$( element ).removeClass( errorClass ).addClass( validClass );
 			}
+			
+			// SpeedOffice Customized
+			$(element).closest('.form-group').removeClass('validate-has-error');
 		}
 	},
 

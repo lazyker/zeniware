@@ -13,5 +13,7 @@ public interface PluginService {
   public List<TreeNode> getNodeListSearch(Map<String, Object> paramMap);
   
   public List<TreeNode> getNodeListDefer(Map<String, Object> paramMap);
+  
+  public int getChildNodeCount(Map<String, Object> paramMap);
 
 }

@@ -129,7 +129,7 @@
 			var orgCodeId = "${commonCode.codeId}";
 			var curCodeId = $('#txtCodeId').val();
 			var curGroupId = $('#txtGroupId').val();
-			
+
 			if (jQuery.isEmptyObject(orgCodeId) || curCodeId != orgCodeId) {
 				$.ajax({
 					url: '../ajax/getSingleCodeExists', 
