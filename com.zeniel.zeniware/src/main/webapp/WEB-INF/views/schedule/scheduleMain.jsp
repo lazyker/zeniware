@@ -8,7 +8,7 @@
 // 	        start: new Date(y, m, d-5),
 // 	        end: new Date(y, m, d-2),
 // 	        color: 'red',
-// 	        backgroundColor: 'yellow',
+// 	        backgroundColor: 'ff6264',
 // 	        borderColor: 'blue',
 // 	        textColor: 'green',
 
@@ -30,9 +30,9 @@
 	 	events = [
 					{
 						title : 'All Day Event',
-						start : '2015-07-14',
-						end : '2015-07-16',
-				        textColor : 'red',
+						start : '2015-08-27',
+						end : '2015-08-27',
+						backgroundColor : '#c8c8c8',
 				        allDay : false
 					}
 			]
@@ -132,6 +132,7 @@
 	 		events: function(start, end, timezone, callback) {
 	 			schedData(start, end, callback);
 	 		}
+// 	 		events : events
 		});
 		
 	}
@@ -212,15 +213,18 @@
 	                    	
 							//시간이 없는 경우 종일일정 표시	                    	
 							$.each(data, function(i) {
+		                    	var rgb = rgbChange(this.cldrColorVal)
 								
 								//null 일 경우에 반복일정처럼 묶여서 프로퍼티 삭제
 // 								if($(this)[0].id === null) {
 // 									delete $(this)[0].id;
 // 								}
 	                    		
-								if( $(this)[0].startTm === null ) {
-									$(this)[0].allDay = true;
+								if( this.startTm === null ) {
+									this.allDay = true;
 								}
+								
+								this.backgroundColor = rgb;
 							}) 	                    	
 
 							callback(data);

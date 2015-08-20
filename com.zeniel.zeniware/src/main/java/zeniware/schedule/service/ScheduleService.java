@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
+import zeniware.schedule.vo.TodoVo;
 
 public interface ScheduleService {
 	
@@ -103,7 +104,36 @@ public interface ScheduleService {
 	 */
 	public List<HashMap<String, String>> getRpetExcptSchedList(ScheduleVo paramVo);
 	
+	/**
+	 * 할일 리스트
+	 * @param paramMap
+	 * @return
+	 */
+	public List<TodoVo> getTodoList(Map<String, Object>paramMap);
 	
+	/**
+	 * 할일 추가
+	 * @param todoVo
+	 */
+	public void addTodo(TodoVo paramVo);
+	
+	/**
+	 * 할일 수정
+	 * @param todoVo
+	 */
+	public void updateTodo(TodoVo paramVo);
+	
+	/**
+	 * 할일 삭제
+	 * @param todoVo
+	 */
+	public void delTodo(TodoVo paramVo);
+	
+	/**
+	 * 할일 SEQ 가져오기
+	 * @param todoVo
+	 */
+	public int getTodoSeq(TodoVo paramVo);
 	
 	
 	@Transactional(value="transactionManager")

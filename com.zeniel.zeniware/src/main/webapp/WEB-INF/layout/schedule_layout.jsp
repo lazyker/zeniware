@@ -114,6 +114,7 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/ajax.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-widgets.js"></script>
 	
 	<!-- JavaScripts initializations and stuff -->
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>

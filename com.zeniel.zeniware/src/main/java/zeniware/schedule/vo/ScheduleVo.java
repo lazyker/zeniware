@@ -24,6 +24,7 @@ public class ScheduleVo implements Serializable {
 	private int rpetCyc;
 	private String apntPlc;
 	private String memoCont;
+	private String cldrColorVal;
 	
 	//FullCalendar 필수 key
 	private String id;
@@ -38,6 +39,13 @@ public class ScheduleVo implements Serializable {
 	private String rpetSchedId;
 	private String trgtYmd;
 	
+	
+	public String getCldrColorVal() {
+		return cldrColorVal;
+	}
+	public void setCldrColorVal(String cldrColorVal) {
+		this.cldrColorVal = cldrColorVal;
+	}
 	public String getRpetSchedId() {
 		return rpetSchedId;
 	}

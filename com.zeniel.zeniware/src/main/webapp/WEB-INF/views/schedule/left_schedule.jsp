@@ -71,14 +71,14 @@
 
 	<ul id="calendar-menu" class="calendar-menu">
 	
-		<c:forEach items="${calList}"  var="detail"  varStatus="status">
-		<li  id="<c:out value="${detail.cldrId}"/>">
-			<input type="checkbox" class="cbr cbr-<c:out value="${detail.cldrColorVal}"/>" checked> 
-			<a href="#" class="calendarList" data-toggle="modal" data-target="#calendarModal" data-whatever="<c:out value="${detail.cldrId},${detail.cldrNm},${detail.cldrColorVal}" />" >
-				<c:out value="${detail.cldrNm}" />
-			</a>
-		</li>
-		</c:forEach>
+<%-- 		<c:forEach items="${calList}"  var="detail"  varStatus="status"> --%>
+<%-- 		<li  id="<c:out value="${detail.cldrId}"/>"> --%>
+<%-- 			<input type="checkbox" class="cbr cbr-<c:out value="${detail.cldrColorVal}"/>" checked>  --%>
+<%-- 			<a href="#" class="calendarList" data-toggle="modal" data-target="#calendarModal" data-whatever="<c:out value="${detail.cldrId},${detail.cldrNm},${detail.cldrColorVal}" />" > --%>
+<%-- 				<c:out value="${detail.cldrNm}" /> --%>
+<!-- 			</a> -->
+<!-- 		</li> -->
+<%-- 		</c:forEach> --%>
 		
 <!-- 		<li> -->
 <!-- 			<label id="label_1"> -->
@@ -96,32 +96,23 @@
 	<div style="margin-bottom: 10px;">
 		<div style="margin-left:17px;float:left;">할 일</div>
 		<div class="text-right" style="margin-right:15px;">
-			<a href="#" style="margin-right:3px;">
+			<a href="#" data-toggle="modal" data-target="#todoModal" data-whatever="new" style="margin-right:3px;">
 				<i class="fa fa-plus"></i>
 			</a>
 			
-			<a href="#">
+			<a href="javascript:;" id="showDelTodoBtn">
 				<i class="fa fa-minus"></i>
 			</a>
+			
 		</div>
 	</div>
-	
+
 	<ul id="todo-menu" class="calendar-menu">
-	
-		<li>
-			<label>
-				<a href=""><input type="checkbox" class="cbr cbr-info"> 개인 스케줄</a>
-			</label>
-		</li>
-		<li>
-			<label>
-				<input type="checkbox" class="cbr cbr-danger"> 회사 스케줄
-			</label>
-		</li>
-		
 	</ul>
 					
 </div>
+
+
 	
 	<!-- 캘린더 추가 Modal -->
 	<form role="form" id="calForm" class="validate">
@@ -184,6 +175,44 @@
 	</div>
 	</form>
 	
+	<!-- 할일 Modal -->
+	<form role="form" id="todoForm" class="validate">
+	<div class="modal fade" id="todoModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">할일 추가</h4>
+				</div>
+				
+				<div class="modal-body">
+				
+					<div class="row">
+						<div class="col-md-12">
+							
+							<div class="form-group">
+								<label for="field-1" class="control-label">할 일</label>
+								
+								<input type="text" class="form-control" id="todoNm" name="todoNm" data-validate="required" />
+							</div>	
+							
+						</div>
+					</div>
+				
+				</div>
+					<div id="chkVal" style="display:none;border-color: #cc3f44;color: #cc3f44">※ 값이 모두 입력되지 않았습니다.</div>
+					<input type="hidden" name="todoSeq" id="hidnTodoSeq" />
+					<input type="hidden" name="cmpltYn" id="hidnCmpltYn" />
+				<div class="modal-footer form-group">
+					<button type="button" class="btn btn-info" id="savetodo">저장</button>
+					<button type="button" class="btn btn-white" data-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</form>
+	
 		<script type="text/javascript">
 		
 		$(document).ready(function() {
@@ -211,13 +240,6 @@
 					});
 					
 					cbr_replace();
-					
-// 					<li  id="<c:out value="${detail.cldrId}"/>">
-// 					<input type="checkbox" class="cbr cbr-<c:out value="${detail.cldrColorVal}"/>" checked> 
-// 					<a href="#" class="calendarList" data-toggle="modal" data-target="#calendarModal" data-whatever="<c:out value="${detail.cldrId},${detail.cldrNm},${detail.cldrColorVal}" />" >
-// 						<c:out value="${detail.cldrNm}" />
-// 					</a>
-// 				</li>					
 					
 				}
 					
@@ -272,11 +294,7 @@
 // 				$(this).removeData('bs.modal');
 // 				});
 			
-			//캘린더 삭제 버튼 보이기
-			$('#showDelCalBtn').on('click', function() {
-				showDelCalBtn();
-			});
-			
+			//캘린더 저장
 			$('#saveCal').on('click', function() {
 				var $cldrNmVal = $('#cldrNm');
 				
@@ -291,7 +309,121 @@
 				addCalendar();
 			});
 			
-		});
+			//캘린더 삭제 버튼 보이기
+			$('#showDelCalBtn').on('click', function() {
+				showDelCalBtn();
+			});
+			
+			/////////////////////////////////////////// 할일 영역 /////////////////////////////////////////////
+			
+			//할일 조회
+			$.ajax({
+				url: './getTodoList',
+				data : {
+					userId : '<c:out value="${user.userId}"/>',
+					compId : '<c:out value="${user.compId}"/>'
+					
+				},
+				success : function(data){
+					
+					var strTodo = $('#todo-menu');
+					var obj = JSON.parse(data);
+					
+					$.each(obj, function(i) {
+						var checked = "";
+						var done = "";
+						if (obj[i].cmpltYn == 'Y') {
+							checked = "checked";
+							done = "done";							
+						}
+						
+						strTodo.append(
+								'<li  id="' + obj[i].todoSeq + '" class="' + done + '">'
+								+ '<label>'
+								+ '<input type="checkbox" class="cbr cbr-primary" '+ checked +'>'
+								+ '<span><a href="#" data-toggle="modal" data-target="#todoModal" data-whatever="'+ obj[i].todoSeq +',' + obj[i].todoNm + "," + obj[i].cmpltYn +'">&nbsp'
+								+ obj[i].todoNm + '</a></span>'
+								+ '</label></li>'
+								);
+					});
+					
+					cbr_replace();
+					
+				}
+					
+			});
+			
+			// Todo List
+			$("#todo-menu").on('change', 'input[type="checkbox"]', function(ev)
+			{
+				var cmpltYn = "N";
+				var $cb = $(this),
+					$li = $cb.closest('li'),
+					$a = $li.find('a');
+				var data = $a.data('whatever').split(',');
+				
+				$li.removeClass('done');
+					
+				if($cb.is(':checked'))
+				{
+					$li.addClass('done');
+					cmpltYn = 'Y';
+				}
+				
+				$.ajax({
+					url: './addTodo',
+					contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+					data:  {
+						todoSeq : data[0],
+						todoNm : data[1],
+						cmpltYn : cmpltYn
+					},
+					success: function(data)
+					{
+						var obj = JSON.parse(data);
+					}
+				});	
+				
+			});
+			
+			//할일 Modal 활성화 전 이번트
+			$('#todoModal').on('show.bs.modal', function (event) {
+				{
+					//모달 초기화
+					$('#hidnTodoSeq').val("");
+					$('#todoNm').val("");
+				}
+				
+			    var button = $(event.relatedTarget) //이것이 Modal을 화면에 보이도록 한 버튼이다.
+				var data = button.data('whatever');			                                       
+			    var modal = $(this); //Modal 전체를 담고있는 DIV 객체가 그대로 전달되므로,Modal 안쪽의 오브젝트에 접근하기 위해서 사용한다.
+			    
+			    if( data !== "new") {
+			    	var data = data.split(',');
+			    	
+					modal.find('.modal-title').text('할일 수정');
+					modal.find('#hidnTodoSeq').val(data[0]); //할일 번호
+					modal.find('#todoNm').val(data[1]); //할일
+					modal.find('#hidnCmpltYn').val(data[2]); //완료여부
+					
+			    }
+			    else { //신규
+			    	modal.find('.modal-title').text('할일 추가');
+			    }
+			    
+			});
+			
+			// 할일 저장
+			$('#savetodo').on('click', function() {
+				addTodo();
+			});
+			
+			//할일 삭제 버튼 보이기
+			$('#showDelTodoBtn').on('click', function() {
+				showDelTodoBtn();
+			});
+			
+		}); //Ready End
 		
 // 			function showAddCalModal()
 // 			{ 
@@ -531,5 +663,117 @@
 				});
 			}
 			
+			//할일 저장
+			function addTodo() {
+				var todoSeq = $('#hidnTodoSeq').val();
+				var cmpltYn = $('#hidnCmpltYn').val();
+				var data = {
+						todoNm : $('#todoNm').val(),
+						cmpltYn : 'N'
+				};
+
+				//수정할 때..
+				if (todoSeq !== "") { 
+					data.todoSeq = 	todoSeq;
+					data.cmpltYn = cmpltYn;
+				}
+				
+				$.ajax({
+					url: './addTodo',
+					contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+					data:  data,
+					success: function(data)
+					{
+						var obj = JSON.parse(data);
+						
+						//수정일 경우 태그 지우기
+						if( obj.runType == "New" ) {
+							var todoListStr = 
+								"<li id=\"" + obj.todoSeq + "\">" +
+								"<label>" + 
+								"<input type='checkbox' class='cbr cbr-primary'>" +
+								"<span><a href='#' data-toggle='modal' data-target='#todoModal' data-whatever='" + obj.todoSeq + "," + obj.todoNm + "," + obj.cmpltYn +"'>" + 
+								obj.todoNm + "</a></span>" + 
+								"</label>" +
+								"</li>";
+								
+							$('#todo-menu').append(todoListStr);
+							
+						}
+						else {
+							var todoSeq = '#'+obj.todoSeq; 
+							$(todoSeq).empty();
+							
+							var checked = "";
+							if (obj.cmpltYn == 'Y') {
+								checked = "checked";
+							}
+							
+							var todoListStr = 
+								"<label>" + 
+								"<input type='checkbox' class='cbr cbr-primary' "+ checked +">" +
+								"<span><a href='#' data-toggle='modal' data-target='#todoModal' data-whatever='" + obj.todoSeq + "," + obj.todoNm + "," + obj.cmpltYn +"'>" + 
+								obj.todoNm + "</a></span>" + 
+								"</label>";
+							
+// 							var todoListStr = 
+// 								"<label>" +
+// 								"<a href='#' data-toggle='modal' data-target='#todoModal' data-whatever='" + obj.todoSeq + "," + obj.todoNm + "," + obj.cmpltYn +"'>" +
+// 								"<input type='checkbox' class='cbr cbr-primary'> " + obj.todoNm + 
+// 								"</a>" +
+// 								"</label>";
+								
+							$(todoSeq).append(todoListStr);
+						}
+						
+						cbr_replace(); //부트스트랩 체크박스 변환
+					}
+				});
+				
+				$('#todoNm').val("");
+				$('#todoModal').modal('hide');
+			}
+			
+			//할일 삭제 버튼 활성화 이벤트
+			function showDelTodoBtn() {
+		 		if($('.todoDel').length <= 0) {
+		 			$.each($('#todo-menu > li'), function(idx, element) {
+		 				var todoSeq = $(element).attr('id');
+			 			var delHtml = 
+			 				"<span class=\"pull-right todoDel\">" +
+			 				"<a href=\"javascript:;\" onclick=\"delTodo(" + idx + ", \'" + todoSeq + "\');\">" +
+			 				"<i class=\"fa fa-times\"></i></a>" +
+			 				"</span>";
+		 				
+			 			$('#' + todoSeq).append(delHtml);
+			 			
+		 			});
+		 		}
+		 		else{
+			 		$('.todoDel').remove();
+		 		}
+			}
+			
+			//할일 삭제
+			function delTodo(index, todoSeq) {
+				$.ajax({
+					url: './delTodo',
+					contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+					data: {
+						todoSeq : todoSeq
+					},
+					success: function(data)
+					{
+						$('#' + todoSeq).remove();
+						
+						var opts = {
+								"closeButton": true,
+								"positionClass": "toast-bottom-right",
+							};
+							
+							toastr.success("삭제 처리 되었습니다.", null, opts);
+					}
+				});
+		}	
 			
 		</script>

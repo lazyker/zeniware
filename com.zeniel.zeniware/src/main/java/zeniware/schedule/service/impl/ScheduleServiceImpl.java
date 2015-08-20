@@ -12,6 +12,7 @@ import zeniware.schedule.dao.ScheduleDao;
 import zeniware.schedule.service.ScheduleService;
 import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
+import zeniware.schedule.vo.TodoVo;
 
 @Service
 public class ScheduleServiceImpl implements ScheduleService {
@@ -110,6 +111,34 @@ public class ScheduleServiceImpl implements ScheduleService {
 		List<HashMap<String, String>> result = scheduleDao.getRpetExcptSchedList(paramVo);
 		return result;
 	}
+	
+	@Override
+	public List<TodoVo> getTodoList(Map<String, Object> paramMap) {
+		List<TodoVo> todoList = scheduleDao.getTodoList(paramMap);
+		return todoList;
+	}
+	
+	@Override
+	public void addTodo(TodoVo paramVo) {
+		scheduleDao.addTodo(paramVo);
+	}
+	
+	@Override
+	public void updateTodo(TodoVo paramVo) {
+		scheduleDao.updateTodo(paramVo);
+	}
+	
+	@Override
+	public void delTodo(TodoVo paramVo) {
+		scheduleDao.delTodo(paramVo);
+	}
+	
+	@Override
+	public int getTodoSeq(TodoVo paramVo) {
+		return (int) scheduleDao.getTodoSeq(paramVo);
+	}
+
+	
 
 	@Override
 	public void test(String param) throws Exception {

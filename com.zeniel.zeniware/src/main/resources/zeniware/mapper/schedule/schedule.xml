@@ -16,8 +16,8 @@
 	</resultMap>
 
 	<resultMap type="zeniware.schedule.vo.ScheduleVo" id="scheduleVo">
-			<result property="schedId" column="SCHED_ID"/>
-			<result property="id" column="ID"/>
+			<id property="schedId" column="SCHED_ID"/>
+			<id property="id" column="ID"/>
 			<result property="cldrId" column="CLDR_ID"/>
 			<result property="schedNm" column="SCHED_NM"/>
 			<result property="title" column="TITLE"/>
@@ -36,7 +36,8 @@
 			<result property="apntPlc" column="APNT_PLC"/>
 			<result property="memoCont" column="MEMO_CONT"/>
 			<result property="rpetDateType" column="RPET_DATE_TYPE"/>
-			<result property="rpetDd" column="RPETDd"/>
+			<result property="rpetDd" column="RPET_DD"/>
+			<result property="cldrColorVal" column="CLDR_COLOR_VAL"/>
 	</resultMap>
 
 	<insert id="insertTest" parameterType="String">
@@ -153,7 +154,8 @@
 				APNT_PLC,
 				MEMO_CONT,
 				R.RPET_DATE_TYPE,
-				R.RPET_DD
+				R.RPET_DD,
+				C.CLDR_COLOR_VAL
 			FROM 
 				FS_CLDR C
 				INNER JOIN FS_SCHED S 
@@ -369,30 +371,4 @@
 			AND RPET_SCHED_ID =  #{schedId, jdbcType=VARCHAR}
 	</select>
 	
-	
-	
-	<insert id="addTodo">
-		INSERT INTO FS_TODO
-		(
-			USER_ID,
-			TODO_NM,
-			START_YMD,
-			END_YMD,
-			CMPLT_YN,
-			REG_DATE,
-			MOD_DATE
-		)
-		VALUES
-		(
-			#{userId, jdbcType=VARCHAR},
-			#{todoNm, jdbcType=VARCHAR},
-			#{startYmd, jdbcType=VARCHAR},
-			#{endYmd, jdbcType=VARCHAR},
-			#{cmpltYn, jdbcType=VARCHAR},
-			NOW(),
-			NOW()
-		)
-	</insert>
-	
-
 </mapper>

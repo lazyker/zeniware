@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import zeniware.common.sql.AbstractDao;
 import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
+import zeniware.schedule.vo.TodoVo;
 
 @Repository
 public class ScheduleDao extends AbstractDao {
@@ -143,6 +144,47 @@ public class ScheduleDao extends AbstractDao {
 	 */
 	public List<HashMap<String, String>> getRpetExcptSchedList(ScheduleVo paramVo) {
 		return (List<HashMap<String, String>>) selectList("schedule.getRpetExcptSchedList", paramVo);		
+	}
+	
+	/**
+	 * 할일 리스트
+	 * @param paramMap
+	 * @return List<TodoVo>
+	 */
+	public List<TodoVo> getTodoList(Map<String, Object>paramMap) {
+		return (List<TodoVo>) selectList("todo.getTodoList", paramMap);
+	}
+	
+	/**
+	 * 할일 추가
+	 * @param paramVo
+	 */
+	public void addTodo(TodoVo paramVo) {
+		insert("todo.addTodo", paramVo);
+	}
+	
+	/**
+	 * 할일 수정
+	 * @param paramVo
+	 */
+	public void updateTodo(TodoVo paramVo) {
+		insert("todo.updateTodo", paramVo);
+	}
+	
+	/**
+	 * 할일 삭제
+	 * @param paramVo
+	 */
+	public void delTodo(TodoVo paramVo) {
+		delete("todo.delTodo", paramVo);
+	}
+	
+	/**
+	 * 할일 삭제
+	 * @param paramVo
+	 */
+	public int getTodoSeq(TodoVo paramVo) {
+		return (int) selectOne("todo.getTodoSeq", paramVo);
 	}
 	
 	

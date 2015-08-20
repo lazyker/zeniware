@@ -33,6 +33,7 @@ import zeniware.common.util.DateUtil;
 import zeniware.schedule.service.ScheduleService;
 import zeniware.schedule.vo.CalendarVo;
 import zeniware.schedule.vo.ScheduleVo;
+import zeniware.schedule.vo.TodoVo;
 
 @Controller
 public class ScheduleController {
@@ -183,13 +184,10 @@ public class ScheduleController {
 		
 		for( int i=0;  i < list.size(); i++ ) {
 			ScheduleVo scheduleVo = list.get(i);
-			resultList.add(scheduleVo);
+//			resultList.add(scheduleVo);
 			
 			//반복일정이면..
 			if ("Y".equals(scheduleVo.getRpetYn())) {
-				
-				//반복 시작 일정 리스트에 추가
-//				resultList.add(scheduleVo);
 				
 				try {
 					String[] start = scheduleVo.getStart().split("T");
@@ -215,6 +213,26 @@ public class ScheduleController {
 					FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd", Locale.getDefault());
 					cal.setTime(startDate);
 					cal2.setTime(endDate);
+					
+					//반복 예외일정 조회
+					List<HashMap<String, String>> rpetExcptList = scheduleService.getRpetExcptSchedList(scheduleVo);
+					String resultFlag = "N";
+					
+					if (0 != rpetExcptList.size()) {
+						for (int excp = 0; excp < rpetExcptList.size(); excp++) {
+							HashMap<String, String> hm = rpetExcptList.get(excp);
+							String trgtYmd = hm.get("TRGT_YMD");
+							
+							if (startYmd.equals(trgtYmd)) {
+								resultFlag = "Y";
+							}
+							
+						}
+					}
+					
+					//반복 시작 일정 리스트에 추가 
+					if (resultFlag.equals("N"))
+						resultList.add(scheduleVo);
 					
 					for ( int j = 0 ; j < days; j ++ ) {
 						ScheduleVo scheduleVoNew = new ScheduleVo();
@@ -261,14 +279,10 @@ public class ScheduleController {
 							}
 						}
 						
-						
 						startYmd= sdf.format(cal.getTime());
 						System.out.println("startYmd ::: " + startYmd);
 						endYmd = sdf.format(cal2.getTime());
 						System.out.println("endYmd ::: " + endYmd);
-						
-						
-						List<HashMap<String, String>> rpetExcptList = scheduleService.getRpetExcptSchedList(scheduleVo);
 						
 						if (0 != rpetExcptList.size()) {
 							for (int excp = 0; excp < rpetExcptList.size(); excp++) {
@@ -300,6 +314,7 @@ public class ScheduleController {
 						scheduleVoNew.setMemoCont(scheduleVo.getMemoCont());
 						scheduleVoNew.setRpetDateType(scheduleVo.getRpetDateType());
 						scheduleVoNew.setRpetDd(scheduleVo.getRpetDd());
+						scheduleVoNew.setCldrColorVal(scheduleVo.getCldrColorVal());
 						
 						resultList.add(scheduleVoNew);
 						
@@ -309,6 +324,10 @@ public class ScheduleController {
 					e.printStackTrace();
 				}
 				
+			}
+			else {
+				//일반 일정
+				resultList.add(scheduleVo);
 			}
 			
 			
@@ -461,7 +480,7 @@ public class ScheduleController {
 		scheduleVo.setStartYmd(startYmdHHss[0]);
 		scheduleVo.setEndYmd(endYmdHHss[0]);
 		
-		if (null != scheduleVo.getStartTm()) {
+		if (startYmdHHss.length == 2) {
 			scheduleVo.setStartTm(startYmdHHss[1].replace(":", "").substring(0,4));
 			scheduleVo.setEndTm(endYmdHHss[1].replace(":", "").substring(0,4));
 		}
@@ -499,6 +518,69 @@ public class ScheduleController {
 		
 		OutputStream out = response.getOutputStream();
 		out.write(jsonString.getBytes());
+	}
+	
+	/** 할일 추가 **/
+	@RequestMapping(value="/schedule/addTodo") 
+	public void addTodo(@ModelAttribute TodoVo todoVo, HttpServletResponse response, Authentication authentication) throws IOException {
+		
+		
+		String type = (0 == todoVo.getTodoSeq() ? "New" : "Modify");
+		
+		//Spring Security의 Authentication 객를 주입
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		
+		
+//		todoVo.setCompId(memberInfo.getCompId()); //회사로도 구분이 필요할 경우 추가 해야 함
+		todoVo.setUserId(memberInfo.getUserId());
+		
+		if( "New".equals(type) ) {
+			int todoSeq = scheduleService.getTodoSeq(todoVo);	//할일 SEQ 가져오기
+			
+			todoVo.setRunType("New");
+			todoVo.setTodoSeq(todoSeq);
+			
+			scheduleService.addTodo(todoVo);
+		}
+		else {
+			todoVo.setRunType("Modify");
+			
+			scheduleService.updateTodo(todoVo);
+		}
+		
+		ObjectMapper om = new ObjectMapper();
+		
+		String jsonString = om.writeValueAsString(todoVo);
+		
+		OutputStream out = response.getOutputStream();
+		out.write(jsonString.getBytes());
+	}
+	
+	/** 할일 리스트 조회 **/
+	@RequestMapping(value="/schedule/getTodoList") 
+	public void getTodoList(@RequestParam Map<String, Object>paramMap, HttpServletResponse response) throws IOException {
+		
+		List<TodoVo> todoList  = scheduleService.getTodoList(paramMap);
+		
+		ObjectMapper om = new ObjectMapper();
+		
+		String jsonString = om.writeValueAsString(todoList);
+		
+		OutputStream out = response.getOutputStream();
+		out.write(jsonString.getBytes());
+	}
+	
+	/** 할일 삭제 **/
+	@RequestMapping(value="/schedule/delTodo") 
+	public void delTodo(@ModelAttribute TodoVo todoVo, HttpServletResponse response, Authentication authentication) throws IOException {
+		
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		
+//		todoVo.setCompId(memberInfo.getCompId());
+		todoVo.setUserId(memberInfo.getUserId());
+		
+		scheduleService.delTodo(todoVo);
+		
 	}
 	
 }
