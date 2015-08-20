@@ -47,12 +47,13 @@
 		/* userlist Data Binding */
 		$('#tblUserSort').DataTable({
 			ajax: {
-				"url": "../ajax/getUserlist?compId=" + prmCompId + "&deptId=" + prmDeptId + "&resigned=0", 
+				"url": contextPath + "/admin/ajax/getUserlist?compId=" + prmCompId + "&deptId=" + prmDeptId + "&resigned=0", 
 				"dataSrc": ""
 			}, 
 			deferRender: true, 
 			paging: false, 
-			rowReorder: { selector: 'tr', snapX: 10 }, 
+			ordering: false, 
+			rowReorder: { selector: 'tr', snapX: 10, update: true, dataSrc: 'sequence' }, 
 			aoColumns: [
 				{ "mRender": function(data, type, full) { return rendering(data, type, full); } }, 
 				{ "mData": "compId", "visible": false }, 
@@ -65,8 +66,16 @@
  			sDom: "rti"
 		});
 		
+// 		$('#tblUserSort').DataTable().on('row-reorder', function( e, diff, edit ) {
+// 			for (var i = 0, ien = diff.length; i < ien; i++) {
+// 				$(diff[i].node).addClass("reordered");
+// 			}
+// 		});
+		
 		$('#btnSave').on('click', function() {
-			$('#tblUserSort').dataTable().fnDraw();
+			//var rows = $('#tblUserSort').DataTable().rows('.reordered').indexes();
+//console.log($('#tblUserSort').DataTable().rows().data());
+			
 			var wholeRow = $('#tblUserSort').DataTable().rows().data();
 			if (wholeRow.length > 0) {
 				bootbox.confirm("저장하시겠습니까?", function(result) {
