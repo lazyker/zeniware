@@ -51,6 +51,7 @@ public class CommunityAdmController {
 		return "/adminLayout/community/default";
 	}
 
+	//커뮤니티 설정 변경(관리자)
 	@RequestMapping(value = "/editBasic", method=RequestMethod.POST)
 	public String setEditCumtBasic(@ModelAttribute CommunityVO communityVO, Authentication authentication) throws Throwable {
 		//Spring Security의 Authentication 객를 주입
@@ -83,15 +84,19 @@ public class CommunityAdmController {
 	public String getCommunityAllList(@RequestParam Map<String, Object> paramMap, ModelMap model, Authentication authentication) throws IOException{
 		//Spring Security의 Authentication 객를 주입
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
-		paramMap.put("compId", memberInfo.getCompId());
-		model.put("compId", memberInfo.getCompId());
+		paramMap.put("compId"		, memberInfo.getCompId());
+
+		model.put("compId"	, memberInfo.getCompId());
+		model.put("base"		,paramMap);
 
 		return "/adminLayout/community/cumtAllList";
 	}
 
 	@RequestMapping(value = "/getCumtAllListData")
-	public void getCumtAllListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
+	public void getCumtAllListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException{
 		List<ComtInfoVO> list = new ArrayList<ComtInfoVO>();
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId"		, memberInfo.getCompId());
 		try {
 			list = communityAdmService.getCumtALLListData(paramMap);
 
@@ -104,8 +109,10 @@ public class CommunityAdmController {
 	}
 
 	@RequestMapping(value = "/getCumtListData")
-	public void getCumtListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws IOException{
+	public void getCumtListData(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException{
 		List<ComtInfoVO> list = new ArrayList<ComtInfoVO>();
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId"		, memberInfo.getCompId());
 		try {
 			list = communityAdmService.getCumtListData(paramMap);
 
@@ -119,13 +126,17 @@ public class CommunityAdmController {
 
 	//개설신청 수락 처리 Ajax
 	@RequestMapping(value = "updateCumtAdmlist")
-	public void updateCumtAdmlist(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public void updateCumtAdmlist(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws Throwable {
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		try {
 			String jsonString = (String)paramMap.get("cumtlist");
 			ObjectMapper objectMapper = new ObjectMapper();
 			List<ComtInfoVO> cumtlist = objectMapper.readValue(jsonString,
 					objectMapper.getTypeFactory().constructCollectionType(List.class, ComtInfoVO.class));
-			logger.debug("cumtlist.get(0).getFcComtId()============================>" + cumtlist.get(0).getFcComtId());
+			for(int i = 0; i < cumtlist.size(); i++) {
+				cumtlist.get(i).setModUserId(memberInfo.getUserId());
+			}
+
 			int addRow = communityAdmService.updateCumtAdmlist(cumtlist);
 
 			ObjectMapper mapper = new ObjectMapper();
@@ -137,12 +148,16 @@ public class CommunityAdmController {
 
 	//개설신청 반려 처리 Ajax
 	@RequestMapping(value = "deleteCumtAdmlist")
-	public void deleteCumtAdmlist(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public void deleteCumtAdmlist(@RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws Throwable {
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		try {
 			String jsonString = (String)paramMap.get("cumtlist");
 			ObjectMapper objectMapper = new ObjectMapper();
 			List<ComtInfoVO> cumtlist = objectMapper.readValue(jsonString,
 					objectMapper.getTypeFactory().constructCollectionType(List.class, ComtInfoVO.class));
+			for(int i = 0; i < cumtlist.size(); i++) {
+				cumtlist.get(i).setModUserId(memberInfo.getUserId());
+			}
 			int addRow = communityAdmService.deleteCumtAdmlist(cumtlist);
 
 			ObjectMapper mapper = new ObjectMapper();

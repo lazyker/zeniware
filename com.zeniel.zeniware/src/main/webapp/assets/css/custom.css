@@ -14,7 +14,7 @@ table.dataTable tbody tr.selected {
 }
 
 table.dataTable th, table.dataTable td {
-	min-width: 50px;
+	min-width: 10px;
 	max-width: 350px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -22,11 +22,19 @@ table.dataTable th, table.dataTable td {
 }
 
 table-ellipsis th, .table-ellipsis td {
-	min-width: 50px;
+	min-width: 10px;
 	max-width: 160px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.table.dataTable tbody tr td.user-cb {
+	width: 1%
+}
+
+.table.dataTable tbody tr td.user-image {
+	width: 1%
 }
 
 /*** page-title customized ***/

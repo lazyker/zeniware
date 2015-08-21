@@ -51,7 +51,6 @@ public class CommunityAdmServiceImpl implements CommunityAdmService {
 		int addRows = -1;
 		try {
 			for(ComtInfoVO comtInfoVO: cumtlist) {
-				logger.debug("comtInfoVO =====================>" + comtInfoVO.getFcComtId());
 				addRows += communityAdmDao.updateCumtAdmlist(comtInfoVO);
 			}
 		}

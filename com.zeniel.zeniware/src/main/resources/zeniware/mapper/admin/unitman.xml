@@ -123,6 +123,10 @@
 		CALL UP_UNITMAN_DEPT_MOVE(#{compId}, #{deptId}, #{parentDeptId});
 	</update>
 	
+	<update id="moveSingleUser" parameterType="map">
+		CALL UP_UNITMAN_USER_MOVE(#{compId}, #{userId}, #{deptId});
+	</update>
+	
 	<update id="setSingleDeptSort" parameterType="map">
 		CALL UP_UNITMAN_DEPT_SORT_SET(#{compId}, #{deptId}, #{sortOrder});
 	</update>
@@ -135,6 +139,14 @@
 		CALL UP_UNITMAN_USER_SORT_SET(#{compId}, #{userId}, #{sortOrder});
 	</update>
 	
+	<update id="restoreSingleComp" parameterType="map">
+		CALL UP_UNITMAN_COMP_RESTORE(#{compId});
+	</update>
+	
+	<update id="restoreSingleUser" parameterType="map">
+		CALL UP_UNITMAN_USER_RESTORE(#{compId}, #{userId}, #{deptId});
+	</update>
+	
 	<delete id="deleteSingleComp" parameterType="map">
 		CALL UP_UNITMAN_COMP_DELETE(#{mode}, #{compId});
 	</delete>
@@ -143,8 +155,8 @@
 		CALL UP_UNITMAN_DEPT_DELETE(#{mode}, #{compId}, #{deptId});
 	</delete>
 	
-	<delete id="restoreSingleComp" parameterType="map">
-		CALL UP_UNITMAN_COMP_RESTORE(#{compId});
+	<delete id="deleteSingleUser" parameterType="map">
+		CALL UP_UNITMAN_USER_DELETE(#{mode}, #{compId}, #{userId});
 	</delete>
 
 </mapper>

@@ -70,6 +70,6 @@ public class CommunityAdmDao extends AbstractDao {
 	 * @param
 	*/
 	public int deleteCumtAdmlist(ComtInfoVO comtInfoVO) {
-		return (int) delete("cmutadmin.deleteCumtAdmlist", comtInfoVO);
+		return (int) update("cmutadmin.deleteCumtAdmlist", comtInfoVO);
 	}
 }

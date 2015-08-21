@@ -120,12 +120,12 @@ $(document).ready(function() {
 	var rendering = function(data, type, full) {
 		var result = "";
 		
-		if (type == 'display') {
-			result += "<a href='#'>";
+//		if (type == 'display') {
+// 			result += "<a href='#'>";
 			result += "<img src='${pageContext.request.contextPath}";
 			result += "/assets/images/user-3.png' class='img-circle' alt='user-pic' />";
-			result += "</a>";
-		}
+// 			result += "</a>";
+//		}
 		
 		return result;
 	};

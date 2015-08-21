@@ -95,6 +95,8 @@ public class ModalController {
   @RequestMapping("/modal/admin/deptTree")
   public String requestJstreeDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
+    model.put("opener", paramMap.get("opener"));
+    
     return "/modal/admin/deptTree";
   }
   
@@ -119,8 +121,8 @@ public class ModalController {
   }
   
   private Department deptMaker(String compId, String parentDeptId, String parentDeptName) {
-    return new Department()
-      .setCompId(compId).setParentDeptId(parentDeptId).setParentDeptName(parentDeptName).setActivateYn(true);
+    return new Department().setCompId(compId)
+      .setParentDeptId(parentDeptId).setParentDeptName(parentDeptName).setActivateYn(true);
   }
   
   private Department deptMaker(Map<String, Object> paramMap) {
@@ -128,8 +130,8 @@ public class ModalController {
   }
   
   private User userMaker(String compId, String deptId, String deptName) {
-    return new User().setCompId(compId).setDeptId(deptId).setDeptName(deptName)
-      .setActivateYn(true).setUseSolarYn(true).setSecurityLevel(10);
+    return new User().setCompId(compId).setDeptId(deptId)
+      .setDeptName(deptName).setActivateYn(true).setUseSolarYn(true).setSecurityLevel(10);
   }
   
   private User userMaker(Map<String, Object> paramMap) {
@@ -137,7 +139,9 @@ public class ModalController {
   }
   
   private List<User> userlistMaker(String compId, String deptId) {
+    
     Map<String, Object> paramMap = new HashMap<String, Object>();
+    
     paramMap.put("compId", compId);
     paramMap.put("deptId", deptId);
     paramMap.put("resigned", 0);
@@ -151,6 +155,7 @@ public class ModalController {
     
     try {
       Map<String, Object> paramMap = new HashMap<String, Object>();
+      
       paramMap.put("groupId", groupId);
       paramMap.put("langCode", langCode);
       
