@@ -21,6 +21,7 @@
 						<th class="no-sorting">ID</th>
 						<th class="no-sorting">직위</th>
 						<th class="no-sorting">메일</th>
+						<th class="no-sorting">정렬순서</th>
 					</tr>
 				</thead>
 			</table>
@@ -52,61 +53,56 @@
 			}, 
 			deferRender: true, 
 			paging: false, 
-			ordering: false, 
 			rowReorder: { selector: 'tr', snapX: 10, update: false }, 
 			aoColumns: [
-				{ "mRender": function(data, type, full) { return rendering(data, type, full); } }, 
+				{ "mRender": function(data, type, full) { return imageRender(data, type, full); }, "sClass": "user-image" }, 
 				{ "mData": "compId", "visible": false }, 
         { "mData": "deptName" }, 
       	{ "mData": "userName" }, 
       	{ "mData": "userId" }, 
       	{ "mData": "jobTitleName" }, 
-      	{ "mData": "mailId" }
+      	{ "mData": "mailId" }, 
+      	{ "mData": "sortOrder", "visible": false }
       ], 
+      order: [ [7, "asc"] ], 
  			sDom: "rti"
 		});
 		
-// 		$('#tblUserSort').DataTable().on('row-reorder', function( e, diff, edit ) {
-// 			for (var i = 0, ien = diff.length; i < ien; i++) {
-// 				$(diff[i].node).addClass("reordered");
-// 			}
-// 		});
-		
 		$('#btnSave').on('click', function() {
-			//var rows = $('#tblUserSort').DataTable().rows('.reordered').indexes();
-//console.log($('#tblUserSort').DataTable().rows().data());
+			var oTable = $('#tblUserSort').dataTable();			
+			var $rows = $('tbody tr', $('#tblUserSort'));
 			
-			var wholeRow = $('#tblUserSort').DataTable().rows().data();
-			if (wholeRow.length > 0) {
-				bootbox.confirm("저장하시겠습니까?", function(result) {
+			if ($rows.length > 0) {
+				bootbox.confirm('저장하시겠습니까?', function(result) {
 					if (result) {
 						$.ajax({
-							dataType: "json", 
-							type: "post", 
-							url: contextPath + "/admin/ajax/setUserListSort", 
+							dataType: 'json', 
+							type: 'post', 
+							url: contextPath + '/admin/ajax/setUserListSort', 
 							data: { userlist: createJsonUserlist() }, 
 							success: function(data) {
 								modalToggle(false);
 								$('#tblUser').DataTable().ajax.reload(null, false);
-							} 
-						});
+							}
+						})
 					}
 				});
-				
 			} else {
-				toastrAlert('error', '저장할 사용자가 없습니다.');
+				toastrAlert('error', '부서원이 존재하지 않습니다.');
 			}
 		});
 		
 		var createJsonUserlist = function() {
 			var jsonObj = [];
-			
-			$.each($('#tblUser').DataTable().rows().data(), function(index, element) {
-				var jsonItem = {};
+			var oTable = $('#tblUserSort').dataTable();
 
-				jsonItem["compId"] = element.compId;
-				jsonItem["userId"] = element.userId;
-				jsonItem["sortOrder"] = index;
+			$.each($('#tblUserSort tbody tr'), function(index, element) {
+				var jsonItem = {};
+				var aData = oTable.fnGetData(element);
+				
+				jsonItem['compId'] = aData.compId;
+				jsonItem['userId'] = aData.userId;
+				jsonItem['sortOrder'] = index;
 				
 				jsonObj.push(jsonItem);
 			});
@@ -115,13 +111,13 @@
 		};
 		
 		/* 사용자 이미지 Rendering... */
-		var rendering = function(data, type, full) {
+		var imageRender = function(data, type, full) {
 			var result = "";
 			
 			if (type == 'display') {
 				result += "<a href='#'>";
 				result += "<img src='${pageContext.request.contextPath}";
-				result += "/assets/images/user-3.png' class='img-circle' alt='user-pic' />";
+				result += "/assets/images/user-1.png' class='img-circle' alt='user-pic' />";
 				result += "</a>";
 			}
 			

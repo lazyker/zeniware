@@ -27,28 +27,34 @@ public interface UnitManService {
   public String getRootDept(String compId);
   
   @Transactional(value="transactionManager")
-  public int setSingleComp(Company comp);
-  
-  @Transactional(value="transactionManager")
-  public int setSingleDept(Department dept);
-  
-  @Transactional(value="transactionManager")
-  public int setSingleUser(User user);
-  
-  @Transactional(value="transactionManager")
-  public int softDeleteUserList(List<User> userlist);
-  
-  @Transactional(value="transactionManager")
   public int deleteSingleComp(Map<String, Object> paramMap);
   
   @Transactional(value="transactionManager")
   public int deleteSingleDept(Map<String, Object> paramMap);
-  
+
   @Transactional(value="transactionManager")
   public int restoreSingleComp(Map<String, Object> paramMap);
   
   @Transactional(value="transactionManager")
+  public int restoreUserList(Map<String, Object> paramMap) throws Throwable;
+  
+  @Transactional(value="transactionManager")
+  public int setSingleComp(Map<String, Object> paramMap) throws Throwable;
+  
+  @Transactional(value="transactionManager")
+  public int setSingleDept(Map<String, Object> paramMap) throws Throwable;
+  
+  @Transactional(value="transactionManager")
+  public int setSingleUser(Map<String, Object> paramMap) throws Throwable;
+
+  @Transactional(value="transactionManager")
+  public int deleteUserList(Map<String, Object> paramMap) throws Throwable;  
+  
+  @Transactional(value="transactionManager")
   public int moveSingleDept(Map<String, Object> paramMap) throws Throwable;
+  
+  @Transactional(value="transactionManager")
+  public int moveUserList(Map<String, Object> paramMap) throws Throwable;
   
   @Transactional(value="transactionManager")
   public int setUserListSort(Map<String, Object> paramMap) throws Throwable;

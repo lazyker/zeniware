@@ -1,5 +1,6 @@
 package zeniware.admin.unitman.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -55,21 +56,6 @@ public class UnitManServiceImpl implements UnitManService {
   }
   
   @Override
-  public int setSingleComp(Company comp) {
-    return unitmanDao.setSingleComp(comp);
-  }
-  
-  @Override
-  public int setSingleDept(Department dept) {
-    return unitmanDao.setSingleDept(dept);
-  }
-  
-  @Override
-  public int setSingleUser(User user) {
-    return unitmanDao.setSingleUser(user);
-  }
-  
-  @Override
   public int deleteSingleComp(Map<String, Object> paramMap) {
     return unitmanDao.deleteSingleComp(paramMap);
   }
@@ -85,6 +71,111 @@ public class UnitManServiceImpl implements UnitManService {
   }
   
   @Override
+  public int restoreUserList(Map<String, Object> paramMap) throws Throwable {
+    int affectedRows = 0;
+    
+    try {
+      String jsonString = (String)paramMap.get("userlist");
+      ObjectMapper objectMapper = new ObjectMapper();
+      
+      List<User> userlist = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructCollectionType(List.class, User.class));
+      
+      for (User user : userlist) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        
+        map.put("compId", user.getCompId());
+        map.put("userId", user.getUserId());
+        map.put("deptId", paramMap.get("deptId"));
+        
+        affectedRows += unitmanDao.restoreSingleUser(map);
+      }
+      
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
+  }
+  
+  @Override
+  public int setSingleComp(Map<String, Object> paramMap) throws Throwable {
+
+    int affectedRows = 0;
+    
+    try {
+      String jsonString = (String)paramMap.get("comp");
+      ObjectMapper objectMapper = new ObjectMapper();
+      Company comp = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructType(Company.class));
+      
+      affectedRows = unitmanDao.setSingleComp(comp);
+      
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
+  }
+  
+  @Override
+  public int setSingleDept(Map<String, Object> paramMap) throws Throwable {
+    
+    int affectedRows = 0;
+    
+    try {
+      String jsonString = (String)paramMap.get("dept");
+      ObjectMapper objectMapper = new ObjectMapper();
+      Department dept = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructType(Department.class));
+      
+      affectedRows = unitmanDao.setSingleDept(dept);
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
+  }
+  
+  @Override
+  public int setSingleUser(Map<String, Object> paramMap) throws Throwable {
+    int affectedRows = 0;
+    
+    try {
+      String jsonString = (String)paramMap.get("user");
+      ObjectMapper objectMapper = new ObjectMapper();
+      User user = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructType(User.class));
+      
+      affectedRows = unitmanDao.setSingleUser(user);
+      
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
+  }
+  
+  @Override
+  public int deleteUserList(Map<String, Object> paramMap) throws Throwable {
+    
+    int affectedRows = 0;
+    
+    try {
+      String jsonString = (String)paramMap.get("userlist");
+      ObjectMapper objectMapper = new ObjectMapper();
+      
+      List<User> userlist = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructCollectionType(List.class, User.class));
+      
+      for (User user : userlist) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        
+        map.put("mode", paramMap.get("mode"));
+        map.put("compId", user.getCompId());
+        map.put("userId", user.getUserId());
+        
+        affectedRows += unitmanDao.deleteSingleUser(map);
+      }
+      
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
+  }
+  
+  @Override
   public int setUserListSort(Map<String, Object> paramMap) throws Throwable {
     
     int affectedRows = 0;
@@ -92,9 +183,9 @@ public class UnitManServiceImpl implements UnitManService {
     try {
       String jsonString = (String)paramMap.get("userlist");
       
-      ObjectMapper mapper = new ObjectMapper();
-      List<User> userlist = 
-        mapper.readValue(jsonString, mapper.getTypeFactory().constructCollectionType(List.class, User.class));
+      ObjectMapper objectMapper = new ObjectMapper();
+      List<User> userlist = objectMapper.readValue(jsonString, 
+          objectMapper.getTypeFactory().constructCollectionType(List.class, User.class));
       
       for (User user : userlist) {
         affectedRows += unitmanDao.setSingleUserSort(user);
@@ -121,9 +212,9 @@ public class UnitManServiceImpl implements UnitManService {
       
       affectedRows = unitmanDao.moveSingleDept(paramMap);
       
-      ObjectMapper mapper = new ObjectMapper();
-      List<Department> deptlist = 
-        mapper.readValue(jsonString, mapper.getTypeFactory().constructCollectionType(List.class, Department.class));
+      ObjectMapper objectMapper = new ObjectMapper();
+      List<Department> deptlist = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructCollectionType(List.class, Department.class));
       
       for (Department dept : deptlist) {
         affectedRows += unitmanDao.setSingleDeptSort(dept);
@@ -134,17 +225,30 @@ public class UnitManServiceImpl implements UnitManService {
   }
   
   @Override
-  public int softDeleteUserList(List<User> userlist) {
+  public int moveUserList(Map<String, Object> paramMap) throws Throwable {
     
     int affectedRows = 0;
     
     try {
+      String jsonString = (String)paramMap.get("userlist");
+      
+      ObjectMapper objectMapper = new ObjectMapper();
+      List<User> userlist = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructCollectionType(List.class, User.class));
+      
       for (User user : userlist) {
-        affectedRows += unitmanDao.softDeleteSingleUser(user);
+        Map<String, Object> map = new HashMap<String, Object>();
+        
+        map.put("compId", user.getCompId());
+        map.put("userId", user.getUserId());
+        map.put("deptId", paramMap.get("deptId"));
+        
+        affectedRows += unitmanDao.moveSingleUser(map);
       }
+      
     } catch (Exception e) { throw e; }
     
     return affectedRows;
   }
-  
+    
 }

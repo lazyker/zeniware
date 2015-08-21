@@ -166,7 +166,7 @@
 				toastrAlert('error', '회사를 선택하세요.');
 				
 			} else {
-				$(location).prop('href', contextPath + '/admin/preference/unitResignedUser?compId=' + selData[0].compId);
+				$(location).prop('href', contextPath + '/admin/preference/unitDeletedUser?compId=' + selData[0].compId);
 			}
 		});
 

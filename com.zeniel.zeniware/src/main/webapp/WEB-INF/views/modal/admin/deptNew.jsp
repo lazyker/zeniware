@@ -125,7 +125,7 @@
 					success: function(data) {
 						modalToggle(false);
 						
-						var instance = $('#jstree_demo_div').jstree(true);
+						var instance = $('#jstreeDept').jstree(true);
 						var selNode = instance.get_selected();
 						instance.refresh(selNode);
 					} 

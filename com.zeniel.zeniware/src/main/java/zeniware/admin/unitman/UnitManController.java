@@ -1,6 +1,5 @@
 package zeniware.admin.unitman;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,13 +10,9 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zeniware.common.plugin.service.PluginService;
-import zeniware.common.plugin.vo.SelectOption;
 import zeniware.admin.unitman.service.UnitManService;
 import zeniware.admin.unitman.vo.Company;
 import zeniware.admin.unitman.vo.Department;
@@ -27,81 +22,42 @@ import zeniware.admin.unitman.vo.User;
 public class UnitManController {
   
   @Autowired
-  PluginService pluginService;
-  
-  @Autowired
   UnitManService unitmanService;
   
   /*********************
    * Public Procedures
    *********************/
   @RequestMapping("/admin/preference/unitSelect")
-  public String requestUnitSelect(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  public String requestUnitSelect(@RequestParam Map<String, Object> paramMap, ModelMap model) {
     
     return "/preferenceLayout/unitSelect";
   }
   
   @RequestMapping("/admin/preference/unitMain")
-  public String requestUnitMain(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  public String requestUnitMain(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
     
     model.put("compId", paramMap.get("compId"));
     return "/preferenceLayout/unitMain";
   }
   
   @RequestMapping("/admin/preference/unitDeletedComp")
-  public String requestUnitDeletedComp(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  public String requestUnitDeletedComp(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
     
     return "/preferenceLayout/unitDeletedComp";
   }
   
   @RequestMapping("/admin/preference/unitDeletedDept")
-  public String requestUnitClosedDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  public String requestUnitClosedDept(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
     
     model.put("compId", paramMap.get("compId"));
     return "/preferenceLayout/unitDeletedDept";
   }
   
-  @RequestMapping("/admin/preference/unitResignedUser")
-  public String requestUnitResignedUser(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
+  @RequestMapping("/admin/preference/unitDeletedUser")
+  public String requestUnitResignedUser(@RequestParam Map<String, Object> paramMap, ModelMap model) {
     
     model.put("compId", paramMap.get("compId"));
-    return "/preferenceLayout/unitResignedUser";
-  }
-  
-  @RequestMapping(value="/admin/preference/unitNewUser", method=RequestMethod.GET)
-  public String requestUnitNewUserForm(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-
-    try {
-      String paramCompId = (String)paramMap.get("compId");
-      String paramUserId = (String)paramMap.get("userId");
-      String paramDeptId = (String)paramMap.get("deptId");
-      String paramDeptName = (String)paramMap.get("deptName");
-      
-      model.put("user", paramUserId == null ? this.userMaker(paramCompId, paramDeptId) : this.userMaker(paramMap));
-      
-      model.put("compId", paramCompId);
-      model.put("deptName", paramDeptName);
-
-      model.put("sboxEntitle", this.makeSelectbox("A0000", "KO"));
-      model.put("sboxJobTitle", this.makeSelectbox("A0001", "KO"));
-      model.put("sboxJobGrade", this.makeSelectbox("A0002", "KO"));
-      model.put("sboxJobRole", this.makeSelectbox("A0003", "KO"));
-      model.put("sboxLanguage", this.makeSelectbox("A0004", "KO"));      
-      
-    } catch (Exception e) { throw e; }
-
-    return "/preferenceLayout/unitNewUser";
-  }
-  
-  @RequestMapping(value="/admin/preference/unitNewUser", method=RequestMethod.POST)
-  public String requestUnitNewUserSubmit(@ModelAttribute User user) throws Throwable {
-    
-    try {
-      unitmanService.setSingleUser(user);
-      
-    } catch (Exception e) { throw e; }
-    
-    return "redirect:/admin/preference/unitMain?compId=" + user.getCompId();
+    return "/preferenceLayout/unitDeletedUser";
   }
   
   @RequestMapping("/admin/ajax/getComplist")
@@ -153,7 +109,7 @@ public class UnitManController {
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      User user = this.userMaker(paramMap);
+      User user = unitmanService.getSingleUser(paramMap);
       
       ObjectMapper mapper = new ObjectMapper();
       response.setContentType("application/json");
@@ -167,12 +123,9 @@ public class UnitManController {
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {      
-      String jsonString = (String)paramMap.get("comp");
+      int affectedRows = unitmanService.setSingleComp(paramMap);
+
       ObjectMapper objectMapper = new ObjectMapper();
-      Company comp = objectMapper.readValue(jsonString, objectMapper.getTypeFactory().constructType(Company.class));
-      
-      int affectedRows = unitmanService.setSingleComp(comp);
-      
       response.setContentType("application/json");
       objectMapper.writeValue(response.getOutputStream(), affectedRows);
       
@@ -183,13 +136,10 @@ public class UnitManController {
   public void setSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {      
-      String jsonString = (String)paramMap.get("dept");
+    try {
+      int affectedRows = unitmanService.setSingleDept(paramMap);
+      
       ObjectMapper objectMapper = new ObjectMapper();
-      Department dept = objectMapper.readValue(jsonString, objectMapper.getTypeFactory().constructType(Department.class));
-      
-      int affectedRows = unitmanService.setSingleDept(dept);
-      
       response.setContentType("application/json");
       objectMapper.writeValue(response.getOutputStream(), affectedRows);
       
@@ -201,12 +151,9 @@ public class UnitManController {
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      String jsonString = (String)paramMap.get("user");
+      int affectedRows = unitmanService.setSingleUser(paramMap);
+      
       ObjectMapper objectMapper = new ObjectMapper();
-      User user = objectMapper.readValue(jsonString, objectMapper.getTypeFactory().constructType(User.class));
-      
-      int affectedRows = unitmanService.setSingleUser(user);
-      
       response.setContentType("application/json");
       objectMapper.writeValue(response.getOutputStream(), affectedRows);
       
@@ -219,6 +166,20 @@ public class UnitManController {
     
     try {
       int affectedRows = unitmanService.moveSingleDept(paramMap);
+      
+      ObjectMapper objectMapper = new ObjectMapper();
+      response.setContentType("application/json");
+      objectMapper.writeValue(response.getOutputStream(), affectedRows);
+      
+    } catch (Exception e) { throw e; }
+  }
+  
+  @RequestMapping("/admin/ajax/moveUserList")
+  public void moveUserList(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    try {
+      int affectedRows = unitmanService.moveUserList(paramMap);
       
       ObjectMapper objectMapper = new ObjectMapper();
       response.setContentType("application/json");
@@ -255,19 +216,14 @@ public class UnitManController {
     } catch (Exception e) { throw e; }
   }
   
-  @RequestMapping("/admin/ajax/softDeleteUserlist")
-  public void softDeleteUserlist(@RequestParam Map<String, Object> paramMap, 
+  @RequestMapping("/admin/ajax/deleteUserList")
+  public void deleteUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      String jsonString = (String)paramMap.get("userlist");
+      int affectedRows = unitmanService.deleteUserList(paramMap);
+      
       ObjectMapper objectMapper = new ObjectMapper();
-      
-      List<User> userlist = objectMapper.readValue(jsonString, 
-        objectMapper.getTypeFactory().constructCollectionType(List.class, User.class));
-      
-      int affectedRows = unitmanService.softDeleteUserList(userlist);
-      
       response.setContentType("application/json");
       objectMapper.writeValue(response.getOutputStream(), affectedRows);
       
@@ -303,32 +259,18 @@ public class UnitManController {
     } catch (Exception e) { throw e; }
   }
   
-  /*********************
-   * Private Procedures
-   *********************/
-  private List<SelectOption> makeSelectbox(String groupId, String langCode) {
-    
-    List<SelectOption> list = null;
+  @RequestMapping("/admin/ajax/restoreUserList")
+  public void restoreSingleUser(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     try {
-      Map<String, Object> paramMap = new HashMap<String, Object>();
-      paramMap.put("groupId", groupId);
-      paramMap.put("langCode", langCode);
+      int affectedRows = unitmanService.restoreUserList(paramMap);
       
-      list = pluginService.getSboxCodeList(paramMap);
+      ObjectMapper objectMapper = new ObjectMapper();
+      response.setContentType("application/json");
+      objectMapper.writeValue(response.getOutputStream(), affectedRows);
       
     } catch (Exception e) { throw e; }
+  }
     
-    return list;
-  }
-  
-  private User userMaker(String compId, String deptId) {
-    return new User().setCompId(compId).setDeptId(deptId)
-      .setActivateYn(true).setUseSolarYn(true).setSecurityLevel(10).setSortOrder(0);
-  }
-  
-  private User userMaker(Map<String, Object> paramMap) {
-    return unitmanService.getSingleUser(paramMap);
-  }
-  
 }
