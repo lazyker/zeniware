@@ -40,6 +40,13 @@ public class ScheduleVo implements Serializable {
 	private String trgtYmd;
 	
 	
+
+	public String getRpetDd() {
+		return rpetDd;
+	}
+	public void setRpetDd(String rpetDd) {
+		this.rpetDd = rpetDd;
+	}
 	public String getCldrColorVal() {
 		return cldrColorVal;
 	}
@@ -81,12 +88,6 @@ public class ScheduleVo implements Serializable {
 	}
 	public void setRpetDateType(String rpetDateType) {
 		this.rpetDateType = rpetDateType;
-	}
-	public String getRpetDd() {
-		return rpetDd;
-	}
-	public void setRpetDd(String rpetDd) {
-		this.rpetDd = rpetDd;
 	}
 	public String getTitle() {
 		return title;
