@@ -144,7 +144,7 @@ table-ellipsis th, .table-ellipsis td {
 
 label>span {
 	position: relative;
-	display: inline-block;
+/* 	display: inline-block; */
 	color: #7d7f7f
 }
 
@@ -158,6 +158,15 @@ li.done span>a:after {
 	height: 1px;
 	background: #8a8b8b;
 	content: ''
+}
+
+.ellipsis {
+	margin-bottom : 0px;
+	min-width: 50px;
+	max-width: 220px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
 
 /**
