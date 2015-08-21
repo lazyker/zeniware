@@ -43,7 +43,7 @@ $(document).ready(function() {
 	$("#btnCancel2").html("취소");
 
 	var table = $('#cumtInfo').DataTable({
-		ajax: {"url": "../community/getCumtListData?compId="+${compId}, "dataSrc": ""},
+		ajax: {"url": "../community/getCumtListData", "dataSrc": ""},
 		deferRender: true,
 		pagingType: "simple_numbers",
 		aoColumns: [
@@ -147,6 +147,7 @@ $(document).ready(function() {
 				var pos = aTable.fnGetPosition(this);
 //				var data = aTable.fnGetData(pos).fcBoardId;
 				var jsonItem = {};
+				alert(aTable.fnGetData(pos).fcComtId);
 				jsonItem["fcComtId"] = aTable.fnGetData(pos).fcComtId;
 				jsonItem["compId"] = "${compId}";
 				

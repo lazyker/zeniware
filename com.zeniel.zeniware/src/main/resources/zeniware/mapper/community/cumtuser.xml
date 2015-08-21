@@ -114,7 +114,7 @@
 		FROM
 			FC_CUMT_INFO
 		WHERE 1 = 1
-			AND ADM_ACT_YN = 'Y'
+			AND ADM_ACT_YN IN ('Y','N')
 			AND CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
 	</select>
 
