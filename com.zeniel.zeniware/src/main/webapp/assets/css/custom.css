@@ -13,16 +13,8 @@ table.dataTable tbody tr.selected {
 	border-color: #63b026
 }
 
-table.dataTable th, table.dataTable td {
-	min-width: 10px;
-	max-width: 350px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
 table-ellipsis th, .table-ellipsis td {
-	min-width: 10px;
+	min-width: 1%;
 	max-width: 160px;
 	overflow: hidden;
 	text-overflow: ellipsis;
