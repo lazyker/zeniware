@@ -13,20 +13,21 @@ table.dataTable tbody tr.selected {
 	border-color: #63b026
 }
 
-table-ellipsis th, .table-ellipsis td {
-	min-width: 1%;
-	max-width: 160px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
 .table.dataTable tbody tr td.user-cb {
 	width: 1%
 }
 
 .table.dataTable tbody tr td.user-image {
 	width: 1%
+}
+
+/*** table-ellipsis added ***/
+table-ellipsis th, .table-ellipsis td {
+	min-width: 1%;
+	max-width: 160px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 /*** page-title customized ***/
