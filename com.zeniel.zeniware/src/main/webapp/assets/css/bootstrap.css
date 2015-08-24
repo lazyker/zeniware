@@ -1440,7 +1440,8 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small,
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-	margin-top: 18px;
+	/** 2015-08-24 lazyker 수정(margin-top: 18px;) **/
+	margin-top: 9px;
 	margin-bottom: 9px
 }
 
@@ -5764,7 +5765,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover,
 }
 
 .panel-title {
-	margin-top: 0;
+	/** 2015-08-24 lazyker 수정(margin-top: 0;) **/
+/* 	margin-top: 0; */
 	margin-bottom: 0;
 	font-size: 15px;
 	color: inherit

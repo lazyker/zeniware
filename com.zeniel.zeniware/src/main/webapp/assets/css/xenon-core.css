@@ -3561,7 +3561,8 @@ body.chat-open #chat {
     margin: 0;
     background: 0 0;
     font-size: 17px;
-    padding-bottom: 15px;
+    /** 2015-08-24 lazyker 수정 (padding-bottom: 15px;) **/
+    padding-bottom: 7px;
     border-bottom: 2px solid #f5f5f5;
 }
 .panel .panel-heading>.panel-title {
