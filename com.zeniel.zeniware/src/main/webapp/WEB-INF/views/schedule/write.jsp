@@ -413,6 +413,7 @@
 					<input type="text" name="rpetType" id="rpetType" value='<c:out value="${schedVo.rpetType}"></c:out>' placeholder="반복유형">
 					<input type="text" name="unlmtRpetYn" id="unlmtRpetYn" value='<c:out value="${schedVo.unlmtRpetYn}"></c:out>' value="N" placeholder="무한반복">
 					<input type="text" name="rpetDateType" id="rpetDateType" value='<c:out value="${schedVo.rpetDateType}"></c:out>' value="0" placeholder="반복날짜형태">
+					<input type="text" name="rpetDds" id="rpetDds" placeholder="매주 선택날짜들">
 				</form>
 			</div>
 		</div>
@@ -538,6 +539,36 @@
 				}
 			});
 			
+// 			$('input[name=rpetDd]').on('click', function() {
+// 				var selectDate = new Date('<c:out value="${startYmd}"></c:out>');
+// 				var toDay = selectDate.getDay();
+// 				var result = "select";
+				
+// 				$.each($('input[name=rpetDd]'), function() {
+// 					if (this.value == toDay) {
+// 						$(this).prop('checked', true);
+// 					}
+					
+// 				})
+				
+// 				   if ($(this).is(':checked')) {
+// 					   result = 
+// 				   }
+// 					toastrAlert('error', '반복 요일을 선택해 주세요.');
+				
+// 				if (!$($('input[name=rpetDd]')[toDay]).is('checked')) {
+// 					return;
+// 				}
+				
+// 				$('input[name=rpetDd]').is(':checked')
+				
+// 				var rpetDd = $('input[name=rpetDd]')[day];
+				
+// 				rpetDd = $(rpetDd).closest('.cbr-replaced');
+// 				rpetDd.addClass('cbr-checked');
+				
+// 			});
+			
 			//반복 옵션 탭 이벤트
 			$('.nav-tabs').find('li').on('click', function() {
 				var dayOption	= $(this).find('a').prop('href').split('#');
@@ -545,8 +576,14 @@
 				rpetTitleEvent(dayOption[1]);
 			});
 			
-			//저장 이벤트
+			//일정 저장 이벤트
 			$('#saveSchedule').on('click', function() {
+				
+				if ($('input[name="schedNm"]').val() == "") {
+					toastrAlert('error', '제목을 입력해 주세요.');
+					$('input[name="schedNm"]').focus();
+					return false;
+				}
 
 				if ( $("#calendarList option:selected").val() == undefined )
 					$("#calendarList option:eq(0)").prop("selected", "selected");
@@ -562,7 +599,10 @@
 					if (endTmVal.val().length == 4)
 						endTmVal.val(addZero(endTmVal.val()));
 				}
-							
+				
+				//반복일정 저장 시.. (나중에 구분 하자)
+				if ($('#rpetYn').val() == 'Y') {}
+
 				var $rpetCyc = $('#rpetCyc'); //반복주기
 				var $rpetEndYmd = $('#rpetEndYmd'); //반복 종료일
 				var repeatOps = repeatOption();
@@ -582,6 +622,7 @@
 					$rpetCyc.val(Number($('#weeklyRpetCyc').val()));
 					$rpetEndYmd.val($('#weeklyEndYmd').val());
 					$('#rpetType').val('W');
+					$('input[name=rpetDd]:checked').prop('disabled', false); //매주 요일에 대한 체크박스 정보를 저장하기위해 
 					
 				} else if (repeatOps == 'monthly') {
 					$rpetCyc.val(Number($('#monthlyRpetCyc').val()));
@@ -652,6 +693,7 @@
 			}
 			else {
 				$('#rpetOption').hide();
+				$('#rpetYn').val("N");
 			}
 		}
 		
@@ -681,6 +723,14 @@
 			} else if (dayOption == 'weekly') {
 				date.setMonth(date.getMonth()+1);
 				rpetEndYmd = date.format("yyyy-MM-dd");
+				
+				//매주 요일 자동 선택
+				var selectDate = new Date(startYmd);
+				var day = selectDate.getDay();
+				
+				var rpetDd = $('input[name=rpetDd]')[day];
+				$(rpetDd).prop('disabled', true).prop('checked', true);
+				$(rpetDd).closest('.cbr-replaced').addClass('cbr-checked').addClass('cbr-disabled');
 				
 				$('#weeklyEndYmd').datepicker('update', rpetEndYmd);
 				

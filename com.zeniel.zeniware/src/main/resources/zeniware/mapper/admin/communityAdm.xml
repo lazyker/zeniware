@@ -62,7 +62,7 @@
 				,'N'
 				,0
 				,#{fileNotName, javaType=STRING, jdbcType=VARCHAR}
-				,SYSDATE()
+				,NOW()
 				,'admin'
 			FROM FC_ADMN_MAST
 	</insert>
@@ -93,14 +93,16 @@
 			FC_CUMT_INFO
 		WHERE 1 = 1
 			AND COMP_ID = #{compId}
-			AND OPEN_YN = 'N'
+			AND ADM_ACT_YN = 'N'
 	</select>
 
 	<update id="cmutadmin.updateCumtAdmInfoList" parameterType="map">
 		UPDATE FC_CUMT_INFO SET
 			ADM_ACT_YN = 'Y'
+			,MOD_DATE = NOW()
 		WHERE 1 = 1
 			AND COMP_ID = #{compId}
+			AND ADM_ACT_YN = 'N'
 	</update>
 
 	<select id="cmutadmin.getCumtListData" parameterType="map" resultMap="cumtInfoResultMap">
@@ -133,10 +135,12 @@
 			AND COMP_ID = #{compId}
 	</update>
 
-	<delete id="cmutadmin.deleteCumtAdmlist" parameterType="map">
+	<update id="cmutadmin.deleteCumtAdmlist" parameterType="map">
 		UPDATE FC_CUMT_INFO SET
-			ADM_ACT_YN = 'D'
+			ADM_ACT_YN = 'R'
+			,MOD_DATE = NOW()
+			,MOD_USER_ID = ${modUserId)
 		WHERE COMP_ID = #{compId}
 			AND FC_COMT_ID = #{fcComtId}
-	</delete>
+	</update>
 </mapper>

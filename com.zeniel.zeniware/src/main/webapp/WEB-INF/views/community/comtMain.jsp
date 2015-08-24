@@ -132,30 +132,37 @@ $(document).ready(function() {
 
 	$("#comtAllList tbody").on('click', "tr td:not(:nth-child(4))", function() {
 		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
+		alert(pos);
+		return;
 		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos[0]).fcComtId;
 		$(location).prop('href', './comtView?comtId='+ fcComtId);
 		//comtView
 
 	}).on('click', "tr td:nth-child(4)", function() {
 		var pos = $('#comtAllList').dataTable().fnGetPosition(this);
+		alert(pos);
 		var fcComtId = $('#comtAllList').dataTable().fnGetData(pos[0]).fcComtId;
 		var joinYn = $('#comtAllList').dataTable().fnGetData(pos[0]).joinYn;
+		alert(joinYn);
+		return;
 		if(joinYn == 'Y' || joinYn == 'N') {
 		} else {
 			bootbox.confirm("가입하시겠습니까?", function(result) {
-				var param = {};
-				param.fcComtId = fcComtId;
-				param.compId = paramCompId;
-				$.ajax({
-					dataType: "json",
-					type: "POST",
-					url: "./insertComtAllInfoUserAdd",
-					data: param,
-					success: function(data) {
-						$(location).prop('href', './comtMain');
-						return;
-					}
-				});
+				if(result) {
+					var param = {};
+					param.fcComtId = fcComtId;
+					param.compId = paramCompId;
+					$.ajax({
+						dataType: "json",
+						type: "POST",
+						url: "./insertComtAllInfoUserAdd",
+						data: param,
+						success: function(data) {
+							$(location).prop('href', './comtMain');
+							return;
+						}
+					});
+				}
 			});
 		}
 	});

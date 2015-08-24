@@ -339,7 +339,7 @@
 						
 						strTodo.append(
 								'<li  id="' + obj[i].todoSeq + '" class="' + done + '">'
-								+ '<label>'
+								+ '<label class="ellipsis">'
 								+ '<input type="checkbox" class="cbr cbr-primary" '+ checked +'>'
 								+ '<span><a href="#" data-toggle="modal" data-target="#todoModal" data-whatever="'+ obj[i].todoSeq +',' + obj[i].todoNm + "," + obj[i].cmpltYn +'">&nbsp'
 								+ obj[i].todoNm + '</a></span>'

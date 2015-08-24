@@ -251,8 +251,10 @@ public class ScheduleController {
 						else if ("W".equals(rpetType))	//매주
 						{
 							cal.add(Calendar.WEDNESDAY, + rpetcyc);
+//							cal.add(Calendar.DAY_OF_WEEK, 4);
 							
 							if (endDays == 0) {
+//								cal2.add(Calendar.DAY_OF_WEEK, 4);
 								cal2.add(Calendar.WEDNESDAY, + rpetcyc);
 							} else {
 								cal2.add(Calendar.DATE, + endDays);
