@@ -44,6 +44,25 @@ function sboxInit() {
 	});
 }
 
+function dataTableCheckboxRender() {
+	var $state = $(".dataTable thead input[type='checkbox']");
+	
+	$(".dataTable").on('draw.dt', function() {
+		cbr_replace();
+		$state.trigger('change');
+	});
+	
+	$state.on('change', function(ev) {
+		var $chcks = $(".dataTable tbody input[type='checkbox']");
+		
+		if ($state.is(':checked')) {
+			$chcks.prop('checked', true).trigger('change');
+		} else {
+			$chcks.prop('checked', false).trigger('change');
+		}
+	});
+}
+
 $(document).ready(function() {
 	
 	$('.modal').on('hidden.bs.modal', function (event) {
@@ -51,4 +70,5 @@ $(document).ready(function() {
 	});
 	
 	sboxInit();
+	dataTableCheckboxRender();
 });

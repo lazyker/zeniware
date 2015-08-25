@@ -72,6 +72,10 @@ public class UnitManDao extends AbstractDao {
     return (int)update("admin.unitman.restoreSingleComp", paramMap);
   }
   
+  public int restoreSingleDept(Map<String, Object> paramMap) {
+    return (int)update("admin.unitman.restoreSingleDept", paramMap);
+  }
+  
   public int restoreSingleUser(Map<String, Object> paramMap) {
     return (int)update("admin.unitman.restoreSingleUser", paramMap);
   }
@@ -91,10 +95,6 @@ public class UnitManDao extends AbstractDao {
   public int setSingleUserSort(User user) {
     return (int)update("admin.unitman.setSingleUserSort", user);
   }
-  
-//  public int softDeleteSingleUser(User user) {
-//    return (int)update("admin.unitman.softDeleteSingleUser", user);
-//  }
   
   /*********************
    * Update/Delete One

@@ -21,7 +21,7 @@ public class User implements UserDetails {
   private String homePhone;
   private String fax;
   private String mobile;
-  private int postCode;
+  private String postCode;
   private String address1;
   private String address2;
   private String joinDate;
@@ -155,11 +155,11 @@ public class User implements UserDetails {
     return this;
   }
   
-  public int getPostCode() {
+  public String getPostCode() {
     return this.postCode;
   }
   
-  public User setPostCode(int postCode) {
+  public User setPostCode(String postCode) {
     this.postCode = postCode;
     return this;
   }

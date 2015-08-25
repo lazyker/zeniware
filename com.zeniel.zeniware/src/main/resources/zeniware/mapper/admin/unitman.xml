@@ -143,6 +143,10 @@
 		CALL UP_UNITMAN_COMP_RESTORE(#{compId});
 	</update>
 	
+	<update id="restoreSingleDept" parameterType="map">
+		CALL UP_UNITMAN_DEPT_RESTORE(#{compId}, #{deptId}, #{parentDeptId});
+	</update>
+	
 	<update id="restoreSingleUser" parameterType="map">
 		CALL UP_UNITMAN_USER_RESTORE(#{compId}, #{userId}, #{deptId});
 	</update>

@@ -36,6 +36,9 @@ public interface UnitManService {
   public int restoreSingleComp(Map<String, Object> paramMap);
   
   @Transactional(value="transactionManager")
+  public int restoreDeptList(Map<String, Object> paramMap) throws Throwable;
+  
+  @Transactional(value="transactionManager")
   public int restoreUserList(Map<String, Object> paramMap) throws Throwable;
   
   @Transactional(value="transactionManager")

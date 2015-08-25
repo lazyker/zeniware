@@ -1,12 +1,10 @@
 package zeniware.admin.unitman;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.admin.unitman.service.UnitManService;
-import zeniware.admin.unitman.vo.Company;
-import zeniware.admin.unitman.vo.Department;
-import zeniware.admin.unitman.vo.User;
+import zeniware.common.util.StreamMapper;
 
 @Controller
 public class UnitManController {
@@ -63,29 +59,15 @@ public class UnitManController {
   @RequestMapping("/admin/ajax/getComplist")
   public void getCompList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
-    
-    try {
-      List<Company> list = unitmanService.getCompList(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), list);
-      
-    } catch (Exception e) { throw e; }
+
+    StreamMapper.writeValue(response, unitmanService.getCompList(paramMap));
   }
   
   @RequestMapping("/admin/ajax/getDeptlist")
   public void getDeptList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      List<Department> list = unitmanService.getDeptList(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), list);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.getDeptList(paramMap));
   }
   
   @RequestMapping("/admin/ajax/getUserlist")
@@ -94,183 +76,98 @@ public class UnitManController {
     
     if (paramMap.isEmpty()) return;
     
-    try {
-      List<User> list = unitmanService.getUserList(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), list);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.getUserList(paramMap));
   }
   
   @RequestMapping("/admin/ajax/getSingleUser")
   public void getSingleUser(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      User user = unitmanService.getSingleUser(paramMap);
-      
-      ObjectMapper mapper = new ObjectMapper();
-      response.setContentType("application/json");
-      mapper.writeValue(response.getOutputStream(), user);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.getSingleUser(paramMap));
   }
   
   @RequestMapping("/admin/ajax/setSingleComp")
   public void setSingleComp(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {      
-      int affectedRows = unitmanService.setSingleComp(paramMap);
-
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.setSingleComp(paramMap));
   }
   
   @RequestMapping("/admin/ajax/setSingleDept")
   public void setSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.setSingleDept(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.setSingleDept(paramMap));
   }
   
   @RequestMapping("/admin/ajax/setSingleUser")
   public void setSingleUser(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.setSingleUser(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.setSingleUser(paramMap));
   }
   
   @RequestMapping("/admin/ajax/moveSingleDept")
   public void moveSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.moveSingleDept(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.moveSingleDept(paramMap));
   }
   
   @RequestMapping("/admin/ajax/moveUserList")
   public void moveUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
-    
-    try {
-      int affectedRows = unitmanService.moveUserList(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+  
+    StreamMapper.writeValue(response, unitmanService.moveUserList(paramMap));
   }
   
   @RequestMapping("/admin/ajax/setUserListSort")
   public void setUserListSort(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.setUserListSort(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.setUserListSort(paramMap));
   }
   
   @RequestMapping("/admin/ajax/deleteSingleComp")
   public void deleteSingleComp(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
-    
-    try {
-      int affectedRows = unitmanService.deleteSingleComp(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+
+    StreamMapper.writeValue(response, unitmanService.deleteSingleComp(paramMap));
   }
   
   @RequestMapping("/admin/ajax/deleteUserList")
   public void deleteUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.deleteUserList(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.deleteUserList(paramMap));
   }
   
   @RequestMapping("/admin/ajax/deleteSingleDept")
   public void deleteSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.deleteSingleDept(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.deleteSingleDept(paramMap));
   }
-  
   
   @RequestMapping("/admin/ajax/restoreSingleComp")
   public void restoreSingleComp(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.restoreSingleComp(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.restoreSingleComp(paramMap));
+  }
+  
+  @RequestMapping("/admin/ajax/restoreDeptList")
+  public void restoreDeptList(@RequestParam Map<String, Object> paramMap, 
+    HttpServletRequest request, HttpServletResponse response) throws Throwable {
+    
+    StreamMapper.writeValue(response, unitmanService.restoreDeptList(paramMap));
   }
   
   @RequestMapping("/admin/ajax/restoreUserList")
-  public void restoreSingleUser(@RequestParam Map<String, Object> paramMap, 
+  public void restoreUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
-    try {
-      int affectedRows = unitmanService.restoreUserList(paramMap);
-      
-      ObjectMapper objectMapper = new ObjectMapper();
-      response.setContentType("application/json");
-      objectMapper.writeValue(response.getOutputStream(), affectedRows);
-      
-    } catch (Exception e) { throw e; }
+    StreamMapper.writeValue(response, unitmanService.restoreUserList(paramMap));
   }
-    
+      
 }

@@ -125,9 +125,16 @@
 					success: function(data) {
 						modalToggle(false);
 						
-						var instance = $('#jstreeDept').jstree(true);
-						var selNode = instance.get_selected();
-						instance.refresh(selNode);
+						var opener = "${opener}";
+						
+						if (opener == 'jstree') {
+							var instance = $('#jstreeDept').jstree(true);
+							var selNode = instance.get_selected();
+							instance.refresh(selNode);
+						} else if (opener == 'datatable') {
+							$('#tblDept').DataTable().ajax.reload(null, false);
+						}
+						
 					} 
 				});
 			}

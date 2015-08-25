@@ -71,7 +71,35 @@ public class UnitManServiceImpl implements UnitManService {
   }
   
   @Override
+  public int restoreDeptList(Map<String, Object> paramMap) throws Throwable {
+    
+    int affectedRows = 0;
+    
+    try {
+      String jsonString = (String)paramMap.get("deptlist");
+      ObjectMapper objectMapper = new ObjectMapper();
+      
+      List<Department> deptlist = objectMapper.readValue(jsonString, 
+        objectMapper.getTypeFactory().constructCollectionType(List.class, Department.class));
+      
+      for (Department dept : deptlist) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        
+        map.put("compId", dept.getCompId());
+        map.put("deptId", dept.getDeptId());
+        map.put("parentDeptId", paramMap.get("parentDeptId"));
+        
+        affectedRows += unitmanDao.restoreSingleDept(map);
+      }
+      
+    } catch (Exception e) { throw e; }
+    
+    return affectedRows;
+  }
+  
+  @Override
   public int restoreUserList(Map<String, Object> paramMap) throws Throwable {
+    
     int affectedRows = 0;
     
     try {

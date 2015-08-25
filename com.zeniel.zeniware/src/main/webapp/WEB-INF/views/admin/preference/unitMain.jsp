@@ -187,7 +187,7 @@
       	{ "mData": "userName" }, 
       	{ "mData": "userId" }, 
       	{ "mData": "jobTitleName" }, 
-      	{ "mData": "mailId" }, 
+      	{ "mData": "mailId", "sClass": "user-mail" }, 
       	{ "mData": "sortOrder", "visible": false }
       ], 
       order: [ [8, "asc"] ], 
@@ -215,7 +215,7 @@
 			}
 		});
 		
-		/* 부서 변경 */
+		/* 부서 정보 */
 		$('#btnDeptEdit').on('click', function() {
 			var selNode = $('#jstreeDept').jstree(true).get_selected('full', true);
 			
@@ -227,10 +227,10 @@
 				var selDeptId = selNode[0].id.substr(4, 4);
 				
 				sUrl = contextPath + '/modal/admin/deptNew';
-				sUri = '?compId=' + selCompId + '&deptId=' + selDeptId;
+				sUri = '?opener=jstree&compId=' + selCompId + '&deptId=' + selDeptId;
 				
 				$.get(sUrl + sUri, function(data) {
-					modalToggle(true, data, '부서 변경');
+					modalToggle(true, data, '부서 정보');
 				});
 			}
 		});
@@ -271,7 +271,7 @@
 			}
 		});
 		
-		/* 사용자 선택/정보변경 */
+		/* 사용자 정보 */
 		$('#tblUser tbody').on('click', 'tr td:not(:first-child)', function() {
 			var oTable = $('#tblUser').dataTable();
 			var aPos = oTable.fnGetPosition(this);
@@ -281,7 +281,7 @@
  			var sUri = '?compId=' + aData.compId + '&userId=' + aData.userId;
 			
 			$.get(sUrl + sUri, function(data) {
-				modalToggle(true, data);
+				modalToggle(true, data, '사용자 정보');
 			});
 		});
 		
@@ -301,9 +301,16 @@
 		
 		/* 부서이동 */
 		$('#btnUserMove').on('click', function() {
-			$.get(contextPath + '/modal/admin/deptTree?opener=moveuser', function(data) {
-				modalToggle(true, data);
-			});
+			
+			var $checked = $('tbody :checkbox:checked', $('#tblUser'));
+			
+			if ($checked.length > 0) {
+				$.get(contextPath + '/modal/admin/deptTree?opener=moveuser', function(data) {
+					modalToggle(true, data);
+				});
+			} else {
+				toastrAlert('error', '이동할 계정을 선택하세요.');
+			}
 		});
 		
 		/* 정렬순서 */
@@ -349,9 +356,8 @@
 		
 		/* 사용자 삭제(Soft Delete) */
 		$('#btnUserDelete').on('click', function() {
-			var oTable = $('#tblUser').dataTable();
- 			var $checked = $('input:checked', $('#tblUser'));
- 			
+ 			var $checked = $('tbody :checkbox:checked', $('#tblUser'));
+
  			if ($checked.length > 0) {
  				bootbox.confirm('선택된 계정을 삭제하시겠습니까?', function(result) {
  					if (result) {
@@ -361,7 +367,7 @@
  							url: contextPath + '/admin/ajax/deleteUserList', 
  							data: { mode: 'soft', userlist: createJsonUserlist() }, 
  							success: function(data) {
- 								toastrAlert('success', '삭제되었습니다.');
+ 								toastrAlert('success', data + '개의 사용자 계정이 삭제되었습니다.');
  								$('#tblUser').DataTable().ajax.reload(null, false);
  							}
  						});
@@ -394,9 +400,9 @@
 			var jsonObj = [];
 			var oTable = $('#tblUser').dataTable();
 			
-			$('input:checked', oTable.fnGetNodes()).each(function(i) {
+			$('tbody :checkbox:checked', oTable).each(function(index) {
 				var jsonItem = {};
-				var aData = oTable.fnGetData(i);
+				var aData = oTable.fnGetData($(this).closest('tr'));
 				
 				jsonItem['compId'] = aData.compId;
 				jsonItem['userId'] = aData.userId;
@@ -412,33 +418,13 @@
 		var imageRender = function(data, type, full) {
 			var result = "";
 			
-//			if (type == 'display') {
-				result += "<a href='#'>";
-				result += "<img src='${pageContext.request.contextPath}";
-				result += "/assets/images/user-1.png' class='img-circle' alt='user-pic' />";
-				result += "</a>";
-//			}
+			result += "<a href='#'>";
+			result += "<img src='${pageContext.request.contextPath}";
+			result += "/assets/images/user-1.png' class='img-circle' alt='user-pic' />";
+			result += "</a>";
 			
 			return result;
 		};
-		
-		/* checkbox rendering... */
-		var $state = $("#tblUser thead input[type='checkbox']");
-		
-		$("#tblUser").on('draw.dt', function() {
-			cbr_replace();
-			$state.trigger('change');
-		});
-		
-		$state.on('change', function(ev) {
-			var $chcks = $("#tblUser tbody input[type='checkbox']");
-			
-			if ($state.is(':checked')) {
-				$chcks.prop('checked', true).trigger('change');
-			} else {
-				$chcks.prop('checked', false).trigger('change');
-			}
-		});
 
 	});
 

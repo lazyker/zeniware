@@ -46,7 +46,8 @@
 							<label class="control-label" for="activateYn">계정사용</label>
 						</div>
 						<div class="col-sm-9">
-							<input type="checkbox" class="iswitch iswitch-secondary" name="activateYn" checked="${user.activateYn}">
+							<input type="checkbox" class="iswitch iswitch-secondary" 
+								name="activateYn" <c:if test="${user.activateYn}">checked</c:if>>
 						</div>
 					</div>
 				
@@ -193,20 +194,26 @@
 					
 					<div class="row">
 						<div class="col-sm-3">
-							<label class="control-label" for="postCode">주소</label>
+							<label class="control-label" for="postCode">주소(기본)</label>
 						</div>
-						<div class="col-sm-2">
+						<div class="col-sm-3">
 							<div class="input-group">
 								<span class="input-group-btn">
-									<button class="btn btn-info" type="button">우편번호</button>
+									<button class="btn btn-info" type="button">주소검색</button>
 								</span>
 								<input type="text" class="form-control" name="postCode" value="${user.postCode}" readonly />
 							</div>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-6">
 							<input type="text" class="form-control" name="address1" value="${user.address1}" readonly />
 						</div>
-						<div class="col-sm-4">
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-3">
+							<label class="control-label" for="address2">주소(상세)</label>
+						</div>
+						<div class="col-sm-9">
 							<div class="form-group">
 								<input type="text" class="form-control" name="address2" value="${user.address2}" />
 							</div>
@@ -427,9 +434,8 @@
 		width: 50%;
 	}
 	
-	.modal .modal-body {
-		height: 500px;
-		overflow-x: hidden;
+	.modal .modal-body .panel {
+		height: 400px;
 		overflow-y: auto;
 	}
 	

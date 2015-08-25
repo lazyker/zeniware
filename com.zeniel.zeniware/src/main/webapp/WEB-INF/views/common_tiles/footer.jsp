@@ -99,10 +99,6 @@
 			<i class="fa-at"></i>
 			<span>메일 보내기</span>
 		</button>
-		<button class="btn btn-secondary btn-icon btn-icon-standalone btn-icon-standalone-right btn-block">
-			<i class="fa-calendar"></i>
-			<span>일정 초대</span>
-		</button>
 	</div>
 	
 </div>

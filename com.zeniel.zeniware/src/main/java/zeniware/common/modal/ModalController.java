@@ -54,6 +54,7 @@ public class ModalController {
         this.deptMaker(prmCompId, prmParDeptId, prmParDeptName) : this.deptMaker(paramMap));
       
       model.put("sboxUser", this.userlistMaker(prmCompId, prmDeptId));
+      model.put("opener", paramMap.get("opener"));
       
     } catch (Exception e) { throw e; }
     

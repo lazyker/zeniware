@@ -38,8 +38,9 @@
 				<table id="tblDept" class="table table-small-font table-striped table-hover">
 					<thead>
 						<tr>
-							<th>부서명</th>
+							<th class="no-sorting user-cb"><input type="checkbox" class="cbr"></th>
 							<th>부서ID</th>
+							<th>부서명</th>
 		 					<th>생성일</th>
 		 					<th>변경일</th>
 							<th>삭제일</th>
@@ -64,25 +65,87 @@
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
-      	{ "mData": "deptName" }, 
-      	{ "mData": "deptId" },  
+				{ 
+					"mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; }, 
+					"sClass": "user-cb"
+				},
+      	{ "mData": "deptId" },
+      	{ "mData": "deptName" },
       	{ "mData": "regDate" }, 
       	{ "mData": "modDate" }, 
       	{ "mData": "delDate" }
       ], 
+      order: [ [5, "desc"] ], 
  			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 		});
 		
-		$("#tblDept tbody").on('click', 'tr', function() {
-			$("#tblComp").DataTable().$('tr.selected').removeClass('selected');
-			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
-		});
-		
-		$("#btnRestore").on('click', function() {
-			$.get(contextPath + '/modal/admin/deptTree', function(data) {
-				modalToggle(true, data, '상위부서 선택');
+		$("#tblDept tbody").on('click', 'tr td:not(:first-child)', function() {
+			var oTable = $('#tblDept').dataTable();
+			var aPos = oTable.fnGetPosition(this);
+			var aData = oTable.fnGetData(aPos);
+			
+ 			var sUrl = contextPath + '/modal/admin/deptNew';
+ 			var sUri = '?opener=datatable&compId=' + aData.compId + '&deptId=' + aData.deptId;
+			
+			$.get(sUrl + sUri, function(data) {
+				modalToggle(true, data, '부서 정보');
 			});
 		});
+		
+		/* 부서 복원 */
+		$("#btnRestore").on('click', function() {
+			var $checked = $('tbody :checkbox:checked', $('#tblDept'));
+			
+			if ($checked.length > 0) {
+				$.get(contextPath + '/modal/admin/deptTree?opener=restoredept', function(data) {
+					modalToggle(true, data, '상위부서 선택');
+				});
+			} else {
+				toastrAlert('error', '복원할 부서를 선택하세요.');
+			}
+		});
+		
+		/* 부서 삭제(Hard Delete) */
+		$('#btnDelete').on('click', function() {
+			var $checked = $('tbody :checkbox:checked', $('#tblUser'));
+
+ 			if ($checked.length > 0) {
+ 				bootbox.confirm('선택된 부서를 삭제하시겠습니까? 삭제한 부서는 복원할 수 없습니다.', function(result) {
+ 					if (result) {
+ 						$.ajax({
+ 							dataType: 'json', 
+ 							type: 'post', 
+ 							url: contextPath + '/admin/ajax/deleteDeptList', 
+ 							data: { mode: 'hard', userlist: createJsonDeptlist() }, 
+ 							success: function(data) {
+ 								toastrAlert('success', data + '개의 부서가 삭제되었습니다.');
+ 								$('#tblUser').DataTable().ajax.reload(null, false);
+ 							}
+ 						});
+ 					}
+ 				});
+ 			} else {
+ 				toastrAlert('error', '삭제할 계정을 선택하세요.');
+ 			}
+		});
+		
+		/* 부서 json object 생성 */
+		var createJsonDeptlist = function() {
+			var jsonObj = [];
+			var oTable = $('#tblDept').dataTable();
+			
+			$('input:checked', oTable.fnGetNodes()).each(function(i) {
+				var jsonItem = {};
+				var aData = oTable.fnGetData(i);
+				
+				jsonItem['compId'] = aData.compId;
+				jsonItem['deptId'] = aData.deptId;
+				
+				jsonObj.push(jsonItem);
+			});
+
+			return JSON.stringify(jsonObj);
+		};
 
 	});
 

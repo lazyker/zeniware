@@ -24,14 +24,7 @@
 		<div class="panel panel-default">
 		
 			<div class="panel-heading">
-				<h3 class="panel-title">삭제회사 목록</h3>
-				
-				<div class="panel-options">
-					<div class="btn-group">
-						<button class="btn btn-white btn-sm" id="btnRestore">복원</button>
-						<button class="btn btn-white btn-sm" id="btnDelete">완전삭제</button>
-					</div>
-				</div>
+				<h3 class="panel-title">삭제회사 목록</h3>				
 			</div>
 			
 			<div class="panel-body">
@@ -74,55 +67,15 @@
  			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 		});
 		
+		/* 회사 정보 */
 		$("#tblComp tbody").on('click', 'tr', function() {
-			$("#tblComp").DataTable().$('tr.selected').removeClass('selected');
-			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
-		});
-		
-		$("#btnRestore").on('click', function() {
-			var selRow = $('#tblComp').DataTable().rows('.selected').data();
+			var oTable = $('#tblComp').dataTable();
+			var aPos = oTable.fnGetPosition(this);
+			var aData = oTable.fnGetData(aPos);
 			
-			if (selRow.length > 0) {
-				bootbox.confirm("복원하시겠습니까?", function(result) {
-					if (result) {
-						$.ajax({
-							dataType: "json", 
-							type: "post", 
-							url: contextPath + "/admin/ajax/restoreSingleComp", 
-							data: { compId: selRow[0].compId }, 
-							success: function(data) {
-								toastrAlert('success', '복원되었습니다.');
-								$('#tblComp').DataTable().rows('.selected').remove().draw(false);
-							} 
-						});
-					}
-				});
-			} else {
-				toastrAlert('error', '복원할 회사를 선택하세요.');
-			}
-		});
-		
-		$('#btnDelete').on('click', function() {
-			var selRow = $('#tblComp').DataTable().rows('.selected').data();
-			
-			if (selRow.length > 0) {
-				bootbox.confirm("삭제하시겠습니까?", function(result) {
-					if (result) {
-						$.ajax({
-							dataType: "json", 
-							type: "post", 
-							url: contextPath + "/admin/ajax/deleteSingleComp", 
-							data: { mode: "hard", compId: selRow[0].compId }, 
-							success: function(data) {
-								toastrAlert('success', '삭제되었습니다.');
-								$('#tblComp').DataTable().rows('.selected').remove().draw(false);
-							}
-						});
-					}
-				});
-			} else {
-				toastrAlert('error', '삭제할 회사를 선택하세요.');
-			}
+			$.get(contextPath + '/modal/admin/compNew?compId=' + aData.compId, function(data) {
+				modalToggle(true, data, '회사 정보');
+			});
 		});
 
 	});

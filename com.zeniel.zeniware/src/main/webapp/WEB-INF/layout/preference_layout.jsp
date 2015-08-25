@@ -57,7 +57,6 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/validator/validator.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>

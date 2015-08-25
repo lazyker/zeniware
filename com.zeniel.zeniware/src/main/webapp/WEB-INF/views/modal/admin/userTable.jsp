@@ -69,10 +69,7 @@
 		});
 		
 		$('#btnSave').on('click', function() {
-			var oTable = $('#tblUserSort').dataTable();			
-			var $rows = $('tbody tr', $('#tblUserSort'));
-			
-			if ($rows.length > 0) {
+			if ($('#tblUserSort').dataTable().fnGetData().length > 0) {
 				bootbox.confirm('저장하시겠습니까?', function(result) {
 					if (result) {
 						$.ajax({
