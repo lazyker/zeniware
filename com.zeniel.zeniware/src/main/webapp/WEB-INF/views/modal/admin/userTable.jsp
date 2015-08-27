@@ -64,7 +64,7 @@
       	{ "mData": "mailId" }, 
       	{ "mData": "sortOrder", "visible": false }
       ], 
-      order: [ [7, "asc"] ], 
+      order: [ [7, "asc"] ],
  			sDom: "rti"
 		});
 		
@@ -122,6 +122,10 @@
 		};
 		
 	});
+	
+/* ***References***
+	Scroll - vertical, dynamic height: https://www.datatables.net/examples/basic_init/scroll_y_dynamic.html
+*/
 
 </script>
 
@@ -129,6 +133,12 @@
 
 	.modal .modal-dialog {
 		width: 60%;
+	}
+	
+	.modal .modal-body .panel {
+		height: 50vh;
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 
 </style>

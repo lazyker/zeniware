@@ -199,13 +199,13 @@
 						<div class="col-sm-3">
 							<div class="input-group">
 								<span class="input-group-btn">
-									<button class="btn btn-info" type="button">주소검색</button>
+									<button class="btn btn-info" type="button" id="btnAddress">주소검색</button>
 								</span>
-								<input type="text" class="form-control" name="postCode" value="${user.postCode}" readonly />
+								<input type="text" class="form-control" name="postCode" id="txtPostCode" value="${user.postCode}" readonly />
 							</div>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="address1" value="${user.address1}" readonly />
+							<input type="text" class="form-control" name="address1" id="txtAddress1" value="${user.address1}" readonly />
 						</div>
 					</div>
 					
@@ -368,6 +368,35 @@
 
 </form>
 
+<div class="hide" id="popover-head">
+	<a href="#" id="anchorDetail" onclick="$('#btnAddress').popover('hide');">
+		<span class="close">&times;</span>
+		주소 검색
+	</a>
+</div>
+
+<div class="hide" id="popover-content">
+
+	<div class="panel panel-default">
+	
+		<div class="panel-heading">
+			<select class="form-control" id="selectSido">
+				<option></option>
+			</select>
+		</div>
+		
+		<div class="panel-body">
+			<table class="table table-small-font middle-align table-hover">
+				<thead>
+					<th></th>
+				</thead>
+			</table>
+		</div>
+	
+	</div>
+	
+</div>
+
 <script type="text/javascript">
 
 	jQuery(document).ready(function($) {
@@ -424,6 +453,23 @@
 			}
 		});
 		
+		$('#btnAddress').on('click', function() {
+			var sUrl = '${pageContext.request.contextPath}/modal/addressTable';
+			
+			$.get(sUrl, function(data) {
+				bootbox.dialog({
+					title: "주소 검색", 
+					message: data, 
+					buttons: {
+						main: {
+							label: "닫기", 
+							className: "btn-white"
+						}
+					}
+				});
+			});
+		});
+			
 	});
 
 </script>

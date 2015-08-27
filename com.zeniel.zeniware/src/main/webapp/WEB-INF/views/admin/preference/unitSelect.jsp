@@ -51,7 +51,8 @@
 		
 		var contextPath = "${pageContext.request.contextPath}";
 
-		$('#tblComp').DataTable({
+		/* Datatable Configuration */
+		var table = $('#tblComp').DataTable({
 			ajax: { "url": contextPath + "/admin/ajax/getComplist?mode=0", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
@@ -63,11 +64,11 @@
       	{ "mData": "modDate" }
       ], 
       order: [ [3, "desc"] ], 
- 			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
+	  	dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
 		});
 		
 		/* 회사 정보 */
-		$('#tblComp tbody').on('click', 'tr td:not(:first-child)', function() {
+		$('#tblComp tbody').on('click', 'tr', function() {
 			var oTable = $('#tblComp').dataTable();
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);

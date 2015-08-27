@@ -35,8 +35,10 @@ function createNameElements() {
 	return JSON.stringify(jsonItem);
 }
 
-function sboxInit() {
-	$('select').select2({
+function sboxInit(object) {
+	var element = jQuery.isEmptyObject(object) ? 'select' : object;
+
+	$(element).select2({
 		placeholder: "선택하세요...", 
 		allowClear: true
 	}).on('select2-open', function() {

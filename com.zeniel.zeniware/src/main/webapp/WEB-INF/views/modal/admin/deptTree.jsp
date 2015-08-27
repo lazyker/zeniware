@@ -213,7 +213,7 @@
 	}
 	
 	.modal .modal-body .panel {
-		height: 300px;
+		height: 50vh;
 		overflow-y: auto;
 	}
 

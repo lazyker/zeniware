@@ -27,9 +27,9 @@
 				
 				<div class="panel-options">
 					<div class="btn-group">
-						<button class="btn btn-gray btn-sm" id="btnGroupAdd">추가</button>
+						<button class="btn btn-white btn-sm" id="btnGroupAdd">추가</button>
 						<button class="btn btn-white btn-sm" id="btnGroupEdit">변경</button>
-						<button class="btn btn-gray btn-sm" id="btnGroupDelete">삭제</button>
+						<button class="btn btn-white btn-sm" id="btnGroupDelete">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -58,9 +58,9 @@
 				
 				<div class="panel-options">
 					<div class="btn-group">
-						<button class="btn btn-gray btn-sm" id="btnCodeAdd">추가</button>
-						<button class="btn btn-white btn-sm" id="btnCodeEdit">변경</button>
-						<button class="btn btn-gray btn-sm" id="btnCodeDelete">삭제</button>
+						<button class="btn btn-white btn-sm" id="btnRelocation">정렬순서</button>
+						<button class="btn btn-white btn-sm" id="btnCodeAdd">추가</button>
+						<button class="btn btn-white btn-sm" id="btnCodeDelete">삭제</button>
 					</div>
 				</div>
 			</div>
@@ -69,14 +69,15 @@
 				<table id="tblCode" class="table table-small-font table-striped table-hover">
 					<thead>
 						<tr>
+							<th class="no-sorting user-cb"><input type="checkbox" class="cbr"></th>
 							<th>그룹ID</th>
 							<th>코드ID</th>
 		 					<th>코드명(Ko)</th>
 							<th>코드명(En)</th>
 							<th>코드명(Zh)</th>
 							<th>코드명(Ja)</th>
-							<th>정렬순서</th>
 							<th>사용여부</th>
+							<th>정렬순서</th>
 						</tr>
 					</thead>
 				</table>
@@ -91,6 +92,8 @@
 
 	$(document).ready(function() {
 		
+		var contextPath = "${pageContext.request.contextPath}";
+		
 		var msg01 = "공통코드 삭제";
 		var msg02 = "삭제하시겠습니까?";
 		var msg03 = "확인";
@@ -101,148 +104,41 @@
 		var msg08 = "코드그룹을 먼저 선택하세요.";
 		var msg09 = "변경할 코드를 선택하세요.";
 		var msg10 = "변경할 코드를 하나만 선택하세요."
-		var msg11 = "최소 1개 이상의 코드를 선택하세요.";
+		var msg11 = "삭제할 코드를 선택하세요.";
 		
 		/* Grouplist Data Binding */
 		$('#tblGroup').dataTable({
-			ajax: { "url": "../ajax/getGrouplist", "dataSrc": "" }, 
+			ajax: { "url": contextPath + "/admin/ajax/getGrouplist", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
       	{ "mData": "groupId" }, 
       	{ "mData": "groupName" }
       ], 
-      sDom: "frtp", 
-      fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-    	  var paramGroupId = "${groupId}";
-
-    	  if (aData.groupId == paramGroupId) {
-    		  $(nRow).addClass('selected');
-    		  $("#tblCode").DataTable().ajax.url('../ajax/getCodelist?groupId=' + aData.groupId).load();
-    	  }
-      }
+      sDom: "frtp"
 		});
 		
 		/* Codelist Data Binding */
 		$('#tblCode').DataTable({
-			ajax: { "url": "../ajax/getCodelist", "dataSrc": "" }, 
+			ajax: { "url": contextPath + "/admin/ajax/getCodelist", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
+				{ 
+					"mRender": function(data, type, full) { return '<input type="checkbox" class="cbr">'; }, 
+					"sClass": "user-cb"
+				}, 
       	{ "mData": "groupId" }, 
       	{ "mData": "codeId" }, 
       	{ "mData": "codeNameKo" }, 
       	{ "mData": "codeNameEn" }, 
       	{ "mData": "codeNameZh" }, 
       	{ "mData": "codeNameJa" }, 
-      	{ "mData": "sortOrder" }, 
-      	{ "mData": "useYn" }
+      	{ "mData": "useYn" }, 
+      	{ "mData": "sortOrder", "visible": false }
       ], 
+      order: [ [8, "asc"] ], 
  			sDom: "<'row'<'col-sm-6'l><'col-sm-6'f>>rt<'row'<'col-xs-6'i><'col-xs-6'p>>"
-		});
-		
-		/* 그룹 추가 */
-		$("#btnGroupAdd").on('click', function() {
-			$(location).prop('href', 'codeNew?groupId=00000');
-		});
-		
-		/* 그룹 변경 */
-		$("#btnGroupEdit").on('click', function() {
-			var selData = $("#tblGroup").DataTable().rows(".selected").data();
-			
-			if (selData.length == 0) {
-				toastrAlert('error', msg05);
-				
-			} else {
-				$(location).prop('href', 'codeNew?groupId=00000&codeId=' + selData[0].groupId);
-			}
-		});
-		
-		/* 그룹 삭제 */
-		$("#btnGroupDelete").on('click', function(event) {
-			var selData = $("#tblGroup").DataTable().rows(".selected").data();
-			
-			if (selData.length == 0) {
-				toastrAlert('error', msg06);
-				
-			} else {
-				var selChildData = $('#tblCode').DataTable().rows().data();
-				
-				if (selChildData.length > 0) {
-					toastrAlert('error', msg07);
-					
-				} else {
-	 				modalInit(true, '그룹 삭제', '코드그룹을 삭제하시겠습니까?', '확인', '취소');
-	 				$("#btnOk").addClass('deleteGroup');
-				}
-			}
-		});
-		
-		/* 코드 추가 */
-		$("#btnCodeAdd").on('click', function() {
-			var selData = $("#tblGroup").DataTable().rows(".selected").data();
-			
-			if (selData.length == 0) {
-				toastrAlert('error', msg08);
-				
-			} else {
-				$(location).prop('href', 'codeNew?groupId=' + selData[0].groupId);
-			}
-		});
-		
-		/* 코드 변경 */
-		$("#btnCodeEdit").on('click', function() {
-			var selData = $("#tblCode").DataTable().rows(".selected").data();
-			
-			if (selData.length == 0) {				
-				toastrAlert('error', msg09);
-				
-			} else if (selData.length > 1) {
-				toastrAlert('error', msg10);
-				
-			} else {
-				$(location).attr('href', 'codeNew?groupId=' + selData[0].groupId + '&codeId=' + selData[0].codeId);
-			}
-		});
-		
-		/* 코드 삭제 */
-		$("#btnCodeDelete").on('click', function() {
-			var selData = $("#tblCode").DataTable().rows(".selected").data();
-			
-			if (selData.length > 0) {
-				modalInit(true, msg01, msg02, msg03, msg04);
-				$("#btnOk").addClass('deleteCode');
-				
-			} else {
-				toastrAlert('error', msg11);
-			}
-		});
-		
-		/* 삭제 진행 */
-		$('#btnOk').on('click', function() {
-			if ($(this).hasClass("deleteGroup")) {
-				$.ajax({
-					dataType: "json", 
-					type: "POST", 
-					url: "../ajax/deleteCodelist", 
-					data: { codelist: createJsonGrouplist() }, 
-					success: function(data) {
-						modalInit(false);
-						$("#tblGroup").DataTable().ajax.url('../ajax/getGrouplist').load();
-					}
-				});
-			} else {
-				$.ajax({
-					dataType: "json", 
-					type: "POST", 
-					url: "../ajax/deleteCodelist", 
-					data: { codelist: createJsonCodelist() }, 
-					success: function(data) {
-						modalInit(false);
-						$("#tblCode").DataTable().rows(".selected").remove().draw(false);
-					} 
-				});
-			}
 		});
 		
 		/* 그룹 선택 */
@@ -257,9 +153,123 @@
 			$('#tblCode').DataTable().ajax.url('../ajax/getCodelist?groupId=' + selectedGroupId).load();
 		});
 		
-		/* 코드 선택 */
-		$('#tblCode tbody').on('click', 'tr', function() {
-			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');
+		/* 그룹 추가 */
+		$("#btnGroupAdd").on('click', function() {
+ 			$.get(contextPath + '/modal/admin/codeNew?opener=group&groupId=00000', function(data) {
+				modalToggle(true, data, '그룹 추가');
+			});
+		});
+		
+		/* 그룹 변경 */
+		$("#btnGroupEdit").on('click', function() {
+			var selData = $("#tblGroup").DataTable().rows(".selected").data();
+			
+			if (selData.length == 0) {
+				toastrAlert('error', msg05);
+				
+			} else {
+				var sUrl = contextPath + '/modal/admin/codeNew';
+				var sUri = '?opener=group&groupId=00000&codeId=' + selData[0].groupId;
+				$.get(sUrl + sUri, function(data) {
+					modalToggle(true, data, '그룹 정보');
+				});
+			}
+		});
+		
+		/* 그룹 삭제 */
+		$("#btnGroupDelete").on('click', function(event) {
+			var selData = $("#tblGroup").DataTable().rows(".selected").data();
+			
+			if (selData.length == 0) {
+				toastrAlert('error', msg06);
+			} else {
+				var selChildData = $('#tblCode').DataTable().rows().data();
+				
+				if (selChildData.length > 0) {
+					toastrAlert('error', msg07);
+				} else {
+					bootbox.confirm('코드그룹을 삭제하시겠습니까?', function(result) {
+						$.ajax({
+							dataType: "json", 
+							type: "POST", 
+							url: "../ajax/deleteCodeList", 
+							data: { codelist: createJsonGrouplist() }, 
+							success: function(data) {
+								toastrAlert('success', '삭제되었습니다.');
+								$('#tblGroup').DataTable().ajax.reload(null, false);
+							}
+						});
+					});
+				}
+			}
+		});
+		
+		/* 코드 정보 */
+		$('#tblCode tbody').on('click', 'tr td:not(:first-child)', function() {
+			var oTable = $('#tblCode').dataTable();
+			var aPos = oTable.fnGetPosition(this);
+			var aData = oTable.fnGetData(aPos);
+			
+			var sUrl = contextPath + '/modal/admin/codeNew';
+ 			var sUri = '?opener=code&groupId=' + aData.groupId + '&codeId=' + aData.codeId;
+
+ 			$.get(sUrl + sUri, function(data) {
+				modalToggle(true, data, '코드 정보');
+			});
+		});
+		
+		/* 코드 추가 */
+		$("#btnCodeAdd").on('click', function() {
+			var selData = $("#tblGroup").DataTable().rows(".selected").data();
+			
+			if (selData.length == 0) {
+				toastrAlert('error', msg08);
+			} else {
+				var sUrl = contextPath + '/modal/admin/codeNew';
+	 			var sUri = '?opener=code&groupId=' + selData[0].groupId;
+
+	 			$.get(sUrl + sUri, function(data) {
+					modalToggle(true, data);
+				});
+			}
+		});
+		
+		/* 코드 삭제 */
+		$("#btnCodeDelete").on('click', function() {
+			var $checked = $('tbody :checkbox:checked', $('#tblCode'));
+			
+			if ($checked.length > 0) {
+				bootbox.confirm('선택된 코드를 삭제하시겠습니까?', function(result) {
+					$.ajax({
+						dataType: "json", 
+						type: "POST", 
+						url: "../ajax/deleteCodelist", 
+						data: { codelist: createJsonCodelist() }, 
+						success: function(data) {
+							toastrAlert('success', data + '개의 코드가 삭제되었습니다.');
+							$('#tblCode').DataTable().ajax.reload(null, false);
+						} 
+					});
+				});				
+			} else {
+				toastrAlert('error', msg11);
+			}
+		});
+		
+		/* 정렬순서 */
+		$('#btnRelocation').on('click', function () {
+			var selData = $("#tblGroup").DataTable().rows(".selected").data();
+			
+			if (selData.length == 0) {
+				toastrAlert('error', '그룹코드를 선택하세요.');
+			} else {
+				var sUrl = contextPath + '/modal/admin/codeTable';
+				var sUri = '?groupId=' + selData[0].groupId;
+				
+				$.get(sUrl + sUri, function(data) {
+					modalToggle(true, data);
+				});
+			}
 		});
 		
 		/* 그룹 Json Object 생성 */
@@ -278,12 +288,14 @@
 		/* 코드 Json Object 생성 */
 		function createJsonCodelist() {
 			var jsonObj = [];
+			var oTable = $('#tblCode').dataTable();
 			
-			$('#tblCode').DataTable().rows(".selected").data().each(function(selData) {
+			$('tbody :checkbox:checked', oTable).each(function(index) {
 				var jsonItem = {};
+				var aData = oTable.fnGetData($(this).closest('tr'));
 				
-				jsonItem["groupId"] = selData.groupId;
-				jsonItem["codeId"] = selData.codeId;
+				jsonItem['groupId'] = aData.groupId;
+				jsonItem['codeId'] = aData.codeId;
 				
 				jsonObj.push(jsonItem);
 			});

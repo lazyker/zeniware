@@ -10,7 +10,8 @@
 	<tiles:insertAttribute name="header" />
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/rowReorder.dataTables.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/buttons/css/buttons.dataTables.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/rowReorder/css/rowReorder.dataTables.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2-bootstrap.css">
@@ -47,9 +48,10 @@
 	<script src="${pageContext.request.contextPath}/assets/js/bootbox/bootbox.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/js/jquery.dataTables.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datatables/dataTables.rowReorder.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/buttons/js/buttons.html5.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/buttons/js/buttons.print.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/buttons/js/dataTables.buttons.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datatables/rowReorder/js/dataTables.rowReorder.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
@@ -57,6 +59,9 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
+	
+	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
