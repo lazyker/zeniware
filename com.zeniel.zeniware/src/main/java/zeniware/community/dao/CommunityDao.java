@@ -37,10 +37,10 @@ public class CommunityDao extends AbstractDao {
 	*/
 	public int insertNewComtInfo(ComtVo comtVo) {
 		int res = (int) selectOne("comtUser.getComtInfoCnt", comtVo);
-		logger.debug("커뮤니티 개설 신청 처리 중복====================================>" + res);
 		int rsult = 0;
 		if(res == 0) {
 			insert("comtUser.insertNewComtInfoAdd", comtVo);
+			insert("comtUser.setInsertComtInfoAdmUserAdd", comtVo);
 			rsult = (int) insert("comtUser.insertNewComtAddUserInfo" , comtVo);
 		}
 		return rsult;

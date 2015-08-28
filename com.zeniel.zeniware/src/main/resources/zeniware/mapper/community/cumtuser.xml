@@ -108,6 +108,7 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 	</select>
 
+	<!-- 커뮤니티 개설 신청명 중복 조회 -->
 	<select id="comtUser.getComtInfoCnt" parameterType="zeniware.community.vo.ComtVo" resultType="int">
 		SELECT
 			COUNT(FC_ADM_SEQ) AS CNT
@@ -118,6 +119,7 @@
 			AND CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
 	</select>
 
+	<!-- 커뮤니티 개설 신청 처리 -->
 	<insert id="comtUser.insertNewComtInfoAdd" parameterType="zeniware.community.vo.ComtVo">
 		INSERT INTO FC_CUMT_INFO
 		(
@@ -147,6 +149,7 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 	</insert>
 
+	<!-- 커뮤니티 개설 신청 처리의 사용자 정보 입력 처리 -->
 	<insert id="comtUser.insertNewComtAddUserInfo" parameterType="zeniware.community.vo.ComtVo">
 		INSERT INTO FC_CUMT_ADD_INFO
 		(
@@ -199,6 +202,29 @@
 			#{inviteYn, jdbcType=VARCHAR},
 			#{joinYn, jdbcType=VARCHAR},
 			NOW()
+		)
+	</insert>
+
+	<!-- 커뮤니티 신청 시 운영자 정보 입력 -->
+	<insert id="comtUser.setInsertComtInfoAdmUserAdd" parameterType="hashmap">
+		/* comtUser.setInsertComtInfoAdmUserAdd */
+		INSERT INTO FC_COMT_ADMIN_USER
+		(
+			FC_COMT_ID,
+			BOARD_INFO_ID,
+			COMP_ID,
+			USER_ID,
+			DEPT_ID,
+			MAST_GUBUN,
+			TYPE_GUBUN
+		) VALUES (
+			#{fcComtId, jdbcType=VARCHAR},
+			#{boardInfoId, jdbcType=NUMERIC},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{deptId, jdbcType=VARCHAR},
+			#{mastGubun, jdbcType=VARCHAR},
+			#{typeGubun, jdbcType=VARCHAR}
 		)
 	</insert>
 
