@@ -87,6 +87,10 @@ table-ellipsis th, .table-ellipsis td {
 	width: 200px
 }
 
+.pointer {
+	cursor: pointer;
+}
+
 /**
  * End 공통 custom
 */
