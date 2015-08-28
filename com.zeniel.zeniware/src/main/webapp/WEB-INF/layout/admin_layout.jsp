@@ -10,8 +10,6 @@
 	<!-- Imported styles on this page -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
 	
-	<!-- JavaScripts initializations and stuff -->
-	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 </head>
 
 <body class="page-body skin-aero">
@@ -76,6 +74,11 @@
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js"></script>
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 
 </body>
 </html>

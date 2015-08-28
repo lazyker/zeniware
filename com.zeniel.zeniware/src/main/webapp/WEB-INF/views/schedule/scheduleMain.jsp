@@ -110,6 +110,9 @@
 			eventResize:function( event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view ) { 
 				dropResizeEvent(event);
 			},
+			eventAfterAllRender : function (view) {
+				holiDayAjaxBind(view);
+			},
 	 		editable: true,
 			firstDay: 0,				//---	0. 일요일
 			weekends: true,
@@ -376,6 +379,44 @@
 				error : function(request) {
 					alert("삭제 중 오류 발생 [관리자에게 문의 하세요.]");
 				}
+		});
+	}
+	
+	var holiDayAjaxBind = function(view) {
+		
+		$.ajax({
+			url: "../admin/schedule/getHoliDayList",
+			dataType: 'json',
+			type: 'POST',
+			success: function( json ) {
+				var holidays = json.data;
+   				var holiday;
+   				
+   				for(var i = 0; i < holidays.length; i++) {				
+   					holiday = holidays[i].hldyYmd;
+   					holidayNm = holidays[i].hldyNm;
+   					
+   					if (view.name == 'month') {
+   						var $day = $(".fc-content-skeleton td[data-date=" + holiday + "]");
+   						var dayStr = $day.text();
+   						
+   						$day.addClass('fc-sun').text(holidayNm + " " + dayStr);
+   					} else if (view.name =='agendaWeek') {
+   						var $day = $(".fc-day-header:contains('" + holiday.substr(6, 8).replace('-', '/') + "')");
+   						var dayStr = $day.text(); 
+   						
+   						$day.addClass('fc-sun').text(holidayNm + " " + dayStr);
+   					} else if (view.name == 'agendaDay') {
+   						if(holiday == $('#calendar').fullCalendar('getDate').format('YYYY-MM-DD')) {
+   							var $day = $(".fc-day-header");
+   							var dayStr = $day.text();
+   							
+   							$day.addClass('fc-sun').text(holidayNm + " " + dayStr);
+   						};
+   					}
+   				}
+   				
+			}
 		});
 	}
 	
