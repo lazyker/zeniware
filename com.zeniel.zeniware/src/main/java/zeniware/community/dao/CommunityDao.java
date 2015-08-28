@@ -111,6 +111,11 @@ public class CommunityDao extends AbstractDao {
 		return (int) update("comtUser.setInsertUserComtBasicInfo", paramMap);
 	}
 
+	//커뮤니티 상세보기 수정의 커뮤니티명 중복 확인
+	public int getInserComtBasicInfoNm(Map<String, Object> paramMap) {
+		return (int) selectOne("comtUser.getInserComtBasicInfoNm", paramMap);
+	}
+
 	//커뮤니티 멤버 전체 조회
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap) {
 		return (List<Map<String, Object>>) selectList("comtUser.getComtInfoMemberAllList", listMap);

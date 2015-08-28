@@ -217,11 +217,19 @@ public class CommunityController {
 		//Spring Security의 Authentication 객를 주입
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		paramMap.put("compId",		memberInfo.getCompId());
+		paramMap.put("userId",			memberInfo.getUserId());
 		String txtMastGubun		= (String) paramMap.get("txtMastGubun");
 		String[] mg_arr = ((String) paramMap.get("txtMastGubun")).split(",");
 
 		int rows = 0;
-		rows = communityService.setInsertUserComtBasicInfo(paramMap);
+		int cntRw = 0;
+		cntRw = communityService.getInserComtBasicInfoNm(paramMap);
+		logger.debug("cntRw ===========================================>" + cntRw);
+		if(cntRw > 0) {
+			rows = 99;
+		} else {
+			rows = communityService.setInsertUserComtBasicInfo(paramMap);
+		}
 
 		try {
 			ObjectMapper mapper = new ObjectMapper();

@@ -245,11 +245,12 @@ $(document).ready(function() {
 	var paramCompId = "${compId}";
 	var fcComtId = "${fcComtId}";
 	var msg01 = "운영자를 입력해 주세요.";
-	var msg02 = "커뮤니티 정보 수정이 실해 하였습니다.";
+	var msg02 = "커뮤니티 정보 수정이 실패 하였습니다.";
 	var msg03 = "커뮤니티 정보를 수정 하였습니다.";
 	var msg04 = "페쇄 신청 사유를 입력 하셔야 합니다.";
 	var msg05 = "알림 제목을 입력 하셔야 합니다.";
 	var msg06 = "알림 내용을 입력 하셔야 합니다.";
+	var msg07 = "중복된 커뮤니티명은 사용하실 수 없습니다.";
 	var param = {};
 
 	$("#sendIfSave").on("click",  function() {
@@ -309,6 +310,10 @@ $(document).ready(function() {
 				if(data == 0) {
 					toastr.options.positionClass = "toast-top-full-width";
 					toastr.error("<div align='center'><b>" + msg02 + "</b></div>", null);
+					return false;
+				} else if(data == 99) {
+					toastr.options.positionClass = "toast-top-full-width";
+					toastr.error("<div align='center'><b>" + msg07 + "</b></div>", null);
 					return false;
 				} else {
 					toastr.options.positionClass = "toast-top-full-width";

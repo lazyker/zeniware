@@ -32,7 +32,7 @@
 							(가입대기)&nbsp;
 							</c:if>
 						</span>
-						<c:if test="${comtlist.mastGubun != 'U'}">
+						<c:if test="${comtlist.mastGubun != ''}">
 						<span class="pull-right hidden-collapsed">
 						<a href="./comtInfoEdit?fcComtId=<c:out value="${comtlist.fcComtId}" />" style="padding:0 !important;">
 							<i class="fa fa-edit"></i>
