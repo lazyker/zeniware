@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import zeniware.common.plugin.service.PluginService;
-import zeniware.common.plugin.vo.SelectOption;
-import zeniware.common.plugin.vo.TreeNode;
+import zeniware.common.plugin.vo.SelectOptionVo;
+import zeniware.common.plugin.vo.TreeNodeVo;
 import zeniware.common.plugin.dao.PluginDao;
 
 @Service
@@ -18,17 +18,23 @@ public class PluginServiceImpl implements PluginService {
   private PluginDao pluginDao;
 
   @Override
-  public List<SelectOption> getSboxCodeList(Map<String, Object> paramMap) {
+  public List<SelectOptionVo> getSboxCodeList(Map<String, Object> paramMap) {
     return pluginDao.getSboxCodeList(paramMap);
   }
   
   @Override
-  public List<TreeNode> getNodeListSearch(Map<String, Object> paramMap) {
-    return pluginDao.getNodeListSearch(paramMap);
+  public List<TreeNodeVo> getNodeListSearch(Map<String, Object> paramMap) {
+    List<TreeNodeVo> list = pluginDao.getNodeListSearch(paramMap);
+    
+    if (list.size() == 0) {
+      list.add(new TreeNodeVo().setId("empty").setText("검색 결과가 없습니다").setParent("#").setIcon("fa fa-exclamation"));
+    }
+    
+    return list;
   }
   
   @Override
-  public List<TreeNode> getNodeListDefer(Map<String, Object> paramMap) {
+  public List<TreeNodeVo> getNodeListDefer(Map<String, Object> paramMap) {
     return pluginDao.getNodeListDefer(paramMap);
   }
   

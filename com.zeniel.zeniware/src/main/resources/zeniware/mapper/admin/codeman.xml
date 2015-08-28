@@ -3,14 +3,15 @@
 
 <mapper namespace="admin.codeman">
 
-	<resultMap type="zeniware.admin.codeman.vo.CommonGroup" id="commonGroupResultMap">
+	<resultMap type="zeniware.admin.codeman.vo.GroupVo" id="commonGroupResultMap">
 		<id property="groupId" column="CODE_ID" />
 		<result property="groupName" column="CODE_NM_KO" />
 	</resultMap>
 
-	<resultMap type="zeniware.admin.codeman.vo.CommonCode" id="commonCodeResultMap">
+	<resultMap type="zeniware.admin.codeman.vo.CodeVo" id="commonCodeResultMap">
 		<id property="groupId" column="GROUP_ID" />
 		<id property="codeId" column="CODE_ID" />
+ 		<result property="groupNameKo" column="GROUP_NM_KO" />
  		<result property="codeNameKo" column="CODE_NM_KO" />
 		<result property="codeNameEn" column="CODE_NM_EN" />
 		<result property="codeNameZh" column="CODE_NM_ZH" />
@@ -31,29 +32,33 @@
 	</select>
 	
 	<select id="getSingleCode" parameterType="map" resultMap="commonCodeResultMap">
-		CALL UP_CODEMAN_SINGLE_CODE(#{groupId}, #{codeId});
+		CALL UP_CODEMAN_CODE_ONE(#{groupId}, #{codeId});
 	</select>
 	
 	<select id="getSingleCodeExists" parameterType="map" resultType="int">
-		CALL UP_CODEMAN_SINGLE_CODE_EXISTS(#{groupId}, #{codeId});
+		CALL UP_CODEMAN_CODE_EXISTS(#{groupId}, #{codeId});
 	</select>
 	
 	<insert id="insertSingleCode" parameterType="map">
-		CALL UP_CODEMAN_SINGLE_CODE_INSERT(
-			#{groupId}, #{codeId}, #{codeNameKo}, #{codeNameEn}, #{codeNameZh}, #{codeNameJa}, 
-			#{sortOrder}, #{useYn}, #{description}
+		CALL UP_CODEMAN_CODE_INSERT(
+			#{groupId}, #{codeId}, #{codeNameKo}, #{codeNameEn}, 
+			#{codeNameZh}, #{codeNameJa}, #{useYn}, #{description}
 		);
 	</insert>
 	
 	<update id="updateSingleCode" parameterType="map">
-		CALL UP_CODEMAN_SINGLE_CODE_UPDATE(
-			#{groupId}, #{codeId}, #{orgCodeId}, #{codeNameKo}, #{codeNameEn}, #{codeNameZh}, #{codeNameJa}, 
-			#{sortOrder}, #{useYn}, #{description} 
+		CALL UP_CODEMAN_CODE_UPDATE(
+			#{groupId}, #{codeId}, #{orgCodeId}, #{codeNameKo}, 
+			#{codeNameEn}, #{codeNameZh}, #{codeNameJa}, #{useYn}, #{description} 
 		);
+	</update>
+	
+	<update id="setSingleCodeSort" parameterType="map">
+		CALL UP_CODEMAN_CODE_SORT_SET(#{groupId}, #{codeId}, #{sortOrder});
 	</update>
 		
 	<delete id="deleteSingleCode" parameterType="map">
-		CALL UP_CODEMAN_SINGLE_CODE_DELETE(#{groupId}, #{codeId});
+		CALL UP_CODEMAN_CODE_DELETE(#{groupId}, #{codeId});
 	</delete>
 
 </mapper>

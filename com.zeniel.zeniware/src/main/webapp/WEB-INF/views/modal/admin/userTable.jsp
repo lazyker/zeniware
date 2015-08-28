@@ -64,15 +64,12 @@
       	{ "mData": "mailId" }, 
       	{ "mData": "sortOrder", "visible": false }
       ], 
-      order: [ [7, "asc"] ], 
+      order: [ [7, "asc"] ],
  			sDom: "rti"
 		});
 		
 		$('#btnSave').on('click', function() {
-			var oTable = $('#tblUserSort').dataTable();			
-			var $rows = $('tbody tr', $('#tblUserSort'));
-			
-			if ($rows.length > 0) {
+			if ($('#tblUserSort').dataTable().fnGetData().length > 0) {
 				bootbox.confirm('저장하시겠습니까?', function(result) {
 					if (result) {
 						$.ajax({
@@ -125,6 +122,10 @@
 		};
 		
 	});
+	
+/* ***References***
+	Scroll - vertical, dynamic height: https://www.datatables.net/examples/basic_init/scroll_y_dynamic.html
+*/
 
 </script>
 
@@ -132,6 +133,12 @@
 
 	.modal .modal-dialog {
 		width: 60%;
+	}
+	
+	.modal .modal-body .panel {
+		height: 50vh;
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 
 </style>

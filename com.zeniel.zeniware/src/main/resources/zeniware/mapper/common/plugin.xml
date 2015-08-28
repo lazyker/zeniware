@@ -3,18 +3,18 @@
 
 <mapper namespace="common.plugin">
 
-	<resultMap id="sboxResultMap" type="zeniware.common.plugin.vo.SelectOption">
+	<resultMap id="sboxResultMap" type="zeniware.common.plugin.vo.SelectOptionVo">
 		<id property="id" column="ID" />
 		<result property="text" column="TEXT" />
 	</resultMap>
 	
-	<resultMap id="treeNodeResultMap" type="zeniware.common.plugin.vo.TreeNode">
+	<resultMap id="treeNodeResultMap" type="zeniware.common.plugin.vo.TreeNodeVo">
 		<id property="id" column="ID" />
 		<result property="parent" column="PARENT" />
 		<result property="text" column="TEXT" />
 		<result property="icon" column="ICON" />
 		<result property="children" column="CHILDREN" />
-		<association property="state" javaType="zeniware.common.plugin.vo.TreeNodeState">
+		<association property="state" javaType="zeniware.common.plugin.vo.TreeNodeStateVo">
 			<result property="opened" column="OPENED" />
 			<result property="disabled" column="DISABLED" />
 			<result property="selected" column="SELECTED" />

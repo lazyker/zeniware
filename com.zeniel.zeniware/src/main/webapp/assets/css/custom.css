@@ -10,15 +10,19 @@
 table.dataTable tbody tr.selected {
   background-color: #b0bed9;
 	color: #fff;
-	border-color: #63b026
+	border-color: #63b026;
 }
 
 .table.dataTable tbody tr td.user-cb {
-	width: 1%
+	width: 1%;
 }
 
 .table.dataTable tbody tr td.user-image {
-	width: 1%
+	width: 1%;
+}
+
+.table.dataTable tbody tr td.user-mail {
+	width: 25%;
 }
 
 /*** table-ellipsis added ***/
@@ -32,7 +36,7 @@ table-ellipsis th, .table-ellipsis td {
 
 /*** page-title customized ***/
 .page-container .main-content .page-title .title-env .title {
-	font-size: 22px
+	font-size: 22px;
 }
 
 .page-container .main-content .page-title {
@@ -46,21 +50,21 @@ table-ellipsis th, .table-ellipsis td {
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 20px;
-	margin: 0
+	margin: 0;
 }
 
 .panel.panel-flat-custom .panel-heading {
-	border-bottom-color: #ddd
+	border-bottom-color: #ddd;
 }
 
 .panel.panel-flat-custom .panel-disabled {
-	background: rgba(238, 238, 238, .6)
+	background: rgba(238, 238, 238, .6);
 }
 
 /*** panel-flat customized ***/
 .panel.panel-flat {
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 /*** footer customized ***/
@@ -68,23 +72,23 @@ table-ellipsis th, .table-ellipsis td {
 /* 		left: 0; */
 	right: 30px;
 	bottom: 0;
-	z-index: 1000
+	z-index: 1000;
 }
 
 .footer-sticked-chat .chat-conversations>li.open>a {
-	width: 270px
+	width: 270px;
 }
 
 .footer-sticked-chat .chat-conversations>li .chat-user {
-	width: 200px
+	width: 200px;
 }
 
 .footer-sticked-chat .chat-conversations>li .conversation-window .conversation-messages {
-	max-height: 350px
+	max-height: 350px;
 }
 
 .footer-sticked-chat .chat-conversations>li .custom-jstree {
-	width: 200px
+	width: 200px;
 }
 
 .pointer {

@@ -3,7 +3,7 @@
 
 <mapper namespace="admin.unitman">
 	
-	<resultMap id="compResultMap" type="zeniware.admin.unitman.vo.Company">
+	<resultMap id="compResultMap" type="zeniware.admin.unitman.vo.CompanyVo">
 		<id property="compId" column="COMP_ID" />
 		<result property="compName" column="COMP_NM" />
 		<result property="sortOrder" column="SORT_ORDER" />
@@ -14,7 +14,7 @@
 		<result property="delDate" column="DEL_DATE" />
 	</resultMap>
 	
-	<resultMap id="deptResultMap" type="zeniware.admin.unitman.vo.Department">
+	<resultMap id="deptResultMap" type="zeniware.admin.unitman.vo.DepartmentVo">
 		<id property="deptId" column="DEPT_ID" />
 		<id property="compId" column="COMP_ID" />
 		<result property="deptName" column="DEPT_NM" />
@@ -32,7 +32,7 @@
 		<result property="delDate" column="DEL_DATE" />
 	</resultMap>
 	
-	<resultMap id="userResultMap" type="zeniware.admin.unitman.vo.User">
+	<resultMap id="userResultMap" type="zeniware.admin.unitman.vo.UserVo">
 		<id property="userId" column="USER_ID" />
 	  <id property="compId" column="COMP_ID" />
 	  <result property="deptId" column="DEPT_ID" />
@@ -130,17 +130,17 @@
 	<update id="setSingleDeptSort" parameterType="map">
 		CALL UP_UNITMAN_DEPT_SORT_SET(#{compId}, #{deptId}, #{sortOrder});
 	</update>
-	
-	<update id="softDeleteSingleUser" parameterType="map">
-		CALL UP_UNITMAN_USER_DELETE_SOFT(#{compId}, #{userId}, #{useYn});
-	</update>
-	
+		
 	<update id="setSingleUserSort" parameterType="map">
 		CALL UP_UNITMAN_USER_SORT_SET(#{compId}, #{userId}, #{sortOrder});
 	</update>
 	
 	<update id="restoreSingleComp" parameterType="map">
 		CALL UP_UNITMAN_COMP_RESTORE(#{compId});
+	</update>
+	
+	<update id="restoreSingleDept" parameterType="map">
+		CALL UP_UNITMAN_DEPT_RESTORE(#{compId}, #{deptId}, #{parentDeptId});
 	</update>
 	
 	<update id="restoreSingleUser" parameterType="map">

@@ -90,7 +90,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/admin/workflow/basicInitialisation">
 					<i class="fa fa-check"></i>
 					<span class="title">전자결재</span>
 				</a>

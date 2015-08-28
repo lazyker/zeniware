@@ -5,26 +5,26 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import zeniware.common.plugin.vo.SelectOption;
-import zeniware.common.plugin.vo.TreeNode;
+import zeniware.common.plugin.vo.SelectOptionVo;
+import zeniware.common.plugin.vo.TreeNodeVo;
 import zeniware.common.sql.AbstractDao;
 
 @Repository
 public class PluginDao extends AbstractDao {
 
   @SuppressWarnings("unchecked")
-  public List<SelectOption> getSboxCodeList(Map<String, Object> paramMap) {
-    return (List<SelectOption>)selectList("common.plugin.getSboxCodeList", paramMap);
+  public List<SelectOptionVo> getSboxCodeList(Map<String, Object> paramMap) {
+    return (List<SelectOptionVo>)selectList("common.plugin.getSboxCodeList", paramMap);
   }
   
   @SuppressWarnings("unchecked")
-  public List<TreeNode> getNodeListSearch(Map<String, Object> paramMap) {
-    return (List<TreeNode>)selectList("common.plugin.getNodeListSearch", paramMap);
+  public List<TreeNodeVo> getNodeListSearch(Map<String, Object> paramMap) {
+    return (List<TreeNodeVo>)selectList("common.plugin.getNodeListSearch", paramMap);
   }
   
   @SuppressWarnings("unchecked")
-  public List<TreeNode> getNodeListDefer(Map<String, Object> paramMap) {
-    return (List<TreeNode>)selectList("common.plugin.getNodeListDefer", paramMap);
+  public List<TreeNodeVo> getNodeListDefer(Map<String, Object> paramMap) {
+    return (List<TreeNodeVo>)selectList("common.plugin.getNodeListDefer", paramMap);
   }
   
   public int getChildNodeCount(Map<String, Object> paramMap) {

@@ -79,6 +79,18 @@
 	<definition name="/preferenceLayout/*" extends="preference_layout">
 		<put-attribute name="body" value="/WEB-INF/views/admin/preference/{1}.jsp" />
 	</definition>
+	
+	<!-- 관리자 전자결재 Layout -->
+	<definition name="admin_workflow_layout" template="/WEB-INF/layout/preference_layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/common_tiles/header.jsp" />
+		<put-attribute name="top" value="/WEB-INF/views/common_tiles/admin_topForm.jsp" />
+		<put-attribute name="leftFm" value="/WEB-INF/views/admin/workflow/workflowLeft.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="/workflowadminLayout/*" extends="admin_workflow_layout">
+		<put-attribute name="body" value="/WEB-INF/views/admin/workflow/{1}.jsp" />
+	</definition>
 
 	<!-- 커뮤니티 레이아웃 -->
 	<definition name="cumt_layout" template="/WEB-INF/layout/community_layout.jsp">
