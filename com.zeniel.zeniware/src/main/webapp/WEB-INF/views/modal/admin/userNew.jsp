@@ -368,35 +368,6 @@
 
 </form>
 
-<div class="hide" id="popover-head">
-	<a href="#" id="anchorDetail" onclick="$('#btnAddress').popover('hide');">
-		<span class="close">&times;</span>
-		주소 검색
-	</a>
-</div>
-
-<div class="hide" id="popover-content">
-
-	<div class="panel panel-default">
-	
-		<div class="panel-heading">
-			<select class="form-control" id="selectSido">
-				<option></option>
-			</select>
-		</div>
-		
-		<div class="panel-body">
-			<table class="table table-small-font middle-align table-hover">
-				<thead>
-					<th></th>
-				</thead>
-			</table>
-		</div>
-	
-	</div>
-	
-</div>
-
 <script type="text/javascript">
 
 	jQuery(document).ready(function($) {

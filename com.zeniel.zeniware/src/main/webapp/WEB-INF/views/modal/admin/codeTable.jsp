@@ -63,8 +63,6 @@
       	{ "mData": "sortOrder", "visible": false }
       ], 
       order: [ [7, "asc"] ], 
-      scrollY: '50vh', 
-      scrollCollapse: true, 
  			sDom: "rti"
 		});
 		
@@ -115,6 +113,12 @@
 
 	.modal .modal-dialog {
 		width: 60%;
+	}
+	
+	.modal .modal-body .panel {
+		height: 50vh;
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 
 </style>
