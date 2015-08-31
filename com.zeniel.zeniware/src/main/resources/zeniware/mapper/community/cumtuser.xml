@@ -28,7 +28,12 @@
 		SELECT
 			CI.FC_COMT_ID, CI.FC_ADM_SEQ, CI.COMP_ID, CI.CUMT_NM, CI.CUMT_COMMENT, CI.ADM_ACT_YN,
 			CI.OPEN_YN, CI.REG_DATE, CI.MOD_DATE, CI.REG_USER_ID, CI.MOD_USER_ID,
-			CAI.MAST_GUBUN, CAI.JOIN_YN
+			(
+				SELECT MAST_GUBUN FROM FC_COMT_ADMN_USER
+				WHERE FC_COMT_ID = CI.FC_COMT_ID
+					AND USER_ID = #{userId, jdbcType=VARCHAR}
+			) AS MAST_GUBUN,
+			CAI.JOIN_YN
 		FROM
 			FC_CUMT_INFO CI
 			INNER JOIN FC_CUMT_ADD_INFO CAI ON CI.FC_COMT_ID = CAI.FC_COMT_ID AND CAI.TYPE_GUBUN = 'C'
@@ -108,6 +113,7 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 	</select>
 
+	<!-- 커뮤니티 개설 신청명 중복 조회 -->
 	<select id="comtUser.getComtInfoCnt" parameterType="zeniware.community.vo.ComtVo" resultType="int">
 		SELECT
 			COUNT(FC_ADM_SEQ) AS CNT
@@ -118,6 +124,7 @@
 			AND CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
 	</select>
 
+	<!-- 커뮤니티 개설 신청 처리 -->
 	<insert id="comtUser.insertNewComtInfoAdd" parameterType="zeniware.community.vo.ComtVo">
 		INSERT INTO FC_CUMT_INFO
 		(
@@ -147,6 +154,7 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 	</insert>
 
+	<!-- 커뮤니티 개설 신청 처리의 사용자 정보 입력 처리 -->
 	<insert id="comtUser.insertNewComtAddUserInfo" parameterType="zeniware.community.vo.ComtVo">
 		INSERT INTO FC_CUMT_ADD_INFO
 		(
@@ -202,6 +210,29 @@
 		)
 	</insert>
 
+	<!-- 커뮤니티 신청 시 운영자 정보 입력 -->
+	<insert id="comtUser.setInsertComtInfoAdmUserAdd" parameterType="hashmap">
+		/* comtUser.setInsertComtInfoAdmUserAdd */
+		INSERT INTO FC_COMT_ADMIN_USER
+		(
+			FC_COMT_ID,
+			BOARD_INFO_ID,
+			COMP_ID,
+			USER_ID,
+			DEPT_ID,
+			MAST_GUBUN,
+			TYPE_GUBUN
+		) VALUES (
+			#{fcComtId, jdbcType=VARCHAR},
+			#{boardInfoId, jdbcType=NUMERIC},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{deptId, jdbcType=VARCHAR},
+			#{mastGubun, jdbcType=VARCHAR},
+			#{typeGubun, jdbcType=VARCHAR}
+		)
+	</insert>
+
 	<!-- 커뮤니티 상세정보view(fcComtId) -->
 	<select id="comtUser.comtview.getComtInfoDetail" parameterType="hashmap" resultMap="comtVoMap">
 		SELECT
@@ -230,7 +261,7 @@
 		SELECT
 			COUNT(USER_ID) AS CNT
 		FROM
-			FC_CUMT_INFO
+			FC_CUMT_ADD_INFO
 		WHERE 1 = 1
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
@@ -336,4 +367,28 @@
 			NOW()
 		)
 	</insert>
+
+	<!-- 커뮤니티 상세보기 수정 처리 -->
+	<update id="comtUser.setInsertUserComtBasicInfo" parameterType="hashmap">
+		/* comtUser.setInsertUserComtBasicInfo */
+		UPDATE FC_CUMT_INFO SET
+			CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
+			,CUMT_COMMENT = #{cumtComment, jdbcType=VARCHAR}
+			,OPEN_YN = #{openYn, jdbcType=VARCHAR}
+			,MOD_DATE = NOW()
+			,MOD_USER_ID = #{userId, jdbcType=VARCHAR}
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND COMP_ID = #{compId, jdbcType=VARCHAR}
+	</update>
+
+	<!-- 커뮤니티 상세보기 수정의 커뮤니티명 중복 확인 -->
+	<select id="comtUser.getInserComtBasicInfoNm" parameterType="hashmap" resultType="int">
+		/* comtUser.getInserComtBasicInfoNm */
+		SELECT
+			COUNT(FC_COMT_ID) AS CNT
+		FROM
+			FC_CUMT_INFO
+		WHERE COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
+	</select>
 </mapper>

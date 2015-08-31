@@ -104,9 +104,9 @@
 	
 	<!-- Imported scripts on this page -->
 	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/fullcalendar/fullcalendar.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/timepicker/bootstrap-timepicker.min.js"></script>
 <%-- 	<script src="${pageContext.request.contextPath}/assets/js/colorpicker/bootstrap-colorpicker.min.js"></script> --%>
 	<script src="${pageContext.request.contextPath}/assets/js/simplecolorpicker/jquery.simplecolorpicker.js"></script>

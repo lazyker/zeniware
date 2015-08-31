@@ -10,8 +10,6 @@
 	<!-- Imported styles on this page -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/datatables/dataTables.bootstrap.css">
 	
-	<!-- JavaScripts initializations and stuff -->
-	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 </head>
 
 <body class="page-body skin-aero">
@@ -23,39 +21,6 @@
 	
 		<div class="main-content">
 			<tiles:insertAttribute name="body" />
-		</div>
-	</div>
-	
-	<div class="modal fade" id="modl">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"></h4>
-				</div>
-				<div class="modal-body" id="modlBody">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-info" id="btnOk"></button>
-					<button type="button" class="btn btn-white" id="btnCancel" data-dismiss="modal"></button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="mod2">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"></h4>
-				</div>
-				<div class="modal-body" id="mod2Body">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-info" id="btnOk2"></button>
-					<button type="button" class="btn btn-white" id="btnCancel2" data-dismiss="modal"></button>
-				</div>
-			</div>
 		</div>
 	</div>
 	
@@ -76,6 +41,11 @@
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/yadcf/jquery.dataTables.yadcf.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/datatables/tabletools/dataTables.tableTools.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datepicker/bootstrap-datepicker.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/datepicker/locales/bootstrap-datepicker.kr.js"></script>
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 
 </body>
 </html>

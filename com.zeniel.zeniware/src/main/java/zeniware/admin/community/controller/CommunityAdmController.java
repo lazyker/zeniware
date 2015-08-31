@@ -48,7 +48,7 @@ public class CommunityAdmController {
 		model.put("file_size", "4");
 		model.put("cmutBasic", cmutBasic);
 
-		return "/adminLayout/community/default";
+		return "/comtAdmLayout/community/default";
 	}
 
 	//커뮤니티 설정 변경(관리자)
@@ -76,7 +76,7 @@ public class CommunityAdmController {
 		paramMap.put("compId", memberInfo.getCompId());
 		model.put("compId", memberInfo.getCompId());
 
-		return "/adminLayout/community/cumtInfoList";
+		return "/comtAdmLayout/community/cumtInfoList";
 	}
 
 	//관리자에서 전체 커뮤니티 목록 조회
@@ -89,7 +89,7 @@ public class CommunityAdmController {
 		model.put("compId"	, memberInfo.getCompId());
 		model.put("base"		,paramMap);
 
-		return "/adminLayout/community/cumtAllList";
+		return "/comtAdmLayout/community/cumtAllList";
 	}
 
 	@RequestMapping(value = "/getCumtAllListData")

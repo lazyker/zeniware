@@ -53,7 +53,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/admin/schedule/holiDayMain">
 					<i class="fa fa-calendar"></i>
 					<span class="title">일정관리</span>
 				</a>

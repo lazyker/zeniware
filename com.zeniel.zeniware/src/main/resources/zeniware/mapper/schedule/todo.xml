@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" > 
+
+<mapper namespace="todo">
+	
+	<resultMap type="zeniware.schedule.vo.TodoVo" id="todoVo">
+		<id property="userId" column="USER_ID"/>
+		<id property="todoSeq" column="TODO_SEQ"/>
+		<result property="todoNm" column="TODO_NM"/>
+		<result property="compId" column="COMP_ID"/>
+		<result property="startYmd" column="START_YMD"/>
+		<result property="endYmd" column="END_yMD"/>
+		<result property="cmpltYn" column="CMPLT_YN"/>
+		<result property="regDate" column="REG_DATE"/>
+		<result property="modDate" column="MOD_DATE"/>
+	</resultMap>
+	
+	<insert id="addTodo" parameterType="zeniware.schedule.vo.TodoVo">
+	<selectKey keyProperty="todoSeq" resultType="int" order="BEFORE">
+		SELECT IFNULL((MAX(TODO_SEQ) +1), 1) todoSeq FROM FS_TODO WHERE USER_ID = #{userId, jdbcType=VARCHAR}
+	</selectKey>
+		INSERT INTO FS_TODO
+		(
+			USER_ID,
+			TODO_SEQ,
+			TODO_NM,
+			START_YMD,
+			END_YMD,
+			CMPLT_YN,
+			REG_DATE,
+			MOD_DATE
+		)
+		VALUES
+		(
+			#{userId, jdbcType=VARCHAR},
+			#{todoSeq, jdbcType=VARCHAR},
+			#{todoNm, jdbcType=VARCHAR},
+			#{startYmd, jdbcType=VARCHAR},
+			#{endYmd, jdbcType=VARCHAR},
+			#{cmpltYn, jdbcType=VARCHAR},
+			NOW(),
+			NOW()
+		)
+	</insert>
+	
+	<!-- 할일 리스트 -->
+	<select id="getTodoList" parameterType="zeniware.schedule.vo.TodoVo" resultMap="todoVo">
+		SELECT 
+			TODO_SEQ,
+			TODO_NM,
+			START_YMD,
+			END_YMD,
+			CMPLT_YN
+		FROM FS_TODO
+		WHERE
+		USER_ID = #{userId, jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 할일 SEQ 가져오기 -->
+	<select id="getTodoSeq" parameterType="zeniware.schedule.vo.TodoVo" resultType="int">
+		SELECT IFNULL((MAX(TODO_SEQ) +1), 1) todoSeq FROM FS_TODO WHERE USER_ID = #{userId, jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 할일 수정 -->
+	<update id="updateTodo" parameterType="zeniware.schedule.vo.TodoVo">
+		UPDATE FS_TODO
+		SET
+			TODO_NM = #{todoNm, jdbcType=VARCHAR},
+			START_YMD = #{startYmd, jdbcType=VARCHAR},
+			END_YMD = #{endYmd, jdbcType=VARCHAR},
+			CMPLT_YN = #{cmpltYn, jdbcType=VARCHAR},
+			MOD_DATE = NOW()
+		WHERE
+			USER_ID = #{userId, jdbcType=VARCHAR}
+			AND TODO_SEQ = #{todoSeq, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 할일 삭제 -->
+	<delete id="delTodo" parameterType="zeniware.schedule.vo.TodoVo">
+		DELETE 
+			FROM FS_TODO 
+		WHERE 
+			USER_ID = #{userId, jdbcType=VARCHAR}
+			AND TODO_SEQ = #{todoSeq, jdbcType=VARCHAR}
+	</delete>
+
+</mapper>

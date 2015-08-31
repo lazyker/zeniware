@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="admin.holiday">
+
+	<resultMap type="zeniware.admin.schedule.vo.HoliDayAdmVo" id="holiDayAdmVo">
+		<id property="hldyYmd" column="HLDY_YMD" />
+		<id property="compId" column="COMP_ID" />
+		<id property="hldyId" column="HLDY_ID" />
+ 		<result property="hldyNm" column="HLDY_NM" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+	</resultMap>
+	
+	<select id="totalPageCount" parameterType="map" resultType="int">
+		SELECT 
+			COUNT(1) 
+		FROM 
+			FS_HLDY 
+		WHERE 
+			COMP_ID = #{compId, jdbcType=VARCHAR}
+		<if test="hldyNm != ''">
+			AND HLDY_NM LIKE '%' || #{hldyNm, jdbcType=VARCHAR} || '%'
+		</if>
+	</select>
+	
+	<select id="getHoliDayList" parameterType="map" resultMap="holiDayAdmVo">
+		CALL UP_SCHEDULE_HOLIDAY_LIST(#{compId, jdbcType=VARCHAR});
+	</select>
+	
+	<insert id="setHoliDay" parameterType="zeniware.admin.schedule.vo.HoliDayAdmVo">
+		CALL UP_SCHEDULE_HOLIDAY_INSERT(
+			#{compId, jdbcType=VARCHAR},
+			#{hldyYmd, jdbcType=VARCHAR},
+			#{hldyNm, jdbcType=VARCHAR}
+		);
+	</insert>
+	
+	<update id="modHoliDay" parameterType="zeniware.admin.schedule.vo.HoliDayAdmVo">
+		CALL UP_SCHEDULE_HOLIDAY_UPDATE(
+			#{compId, jdbcType=VARCHAR},
+			#{hldyYmd, jdbcType=VARCHAR},
+			#{hldyId, jdbcType=NUMERIC},
+			#{hldyNm, jdbcType=VARCHAR}
+		);
+	</update>
+		
+	<delete id="delHoliDay" parameterType="zeniware.admin.schedule.vo.HoliDayAdmVo">
+		CALL UP_SCHEDULE_HOLIDAY_DELETE(#{compId, jdbcType=VARCHAR}, #{hldyId, jdbcType=NUMERIC});
+	</delete>
+
+</mapper>
