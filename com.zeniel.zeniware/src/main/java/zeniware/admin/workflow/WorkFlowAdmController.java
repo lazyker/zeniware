@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class WorkFlowAdmController {
 
-  @RequestMapping("/admin/workflow/basicInitialisation")
-  public String requestBasicInitialisation(@RequestParam Map<String, Object> paramMap, ModelMap model) {
+  @RequestMapping("/admin/workflow/basicInit")
+  public String requestBasicInit(@RequestParam Map<String, Object> paramMap, ModelMap model) {
     
-    return "/workflowadminLayout/basicInitialisation";
+    return "/workflowadminLayout/basicInit";
   }
   
 }

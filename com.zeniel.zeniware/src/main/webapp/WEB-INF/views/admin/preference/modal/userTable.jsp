@@ -43,12 +43,11 @@
 		
 		var prmCompId = "${compId}";
 		var prmDeptId = "${deptId}";
-		var contextPath = "${pageContext.request.contextPath}";
-		
+
 		/* userlist Data Binding */
 		$('#tblUserSort').DataTable({
 			ajax: {
-				"url": contextPath + "/admin/ajax/getUserlist?compId=" + prmCompId + "&deptId=" + prmDeptId + "&resigned=0", 
+				"url": './ajax/getUserlist?compId=' + prmCompId + '&deptId=' + prmDeptId + '&resigned=0', 
 				"dataSrc": ""
 			}, 
 			deferRender: true, 
@@ -75,7 +74,7 @@
 						$.ajax({
 							dataType: 'json', 
 							type: 'post', 
-							url: contextPath + '/admin/ajax/setUserListSort', 
+							url: './ajax/setUserListSort', 
 							data: { userlist: createJsonUserlist() }, 
 							success: function(data) {
 								modalToggle(false);

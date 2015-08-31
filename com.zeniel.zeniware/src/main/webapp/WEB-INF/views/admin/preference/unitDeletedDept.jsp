@@ -58,10 +58,9 @@
 
 	$(document).ready(function() {
 		var prmCompId = "${compId}";
-		var contextPath = "${pageContext.request.contextPath}";
 		
 		$('#tblDept').DataTable({
-			ajax: { "url": "../ajax/getDeptlist?mode=-1&compId=" + prmCompId, "dataSrc": "" }, 
+			ajax: { "url": "./ajax/getDeptlist?mode=-1&compId=" + prmCompId, "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -84,7 +83,7 @@
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);
 			
- 			var sUrl = contextPath + '/modal/admin/deptNew';
+ 			var sUrl = './modal/deptNew';
  			var sUri = '?opener=datatable&compId=' + aData.compId + '&deptId=' + aData.deptId;
 			
 			$.get(sUrl + sUri, function(data) {
@@ -97,7 +96,7 @@
 			var $checked = $('tbody :checkbox:checked', $('#tblDept'));
 			
 			if ($checked.length > 0) {
-				$.get(contextPath + '/modal/admin/deptTree?opener=restoredept', function(data) {
+				$.get('./modal/deptTree?opener=restoredept', function(data) {
 					modalToggle(true, data, '상위부서 선택');
 				});
 			} else {
@@ -115,7 +114,7 @@
  						$.ajax({
  							dataType: 'json', 
  							type: 'post', 
- 							url: contextPath + '/admin/ajax/deleteDeptList', 
+ 							url: './ajax/deleteDeptList', 
  							data: { mode: 'hard', userlist: createJsonDeptlist() }, 
  							success: function(data) {
  								toastrAlert('success', data + '개의 부서가 삭제되었습니다.');

@@ -116,9 +116,9 @@
 			}, 
 			submitHandler: function(form) {
 	 			$.ajax({
-					dataType: "json", 
-					type: "post", 
-					url: "${pageContext.request.contextPath}/admin/ajax/setSingleDept", 
+					dataType: 'json', 
+					type: 'post', 
+					url: './ajax/setSingleDept', 
 					data: {
 						dept: createNameElements()
 					}, 

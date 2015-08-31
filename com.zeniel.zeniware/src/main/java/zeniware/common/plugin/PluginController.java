@@ -19,28 +19,21 @@ public class PluginController {
   @Autowired
   PluginService pluginService;
   
-  @RequestMapping("/admin/ajax/getSboxCodelist")
-  public void getSboxCodelist(@RequestParam Map<String, Object> paramMap, 
-      HttpServletRequest request, HttpServletResponse response) throws Throwable {
-    
-    StreamMapper.writeValue(response, pluginService.getSboxCodeList(paramMap));
-  }
-  
-  @RequestMapping("/admin/ajax/getNodelistSearch")
+  @RequestMapping("/plugin/ajax/getNodelistSearch")
   public void getTreeNodelistSearch(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, pluginService.getNodeListSearch(paramMap));
   }
   
-  @RequestMapping("/admin/ajax/getNodelistDefer")
+  @RequestMapping("/plugin/ajax/getNodelistDefer")
   public void getNodelistDefer(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, pluginService.getNodeListDefer(paramMap));
   }
   
-  @RequestMapping("/admin/ajax/getChildNodeCount")
+  @RequestMapping("/plugin/ajax/getChildNodeCount")
   public void getChildNodeCount(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     

@@ -1,4 +1,4 @@
-package zeniware.common.modal;
+package zeniware.admin.unitman;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,8 +13,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zeniware.admin.codeman.service.CodeManAdmService;
-import zeniware.admin.codeman.vo.CodeVo;
 import zeniware.admin.unitman.service.UnitManAdmService;
 import zeniware.admin.unitman.vo.CompanyVo;
 import zeniware.admin.unitman.vo.DepartmentVo;
@@ -24,10 +22,7 @@ import zeniware.common.plugin.vo.SelectOptionVo;
 import zeniware.common.util.StreamMapper;
 
 @Controller
-public class ModalController {
-  
-  @Autowired
-  CodeManAdmService codemanAdmService;
+public class UnitManAdmModalController {
   
   @Autowired
   UnitManAdmService unitmanAdmService;
@@ -45,22 +40,7 @@ public class ModalController {
     StreamMapper.writeValue(response, "");
   }
   
-  @RequestMapping("/modal/admin/codeNew")
-  public String requestCodeNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-    
-    try {
-      String prmGroupId = (String)paramMap.get("groupId");
-      String prmCodeId = (String)paramMap.get("codeId");
-      
-      model.put("code", (prmCodeId == null) ? this.codeMaker(prmGroupId) : this.codeMaker(paramMap));
-      model.put("opener", paramMap.get("opener"));
-      
-    } catch (Exception e) { throw e; }
-    
-    return "/modal/admin/codeNew";
-  }
-  
-  @RequestMapping("/modal/admin/compNew")
+  @RequestMapping("/admin/preference/modal/compNew")
   public String requestCompNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -70,10 +50,10 @@ public class ModalController {
       
     } catch (Exception e) { throw e; }
     
-    return "/modal/admin/compNew";
+    return "/admin/preference/modal/compNew";
   }
   
-  @RequestMapping("/modal/admin/deptNew")
+  @RequestMapping("/admin/preference/modal/deptNew")
   public String requestDeptNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -90,10 +70,10 @@ public class ModalController {
       
     } catch (Exception e) { throw e; }
     
-    return "/modal/admin/deptNew";
+    return "/admin/preference/modal/deptNew";
   }
   
-  @RequestMapping("/modal/admin/userNew")
+  @RequestMapping("/admin/preference/modal/userNew")
   public String requestUserNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -113,60 +93,35 @@ public class ModalController {
       
     } catch (Exception e) { throw e; }
     
-    return "/modal/admin/userNew";
+    return "/admin/preference/modal/userNew";
   }
   
-  @RequestMapping("/modal/admin/codeTable")
-  public String requestCodeSort(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-    
-    model.put("groupId", paramMap.get("groupId"));
-    
-    return "/modal/admin/codeTable";
-  }
-  
-  @RequestMapping("/modal/admin/userTable")
+  @RequestMapping("/admin/preference/modal/userTable")
   public String requestDeptMemberSort(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     model.put("compId", paramMap.get("compId"));
     model.put("deptId", paramMap.get("deptId"));
     
-    return "/modal/admin/userTable";
+    return "/admin/preference/modal/userTable";
   }
   
-  @RequestMapping("/modal/admin/deptTree")
+  @RequestMapping("/admin/preference/modal/deptTree")
   public String requestJstreeDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     model.put("opener", paramMap.get("opener"));
     
-    return "/modal/admin/deptTree";
+    return "/admin/preference/modal/deptTree";
   }
   
-  @RequestMapping("/modal/addressTable")
+  @RequestMapping("/admin/preference/modal/addressTable")
   public String requestAddressTable(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
-    return "/modal/addressTable";
-  }
-  
-  @RequestMapping("/modal/unitTest")
-  public String requestUnitTest(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
-    
-    model.put("compId", paramMap.get("compId"));
-    model.put("deptId", paramMap.get("deptId"));
-    
-    return "/modal/unitTest";
+    return "/admin/preference/modal/addressTable";
   }
   
   /*********************
    * Private Procedures
    *********************/
-  private CodeVo codeMaker(String paramGroupId) {
-    return new CodeVo().setGroupId(paramGroupId).setSortOrder(0).setUseYn(true);
-  }
-  
-  private CodeVo codeMaker(Map<String, Object> paramMap) {
-    return codemanAdmService.getSingleCode(paramMap);
-  }
-  
   private CompanyVo compMaker() {
     return new CompanyVo().setActivateYn(true);
   }
@@ -220,5 +175,5 @@ public class ModalController {
     
     return list;
   }
-
+  
 }

@@ -41,12 +41,11 @@
 	$(document).ready(function() {
 
 		var prmGroupId = "${groupId}";
-		var contextPath = "${pageContext.request.contextPath}";
 		
 		/* codelist data binding */
 		$('#tblCodeSort').DataTable({
 			ajax: {
-				"url": contextPath + "/admin/ajax/getCodelist?groupId=" + prmGroupId, 
+				"url": "./ajax/getCodelist?groupId=" + prmGroupId, 
 				"dataSrc": ""
 			}, 
 			deferRender: true, 
@@ -73,7 +72,7 @@
 						$.ajax({
 							dataType: 'json', 
 							type: 'post', 
-							url: contextPath + '/admin/ajax/setCodeListSort', 
+							url: './ajax/setCodeListSort', 
 							data: { userlist: createJsonCodelist() }, 
 							success: function(data) {
 								modalToggle(false);

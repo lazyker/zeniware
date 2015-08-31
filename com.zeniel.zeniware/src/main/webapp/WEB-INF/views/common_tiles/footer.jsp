@@ -159,8 +159,8 @@
 						var paramDeptId = node.id.substr(4, 4);
 						
 						return node.id == '#' ? 
-							'../admin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
-							'../admin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
+							'../plugin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
+							'../plugin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };
@@ -173,7 +173,7 @@
 					$.ajax({
 						dataType: "json", 
 						type: "post", 
-						url: "../admin/ajax/getSingleUser", 
+						url: "../admin/preference/ajax/getSingleUser", 
 						data: { compId: data.node.id.substr(1, 3), userId: data.node.id.substr(4) }, 
 						success: function(result) {
 							$('#profileUserName').html(result.userName);
@@ -213,9 +213,9 @@
 						
 						return node.id == '#' ?
 							keyword.length == 0 ? 
-								'../admin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
-								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
-							'../admin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
+								'../plugin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
+								'../plugin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
+							'../plugin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };

@@ -79,7 +79,6 @@
 <script type="text/javascript">
 	
 	var curCompId = "${comp.compId}";
-	var contextPath = "${pageContext.request.contextPath}";
 
 	jQuery(document).ready(function($) {
 		
@@ -90,17 +89,17 @@
 		
 		/* 부서/사용자 관리 */
 		$('#btnUnit').on('click', function() {
-			$(location).prop('href', contextPath + '/admin/preference/unitMain?compId=' + curCompId);
+			$(location).prop('href', './unitMain?compId=' + curCompId);
 		});
 		
 		/* 삭제부서 관리 */
 		$('#btnDelDept').on('click', function() {
-			$(location).prop('href', contextPath + '/admin/preference/unitDeletedDept?compId=' + curCompId);
+			$(location).prop('href', './unitDeletedDept?compId=' + curCompId);
 		});
 		
 		/* 삭제계정 관리 */
 		$('#btnDelUser').on('click', function() {
-			$(location).prop('href', contextPath + '/admin/preference/unitDeletedUser?compId=' + curCompId);
+			$(location).prop('href', './unitDeletedUser?compId=' + curCompId);
 		});
 		
 		/* 회사 삭제(Hard Delete) */
@@ -113,9 +112,9 @@
 			bootbox.confirm("복원하시겠습니까?", function(result) {
 				if (result) {
 					$.ajax({
-						dataType: "json", 
-						type: "post", 
-						url: contextPath + "/admin/ajax/restoreSingleComp", 
+						dataType: 'json', 
+						type: 'post', 
+						url: './ajax/restoreSingleComp', 
 						data: { compId: curCompId }, 
 						success: function(data) {
 							toastrAlert('success', '복원되었습니다.');
@@ -136,9 +135,9 @@
 			}, 
 			submitHandler: function(form) {
 	 			$.ajax({
-					dataType: "json", 
-					type: "post", 
-					url: "${pageContext.request.contextPath}/admin/ajax/setSingleComp", 
+					dataType: 'json', 
+					type: 'post', 
+					url: './ajax/setSingleComp', 
 					data: {
 						comp: createNameElements()
 					}, 
@@ -156,9 +155,9 @@
 			bootbox.confirm("삭제하시겠습니까?", function(result) {
 				if (result) {
 					$.ajax({
-						dataType: "json", 
-						type: "post", 
-						url: contextPath + "/admin/ajax/deleteSingleComp", 
+						dataType: 'json', 
+						type: 'post', 
+						url: './ajax/deleteSingleComp', 
 						data: { mode: delMode, compId: curCompId }, 
 						success: function(data) {
 							toastrAlert('success', '삭제되었습니다.');

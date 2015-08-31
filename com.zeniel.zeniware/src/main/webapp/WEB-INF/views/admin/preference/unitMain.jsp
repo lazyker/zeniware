@@ -87,7 +87,6 @@
 
 	$(document).ready(function() {
 		var prmCompId = "${compId}";
-		var contextPath = "${pageContext.request.contextPath}";
 		
 		/* jsTree Data Binding */
 		$('#jstreeDept').jstree({
@@ -98,8 +97,8 @@
 						var curDeptId = node.id.substr(4, 4);
 
 						return node.id == '#' ? 
-							contextPath + '/admin/ajax/getNodelistDefer?compId=' + prmCompId + '&nodeType=root&resType=D' : 
-							contextPath + '/admin/ajax/getNodelistDefer?compId=' + curCompId + '&deptId=' + curDeptId + '&nodeType=child&resType=D';
+							'../../plugin/ajax/getNodelistDefer?compId=' + prmCompId + '&nodeType=root&resType=D' : 
+							'../../plugin/ajax/getNodelistDefer?compId=' + curCompId + '&deptId=' + curDeptId + '&nodeType=child&resType=D';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };
@@ -131,7 +130,7 @@
 			var i, j, r = [];
 
 			if (data.selected.length == 0) {
-				$('#tblUser').DataTable().ajax.url(contextPath + '/admin/ajax/getUserlist').load();
+				$('#tblUser').DataTable().ajax.url('./ajax/getUserlist').load();
 			} else {
 				for (i = 0, j = data.selected.length; i < j; i++) {
 					r.push(data.instance.get_node(data.selected[i]).text);
@@ -145,7 +144,7 @@
 				}
 				
 				$('#tblUser').DataTable().ajax.url(
-					contextPath + '/admin/ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId + '&resigned=0').load();
+					'./ajax/getUserlist?compId=' + curCompId + '&deptId=' + curDeptId + '&resigned=0').load();
 			}
 		}).on('move_node.jstree', function(e, data) {
 			var curCompId = data.node.id.substr(1, 3);
@@ -153,9 +152,9 @@
 			var curParentDeptId = data.parent == '#' ? data.parent : data.parent.substr(4, 4);
 			
 			$.ajax({
-				dataType: "json", 
-				type: "post", 
-				url: contextPath + "/admin/ajax/moveSingleDept", 
+				dataType: 'json', 
+				type: 'post', 
+				url: './ajax/moveSingleDept', 
 				data: { 
 					compId: curCompId,  
 					deptId: curDeptId, 
@@ -170,7 +169,7 @@
 		
 		/* userlist Data Binding */
 		$('#tblUser').DataTable({
-			ajax: { "url": contextPath + "/admin/ajax/getUserlist", "dataSrc": "" }, 
+			ajax: { "url": './ajax/getUserlist', "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -206,7 +205,7 @@
 				var selDeptId = selNode[0].id.substr(4, 4);
 				var selDeptName = selNode[0].text;
 				
-				var sUrl = contextPath + '/modal/admin/deptNew';
+				var sUrl = './modal/deptNew';
 				var sUri = '?compId=' + selCompId + '&parDeptId=' + selDeptId + '&parDeptName=' + selDeptName;
 				
 				$.get(sUrl + sUri, function(data) {
@@ -226,7 +225,7 @@
 				var selCompId = selNode[0].id.substr(1, 3);
 				var selDeptId = selNode[0].id.substr(4, 4);
 				
-				sUrl = contextPath + '/modal/admin/deptNew';
+				sUrl = './modal/deptNew';
 				sUri = '?opener=jstree&compId=' + selCompId + '&deptId=' + selDeptId;
 				
 				$.get(sUrl + sUri, function(data) {
@@ -244,9 +243,9 @@
 				toastrAlert('error', '삭제할 부서를 선택하세요.');
 			} else {
 				$.ajax({
-					dataType: "json", 
-					type: "post", 
-					url: contextPath + "/admin/ajax/getChildNodeCount", 
+					dataType: 'json', 
+					type: 'post', 
+					url: '../../plugin/ajax/getChildNodeCount', 
 					data: { compId: selNode[0].substr(1, 3), deptId: selNode[0].substr(4, 4) }, 
 					success: function(data) {
 						if (data > 0) {
@@ -277,7 +276,7 @@
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);
 			
- 			var sUrl = contextPath + '/modal/admin/userNew';
+ 			var sUrl = './modal/userNew';
  			var sUri = '?compId=' + aData.compId + '&userId=' + aData.userId;
 			
 			$.get(sUrl + sUri, function(data) {
@@ -291,7 +290,7 @@
 				if ($(this).val().length == 0) {
 					toastrAlert('error', '검색어를 입력하세요.');
 				} else {
-					var sUrl = contextPath + '/admin/ajax/getUserlist';
+					var sUrl = './ajax/getUserlist';
 					var sUri = '?compId=' + prmCompId + '&resigned=0&keyword=' + $(this).val();
 					
 					$('#tblUser').DataTable().ajax.url(sUrl + sUri).load();
@@ -305,7 +304,7 @@
 			var $checked = $('tbody :checkbox:checked', $('#tblUser'));
 			
 			if ($checked.length > 0) {
-				$.get(contextPath + '/modal/admin/deptTree?opener=moveuser', function(data) {
+				$.get('./modal/deptTree?opener=moveuser', function(data) {
 					modalToggle(true, data);
 				});
 			} else {
@@ -345,7 +344,7 @@
 				var selDeptId = selNode[0].id.substr(4, 4);
 				var selDeptName = selNode[0].text;
 
-				var sUrl = contextPath + '/modal/admin/userNew';
+				var sUrl = './modal/userNew';
 				var sUri = '?compId=' + selCompId + '&deptId=' + selDeptId + '&deptName=' + selDeptName;
 				
 				$.get(sUrl + sUri, function(data) {
@@ -364,7 +363,7 @@
  						$.ajax({
  							dataType: 'json', 
  							type: 'post', 
- 							url: contextPath + '/admin/ajax/deleteUserList', 
+ 							url: './ajax/deleteUserList', 
  							data: { mode: 'soft', userlist: createJsonUserlist() }, 
  							success: function(data) {
  								toastrAlert('success', data + '개의 사용자 계정이 삭제되었습니다.');

@@ -30,35 +30,14 @@ public class CodeManAdmController {
     return "/preferenceLayout/codeMain";
   }
   
-//  @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.GET)
-//  public String requestSingleCodeForm(@RequestParam Map<String, Object> paramMap, ModelMap model) {
-//
-//    String prmGroupId = (String)paramMap.get("groupId");
-//    String prmCodeId = (String)paramMap.get("codeId");
-//    
-//    model.put("code", 
-//      (prmCodeId == null) ? 
-//        new CodeVo().setGroupId(prmGroupId).setSortOrder(0).setUseYn(true) : codemanAdmService.getSingleCode(paramMap)
-//    );
-//   
-//    return "/preferenceLayout/codeNew";
-//  }
-//  
-//  @RequestMapping(value="/admin/preference/codeNew", method=RequestMethod.POST)
-//  public String requestSingleCodeSubmit(@ModelAttribute CodeVo commonCode, ModelMap model) {
-//    
-//    codemanAdmService.setSingleCode(commonCode);
-//    return "redirect:/admin/preference/codeMain";
-//  }
-    
-  @RequestMapping("/admin/ajax/getGrouplist")
+  @RequestMapping("/admin/preference/ajax/getGrouplist")
   public void getGroupList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.getGroupList());
   }
   
-  @RequestMapping("/admin/ajax/getCodelist")
+  @RequestMapping("/admin/preference/ajax/getCodelist")
   public void getCodelist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
@@ -67,28 +46,28 @@ public class CodeManAdmController {
     StreamMapper.writeValue(response, codemanAdmService.getCodeList(paramMap));
   }
   
-  @RequestMapping("/admin/ajax/getSingleCodeExists")
+  @RequestMapping("/admin/preference/ajax/getSingleCodeExists")
   public void getSingleCodeExists(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.getSingleCodeExists(paramMap));
   }
   
-  @RequestMapping("/admin/ajax/setSingleCode")
+  @RequestMapping("/admin/preference/ajax/setSingleCode")
   public void setSingleCode(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.setSingleCode(paramMap));
   }
   
-  @RequestMapping("/admin/ajax/setCodeListSort")
+  @RequestMapping("/admin/preference/ajax/setCodeListSort")
   public void setCodeListSort(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.setCodeListSort(paramMap));
   }
   
-  @RequestMapping("/admin/ajax/deleteCodeList")
+  @RequestMapping("/admin/preference/ajax/deleteCodeList")
   public void deleteCodeList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     

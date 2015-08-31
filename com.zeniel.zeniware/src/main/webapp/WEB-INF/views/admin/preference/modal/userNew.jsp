@@ -410,9 +410,9 @@
 			}, 
 			submitHandler: function(form, event) {
 				$.ajax({
-					dataType: "json", 
-					type: "post", 
-					url: "${pageContext.request.contextPath}/admin/ajax/setSingleUser", 
+					dataType: 'json', 
+					type: 'post', 
+					url: './ajax/setSingleUser', 
 					data: {
 						user: createNameElements()
 					}, 
@@ -425,7 +425,7 @@
 		});
 		
 		$('#btnAddress').on('click', function() {
-			var sUrl = '${pageContext.request.contextPath}/modal/addressTable';
+			var sUrl = './addressTable';
 			
 			$.get(sUrl, function(data) {
 				bootbox.dialog({

@@ -30,8 +30,6 @@
 
 <script type="text/javascript">
 	
-	var contextPath = "${pageContext.request.contextPath}";
-
 	jQuery(document).ready(function($) {
 		
 		/* jsTree Data Binding */
@@ -39,14 +37,13 @@
 			'core': {
 				'data': {
 					'url': function(node) {
-						var contextPath = "${pageContext.request.contextPath}";
-						var sUrl = '/admin/ajax/getNodelistDefer';
+						var sUrl = '../../plugin/ajax/getNodelistDefer';
 						var prmCompId = node.id.substr(1, 3);
 						var prmDeptId = node.id.substr(4, 4);
 						
 						return node.id == '#' ? 
-							contextPath + sUrl + '?compId=' + '001' + '&nodeType=root&resType=D' : 
-							contextPath + sUrl + '?compId=' + prmCompId + '&deptId=' + prmDeptId + '&nodeType=child&resType=D';
+							sUrl + '?compId=' + '001' + '&nodeType=root&resType=D' : 
+							sUrl + '?compId=' + prmCompId + '&deptId=' + prmDeptId + '&nodeType=child&resType=D';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };
@@ -83,9 +80,9 @@
 			bootbox.confirm('선택된 부서로 이동하시겠습니까?', function(result) {
 				if (result) {
 					$.ajax({
-						dataType: "json", 
-						type: "post", 
-						url: contextPath + "/admin/ajax/moveUserList", 
+						dataType: 'json', 
+						type: 'post', 
+						url: './ajax/moveUserList', 
 						data: {
 							compId: selNode[0].substr(1, 3), 
 							deptId: selNode[0].substr(4, 4), 
@@ -120,7 +117,7 @@
 					$.ajax({
 						dataType: 'json', 
 						type: 'post', 
-						url: contextPath + '/admin/ajax/restoreUserList', 
+						url: './ajax/restoreUserList', 
 						data: {
 							compId: selNode[0].substr(1, 3), 
 							deptId: selNode[0].substr(4, 4), 
@@ -151,7 +148,7 @@
 					$.ajax({
 						dataType: 'json', 
 						type: 'post', 
-						url: contextPath + '/admin/ajax/restoreDeptList', 
+						url: './ajax/restoreDeptList', 
 						data: {
 							parentDeptId: selNode[0].substr(4, 4), 
 							deptlist: createDeptlist()
