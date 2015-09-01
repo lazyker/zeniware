@@ -256,7 +256,7 @@
 									$.ajax({
 										dataType: "json", 
 										type: "post", 
-										url: contextPath + "/admin/ajax/deleteSingleDept", 
+										url: './ajax/deleteSingleDept', 
 										data: { mode: 'soft', compId: selNode[0].substr(1, 3), deptId: selNode[0].substr(4, 4) }, 
 										success: function(data) {
 											instance.delete_node(selNode);
@@ -285,13 +285,15 @@
 		});
 		
 		/* 사용자 검색 */
-		$('.dataTables_filter input').unbind().keyup(function(e) {
-			if (e.keyCode == 13) {
-				if ($(this).val().length == 0) {
+		$('.dataTables_filter input').unbind('keyup').on('keydown', function(event) {
+			var keyword = $(this).val();
+			
+			if (event.keyCode == 13) {
+				if (keyword.length == 0) {
 					toastrAlert('error', '검색어를 입력하세요.');
 				} else {
 					var sUrl = './ajax/getUserlist';
-					var sUri = '?compId=' + prmCompId + '&resigned=0&keyword=' + $(this).val();
+					var sUri = '?compId=' + prmCompId + '&resigned=0&keyword=' + encodeURIComponent(keyword);
 					
 					$('#tblUser').DataTable().ajax.url(sUrl + sUri).load();
 				}
@@ -323,7 +325,7 @@
 				var selCompId = selNode[0].substr(1, 3);
 				var selDeptId = selNode[0].substr(4, 4);
 				
-				var sUrl = contextPath + '/modal/admin/userTable';
+				var sUrl = './modal/userTable';
 				var sUri = '?compId=' + selCompId + '&deptId=' + selDeptId;
 				
 				$.get(sUrl + sUri, function(data) {

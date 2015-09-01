@@ -11,7 +11,7 @@
 		<ol class="breadcrumb bc-1" >
 			<li><a href="../../admin/preference/codeMain"><i class="fa-home"></i>Home</a></li>
 			<li><a href="../preference/codeMain">환경설정</a></li>
-			<li class="active">공통코드관리</strong></li>
+			<li class="active"><strong>공통코드관리</strong></li>
 		</ol>
 	</div>
 	
