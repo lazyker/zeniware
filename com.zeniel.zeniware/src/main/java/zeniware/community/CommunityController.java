@@ -199,7 +199,6 @@ public class CommunityController {
 		model.put("fcComtId",	paramMap.get("fcComtId"));
 		model.addAttribute("useList", this.comtUserMaster(paramMap));
 
-		//return "/comtLayout/comtViewMain";
 		return "/cumtLayout/community/comtViewMain";
 	}
 
@@ -224,7 +223,7 @@ public class CommunityController {
 		int rows = 0;
 		int cntRw = 0;
 		cntRw = communityService.getInserComtBasicInfoNm(paramMap);
-		logger.debug("cntRw ===========================================>" + cntRw);
+
 		if(cntRw > 0) {
 			rows = 99;
 		} else {
@@ -267,8 +266,25 @@ public class CommunityController {
 	public void getComtAddUsrAllListData(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
 		//Spring Security의 Authentication 객를 주입
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+		paramMap.put("compId", 	memberInfo.getCompId());
 
 		List<Map<String, Object>> memList = comtInfoMemberList(paramMap);
+		for(int i = 0; i < memList.size(); i++) {
+			paramMap.put("userId",		memList.get(i).get("userId"));
+
+			int cnt  = communityService.getComtAdmMemberInfo(paramMap);
+
+			if(cnt == 0) {
+				memList.get(i).put("mastGubun", "U");
+				if(memList.get(i).get("joinYn").equals("Y")) {
+					memList.get(i).put("taltelGubun", "D");
+				} else {
+					memList.get(i).put("taltelGubun", "N");
+				}
+			} else {
+				memList.get(i).put("taltelGubun", "Y");
+			}
+		}
 
 		try {
 			ObjectMapper mapper = new ObjectMapper();
@@ -352,5 +368,33 @@ public class CommunityController {
 		} catch (Exception e) {
 			throw e;
 		}
+	}
+
+	//커뮤니티 게시판 기본 메인화면 - comtLayout/*
+	@RequestMapping(value = "/comtView")
+	public String getComtViewInfo(HttpServletRequest request, @RequestParam Map<String, Object>paramMap, ModelMap model, Authentication authentication) throws Throwable {
+		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+
+		//현재 커뮤니티의 가입 여부 확인
+		int joinCnt = getComtJoinYn(memberInfo, paramMap);
+		logger.debug(" request.getServerPort() ===========================> " +  request.getServerPort());
+		logger.debug(" request.getRequestURI() ===========================> " +  request.getRequestURI());
+		if(joinCnt == 0) {
+			model.put("errorType",		"1");
+		}
+		model.put("compId",		memberInfo.getCompId());
+		model.put("joinCnt",		joinCnt);
+
+		return "/comtLayout/comtBoardMain";
+	}
+
+	//커뮤니티 가입여부 조회
+	public int getComtJoinYn(MemberInfo memberInfo, Map<String, Object> paramMap) {
+		paramMap.put("compId", memberInfo.getCompId());
+		paramMap.put("userId", memberInfo.getUserId());
+
+		int joinYn = communityService.getComtJoinCnt(paramMap);
+
+		return joinYn;
 	}
 }

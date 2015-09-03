@@ -2,7 +2,7 @@
 
 <div class="page-title">
 	<div class="title-env">
-		<h1 class="title">커뮤니티/게시판</h1>
+		<h1 class="title">커뮤니티 글</h1>
 	</div>
 
 	<div class="breadcrumb-env">

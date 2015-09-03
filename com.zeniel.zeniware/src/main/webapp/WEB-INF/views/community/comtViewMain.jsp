@@ -109,137 +109,6 @@
 					</p>
 				</div>
 			</div>
-
-			<div class="tab-pane" id="comtAddUserIf">
-				<table id="comtMemList" class="table table-small-font table-striped table-bordered">
-					<thead>
-						<tr>
-							<th>커뮤니티ID</th>
-							<th>이름</th>
-							<th>아이디</th>
-							<th>부서명</th>
-							<th>작성글 수</th>
-							<th>가입처리</th>
-							<th>운영자구분</th>
-							<th>탈퇴처리</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-
-			<div class="tab-pane" id="comtCloseIf">
-				<div>
-					<div class="row">
-						<div class="form-group">
-							<div class="col-md-2">
-								<label for="closeTitle" class="control-label">페쇄 이유</label>
-							</div>
-							<div class="col-md-9">
-								<input type="text" class="form-control" id="txtCloseNm" name="closeTitle" data-validate="maxlength[100]" value="" />
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<p>
-							<div class="form-group">
-								<div class="col-md-2">
-									<label for="closeCommentt" class="control-label">페쇄 상세 사유</label>
-								</div>
-								<div class="col-md-9">
-									<textarea class="form-control" id="txtCloseComment" rows="5" name="closeComment" data-validate="maxlength[300]"></textarea>
-								</div>
-								<div class="form-group-separator"></div>
-							</div>
-						</p>
-					</div>
-					<div class="row">
-						<p>
-							<div class="form-group">
-								<div class="col-md-2">
-									<label for="sendAll" class="control-label">전체 공지</label>
-								</div>
-								<div class="col-md-9">
-									<input type="checkbox" class="iswitch iswitch-secondary" name="sendAll" id="chkSendAll" value="Y">
-								</div>
-								<div class="form-group-separator"></div>
-							</div>
-						</p>
-					</div>
-					<div class="row">
-						<p>
-							<div class="form-group text-right">
-								<button class="btn btn-secondary btn-icon" id="closeIfSave">신청</button>
-								<button class="btn btn-gray btn-icon" id="closeIfCanse">Canse</button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="tab-pane" id="comtSendIf">
-				<!-- <form role="form" method="post">
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-2">
-								<label for="mailTitle" class="control-label">알림 제목</label>
-							</div>
-							<div class="col-md-9">
-								<input type="text" class="form-control" id="txtMailTitle" name="mailTitle" maxlength="100" value="" />
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-2">
-									<label for="mailText" class="control-label">알림 내용</label>
-								</div>
-								<div class="col-md-9">
-									<textarea class="form-control ckeditor" id="txtMailText" name="mailText" rows="10"></textarea>
-								</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="form-group text-right">
-								<button class="btn btn-secondary btn-icon" id="sendIfSave">Save changes</button>
-								<button class="btn btn-gray btn-icon" id="sendIfCanse">Canse</button>
-							</div>
-						</div>
-					</div>
-				</form> -->
-				<div>
-					<div class="row">
-						<div class="form-group">
-							<div class="col-md-2">
-								<label for="mailTitle" class="control-label">알림 제목</label>
-							</div>
-							<div class="col-md-9">
-								<input type="text" class="form-control" id="txtMailTitle" name="mailTitle" maxlength="100" value="" />
-							</div>
-						</div>
-					</div>
-					<div class="form-group-separator"></div>
-					<div class="row">
-						<p>
-							<div class="form-group">
-								<div class="col-md-2">
-									<label for="mailText" class="control-label">알림 내용</label>
-								</div>
-								<div class="col-md-9">
-									<textarea class="form-control ckeditor" id="txtMailText" name="mailText" rows="10"></textarea>
-								</div>
-							</div>
-						</p>
-					</div>
-					<div class="row">
-						<p>
-							<div class="form-group text-right">
-								<button class="btn btn-secondary btn-icon" id="sendIfSave">Save changes</button>
-								<button class="btn btn-gray btn-icon" id="sendIfCanse">Canse</button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
 <script type="text/javascript">
 $(document).ready(function() {
 	var paramCompId = "${compId}";
@@ -252,6 +121,23 @@ $(document).ready(function() {
 	var msg06 = "알림 내용을 입력 하셔야 합니다.";
 	var msg07 = "중복된 커뮤니티명은 사용하실 수 없습니다.";
 	var param = {};
+
+	/* $("#txtMastGubun").tagsInput({
+		'autocomplete_url': url_to_autocomplete_api,
+		'autocomplete': { option: value, option: value},
+		'height':'100px',
+		'width':'300px',
+		'interactive':true,
+		'defaultText':'add a tag',
+		'onAddTag':callback_function,
+		'onRemoveTag':callback_function,
+		'onChange' : callback_function,
+		'delimiter': [',',';'],   // Or a string with a single delimiter. Ex: ';'
+		'removeWithBackspace' : false,
+		'minChars' : 0,
+		'maxChars' : 0, // if not provided there is no limit
+		'placeholderColor' : '#666666'
+	}); */
 
 	$("#sendIfSave").on("click",  function() {
 		if($("#txtMailTitle").val() == "") {
@@ -462,5 +348,107 @@ $(document).ready(function() {
 	});
 });
 </script>
+			<div class="tab-pane" id="comtAddUserIf">
+				<table id="comtMemList" class="table table-small-font table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>커뮤니티ID</th>
+							<th>이름</th>
+							<th>아이디</th>
+							<th>부서명</th>
+							<th>작성글 수</th>
+							<th>가입처리</th>
+							<th>운영자구분</th>
+							<th>탈퇴처리</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+			<div class="tab-pane" id="comtCloseIf">
+				<div>
+					<div class="row">
+						<div class="form-group">
+							<div class="col-md-2">
+								<label for="closeTitle" class="control-label">페쇄 이유</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="txtCloseNm" name="closeTitle" data-validate="maxlength[100]" value="" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<p>
+							<div class="form-group">
+								<div class="col-md-2">
+									<label for="closeCommentt" class="control-label">페쇄 상세 사유</label>
+								</div>
+								<div class="col-md-9">
+									<textarea class="form-control" id="txtCloseComment" rows="5" name="closeComment" data-validate="maxlength[300]"></textarea>
+								</div>
+								<div class="form-group-separator"></div>
+							</div>
+						</p>
+					</div>
+					<div class="row">
+						<p>
+							<div class="form-group">
+								<div class="col-md-2">
+									<label for="sendAll" class="control-label">전체 공지</label>
+								</div>
+								<div class="col-md-9">
+									<input type="checkbox" class="iswitch iswitch-secondary" name="sendAll" id="chkSendAll" value="Y">
+								</div>
+								<div class="form-group-separator"></div>
+							</div>
+						</p>
+					</div>
+					<div class="row">
+						<p>
+							<div class="form-group text-right">
+								<button class="btn btn-secondary btn-icon" id="closeIfSave">신청</button>
+								<button class="btn btn-gray btn-icon" id="closeIfCanse">Canse</button>
+							</div>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-pane" id="comtSendIf">
+				<div>
+					<div class="row">
+						<div class="form-group">
+							<div class="col-md-2">
+								<label for="mailTitle" class="control-label">알림 제목</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="txtMailTitle" name="mailTitle" maxlength="100" value="" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group-separator"></div>
+					<div class="row">
+						<p>
+							<div class="form-group">
+								<div class="col-md-2">
+									<label for="mailText" class="control-label">알림 내용</label>
+								</div>
+								<div class="col-md-9">
+									<textarea class="form-control ckeditor" id="txtMailText" name="mailText" rows="10"></textarea>
+								</div>
+							</div>
+						</p>
+					</div>
+					<div class="row">
+						<p>
+							<div class="form-group text-right">
+								<button class="btn btn-secondary btn-icon" id="sendIfSave">Save changes</button>
+								<button class="btn btn-gray btn-icon" id="sendIfCanse">Canse</button>
+							</div>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
