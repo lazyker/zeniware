@@ -692,11 +692,11 @@ CREATE TABLE FC_BORD_INFO
 	FC_BOARD_TITLE varchar(100) NOT NULL,
 	-- C : 클래식
 	-- P : 피드(SNS)
-	FC_BOARD_TYPE varchar(2) DEFAULT 'C' NOT NULL COMMENT 'C : 클래식
+	FC_BOARD_TYPE varchar(2) DEFAULT 'C' COMMENT 'C : 클래식
 P : 피드(SNS)',
 	-- Y : 사용
 	-- N : 미사용
-	FC_BOARD_HEAD_YN char(1) DEFAULT 'N' NOT NULL COMMENT 'Y : 사용
+	FC_BOARD_HEAD_YN char(1) DEFAULT 'N' COMMENT 'Y : 사용
 N : 미사용',
 	-- Y : 있음
 	-- N : 없음
@@ -704,7 +704,7 @@ N : 미사용',
 N : 없음',
 	-- Y : 사용
 	-- N : 미사용
-	FC_BOARD_OPEN_YN char(1) DEFAULT 'N' NOT NULL COMMENT 'Y : 사용
+	FC_BOARD_OPEN_YN char(1) DEFAULT 'N' COMMENT 'Y : 사용
 N : 미사용',
 	-- Y : 허용
 	-- N : 미 허용
@@ -714,6 +714,11 @@ N : 미 허용',
 	-- N : 추가없음
 	BOOKMARK_YN varchar(2) DEFAULT 'N' COMMENT 'Y : 추가
 N : 추가없음',
+	-- Y :  구분선
+	-- N : 일반
+	LINE_GUBUN char(1) COMMENT 'Y :  구분선
+N : 일반',
+	SORT_INT int(4),
 	REG_DATE datetime NOT NULL,
 	REG_USER_ID varchar(20) NOT NULL,
 	PRIMARY KEY (BOARD_INFO_ID)
