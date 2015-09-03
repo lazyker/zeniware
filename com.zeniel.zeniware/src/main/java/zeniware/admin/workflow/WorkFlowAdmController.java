@@ -9,11 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.admin.workflow.service.WorkFlowAdmService;
 import zeniware.admin.workflow.vo.ConfigVo;
+import zeniware.admin.workflow.vo.FormVo;
 import zeniware.common.login.MemberInfo;
 import zeniware.common.util.StreamMapper;
 
@@ -41,6 +44,18 @@ public class WorkFlowAdmController {
   public String requestFormMain(@RequestParam Map<String, Object> paramMap, ModelMap model) {
   	
   	return "/workflowAdminLayout/formMaker";
+  }
+  
+  @RequestMapping(value="/formNew", method=RequestMethod.GET)
+  public String requestFormNew(@RequestParam Map<String, Object> paramMap, ModelMap model) {
+  	
+  	return "/workflowAdminLayout/formNew";
+  }
+  
+  @RequestMapping(value="/formNew", method=RequestMethod.POST)
+  public String submitFormNew(@ModelAttribute FormVo form) {
+  	
+  	return "redirect:formMaker";
   }
   
   @RequestMapping("/ajax/setSingleConf")
