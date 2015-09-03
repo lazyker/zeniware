@@ -9,8 +9,8 @@
 
 	<div class="breadcrumb-env">
 		<ol class="breadcrumb bc-1" >
-			<li><a href="../../admin/preference/codeMain"><i class="fa-home"></i>Home</a></li>
-			<li><a href="../preference/codeMain">일정관리</a></li>
+			<li><a href=""><i class="fa-home"></i>Home</a></li>
+			<li><a href="">일정관리</a></li>
 			<li class="active">공휴일 관리</strong></li>
 		</ol>
 	</div>

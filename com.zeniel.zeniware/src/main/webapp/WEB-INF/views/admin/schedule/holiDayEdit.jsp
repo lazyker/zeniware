@@ -15,7 +15,6 @@
 				<c:otherwise>
 					<h3 class="panel-title">공휴일 수정</h3>
 				</c:otherwise>
-				
 			</c:choose>
 			</div>
 			
@@ -31,9 +30,7 @@
 						<label class="col-sm-1 control-label">휴일 이름</label>
 						
 						<div class="col-sm-11">
-							<input type="text" class="form-control" name="hldyNm" data-validate="required" data-message-required="데이터를 입력해주세요." 
-							value='<c:out value="${param.hldyNm}"></c:out>' />
-							
+							<input type="text" class="form-control" name="hldyNm" value='<c:out value="${param.hldyNm}"></c:out>' />
 						</div>
 						
 					</div>
