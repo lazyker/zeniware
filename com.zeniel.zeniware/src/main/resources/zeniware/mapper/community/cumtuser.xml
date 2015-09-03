@@ -24,11 +24,35 @@
 		<result column="USER_NAME"		property="userNm" />
 	</resultMap>
 
+	<resultMap type="zeniware.community.vo.ComtAllListVo" id="ComtAllListVoMap">
+		<id column="COMP_ID"				property="compId" />
+		<id column="FC_COMT_ID"			property="fcComtId" />
+		<result column="fcComtId"		property="fcComtId" />
+		<result column="compId"			property="compId" />
+		<result column="userId"			property="userId" />
+		<result column="userNm"			property="userNm" />
+		<result column="deptId"			property="deptId" />
+		<result column="deptNm"			property="deptNm" />
+		<result column="talNum"			property="talNum" />
+		<result column="typeGubun"		property="typeGubun" />
+		<result column="boardInfoId"		property="boardInfoId" />
+		<result column="mastGubun"		property="mastGubun" />
+		<result column="taltelGubun"		property="taltelGubun" />
+		<result column="inviteYn"			property="inviteYn" />
+		<result column="joinYn"				property="joinYn" />
+		<result column="REG_DATE"		property="regDate" />
+	</resultMap>
+
 	<select id="comtUser.getComntUserJoinList" parameterType="map" resultMap="comtVoMap">
 		SELECT
 			CI.FC_COMT_ID, CI.FC_ADM_SEQ, CI.COMP_ID, CI.CUMT_NM, CI.CUMT_COMMENT, CI.ADM_ACT_YN,
 			CI.OPEN_YN, CI.REG_DATE, CI.MOD_DATE, CI.REG_USER_ID, CI.MOD_USER_ID,
-			CAI.MAST_GUBUN, CAI.JOIN_YN
+			(
+				SELECT MAST_GUBUN FROM FC_COMT_ADMN_USER
+				WHERE FC_COMT_ID = CI.FC_COMT_ID
+					AND USER_ID = #{userId, jdbcType=VARCHAR}
+			) AS MAST_GUBUN,
+			CAI.JOIN_YN
 		FROM
 			FC_CUMT_INFO CI
 			INNER JOIN FC_CUMT_ADD_INFO CAI ON CI.FC_COMT_ID = CAI.FC_COMT_ID AND CAI.TYPE_GUBUN = 'C'
@@ -84,13 +108,14 @@
 	</select>
 
 	<select id="comtUser.getComtInofUserMastList" parameterType="map" resultType="hashmap">
+		/* comtUser.getComtInofUserMastList */
 		SELECT
 			CAI.USER_ID,
 			(
 				SELECT USER_NM FROM FH_USER WHERE USER_ID = CAI.USER_ID
 			) AS USER_NAME
 		FROM
-			FC_CUMT_ADD_INFO CAI
+			FC_COMT_ADMN_USER CAI
 		WHERE 1 = 1
 			AND CAI.COMP_ID = #{compId, jdbcType=VARCHAR}
 			AND CAI.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
@@ -108,6 +133,7 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 	</select>
 
+	<!-- 커뮤니티 개설 신청명 중복 조회 -->
 	<select id="comtUser.getComtInfoCnt" parameterType="zeniware.community.vo.ComtVo" resultType="int">
 		SELECT
 			COUNT(FC_ADM_SEQ) AS CNT
@@ -118,6 +144,7 @@
 			AND CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
 	</select>
 
+	<!-- 커뮤니티 개설 신청 처리 -->
 	<insert id="comtUser.insertNewComtInfoAdd" parameterType="zeniware.community.vo.ComtVo">
 		INSERT INTO FC_CUMT_INFO
 		(
@@ -147,6 +174,7 @@
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 	</insert>
 
+	<!-- 커뮤니티 개설 신청 처리의 사용자 정보 입력 처리 -->
 	<insert id="comtUser.insertNewComtAddUserInfo" parameterType="zeniware.community.vo.ComtVo">
 		INSERT INTO FC_CUMT_ADD_INFO
 		(
@@ -202,6 +230,29 @@
 		)
 	</insert>
 
+	<!-- 커뮤니티 신청 시 운영자 정보 입력 -->
+	<insert id="comtUser.setInsertComtInfoAdmUserAdd" parameterType="hashmap">
+		/* comtUser.setInsertComtInfoAdmUserAdd */
+		INSERT INTO FC_COMT_ADMIN_USER
+		(
+			FC_COMT_ID,
+			BOARD_INFO_ID,
+			COMP_ID,
+			USER_ID,
+			DEPT_ID,
+			MAST_GUBUN,
+			TYPE_GUBUN
+		) VALUES (
+			#{fcComtId, jdbcType=VARCHAR},
+			#{boardInfoId, jdbcType=NUMERIC},
+			#{compId, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{deptId, jdbcType=VARCHAR},
+			#{mastGubun, jdbcType=VARCHAR},
+			#{typeGubun, jdbcType=VARCHAR}
+		)
+	</insert>
+
 	<!-- 커뮤니티 상세정보view(fcComtId) -->
 	<select id="comtUser.comtview.getComtInfoDetail" parameterType="hashmap" resultMap="comtVoMap">
 		SELECT
@@ -230,7 +281,7 @@
 		SELECT
 			COUNT(USER_ID) AS CNT
 		FROM
-			FC_CUMT_INFO
+			FC_CUMT_ADD_INFO
 		WHERE 1 = 1
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
 			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
@@ -239,35 +290,51 @@
 
 	<!-- 커뮤니티 멤버 전체 조회 -->
 	<select id="comtUser.getComtInfoMemberAllList" parameterType="hashmap" resultType="hashmap">
+		/* comtUser.getComtInfoMemberAllList */
 		SELECT
-			FC_COMT_ID AS fcComtId,
-			COMP_ID AS compId,
-			USER_ID AS userId,
-			(
-				SELECT USER_NM FROM FH_USER WHERE USER_ID = A.USER_ID AND COMP_ID = A.COMP_ID
-			) AS userNm,
-			DEPT_ID AS deptId,
-			(
-				SELECT DEPT_NM FROM FH_DEPT WHERE DEPT_ID = A.DEPT_ID AND COMP_ID = A.COMP_ID
-			) AS deptNm,
+			A.FC_COMT_ID AS fcComtId,
+			A.COMP_ID AS compId,
+			A.USER_ID AS userId,
+			FU.USER_NM AS userNm,
+			A.DEPT_ID AS deptId,
+			FD.DEPT_NM AS deptNm,
 			(
 				SELECT COUNT(C.BOARD_SEQ) FROM FC_BORD_INFO B, FC_CUMT_BOAD_INFO C
 				WHERE B.BOARD_INFO_ID = C.BOARD_INFO_ID
 					AND A.FC_COMT_ID = B.FC_COMT_ID
 			) AS talNum,
-			TYPE_GUBUN AS typeGubun,
-			BOARD_INFO_ID AS boardInfOId,
-			MAST_GUBUN AS mastGubun,
-			CASE WHEN MAST_GUBUN = 'M' AND JOIN_YN = 'Y' THEN 'Y'
-			WHEN MAST_GUBUN = 'U' AND JOIN_YN = 'Y' THEN 'D'
-			ELSE 'N' END AS taltelGubun,
-			INVITE_YN AS inviteYn,
-			JOIN_YN AS joinYn,
-			REG_DATE AS regDate
+			A.TYPE_GUBUN AS typeGubun,
+			(
+				SELECT MAST_GUBUN FROM FC_COMT_ADMN_USER
+				WHERE USER_ID = A.USER_ID
+					AND FC_COMT_ID = A.FC_COMT_ID
+			) AS mastGubun,
+			A.BOARD_INFO_ID AS boardInfOId,
+			A.INVITE_YN AS inviteYn,
+			A.JOIN_YN AS joinYn,
+			A.REG_DATE AS regDate
 		FROM
 			FC_CUMT_ADD_INFO A
+			INNER JOIN FH_USER FU ON A.USER_ID = FU.USER_ID AND FU.COMP_ID = #{compId, jdbcType=VARCHAR}
+			INNER JOIN FH_DEPT FD ON A.DEPT_ID = FD.DEPT_ID AND FD.COMP_ID = #{compId, jdbcType=VARCHAR}
+		WHERE 1 = 1
+			AND A.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
+			<!-- CALL SP_FC_COMT_ALL_MEMB_LIST(#{compId}, #{fcComtId}); -->
+	</select>
+
+	<!--  -->
+	<select id="comtUser.getComtAdmMemberInfo" parameterType="hashmap" resultType="int">
+		/* comtUser.getComtAdmMemberInfo */
+		SELECT
+			COUNT(*) AS CNT
+		FROM
+			FC_COMT_ADMN_USER
 		WHERE 1 = 1
 			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId, jdbcType=VARCHAR}
+			AND MAST_GUBUN IN ('M','B')
+			AND TYPE_GUBUN = 'C'
 	</select>
 
 	<!-- 커뮤니티 멤버 탈퇴 처리 -->
@@ -336,4 +403,39 @@
 			NOW()
 		)
 	</insert>
+
+	<!-- 커뮤니티 상세보기 수정 처리 -->
+	<update id="comtUser.setInsertUserComtBasicInfo" parameterType="hashmap">
+		/* comtUser.setInsertUserComtBasicInfo */
+		UPDATE FC_CUMT_INFO SET
+			CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
+			,CUMT_COMMENT = #{cumtComment, jdbcType=VARCHAR}
+			,OPEN_YN = #{openYn, jdbcType=VARCHAR}
+			,MOD_DATE = NOW()
+			,MOD_USER_ID = #{userId, jdbcType=VARCHAR}
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND COMP_ID = #{compId, jdbcType=VARCHAR}
+	</update>
+
+	<!-- 커뮤니티 상세보기 수정의 커뮤니티명 중복 확인 -->
+	<select id="comtUser.getInserComtBasicInfoNm" parameterType="hashmap" resultType="int">
+		/* comtUser.getInserComtBasicInfoNm */
+		SELECT
+			COUNT(FC_COMT_ID) AS CNT
+		FROM
+			FC_CUMT_INFO
+		WHERE COMP_ID = #{compId, jdbcType=VARCHAR}
+			AND CUMT_NM = #{cumtNm, jdbcType=VARCHAR}
+	</select>
+
+	<!-- 커뮤니티 가입여부 조회 -->
+	<select id="comtUser.getComtJoinCnt" parameterType="hashmap" resultType="int">
+		/* comtUser.getComtJoinCnt */
+		SELECT
+			COUNT(USER_ID) AS CNT
+		FROM
+			FC_CUMT_ADD_INFO
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND USER_ID = #{userId,  jdbcType=VARCHAR}
+	</select>
 </mapper>

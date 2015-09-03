@@ -59,12 +59,14 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jstree/jstree.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/ckeditor/ckeditor.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/ckeditor/adapters/jquery.js"></script>
 	
 	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
 	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/custom/speed-custom.js"></script>
 	
 </body>
 

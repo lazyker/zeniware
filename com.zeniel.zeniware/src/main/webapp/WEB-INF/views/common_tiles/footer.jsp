@@ -141,7 +141,9 @@
 	}
 	
 	jQuery(document).ready(function($) {
+		
 		var curCompId = "${currentUser.compId}";
+		var contextPath = "${pageContext.request.contextPath}";
 
 		/* footer member window toggle */
 		$(".footer-sticked-chat .chat-user, .other-conversations-list a").on('click', function(ev)
@@ -159,8 +161,8 @@
 						var paramDeptId = node.id.substr(4, 4);
 						
 						return node.id == '#' ? 
-							'../admin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
-							'../admin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
+							contextPath + '/plugin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
+							contextPath + '/plugin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };
@@ -173,7 +175,7 @@
 					$.ajax({
 						dataType: "json", 
 						type: "post", 
-						url: "../admin/ajax/getSingleUser", 
+						url: contextPath + "/admin/preference/ajax/getSingleUser", 
 						data: { compId: data.node.id.substr(1, 3), userId: data.node.id.substr(4) }, 
 						success: function(result) {
 							$('#profileUserName').html(result.userName);
@@ -213,9 +215,9 @@
 						
 						return node.id == '#' ?
 							keyword.length == 0 ? 
-								'../admin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
-								'../admin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
-							'../admin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
+								contextPath + '/plugin/ajax/getNodelistDefer?compId=' + curCompId + '&nodeType=root&resType=U' : 
+								contextPath + '/plugin/ajax/getNodelistSearch?compId=' + curCompId + '&keyword=' + encodeURIComponent(keyword) : 
+							contextPath + '/plugin/ajax/getNodelistDefer?compId=' + paramCompId + '&deptId=' + paramDeptId + '&nodeType=child&resType=U';
 					}, 
 					'data': function(node) {
 						return { 'id': node.id };

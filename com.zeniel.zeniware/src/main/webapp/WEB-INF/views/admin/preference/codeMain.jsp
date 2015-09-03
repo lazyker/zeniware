@@ -11,7 +11,7 @@
 		<ol class="breadcrumb bc-1" >
 			<li><a href="../../admin/preference/codeMain"><i class="fa-home"></i>Home</a></li>
 			<li><a href="../preference/codeMain">환경설정</a></li>
-			<li class="active">공통코드관리</strong></li>
+			<li class="active"><strong>공통코드관리</strong></li>
 		</ol>
 	</div>
 	
@@ -92,8 +92,6 @@
 
 	$(document).ready(function() {
 		
-		var contextPath = "${pageContext.request.contextPath}";
-		
 		var msg01 = "공통코드 삭제";
 		var msg02 = "삭제하시겠습니까?";
 		var msg03 = "확인";
@@ -108,7 +106,7 @@
 		
 		/* Grouplist Data Binding */
 		$('#tblGroup').dataTable({
-			ajax: { "url": contextPath + "/admin/ajax/getGrouplist", "dataSrc": "" }, 
+			ajax: { "url": "./ajax/getGrouplist", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -120,7 +118,7 @@
 		
 		/* Codelist Data Binding */
 		$('#tblCode').DataTable({
-			ajax: { "url": contextPath + "/admin/ajax/getCodelist", "dataSrc": "" }, 
+			ajax: { "url": "./ajax/getCodelist", "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -150,12 +148,12 @@
 			$('#tblGroup').DataTable().$('tr.selected').removeClass('selected');
 			$(this)[$(this).hasClass('selected') ? 'removeClass' : 'addClass']('selected');			
 
-			$('#tblCode').DataTable().ajax.url('../ajax/getCodelist?groupId=' + selectedGroupId).load();
+			$('#tblCode').DataTable().ajax.url('./ajax/getCodelist?groupId=' + selectedGroupId).load();
 		});
 		
 		/* 그룹 추가 */
 		$("#btnGroupAdd").on('click', function() {
- 			$.get(contextPath + '/modal/admin/codeNew?opener=group&groupId=00000', function(data) {
+ 			$.get('./modal/codeNew?opener=group&groupId=00000', function(data) {
 				modalToggle(true, data, '그룹 추가');
 			});
 		});
@@ -168,7 +166,7 @@
 				toastrAlert('error', msg05);
 				
 			} else {
-				var sUrl = contextPath + '/modal/admin/codeNew';
+				var sUrl = './modal/codeNew';
 				var sUri = '?opener=group&groupId=00000&codeId=' + selData[0].groupId;
 				$.get(sUrl + sUri, function(data) {
 					modalToggle(true, data, '그룹 정보');
@@ -192,7 +190,7 @@
 						$.ajax({
 							dataType: "json", 
 							type: "POST", 
-							url: "../ajax/deleteCodeList", 
+							url: "./ajax/deleteCodeList", 
 							data: { codelist: createJsonGrouplist() }, 
 							success: function(data) {
 								toastrAlert('success', '삭제되었습니다.');
@@ -210,7 +208,7 @@
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);
 			
-			var sUrl = contextPath + '/modal/admin/codeNew';
+			var sUrl = './modal/codeNew';
  			var sUri = '?opener=code&groupId=' + aData.groupId + '&codeId=' + aData.codeId;
 
  			$.get(sUrl + sUri, function(data) {
@@ -225,7 +223,7 @@
 			if (selData.length == 0) {
 				toastrAlert('error', msg08);
 			} else {
-				var sUrl = contextPath + '/modal/admin/codeNew';
+				var sUrl = './modal/codeNew';
 	 			var sUri = '?opener=code&groupId=' + selData[0].groupId;
 
 	 			$.get(sUrl + sUri, function(data) {
@@ -243,7 +241,7 @@
 					$.ajax({
 						dataType: "json", 
 						type: "POST", 
-						url: "../ajax/deleteCodelist", 
+						url: "./ajax/deleteCodelist", 
 						data: { codelist: createJsonCodelist() }, 
 						success: function(data) {
 							toastrAlert('success', data + '개의 코드가 삭제되었습니다.');
@@ -263,7 +261,7 @@
 			if (selData.length == 0) {
 				toastrAlert('error', '그룹코드를 선택하세요.');
 			} else {
-				var sUrl = contextPath + '/modal/admin/codeTable';
+				var sUrl = './modal/codeTable';
 				var sUri = '?groupId=' + selData[0].groupId;
 				
 				$.get(sUrl + sUri, function(data) {

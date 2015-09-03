@@ -76,12 +76,26 @@
 		<put-attribute name="body" value="" />
 	</definition>
 
+	<!-- 커뮤니티 Admin 선언 -->
+	<definition name="comtAdm_layout" template="/WEB-INF/layout/comtAdm_layout.jsp">
+		<put-attribute name="header"  value="/WEB-INF/views/common_tiles/header.jsp" />
+		<put-attribute name="top"  value="/WEB-INF/views/common_tiles/admin_topForm.jsp" />
+		<put-attribute name="leftFm" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+
 	<!-- Admin 구분 Tiles 호출 -->
 	<definition name="/adminLayout/*/*" extends="admin_layout">
 		<put-attribute name="leftFm"  value="/WEB-INF/views/admin/common/admleft_{1}.jsp" />
 		<put-attribute name="body"  value="/WEB-INF/views/admin/{1}/{2}.jsp" />
 	</definition>
-	
+
+	<!-- 커뮤니티 Adm 구분 Tiles 호출 -->
+	<definition name="/comtAdmLayout/*/*" extends="comtAdm_layout">
+		<put-attribute name="leftFm"  value="/WEB-INF/views/admin/common/admleft_{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/admin/{1}/{2}.jsp" />
+	</definition>
+
 	<!-- 관리자 환경설정 Layout -->
 	<definition name="preference_layout" template="/WEB-INF/layout/preference_layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/common_tiles/header.jsp" />
@@ -102,7 +116,7 @@
 		<put-attribute name="body" value="" />
 	</definition>
 
-	<definition name="/workflowadminLayout/*" extends="admin_workflow_layout">
+	<definition name="/workflowAdminLayout/*" extends="admin_workflow_layout">
 		<put-attribute name="body" value="/WEB-INF/views/admin/workflow/{1}.jsp" />
 	</definition>
 

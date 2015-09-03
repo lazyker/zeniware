@@ -50,10 +50,8 @@
 
 	$(document).ready(function() {
 		
-		var contextPath = "${pageContext.request.contextPath}";
-		
 		$('#tblComp').DataTable({
-			ajax: { "url": "../ajax/getComplist?mode=-1", "dataSrc": "" }, 
+			ajax: { "url": './ajax/getComplist?mode=-1', "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -73,7 +71,7 @@
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);
 			
-			$.get(contextPath + '/modal/admin/compNew?compId=' + aData.compId, function(data) {
+			$.get('./modal/compNew?compId=' + aData.compId, function(data) {
 				modalToggle(true, data, '회사 정보');
 			});
 		});

@@ -49,11 +49,9 @@
 
 	$(document).ready(function() {
 		
-		var contextPath = "${pageContext.request.contextPath}";
-
 		/* Datatable Configuration */
 		var table = $('#tblComp').DataTable({
-			ajax: { "url": contextPath + "/admin/ajax/getComplist?mode=0", "dataSrc": "" }, 
+			ajax: { "url": './ajax/getComplist?mode=0', "dataSrc": "" }, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
 			aoColumns: [
@@ -73,19 +71,19 @@
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);
 			
-			$.get(contextPath + '/modal/admin/compNew?compId=' + aData.compId, function(data) {
+			$.get('./modal/compNew?compId=' + aData.compId, function(data) {
 				modalToggle(true, data, '회사 정보');
 			});
 		});
 		
 		/* 삭제회사관리 */
 		$('#btnDelComp').on('click', function() {
-			$(location).prop('href', contextPath + '/admin/preference/unitDeletedComp');
+			$(location).prop('href', './unitDeletedComp');
 		});
 		
 		/* 회사 추가 */
 		$('#btnCompAdd').on('click', function() {
-			$.get(contextPath + '/modal/admin/compNew', function(data) {
+			$.get('./modal/compNew', function(data) {
 				modalToggle(true, data);
 			});
 		});

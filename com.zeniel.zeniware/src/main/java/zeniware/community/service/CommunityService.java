@@ -55,8 +55,14 @@ public interface CommunityService {
 	//커뮤니티 상세보기의 정보 수정
 	public int setInsertUserComtBasicInfo(Map<String, Object> paramMap);
 
+	//커뮤니티 상세보기 수정의 커뮤니티명 중복 확인
+	public int getInserComtBasicInfoNm(Map<String, Object> paramMap);
+
 	//커뮤니티 멤버 전체 조회
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap);
+
+	//커뮤니티 멤버 전체 조회의 관리자여부 조회
+	public int getComtAdmMemberInfo(Map<String, Object> paramMap);
 
 	//커뮤니티 멤버 탈퇴 처리
 	public int setDeleteComtInfoMemUser(Map<String, Object> paramMap);
@@ -69,4 +75,7 @@ public interface CommunityService {
 
 	//커뮤니티 메일 발송 내용 DB 저장 처리
 	public int setInsertComtInfoMailSend(Map<String, Object> paramMap);
+
+	//커뮤니티 가입여부 조회
+	public int getComtJoinCnt(Map<String, Object> paramMap);
 }

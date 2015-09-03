@@ -63,13 +63,12 @@
 	$(document).ready(function() {
 		
 		var paramCompId = "${compId}";
-		var contextPath = "${pageContext.request.contextPath}";
 		
 		$('#tblUser').DataTable({
 			ajax: {
-				"url": contextPath + "/admin/ajax/getUserlist", 
-				"data": { compId: paramCompId, resigned: 1 }, 
-				"dataSrc": "" 
+				'url': './ajax/getUserlist', 
+				'data': { compId: paramCompId, resigned: 1 }, 
+				'dataSrc': "" 
 			}, 
 			deferRender: true, 
 			pagingType: "simple_numbers", 
@@ -98,7 +97,7 @@
 			var aPos = oTable.fnGetPosition(this);
 			var aData = oTable.fnGetData(aPos);
 			
- 			var sUrl = contextPath + '/modal/admin/userNew';
+ 			var sUrl = './modal/userNew';
  			var sUri = '?compId=' + aData.compId + '&userId=' + aData.userId;
 			
 			$.get(sUrl + sUri, function(data) {
@@ -111,7 +110,7 @@
 			var $checked = $('tbody :checkbox:checked', $('#tblUser'));
 			
 			if ($checked.length > 0) {
-				$.get(contextPath + '/modal/admin/deptTree?opener=restoreuser', function(data) {
+				$.get('./modal/deptTree?opener=restoreuser', function(data) {
 					modalToggle(true, data);
 				});
 			} else {
@@ -129,7 +128,7 @@
  						$.ajax({
  							dataType: 'json', 
  							type: 'post', 
- 							url: contextPath + '/admin/ajax/deleteUserList', 
+ 							url: './ajax/deleteUserList', 
  							data: { mode: 'hard', userlist: createJsonUserlist() }, 
  							success: function(data) {
  								toastrAlert('success', data + '개의 사용자 계정이 삭제되었습니다.');

@@ -37,10 +37,10 @@ public class CommunityDao extends AbstractDao {
 	*/
 	public int insertNewComtInfo(ComtVo comtVo) {
 		int res = (int) selectOne("comtUser.getComtInfoCnt", comtVo);
-		logger.debug("커뮤니티 개설 신청 처리 중복====================================>" + res);
 		int rsult = 0;
 		if(res == 0) {
 			insert("comtUser.insertNewComtInfoAdd", comtVo);
+			insert("comtUser.setInsertComtInfoAdmUserAdd", comtVo);
 			rsult = (int) insert("comtUser.insertNewComtAddUserInfo" , comtVo);
 		}
 		return rsult;
@@ -111,9 +111,19 @@ public class CommunityDao extends AbstractDao {
 		return (int) update("comtUser.setInsertUserComtBasicInfo", paramMap);
 	}
 
+	//커뮤니티 상세보기 수정의 커뮤니티명 중복 확인
+	public int getInserComtBasicInfoNm(Map<String, Object> paramMap) {
+		return (int) selectOne("comtUser.getInserComtBasicInfoNm", paramMap);
+	}
+
 	//커뮤니티 멤버 전체 조회
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap) {
 		return (List<Map<String, Object>>) selectList("comtUser.getComtInfoMemberAllList", listMap);
+	}
+
+	//커뮤니티 멤버 전체 조회의 관리자여부 조회
+	public int getComtAdmMemberInfo(Map<String, Object> paramMap) {
+		return (int) selectOne("comtUser.getComtAdmMemberInfo" , paramMap);
 	}
 
 	//커뮤니티 멤버 탈퇴 처리
@@ -138,5 +148,10 @@ public class CommunityDao extends AbstractDao {
 	//커뮤니티 메일 발송 내용 DB 저장 처리
 	public int setInsertComtInfoMailSend(Map<String, Object> paramMap) {
 		return (int) update("comtUser.setInsertComtInfoMailSend", paramMap);
+	}
+
+	//커뮤니티 가입여부 조회
+	public int getComtJoinCnt(Map<String, Object> paramMap) {
+		return (int) selectOne("comtUser.getComtJoinCnt" , paramMap);
 	}
 }

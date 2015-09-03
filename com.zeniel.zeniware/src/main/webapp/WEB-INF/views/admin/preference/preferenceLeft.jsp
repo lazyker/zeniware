@@ -2,7 +2,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<sec:authentication var="currentUser" property="principal" />
+<sec:authentication var="curUser" property="principal" />
  
 <div class="sidebar-menu toggle-others"> 
 		 
@@ -21,20 +21,20 @@
 				<a href="${pageContext.request.contextPath}/admin/preference/unitSelect">
 					<i class="linecons-user"></i><span class="title">조직관리</span>
 				</a>
-				<c:if test='${currentUser.entitlement.equals("2")}'>
+				<c:if test='${curUser.entitlement.equals("2")}'>
 				<ul>
 					<li>
-						<a href="./unitMain?compId=${currentUser.getCompId()}">
+						<a href="./unitMain?compId=${curUser.getCompId()}">
 							<i class="entypo-flow-line"></i><span class="title">부서/사용자 관리</span> 
 						</a>
 					</li>
 					<li>
-						<a href="./unitClosedDept?compId=${currentUser.getCompId()}">
+						<a href="./unitDeletedDept?compId=${curUser.getCompId()}">
 							<i class="entypo-flow-line"></i><span class="title">폐쇄부서 관리</span>
 						</a>
 					</li>
 					<li>
-						<a href="./unitResignedUser?compId=${currentUser.getCompId()}">
+						<a href="./unitDeletedUser?compId=${curUser.getCompId()}">
 							<i class="entypo-flow-line"></i><span class="title">퇴직자 관리</span>
 						</a>
 					</li>
@@ -44,5 +44,14 @@
 			
 		</ul> 
 		 
-	</div> 
+	</div>
+	
 </div> 
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+	});
+	
+</script>

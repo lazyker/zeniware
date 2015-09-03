@@ -22,18 +22,18 @@
 
 		<ul id="main-menu" class="main-menu">
 			
-			<li class="opened active">
+			<li>
 				<a href="#"> 
 					<i class="linecons-desktop"></i><span class="title">개인결재</span>
 				</a>
 				<ul>
 					<li>
-						<a href="#">
+						<a href="${pageContext.request.contextPath}/workflow/flow/flow1">
 							<i class="entypo-flow-line"></i><span class="title">대기문서</span>
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="${pageContext.request.contextPath}/workflow/flow/flow2">
 							<i class="entype-flow-line"></i><span class="title">진행문서</span>
 						</a>
 					</li>
@@ -51,7 +51,7 @@
 						</a>
 						<ul>
 							<li>
-								<a href="#">
+								<a href="${pageContext.request.contextPath}/workflow/flow/flow3">
 									<i class="entype-flow-parallel"></i><span class="title">일반기안문</span>
 								</a>
 							</li>
@@ -71,7 +71,7 @@
 				</a>
 				<ul>
 					<li>
-						<a href="#">
+						<a href="${pageContext.request.contextPath}/workflow/folder/folder1">
 							<i class="entypo-flow-line"></i><span class="title">기안문서함</span>
 						</a>
 					</li>
@@ -104,7 +104,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="${pageContext.request.contextPath}/workflow/folder/folder2">
 									<i class="entype-flow-parallel"></i><span class="title">수신함</span>
 								</a>
 							</li>
@@ -117,3 +117,15 @@
 		 
 	</div> 
 </div> 
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+	});
+	
+/* ***References***
+
+*/
+
+</script>

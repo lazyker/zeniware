@@ -13,8 +13,6 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2-bootstrap.css">
-	
-	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 
 </head>
 
@@ -73,7 +71,8 @@
 	<script src="${pageContext.request.contextPath}/assets/js/select2/select2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 	
-	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/custom/speed-custom.js"></script>
 
 </body>
 

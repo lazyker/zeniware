@@ -79,8 +79,20 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
+	//커뮤니티 상세보기 수정의 커뮤니티명 중복 확인
+	public int getInserComtBasicInfoNm(Map<String, Object> paramMap) {
+		return communityDao.getInserComtBasicInfoNm(paramMap);
+	}
+
+	@Override
 	public List<Map<String, Object>> getComtInfoMemberAllList(Map<String, Object> listMap) {
 		return communityDao.getComtInfoMemberAllList(listMap);
+	}
+
+	@Override
+	//커뮤니티 멤버 전체 조회의 관리자여부 조회
+	public int getComtAdmMemberInfo(Map<String, Object> paramMap) {
+		return communityDao.getComtAdmMemberInfo(paramMap);
 	}
 
 	@Override
@@ -101,5 +113,10 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public int setInsertComtInfoMailSend(Map<String, Object> paramMap) {
 		return communityDao.setInsertComtInfoMailSend(paramMap);
+	}
+
+	@Override
+	public int getComtJoinCnt(Map<String, Object> paramMap) {
+		return communityDao.getComtJoinCnt(paramMap);
 	}
 }

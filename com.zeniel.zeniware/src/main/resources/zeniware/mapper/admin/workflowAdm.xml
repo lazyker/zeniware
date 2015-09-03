@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="admin.workflowAdm">
+	
+	<resultMap id="confResultMap" type="zeniware.admin.workflow.vo.ConfigVo">
+		<id property="compId" column="COMP_ID" />
+		<result property="signYn" column="SIGN_YN" />
+		<result property="passYn" column="PASS_YN" />
+		<result property="titleYn" column="TITLE_YN" />
+		<result property="agreementYn" column="AGREEMENT_YN" />
+		<result property="namingPrefix" column="NAMING_PREFIX" />
+		<result property="namingYear" column="NAMING_YEAR" />
+		<result property="namingDigit" column="NAMING_DIGIT" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+	</resultMap>
+	
+	<select id="getSingleConf" parameterType="map" resultMap="confResultMap">
+		CALL UP_WORKFLOW_CONF_ONE(#{compId});
+	</select>
+	
+	<insert id="setSingleConf" parameterType="map">
+		CALL UP_WORKFLOW_CONF_SET(
+			#{compId}, #{signYn}, #{passYn}, #{titleYn}, #{agreementYn}, #{namingPrefix}, #{namingYear}, #{namingDigit}
+		);
+	</insert>
+
+</mapper>
