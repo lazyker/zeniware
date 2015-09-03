@@ -14,26 +14,27 @@ import zeniware.common.plugin.service.PluginService;
 import zeniware.common.util.StreamMapper;
 
 @Controller
+@RequestMapping("/plugin")
 public class PluginController {
   
   @Autowired
   PluginService pluginService;
   
-  @RequestMapping("/plugin/ajax/getNodelistSearch")
+  @RequestMapping("/ajax/getNodelistSearch")
   public void getTreeNodelistSearch(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, pluginService.getNodeListSearch(paramMap));
   }
   
-  @RequestMapping("/plugin/ajax/getNodelistDefer")
+  @RequestMapping("/ajax/getNodelistDefer")
   public void getNodelistDefer(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, pluginService.getNodeListDefer(paramMap));
   }
   
-  @RequestMapping("/plugin/ajax/getChildNodeCount")
+  @RequestMapping("/ajax/getChildNodeCount")
   public void getChildNodeCount(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     

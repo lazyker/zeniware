@@ -102,8 +102,6 @@
 
 <script type="text/javascript">
 	
-	var contextPath = "${pageContext.request.contextPath}";
-
 	jQuery(document).ready(function($) {
 
 		/* 코드 정보 저장 */
@@ -125,7 +123,7 @@
 					$.ajax({
 						dataType: 'json', 
 						type: 'post', 
-						url: contextPath + '/admin/ajax/getSingleCodeExists', 
+						url: './ajax/getSingleCodeExists', 
 						data: { groupId: curGroupId, codeId: curCodeId }, 
 						success: function(data) {
 							if (data > 0) {
@@ -147,7 +145,7 @@
 		$.ajax({
 			dataType: "json", 
 			type: "post", 
-			url: contextPath + '/admin/ajax/setSingleCode', 
+			url: './ajax/setSingleCode', 
 			data: {
 				code: createNameElements()
 			}, 

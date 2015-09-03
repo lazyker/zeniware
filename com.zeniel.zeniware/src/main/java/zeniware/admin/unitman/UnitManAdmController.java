@@ -15,62 +15,61 @@ import zeniware.admin.unitman.service.UnitManAdmService;
 import zeniware.common.util.StreamMapper;
 
 @Controller
+@RequestMapping("/admin/preference")
 public class UnitManAdmController {
-  
-  @Autowired
-  UnitManAdmService unitmanAdmService;
-  
-  /*********************
-   * Public Procedures
-   *********************/
-  @RequestMapping("/admin/preference/unitSelect")
-  public String requestUnitSelect(@RequestParam Map<String, Object> paramMap, ModelMap model) {
-    
-    return "/preferenceLayout/unitSelect";
-  }
-  
-  @RequestMapping("/admin/preference/unitMain")
-  public String requestUnitMain(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
-    
-    model.put("compId", paramMap.get("compId"));
-    return "/preferenceLayout/unitMain";
-  }
-  
-  @RequestMapping("/admin/preference/unitDeletedComp")
-  public String requestUnitDeletedComp(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
-    
-    return "/preferenceLayout/unitDeletedComp";
-  }
-  
-  @RequestMapping("/admin/preference/unitDeletedDept")
+	
+	@Autowired
+	UnitManAdmService unitmanAdmService;
+	
+	/*********************
+	 * Public Procedures
+	 *********************/
+	@RequestMapping("/unitSelect")
+	public String requestUnitSelect(@RequestParam Map<String, Object> paramMap, ModelMap model) {
+		return "/preferenceLayout/unitSelect";
+	}
+	
+	@RequestMapping("/unitMain")
+	public String requestUnitMain(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
+		
+		model.put("compId", paramMap.get("compId"));
+		return "/preferenceLayout/unitMain";
+	}
+	
+	@RequestMapping("/unitDeletedComp")
+	public String requestUnitDeletedComp(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
+		return "/preferenceLayout/unitDeletedComp";
+	}
+	
+  @RequestMapping("/unitDeletedDept")
   public String requestUnitClosedDept(@RequestParam Map<String, Object> paramMap, ModelMap model)  {
     
     model.put("compId", paramMap.get("compId"));
     return "/preferenceLayout/unitDeletedDept";
   }
   
-  @RequestMapping("/admin/preference/unitDeletedUser")
+  @RequestMapping("/unitDeletedUser")
   public String requestUnitResignedUser(@RequestParam Map<String, Object> paramMap, ModelMap model) {
     
     model.put("compId", paramMap.get("compId"));
     return "/preferenceLayout/unitDeletedUser";
   }
   
-  @RequestMapping("/admin/preference/ajax/getComplist")
+  @RequestMapping("/ajax/getComplist")
   public void getCompList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
     StreamMapper.writeValue(response, unitmanAdmService.getCompList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/getDeptlist")
+  @RequestMapping("/ajax/getDeptlist")
   public void getDeptList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.getDeptList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/getUserlist")
+  @RequestMapping("/ajax/getUserlist")
   public void getUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
@@ -79,91 +78,91 @@ public class UnitManAdmController {
     StreamMapper.writeValue(response, unitmanAdmService.getUserList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/getSingleUser")
+  @RequestMapping("/ajax/getSingleUser")
   public void getSingleUser(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.getSingleUser(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/setSingleComp")
+  @RequestMapping("/ajax/setSingleComp")
   public void setSingleComp(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.setSingleComp(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/setSingleDept")
+  @RequestMapping("/ajax/setSingleDept")
   public void setSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.setSingleDept(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/setSingleUser")
+  @RequestMapping("/ajax/setSingleUser")
   public void setSingleUser(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.setSingleUser(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/moveSingleDept")
+  @RequestMapping("/ajax/moveSingleDept")
   public void moveSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.moveSingleDept(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/moveUserList")
+  @RequestMapping("/ajax/moveUserList")
   public void moveUserList(@RequestParam Map<String, Object> paramMap, 
-    HttpServletRequest request, HttpServletResponse response) throws Throwable {
-  
+		HttpServletRequest request, HttpServletResponse response) throws Throwable {
+
     StreamMapper.writeValue(response, unitmanAdmService.moveUserList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/setUserListSort")
+  @RequestMapping("/ajax/setUserListSort")
   public void setUserListSort(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.setUserListSort(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/deleteSingleComp")
+  @RequestMapping("/ajax/deleteSingleComp")
   public void deleteSingleComp(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
     StreamMapper.writeValue(response, unitmanAdmService.deleteSingleComp(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/deleteUserList")
+  @RequestMapping("/ajax/deleteUserList")
   public void deleteUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.deleteUserList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/deleteSingleDept")
+  @RequestMapping("/ajax/deleteSingleDept")
   public void deleteSingleDept(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.deleteSingleDept(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/restoreSingleComp")
+  @RequestMapping("/ajax/restoreSingleComp")
   public void restoreSingleComp(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.restoreSingleComp(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/restoreDeptList")
+  @RequestMapping("/ajax/restoreDeptList")
   public void restoreDeptList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, unitmanAdmService.restoreDeptList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/restoreUserList")
+  @RequestMapping("/ajax/restoreUserList")
   public void restoreUserList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     

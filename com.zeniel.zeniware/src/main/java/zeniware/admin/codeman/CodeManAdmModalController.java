@@ -12,6 +12,7 @@ import zeniware.admin.codeman.service.CodeManAdmService;
 import zeniware.admin.codeman.vo.CodeVo;
 
 @Controller
+@RequestMapping("/admin/preference/modal")
 public class CodeManAdmModalController {
   
   @Autowired
@@ -20,7 +21,7 @@ public class CodeManAdmModalController {
   /*********************
    * Public Procedures
    *********************/
-  @RequestMapping("/admin/preference/modal/codeNew")
+  @RequestMapping("/codeNew")
   public String requestCodeNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -35,7 +36,7 @@ public class CodeManAdmModalController {
     return "/admin/preference/modal/codeNew";
   }
   
-  @RequestMapping("/admin/preference/modal/codeTable")
+  @RequestMapping("/codeTable")
   public String requestCodeSort(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     model.put("groupId", paramMap.get("groupId"));

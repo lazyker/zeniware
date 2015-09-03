@@ -1,5 +1,5 @@
 /**
- * 
+ * custom.js [v0.0.1]
  */
 
 /* bootstrap modal toggle */
@@ -26,6 +26,10 @@ function createNameElements() {
 		if (element.name.length > 0) {
 			if (element.type == 'checkbox') {
 				jsonItem[element.name] = element.checked;
+			} else if (element.type == 'radio') {
+				if (element.checked) {
+					jsonItem[element.name] = element.value;
+				}
 			} else {
 				jsonItem[element.name] = element.value;
 			}
@@ -35,6 +39,14 @@ function createNameElements() {
 	return JSON.stringify(jsonItem);
 }
 
+/* bootstrap modal initialisation */
+function modalInit() {
+	$('.modal').on('hidden.bs.modal', function (event) {
+		$('.modal .modal-content').html("");
+	});
+}
+
+/* select2 initialisation */
 function sboxInit(object) {
 	var element = jQuery.isEmptyObject(object) ? 'select' : object;
 
@@ -46,7 +58,8 @@ function sboxInit(object) {
 	});
 }
 
-function dataTableCheckboxRender() {
+/* datatable checkbox render */
+function checkboxRender() {
 	var $state = $(".dataTable thead input[type='checkbox']");
 	
 	$(".dataTable").on('draw.dt', function() {
@@ -65,12 +78,32 @@ function dataTableCheckboxRender() {
 	});
 }
 
+/* sidebar menu open & active */
+function activeMaker() {
+	var arrPathName = $(location).prop('pathname').split('/');
+	var reqSearch = $(location).prop('search');
+	
+	if (arrPathName.length > 0) {
+		var splitReqUri = arrPathName[arrPathName.length - 1];
+	
+		$('.main-menu a', $('.sidebar-menu-inner')).each(function(index) {
+			var arrUri = $(this).prop('href').split('/');
+			var splitHref = arrUri[arrUri.length - 1];
+			
+			if (splitHref == splitReqUri + reqSearch) {
+				var curLi = $(this).closest('li');
+				curLi.addClass('active');
+				curLi.parents('ul').closest('li').addClass('opened');
+			}
+		});
+	}
+}
+
 $(document).ready(function() {
 	
-	$('.modal').on('hidden.bs.modal', function (event) {
-		$('.modal .modal-content').html("");
-	});
-	
+	modalInit();
 	sboxInit();
-	dataTableCheckboxRender();
+	checkboxRender();
+	activeMaker();
+	
 });

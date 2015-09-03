@@ -6,18 +6,18 @@
  
 <div class="sidebar-menu toggle-others"> 
 		 
-	<div class="sidebar-menu-inner"> 
- 
-		<ul id="main-menu" class="main-menu"> 
+	<div class="sidebar-menu-inner">
+
+		<ul id="main-menu" class="main-menu auto-inherit-active-class">
 			
 			<li>
-				<a href="${pageContext.request.contextPath}/admin/workflow/basicInitialisation">
+				<a href="${pageContext.request.contextPath}/admin/workflow/basicInit">
 					<i class="linecons-tag"></i><span class="title">기본설정</span>
 				</a>
 			</li>
-			
+
 			<li>
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/admin/workflow/formMaker">
 					<i class="linecons-tag"></i><span class="title">양식관리</span>
 				</a>
 			</li>
@@ -25,12 +25,6 @@
 			<li>
 				<a href="#">
 					<i class="linecons-tag"></i><span class="title">부서문서함관리</span>
-				</a>
-			</li>
-			
-			<li>
-				<a href="#">
-					<i class="linecons-tag"></i><span class="title">문서번호 채번규칙</span>
 				</a>
 			</li>
 			
@@ -44,3 +38,15 @@
 		 
 	</div> 
 </div> 
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+	});
+	
+/* ***References***
+
+*/
+
+</script>

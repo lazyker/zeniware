@@ -15,6 +15,7 @@ import zeniware.admin.codeman.service.CodeManAdmService;
 import zeniware.common.util.StreamMapper;
 
 @Controller
+@RequestMapping("/admin/preference")
 public class CodeManAdmController {
   
   @Autowired
@@ -23,21 +24,21 @@ public class CodeManAdmController {
   /*********************
    * Public Procedures
    *********************/
-  @RequestMapping("/admin/preference/codeMain")
+  @RequestMapping("/codeMain")
   public String requestCodeMain(@RequestParam Map<String, Object> paramMap, ModelMap model) {
 
     model.put("groupId", paramMap.get("groupId"));
     return "/preferenceLayout/codeMain";
   }
   
-  @RequestMapping("/admin/preference/ajax/getGrouplist")
+  @RequestMapping("/ajax/getGrouplist")
   public void getGroupList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.getGroupList());
   }
   
-  @RequestMapping("/admin/preference/ajax/getCodelist")
+  @RequestMapping("/ajax/getCodelist")
   public void getCodelist(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
@@ -46,28 +47,28 @@ public class CodeManAdmController {
     StreamMapper.writeValue(response, codemanAdmService.getCodeList(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/getSingleCodeExists")
+  @RequestMapping("/ajax/getSingleCodeExists")
   public void getSingleCodeExists(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.getSingleCodeExists(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/setSingleCode")
+  @RequestMapping("/ajax/setSingleCode")
   public void setSingleCode(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.setSingleCode(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/setCodeListSort")
+  @RequestMapping("/ajax/setCodeListSort")
   public void setCodeListSort(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     
     StreamMapper.writeValue(response, codemanAdmService.setCodeListSort(paramMap));
   }
   
-  @RequestMapping("/admin/preference/ajax/deleteCodeList")
+  @RequestMapping("/ajax/deleteCodeList")
   public void deleteCodeList(@RequestParam Map<String, Object> paramMap, 
     HttpServletRequest request, HttpServletResponse response) throws Throwable {
     

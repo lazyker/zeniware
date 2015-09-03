@@ -11,7 +11,6 @@ import zeniware.admin.unitman.vo.UserVo;
 
 public interface UnitManAdmService {
   
-  
   public List<CompanyVo> getCompList(Map<String, Object> paramMap);
   
   public List<DepartmentVo> getDeptList(Map<String, Object> paramMap);

@@ -22,6 +22,7 @@ import zeniware.common.plugin.vo.SelectOptionVo;
 import zeniware.common.util.StreamMapper;
 
 @Controller
+@RequestMapping("/admin/preference/modal")
 public class UnitManAdmModalController {
   
   @Autowired
@@ -40,7 +41,7 @@ public class UnitManAdmModalController {
     StreamMapper.writeValue(response, "");
   }
   
-  @RequestMapping("/admin/preference/modal/compNew")
+  @RequestMapping("/compNew")
   public String requestCompNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -53,7 +54,7 @@ public class UnitManAdmModalController {
     return "/admin/preference/modal/compNew";
   }
   
-  @RequestMapping("/admin/preference/modal/deptNew")
+  @RequestMapping("/deptNew")
   public String requestDeptNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -73,7 +74,7 @@ public class UnitManAdmModalController {
     return "/admin/preference/modal/deptNew";
   }
   
-  @RequestMapping("/admin/preference/modal/userNew")
+  @RequestMapping("/userNew")
   public String requestUserNew(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     try {
@@ -96,7 +97,7 @@ public class UnitManAdmModalController {
     return "/admin/preference/modal/userNew";
   }
   
-  @RequestMapping("/admin/preference/modal/userTable")
+  @RequestMapping("/userTable")
   public String requestDeptMemberSort(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     model.put("compId", paramMap.get("compId"));
@@ -105,7 +106,7 @@ public class UnitManAdmModalController {
     return "/admin/preference/modal/userTable";
   }
   
-  @RequestMapping("/admin/preference/modal/deptTree")
+  @RequestMapping("/deptTree")
   public String requestJstreeDept(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     model.put("opener", paramMap.get("opener"));
@@ -113,7 +114,7 @@ public class UnitManAdmModalController {
     return "/admin/preference/modal/deptTree";
   }
   
-  @RequestMapping("/admin/preference/modal/addressTable")
+  @RequestMapping("/addressTable")
   public String requestAddressTable(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable {
     
     return "/admin/preference/modal/addressTable";

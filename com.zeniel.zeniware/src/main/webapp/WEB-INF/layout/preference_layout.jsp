@@ -64,7 +64,7 @@
 	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/custom/preference.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/custom/speed-custom.js"></script>
 	
 </body>
 
