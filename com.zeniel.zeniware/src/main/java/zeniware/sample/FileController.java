@@ -37,7 +37,7 @@ public class FileController {
     }
      
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    @ResponseBody
+//    @ResponseBody
     public String fileSubmit(SampleVo dto) {
     	
 //    	String filePath = uploadPath + "0001" + System.currentTimeMillis();
@@ -47,7 +47,7 @@ public class FileController {
     	for( FileVo vo :  dto.getFile() ) {
     		
     		try {
-				vo.transferFile(filePath, "0001_" + System.currentTimeMillis() + "." + vo.getExt());
+				vo.transferFile(uploadPath, "0001_" + System.currentTimeMillis() + "." + vo.getExt());
 				
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
