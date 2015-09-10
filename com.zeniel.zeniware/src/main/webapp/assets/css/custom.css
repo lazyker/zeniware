@@ -95,7 +95,8 @@ table-ellipsis th, .table-ellipsis td {
 	cursor: pointer;
 }
 
-@media (min-width: 768px) {
+/* 읽기 화면용 가로구성 title 설정 */
+@media (min-width: 300px) {
 	.form-horizontal .control-label2 {
 		color: #5CABC7;
 	    text-align: right;
@@ -103,10 +104,23 @@ table-ellipsis th, .table-ellipsis td {
 	}
 }
 
+/* 읽기 화면용 세로구성 title 설정 */
+@media (min-width: 300px) {
+	.form-group .control-label3 {
+		color: #5CABC7;
+	}
+}
+
 .read {
 	float: left;
 	padding-right: 10px;
 	padding-top : 1px;
+}
+/* div 한개에 input 2개 넣을 경우 */
+@media (max-width: 800px) {
+	.label2 {
+	    margin-top: 10px;
+	}
 }
 
 /**
