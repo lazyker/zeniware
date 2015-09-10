@@ -1,10 +1,19 @@
 $(document).ready(function() {
 	
-	//일정등록 화면 이동 이벤트
+	//커뮤니티 화면 이동 이벤트
 	$('#comtWrite').on('click', function() {
 		window.location.href =  getContextPath() + "/cumnity/comtMainWrite";
 	});
-	
+
+	//커뮤니티내의 게시판 생성 이동 이벤트
+	$('#boardNewComt').on('click', function() {
+		window.location.href =  getContextPath() + "/comtBoard/comtNewBoardWrite";
+	});
+
+	//커뮤니티내의 게시판 글쓰기 화면 이동 이벤트-comtBoardWrite
+	$('#comtBoardNewWrite').on('click', function() {
+		window.location.href =  getContextPath() + "/comtBoard/comtBoardWrite";
+	});
 });
 
 /* ContextPath 가져오기 함수 */

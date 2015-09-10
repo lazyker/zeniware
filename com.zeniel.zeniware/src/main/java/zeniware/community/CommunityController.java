@@ -24,6 +24,8 @@ import zeniware.common.converter.DateTimeUniqueConverter;
 import zeniware.common.login.MemberInfo;
 import zeniware.community.service.CommunityService;
 import zeniware.community.vo.ComtAddInfoVo;
+import zeniware.community.vo.ComtBoardInfoVo;
+import zeniware.community.vo.ComtBoardVo;
 import zeniware.community.vo.ComtVo;
 
 @Controller
@@ -46,7 +48,19 @@ public class CommunityController {
 
 		model.put("compId", memberInfo.getCompId());
 
-		return "/cumtLayout/community/comtMain";
+		//커뮤니티내의 게시글 조회(전체)
+		paramMap.put("allYn", "");
+		paramMap.put("compId", memberInfo.getCompId());
+		int total = 0;
+		List<ComtBoardVo> boardList = communityService.getComtBoardNewList(paramMap);
+		if(boardList != null && boardList.size() > 0) {
+			total = boardList.size();
+		}
+
+		model.put("comtBdList"		, boardList);
+		model.put("total"				, total);
+
+		return "/cumtMainLayout/left_community/comtMain";
 	}
 
 	//내가 가입한 커뮤니티 리스트(가입대기 포함)
@@ -83,7 +97,7 @@ public class CommunityController {
 		model.addAttribute("comtlist", list);
 		model.addAttribute("memberInfo", memberInfo);
 
-		return "/cumtLayout/community/comtMainWrite";
+		return "/cumtMainLayout/left_community/comtMainWrite";
 	}
 
 	@RequestMapping(value = "/writeComtMainBasic")
@@ -188,21 +202,43 @@ public class CommunityController {
 		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
 		paramMap .put("compId",	memberInfo.getCompId());
 		paramMap .put("userId",	memberInfo.getUserId());
-		
-		//cumt view left 메뉴 조회
-		List<ComtVo> list = getCumntUserJoinList(memberInfo);
-		model.addAttribute("comtlist", list);
-		model.addAttribute("memberInfo", memberInfo);
 
 		model.put("compId",		memberInfo.getCompId());
 		model.put("comtVo",		this.comtMaker(paramMap));
 		model.put("fcComtId",	paramMap.get("fcComtId"));
 		model.addAttribute("useList", this.comtUserMaster(paramMap));
 
-		return "/cumtLayout/community/comtViewMain";
+		//현재 커뮤니티의 가입 여부 확인
+		int joinCnt = getComtJoinYn(memberInfo, paramMap);
+		if(joinCnt == 0) {
+			model.put("errorType",		"1");
+		}
+
+		//left 커뮤니티 조회(해당)
+		Map<String, Object> comtInfo = communityService.getUsersComtInfoNm(paramMap);
+
+		paramMap.put("compId", memberInfo.getCompId());
+		paramMap.put("userId", memberInfo.getUserId());
+		paramMap.put("admActYn", "Y");
+
+		//left 커뮤니티 조회(해당제외)
+		List<ComtVo> list = communityService.getComntUserJoinList(paramMap);
+
+		//생성된 게시판 리스트 조회
+		paramMap.put("userId", memberInfo.getUserId());
+		List<ComtBoardInfoVo> boardInfoList = communityService.getComtBoardInfoList(paramMap);
+
+		model.put("compId"			, memberInfo.getCompId());
+		model.put("joinCnt"			, joinCnt);
+		model.put("comtInfo"		, comtInfo);
+		model.put("comtList"			, list);
+		model.put("boardInfoList"	, boardInfoList);
+
+		return "/cumtMainLayout/left_comtBoardMain/comtViewMain";
 	}
 
 	private ComtVo comtMaker(Map<String, Object> paramMap) {
+		paramMap.put("nosch", "");
 		return communityService.getComtInfoDetail(paramMap);
 	}
 
@@ -239,25 +275,6 @@ public class CommunityController {
 		}
 	}
 
-	/*
-	 * @RequestMapping(value = "/getComtAllList")
-	public void getComtAllListData(@RequestParam Map<String, Object> paramMap, HttpServletResponse response, Authentication authentication) throws IOException{
-		//Spring Security의 Authentication 객를 주입
-		MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
-
-		//cumt left 메뉴 조회
-		List<ComtVo> list = getCumntAllJoinList(memberInfo);
-
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			response.setContentType("application/json");
-			mapper.writeValue(response.getOutputStream(), list);
-		} catch (Exception e) {
-			throw e;
-		}
-	}
-	 */
-
 	private List<Map<String, Object>> comtInfoMemberList(Map<String, Object> paramMap) {
 		return communityService.getComtInfoMemberAllList(paramMap);
 	}
@@ -269,22 +286,6 @@ public class CommunityController {
 		paramMap.put("compId", 	memberInfo.getCompId());
 
 		List<Map<String, Object>> memList = comtInfoMemberList(paramMap);
-		for(int i = 0; i < memList.size(); i++) {
-			paramMap.put("userId",		memList.get(i).get("userId"));
-
-			int cnt  = communityService.getComtAdmMemberInfo(paramMap);
-
-			if(cnt == 0) {
-				memList.get(i).put("mastGubun", "U");
-				if(memList.get(i).get("joinYn").equals("Y")) {
-					memList.get(i).put("taltelGubun", "D");
-				} else {
-					memList.get(i).put("taltelGubun", "N");
-				}
-			} else {
-				memList.get(i).put("taltelGubun", "Y");
-			}
-		}
 
 		try {
 			ObjectMapper mapper = new ObjectMapper();
@@ -382,8 +383,38 @@ public class CommunityController {
 		if(joinCnt == 0) {
 			model.put("errorType",		"1");
 		}
-		model.put("compId",		memberInfo.getCompId());
-		model.put("joinCnt",		joinCnt);
+
+		//left 커뮤니티 조회(해당)
+		Map<String, Object> comtInfo = communityService.getUsersComtInfoNm(paramMap);
+
+		paramMap.put("compId", memberInfo.getCompId());
+		paramMap.put("userId", memberInfo.getUserId());
+		paramMap.put("admActYn", "Y");
+
+		//left 커뮤니티 조회(해당제외)
+		List<ComtVo> list = communityService.getComntUserJoinList(paramMap);
+
+		//생성된 게시판 리스트 조회
+		paramMap.put("userId", memberInfo.getUserId());
+		List<ComtBoardInfoVo> boardInfoList = communityService.getComtBoardInfoList(paramMap);
+
+		//해당 커뮤니티의 최신글 조회
+		//해당 커뮤니티의 최신글 조회
+		paramMap.put("allYn", "Y");
+		int total = 0;
+		List<ComtBoardVo> boardList = communityService.getComtBoardNewList(paramMap);
+		if(boardList != null && boardList.size() > 0) {
+			total = boardList.size();
+		}
+
+		model.put("compId",			memberInfo.getCompId());
+		model.put("joinCnt",			joinCnt);
+		model.put("comtInfo",		comtInfo);
+		model.put("comtList",		list);
+		model.put("comtBdList",		boardList);
+		model.put("boardInfoList",	boardInfoList);
+		model.put("fcComtId",		paramMap.get("fcComtId"));
+		model.put("total",				total);
 
 		return "/comtLayout/comtBoardMain";
 	}

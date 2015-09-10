@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="comtBoard">
+
+	<resultMap type="zeniware.community.vo.ComtBoardInfoVo" id="comtBoardInfoVoMap">
+		<id column="COMP_ID"							property="compId" />
+		<id column="FC_COMT_ID"						property="fcComtId" />
+		<result column="FC_COMT_ID"				property="fcComtId" />
+		<result column="BOARD_INFO_ID"			property="boardInfoId" />
+		<result column="COMP_ID"						property="compId" />
+		<result column="FC-BOARD_TITLE"			property="fcBoardTitle" />
+		<result column="FC_BOARD_TYPE"			property="fcBoardType" />
+		<result column="FC_BOARD_HEAD_YN"		property="fcBoardHeadYn" />
+		<result column="FC_BOARD_ADM_YN"		property="fcBoardAdmYn" />
+		<result column="FC-BOARD_OPEN_YN"		property="fcBoardOpenYn" />
+		<result column="FC_BOARD_COMT_YN"		property="fcBoardComtYn" />
+		<result column="fcBoardMastYn"				property="fcBoardMastYn" />
+		<result column="BOOKMARK"					property="bookmark" />
+		<result column="LINE_GUBUN"					property="lineGubun" />
+		<result column="SORT_INT"					property="sortInt" />
+		<result column="USE_YN"						property="useYn" />
+		<result column="REG_DATE"					property="regDate" />
+		<result column="REG_USER_ID"				property="regUserId" />
+		<result column="MOD_DATE"					property="modDate" />
+		<result column="MOD_USER_ID"				property="modUserId" />
+	</resultMap>
+
+	<resultMap type="zeniware.community.vo.ComtBoardVo" id="comtBoardVoMap">
+		<id column="COMP_ID"						property="compId" />
+		<id column="FC_COMT_ID"					property="fcComtId" />
+		<result column="TOTALCNT"				property="totalCnt" />
+		<result column="COMP_ID"					property="compId" />
+		<result column="FC_COMT_ID"			property="fcComtId" />
+		<result column="FC_COMT_NM"			property="fcComtNm" />
+		<result column="fcFullComtBdTitle"		property="fcFullComtBdTitle" />
+		<result column="FC_BOARD_TITLE"		property="fcBoardTitle" />
+		<result column="BOARD_SEQ"				property="boardSeq" />
+		<result column="BOARD_INFO_ID"		property="boardInfoId" />
+		<result column="COMP_ID"					property="compId" />
+		<result column="USER_ID"					property="userId" />
+		<result column="USER_NM"					property="userNm" />
+		<result column="DPET_ID"					property="deptId" />
+		<result column="DPET_NM"					property="deptNm" />
+		<result column="FC_BOARD_TYPE"		property="fcBoardType" />
+		<result column="TITLE"						property="title" />
+		<result column="CONTENTS"				property="contents" />
+		<result column="FILE_YN"					property="fileYn" />
+		<result column="OPEN_YN"					property="openYn" />
+		<result column="REG_DATE"				property="regDate" />
+		<result column="MOD_DATE"				property="modDate" />
+	</resultMap>
+
+	<!-- 생성된커뮤니티의 게시판 리스트 조회 -->
+	<select id="comtBoard.getComtBoardInfoList" parameterType="map" resultMap="comtBoardInfoVoMap">
+		/* comtBoard.getComtBoardInfoList */
+		SELECT
+			A.*,
+			(
+				SELECT
+					CASE WHEN TYPE_GUBUN = 'C' THEN 'Y'
+					WHEN TYPE_GUBUN = 'B' AND MAST_GUBUN = 'M' THEN 'Y'
+					WHEN TYPE_GUBUN = 'B' AND MAST_GUBUN = 'B' THEN 'Y'
+					ELSE 'N'
+					END
+				FROM
+					FC_COMT_ADMN_USER B
+				WHERE B.FC_COMT_ID = A.FC_COMT_ID
+					AND B.USER_ID = #{userId, jdbcType=VARCHAR}
+			) AS fcBoardMastYn
+		FROM
+			FC_BORD_INFO A
+		WHERE 1 = 1
+			AND A.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
+	</select>
+
+	<!-- 해당 커뮤니티의 최신글 리스트 조회 -->
+	<select id="comtBoard.getComtBoardNewList" parameterType="map" resultMap="comtBoardVoMap">
+		/* comtBoard.getComtBoardNewList */
+		SELECT
+			A.BOARD_SEQ,
+			A.BOARD_INFO_ID,
+			B.FC_BOARD_TITLE,
+			FCI.CUMT_NM AS FC_COMT_NM,
+			(FCI.CUMT_NM +' > '+ B.FC_BOARD_TITLE) AS fcFullComtBdTitle,
+			A.COMP_ID,
+			A.USER_ID,
+			FU.USER_NM,
+			A.DEPT_ID,
+			A.FC_BOARD_TYPE,
+			A.TITLE,
+			SUBSTRING(A.CONTENTS, 1, 30) AS CONTENTS,
+			A.FILE_YN,
+			A.OPEN_YN,
+			A.MAIN_TOP_YN,
+			A.MEMBER_VIEW,
+			SUBSTRING(A.REG_DATE,1,10) AS REG_DATE,
+			SUBSTRING(A.MOD_DATE,1,10) AS MOD_DATE
+		FROM
+			FC_CUMT_BOAD_INFO A
+			INNER JOIN FC_BORD_INFO B ON A.BOARD_INFO_ID = B.BOARD_INFO_ID
+			INNER JOIN FH_USER FU ON A.USER_ID = FU.USER_ID AND FU.COMP_ID = #{compId, jdbcType=VARCHAR}
+			INNER JOIN FC_CUMT_INFO FCI ON FCI.FC_COMT_ID = A.FC_COMT_ID AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
+		WHERE A.USE_YN != '0'
+			<if test="allYn != ''">
+			AND B.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			</if>
+		ORDER BY REG_DATE DESC
+	</select>
+</mapper>

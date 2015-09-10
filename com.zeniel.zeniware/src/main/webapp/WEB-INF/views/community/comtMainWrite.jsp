@@ -132,7 +132,7 @@ function sendComtInfo() {
 				<div class="col-sm-2">
 					<span class="title">커뮤니티 상세소개</span>
 				</div>
-				<div class="col-sm-10">
+				<div class="col-sm-9">
 					<textarea class="form-control autogrow" name="cumtComment" id="cumtComment" rows="5" placeholder="Could be used also as Motivation Letter"></textarea>
 				</div>
 			</div>
