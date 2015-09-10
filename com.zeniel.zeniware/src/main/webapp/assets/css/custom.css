@@ -61,6 +61,35 @@ table-ellipsis th, .table-ellipsis td {
 	background: rgba(238, 238, 238, .6);
 }
 
+/** panel-flat-custom added(Community) **/
+.panel2.panel-flat-custom {
+	background: 0 0;
+	padding-top: 12px;
+	padding-left: 10px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+	margin: 0;
+}
+
+.panel2.panel-flat-custom .panel-heading {
+	border-bottom-color: #ddd;
+}
+
+.panel2.panel-flat-custom .panel-disabled {
+	background: rgba(238, 238, 238, .6);
+}
+.input-group-addon2 {
+	padding: 6px 12px;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1;
+	color: #555;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #e4e4e4;
+	border-radius: 0
+}
+
 /*** panel-flat customized ***/
 .panel.panel-flat {
 	margin: 0;

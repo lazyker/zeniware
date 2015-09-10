@@ -119,6 +119,11 @@
 		<put-attribute name="body"  value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
 
+	<definition name="/cumtMainLayout/*/*" extends="cumt_layout">
+		<put-attribute name="leftFm" value="/WEB-INF/views/community/{1}.jsp" />
+		<put-attribute name="body"  value="/WEB-INF/views/community/{2}.jsp" />
+	</definition>
+
 	<definition name="/comtLayout/*" extends="cumt_layout">
 		<put-attribute name="leftFm" value="/WEB-INF/views/community/left_{1}.jsp" />
 		<put-attribute name="body"  value="/WEB-INF/views/community/{1}.jsp" />
