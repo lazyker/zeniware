@@ -62,7 +62,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="forms-native.html">
+				<a href="${pageContext.request.contextPath}/task/customerMain">
 					<i class="fa fa-tasks"></i>
 					<span class="title">업무관리</span>
 				</a>

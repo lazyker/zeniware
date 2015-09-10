@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="customer">
+
+	<resultMap type="zeniware.task.vo.CustomerVo" id="customerVo">
+		<id property="custSeq" column="CUST_SEQ" />
+		<id property="userId" column="USER_ID" />
+		<id property="compId" column="COMP_ID" />
+		<result property="userNm" column="USER_NM" />
+ 		<result property="custNm" column="CUST_NM" />
+		<result property="custDegt" column="CUST_DEGT" />
+		<result property="custCorpn" column="CUST_CORPN" />
+		<result property="custLices" column="CUST_LICES" />
+		<result property="custTypeNm" column="CUST_TYPE_NM" />
+		<result property="mailId" column="MAIL_ID" />
+		<result property="phone" column="PHONE" />
+		<result property="fax" column="FAX" />
+		<result property="address" column="ADDRESS" />
+		<result property="custInfo" column="CUST_INFO" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />		
+		<result property="recCnt" column="REC_CNT" />
+	</resultMap>
+	
+	<select id="getCustomerList" parameterType="map" resultMap="customerVo">
+		CALL UP_TASK_CUSTOMER_LIST(
+			#{custSeq, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR}
+		);
+	</select>
+	
+	<insert id="setCustomer" parameterType="zeniware.task.vo.CustomerVo">
+		CALL UP_TASK_CUSTOMER_INSERT(
+			#{userId, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR},
+			#{custNm, jdbcType=VARCHAR},
+			#{custDegt, jdbcType=VARCHAR},
+			#{custCorpn, jdbcType=VARCHAR},
+			#{custLices, jdbcType=VARCHAR},
+			#{custTypeNm, jdbcType=VARCHAR},
+			#{mailId, jdbcType=VARCHAR},
+			#{phone, jdbcType=VARCHAR},
+			#{fax, jdbcType=VARCHAR},
+			#{address, jdbcType=VARCHAR},
+			#{custInfo, jdbcType=VARCHAR}			
+		);
+	</insert>
+	
+	<update id="modCustomer" parameterType="zeniware.task.vo.CustomerVo">
+		CALL UP_TASK_CUSTOMER_UPDATE(
+			#{custSeq, jdbcType=NUMERIC},
+			#{userId, jdbcType=VARCHAR},
+			#{compId, jdbcType=VARCHAR},
+			#{custNm, jdbcType=VARCHAR},
+			#{custDegt, jdbcType=VARCHAR},
+			#{custCorpn, jdbcType=VARCHAR},
+			#{custLices, jdbcType=VARCHAR},
+			#{custTypeNm, jdbcType=VARCHAR},
+			#{mailId, jdbcType=VARCHAR},
+			#{phone, jdbcType=VARCHAR},
+			#{fax, jdbcType=VARCHAR},
+			#{address, jdbcType=VARCHAR},
+			#{custInfo, jdbcType=VARCHAR}
+		);
+	</update>
+		
+	<delete id="delCustomer" parameterType="zeniware.task.vo.CustomerVo">
+		CALL UP_TASK_CUSTOMER_DELETE(#{custSeq, jdbcType=NUMERIC}, #{userId, jdbcType=VARCHAR}, #{compId, jdbcType=VARCHAR});
+	</delete>
+
+</mapper>

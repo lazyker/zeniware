@@ -114,6 +114,7 @@
 				holiDayAjaxBind(view);
 			},
 	 		editable: true,
+	 		eventLimit: true,
 			firstDay: 0,				//---	0. 일요일
 			weekends: true,
 			allDaySlot: true,
@@ -130,11 +131,13 @@
 			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
 	 		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
 	 		buttonText: {today: '오늘', month: '월간', week: '주간', day: '일간'},
-	 		contentHeight: 650,
-// 	 		eventLimit: true,
+// 	 		contentHeight: 650,
+			aspectRatio:2.1,
+			contentHeight:'auto',
 	 		events: function(start, end, timezone, callback) {
 	 			schedData(start, end, callback);
-	 		}
+	 		},
+	 		droppable: true
 // 	 		events : events
 		});
 		
@@ -477,7 +480,7 @@
 		</div>
 		
 			<section class="calendar-env">
-				<div class="col-md-12">
+				<div class="col-sm-12">
 					
 					<div class="calendar-main">
 						
