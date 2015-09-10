@@ -3,7 +3,7 @@
 
 <div class="page-title">
 	<div class="title-env">
-		<h1 class="title">커뮤니티</h1>
+		<h1 class="title">${comtInfo.CUMT_NM}</h1>
 	</div>
 
 	<div class="breadcrumb-env">

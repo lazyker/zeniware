@@ -262,7 +262,12 @@
 			FC_CUMT_INFO
 		WHERE 1 = 1
 			AND COMP_ID = #{compId, jdbcType=VARCHAR}
-			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			<if test="nosch == ''">
+				AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			</if>
+			<if test="nosch != ''">
+				AND FC_COMT_ID != #{fcComtId, jdbcType=VARCHAR}
+			</if>
 		ORDER BY CUMT_NM  ASC
 	</select>
 
@@ -305,36 +310,32 @@
 			) AS talNum,
 			A.TYPE_GUBUN AS typeGubun,
 			(
-				SELECT MAST_GUBUN FROM FC_COMT_ADMN_USER
+				SELECT CASE WHEN COUNT(USER_ID) = 0 THEN 'U'
+					ELSE 'M' END
+				FROM FC_COMT_ADMN_USER
 				WHERE USER_ID = A.USER_ID
 					AND FC_COMT_ID = A.FC_COMT_ID
 			) AS mastGubun,
-			A.BOARD_INFO_ID AS boardInfOId,
+			(
+            	select CASE WHEN COUNT(USER_ID) = 0 and A.JOIN_YN = 'Y' then 'D'
+                	WHEN COUNT(USER_ID) = 0 and A.JOIN_YN = 'N' THEN 'N'
+                    ELSE 'Y' END
+                FROM FC_COMT_ADMN_USER
+                WHERE FC_COMT_ID = A.FC_COMT_ID
+                	AND USER_ID = A.USER_ID
+            ) AS taltelGubun,
+			A.BOARD_INFO_ID AS boardInfoId,
 			A.INVITE_YN AS inviteYn,
 			A.JOIN_YN AS joinYn,
 			A.REG_DATE AS regDate
 		FROM
 			FC_CUMT_ADD_INFO A
 			INNER JOIN FH_USER FU ON A.USER_ID = FU.USER_ID AND FU.COMP_ID = #{compId, jdbcType=VARCHAR}
-			INNER JOIN FH_DEPT FD ON A.DEPT_ID = FD.DEPT_ID AND FD.COMP_ID = #{compId, jdbcType=VARCHAR}
+			INNER JOIN FH_DEPT FD ON FU.DEPT_ID = FD.DEPT_ID AND FD.COMP_ID = #{compId, jdbcType=VARCHAR}
 		WHERE 1 = 1
 			AND A.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 			AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
 			<!-- CALL SP_FC_COMT_ALL_MEMB_LIST(#{compId}, #{fcComtId}); -->
-	</select>
-
-	<!--  -->
-	<select id="comtUser.getComtAdmMemberInfo" parameterType="hashmap" resultType="int">
-		/* comtUser.getComtAdmMemberInfo */
-		SELECT
-			COUNT(*) AS CNT
-		FROM
-			FC_COMT_ADMN_USER
-		WHERE 1 = 1
-			AND FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
-			AND USER_ID = #{userId, jdbcType=VARCHAR}
-			AND MAST_GUBUN IN ('M','B')
-			AND TYPE_GUBUN = 'C'
 	</select>
 
 	<!-- 커뮤니티 멤버 탈퇴 처리 -->
@@ -437,5 +438,15 @@
 			FC_CUMT_ADD_INFO
 		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 			AND USER_ID = #{userId,  jdbcType=VARCHAR}
+	</select>
+
+	<!--  -->
+	<select id="comtUser.getUsersComtInfoNm" parameterType="hashmap" resultType="hashmap">
+		/* comtUser.getUsersComtInfoNm */
+		SELECT
+			*
+		FROM
+			FC_CUMT_INFO
+		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
 	</select>
 </mapper>

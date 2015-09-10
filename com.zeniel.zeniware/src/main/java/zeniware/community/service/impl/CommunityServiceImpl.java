@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import zeniware.community.dao.CommunityDao;
 import zeniware.community.service.CommunityService;
 import zeniware.community.vo.ComtAddInfoVo;
+import zeniware.community.vo.ComtBoardInfoVo;
+import zeniware.community.vo.ComtBoardVo;
 import zeniware.community.vo.ComtVo;
 
 @Service
@@ -90,12 +92,6 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	//커뮤니티 멤버 전체 조회의 관리자여부 조회
-	public int getComtAdmMemberInfo(Map<String, Object> paramMap) {
-		return communityDao.getComtAdmMemberInfo(paramMap);
-	}
-
-	@Override
 	public int setDeleteComtInfoMemUser(Map<String, Object> paramMap) {
 		return communityDao.setDeleteComtInfoMemUser(paramMap);
 	}
@@ -118,5 +114,25 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public int getComtJoinCnt(Map<String, Object> paramMap) {
 		return communityDao.getComtJoinCnt(paramMap);
+	}
+
+	@Override
+	public Map<String, Object> getUsersComtInfoNm(Map<String, Object>paramMap) {
+		return communityDao.getUsersComtInfoNm(paramMap);
+	}
+
+	@Override
+	public List<ComtVo> getUsersComtInfoNmList(Map<String, Object> paramMap) {
+		return communityDao.getUsersComtInfoNmList(paramMap);
+	}
+
+	@Override
+	public List<ComtBoardInfoVo> getComtBoardInfoList(Map<String, Object> paramMap) {
+		return communityDao.getComtBoardInfoList(paramMap);
+	}
+
+	@Override
+	public List<ComtBoardVo> getComtBoardNewList(Map<String, Object> paramMap) {
+		return communityDao.getComtBoardNewList(paramMap);
 	}
 }

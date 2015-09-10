@@ -53,17 +53,17 @@
 			deferRender: true, 
 			paging: false, 
 			rowReorder: { selector: 'tr', snapX: 10, update: false }, 
-			aoColumns: [
-				{ "mRender": function(data, type, full) { return imageRender(data, type, full); }, "sClass": "user-image" }, 
-				{ "mData": "compId", "visible": false }, 
-        { "mData": "deptName" }, 
-      	{ "mData": "userName" }, 
-      	{ "mData": "userId" }, 
-      	{ "mData": "jobTitleName" }, 
-      	{ "mData": "mailId" }, 
-      	{ "mData": "sortOrder", "visible": false }
+			columns: [
+				{ render: function(data, type, full) { return imageRender(data, type, full); }, className: "user-image" }, 
+				{ data: 'compId', visible: false }, 
+        { data: 'deptName' }, 
+      	{ data: 'userName' }, 
+      	{ data: 'userId' }, 
+      	{ data: 'jobTitleName' }, 
+      	{ data: 'mailId' }, 
+      	{ data: 'sortOrder', visible: false }
       ], 
-      order: [ [7, "asc"] ],
+      order: [ [7, "asc"] ],  
  			sDom: "rti"
 		});
 		
@@ -134,10 +134,10 @@
 		width: 60%;
 	}
 	
-	.modal .modal-body .panel {
-		height: 50vh;
-		overflow-x: hidden;
-		overflow-y: auto;
-	}
+ 	.modal .modal-body .panel {
+ 		height: 50vh;
+ 		overflow-x: hidden;
+ 		overflow-y: auto;
+ 	}
 
 </style>

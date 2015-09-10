@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import zeniware.common.sql.AbstractDao;
 import zeniware.community.vo.ComtAddInfoVo;
+import zeniware.community.vo.ComtBoardInfoVo;
+import zeniware.community.vo.ComtBoardVo;
 import zeniware.community.vo.ComtVo;
 
 @Repository
@@ -121,11 +123,6 @@ public class CommunityDao extends AbstractDao {
 		return (List<Map<String, Object>>) selectList("comtUser.getComtInfoMemberAllList", listMap);
 	}
 
-	//커뮤니티 멤버 전체 조회의 관리자여부 조회
-	public int getComtAdmMemberInfo(Map<String, Object> paramMap) {
-		return (int) selectOne("comtUser.getComtAdmMemberInfo" , paramMap);
-	}
-
 	//커뮤니티 멤버 탈퇴 처리
 	public int setDeleteComtInfoMemUser(Map<String, Object> paramMap) {
 		return (int) delete("comtUser.setDeleteComtInfoMemUser", paramMap);
@@ -153,5 +150,25 @@ public class CommunityDao extends AbstractDao {
 	//커뮤니티 가입여부 조회
 	public int getComtJoinCnt(Map<String, Object> paramMap) {
 		return (int) selectOne("comtUser.getComtJoinCnt" , paramMap);
+	}
+
+	//커뮤니티 현재 명 조회
+	public Map<String, Object> getUsersComtInfoNm(Map<String, Object>paramMap) {
+		return (Map<String, Object>) selectOne("comtUser.getUsersComtInfoNm" , paramMap);
+	}
+
+	//left 커뮤니티 조회(해당제외)
+	public List<ComtVo> getUsersComtInfoNmList(Map<String, Object> paramMap) {
+		return (List<ComtVo>) selectList("comtUser.comtview.getComtInfoDetail", paramMap);
+	}
+
+	//생성된 게시판 리스트 조회
+	public List<ComtBoardInfoVo> getComtBoardInfoList(Map<String, Object> paramMap) {
+		return (List<ComtBoardInfoVo>) selectList("comtBoard.getComtBoardInfoList", paramMap);
+	}
+
+	//해당 커뮤니티의 최신글 조회
+	public List<ComtBoardVo> getComtBoardNewList(Map<String, Object> paramMap) {
+		return (List<ComtBoardVo>) selectList("comtBoard.getComtBoardNewList", paramMap);
 	}
 }

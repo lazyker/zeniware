@@ -6,9 +6,14 @@ public class FormVo {
 	private int formVersion;
 	private String formContId;
 	private String formName;
-	private String formDescription;
+	private String formDesc;
+	private int storagePeriod;
+	private int sortOrder;
 	private boolean useYn;
 	private boolean activateYn;
+	private String regDate;
+	private String modDate;
+	private String delDate;
 	
 	public FormVo() { }
 	
@@ -48,12 +53,30 @@ public class FormVo {
 		return this;
 	}
 	
-	public String getFormDescription() {
-		return formDescription;
+	public String getFormDesc() {
+		return formDesc;
 	}
 	
-	public FormVo setFormDescription(String formDescription) {
-		this.formDescription = formDescription;
+	public FormVo setFormDesc(String formDesc) {
+		this.formDesc = formDesc;
+		return this;
+	}
+	
+	public int getStoragePeriod() {
+		return this.storagePeriod;
+	}
+
+	public FormVo setStoragePeriod(int storagePeriod) {
+		this.storagePeriod = storagePeriod;
+		return this;
+	}
+	
+	public int getSortOrder() {
+		return this.sortOrder;
+	}
+	
+	public FormVo setSortOrder(int sortOrder) {
+		this.sortOrder = sortOrder;
 		return this;
 	}
 	
@@ -72,6 +95,33 @@ public class FormVo {
 	
 	public FormVo setActivateYn(boolean activateYn) {
 		this.activateYn = activateYn;
+		return this;
+	}
+
+	public String getRegDate() {
+		return regDate;
+	}
+
+	public FormVo setRegDate(String regDate) {
+		this.regDate = regDate;
+		return this;
+	}
+
+	public String getModDate() {
+		return modDate;
+	}
+
+	public FormVo setModDate(String modDate) {
+		this.modDate = modDate;
+		return this;
+	}
+
+	public String getDelDate() {
+		return delDate;
+	}
+
+	public FormVo setDelDate(String delDate) {
+		this.delDate = delDate;
 		return this;
 	}
 

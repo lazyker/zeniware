@@ -15,7 +15,7 @@
 			<i class="fa fa-comment-o"></i>
 			<span class="title">가입 커뮤니티</span>
 			<ul class="calendar-menu" style="display:block;padding-left:15px !important;">
-				<c:forEach items="${comtlist}"  var="comtlist"  varStatus="status">
+				<c:forEach items="${comtlist}" var="comtlist" varStatus="status">
 					<li style="color:#FFFFFF;">
 						<i class="fa fa-cube"></i>
 						<label>

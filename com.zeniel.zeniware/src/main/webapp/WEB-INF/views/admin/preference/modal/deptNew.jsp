@@ -34,7 +34,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label">상위부서명</label>
-					<input type="text" class="form-control" name="parentDeptName" value="${dept.parentDeptName }" readonly />
+					<input type="text" class="form-control" name="parentDeptName" value="${dept.parentDeptName}" readonly />
 				</div>
 			</div>
 			
