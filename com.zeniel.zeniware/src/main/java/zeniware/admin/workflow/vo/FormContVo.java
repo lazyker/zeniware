@@ -1,25 +1,21 @@
 package zeniware.admin.workflow.vo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FormContVo {
 	
-	private String formContId;
 	private String compId;
-	private String formContName;
-	private String formContDescription;
+	private String contId;
+	private String contName;
+	private String contDesc;
+	private int sortOrder;
+	private List<FormVo> formList = new ArrayList<FormVo>();
 	
 	public FormContVo() { }
 	
-	public String getFormContId() {
-		return formContId;
-	}
-	
-	public FormContVo setFormContId(String formContId) {
-		this.formContId = formContId;
-		return this;
-	}
-	
 	public String getCompId() {
-		return compId;
+		return this.compId;
 	}
 	
 	public FormContVo setCompId(String compId) {
@@ -27,21 +23,48 @@ public class FormContVo {
 		return this;
 	}
 	
-	public String getFormContName() {
-		return formContName;
+	public String getContId() {
+		return this.contId;
 	}
 	
-	public FormContVo setFormContName(String formContName) {
-		this.formContName = formContName;
+	public FormContVo setContId(String contId) {
+		this.contId = contId;
 		return this;
 	}
 	
-	public String getFormContDescription() {
-		return formContDescription;
+	public String getContName() {
+		return this.contName;
 	}
 	
-	public FormContVo setFormContDescription(String formContDescription) {
-		this.formContDescription = formContDescription;
+	public FormContVo setContName(String contName) {
+		this.contName = contName;
+		return this;
+	}
+	
+	public String getContDesc() {
+		return this.contDesc;
+	}
+	
+	public FormContVo setContDesc(String contDesc) {
+		this.contDesc = contDesc;
+		return this;
+	}
+	
+	public int getSortOrder() {
+		return this.sortOrder;
+	}
+	
+	public FormContVo setSortOrder(int sortOrder) {
+		this.sortOrder = sortOrder;
+		return this;
+	}
+	
+	public List<FormVo> getFormList() {
+		return this.formList;
+	}
+	
+	public FormContVo setFormList(List<FormVo> formList) {
+		this.formList = formList;
 		return this;
 	}
 	

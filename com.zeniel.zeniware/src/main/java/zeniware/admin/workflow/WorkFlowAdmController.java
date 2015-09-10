@@ -1,5 +1,6 @@
 package zeniware.admin.workflow;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import zeniware.admin.workflow.service.WorkFlowAdmService;
 import zeniware.admin.workflow.vo.ConfigVo;
+import zeniware.admin.workflow.vo.FormContVo;
 import zeniware.admin.workflow.vo.FormVo;
 import zeniware.common.login.MemberInfo;
 import zeniware.common.util.StreamMapper;
@@ -41,7 +43,13 @@ public class WorkFlowAdmController {
   }
   
   @RequestMapping("/formMaker")
-  public String requestFormMain(@RequestParam Map<String, Object> paramMap, ModelMap model) {
+  public String requestFormMain(@RequestParam Map<String, Object> paramMap, ModelMap model, Authentication auth) {
+  	
+  	MemberInfo curUser = (MemberInfo)auth.getPrincipal();
+  	
+  	List<FormContVo> formContList = workflowAdmService.getFormContList(curUser.getCompId());
+  	
+  	model.put("formContList", formContList);
   	
   	return "/workflowAdminLayout/formMaker";
   }
@@ -58,11 +66,31 @@ public class WorkFlowAdmController {
   	return "redirect:formMaker";
   }
   
+  @RequestMapping(value="/formContNew", method=RequestMethod.POST)
+  public String submitFormContNew(@ModelAttribute FormContVo formCont) {
+  	
+  	return "redirect: formMaker";
+  }
+  
   @RequestMapping("/ajax/setSingleConf")
   public void setSingleConf(@RequestParam Map<String, Object> paramMap, 
 		HttpServletRequest request, HttpServletResponse response) throws Throwable {
   	
   	StreamMapper.writeValue(response, workflowAdmService.setSingleConf(paramMap));
+  }
+  
+  @RequestMapping("/ajax/insertSingleFormCont")
+  public void insertSingleFormCont(@RequestParam Map<String, Object> paramMap, 
+		HttpServletRequest request, HttpServletResponse response) throws Throwable {
+  	
+  	StreamMapper.writeValue(response, workflowAdmService.insertSingleFormCont(paramMap));
+  }
+  
+  @RequestMapping("/ajax/updateFormContList")
+  public void updateFormContList(@RequestParam Map<String, Object> paramMap, 
+		HttpServletRequest request, HttpServletResponse response) throws Throwable {
+  	
+  	StreamMapper.writeValue(response, workflowAdmService.updateFormContList(paramMap));
   }
   
   /*********************

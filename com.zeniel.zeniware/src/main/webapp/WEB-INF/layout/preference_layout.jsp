@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/jstree/themes/default/style.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/select2/select2-bootstrap.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/js/x-editable/css/bootstrap-editable.css">
 
 </head>
 
@@ -61,9 +62,7 @@
 	<script src="${pageContext.request.contextPath}/assets/js/toastr/toastr.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/ckeditor/ckeditor.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/ckeditor/adapters/jquery.js"></script>
-	
-	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-	<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/x-editable/js/bootstrap-editable.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/assets/js/xenon-custom.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/custom/speed-custom.js"></script>

@@ -16,6 +16,33 @@
 		<result property="modDate" column="MOD_DATE" />
 	</resultMap>
 	
+	<resultMap id="formContResultMap" type="zeniware.admin.workflow.vo.FormContVo">
+		<id property="compId" column="COMP_ID" />
+		<id property="contId" column="CONT_ID" />
+		<result property="contName" column="CONT_NM" />
+		<result property="contDesc" column="CONT_DESC" />
+		<collection property="formList" resultMap="formResultMap" />
+	</resultMap>
+	
+	<resultMap id="formResultMap" type="zeniware.admin.workflow.vo.FormVo">
+		<id property="formId" column="FORM_ID" />
+		<result property="formVersion" column="FORM_VERSION" />
+		<result property="formContId" column="FORM_CONT_ID" />
+		<result property="formName" column="FORM_NM" />
+		<result property="formDesc" column="FORM_DESC" />
+		<result property="storagePeriod" column="STORAGE_PERIOD" />
+		<result property="sortOrder" column="SORT_ORDER" />
+		<result property="useYn" column="USE_YN" />
+		<result property="activateYn" column="ACTIVATE_YN" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+		<result property="delDate" column="DEL_DATE" />
+	</resultMap>
+	
+	<select id="getFormContList" parameterType="map" resultMap="formContResultMap">
+		CALL UP_WORKFLOW_FORM_CONT_LIST(#{compId});
+	</select>
+	
 	<select id="getSingleConf" parameterType="map" resultMap="confResultMap">
 		CALL UP_WORKFLOW_CONF_ONE(#{compId});
 	</select>
@@ -25,5 +52,21 @@
 			#{compId}, #{signYn}, #{passYn}, #{titleYn}, #{agreementYn}, #{namingPrefix}, #{namingYear}, #{namingDigit}
 		);
 	</insert>
+	
+	<insert id="insertSingleFormCont" parameterType="map">
+		CALL UP_WORKFLOW_FORM_CONT_INSERT(#{compId}, #{contName}, #{contDesc});
+	</insert>
+	
+	<insert id="setSingleForm" parameterType="map">
+		CALL UP_WORKFLOW_FORM_SET(#{formId}, #{formVersion}, #{formContId}, #{formName}, #{formDesc}, #{storagePeriod}, #{activeYn});
+	</insert>
+	
+	<update id="updateSingleFormCont" parameterType="map">
+		CALL UP_WORKFLOW_FORM_CONT_UPDATE(#{compId}, #{contId}, #{contName}, #{sortOrder});
+	</update>
+	
+	<update id="updateSingleForm" parameterType="map">
+		CALL UP_WORKFLOW_FORM_UPDATE(#{formId}, #{sortOrder});
+	</update>
 
 </mapper>
