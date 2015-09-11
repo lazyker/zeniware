@@ -85,7 +85,7 @@
 			window.location.href = "./customerEdit?custSeq=" + rowData.custSeq
 		});
 		
-		/* 고객사 등록 */
+		/* 고객사 등록 화면 이동 */
 		$('#btnCreCustomer').on('click', function() {
 			window.location.href = "./customerEdit";
 		});

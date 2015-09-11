@@ -40,8 +40,8 @@ public class FileController {
     @ResponseBody
     public String fileSubmit(SampleVo dto) {
     	
-    	String filePath = uploadPath + "0001" + System.currentTimeMillis();
-//    	String filePath =  "C:/images/upload/" + "0001/";
+//    	String filePath = uploadPath + "0001" + System.currentTimeMillis();
+    	String filePath =  "C:/images/upload/" + "0001/";
     	System.out.println("controll : " + uploadPath);
     	
     	for( FileVo vo :  dto.getFile() ) {

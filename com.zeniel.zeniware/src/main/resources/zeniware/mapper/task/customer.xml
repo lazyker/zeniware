@@ -23,9 +23,40 @@
 		<result property="recCnt" column="REC_CNT" />
 	</resultMap>
 	
+	<resultMap type="zeniware.task.vo.RecordVo" id="recordVo">
+		<id property="recSeq" column="REC_SEQ" />
+		<result property="custSeq" column="CUST_SEQ" />
+		<result property="recYmd" column="REC_YMD" />
+		<result property="recCont" column="REC_CONT" />
+		<result property="userId" column="USER_ID" />
+		<result property="userNm" column="USER_NM" />
+		<result property="fileId" column="FILE_ID" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+		<result property="originalFileName" column="ORIGINAL_FILE_NAME" />
+		<result property="fileSize" column="FILE_SIZE" />
+	</resultMap>
+	
+	<resultMap type="zeniware.task.vo.PersonVo" id="personVo">
+		<id property="personSeq" column="PERSON_SEQ" />
+		<result property="custSeq" column="CUST_SEQ" />
+		<result property="personNm" column="PERSON_NM" />
+		<result property="deptNm" column="DEPT_NM" />
+		<result property="jobTitleNm" column="JOB_TITLE_NM" />
+		<result property="birthday" column="BIRTHDAY" />
+		<result property="mailId" column="MAIL_ID" />
+		<result property="officePhone" column="OFFICE_PHONE" />
+		<result property="mobilePhone" column="MOBILE_PHONE" />
+		<result property="businessNm" column="BUSINESS_NM" />
+		<result property="memo" column="MEMO" />
+		<result property="userId" column="USER_ID" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="modDate" column="MOD_DATE" />
+	</resultMap>
+	
 	<select id="getCustomerList" parameterType="map" resultMap="customerVo">
 		CALL UP_TASK_CUSTOMER_LIST(
-			#{custSeq, jdbcType=VARCHAR},
+			#{custSeq, jdbcType=NUMERIC},
 			#{userId, jdbcType=VARCHAR},
 			#{compId, jdbcType=VARCHAR}
 		);
@@ -68,6 +99,92 @@
 		
 	<delete id="delCustomer" parameterType="zeniware.task.vo.CustomerVo">
 		CALL UP_TASK_CUSTOMER_DELETE(#{custSeq, jdbcType=NUMERIC}, #{userId, jdbcType=VARCHAR}, #{compId, jdbcType=VARCHAR});
+	</delete>
+	
+	<!-- 고객관리 - 업무기록 조회  -->
+	<select id="getRecordList" parameterType="map" resultMap="recordVo">
+		CALL UP_TASK_CUST_RECORD_LIST(
+			#{recSeq, jdbcType=NUMERIC},
+			#{custSeq, jdbcType=NUMERIC},
+			#{userId, jdbcType=VARCHAR}
+		);
+	</select>
+	
+	<!-- 고객관리 - 업무기록 저장 -->
+	<insert id="setRecord" parameterType="zeniware.task.vo.RecordVo">
+		CALL UP_TASK_CUST_RECORD_INSERT(
+			#{custSeq, jdbcType=NUMERIC},
+			#{recYmd, jdbcType=VARCHAR},
+			#{recCont, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{fileId, jdbcType=VARCHAR}			
+		);
+	</insert>
+	
+	<!-- 고객관리 - 업무기록 수정  -->
+	<update id="modRecord" parameterType="zeniware.task.vo.RecordVo">
+		CALL UP_TASK_CUST_RECORD_UPDATE(
+			#{recSeq, jdbcType=NUMERIC},
+			#{custSeq, jdbcType=NUMERIC},
+			#{recYmd, jdbcType=VARCHAR},
+			#{recCont, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR},
+			#{fileId, jdbcType=VARCHAR}	
+		);
+	</update>
+		
+	<!-- 고객관리 - 업무기록 삭제  -->
+	<delete id="delRecord" parameterType="zeniware.task.vo.RecordVo">
+		CALL UP_TASK_CUST_RECORD_DELETE(#{recSeq, jdbcType=NUMERIC}, #{custSeq, jdbcType=NUMERIC}, #{userId, jdbcType=VARCHAR});
+	</delete>
+	
+	<!-- 고객관리 - 담당자 조회  -->
+	<select id="getPersonList" parameterType="map" resultMap="personVo">
+		CALL UP_TASK_CUST_PERSON_LIST(
+			#{personSeq, jdbcType=NUMERIC},
+			#{custSeq, jdbcType=NUMERIC},
+			#{userId, jdbcType=VARCHAR}
+		);
+	</select>
+	
+	<!-- 고객관리 - 담당자 저장 -->
+	<insert id="setPerson" parameterType="zeniware.task.vo.PersonVo">
+		CALL UP_TASK_CUST_PERSON_INSERT(
+			#{custSeq, jdbcType=NUMERIC},
+			#{personNm, jdbcType=VARCHAR},
+			#{deptNm, jdbcType=VARCHAR},
+			#{jobTitleNm, jdbcType=VARCHAR},
+			#{birthday, jdbcType=VARCHAR},
+			#{mailId, jdbcType=VARCHAR},
+			#{officePhone, jdbcType=VARCHAR},
+			#{mobilePhone, jdbcType=VARCHAR},
+			#{businessNm, jdbcType=VARCHAR},
+			#{memo, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR}
+		);
+	</insert>
+	
+	<!-- 고객관리 - 담당자 수정  -->
+	<update id="modPerson" parameterType="zeniware.task.vo.PersonVo">
+		CALL UP_TASK_CUST_PERSON_UPDATE(
+			#{personSeq, jdbcType=NUMERIC},
+			#{custSeq, jdbcType=NUMERIC},
+			#{personNm, jdbcType=VARCHAR},
+			#{deptNm, jdbcType=VARCHAR},
+			#{jobTitleNm, jdbcType=VARCHAR},
+			#{birthday, jdbcType=VARCHAR},
+			#{mailId, jdbcType=VARCHAR},
+			#{officePhone, jdbcType=VARCHAR},
+			#{mobilePhone, jdbcType=VARCHAR},
+			#{businessNm, jdbcType=VARCHAR},
+			#{memo, jdbcType=VARCHAR},
+			#{userId, jdbcType=VARCHAR}
+		);
+	</update>
+		
+	<!-- 고객관리 - 담당자 삭제  -->
+	<delete id="delPerson" parameterType="zeniware.task.vo.PersonVo">
+		CALL UP_TASK_CUST_PERSON_DELETE(#{personSeq, jdbcType=NUMERIC}, #{custSeq, jdbcType=NUMERIC}, #{userId, jdbcType=VARCHAR});
 	</delete>
 
 </mapper>

@@ -128,7 +128,7 @@ table-ellipsis th, .table-ellipsis td {
 @media (min-width: 300px) {
 	.form-horizontal .control-label2 {
 		color: #5CABC7;
-	    text-align: right;
+	    text-align: center;
 	    margin-bottom: 0;
 	}
 }

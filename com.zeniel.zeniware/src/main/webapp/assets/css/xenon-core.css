@@ -843,7 +843,7 @@ body {
     color: #979898;
     text-decoration: none;
     display: block;
-    padding: 13px 5px;
+    padding: 7px 5px;
     border-bottom: 1px solid #313437;
 }
 .sidebar-menu .main-menu a>i {
@@ -1626,15 +1626,16 @@ body {
 .navbar.horizontal-menu.navbar-minimal+.page-container>.sidebar-menu.fixed .sidebar-menu-inner {
     top: 55px;
 }
+/** lazyker 2015-09 메뉴 문제로 55px > 54px로 변경 **/
 @media screen and (min-width:768px) {
     .navbar.horizontal-menu.navbar-minimal .navbar-inner .navbar-brand {
-        height: 55px;
+        height: 54px;
     }
     .navbar.horizontal-menu.navbar-minimal .navbar-inner .navbar-nav>li {
-        line-height: 55px;
+        line-height: 54px;
     }
     .navbar.horizontal-menu.navbar-minimal .navbar-inner .navbar-nav>li>a {
-        line-height: 55px;
+        line-height: 54px;
     }
 }
 .navbar.horizontal-menu.navbar-minimal .navbar-inner>.nav>li {
@@ -3547,7 +3548,7 @@ body.chat-open #chat {
     background: #fff;
     padding: 20px 30px;
     border: 0;
-    margin-bottom: 30px;
+    /** 2015-09-04 lazyker 수정 (margin-bottom: 30px;) **/
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

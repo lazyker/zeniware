@@ -2,7 +2,7 @@
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -1331,7 +1331,7 @@ html {
 
 body {
 	font-family: Arimo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
+	font-size: 12px;
 	line-height: 1.42857143;
 	color: #2c2e2f;
 	background-color: #fff
@@ -7144,3 +7144,12 @@ button.close {
 		display: none !important
 	}
 }
+
+
+/* @media (min-width: 1366px) {  */
+/*     body { font-size: 1.3em; }  */
+/* }  */
+
+/* @media (min-width: 1600px) {  */
+/*     body { font-size: 1.3em; }  */
+/* } */

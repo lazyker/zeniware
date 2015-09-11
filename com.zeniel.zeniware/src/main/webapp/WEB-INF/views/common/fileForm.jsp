@@ -45,9 +45,6 @@
 			</table>
 		</fieldset>
 		
-		<div id="iframeZone">
-<iframe src="http://okjsp.pe.kr" style="width:40%;height:40%;"></iframe>
-</div>
 	</form>
 </body>
 </html>

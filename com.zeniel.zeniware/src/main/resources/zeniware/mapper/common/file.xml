@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="file">
+
+	<resultMap type="zeniware.common.converter.FileVo" id="fileVo">
+		<id property="fileId" column="FILE_ID" />
+		<result property="originalFileName" column="ORIGINAL_FILE_NAME" />
+		<result property="storedFileName" column="STORED_FILE_NAME" />
+		<result property="unitCd" column="UNIT_CD" />
+		<result property="filePath" column="FILE_PATH" />
+ 		<result property="fileSize" column="FILE_SIZE" />
+		<result property="regUserId" column="REG_USER_ID" />
+		<result property="regUserDeptId" column="REG_USER_DEPT_ID" />
+		<result property="regUserCompId" column="REG_USER_COMP_ID" />
+		<result property="delGb" column="DEL_GB" />
+		<result property="regDate" column="REG_DATE" />
+	</resultMap>
+	
+	
+	<!-- 파일정보 저장 -->
+	<insert id="setFile" parameterType="zeniware.common.converter.FileVo">
+		CALL UP_NC_FILE_INSERT(
+			#{fileId, jdbcType=VARCHAR},
+			#{originalFileName, jdbcType=VARCHAR},
+			#{storedFileName, jdbcType=VARCHAR},
+			#{unitCd, jdbcType=VARCHAR},
+			#{filePath, jdbcType=VARCHAR},
+			#{fileSize, jdbcType=NUMERIC},
+			#{regUserId, jdbcType=VARCHAR},
+			#{regUserDeptId, jdbcType=VARCHAR},
+			#{regUserCompId, jdbcType=VARCHAR},
+			#{delGb, jdbcType=VARCHAR}
+		);
+	</insert>
+	
+</mapper>

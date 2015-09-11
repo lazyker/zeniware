@@ -2,10 +2,15 @@ package zeniware.common.converter;
 
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.web.multipart.MultipartFile;
 
 public class MultipartFileToFileVOConverter implements Converter<MultipartFile, FileVo> {
+	
+//	@Value("#{globals['file.upload.path']}")	//서버 
+	@Value("#{globals['local.file.upload.path']}")	//로컬
+	private String uploadPath;
 	
 	@Override
 	public FileVo convert(MultipartFile source) {
@@ -25,9 +30,11 @@ public class MultipartFileToFileVOConverter implements Converter<MultipartFile, 
 				String id = UUID.randomUUID().toString();
 				
 				result.setFileId(id);
-				result.setOrgFileName(orgFileName);	// 원본 파일 이름 설정
-				result.setMultipartFile(source);	// 업로드된 파일의 MultipartFile 객체 설정
-				result.setFileSize(source.getSize());	// 업로드된 파일의 크기 설정
+				result.setOriginalFileName(orgFileName);	// 원본 파일 이름 설정
+				result.setStoredFileName("_" + System.currentTimeMillis());
+				result.setMultipartFile(source);				// 업로드된 파일의 MultipartFile 객체 설정
+				result.setFileSize(source.getSize());		// 업로드된 파일의 크기 설정
+				result.setFilePath(uploadPath);			// 파일 기본 경로
 				
 				//확장자를 구하는 작업을 진행한다.
 				int idx = orgFileName.lastIndexOf(".");
