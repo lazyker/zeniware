@@ -61,11 +61,13 @@
 			</ul>
 			</li>
 		</ul>
-		<div class="panel panel-flat-custom">
-			<div class="panel-body btn-icon-standalone-right" style="color:#FFFFFF !important;padding-right:5px;margin-right:2px;">
-				<span style="color:#FFFFFF !important;"><a href="javascript:void(0);" onclick="fn_boardNewInfo('${fcComtId}')">게시판생성</a></span>
+		<c:if test="${comtInfo.mastGubun == 'M' or comtInfo.mastGubun == 'B' }">
+			<div class="panel panel-flat-custom">
+				<div class="panel-body btn-icon-standalone-right" style="color:#FFFFFF !important;padding-right:5px;margin-right:2px;">
+					<span style="color:#FFFFFF !important;"><a href="javascript:void(0);" onclick="fn_boardNewInfo('${fcComtId}')">게시판생성</a></span>
+				</div>
 			</div>
-		</div>
+		</c:if>
 	</div>
 </div>
 

@@ -25,8 +25,8 @@
 					<div class="col-sm-2">
 						<span class="title">위치</span>
 					</div>
-					<div class="col-md-6">
-						<select id="comtInfoId">
+					<div class="col-sm-3">
+						<select id="comtInfoId" class="form-control">
 							<option value="IDLGA0WF0000002">test11</option>
 							<option value="IDLGA5KW0000003">test22</option>
 						</select>
@@ -63,7 +63,7 @@
 					<div class="col-sm-2">
 						<span class="title">유형</span>
 					</div>
-					<div class="col-sm-10">
+					<div class="col-sm-9">
 						<div class="form-block">
 							<label>
 								<input type="radio" name="boardType" value="B" class="cbr cbr-success" checked>
@@ -77,6 +77,27 @@
 					</div>
 				</div>
 			</div>
+			<div class="form-group-separator"></div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-2">
+						<span class="title">말머리글</span>
+					</div>
+					<div class="col-sm-9">
+						<div class="form-block">
+							<label>
+								<input type="radio" name="headYn" value="Y" class="cbr cbr-success">
+								사용
+							</label>
+							<label>
+								<input type="radio" name="headYn" value="N" class="cbr cbr-success" checked>
+								사용안함
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>

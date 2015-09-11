@@ -378,27 +378,23 @@ public class CommunityController {
 
 		//현재 커뮤니티의 가입 여부 확인
 		int joinCnt = getComtJoinYn(memberInfo, paramMap);
-		logger.debug(" request.getServerPort() ===========================> " +  request.getServerPort());
-		logger.debug(" request.getRequestURI() ===========================> " +  request.getRequestURI());
 		if(joinCnt == 0) {
 			model.put("errorType",		"1");
 		}
-
-		//left 커뮤니티 조회(해당)
-		Map<String, Object> comtInfo = communityService.getUsersComtInfoNm(paramMap);
 
 		paramMap.put("compId", memberInfo.getCompId());
 		paramMap.put("userId", memberInfo.getUserId());
 		paramMap.put("admActYn", "Y");
 
+		//left 커뮤니티 조회(해당)
+		Map<String, Object> comtInfo = communityService.getUsersComtInfoNm(paramMap);
+
 		//left 커뮤니티 조회(해당제외)
 		List<ComtVo> list = communityService.getComntUserJoinList(paramMap);
 
 		//생성된 게시판 리스트 조회
-		paramMap.put("userId", memberInfo.getUserId());
 		List<ComtBoardInfoVo> boardInfoList = communityService.getComtBoardInfoList(paramMap);
 
-		//해당 커뮤니티의 최신글 조회
 		//해당 커뮤니티의 최신글 조회
 		paramMap.put("allYn", "Y");
 		int total = 0;

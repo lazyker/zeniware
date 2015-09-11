@@ -444,9 +444,17 @@
 	<select id="comtUser.getUsersComtInfoNm" parameterType="hashmap" resultType="hashmap">
 		/* comtUser.getUsersComtInfoNm */
 		SELECT
-			*
+			A.*,
+			(
+				SELECT CASE WHEN COUNT(USER_ID) = 0 THEN 'U'
+					ELSE 'M' END
+				FROM FC_COMT_ADMN_USER
+				WHERE USER_ID = #{userId,  jdbcType=VARCHAR}
+					AND FC_COMT_ID = A.FC_COMT_ID
+			) AS mastGubun
 		FROM
-			FC_CUMT_INFO
-		WHERE FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			FC_CUMT_INFO A
+		WHERE A.FC_COMT_ID = #{fcComtId, jdbcType=VARCHAR}
+			AND A.COMP_ID = #{compId, jdbcType=VARCHAR}
 	</select>
 </mapper>
